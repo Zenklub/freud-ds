@@ -1,0 +1,14 @@
+{
+  "border": {
+    "radius": {
+      "none": { "value": "0" },
+      "sm": { "value": "4px" },
+      "md": { "value": "8px" },
+      "lg": { "value": "16px" },
+      "xl": { "value": "24px" },
+      "pill": { "value": "999px" },
+      "circular": { "value": "50%" }
+    }
+  }
+}
+ 

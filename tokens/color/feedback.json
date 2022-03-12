@@ -1,0 +1,24 @@
+{
+  "feedback": {
+    "color": {
+      "positive": {
+        "pure": { "value": "#46DA6B" },
+        "01": { "value": "#EBF9EC" },
+        "02": { "value": "#C2ECC5" },
+        "03": { "value": "#2E432F" }
+      },
+      "negative": {
+        "pure": { "value": "#FF3B30" },
+        "01": { "value": "#FFDCD9" },
+        "02": { "value": "#FF958E" },
+        "03": { "value": "#661F1A" }
+      },
+      "warning": {
+        "pure": { "value": "#FED223" },
+        "01": { "value": "#FFF6DD" },
+        "02": { "value": "#FFE59A" },
+        "03": { "value": "#615121" }
+      }
+    }
+  }
+}
