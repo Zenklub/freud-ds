@@ -1,48 +1,20 @@
 # Freud DS Tokens (Readme em construção)
 
-This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
+Freud DS Tokens to build this project ou can `cd` into this directory and run:
 ```bash
-style-dictionary build
-```
+npm install
 
-You should see something like this output:
-```
-Copying starter files...
-
-Source style dictionary starter files created!
-
-Running `style-dictionary build` for the first time to generate build artifacts.
-
-
-scss
-✔︎  build/scss/_variables.scss
-
-android
-✔︎  build/android/font_dimens.xml
-✔︎  build/android/colors.xml
-
-compose
-✔︎ build/compose/StyleDictionaryColor.kt
-✔︎ build/compose/StyleDictionarySize.kt
-
-ios
-✔︎  build/ios/StyleDictionaryColor.h
-✔︎  build/ios/StyleDictionaryColor.m
-✔︎  build/ios/StyleDictionarySize.h
-✔︎  build/ios/StyleDictionarySize.m
-
-ios-swift
-✔︎  build/ios-swift/StyleDictionary.swift
-
-ios-swift-separate-enums
-✔︎  build/ios-swift/StyleDictionaryColor.swift
-✔︎  build/ios-swift/StyleDictionarySize.swift
+npm run build
 ```
 
 Good for you! You have now built your first style dictionary! Moving on, take a look at what we have built. This should have created a build directory and it should look like this:
 ```
 ├── README.md
 ├── config.json
+├── assets/
+│   ├── brand/
+│   ├── icon/
+│   ├── emoji/
 ├── tokens/
 │   ├── color/
 │       ├── base.json
@@ -50,23 +22,16 @@ Good for you! You have now built your first style dictionary! Moving on, take a 
 │   ├── size/
 │       ├── font.json
 ├── build/
-│   ├── android/
-│      ├── font_dimens.xml
-│      ├── colors.xml
-│   ├── compose/
-│      ├── StyleDictionaryColor.kt
-│      ├── StyleDictionarySize.kt
+│   ├── assets/
+│      ├── brand/
+│      ├── icon/
+│      ├── emoji/
+│   ├── react-native/
+│      ├── variables.js
+│   ├── css/
+│      ├── variables.css
 │   ├── scss/
 │      ├── _variables.scss
-│   ├── ios/
-│      ├── StyleDictionaryColor.h
-│      ├── StyleDictionaryColor.m
-│      ├── StyleDictionarySize.h
-│      ├── StyleDictionarySize.m
-│   ├── ios-swift/
-│      ├── StyleDictionary.swift
-│      ├── StyleDictionaryColor.swift
-│      ├── StyleDictionarySize.swift
 ```
 
 If you open `config.json` you will see there are 5 platforms defined: scss, android, compose, ios, and ios-swift. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
