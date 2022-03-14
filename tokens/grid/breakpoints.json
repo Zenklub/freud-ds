@@ -1,0 +1,41 @@
+{
+  "grid": {
+    "web": {
+      "breakpoints": {
+        "min": {
+          "sm": { "value": "320px"},
+          "md": { "value": "768px"},
+          "lg": { "value": "1366px"}
+        },
+        "max": {
+          "sm": { "value": "767px"},
+          "md": { "value": "1365px"}
+        }
+      },
+      "margin": {
+        "sm": { "value": "16px"},
+        "md": { "value": "24px"},
+        "lg": { "value": "24px"}
+      },
+      "gutter": {
+        "sm": { "value": "16px"},
+        "md": { "value": "16px"},
+        "lg": { "value": "24px"}
+      },
+      "fixed": {
+        "min": { "value": "1366px" },
+        "containerWidth": { "value": "1320px" }
+      }
+    },
+    "mobile": {
+      "phone": {
+        "max": { "value": "328px"},
+        "gutter": { "value": "16px"}
+      },
+      "tablet": {
+        "max": { "value": "720px"},
+        "gutter": { "value": "16px"}
+      }
+    }
+  }
+}
