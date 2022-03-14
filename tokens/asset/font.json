@@ -1,0 +1,10 @@
+{
+  "asset": {
+    "font": {
+      "sourcesanspro": {
+        "name" : { "value": "Source Sans Pro" },
+        "ttf"  : { "value": "assets/fonts/SourceSansPro-Regular.ttf" }
+      }
+    }
+  }
+}
