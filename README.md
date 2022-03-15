@@ -59,31 +59,6 @@ If you open `config.json` you will see there are 5 platforms defined: scss, andr
 </resources>
 ```
 
-**Compose**
-```kotlin
-object StyleDictionaryColor {
-  val colorBaseGrayDark = Color(0xff111111)
-  val colorBaseGrayLight = Color(0xffcccccc)
-  val colorBaseGrayMedium = Color(0xff999999)
-  val colorBaseGreen = Color(0xff00ff00)
-  val colorBaseRed = Color(0xffff0000)
-  val colorFontBase = Color(0xffff0000)
-  val colorFontSecondary = Color(0xff00ff00)
-  val colorFontTertiary = Color(0xffcccccc)
-}
-
-object StyleDictionarySize {
-  /** the base size of the font */
-  val sizeFontBase = 16.00.sp
-  /** the large size of the font */
-  val sizeFontLarge = 32.00.sp
-  /** the medium size of the font */
-  val sizeFontMedium = 16.00.sp
-  /** the small size of the font */
-  val sizeFontSmall = 12.00.sp
-}
-```
-
 **SCSS**
 ```scss
 // variables.scss
