@@ -1,8 +1,8 @@
 {
-    "font": {
-      "family": {
-        "highlight": { "value": "Source Sans Pro" },
-        "base": { "value": "Source Sans Pro" }
-      }
+  "font": {
+    "family": {
+      "highlight": { "value": "Source Sans Pro" },
+      "base": { "value": "Source Sans Pro" }
     }
   }
+}

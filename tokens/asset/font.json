@@ -2,8 +2,16 @@
   "asset": {
     "font": {
       "sourcesanspro": {
-        "name" : { "value": "Source Sans Pro" },
-        "ttf"  : { "value": "assets/fonts/SourceSansPro-Regular.ttf" }
+        "name": { "value": "Source Sans Pro" },
+        "regular": {
+          "ttf": { "value": "assets/fonts/SourceSansPro-Regular.ttf" }
+        },
+        "semibold": {
+          "ttf": { "value": "assets/fonts/SourceSansPro-SemiBold.ttf" }
+        },
+        "bold": {
+          "ttf": { "value": "assets/fonts/SourceSansPro-Bold.ttf" }
+        }
       }
     }
   }
