@@ -1,0 +1,29 @@
+$gridMaxSize: 100%;
+$gridMargin: 16px;
+$gridGutter: 16px;
+
+@mixin screen-fluid($type) {
+    @if $type == sm {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    } @else if $type == md {
+        @media only screen and (min-width: 768px) and (max-width: 1365px) {
+            $gridMargin: 24px;
+            $gridGutter: 16px;
+            @content;
+        }
+    } @else if $type == lg {
+        @media only screen and (min-width: 1366px) {
+            $gridMargin: 24px;
+            $gridGutter: 24px;
+            @content;
+        }
+    } @else if $type == fixed {
+        @media only screen and (min-width: 1366px) {
+            $gridGutter: 24px;
+            $gridMaxSize: 1320px;
+            @content;
+        }
+    }
+};

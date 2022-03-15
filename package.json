@@ -9,7 +9,7 @@
     "scripts": {
       "build": "npm run clean && node_modules/.bin/style-dictionary build && npm run copy",
       "clean": "rm -rf build",
-      "copy": "cp -r assets build/",
+      "copy": "cp -r assets build/ && cp tokens/grid/grid.scss build/style/scss/_grid.scss",
       "prepublishOnly": "npm run build",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
