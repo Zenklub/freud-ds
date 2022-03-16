@@ -3,7 +3,7 @@
   "platforms": {
     "css": {
       "transformGroup": "css",
-      "buildPath": "build/style/css/",
+      "buildPath": "dist/style/css/",
       "files": [
         {
           "format": "css/variables",
@@ -13,7 +13,7 @@
     },
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "build/style/scss/",
+      "buildPath": "dist/style/scss/",
       "files": [{
         "destination": "_variables.scss",
         "format": "scss/variables"
@@ -21,7 +21,7 @@
     },
     "rn": {
       "transformGroup": "react-native",
-      "buildPath": "build/style/react-native/",
+      "buildPath": "dist/style/react-native/",
       "files": [
         {
           "destination": "variables.js",

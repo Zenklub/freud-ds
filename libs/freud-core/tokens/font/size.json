@@ -1,8 +1,21 @@
 {
   "font": {
     "size": {
-      "xxxs": { "value": "12px" },
-      "xxs": { "value": "14px" },
+      "xxxs": {
+        "value": "12px",
+        "group": "px",
+        "type": "px",
+        "attributes": {
+          "type": "font",
+          "category": "size/px"
+        }
+      },
+      "xxs": {
+        "value": "14px",
+        "attributes": {
+          "category": "size"
+        }
+      },
       "xs": { "value": "16px" },
       "sm": { "value": "20px" },
       "md": { "value": "24px" },

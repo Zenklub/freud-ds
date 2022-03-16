@@ -25,7 +25,13 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "----------------- DS CORE COMMANDS ------------------ ": "",
+    "bump-version:major": "cd libs/freud-core && npm version major --force",
+    "bump-version:minor": "cd libs/freud-core && npm version minor --force",
+    "bump-version:patch": "cd libs/freud-core && npm version patch --force",
+    "build:freud-core": "cd libs/freud-core && npm run clean && ./../../node_modules/.bin/style-dictionary build && npm run copy",
+    "publish:freud-core": "cd libs/freud-core && npm publish --access public"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +61,7 @@
     "@nrwl/eslint-plugin-nx": "11.6.3",
     "@nrwl/jest": "11.6.3",
     "@nrwl/linter": "11.6.3",
+    "@nrwl/node": "^13.9.0",
     "@nrwl/storybook": "^11.6.3",
     "@nrwl/tao": "11.6.3",
     "@nrwl/workspace": "11.6.3",
@@ -72,7 +79,9 @@
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.2.1",
+    "style-dictionary": "3.7.0",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "typescript": "~4.0.3"
