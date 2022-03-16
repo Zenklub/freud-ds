@@ -1,0 +1,21 @@
+{
+  "name": "freud-core",
+  "version": "1.0.0",
+  "description": "Zenklub DS Freud Core",
+  "main": "build/index.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "npm run clean && node_modules/.bin/style-dictionary build && npm run copy",
+    "clean": "rm -rf build",
+    "copy": "cp -r assets build/ && cp tokens/grid/grid.scss build/style/scss/_grid.scss",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zenklub",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "style-dictionary": "3.7.0"
+  }
+}

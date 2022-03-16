@@ -1,121 +1,100 @@
-# Freud DS Tokens (Readme em construção)
 
-Freud DS Tokens to build this project ou can `cd` into this directory and run:
-```bash
-npm install
 
-npm run build
-```
+# DsFreud (README Em construção!)
 
-Good for you! You have now built your first style dictionary! Moving on, take a look at what we have built. This should have created a build directory and it should look like this:
-```
-├── README.md
-├── config.json
-├── assets/
-│   ├── brand/
-│   ├── icon/
-│   ├── emoji/
-├── tokens/
-│   ├── color/
-│       ├── base.json
-│       ├── font.json
-│   ├── size/
-│       ├── font.json
-├── build/
-│   ├── assets/
-│      ├── brand/
-│      ├── icon/
-│      ├── emoji/
-│   ├── react-native/
-│      ├── variables.js
-│   ├── css/
-│      ├── variables.css
-│   ├── scss/
-│      ├── _variables.scss
-```
+This project was generated using [Nx](https://nx.dev).
 
-If you open `config.json` you will see there are 5 platforms defined: scss, android, compose, ios, and ios-swift. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-**Android**
-```xml
-<!-- font_dimens.xml -->
-<resources>
-  <dimen name="size_font_small">12.00sp</dimen>
-  <dimen name="size_font_medium">16.00sp</dimen>
-  <dimen name="size_font_large">32.00sp</dimen>
-  <dimen name="size_font_base">16.00sp</dimen>
-</resources>
+🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
-<!-- colors.xml -->
-<resources>
-  <color name="color_base_gray_light">#ffcccccc</color>
-  <color name="color_base_gray_medium">#ff999999</color>
-  <color name="color_base_gray_dark">#ff111111</color>
-  <color name="color_base_red">#ffff0000</color>
-  <color name="color_base_green">#ff00ff00</color>
-  <color name="color_font_base">#ffff0000</color>
-  <color name="color_font_secondary">#ff00ff00</color>
-  <color name="color_font_tertiary">#ffcccccc</color>
-</resources>
-```
+## Quick Start & Documentation
 
-**SCSS**
-```scss
-// variables.scss
-$color-base-gray-light: #cccccc;
-$color-base-gray-medium: #999999;
-$color-base-gray-dark: #111111;
-$color-base-red: #ff0000;
-$color-base-green: #00ff00;
-$color-font-base: #ff0000;
-$color-font-secondary: #00ff00;
-$color-font-tertiary: #cccccc;
-$size-font-small: 0.75rem;
-$size-font-medium: 1rem;
-$size-font-large: 2rem;
-$size-font-base: 1rem;
-```
+[Nx Documentation](https://nx.dev/angular)
 
-**iOS**
-```objc
-#import "StyleDictionaryColor.h"
+[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
 
-@implementation StyleDictionaryColor
+[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
 
-+ (UIColor *)color:(StyleDictionaryColorName)colorEnum{
-  return [[self values] objectAtIndex:colorEnum];
-}
+## Adding capabilities to your workspace
 
-+ (NSArray *)values {
-  static NSArray* colorArray;
-  static dispatch_once_t onceToken;
+Nx supports many plugins which add capabilities for developing different types of applications and different tools.
 
-  dispatch_once(&onceToken, ^{
-    colorArray = @[
-[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f],
-[UIColor colorWithRed:0.600f green:0.600f blue:0.600f alpha:1.000f],
-[UIColor colorWithRed:0.067f green:0.067f blue:0.067f alpha:1.000f],
-[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f]
-    ];
-  });
+These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
 
-  return colorArray;
-}
+Below are our core plugins:
 
-@end
-```
+- [Angular](https://angular.io)
+  - `ng add @nrwl/angular`
+- [React](https://reactjs.org)
+  - `ng add @nrwl/react`
+- Web (no framework frontends)
+  - `ng add @nrwl/web`
+- [Nest](https://nestjs.com)
+  - `ng add @nrwl/nest`
+- [Express](https://expressjs.com)
+  - `ng add @nrwl/express`
+- [Node](https://nodejs.org)
+  - `ng add @nrwl/node`
 
-Pretty nifty! This shows a few things happening:
-1. The build system does a deep merge of all the token JSON files defined in the `source` attribute of `config.json`. This allows you to split up the token JSON files however you want. There are 2 JSON files with `color` as the top level key, but they get merged properly.
-1. The build system resolves references to other design tokens. `{size.font.medium.value}` gets resolved properly.
-1. The build system handles references to token values in other files as well as you can see in `tokens/color/font.json`.
+There are also many [community plugins](https://nx.dev/nx-community) you could add.
 
-Now let's make a change and see how that affects things. Open up `tokens/color/base.json` and change `"#111111"` to `"#000000"`. After you make that change, save the file and re-run the build command `style-dictionary build`. Open up the build files and take a look.
+## Generate an application
 
-**Huzzah!**
+Run `ng g @nrwl/angular:app my-app` to generate an application.
 
-Now go forth and create! Take a look at all the built-in [transforms](https://amzn.github.io/style-dictionary/#/transforms?id=pre-defined-transforms) and [formats](https://amzn.github.io/style-dictionary/#/formats?id=pre-defined-formats).
+> You can use any of the plugins above to generate applications as well.
+
+When using Nx, you can create multiple applications and libraries in the same workspace.
+
+## Generate a library
+
+Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+
+> You can also use any of the plugins above to generate libraries as well.
+
+Libraries are shareable across libraries and applications. They can be imported from `@ds-freud/mylib`.
+
+## Development server
+
+Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng g component my-component --project=my-app` to generate a new component.
+
+## Build
+
+Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+
+Run `nx affected:test` to execute the unit tests affected by a change.
+
+## Running end-to-end tests
+
+Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+
+Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+
+## Understand your workspace
+
+Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+
+## Further help
+
+Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+
+## ☁ Nx Cloud
+
+### Computation Memoization in the Cloud
+
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+
+Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
+
+Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
+
+Visit [Nx Cloud](https://nx.app/) to learn more.
