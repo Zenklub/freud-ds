@@ -1,13 +1,13 @@
 {
   "name": "@zenklub-ds/freud-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Zenklub DS Freud Core",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && ../../node_modules/.bin/style-dictionary build && npm run copy",
+    "build": "npm run clean && node ./build.js && npm run copy",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist",
     "copy": "cp -r assets dist/ && cp tokens/grid/grid.scss dist/style/scss/_grid.scss && npm run copy-files",

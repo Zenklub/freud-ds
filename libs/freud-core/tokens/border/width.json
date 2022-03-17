@@ -1,7 +1,7 @@
 {
   "border": {
     "width": {
-      "none": { "value": "0" },
+      "none": { "value": 0 },
       "sm": { "value": "1px" },
       "md": { "value": "2px" },
       "lg": { "value": "4px" },
