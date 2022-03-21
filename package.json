@@ -32,7 +32,6 @@
     "freud-core-version:patch": "cd libs/freud-core && npm version patch --force",
     "build:freud-core": "cd libs/freud-core && npm run clean && npm run build && npm run copy",
     "publish:freud-core": "cd libs/freud-core && npm publish --access public",
-
     "----------------- CORE WEB ------------------ ": "",
     "core-web:build-storybook": "nx run core-web:build-storybook -o dist/storybook/core-web",
     "core-web:storybook": "nx run core-web:storybook"
