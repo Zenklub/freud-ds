@@ -1,0 +1,86 @@
+# .helm-script: &helm-script
+#   - export PROJECT_NAME=ng-ui
+#   - export DEPLOY_NAMESPACE=staging
+#   - export REPO=${CI_REGISTRY_IMAGE}/staging/freud
+#   - export DEPLOYS=$(helm ls --namespace ${DEPLOY_NAMESPACE} | grep ${PROJECT_NAME} | wc -l)
+#   - export HELM_OP_CMD=upgrade && [[ $DEPLOYS = 0 ]] && export HELM_OP_CMD=install
+
+# .except-post-publish:
+#   except: &except-post-publish
+#     variables:
+#       - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
+
+# .prune-images: &prune-images
+#   - docker image prune -a -f --filter "until=148h"
+
+# storybook-build:
+#   image: docker:19
+#   services:
+#     - docker:19-dind
+#   stage: storybook-build
+#   dependencies: []
+#   only:
+#     - develop
+#   retry:
+#     max: 2
+#     when:
+#       - runner_system_failure
+#       - stuck_or_timeout_failure
+#       - unknown_failure
+#   variables:
+#     CONTAINER_IMAGE_REF: ${CI_REGISTRY_IMAGE}/staging/freud:${CI_COMMIT_REF_NAME}
+#     CONTAINER_IMAGE_SHA: ${CI_REGISTRY_IMAGE}/staging/freud:${CI_COMMIT_SHA}
+#     CONTAINER_IMAGE_LATEST: ${CI_REGISTRY_IMAGE}/staging/freud:latest
+#   script:
+#     # make sure we are not bringing node_modules within he container
+#     - rm -rf node_modules
+#     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+#     # fetches the latest image (not failing if image is not found)
+#     - docker pull ${CONTAINER_IMAGE_LATEST} || true
+#     - >
+#       docker build
+#       --pull
+#       --cache-from ${CONTAINER_IMAGE_LATEST}
+#       --tag ${CONTAINER_IMAGE_SHA}
+#       -f ./docker/storybook/Dockerfile .
+#     - docker push ${CONTAINER_IMAGE_SHA}
+#     # Then we tag it "latest"
+#     - docker tag ${CONTAINER_IMAGE_SHA} ${CONTAINER_IMAGE_LATEST}
+#     # And we push it.
+#     - docker push ${CONTAINER_IMAGE_LATEST}
+#     # prunes old images
+#     #- *prune-images
+#   except: *except-post-publish
+
+# storybook-release:
+#   stage: storybook-release
+#   image:
+#     name: alpine/helm:3.4.2
+#     entrypoint: ['/bin/sh', '-c']
+#   dependencies:
+#     - storybook-build
+#   retry:
+#     max: 2
+#     when:
+#       - runner_system_failure
+#       - stuck_or_timeout_failure
+#       - unknown_failure
+#   tags:
+#     - cluster
+#     - kubernetes
+#   when: always
+#   only:
+#     - develop
+#   script:
+#     - *helm-script
+#     - >
+#       helm $HELM_OP_CMD ${PROJECT_NAME} chart
+#       --namespace ${DEPLOY_NAMESPACE}
+#       --set image.repository=${REPO}
+#       --set image.tag=${CI_COMMIT_SHA}
+#       --set ingress.hosts[0].host=freud.zenklub.com
+#       --set ingress.hosts[0].paths[0]=/
+#       --set ingress.tls.host=freud.zenklub.com
+#       --values chart/values.yaml
+#       --set env.NODE_OPTIONS="--max-old-space-size=2048"
+#   except: *except-post-publish

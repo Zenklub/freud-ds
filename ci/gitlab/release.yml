@@ -1,0 +1,76 @@
+variables: &global-variables
+  DEFAULT_COMMIT_TITLE: 'chore(release): automatic version update'
+  DOCKER_DRIVER: overlay
+  DOCKER_TLS_CERTDIR: ''
+
+.except-post-publish:
+  except: &except-post-publish
+    variables:
+      - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
+
+.git-config: &git-config
+  - git config user.email "bot@zenklub.com"
+  - git config user.name "Zenklub Deploy Bot"
+  - git remote set-url origin "https://gitlab-ci-token:$GL_TOKEN@gitlab.com/zenklubtech/ng-ui.git"
+
+.version-bump-minor: &version-bump-minor
+  - git reset --hard
+  - git checkout $CI_COMMIT_REF_NAME
+  - git pull origin $CI_COMMIT_REF_NAME
+  - npm version minor -m "$DEFAULT_COMMIT_TITLE"
+  - git push origin $CI_COMMIT_REF_NAME
+
+.version-bump-patch: &version-bump-patch
+  - git reset --hard
+  - git checkout $CI_COMMIT_REF_NAME
+  - git pull origin $CI_COMMIT_REF_NAME
+  - npm version patch -m "$DEFAULT_COMMIT_TITLE"
+  - git push origin $CI_COMMIT_REF_NAME
+
+.create-tag: &create-tag
+  - tag=$(git tag --points-at HEAD)
+  - git push origin "$tag"
+
+.release-package: &release-package
+  - npm run build
+  - npm publish dist
+
+#########################
+# Release Minor Version #
+#########################
+release (minor version):
+  stage: release
+  only:
+    - master
+  retry:
+    max: 2
+    when: runner_system_failure
+  variables:
+    <<: *global-variables
+  script:
+    - *git-config
+    - *version-bump-minor
+    - *create-tag
+    - *release-package
+  except: *except-post-publish
+  when: manual
+
+# #########################
+# # Release Patch Version #
+# #########################
+release (patch version):
+  stage: release
+  only:
+    - master
+  retry:
+    max: 2
+    when: runner_system_failure
+  variables:
+    <<: *global-variables
+  script:
+    - *git-config
+    - *version-bump-patch
+    - *create-tag
+    - *release-package
+  except: *except-post-publish
+  when: manual

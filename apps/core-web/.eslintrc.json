@@ -10,8 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "apps/angular-components/tsconfig.*?.json",
-          "apps/angular-components/.storybook/tsconfig.json"
+          "apps/core-web/tsconfig.*?.json",
+          "apps/core-web/.storybook/tsconfig.json"
         ]
       },
       "rules": {

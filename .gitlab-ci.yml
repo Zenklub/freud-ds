@@ -1,0 +1,172 @@
+# image: node:latest
+
+# stages:
+#   - build
+#   - test
+#   - quality
+#   - storybook-build
+#   - storybook-release
+#   - release
+
+# .except-post-publish:
+#   except: &except-post-publish
+#     variables:
+#       - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
+
+# #########
+# # Build #
+# #########
+# prepare:
+#   stage: build
+#   retry:
+#     max: 2
+#     when: runner_system_failure
+#   script:
+#     - npm ci --quiet
+#     - npm run build
+#   artifacts:
+#     expire_in: 1 week
+#     paths:
+#       - node_modules/
+#   except: *except-post-publish
+#   only:
+#     - merge_requests
+#     - feat/*
+#     - feature/*
+#     - fix/*
+#     - hotfix/*
+#     - master
+#     - main
+#     - develop
+#     - staging
+#     - notyet
+#     - youknowwho
+#     - nyan
+
+# ########
+# # Lint #
+# ########
+# lint:
+#   stage: test
+#   retry:
+#     max: 2
+#     when: runner_system_failure
+#   dependencies:
+#     - prepare
+#   script:
+#     - npm run lint
+#   except: *except-post-publish
+#   only:
+#     - merge_requests
+#     - feat/*
+#     - feature/*
+#     - fix/*
+#     - hotfix/*
+#     - master
+#     - main
+#     - develop
+#     - staging
+#     - notyet
+#     - youknowwho
+#     - nyan
+
+# test:unit:
+#   image: registry.gitlab.com/zenklubtech/devops/node-with-chrome:latest
+#   stage: test
+#   dependencies:
+#     - prepare
+#   script:
+#     - npm run test
+#   artifacts:
+#     paths:
+#       - test-report.xml
+#       - coverage/
+#     expire_in: 1 week
+#   except: *except-post-publish
+#   only:
+#     - merge_requests
+#     - feat/*
+#     - feature/*
+#     - fix/*
+#     - hotfix/*
+#     - master
+#     - main
+#     - develop
+#     - staging
+#     - notyet
+#     - youknowwho
+#     - nyan
+
+# #####################################
+# # Quality Gates and Security Checks #
+# #####################################
+# sonarqube:
+#   stage: quality
+#   image: 
+#     name: sonarsource/sonar-scanner-cli:latest
+#     entrypoint: [""]
+#   variables:
+#     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+#     GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+#   cache:
+#     key: "${CI_JOB_NAME}"
+#     paths:
+#       - .sonar/cache
+#   script: 
+#     - sonar-scanner
+#   allow_failure: true
+#   only:
+#     - merge_requests
+#     - master
+#     - notyet
+#     - youknowwho
+#     - nyan
+#     - feature/QUALITY
+#     - develop
+
+# semgrep:
+#   image: returntocorp/semgrep-agent:v1
+#   script: semgrep-agent
+#   stage: quality
+
+#   rules:
+#   # Scan changed files in MRs, block on new issues only (existing issues ignored)
+#   - if: $CI_MERGE_REQUEST_IID
+#   # Scan all files on default branch, block on any issues
+#   # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+#   variables:
+#     SEMGREP_RULES: >- # more at semgrep.dev/explore
+#       p/security-audit
+#       p/secrets
+#       p/owasp-top-ten
+
+#     # == Optional settings in the `variables:` block
+
+#     # Instead of `SEMGREP_RULES:`, use rules set in Semgrep App.
+#     # Get your token from semgrep.dev/manage/settings.
+#     #   SEMGREP_APP_TOKEN: $SEMGREP_APP_TOKEN
+
+#     # Receive inline MR comments (requires Semgrep App account)
+#     # Setup instructions: https://semgrep.dev/docs/notifications/#gitlab-merge-request-comments
+#     GITLAB_TOKEN: $PAT
+
+#     # Never fail the build due to findings on pushes.
+#     # Instead, just collect findings for semgrep.dev/manage/findings
+#     #   SEMGREP_AUDIT_ON: push
+
+#     # Upload findings to GitLab SAST Dashboard [step 1/2]
+#     # See also the next step.
+#     SEMGREP_GITLAB_JSON: "1"
+
+#     # Change job timeout (default is 1800 seconds; set to 0 to disable)
+#     #   SEMGREP_TIMEOUT: 300
+
+#   # Upload findings to GitLab SAST Dashboard (remove `script:` line above) [step 2/2]
+#   script: semgrep-agent --gitlab-json > gl-sast-report.json || true
+#   artifacts:
+#     reports:
+#       sast: gl-sast-report.json
+
+# include:
+#   - '/ci/gitlab/release.yml'

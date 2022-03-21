@@ -29,12 +29,12 @@
     }
   },
   "projects": {
-    "angular-components": {
+    "core-web": {
       "tags": []
     },
-    "angular-components-e2e": {
+    "core-web-e2e": {
       "tags": [],
-      "implicitDependencies": ["angular-components"]
+      "implicitDependencies": ["core-web"]
     }
   },
   "cli": {
@@ -67,5 +67,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "angular-components"
+  "defaultProject": "core-web"
 }

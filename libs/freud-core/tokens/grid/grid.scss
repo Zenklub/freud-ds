@@ -1,6 +1,20 @@
 $gridMaxSize: 100%;
 $gridMargin: 16px;
-$gridGutter: 16px;
+$grid-gutter: 16px;
+$grid-columns: 12;
+
+[class*="freud-grid-"] {
+  float: left;
+  box-sizing: border-box;
+  padding: 0 $grid-gutter;
+  margin-bottom: $gridMargin;
+}
+
+@for $i from 1 through $grid-columns{  
+  .freud-grid-#{$i} {
+    width: 100% / $grid-columns * $i;
+  }
+}
 
 @mixin screen-fluid($type) {
     @if $type == sm {
