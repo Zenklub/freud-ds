@@ -1,6 +1,6 @@
 {
   "name": "@zenklub-ds/freud-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Zenklub DS Freud Core",
   "main": "dist/index.js",
   "files": [
