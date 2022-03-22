@@ -8,6 +8,11 @@ variables: &global-variables
     variables:
       - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
 
+.git-config: &git-config
+  - git config user.email "bot@zenklub.com"
+  - git config user.name "Zenklub Deploy Bot"
+  - git remote set-url origin "https://gitlab-ci-token:$GL_TOKEN@gitlab.com/ana.jacobsen1/ds-freud.git"
+
 .version-bump-minor: &version-bump-minor
   - git reset --hard
   - git checkout $CI_COMMIT_REF_NAME
@@ -43,6 +48,7 @@ release core (minor version):
   variables:
     <<: *global-variables
   script:
+    - *git-config
     - *version-bump-minor
     - *create-tag
     - *release-package
@@ -62,6 +68,7 @@ release core (patch version):
   variables:
     <<: *global-variables
   script:
+    - *git-config
     - *version-bump-patch
     - *create-tag
     - *release-package
