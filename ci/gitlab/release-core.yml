@@ -50,7 +50,6 @@ release core (minor version):
   script:
     - *git-config
     - *version-bump-minor
-    - *create-tag
     - *release-package
   except: *except-post-publish
   when: manual
@@ -70,7 +69,6 @@ release core (patch version):
   script:
     - *git-config
     - *version-bump-patch
-    - *create-tag
     - *release-package
   except: *except-post-publish
   when: manual
