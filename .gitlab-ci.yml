@@ -20,7 +20,6 @@ prepare:
     max: 2
     when: runner_system_failure
   script:
-    - npm i -g nx@11
     - npm ci --quiet
     - npm run build
     - npm run build:freud-core
