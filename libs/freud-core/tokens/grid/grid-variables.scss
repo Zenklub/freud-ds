@@ -1,0 +1,20 @@
+$breakpoints: (
+  lg: 1366px,
+  md: 768px,
+  sm: 0px,
+) !default;
+
+$default-margin: (
+  lg: 24px,
+  md: 24px,
+  sm: 16px,
+) !default;
+
+$default-gutter: (
+  lg: 24px,
+  md: 16px,
+  sm: 16px,  
+) !default;
+
+$columns: 12 !default;
+$max-width: null !default;

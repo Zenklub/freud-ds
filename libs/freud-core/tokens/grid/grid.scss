@@ -1,43 +1,67 @@
-$gridMaxSize: 100%;
-$gridMargin: 16px;
-$grid-gutter: 16px;
-$grid-columns: 12;
+@use 'sass:list';
+@use 'sass:map';
+@use './grid-variables';
+@use './mixins';
 
-[class*="freud-grid-"] {
-  float: left;
-  box-sizing: border-box;
-  padding: 0 $grid-gutter;
-  margin-bottom: $gridMargin;
-}
+.freud-grid {
+  @each $size in map.keys(variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $margin: map.get(variables.$default-margin, $size);
 
-@for $i from 1 through $grid-columns{  
-  .freud-grid-#{$i} {
-    width: 100% / $grid-columns * $i;
+      @include mixins.layout-grid($size, $margin, variables.$max-width);
+    }
   }
 }
 
-@mixin screen-fluid($type) {
-    @if $type == sm {
-        @media only screen and (max-width: 767px) {
-            @content;
-        }
-    } @else if $type == md {
-        @media only screen and (min-width: 768px) and (max-width: 1365px) {
-            $gridMargin: 24px;
-            $gridGutter: 16px;
-            @content;
-        }
-    } @else if $type == lg {
-        @media only screen and (min-width: 1366px) {
-            $gridMargin: 24px;
-            $gridGutter: 24px;
-            @content;
-        }
-    } @else if $type == fixed {
-        @media only screen and (min-width: 1366px) {
-            $gridGutter: 24px;
-            $gridMaxSize: 1320px;
-            @content;
-        }
+.freud-row {
+  @each $size in map.keys(variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $margin: map.get(variables.$default-margin, $size);
+      $gutter: map.get(variables.$default-gutter, $size);
+
+      @include mixins.inner($size, $margin, $gutter);
     }
-};
+  }
+}
+
+.freud-col {
+  // select the upper breakpoint
+  $upper-breakpoint: list.nth(map.keys(variables.$breakpoints), 1);
+
+  @each $size in map.keys(variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $gutter: map.get(variables.$default-gutter, $size);
+
+      @include mixins.cell($size, variables.$columns, $gutter);
+
+      @for $span from 1 through variables.$columns {
+        // Span classes.
+        // stylelint-disable max-nesting-depth
+        @at-root .freud-col-#{$span} {
+          @include mixins.cell-span_($size, $span, $gutter);
+        }
+        // stylelint-enable max-nesting-depth
+      }
+    }
+  }
+
+  // Order override classes.
+  @for $i from 1 through variables.$columns {
+    &-order-#{$i} {
+      @include mixins.cell-order($i);
+    }
+  }
+
+  // Alignment classes.
+  &-align-top {
+    @include mixins.cell-align(top);
+  }
+
+  &-align-middle {
+    @include mixins.cell-align(middle);
+  }
+
+  &-align-bottom {
+    @include mixins.cell-align(bottom);
+  }
+}
