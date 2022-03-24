@@ -14,6 +14,9 @@ stages:
 # Build #
 #########
 prepare:
+  cache:
+    paths:
+    - node_modules/
   stage: build
   retry:
     max: 2
