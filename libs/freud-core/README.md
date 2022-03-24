@@ -1,47 +1,25 @@
 # Freud DS Core
 
-Tokens, icones e emojis do Freud DS.
-## Estrutura da lib compilada
+Escala e consistência em todos os produtos Zen!
 
-```
-├── README.md
-├── assets/
-│   ├── brand/
-│   ├── icon/
-│   ├── emoji/
-│   ├── fonts/
-├── style/
-│   ├── react-native/
-│      ├── variables.js
-│   ├── css/
-│      ├── variables.css
-│   ├── scss/
-│      ├── _variables.scss
-│      ├── _grid.scss
-```
 
-## Projeto
+## Sobre o Freud
+
+Neurologista e psiquiatra criador da psicanálise. Seus estudos serviram como base pra a evolução da psicologia. 
+
+Do mesmo modo, nosso Design System tem como base garantir a evolução dos produtos Zenklub.
+
+Através do Freud DS queremos propagar pelo mundo a importância de criar produtos acessíveis e consistentes.
+
+
+## Projeto @zenklub-ds/freud-core
+
+Biblioteca que auxilia na composição dos componentes e interfaces como ícones, marcas, grids e utilities.
 
 Ao abrir o arquivo `config.json` você vai encontrar 3 plataformas definidas, css, scss e react-native. Cada plataforma definida transforma os arquivos na pasta tokens em variáveis de acordo com a plataforma e formado configurado.
 
-Para adicionar mais formatos consulte a documentação do `Amazon Style Dictionary`
+Para mais informações consulte a documentação do `Amazon Style Dictionary`
 
-### Estrutura do projeto
-
-```
-├── README.md
-├── config.json
-├── assets/
-│   ├── brand/
-│   ├── icon/
-│   ├── emoji/
-├── tokens/
-│   ├── color/
-│       ├── base.json
-│       ├── font.json
-│   ├── size/
-│       ├── font.json
-```
 
 ## Exemplos de output
 
@@ -87,4 +65,119 @@ Para adicionar mais formatos consulte a documentação do `Amazon Style Dictiona
   export const opacityLevel1 = 0.04;
   export const opacityLevel2 = 0.08;
   export const opacityLevel3 = 0.16;
+```
+
+
+## Estrutura da lib compilada
+
+```
+├── README.md
+├── assets/
+│   ├── brand/
+│   ├── icon/
+│   ├── emoji/
+│   ├── fonts/
+├── style/
+│   ├── react-native/
+│      ├── variables.js
+│   ├── css/
+│      ├── variables.css
+│   ├── scss/
+│      ├── _variables.scss
+│      ├── _grid.scss
+```
+
+
+## Como instalar o Freud core em seu projeto Angular
+1. Primeiro instale a biblioteca via npm:
+
+`npm i @zenklub-ds/freud-core`
+
+
+2. Importe as variáveis via scss para o seu arquivo de estilo que você for precisar dos tokens (Opção 1):
+
+```
+@import '@zenklub-ds/freud-core/dist/style/scss/_variables.scss';
+@import '@zenklub-ds/freud-core/dist/style/scss/_grid.scss';
+
+=> Exemplo de uso:
+
+background-color: $brand-color-01;
+
+```
+
+2. **Ou** Importe as variáveis root para o seu arquivo de estilo principal (Opção 2):
+
+```
+@import '@zenklub-ds/freud-core/dist/style/css/_variables.css';
+
+=> Exemplo de uso:
+
+background-color: var(--brand-color-01);
+
+```
+
+2. **Ou** Importe as variáveis no arquivo `angular.json` (Opção 3):
+
+```
+No array de styles adicione o seguinte estilo
+
+"node_modules/@zenklub-ds/freud-core/dist/style/css/variables.css"
+
+=> Exemplo de uso:
+
+background-color: var(--brand-color-01);
+
+```
+
+```
+// angular.json
+
+{
+  ...
+  "projects": {
+    ...
+    "architect": {
+      ...
+      "build": {
+        ...
+        "options": {
+          ...
+          "styles": [...] <== PASTE HERE
+        }
+      }
+    }
+  }
+}
+```
+
+3. Adicione o seguinte caminho para a pasta de ativos em seu arquivo `angular.json` para permitir o uso dos icones e emojis:
+
+```
+  {
+    "glob": "**/*",
+    "input": "node_modules/@zenklub-ds/freud-core/dist/assets",
+    "output": "./assets/@zenklub-ds/"
+  }
+```
+
+```
+// angular.json
+
+{
+  ...
+  "projects": {
+    ...
+    "architect": {
+      ...
+      "build": {
+        ...
+        "options": {
+          ...
+          "assets": [...] <== PASTE HERE
+        }
+      }
+    }
+  }
+}
 ```

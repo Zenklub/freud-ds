@@ -41,115 +41,11 @@ Se você nunca encontrou nenhum deles antes, recomendamos algumas horas para se 
 
 ## Como instalar o Freud em seu projeto Angular
 
-### Somente o core (Tokens, grid, icones e emojis)
+[Somente o core (Tokens, grid, icones e emojis)](./libs/freud-core/README.md)
 
-1. Primeiro instale a biblioteca via npm:
-
-`npm i @zenklub-ds/freud-core`
-
-
-2. Importe as variáveis via scss para o seu arquivo de estilo que você for precisar dos tokens (Opção 1):
-
-```
-@import '@zenklub-ds/freud-core/dist/style/scss/_variables.scss';
-@import '@zenklub-ds/freud-core/dist/style/scss/_grid.scss';
-
-=> Exemplo de uso:
-
-background-color: $brand-color-01;
-
-```
-
-2. **Ou** Importe as variáveis root para o seu arquivo de estilo principal (Opção 2):
-
-```
-@import '@zenklub-ds/freud-core/dist/style/css/_variables.css';
-
-=> Exemplo de uso:
-
-background-color: var(--brand-color-01);
-
-```
-
-2. **Ou** Importe as variáveis no arquivo `angular.json` (Opção 3):
-
-```
-No array de styles adicione o seguinte estilo
-
-"node_modules/@zenklub-ds/freud-core/dist/style/css/variables.css"
-
-=> Exemplo de uso:
-
-background-color: var(--brand-color-01);
-
-```
-
-```
-// angular.json
-
-{
-  ...
-  "projects": {
-    ...
-    "architect": {
-      ...
-      "build": {
-        ...
-        "options": {
-          ...
-          "styles": [...] <== PASTE HERE
-        }
-      }
-    }
-  }
-}
-```
-
-3. Adicione o seguinte caminho para a pasta de ativos em seu arquivo `angular.json` para permitir o uso dos icones e emojis:
-
-```
-  {
-    "glob": "**/*",
-    "input": "node_modules/@zenklub-ds/freud-core/dist/assets",
-    "output": "./assets/@zenklub-ds/"
-  }
-```
-
-```
-// angular.json
-
-{
-  ...
-  "projects": {
-    ...
-    "architect": {
-      ...
-      "build": {
-        ...
-        "options": {
-          ...
-          "assets": [...] <== PASTE HERE
-        }
-      }
-    }
-  }
-}
-```
 
 ## Em construção
 
-### Para publicar o Core no npm
-
-Processo para ser automatizado
-
-```
-1 - Alerar a versão do pacote:
-
-2 - Rodar o comando abaixo:
-
-npm run publish:freud-core
-
-```
 
 ### Para incluir o storybook de componentes react native:
 

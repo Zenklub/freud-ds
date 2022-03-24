@@ -9,6 +9,7 @@
   "scripts": {
     "build": "npm run clean && node ./build.js && npm run copy",
     "prepublishOnly": "npm run build",
+    "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag freud-core-v$PACKAGE_VERSION && git push --tags",
     "clean": "rm -rf dist",
     "copy": "cp -r assets dist/ && cp tokens/grid/* dist/style/scss/ && npm run copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
