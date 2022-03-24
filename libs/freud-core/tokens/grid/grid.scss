@@ -3,7 +3,7 @@
 @use './grid-variables';
 @use './mixins';
 
-.freud-grid {
+.freud-grid, .freud-grid-fixed {
   @each $size in map.keys(grid-variables.$breakpoints) {
     @include mixins.screen-fluid($size) {
       $margin: map.get(grid-variables.$default-margin, $size);
@@ -11,6 +11,10 @@
       @include mixins.layout-grid($size, $margin, grid-variables.$max-width);
     }
   }
+}
+
+.freud-grid-fixed {
+  max-width: 1320px;
 }
 
 .freud-row {
@@ -37,7 +41,8 @@
       @for $span from 1 through grid-variables.$columns {
         // Span classes.
         // stylelint-disable max-nesting-depth
-        @at-root .freud-col-#{$span} {
+        @at-root .freud-col-#{$span},
+            .freud-col-#{$span}-#{$size} {
           @include mixins.cell-span_($size, $span, $gutter);
         }
         // stylelint-enable max-nesting-depth

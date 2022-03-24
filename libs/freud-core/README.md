@@ -84,7 +84,7 @@ Para mais informações consulte a documentação do `Amazon Style Dictionary`
 │      ├── variables.css
 │   ├── scss/
 │      ├── _variables.scss
-│      ├── _grid.scss
+│      ├── grid.scss
 ```
 
 
@@ -98,7 +98,7 @@ Para mais informações consulte a documentação do `Amazon Style Dictionary`
 
 ```
 @import '@zenklub-ds/freud-core/dist/style/scss/_variables.scss';
-@import '@zenklub-ds/freud-core/dist/style/scss/_grid.scss';
+@import '@zenklub-ds/freud-core/dist/style/scss/grid.scss';
 
 => Exemplo de uso:
 
@@ -120,9 +120,11 @@ background-color: var(--brand-color-01);
 2. **Ou** Importe as variáveis no arquivo `angular.json` (Opção 3):
 
 ```
-No array de styles adicione o seguinte estilo
+No array de styles adicione os seguintes estilos
 
 "node_modules/@zenklub-ds/freud-core/dist/style/css/variables.css"
+
+"node_modules/@zenklub-ds/freud-core/dist/style/scss/grid.scss"
 
 => Exemplo de uso:
 
@@ -181,3 +183,45 @@ background-color: var(--brand-color-01);
   }
 }
 ```
+
+
+## Utilizando os grids
+
+### Estrutura do HTML
+
+#### Grid fuida, sem limite de tamanho
+```
+<div class="freud-grid">
+  <div class="freud-row">
+    <div class="freud-col-<NUMERO DE COLUNAS>"></div> <--- Numero de 1 a 12
+    <div class="freud-col"></div> <--- Sem determinar o numero de colunas é atribuido o maximo(12)
+  </div>
+</div>
+
+```
+
+#### Grid fixa, com limite maximo do container em 1320
+```
+<div class="freud-grid-fixed">
+  <div class="freud-row">
+    <div class="freud-col-<NUMERO DE COLUNAS>"></div> <--- Numero de 1 a 12
+    <div class="freud-col"></div> <--- Sem determinar o numero de colunas é atribuido o maximo(12)
+  </div>
+</div>
+
+```
+
+#### Classes disponíveis
+
+### CSS Classes
+
+Classe CSS | Descrição
+--- | ---
+`freud-grid` | Obrigatório, para o elemento de grade de layout
+`freud-row` | Obrigatório, para agrupar as colunas
+`freud-col` | Obrigatório, Coluna do grid
+`freud-col-<NUMBER_OF_COLUMNS>` | Opcional, especifica o numero de colunas de 1 até 12
+`freud-col-<NUMBER_OF_COLUMNS>-<TYPE_OF_DEVICE>` | Opcional, especifica o numero de colunas em um tamanho de tela ex (sm, md, lg)
+`freud-col-order-<INDEX>` | Opcional, especifica a ordem da coluna dentro da row
+`freud-col-align-<POSITION>` | Opcional, especifica o alinhamento da coluna
+
