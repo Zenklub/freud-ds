@@ -5,20 +5,20 @@
 
 // returns the lower grid boundary or null if the smallest grid is selected
 @function breakpoint-min($size) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
-  $min: map.get(variables.$breakpoints, $size);
+  $min: map.get(grid-variables.$breakpoints, $size);
 
   @return if($min > 0, $min, null);
 }
 
 // returns the upper grid boundary or null if the largest grid is selected
 @function breakpoint-max($size) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
-  $names: map.keys(variables.$breakpoints);
+  $names: map.keys(grid-variables.$breakpoints);
   $n: list.index($names, $size);
   $prev: if($n > 1, list.nth($names, $n - 1), null);
 
@@ -27,8 +27,8 @@
 
 // For internal use.
 @mixin screen-fluid($size) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
 
   $min: breakpoint-min($size);
@@ -56,12 +56,12 @@
 }
 
 @mixin cell-span_($size, $span, $gutter) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
 
   $percent: math.percentage(
-    math.div($span, variables.$columns)
+    math.div($span, grid-variables.$columns)
   );
 
   @if $percent > 100% {
@@ -70,18 +70,18 @@
 
   width: calc(#{$percent} - #{$gutter});
   // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  width: calc(#{$percent} - map.get(variables.$default-gutter, $size));
+  width: calc(#{$percent} - map.get(grid-variables.$default-gutter, $size));
 
   @supports (display: grid) {
     width: auto;
-    grid-column-end: span math.min($span, variables.$columns);
+    grid-column-end: span math.min($span, grid-variables.$columns);
   }
 }
 
 // Public mixins, meant for developer usage.
 @mixin layout-grid($size, $margin, $max-width: null) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
 
   box-sizing: border-box;
@@ -94,8 +94,8 @@
 }
 
 @mixin inner($size, $margin, $gutter) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
 
   display: flex;
@@ -103,24 +103,24 @@
   align-items: stretch;
   margin: math.div(-$gutter, 2);
   // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  margin: calc(map.get(variables.$default-margin, $size) / 2 * -1);
+  margin: calc(map.get(grid-variables.$default-margin, $size) / 2 * -1);
 
   @supports (display: grid) {
     display: grid;
     margin: 0;
     grid-gap: $gutter;
     // stylelint-disable-next-line declaration-block-no-duplicate-properties
-    grid-gap: map.get(variables.$default-gutter, $size);
+    grid-gap: map.get(grid-variables.$default-gutter, $size);
     grid-template-columns: repeat(
-      variables.$columns,
+      grid-variables.$columns,
       minmax(0, 1fr)
     );
   }
 }
 
 @mixin cell($size, $default-span, $gutter) {
-  @if not map.has-key(variables.$breakpoints, $size) {
-    @error "Invalid size! Choose one of #{map.keys(variables.$breakpoints)}";
+  @if not map.has-key(grid-variables.$breakpoints, $size) {
+    @error "Invalid size! Choose one of #{map.keys(grid-variables.$breakpoints)}";
   }
 
   @include cell-span_($size, $default-span, $gutter);
@@ -128,7 +128,7 @@
   box-sizing: border-box;
   margin: math.div($gutter, 2);
   // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  margin: calc(map.get(variables.$default-gutter, $size) / 2);
+  margin: calc(map.get(grid-variables.$default-gutter, $size) / 2);
 
   @supports (display: grid) {
     margin: 0;

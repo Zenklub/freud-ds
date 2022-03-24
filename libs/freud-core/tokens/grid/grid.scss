@@ -4,20 +4,20 @@
 @use './mixins';
 
 .freud-grid {
-  @each $size in map.keys(variables.$breakpoints) {
+  @each $size in map.keys(grid-variables.$breakpoints) {
     @include mixins.screen-fluid($size) {
-      $margin: map.get(variables.$default-margin, $size);
+      $margin: map.get(grid-variables.$default-margin, $size);
 
-      @include mixins.layout-grid($size, $margin, variables.$max-width);
+      @include mixins.layout-grid($size, $margin, grid-variables.$max-width);
     }
   }
 }
 
 .freud-row {
-  @each $size in map.keys(variables.$breakpoints) {
+  @each $size in map.keys(grid-variables.$breakpoints) {
     @include mixins.screen-fluid($size) {
-      $margin: map.get(variables.$default-margin, $size);
-      $gutter: map.get(variables.$default-gutter, $size);
+      $margin: map.get(grid-variables.$default-margin, $size);
+      $gutter: map.get(grid-variables.$default-gutter, $size);
 
       @include mixins.inner($size, $margin, $gutter);
     }
@@ -26,15 +26,15 @@
 
 .freud-col {
   // select the upper breakpoint
-  $upper-breakpoint: list.nth(map.keys(variables.$breakpoints), 1);
+  $upper-breakpoint: list.nth(map.keys(grid-variables.$breakpoints), 1);
 
-  @each $size in map.keys(variables.$breakpoints) {
+  @each $size in map.keys(grid-variables.$breakpoints) {
     @include mixins.screen-fluid($size) {
-      $gutter: map.get(variables.$default-gutter, $size);
+      $gutter: map.get(grid-variables.$default-gutter, $size);
 
-      @include mixins.cell($size, variables.$columns, $gutter);
+      @include mixins.cell($size, grid-variables.$columns, $gutter);
 
-      @for $span from 1 through variables.$columns {
+      @for $span from 1 through grid-variables.$columns {
         // Span classes.
         // stylelint-disable max-nesting-depth
         @at-root .freud-col-#{$span} {
@@ -46,7 +46,7 @@
   }
 
   // Order override classes.
-  @for $i from 1 through variables.$columns {
+  @for $i from 1 through grid-variables.$columns {
     &-order-#{$i} {
       @include mixins.cell-order($i);
     }
