@@ -37,7 +37,8 @@ variables: &global-variables
 
 .release-package: &release-package
   - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-  - npm run publish:freud-core
+  - echo "unsafe-perm = true" >> ~/.npmrc
+  - npm publish --access public
 
 #########################
 # Release Minor Version #
