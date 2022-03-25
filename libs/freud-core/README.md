@@ -221,7 +221,7 @@ Classe CSS | Descrição
 `freud-row` | Obrigatório, para agrupar as colunas
 `freud-col` | Obrigatório, Coluna do grid
 `freud-col-<NUMBER_OF_COLUMNS>` | Opcional, especifica o numero de colunas de 1 até 12
-`freud-col-<NUMBER_OF_COLUMNS>-<TYPE_OF_DEVICE>` | Opcional, especifica o numero de colunas em um tamanho de tela ex (sm, md, lg)
+`<SIZE>:freud-col-<NUMBER_OF_COLUMNS>` | Opcional, especifica o numero de colunas em um tamanho de tela ex (sm, md, lg)
 `freud-col-order-<INDEX>` | Opcional, especifica a ordem da coluna dentro da row
 `freud-col-align-<POSITION>` | Opcional, especifica o alinhamento da coluna
 

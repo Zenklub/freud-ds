@@ -42,7 +42,7 @@
         // Span classes.
         // stylelint-disable max-nesting-depth
         @at-root .freud-col-#{$span},
-            .freud-col-#{$span}-#{$size} {
+            .#{$size}\:freud-col-#{$span} {
           @include mixins.cell-span_($size, $span, $gutter);
         }
         // stylelint-enable max-nesting-depth
