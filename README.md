@@ -42,16 +42,3 @@ Se você nunca encontrou nenhum deles antes, recomendamos algumas horas para se 
 ## Como instalar o Freud em seu projeto Angular
 
 [Somente o core (Tokens, grid, icones e emojis)](./libs/freud-core/README.md)
-
-
-## Em construção
-
-
-### Para incluir o storybook de componentes react native:
-
-Tecnologias sugeridas:
-Expo + Storybook
-
-https://github.com/nrwl/nx-labs/tree/main/packages/expo
-
-https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started
