@@ -24,7 +24,7 @@ prepare:
   script:
     - npm ci --quiet
     - npm run build
-    - npm run build:freud-core
+    - npm run build:core-support
   artifacts:
     expire_in: 1 week
     paths:

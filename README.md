@@ -10,19 +10,22 @@ Do mesmo modo, nosso Design System tem como base garantir a evolução dos produ
 
 Através do Freud DS queremos propagar pelo mundo a importância de criar produtos acessíveis e consistentes.
 
+### Documentação de design
+- [Freud DS](https://zeroheight.com/2f57d070e/p/628e1e-design-system-zenklub)
+
 
 ## Projetos
 
 
-### @zenklub-ds/freud-core
+### @freud-ds/core-support
 
 Biblioteca que auxilia na composição dos componentes e interfaces como ícones, marcas, grids e utilities.
 
-### @zenklub-ds/freud-core-web
+### @freud-ds/core-webcomponent
 
 Biblioteca de componentes web para Angular
 
-### @zenklub-ds/freud-core-mobile
+### @freud-ds/core-appcomponent
 
 Biblioteca de componentes mobile para react-native
 
@@ -41,4 +44,4 @@ Se você nunca encontrou nenhum deles antes, recomendamos algumas horas para se 
 
 ## Como instalar o Freud em seu projeto Angular
 
-[Somente o core (Tokens, grid, icones e emojis)](./libs/freud-core/README.md)
+[Somente o core (Tokens, grid, icones e emojis)](./libs/core-support/README.md)

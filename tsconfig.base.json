@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zenklub-ds/freud-core": ["libs/freud-core/src/index.ts"]
+      "@freud-ds/core-support": ["libs/core-support/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

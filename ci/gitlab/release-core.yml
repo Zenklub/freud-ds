@@ -17,7 +17,7 @@ variables: &global-variables
   - git reset --hard
   - git checkout $CI_COMMIT_REF_NAME
   - git pull origin $CI_COMMIT_REF_NAME
-  - cd libs/freud-core && npm version minor
+  - cd libs/core-support && npm version minor
   - git add .
   - git commit -m "$DEFAULT_COMMIT_TITLE"
   - git push origin $CI_COMMIT_REF_NAME
@@ -26,7 +26,7 @@ variables: &global-variables
   - git reset --hard
   - git checkout $CI_COMMIT_REF_NAME
   - git pull origin $CI_COMMIT_REF_NAME
-  - cd libs/freud-core && npm version patch
+  - cd libs/core-support && npm version patch
   - git add .
   - git commit -m "$DEFAULT_COMMIT_TITLE"
   - git push origin $CI_COMMIT_REF_NAME

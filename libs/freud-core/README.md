@@ -12,7 +12,7 @@ Do mesmo modo, nosso Design System tem como base garantir a evolução dos produ
 Através do Freud DS queremos propagar pelo mundo a importância de criar produtos acessíveis e consistentes.
 
 
-## Projeto @zenklub-ds/freud-core
+## Projeto @freud-ds/core-support
 
 Biblioteca que auxilia na composição dos componentes e interfaces como ícones, marcas, grids e utilities.
 
@@ -91,14 +91,14 @@ Para mais informações consulte a documentação do `Amazon Style Dictionary`
 ## Como instalar o Freud core em seu projeto Angular
 1. Primeiro instale a biblioteca via npm:
 
-`npm i @zenklub-ds/freud-core`
+`npm i @freud-ds/core-support`
 
 
 2. Importe as variáveis via scss para o seu arquivo de estilo que você for precisar dos tokens (Opção 1):
 
 ```
-@import '@zenklub-ds/freud-core/dist/style/scss/_variables.scss';
-@import '@zenklub-ds/freud-core/dist/style/scss/grid.scss';
+@import '@freud-ds/core-support/dist/style/scss/_variables.scss';
+@import '@freud-ds/core-support/dist/style/scss/grid.scss';
 
 => Exemplo de uso:
 
@@ -109,7 +109,7 @@ background-color: $brand-color-01;
 2. **Ou** Importe as variáveis root para o seu arquivo de estilo principal (Opção 2):
 
 ```
-@import '@zenklub-ds/freud-core/dist/style/css/_variables.css';
+@import '@freud-ds/core-support/dist/style/css/_variables.css';
 
 => Exemplo de uso:
 
@@ -122,9 +122,9 @@ background-color: var(--brand-color-01);
 ```
 No array de styles adicione os seguintes estilos
 
-"node_modules/@zenklub-ds/freud-core/dist/style/css/variables.css"
+"node_modules/@freud-ds/core-support/dist/style/css/variables.css"
 
-"node_modules/@zenklub-ds/freud-core/dist/style/scss/grid.scss"
+"node_modules/@freud-ds/core-support/dist/style/scss/grid.scss"
 
 => Exemplo de uso:
 
@@ -158,8 +158,8 @@ background-color: var(--brand-color-01);
 ```
   {
     "glob": "**/*",
-    "input": "node_modules/@zenklub-ds/freud-core/dist/assets",
-    "output": "./assets/@zenklub-ds/"
+    "input": "node_modules/@freud-ds/core-support/dist/assets",
+    "output": "./assets/@freud-ds/"
   }
 ```
 
