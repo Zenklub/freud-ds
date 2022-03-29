@@ -31,4 +31,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci --quiet
       - name: Run tests
-        run: nx test
+        run: npm test
