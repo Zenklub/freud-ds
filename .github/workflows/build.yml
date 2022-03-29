@@ -28,6 +28,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci --quiet
       - name: Build projects
-        run: run build
+        run: npm run build
       - name: Build core support
         run: npm run build:core-support
