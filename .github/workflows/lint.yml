@@ -6,7 +6,8 @@ name: Run Lint
 on:
   workflow_run:
     workflows: ["Build"]
-    types: [requested]
+    types:
+      - completed
     branches:
       - feat/*
       - feature/*
@@ -18,12 +19,14 @@ on:
     pull_request:
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Install nx
+        run: npm i -g @nrwl/cli
       - name: Run lint
         run: npm run lint

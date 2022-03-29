@@ -5,8 +5,9 @@ name: Run unit tests
 
 on:
   workflow_run:
-    workflows: ["Run Lint"]
-    types: [requested]
+    workflows: ["lint"]
+    types:
+      - completed
     branches:
       - feat/*
       - feature/*
@@ -18,7 +19,7 @@ on:
     pull_request:
 
 jobs:
-  build:
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
