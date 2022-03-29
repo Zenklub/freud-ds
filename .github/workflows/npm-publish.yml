@@ -18,11 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ env.checkout-fetch-depth }}
+          ref: ${{ env.checkout-ref }}
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
       - run: echo "teste"
       - run: nx
 #     steps:
