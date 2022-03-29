@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "teste"
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - run: nx
 #     runs-on: ubuntu-latest
 #     steps:
 #       - uses: actions/checkout@v3
