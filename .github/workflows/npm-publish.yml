@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 16
       - name: Nrwl Nx
-        uses: MansaGroup/nrwl-nx-action@v2
+        run: sudo npm i -g @nrwl/cli
       - run: echo "teste"
       - run: nx
 #     steps:
