@@ -13,6 +13,10 @@ on:
         - patch
         - minor
 
+env:
+  NX_BRANCH: ${{ github.head_ref }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+
 jobs:
   npm-publish-support:
     runs-on: ubuntu-latest
