@@ -21,8 +21,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+      - name: Nrwl Nx
+        uses: MansaGroup/nrwl-nx-action@v2
       - run: echo "teste"
       - run: nx
 #     steps:
