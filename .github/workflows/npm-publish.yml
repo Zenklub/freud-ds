@@ -41,10 +41,7 @@ jobs:
       
       # Push new version
       - name: Push new version
-        run: |
-          git add .
-          git commit -m "${CI_COMMIT_TITLE}"
-          git push
+        run: git push
 
       # Release package in npm
       - name: Release version on npm
