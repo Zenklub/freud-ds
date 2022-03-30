@@ -28,24 +28,29 @@ jobs:
           git config user.email "bot@zenklub.com"
           git config user.name "Zenklub Deploy Bot"
 
-      - name: Go to lib directory
-        run: cd libs/core-support
-
       # Update minor ou patch version
       - name: Run patch version
         if: github.event.inputs.release-type == 'patch'
-        run: npm version patch
+        run: |
+          cd libs/core-support
+          npm version patch
       - name: Run patch version
         if: github.event.inputs.release-type == 'minor'
-        run: npm version minor
+        run: |
+          cd libs/core-support
+          npm version minor
       
       # Push new version
       - name: Push new version
-        run: git push
+        run: |
+          git add .
+          git commit -m "${CI_COMMIT_TITLE}"
+          git push
 
       # Release package in npm
       - name: Release version on npm
         run: |
+          cd libs/core-support
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
           echo "unsafe-perm = true" >> ~/.npmrc
           npm publish --access public
