@@ -22,8 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure git
-        run: git config user.email "bot@zenklub.com"
-        run: git config user.name "Zenklub Deploy Bot"
+        run: |
+          git config user.email "bot@zenklub.com"
+          git config user.name "Zenklub Deploy Bot"
 
   publish-core-support-patch:
     needs: git-config
@@ -49,15 +50,17 @@ jobs:
       
       # Push new version
       - name: Push new version
-        run: git add .
-        run: git commit -m "${CI_COMMIT_TITLE}"
-        run: git push
+        run: |
+          git add .
+          git commit -m "${CI_COMMIT_TITLE}"
+          git push
 
       # Release package in npm
       - name: Release version on npm
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-        run: echo "unsafe-perm = true" >> ~/.npmrc
-        run: npm publish --access public
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          echo "unsafe-perm = true" >> ~/.npmrc
+          npm publish --access public
 
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
