@@ -18,17 +18,8 @@ env:
   NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
-  git-config:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Configure git
-        run: |
-          git config user.email "bot@zenklub.com"
-          git config user.name "Zenklub Deploy Bot"
-
-  publish-core-support-patch:
+  publish-core-support:
     needs: git-config
-    if: github.event.inputs.release-type == 'patch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,6 +28,11 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       
+      - name: Configure git
+        run: |
+          git config user.email "bot@zenklub.com"
+          git config user.name "Zenklub Deploy Bot"
+
       - name: Go to lib directory
         run: cd libs/core-support
 
@@ -64,4 +60,5 @@ jobs:
 
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           CI_COMMIT_TITLE: /^chore\(release\):\sautomatic\sversion\supdate$/
