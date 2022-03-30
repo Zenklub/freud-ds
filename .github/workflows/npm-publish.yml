@@ -21,7 +21,7 @@ jobs:
   git-config:
     runs-on: ubuntu-latest
     steps:
-      -name: Configure git
+      - name: Configure git
         run: git config user.email "bot@zenklub.com"
         run: git config user.name "Zenklub Deploy Bot"
 
