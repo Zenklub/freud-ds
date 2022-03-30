@@ -18,37 +18,47 @@ env:
   NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
-  npm-publish-support:
+  git-config:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Configure git
+        run: git config user.email "bot@zenklub.com"
+        run: git config user.name "Zenklub Deploy Bot"
+
+  publish-core-support-patch:
+    needs: git-config
+    if: github.event.inputs.release-type == 'patch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: ${{ env.checkout-fetch-depth }}
-          ref: ${{ env.checkout-ref }}
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: echo "teste"
-      - run: nx
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#       - run: npm ci
-#       - run: npm test
-#   publish-npm:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#           registry-url: https://registry.npmjs.org/
-#       - run: npm ci
-#       - run: npm publish
-#         env:
-#           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          registry-url: https://registry.npmjs.org/
+      
+      - name: Go to lib directory
+        run: cd libs/core-support
+
+      # Update minor ou patch version
+      - name: Run patch version
+        if: github.event.inputs.release-type == 'patch'
+        run: npm version patch
+      - name: Run patch version
+        if: github.event.inputs.release-type == 'minor'
+        run: npm version minor
+      
+      # Push new version
+      - name: Push new version
+        run: git add .
+        run: git commit -m "${CI_COMMIT_TITLE}"
+        run: git push
+
+      # Release package in npm
+      - name: Release version on npm
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+        run: echo "unsafe-perm = true" >> ~/.npmrc
+        run: npm publish --access public
+
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          CI_COMMIT_TITLE: /^chore\(release\):\sautomatic\sversion\supdate$/
