@@ -1,0 +1,11 @@
+body {
+    color: white !important;
+}
+
+input {
+    color: white !important;
+}
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white !important;
+    opacity: 1; /* Firefox */
+}

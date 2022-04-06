@@ -20,7 +20,11 @@
               "apps/core-web/src/favicon.ico",
               "apps/core-web/src/assets"
             ],
-            "styles": ["apps/core-web/src/styles.scss"],
+            "styles": [
+              "apps/core-web/src/styles.scss",
+              "node_modules/@freud-ds/core-support/dist/style/css/variables.css",
+              "node_modules/@freud-ds/core-support/dist/style/scss/_variables.scss"
+            ],
             "scripts": []
           },
           "configurations": {
