@@ -184,6 +184,32 @@ background-color: var(--brand-color-01);
 }
 ```
 
+4. Inclua as fonts do projeto no arquivo de estilos global da aplicação (style.scss):
+
+
+```
+@font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(/assets/@freud-ds/fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(/assets/@freud-ds/fonts/SourceSansPro-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(/assets/@freud-ds/fonts/SourceSansPro-Bold.ttf) format("truetype");
+    font-weight: bold;
+}
+
+*, body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+```
+
 
 ## Utilizando os grids
 
