@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/core-web",
       "sourceRoot": "apps/core-web/src",
-      "prefix": "ds-freud",
+      "prefix": "freud",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -18,7 +18,12 @@
             "aot": true,
             "assets": [
               "apps/core-web/src/favicon.ico",
-              "apps/core-web/src/assets"
+              "apps/core-web/src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@freud-ds/core-support/dist/assets",
+                "output": "./assets/@freud-ds/"
+              }
             ],
             "styles": [
               "apps/core-web/src/styles.scss",

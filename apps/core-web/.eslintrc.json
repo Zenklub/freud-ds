@@ -15,6 +15,7 @@
         ]
       },
       "rules": {
+        "@angular-eslint/no-host-metadata-property": "warn",
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -26,8 +27,8 @@
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": "element",
-            "prefix": "ds-freud",
+            "type": ["element", "attribute"],
+            "prefix": "freud",
             "style": "kebab-case"
           }
         ]
