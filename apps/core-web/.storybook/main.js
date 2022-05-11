@@ -6,4 +6,8 @@ rootMain.stories.push(
   ...['../src/app/**/*.stories.mdx', '../src/app/**/*.stories.@(js|jsx|ts|tsx)']
 );
 
+rootMain.addons.push(
+  ...["storybook-addon-angular-ivy"]
+);
+
 module.exports = rootMain;
