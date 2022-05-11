@@ -795,6 +795,16 @@
                 "defaultValue": "`\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px\">\n    <freud-avatar size=\"xs\" letter=\"Z\"></freud-avatar>\n    <freud-avatar size=\"sm\" letter=\"Z\"></freud-avatar>\n    <freud-avatar size=\"md\" letter=\"Z\"></freud-avatar>\n    <freud-avatar size=\"lg\" letter=\"Z\"></freud-avatar>\n    <freud-avatar size=\"xl\" letter=\"Z\"></freud-avatar>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; gap: 24px; margin: -48px \">\n    <freud-avatar size=\"xs\" [imgSrc]=\"imgSrc\"></freud-avatar>\n    <freud-avatar size=\"sm\" [imgSrc]=\"imgSrc\"></freud-avatar>\n    <freud-avatar size=\"md\" [imgSrc]=\"imgSrc\"></freud-avatar>\n    <freud-avatar size=\"lg\" [imgSrc]=\"imgSrc\"></freud-avatar>\n    <freud-avatar size=\"xl\" [imgSrc]=\"imgSrc\"></freud-avatar>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px; background-color: #6732D1\">\n    <freud-avatar size=\"xs\" letter=\"Z\" theme=\"dark\"></freud-avatar>\n    <freud-avatar size=\"sm\" letter=\"Z\" theme=\"dark\"></freud-avatar>\n    <freud-avatar size=\"md\" letter=\"Z\" theme=\"dark\"></freud-avatar>\n    <freud-avatar size=\"lg\" letter=\"Z\" theme=\"dark\"></freud-avatar>\n    <freud-avatar size=\"xl\" letter=\"Z\" theme=\"dark\"></freud-avatar>\n  </div>\n`"
             },
             {
+                "name": "Button",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/core-web/src/app/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "card",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -828,16 +838,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "apps/core-web/src/app/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -858,21 +858,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "apps/core-web/src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true,\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "apps/core-web/src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false,\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/core-web/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n}"
             },
             {
                 "name": "loaders",
@@ -902,7 +902,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
-                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `\n})"
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `,\n})"
             },
             {
                 "name": "tooltipColors",
@@ -1041,6 +1041,28 @@
                     "defaultValue": "() => {\n  return {\n    template: avatarSizes,\n    props: {\n      imgSrc: '/assets/img/avatar.png',\n    }\n  };\n}"
                 }
             ],
+            "apps/core-web/src/app/components/button/button.stories.ts": [
+                {
+                    "name": "Button",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/core-web/src/app/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/core-web/src/app/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `,\n})"
+                }
+            ],
             "apps/core-web/src/app/components/grid/grid.stories.ts": [
                 {
                     "name": "card",
@@ -1095,28 +1117,6 @@
                     "defaultValue": "`\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 56px 32px; gap: 24px\">\n    <freud-tooltip text=\"Tooltip\" position=\"top\" theme=\"light\">\n      <button freud-button color=\"primary\" theme=\"light\" size=\"sm\">TOP</button>\n    </freud-tooltip>\n\n    <freud-tooltip text=\"Tooltip\" position=\"bottom\" theme=\"light\">\n      <button freud-button color=\"primary\" theme=\"light\" size=\"sm\">BOTTOM</button>\n    </freud-tooltip>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 0 32px 56px 32px; gap: 24px\">\n    <freud-tooltip text=\"Tooltip\" position=\"left\" theme=\"light\">\n      <button freud-button color=\"primary\" theme=\"light\" size=\"sm\">LEFT</button>\n    </freud-tooltip>\n\n    <freud-tooltip text=\"Tooltip\" position=\"right\" theme=\"light\">\n      <button freud-button color=\"primary\" theme=\"light\" size=\"sm\">RIGHT</button>\n    </freud-tooltip>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 56px 32px; background-color: #6732D1; gap: 24px\">\n    <freud-tooltip text=\"Tooltip\" position=\"top\" theme=\"dark\">\n      <button freud-button color=\"primary\" theme=\"dark\" size=\"sm\">TOP</button>\n    </freud-tooltip>\n\n    <freud-tooltip text=\"Tooltip\" position=\"bottom\" theme=\"dark\">\n      <button freud-button color=\"primary\" theme=\"dark\" size=\"sm\">BOTTOM</button>\n    </freud-tooltip>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 0 32px 56px 32px; background-color: #6732D1; gap: 24px\">\n    <freud-tooltip text=\"Tooltip\" position=\"left\" theme=\"dark\">\n      <button freud-button color=\"primary\" theme=\"dark\" size=\"sm\">LEFT</button>\n    </freud-tooltip>\n\n    <freud-tooltip text=\"Tooltip\" position=\"right\" theme=\"dark\">\n      <button freud-button color=\"primary\" theme=\"dark\" size=\"sm\">RIGHT</button>\n    </freud-tooltip>\n  </div>\n`"
                 }
             ],
-            "apps/core-web/src/app/components/button/button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "apps/core-web/src/app/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "apps/core-web/src/app/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudButtonComponent>",
-                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `\n})"
-                }
-            ],
             "apps/core-web/src/app/components/loader/loader.stories.ts": [
                 {
                     "name": "Default",
@@ -1139,18 +1139,6 @@
                     "defaultValue": "`\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px\">\n    <freud-loader size=\"sm\"></freud-loader>\n    <freud-loader size=\"lg\"></freud-loader>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px; background-color: #6732D1\">\n    <freud-loader size=\"sm\" theme=\"dark\"></freud-loader>\n    <freud-loader size=\"lg\" theme=\"dark\"></freud-loader>\n  </div>\n`"
                 }
             ],
-            "apps/core-web/src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "apps/core-web/src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n}"
-                }
-            ],
             "apps/core-web/src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -1161,6 +1149,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n}"
+                }
+            ],
+            "apps/core-web/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/core-web/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n}"
                 }
             ]
         },
@@ -1333,7 +1333,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Button",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
