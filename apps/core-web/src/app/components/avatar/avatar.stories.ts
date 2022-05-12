@@ -31,5 +31,5 @@ const Template: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
 export const Avatar = Template.bind({});
 Avatar.args = {
   letter: 'Z',
-  imgSrc: '/assets/img/avatar.png'
+  imgSrc: 'assets/img/avatar.png'
 };

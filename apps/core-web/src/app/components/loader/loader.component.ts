@@ -9,7 +9,7 @@ type loaderThemes = 'light' | 'dark';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
-    <img [src]="'/assets/icons/loader/loader-' + size + '-' + theme + '.svg'" alt="loader" />
+    <img [src]="'assets/icons/loader/loader-' + size + '-' + theme + '.svg'" alt="loader" />
   `,
   host: {
     class: 'freud-loader',
