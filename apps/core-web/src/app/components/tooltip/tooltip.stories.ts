@@ -38,6 +38,6 @@ const Template: Story<FreudTooltipComponent> = (args: FreudTooltipComponent) => 
 export const Tooltip = Template.bind({});
 Tooltip.args = {
   text: 'Tooltip',
-  posiyion: 'top',
+  position: 'top',
   theme: 'light'
 };
