@@ -2,6 +2,7 @@
   "name": "freud-ds",
   "version": "0.0.1",
   "license": "MIT",
+  "homepage": "http://zenklub.github.io/freud-ds",
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
@@ -93,6 +94,7 @@
     "eslint": "7.10.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
+    "gh-pages": "^4.0.0",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
     "npm-run-all": "^4.1.5",
