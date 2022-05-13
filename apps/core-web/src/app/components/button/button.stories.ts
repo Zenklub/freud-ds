@@ -38,6 +38,7 @@ const Template: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
       [color]="color"
       [theme]="theme"
       [loading]="loading"
+      [attr.disabled] = "disabled ? 'disabled' : null"
     >{{ label }}</button>
   `,
 });
@@ -45,4 +46,5 @@ const Template: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
 export const Button = Template.bind({});
 Button.args = {
   label: 'Button',
+  disabled: false,
 };

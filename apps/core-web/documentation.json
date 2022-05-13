@@ -219,7 +219,7 @@
         },
         {
             "name": "FreudLoaderComponent",
-            "id": "component-FreudLoaderComponent-4c4ce613aa2ab0e89d964d1577863e6dce87e0b31e09cf7a6233c09d0102816c4c61d78bb02d3386c1865e73bd95c5707a74afb0b073875018a11f44beb2ebf3",
+            "id": "component-FreudLoaderComponent-fbc10d443e0dae9384b16e7745f3966455986cd1ed59607a93564441802e77075b40ed19de04a796709b613298b33e27afeca8d87de519023a513be2224b50cd",
             "file": "apps/core-web/src/app/components/loader/loader.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -235,7 +235,7 @@
                 "./loader.component.scss"
             ],
             "styles": [],
-            "template": "<img [src]=\"imgSrc\" alt=\"loader\" />\n",
+            "template": "<img [src]=\"'assets/icons/loader/loader-' + size + '-' + theme + '.svg'\" alt=\"loader\" />\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -259,33 +259,8 @@
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "imgSrc",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 23,
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 25,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -293,7 +268,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\ntype loaderSizes = 'sm' | 'lg';\ntype loaderThemes = 'light' | 'dark';\n\n@Component({\n  selector: 'freud-loader',\n  styleUrls: ['./loader.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <img [src]=\"imgSrc\" alt=\"loader\" />\n  `,\n  host: {\n    class: 'freud-loader',\n  }\n})\nexport class FreudLoaderComponent implements OnInit {\n\n  @Input() size: loaderSizes = 'sm';\n  @Input() theme: loaderThemes = 'light';\n\n  public imgSrc = '';\n\n  ngOnInit(): void {\n    this.imgSrc = `/assets/icons/loader/loader-${this.size}-${this.theme}.svg`;\n  }\n\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype loaderSizes = 'sm' | 'lg';\ntype loaderThemes = 'light' | 'dark';\n\n@Component({\n  selector: 'freud-loader',\n  styleUrls: ['./loader.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <img [src]=\"'assets/icons/loader/loader-' + size + '-' + theme + '.svg'\" alt=\"loader\" />\n  `,\n  host: {\n    class: 'freud-loader',\n  }\n})\nexport class FreudLoaderComponent {\n\n  @Input() size: loaderSizes = 'sm';\n  @Input() theme: loaderThemes = 'light';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -301,10 +276,7 @@
                     "styleUrl": "./loader.component.scss"
                 }
             ],
-            "stylesData": "",
-            "implements": [
-                "OnInit"
-            ]
+            "stylesData": ""
         },
         {
             "name": "FreudTooltipComponent",
@@ -835,16 +807,6 @@
                 "defaultValue": "() => {\n  return {\n    template: card,\n  };\n}"
             },
             {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => {\n  return {\n    template: loaders,\n  };\n}"
-            },
-            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -865,14 +827,14 @@
                 "defaultValue": "{\n  production: false,\n}"
             },
             {
-                "name": "loaders",
+                "name": "Loader",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px\">\n    <freud-loader size=\"sm\"></freud-loader>\n    <freud-loader size=\"lg\"></freud-loader>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px; background-color: #6732D1\">\n    <freud-loader size=\"sm\" theme=\"dark\"></freud-loader>\n    <freud-loader size=\"lg\" theme=\"dark\"></freud-loader>\n  </div>\n`"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -898,11 +860,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudLoaderComponent>",
+                "defaultValue": "(args: FreudLoaderComponent) => ({\n  props: { ...args },\n  component: FreudLoaderComponent\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "apps/core-web/src/app/components/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTooltipComponent>",
-                "defaultValue": "(args: FreudTooltipComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `,\n})"
+                "defaultValue": "(args: FreudTooltipComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tooltip [text]=\"text\" [position]=\"position\" [theme]=\"theme\">\n      <button freud-button size=\"md\" [theme]=\"theme\">Button</button>\n    </freud-tooltip>\n\n  `,\n})"
             },
             {
                 "name": "Tooltip",
@@ -1095,28 +1067,6 @@
                     "defaultValue": "() => {\n  return {\n    template: card,\n  };\n}"
                 }
             ],
-            "apps/core-web/src/app/components/loader/loader.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => {\n  return {\n    template: loaders,\n  };\n}"
-                },
-                {
-                    "name": "loaders",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px\">\n    <freud-loader size=\"sm\"></freud-loader>\n    <freud-loader size=\"lg\"></freud-loader>\n  </div>\n\n  <div style=\"display: flex; align-items: center; justify-content: center; padding: 64px 32px; gap: 24px; background-color: #6732D1\">\n    <freud-loader size=\"sm\" theme=\"dark\"></freud-loader>\n    <freud-loader size=\"lg\" theme=\"dark\"></freud-loader>\n  </div>\n`"
-                }
-            ],
             "apps/core-web/src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1141,6 +1091,28 @@
                     "defaultValue": "{\n  production: false,\n}"
                 }
             ],
+            "apps/core-web/src/app/components/loader/loader.stories.ts": [
+                {
+                    "name": "Loader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/core-web/src/app/components/loader/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudLoaderComponent>",
+                    "defaultValue": "(args: FreudLoaderComponent) => ({\n  props: { ...args },\n  component: FreudLoaderComponent\n})"
+                }
+            ],
             "apps/core-web/src/app/components/tooltip/tooltip.stories.ts": [
                 {
                     "name": "Template",
@@ -1150,7 +1122,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTooltipComponent>",
-                    "defaultValue": "(args: FreudTooltipComponent) => ({\n  props: { ...args },\n  template: `\n    <button\n      freud-button\n      [size]=\"size\"\n      [color]=\"color\"\n      [theme]=\"theme\"\n      [loading]=\"loading\"\n    >{{ label }}</button>\n  `,\n})"
+                    "defaultValue": "(args: FreudTooltipComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tooltip [text]=\"text\" [position]=\"position\" [theme]=\"theme\">\n      <button freud-button size=\"md\" [theme]=\"theme\">Button</button>\n    </freud-tooltip>\n\n  `,\n})"
                 },
                 {
                     "name": "Tooltip",
@@ -1384,7 +1356,7 @@
                 "linktype": "component",
                 "name": "FreudLoaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1392,7 +1364,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Loader",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1402,7 +1374,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "loaders",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

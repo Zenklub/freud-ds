@@ -1,6 +1,9 @@
 @import '~@freud-ds/core-support/dist/style/scss/_variables.scss';
 
 .freud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   margin: 0;
   padding: 0;

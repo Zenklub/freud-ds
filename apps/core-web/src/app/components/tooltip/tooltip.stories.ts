@@ -29,7 +29,9 @@ const Template: Story<FreudTooltipComponent> = (args: FreudTooltipComponent) => 
   props: { ...args },
   template: `
     <freud-tooltip [text]="text" [position]="position" [theme]="theme">
-      <button freud-button size="md" [theme]="theme">Button</button>
+      <p style="margin: 2px 0" [style.color]="theme == 'light' ? '#212529' : '#DEDEDE'">
+        Passe o mouse aqui para ver o Tooltip
+      </p>
     </freud-tooltip>
 
   `,

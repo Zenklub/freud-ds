@@ -23,3 +23,15 @@
     animation: svg-animation 1.6s linear infinite;
   }
 }
+
+.freud-loader.freud-loader-size {
+  &-small {
+    height: 24px;
+    width: 24px;
+  }
+
+  &-large {
+    height: 48px;
+    width: 48px;
+  }
+}

@@ -13,6 +13,8 @@ type loaderThemes = 'light' | 'dark';
   `,
   host: {
     class: 'freud-loader',
+    '[class.freud-loader-size-small]': `size === 'sm'`,
+    '[class.freud-loader-size-large]': `size === 'lg'`,
   }
 })
 export class FreudLoaderComponent {
