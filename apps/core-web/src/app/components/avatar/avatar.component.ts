@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
 type avatarSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-type avatarThemes = 'light' | 'dark';
 
 @Component({
   selector: 'freud-avatar',
@@ -16,7 +15,7 @@ type avatarThemes = 'light' | 'dark';
   `,
   host: {
     class: 'freud-avatar',
-    '[class.freud-avatar-theme-dark]': `theme === 'dark'`,
+    '[class.freud-avatar-bgcolor]': `bgColor`,
     '[class.freud-avatar-size-xsmall]': `size === 'xs'`,
     '[class.freud-avatar-size-small]': `size === 'sm'`,
     '[class.freud-avatar-size-medium]': `size === 'md'`,
@@ -29,6 +28,6 @@ export class FreudAvatarComponent {
   @Input() imgSrc = '';
   @Input() letter = '';
   @Input() size: avatarSizes = 'md';
-  @Input() theme: avatarThemes = 'light';
+  @Input() bgColor = false;
 
 }

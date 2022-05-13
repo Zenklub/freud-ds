@@ -1,7 +1,6 @@
 import { Component, HostListener, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
 
 type tooltipPositions = 'top' | 'bottom' | 'left' | 'right';
-type tooltipThemes = 'light' | 'dark';
 
 @Component({
   selector: 'freud-tooltip',
@@ -15,7 +14,7 @@ type tooltipThemes = 'light' | 'dark';
   `,
   host: {
     class: 'freud-tooltip',
-    '[class.freud-tooltip-theme-dark]': `theme === 'dark'`,
+    '[class.freud-tooltip-bgcolor]': `bgColor`,
 
     '[class.freud-tooltip-position-top]': `position === 'top'`,
     '[class.freud-tooltip-position-bottom]': `position === 'bottom'`,
@@ -25,7 +24,7 @@ type tooltipThemes = 'light' | 'dark';
 })
 export class FreudTooltipComponent implements OnDestroy{
 
-  @Input() theme: tooltipThemes = 'light';
+  @Input() bgColor = false;
   @Input() position: tooltipPositions = 'top';
   @Input() disabled = false;
   @Input() text = '';

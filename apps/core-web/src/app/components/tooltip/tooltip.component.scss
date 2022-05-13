@@ -36,14 +36,12 @@
 
 }
 
-.freud-tooltip.freud-tooltip-theme {
-  &-dark .freud-tooltip-container {
-    color: $neutral-color-dark-01;
-    background-color: $neutral-color-light-pure;
+.freud-tooltip.freud-tooltip-bgcolor .freud-tooltip-container {
+  color: $neutral-color-dark-01;
+  background-color: $neutral-color-light-pure;
 
-    &::after {
-      border-color: $neutral-color-light-pure;
-    }
+  &::after {
+    border-color: $neutral-color-light-pure;
   }
 }
 

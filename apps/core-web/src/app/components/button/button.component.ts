@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
 type buttonSizes = 'sm' | 'md' | 'lg';
-type buttonThemes = 'light' | 'dark';
 type buttonColors = 'primary' | 'secondary' | 'ghost';
 
 @Component({
@@ -15,10 +14,10 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
       <ng-content></ng-content>
     </ng-container>
 
-    <freud-loader *ngIf="loading && (color == 'primary' && theme == 'light')" theme="dark"></freud-loader>
-    <freud-loader *ngIf="loading && (color == 'primary' && theme == 'dark')" theme="light"></freud-loader>
-    <freud-loader *ngIf="loading && (color == 'secondary')" [theme]="theme"></freud-loader>
-    <freud-loader *ngIf="loading && (color == 'ghost')" [theme]="theme"></freud-loader>
+    <freud-loader *ngIf="loading && (color == 'primary' && bgColor)" [bgColor]="false"></freud-loader>
+    <freud-loader *ngIf="loading && (color == 'primary' && !bgColor)" [bgColor]="true"></freud-loader>
+    <freud-loader *ngIf="loading && (color == 'secondary')" [bgColor]="bgColor"></freud-loader>
+    <freud-loader *ngIf="loading && (color == 'ghost')" [bgColor]="bgColor"></freud-loader>
 
   `,
   host: {
@@ -27,7 +26,7 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
     '[class.freud-btn-color-secondary]': `color === 'secondary'`,
     '[class.freud-btn-color-ghost]': `color === 'ghost'`,
 
-    '[class.freud-btn-theme-dark]': `theme === 'dark'`,
+    '[class.freud-btn-bgcolor]': `bgColor`,
     '[class.freud-btn-loading]': `loading`,
 
     '[class.freud-btn-size-small]': `size === 'sm'`,
@@ -39,7 +38,7 @@ export class FreudButtonComponent {
 
   @Input() size: buttonSizes = 'md';
   @Input() color: buttonColors = 'primary';
-  @Input() theme: buttonThemes = 'light';
+  @Input() bgColor = false;
   @Input() loading = false;
 
 }

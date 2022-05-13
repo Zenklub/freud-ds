@@ -14,10 +14,10 @@ export default {
   parameters: {
     layout: 'centered',
     backgrounds: {
-      default: 'light',
+      default: 'Default',
       values: [
-        { name: 'light', value: '#FFFFFF' },
-        { name: 'dark', value: '#6732D1' },
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
       ],
     }
   },
@@ -36,7 +36,7 @@ const Template: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
       freud-button
       [size]="size"
       [color]="color"
-      [theme]="theme"
+      [bgColor]="bgColor"
       [loading]="loading"
       [attr.disabled] = "disabled ? 'disabled' : null"
     >{{ label }}</button>

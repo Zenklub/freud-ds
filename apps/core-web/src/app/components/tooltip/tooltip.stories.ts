@@ -28,8 +28,8 @@ export default {
 const Template: Story<FreudTooltipComponent> = (args: FreudTooltipComponent) => ({
   props: { ...args },
   template: `
-    <freud-tooltip [text]="text" [position]="position" [theme]="theme">
-      <p style="margin: 2px 0" [style.color]="theme == 'light' ? '#212529' : '#DEDEDE'">
+    <freud-tooltip [text]="text" [position]="position" [bgColor]="bgColor">
+      <p style="margin: 2px 0" [style.color]="bgColor ? '#DEDEDE' : '#212529'">
         Passe o mouse aqui para ver o Tooltip
       </p>
     </freud-tooltip>
@@ -41,5 +41,5 @@ export const Tooltip = Template.bind({});
 Tooltip.args = {
   text: 'Tooltip',
   position: 'top',
-  theme: 'light'
+  bgColor: false
 };

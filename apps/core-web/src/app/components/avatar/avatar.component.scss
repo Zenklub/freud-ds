@@ -72,16 +72,14 @@
   }
 }
 
-.freud-avatar.freud-avatar-theme {
-  &-dark {
-    &:hover {
-      border-color: rgba(225, 214, 246, 0.16);
-    }
+.freud-avatar.freud-avatar-bgcolor {
+  &:hover {
+    border-color: rgba(225, 214, 246, 0.16);
+  }
 
-    .freud-avatar-container {
-      background-color: $brand-color-01;
-      border-color: $brand-color-02;
-      color: $brand-color-pure;
-    }
+  .freud-avatar-container {
+    background-color: $brand-color-01;
+    border-color: $brand-color-02;
+    color: $brand-color-pure;
   }
 }
