@@ -34,10 +34,10 @@
     "build:core-support": "cd libs/core-support && npm run clean && npm run build && npm run copy",
     "publish:core-support": "cd libs/core-support && npm publish --access public",
     "----------------- CORE WEB ------------------ ": "",
-    "core-web:docs:json": "compodoc -p apps/core-web/tsconfig.json -e json -d apps/core-web",
+    "core-web:docs:json": "compodoc -p libs/core-web/tsconfig.json -e json -d libs/core-web",
     "core-web:build-storybook": "npm run core-web:docs:json && nx run core-web:build-storybook -o dist/storybook/core-web",
     "core-web:storybook": "npm run core-web:docs:json && nx run core-web:storybook",
-    "core-web:serve": "nx run core-web:serve"
+    "core-web:build": "nx build core-web --prod"
   },
   "husky": {
     "hooks": {
@@ -57,8 +57,6 @@
     "@angular/router": "^11.2.0",
     "@freud-ds/core-support": "0.0.2",
     "@nrwl/angular": "11.6.3",
-    "@storybook/addon-a11y": "^6.4.19",
-    "@storybook/addon-docs": "^6.4.19",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
@@ -81,9 +79,11 @@
     "@nrwl/storybook": "^11.6.3",
     "@nrwl/tao": "11.6.3",
     "@nrwl/workspace": "11.6.3",
+    "@storybook/addon-a11y": "^6.4.19",
+    "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-knobs": "^6.1.11",
-    "@storybook/angular": "^6.1.11",
+    "@storybook/angular": "^6.4.22",
     "@types/jest": "26.0.8",
     "@types/node": "14.14.33",
     "@types/webpack": "4.41.21",
@@ -97,6 +97,7 @@
     "gh-pages": "^4.0.0",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
+    "ng-packagr": "^11.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.9",
     "prettier": "2.2.1",

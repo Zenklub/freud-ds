@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@freud-ds/core-support": ["libs/core-support/src/index.ts"]
+      "@freud-ds/core-support": ["libs/core-support/src/index.ts"],
+      "@freud-ds/core-web": ["libs/core-web/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
