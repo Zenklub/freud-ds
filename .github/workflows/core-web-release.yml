@@ -22,7 +22,7 @@ jobs:
         run: npm install -g nx
       - name: Install Dependencies
         run: npm ci --quiet
-      - name: Build core support
+      - name: Build core web
         run: npm run core-web:build
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
@@ -44,12 +44,12 @@ jobs:
       - name: Run patch version
         if: github.event.inputs.release-type == 'patch'
         run: |
-          cd libs/core-support
+          cd libs/core-web
           npm version patch
       - name: Run patch version
         if: github.event.inputs.release-type == 'minor'
         run: |
-          cd libs/core-support
+          cd libs/core-web
           npm version minor
 
         # Push new version
