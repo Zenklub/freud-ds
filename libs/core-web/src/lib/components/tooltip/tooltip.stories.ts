@@ -28,7 +28,7 @@ export default {
 const Template: Story<FreudTooltipComponent> = (args: FreudTooltipComponent) => ({
   props: { ...args },
   template: `
-    <freud-tooltip [text]="text" [position]="position" [bgColor]="bgColor">
+    <freud-tooltip [text]="text" [position]="position" [bgColor]="bgColor" [width]="width">
       <p style="margin: 2px 0" [style.color]="bgColor ? '#DEDEDE' : '#212529'">
         Passe o mouse aqui para ver o Tooltip
       </p>

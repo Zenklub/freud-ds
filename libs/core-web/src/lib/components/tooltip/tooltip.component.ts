@@ -8,7 +8,7 @@ type tooltipPositions = 'top' | 'bottom' | 'left' | 'right';
   encapsulation: ViewEncapsulation.None,
   template: `
     <ng-content></ng-content>
-    <div class="freud-tooltip-container" [class.freud-tooltip-open]="isOpen">
+    <div class="freud-tooltip-container" [style.width.px]="width" [class.freud-tooltip-open]="isOpen">
       <span class="freud-tooltip-text" [innerHTML]="text"></span>
     </div>
   `,
@@ -28,6 +28,7 @@ export class FreudTooltipComponent implements OnDestroy{
   @Input() position: tooltipPositions = 'top';
   @Input() disabled = false;
   @Input() text = '';
+  @Input() width: string;
 
   public isOpen = false;
   public hideTask: any;

@@ -7,7 +7,6 @@
   align-items: center;
 }
 
-
 .freud-tooltip .freud-tooltip-container {
 
   position: absolute;
@@ -21,6 +20,7 @@
   font-family: $font-family-base;
   font-weight: $font-weight-regular;
   font-size: $font-size-xxs;
+  line-height: $line-height-sm;
 
   transition: 0.2s;
   visibility: hidden;
