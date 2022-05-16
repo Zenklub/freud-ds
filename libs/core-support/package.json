@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/Zenklub/freud-ds.git"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Zenklub DS Freud Core",
   "main": "dist/index.js",
   "files": [
