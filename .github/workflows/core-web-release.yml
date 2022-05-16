@@ -7,8 +7,8 @@ on:
         type: choice
         description: Escolha o tipo de release
         options:
-          - patch
-          - minor
+        - patch
+        - minor
 jobs:
   build:
     if: "!contains(github.event.commits[0].message, 'automatic version update')"
