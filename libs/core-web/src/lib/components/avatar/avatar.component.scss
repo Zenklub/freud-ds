@@ -1,0 +1,85 @@
+@import '~@freud-ds/core-support/dist/style/scss/_variables.scss';
+
+.freud-avatar {
+  display: inline-block;
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-none;
+
+  color: $neutral-color-light-pure;
+  border-radius: $border-radius-circular;
+  border: $border-width-lg solid transparent;
+
+  &:hover {
+    border-color: rgba(41, 20, 84, 0.16);
+  }
+}
+
+.freud-avatar .freud-avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 64px;
+  overflow: hidden;
+
+  border-radius: $border-radius-circular;
+  background-color: $brand-color-pure;
+  border: $border-width-lg solid $brand-color-02;
+  font-size: $font-size-md;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.freud-avatar.freud-avatar-size {
+  &-xsmall .freud-avatar-container {
+    font-size: $font-size-xs;
+    border-width: $border-width-md;
+    height: 32px;
+    width: 32px;
+  }
+
+  &-small .freud-avatar-container {
+    font-size: $font-size-sm;
+    border-width: $border-width-md;
+    height: 40px;
+    width: 40px;
+  }
+
+  &-medium .freud-avatar-container {
+    font-size: $font-size-sm;
+    border-width: $border-width-lg;
+    height: 48px;
+    width: 48px;
+  }
+
+  &-large .freud-avatar-container {
+    font-size: $font-size-lg;
+    border-width: $border-width-lg;
+    height: 64px;
+    width: 64px;
+  }
+
+  &-xlarge .freud-avatar-container {
+    font-size: $font-size-lg;
+    border-width: $border-width-lg;
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.freud-avatar.freud-avatar-bgcolor {
+  &:hover {
+    border-color: rgba(225, 214, 246, 0.16);
+  }
+
+  .freud-avatar-container {
+    background-color: $brand-color-01;
+    border-color: $brand-color-02;
+    color: $brand-color-pure;
+  }
+}

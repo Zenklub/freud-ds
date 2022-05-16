@@ -1,0 +1,130 @@
+@import '~@freud-ds/core-support/dist/style/scss/_variables.scss';
+
+.freud-tooltip {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.freud-tooltip .freud-tooltip-container {
+
+  position: absolute;
+  background-color: $neutral-color-dark-01;
+  border-radius: $border-radius-md;
+  padding: 10px 12px;
+  width: fit-content;
+  z-index: 999;
+
+  color: $neutral-color-light-pure;
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xxs;
+
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-width: 6px;
+    border-style: solid;
+    border-color: $neutral-color-dark-01;
+  }
+
+}
+
+.freud-tooltip.freud-tooltip-bgcolor .freud-tooltip-container {
+  color: $neutral-color-dark-01;
+  background-color: $neutral-color-light-pure;
+
+  &::after {
+    border-color: $neutral-color-light-pure;
+  }
+}
+
+.freud-tooltip.freud-tooltip-position {
+
+  &-top .freud-tooltip-container {
+    bottom: calc(100% + #{$spacing-size-nano});
+    transform: translate3d(0px, 20px, 0px);
+
+    &.freud-tooltip-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+
+  &-bottom .freud-tooltip-container {
+    top: calc(100% + #{$spacing-size-nano});
+    transform: translate3d(0px, -20px, 0px);
+
+    &.freud-tooltip-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+
+  &-right .freud-tooltip-container {
+    left: calc(100% + #{$spacing-size-nano});
+    transform: translate3d(-20px, 0px, 0px);
+
+    &.freud-tooltip-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+    &::after {
+      bottom: 50%;
+      right: 100%;
+      margin-bottom: -6px;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+
+  &-left .freud-tooltip-container {
+    right: calc(100% + #{$spacing-size-nano});
+    transform: translate3d(20px, 0px, 0px);
+
+    &.freud-tooltip-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+    &::after {
+      bottom: 50%;
+      left: 100%;
+      margin-bottom: -6px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+  }
+
+}

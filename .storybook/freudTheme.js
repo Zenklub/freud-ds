@@ -4,29 +4,22 @@ export default create({
   base: 'light',
 
   colorPrimary: '#6732D1',
-  colorSecondary: '#A484E3',
+  colorSecondary: '#6732D1',
 
-  appBg: '#6732D1',
-  appContentBg: 'white',
+  // UI
+  appBg: '#F0F2F5',
+  appBorderRadius: 16,
 
-  // barBg: '#6732D1',
-  barSelectedColor: 'black',
-  // barBg: 'white',
-
+  // Text colors
   textColor: 'black',
-
-
-  //  // Form colors
-  //  inputBg: 'white',
-  //  inputBorder: 'silver',
-  //  inputTextColor: 'black',
-  //  inputBorderRadius: 4,
-   
   textInverseColor: 'rgba(255,255,255,0.9)',
 
-  fontBase: '"Fira Sans", sans-serif',
+  // Toolbar default and active colors
+  barSelectedColor: 'black',
+  barBg: '#F7F9FA',
 
+  fontBase: '"Fira Sans", sans-serif',
   brandTitle: 'Freud DS',
   brandUrl: 'https://zenklub.com.br',
-  brandImage: 'assets/img/logo.svg',
+  brandImage: 'assets/img/logo_ds.png',
 });

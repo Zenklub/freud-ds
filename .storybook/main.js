@@ -1,4 +1,7 @@
 module.exports = {
   stories: [],
-  addons: ['@storybook/addon-knobs/preset']
+  addons: ['@storybook/addon-essentials'],
+  staticDirs: [
+    { from: '../../../.storybook/assets', to: 'assets/' }, // working properly
+  ],
 };

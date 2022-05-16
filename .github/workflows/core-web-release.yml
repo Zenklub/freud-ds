@@ -1,0 +1,83 @@
+
+name: Core-web - Build & Release
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        type: choice
+        description: Escolha o tipo de release
+        options:
+        - patch
+        - minor
+jobs:
+  build:
+    if: "!contains(github.event.commits[0].message, 'automatic version update')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install nx
+        run: npm install -g nx
+      - name: Install Dependencies
+        run: npm ci --quiet
+      - name: Build core support
+        run: npm run core-web:build
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-core-web
+          path: ./dist/libs/core-web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure git
+        run: |
+          git config user.email "bot@zenklub.com"
+          git config user.name "Zenklub Deploy Bot"
+
+      # Update minor ou patch version
+      - name: Run patch version
+        if: github.event.inputs.release-type == 'patch'
+        run: |
+          cd libs/core-support
+          npm version patch
+      - name: Run patch version
+        if: github.event.inputs.release-type == 'minor'
+        run: |
+          cd libs/core-support
+          npm version minor
+
+        # Push new version
+      - name: Push new version
+        run: |
+          git add .
+          git commit -m "chore(release):automatic version update"
+          git push
+
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-core-web
+          path: build
+
+      - name: Run patch version
+        run: |
+          cd build
+          npm version patch
+
+      # Release package in npm
+      - name: Release version on npm
+        run: |
+          cd build
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          echo "unsafe-perm = true" >> ~/.npmrc
+          npm publish --access public
+
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
