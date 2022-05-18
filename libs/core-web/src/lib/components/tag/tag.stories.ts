@@ -25,6 +25,6 @@ const Template: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
 
 export const Tag = Template.bind({});
 Tag.args = {
-  text: 'Tag',
+  text: 'Tag Label',
   type: 'highlight-1',
 };

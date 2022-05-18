@@ -5,12 +5,13 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  padding: $spacing-size-nano;
+  padding: 0 $spacing-size-nano;
   border-radius: $border-radius-pill;
+  height: 24px;
 
   font-family: $font-family-base;
   font-weight: $font-weight-regular;
-  font-size: $font-size-xs;
+  font-size: $font-size-xxs;
   line-height: $line-height-none;
 }
 
