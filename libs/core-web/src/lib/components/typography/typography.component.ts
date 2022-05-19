@@ -23,17 +23,6 @@ export const types = [
 ] as const;
 type fontTypes = typeof types[number];
 
-const getHost = () => {
-  const host = {
-    class: 'freud-typography',
-  };
-
-  types.forEach((type) => {
-    host[`[class.freud-typography-type-${type}]`] = `type === '${type}'`;
-  });
-  return host;
-};
-
 @Component({
   selector: '[freud-typography]',
   exportAs: 'freudTypography',
@@ -41,7 +30,26 @@ const getHost = () => {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `<ng-content></ng-content> `,
-  host: getHost(),
+  host: {
+    class: 'freud-typography',
+    '[class.freud-typography-type-display]': 'type === "display"',
+    '[class.freud-typography-type-heading-xl]': 'type === "heading-xl"',
+    '[class.freud-typography-type-heading-lg]': 'type === "heading-lg"',
+    '[class.freud-typography-type-heading-md]': 'type === "heading-md"',
+    '[class.freud-typography-type-heading-sm]': 'type === "heading-sm"',
+    '[class.freud-typography-type-subtitle-lg]': 'type === "subtitle-lg"',
+    '[class.freud-typography-type-subtitle-md]': 'type === "subtitle-md"',
+    '[class.freud-typography-type-subtitle-sm]': 'type === "subtitle-sm"',
+    '[class.freud-typography-type-body-lg-bold]': 'type === "body-lg-bold"',
+    '[class.freud-typography-type-body-lg-regular]':
+      'type === "body-lg-regular"',
+    '[class.freud-typography-type-body-sm-bold]': 'type === "body-sm-bold"',
+    '[class.freud-typography-type-body-sm-regular]':
+      'type === "body-sm-regular"',
+    '[class.freud-typography-type-caption]': 'type === "caption"',
+    '[class.freud-typography-type-title-highlight]':
+      'type === "title-highlight"',
+  },
 })
 export class FreudTypographyComponent {
   @Input() type: fontTypes = 'body-sm-regular';
