@@ -40,7 +40,7 @@ const Template: Story<FreudTypographyComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <p freud-typography [type]="type" [color]="color" >{{ label }}</p>
+    <p freud-typography [type]="type">{{ label }}</p>
   `,
 });
 
