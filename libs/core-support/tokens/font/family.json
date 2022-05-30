@@ -1,8 +1,15 @@
 {
   "font": {
     "family": {
-      "highlight": { "value": "Source Sans Pro" },
-      "base": { "value": "Source Sans Pro" }
+      "highlight": {
+        "value": "Source Sans Pro"
+      },
+      "base": {
+        "value": "Source Sans Pro"
+      },
+      "icon": {
+        "value": "Freud Icon"
+      }
     }
   }
 }

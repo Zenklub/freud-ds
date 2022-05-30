@@ -2,15 +2,33 @@
   "asset": {
     "font": {
       "sourcesanspro": {
-        "name": { "value": "Source Sans Pro" },
+        "name": {
+          "value": "Source Sans Pro"
+        },
         "regular": {
-          "ttf": { "value": "assets/fonts/SourceSansPro-Regular.ttf" }
+          "ttf": {
+            "value": "assets/fonts/SourceSansPro-Regular.ttf"
+          }
         },
         "semibold": {
-          "ttf": { "value": "assets/fonts/SourceSansPro-SemiBold.ttf" }
+          "ttf": {
+            "value": "assets/fonts/SourceSansPro-SemiBold.ttf"
+          }
         },
         "bold": {
-          "ttf": { "value": "assets/fonts/SourceSansPro-Bold.ttf" }
+          "ttf": {
+            "value": "assets/fonts/SourceSansPro-Bold.ttf"
+          }
+        }
+      },
+      "freudicon": {
+        "name": {
+          "value": "Freud Icon"
+        },
+        "default": {
+          "ttf": {
+            "value": "assets/fonts/freud-icon.ttf"
+          }
         }
       }
     }
