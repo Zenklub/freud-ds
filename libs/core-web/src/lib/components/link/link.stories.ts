@@ -35,6 +35,7 @@ const Template: Story<FreudLinkComponent> = (args: FreudLinkComponent) => ({
       [size]="size"
       [bgColor]="bgColor"
       [attr.disabled] = "disabled ? 'disabled' : null"
+      target="_blank"
       href="#"
     >{{ value }}</a>
   `,
