@@ -18,7 +18,7 @@ export type linkSizes = 'sm' | 'lg';
       <ng-content></ng-content>
     </ng-container>
 
-    <i freud-icon [icon]="'arrow-right'" [size]="'16px'"></i>
+    <i freud-icon-base [icon]="'arrow-right'" [size]="'16px'"></i>
   `,
   host: {
     class: 'freud-link',
