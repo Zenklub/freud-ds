@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { FreudIconComponent } from './icon.component';
-import { FreudIconModule } from './icon.module';
+import { FreudIconBaseComponent } from './icon-base.component';
+import { FreudIconBaseModule } from './icon-base.module';
 
 export default {
-  title: '@freud-ds/core-web/Icon',
-  component: FreudIconComponent,
+  title: '@freud-ds/core-web/IconBase',
+  component: FreudIconBaseComponent,
   decorators: [
     moduleMetadata({
-      imports: [FreudIconModule, CommonModule],
+      imports: [FreudIconBaseModule, CommonModule],
     }),
   ],
   parameters: {
@@ -23,15 +23,17 @@ export default {
   },
 } as Meta;
 
-const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
+const Template: Story<FreudIconBaseComponent> = (
+  args: FreudIconBaseComponent
+) => ({
   props: { ...args },
   template: `
-    <i freud-icon [icon]="icon" [size]="size"></i>
+    <i freud-icon-base [icon]="icon" [size]="size"></i>
   `,
 });
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const IconBase = Template.bind({});
+IconBase.args = {
   icon: 'apps',
   size: '32px',
 };

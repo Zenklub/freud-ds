@@ -5,14 +5,14 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { iconNames } from './icon.interface';
+import { iconNames } from './icon-base.interface';
 
 type iconSize = '16px' | '24px' | '32px' | '40px' | '48px' | '56px';
 
 @Component({
-  selector: 'i[freud-icon]',
-  exportAs: 'FreudIcon',
-  styleUrls: ['./icon.component.scss'],
+  selector: 'i[freud-icon-base]',
+  exportAs: 'FreudIconBase',
+  styleUrls: ['./icon-base.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
@@ -30,7 +30,7 @@ type iconSize = '16px' | '24px' | '32px' | '40px' | '48px' | '56px';
     '[class.freud-icon-56px]': `size === '56px'`,
   },
 })
-export class FreudIconComponent {
+export class FreudIconBaseComponent {
   @Input() icon: iconNames = 'apps';
   @Input() size: iconSize = '32px';
 
