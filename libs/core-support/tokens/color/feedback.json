@@ -9,8 +9,8 @@
       },
       "negative": {
         "pure": { "value": "#FF3B30" },
-        "01": { "value": "#FFDCD9" },
-        "02": { "value": "#FF958E" },
+        "01": { "value": "#FFE4E1" },
+        "02": { "value": "#FFBDB9" },
         "03": { "value": "#661F1A" }
       },
       "warning": {
