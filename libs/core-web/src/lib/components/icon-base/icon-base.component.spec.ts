@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreudIconComponent } from './icon.component';
+import { FreudIconBaseComponent } from './icon-base.component';
 
 describe('FreudIconComponent', () => {
-  let component: FreudIconComponent;
-  let fixture: ComponentFixture<FreudIconComponent>;
+  let component: FreudIconBaseComponent;
+  let fixture: ComponentFixture<FreudIconBaseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FreudIconComponent],
+      declarations: [FreudIconBaseComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreudIconComponent);
+    fixture = TestBed.createComponent(FreudIconBaseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
