@@ -12,8 +12,12 @@
   cursor: pointer;
 
   &:focus {
+    outline-offset: none;
+    border-radius: none;
+  }
+
+  &:focus-visible {
     outline-offset: 2px;
-    border-radius: 2px;
   }
 
   &[disabled] {
@@ -41,7 +45,7 @@
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline: $feedback-color-warning-pure solid 2px;
   }
 
@@ -64,7 +68,7 @@
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline: $neutral-color-light-pure solid 2px;
   }
 
