@@ -4,6 +4,8 @@ import { FreudButtonModule } from './button';
 import { FreudTooltipModule } from './tooltip';
 import { FreudTagModule } from './tag';
 import { FreudTypographyModule } from './typography';
+import { FreudIconBaseModule } from './icon-base';
+import { FreudLinkModule } from './link';
 
 @NgModule({
   imports: [
@@ -11,14 +13,18 @@ import { FreudTypographyModule } from './typography';
     FreudButtonModule,
     FreudTooltipModule,
     FreudTagModule,
-    FreudTypographyModule
+    FreudTypographyModule,
+    FreudIconBaseModule,
+    FreudLinkModule,
   ],
   exports: [
     FreudAvatarModule,
     FreudButtonModule,
     FreudTooltipModule,
     FreudTagModule,
-    FreudTypographyModule
+    FreudTypographyModule,
+    FreudIconBaseModule,
+    FreudLinkModule,
   ],
 })
 export class ComponentsModule {}

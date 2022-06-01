@@ -1,0 +1,96 @@
+@import '~@freud-ds/core-support/dist/style/scss/_variables.scss';
+
+.freud-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-sm;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    outline-offset: none;
+    border-radius: none;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: $opacity-level-5;
+  }
+
+  i {
+    margin-left: $spacing-size-quark;
+    color: inherit !important;
+  }
+}
+
+// COLORS
+
+.freud-link {
+  color: $brand-color-pure;
+
+  &:hover {
+    color: $brand-color-02;
+
+    & > i {
+      color: $brand-color-02;
+    }
+  }
+
+  &:focus-visible {
+    outline: $feedback-color-warning-pure solid 2px;
+  }
+
+  &[disabled] {
+    color: $neutral-color-dark-pure;
+    & > i {
+      color: $neutral-color-dark-pure;
+    }
+  }
+}
+
+.freud-link-bgcolor {
+  color: $neutral-color-light-pure;
+
+  &:hover {
+    color: $brand-color-01;
+
+    & > svg {
+      fill: $brand-color-01;
+    }
+  }
+
+  &:focus-visible {
+    outline: $neutral-color-light-pure solid 2px;
+  }
+
+  &[disabled] {
+    color: $neutral-color-dark-pure;
+    & > i {
+      color: $neutral-color-dark-pure;
+    }
+  }
+
+  i {
+    color: $neutral-color-light-pure !important;
+  }
+}
+
+// SIZES
+.freud-link.freud-link-size {
+  &-lg {
+    font-size: $font-size-xs;
+  }
+
+  &-sm {
+    font-size: $font-size-xxs;
+  }
+}
