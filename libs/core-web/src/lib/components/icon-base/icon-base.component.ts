@@ -10,7 +10,7 @@ import { iconNames } from './icon-base.interface';
 type iconSize = '16px' | '24px' | '32px' | '40px' | '48px' | '56px';
 
 @Component({
-  selector: 'i[freud-icon-base]',
+  selector: '[freud-icon-base]',
   exportAs: 'FreudIconBase',
   styleUrls: ['./icon-base.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
