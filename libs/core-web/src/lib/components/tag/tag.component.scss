@@ -1,7 +1,7 @@
 @import '~@freud-ds/core-support/dist/style/scss/_variables.scss';
 
 .freud-tag {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
@@ -20,7 +20,7 @@
   &-highlight-1 {
     color: $neutral-color-light-pure;
   }
-  
+
   &-highlight-2 {
     color: $neutral-color-light-pure;
   }
@@ -56,7 +56,7 @@
   &-highlight-1 {
     background-color: $brand-color-pure;
   }
-  
+
   &-highlight-2 {
     background-color: $complementary-color-pure;
   }
