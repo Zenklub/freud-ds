@@ -5,3 +5,4 @@ export * from './typography/index';
 export * from './loader/index';
 export * from './icon-base/index';
 export * from './link/index';
+export * from './tag/index';
