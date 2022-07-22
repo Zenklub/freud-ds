@@ -25,7 +25,7 @@ image packages builder:
     IMAGE_NAME: freud-builder
   rules:
     - changes:
-        - docker/freud-builder/Dockerfile
+        - docker/${IMAGE_NAME}/Dockerfile
       when: always
       allow_failure: true
-    - when: never
+    - when: always
