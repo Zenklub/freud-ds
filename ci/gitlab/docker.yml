@@ -1,0 +1,28 @@
+.docker-image-builder-template:
+  stage: docker images
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+
+  retry: 2
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo $CI_PROJECT_DIR
+    - echo $CI_REGISTRY
+    - echo $CI_REGISTRY_USER
+    - echo $CI_REGISTRY_PASSWORD
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/${IMAGE_NAME}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:$(git describe --tags --abbrev=0)"
+      --destination "${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:latest"
+  when: manual
+
+image packages builder:
+  extends: .docker-image-builder-template
+  variables:
+    IMAGE_NAME: freud-builder
+
+

@@ -25,6 +25,8 @@
   "author": "Zenklub",
   "license": "Apache-2.0",
   "devDependencies": {
+    "chalk": "^4.1.2",
+    "fantasticon": "^1.2.3",
     "style-dictionary": "3.7.0"
   }
 }

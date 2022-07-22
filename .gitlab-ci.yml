@@ -1,6 +1,7 @@
 image: node:14
 
 stages:
+  - docker images
   - build
   - test
   - release
