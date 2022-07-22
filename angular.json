@@ -30,7 +30,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core-web"],
+          "outputs": [
+            "coverage/libs/core-web"
+          ],
           "options": {
             "jestConfig": "libs/core-web/jest.config.js",
             "passWithNoTests": true
@@ -70,7 +72,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "f1ed5c10-665d-4c4a-9285-1c972caa2dd6"
   },
   "schematics": {
     "@nrwl/angular:application": {
