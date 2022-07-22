@@ -17,16 +17,15 @@
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/docker/${IMAGE_NAME}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:latest"
-  only:
-    - changes:
-      - docker/${IMAGE_NAME}/Dockerfile
-      when: always
-      allow_failure: true
-    - when: manual
+
 
 image packages builder:
   extends: .docker-image-builder-template
   variables:
     IMAGE_NAME: freud-builder
-
-
+  rules:
+    - changes:
+        - docker/freud-builder/Dockerfile
+      when: always
+      allow_failure: true
+    - when: never
