@@ -4,6 +4,7 @@ stages:
   - docker images
   - build
   - test
+  - quality
   - release
 
 # .except-post-publish:

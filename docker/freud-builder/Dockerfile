@@ -2,7 +2,6 @@ FROM node:14.20.0-alpine3.15
 
 USER root
 
-
 # Install python/pip
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
