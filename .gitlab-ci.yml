@@ -1,4 +1,4 @@
-image: node:14
+image: ${CI_REGISTRY_IMAGE}/freud-builder:latest
 
 stages:
   - docker images
