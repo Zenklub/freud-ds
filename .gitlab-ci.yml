@@ -65,4 +65,5 @@ lint:
     - develop
 
 include:
+  - '/ci/gitlab/docker.yml'
   - '/ci/gitlab/release-core.yml'
