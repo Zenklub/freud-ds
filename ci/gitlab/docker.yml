@@ -15,7 +15,7 @@
     - >-
       /kaniko/executor
       --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/${IMAGE_NAME}/Dockerfile"
+      --dockerfile "${CI_PROJECT_DIR}/docker/${IMAGE_NAME}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:$(git describe --tags --abbrev=0)"
       --destination "${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:latest"
   when: manual
