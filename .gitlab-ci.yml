@@ -11,42 +11,6 @@ stages:
 #     variables:
 #       - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
 
-#########
-# Build #
-#########
-prepare:
-  cache:
-    paths:
-    - node_modules/
-    - libs/**/node_modules/
-    - apps/**/node_modules/
-  stage: build
-  retry:
-    max: 2
-    when: runner_system_failure
-  script:
-    - npm ci --quiet
-    - npm run build
-    - npm run build:core-support
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - node_modules/
-
-########
-# Lint #
-########
-lint:
-  stage: test
-  retry:
-    max: 2
-    when: runner_system_failure
-  dependencies:
-    - prepare
-  script:
-    - npm run lint
-
-
 include:
   - '/ci/gitlab/docker.yml'
   - '/ci/gitlab/build.yml'
