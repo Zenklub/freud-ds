@@ -7,5 +7,6 @@ RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 
 # Installing Dependencies:
-RUN npm install -g nx fantasticon
+RUN npm install -g nx
+RUN npm install -g fantasticon
 RUN pip3 install picosvg

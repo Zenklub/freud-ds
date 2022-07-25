@@ -28,4 +28,4 @@ image packages builder:
         - docker/${IMAGE_NAME}/Dockerfile
       when: always
       allow_failure: true
-    - when: always
+    - when: manual
