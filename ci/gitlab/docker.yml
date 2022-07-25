@@ -7,10 +7,6 @@
   retry: 2
   script:
     - mkdir -p /kaniko/.docker
-    - echo $CI_PROJECT_DIR
-    - echo $CI_REGISTRY
-    - echo $CI_REGISTRY_USER
-    - echo $CI_REGISTRY_PASSWORD
     - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
     - >-
       /kaniko/executor
