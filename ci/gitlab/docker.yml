@@ -1,7 +1,7 @@
 .docker-image-builder-template:
   stage: docker images
   image:
-    name: gcr.io/kaniko-project/executor:debug
+    name: "${KANIKO_EXECUTOR_IMAGE}"
     entrypoint: [""]
 
   retry: 2
