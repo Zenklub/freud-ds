@@ -1,5 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
+  "files": [],
   "compilerOptions": {
     "target": "es2015",
     "declaration": true,
@@ -10,5 +11,13 @@
     "module": "commonjs",
     "esModuleInterop": true,
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

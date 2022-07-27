@@ -2,7 +2,32 @@ import * as path from 'path';
 import * as fs from 'fs';
 import isCI from 'is-ci';
 import chalk from 'chalk';
+import * as util from 'util';
+import * as readline from 'readline'
 
+import { exec as childProcessExec } from 'child_process';
+
+export const executeCommand = util.promisify(childProcessExec);
+
+let terminalSize = {
+  columns: 0,
+  rows: 0
+};
+
+export async function prepareEnvironment() {
+  if (!terminalSize.columns) {
+    const {stdout, stderr} = await executeCommand('term-size');
+    if (stderr) {
+      console.error(stderr);
+      process.exit(1);
+    }
+    const [termColumns,termRows] = stdout.split("\n");
+    terminalSize = {
+      columns: Number.parseInt(termColumns, 10),
+      rows: Number.parseInt(termRows, 10)
+    }
+  }
+}
 
 export function throwSizeError(name: string, value: string, unitType: string) {
   throw `Invalid Number: '${name}: ${value}' is not a valid number, cannot transform to '${unitType}' \n`;
@@ -31,7 +56,7 @@ export function copyFolderRecursiveSync(source: string, target: string, includin
   if (fs.lstatSync(source).isDirectory()) {
     files = fs.readdirSync(source);
     files.forEach(function (file) {
-      let curSource = path.join(source, file);
+      const curSource = path.join(source, file);
       if (fs.lstatSync(curSource).isDirectory()) {
         copyFolderRecursiveSync(curSource, targetFolder);
       } else {
@@ -58,12 +83,12 @@ export function createDir(dir: string) {
 export function clearLines(numOfLines = 1) {
   if (isCI) return;
   for(let i=0; i<numOfLines; i++) {
-    process.stdout.moveCursor(0, -1) // up one line
-    process.stdout.clearLine(1) // from cursor to end
+    readline.moveCursor(process.stdout, 0, -1) // up one line
+    readline.clearLine(process.stdout, 1) // from cursor to end
   }
 }
 
-export function progress(position: number, total: number) {
+export async function progress(position: number, total: number) {
   if (isCI) return;
   const scale = position / total;
 
@@ -71,13 +96,12 @@ export function progress(position: number, total: number) {
   let percentageStr = `${Math.round(scale * 100)}%`
   percentageStr = chalk.bold(`${Array(percentageStrSize - percentageStr.length).join(' ')}${percentageStr}`)
 
-  const columns = process.stdout.columns - percentageStrSize;
-
+  const columns = terminalSize.columns - percentageStrSize;
   const size = Math.round(scale * columns);
   const rest = columns - size;
 
   const chars = chalk.yellow(Array(size ?? columns).join("\u2588"));
   const restChars = rest > 0 ? chalk.gray(Array(rest).join("\u2588")) : '';
 
-  return `${chars}${restChars}${percentageStr}`;
+  console.log(`${chars}${restChars}${percentageStr}`);
 }

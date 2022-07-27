@@ -23,9 +23,7 @@
       }
     }
   },
-  "projects": {
-    "core-web": { "tags": [] }
-  },
+  "projects": { "core-web": { "tags": [] }, "core-support": { "tags": [] } },
   "cli": { "defaultCollection": "@nrwl/angular" },
   "generators": {
     "@nrwl/angular": {

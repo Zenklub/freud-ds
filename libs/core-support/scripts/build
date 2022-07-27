@@ -10,4 +10,4 @@ mkdir "${ROOT_PATH}/style"
 cp -r "${ROOT_PATH}/src/assets" "${ROOT_PATH}/"
 
 # Build assets
-ts-node "${ROOT_PATH}/src/index.ts"
+ts-node --project "${ROOT_PATH}/tsconfig.json" "${ROOT_PATH}/src/index.ts"

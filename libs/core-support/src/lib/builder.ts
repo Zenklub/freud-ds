@@ -1,13 +1,11 @@
 import * as StyleDictionary from 'style-dictionary';
 import * as path from 'path';
 import * as fs from 'fs';
-import * as util from 'util';
 import isCI from 'is-ci';
 import chalk from 'chalk';
 import { FontAssetType, generateFonts, OtherAssetType, RunnerOptions } from 'fantasticon';
-import { throwSizeError, copyFolderRecursiveSync, createDir, clearLines, logSymbols, progress } from './utils';
+import { throwSizeError, copyFolderRecursiveSync, createDir, clearLines, logSymbols, progress, executeCommand, prepareEnvironment } from './utils';
 
-const exec = util.promisify(require('child_process').exec);
 
 
 export class Builder {
@@ -27,8 +25,8 @@ export class Builder {
         }
         return token.value.toString()?.includes('px') || token.value.toString()?.includes('%');
       },
-      transformer: function(token, options) {
-        var val = parseFloat(token.value);
+      transformer: function(token) {
+        const val = parseFloat(token.value);
         if (isNaN(val)) throwSizeError(token.name, token.value, "object");
 
         return token.value.toString()?.includes('px') ? val : val / 100;
@@ -73,14 +71,14 @@ export class Builder {
         if(stat.isFile()) {
           const toPath = path.join(minifiedIconsDir, file);
 
-          const { stderr } = await exec(`picosvg ${fromPath} > ${toPath}`);
+          const { stderr } = await executeCommand(`picosvg ${fromPath} > ${toPath}`);
           clearLines(2);
           if (stderr) {
             console.error(logSymbols.error, stderr)
             return;
           }
           count++;
-          if (!isCI) console.log(progress(count, numOfIcons))
+          if (!isCI) progress(count, numOfIcons)
           console.log(`[${count}/${numOfIcons}]`, file);
         }
       }
@@ -111,18 +109,16 @@ export class Builder {
         // Customize generated icon IDs (unavailable with `.json` config file)
         getIconId: ({
           basename, // `string` - Example: 'foo';
-          relativeDirPath, // `string` - Example: 'sub/dir/foo.svg'
-          absoluteFilePath, // `string` - Example: '/var/icons/sub/dir/foo.svg'
-          relativeFilePath, // `string` - Example: 'foo.svg'
-          index // `number` - Example: `0`
+          // relativeDirPath, // `string` - Example: 'sub/dir/foo.svg'
+          // absoluteFilePath, // `string` - Example: '/var/icons/sub/dir/foo.svg'
+          // relativeFilePath, // `string` - Example: 'foo.svg'
+          // index // `number` - Example: `0`
         }) => basename // 'icon-foo'
       }
       createDir(iconsConfig.outputDir);
 
       await generateFonts(iconsConfig);
       console.log(logSymbols.success, chalk.bold.green('Done\n\n'));
-    } catch(err) {
-      throw err;
     } finally {
       fs.rmSync(minifiedIconsDir, { recursive: true, force: true });
     }
@@ -131,6 +127,8 @@ export class Builder {
   async run() {
 
     try {
+      await prepareEnvironment();
+
       this.createAssetsStep();
 
       const fonts = [
@@ -138,7 +136,7 @@ export class Builder {
         { fontName: 'freud-emoji', svgFolder: 'emoji' },
         { fontName: 'freud-brand', svgFolder: 'brand' },
       ]
-      for(let config of fonts) {
+      for(const config of fonts) {
         await this.convertSvgToFontStep(config.fontName, config.svgFolder);
       }
 

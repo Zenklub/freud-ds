@@ -30,9 +30,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/core-web"
-          ],
+          "outputs": ["coverage/libs/core-web"],
           "options": {
             "jestConfig": "libs/core-web/jest.config.js",
             "passWithNoTests": true
@@ -66,6 +64,33 @@
             "ci": {
               "quiet": true
             }
+          }
+        }
+      }
+    },
+    "core-support": {
+      "root": "libs/core-support",
+      "sourceRoot": "libs/core-support/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core-support/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core-support"],
+          "options": {
+            "jestConfig": "libs/core-support/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/workspace:run-script",
+          "options": {
+            "script": "build"
           }
         }
       }

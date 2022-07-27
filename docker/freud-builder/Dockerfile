@@ -11,6 +11,7 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 # Installing Dependencies:
 RUN npm install -g nx
 RUN npm install -g fantasticon
+RUN npm install -g term-size
 RUN pip3 install picosvg
 
 # Expose global node path

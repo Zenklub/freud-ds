@@ -16,16 +16,8 @@
     "prepublishOnly": "npm run build",
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag core-support-v$PACKAGE_VERSION && git push --tags",
     "clean": "scripts/clean",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Zenklub",
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "chalk": "^4.1.2",
-    "fantasticon": "^1.2.3",
-    "style-dictionary": "3.7.0",
-    "is-ci": "^3.0.1",
-    "ts-node": "~9.1.1",
-    "typescript": "~4.0.3"
-  }
+  "license": "Apache-2.0"
 }
