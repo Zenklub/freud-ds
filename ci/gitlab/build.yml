@@ -14,7 +14,7 @@ build:
     max: 2
     when: runner_system_failure
   script:
-    - npm ci --quiet
+    - npm ci --quiet --no-optional
     - npm run build:core-support
   artifacts:
     expire_in: 1 week
