@@ -97,8 +97,8 @@ Para mais informações consulte a documentação do `Amazon Style Dictionary`
 2. Importe as variáveis via scss para o seu arquivo de estilo que você for precisar dos tokens (Opção 1):
 
 ```
-@import '@freud-ds/core-support/dist/style/scss/_variables.scss';
-@import '@freud-ds/core-support/dist/style/scss/grid.scss';
+@import '@freud-ds/core-support/style/scss/_variables.scss';
+@import '@freud-ds/core-support/style/scss/grid.scss';
 
 => Exemplo de uso:
 
@@ -109,7 +109,7 @@ background-color: $brand-color-01;
 2. **Ou** Importe as variáveis root para o seu arquivo de estilo principal (Opção 2):
 
 ```
-@import '@freud-ds/core-support/dist/style/css/_variables.css';
+@import '@freud-ds/core-support/style/css/_variables.css';
 
 => Exemplo de uso:
 
@@ -122,9 +122,9 @@ background-color: var(--brand-color-01);
 ```
 No array de styles adicione os seguintes estilos
 
-"node_modules/@freud-ds/core-support/dist/style/css/variables.css"
+"node_modules/@freud-ds/core-support/style/css/variables.css"
 
-"node_modules/@freud-ds/core-support/dist/style/scss/grid.scss"
+"node_modules/@freud-ds/core-support/style/scss/grid.scss"
 
 => Exemplo de uso:
 
@@ -158,7 +158,7 @@ background-color: var(--brand-color-01);
 ```
   {
     "glob": "**/*",
-    "input": "node_modules/@freud-ds/core-support/dist/assets",
+    "input": "node_modules/@freud-ds/core-support/assets",
     "output": "./assets/@freud-ds/"
   }
 ```

@@ -6,27 +6,26 @@
   },
   "version": "0.0.9",
   "description": "Zenklub DS Freud Core",
-  "main": "dist/index.js",
   "files": [
-    "dist"
+    "assets",
+    "style",
+    "README.md"
   ],
   "scripts": {
-    "build": "npm run clean && node ./build.js && npm run copy",
+    "build": "scripts/build",
     "prepublishOnly": "npm run build",
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag core-support-v$PACKAGE_VERSION && git push --tags",
-    "clean": "rm -rf dist",
-    "copy": "cp -r assets dist/ && cp tokens/grid/* dist/style/scss/ && npm run copy-files",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "copy-readme": "cp ./README.md ./dist",
-    "copy-license": "cp ./LICENSE ./dist",
-    "copy-changelog": "cp ./Changelog.md ./dist",
-    "copy-files": "npm run copy-readme"
+    "clean": "scripts/clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zenklub",
   "license": "Apache-2.0",
   "devDependencies": {
     "chalk": "^4.1.2",
     "fantasticon": "^1.2.3",
-    "style-dictionary": "3.7.0"
+    "style-dictionary": "3.7.0",
+    "is-ci": "^3.0.1",
+    "ts-node": "~9.1.1",
+    "typescript": "~4.0.3"
   }
 }

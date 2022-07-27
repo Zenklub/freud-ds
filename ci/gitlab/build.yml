@@ -1,18 +1,19 @@
+
 #########
 # Build #
 #########
-prepare:
+build:
   cache:
+    key:
+      files:
+        - package-lock.json
     paths:
     - node_modules/
-    - libs/**/node_modules/
-    - apps/**/node_modules/
   stage: build
   retry:
     max: 2
     when: runner_system_failure
   script:
-    - export NODE_PATH=/usr/local/lib/node_modules
     - npm ci --quiet
     - npm run build
     - npm run build:core-support
@@ -21,15 +22,3 @@ prepare:
     paths:
       - node_modules/
 
-########
-# Lint #
-########
-lint:
-  stage: test
-  retry:
-    max: 2
-    when: runner_system_failure
-  dependencies:
-    - prepare
-  script:
-    - npm run lint

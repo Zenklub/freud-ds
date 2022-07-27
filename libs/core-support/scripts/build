@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+ROOT_PATH="${BASH_SOURCE[0]%/*}/.."
+
+# Clean previous build
+rm -rf "${ROOT_PATH}/assets" && rm -rf "${ROOT_PATH}/style"
+
+# Copy assets and styles
+mkdir "${ROOT_PATH}/style"
+cp -r "${ROOT_PATH}/src/assets" "${ROOT_PATH}/"
+
+# Build assets
+ts-node "${ROOT_PATH}/src/index.ts"

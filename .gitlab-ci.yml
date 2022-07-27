@@ -3,14 +3,8 @@ image: ${CI_REGISTRY_IMAGE}/freud-builder:latest
 stages:
   - docker images
   - build
-  - test
   - quality
   - release
-
-# .except-post-publish:
-#   except: &except-post-publish
-#     variables:
-#       - $CI_COMMIT_TITLE =~ /^chore\(release\):\sautomatic\sversion\supdate$/
 
 include:
   - '/ci/gitlab/docker.yml'

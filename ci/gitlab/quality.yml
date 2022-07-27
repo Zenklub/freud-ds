@@ -1,0 +1,10 @@
+lint:
+  stage: quality
+  retry:
+    max: 2
+    when: runner_system_failure
+  dependencies:
+    - build
+  script:
+    - npm run lint
+    - npm run test

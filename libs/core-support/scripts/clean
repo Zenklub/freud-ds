@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ROOT_PATH="${BASH_SOURCE[0]%/*}/.."
+
+# Clean previous build
+rm -rf "${ROOT_PATH}/assets" && rm -rf "${ROOT_PATH}/style"

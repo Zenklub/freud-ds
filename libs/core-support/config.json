@@ -1,9 +1,9 @@
 {
-  "source": ["tokens/**/*.json"],
+  "source": ["src/tokens/**/*.json"],
   "platforms": {
     "css": {
       "transformGroup": "css",
-      "buildPath": "dist/style/css/",
+      "buildPath": "style/css/",
       "files": [
         {
           "format": "css/variables",
@@ -13,7 +13,7 @@
     },
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "dist/style/scss/",
+      "buildPath": "style/scss/",
       "files": [{
         "destination": "_variables.scss",
         "format": "scss/variables"
@@ -21,7 +21,7 @@
     },
     "rn": {
       "transformGroup": "react-native",
-      "buildPath": "dist/style/react-native/",
+      "buildPath": "style/react-native/",
       "files": [
         {
           "destination": "variables.js",
