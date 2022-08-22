@@ -12,7 +12,9 @@ Pod::Spec.new do |s|
 
   s.source           = {
     :git => 'https://github.com/Zenklub/freud-ds.git',
-    :tag => 'CocoaPods-' + s.version.to_s
+    :branch => 'feature/core-support-ajustments',
+    # :tag => 'CocoaPods-' + s.version.to_s,
+    :submodules => true
   }
   s.social_media_url = 'https://twitter.com/zenklub'
 
