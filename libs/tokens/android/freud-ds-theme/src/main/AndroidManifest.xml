@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zenklub.freudds.theme">
+
+    <application  android:label="Freud DS Theme" />
+</manifest>

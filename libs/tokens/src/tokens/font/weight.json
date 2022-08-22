@@ -1,0 +1,9 @@
+{
+  "size": {
+    "font weight": {
+      "bold": { "value": 700 },
+      "semibold": { "value": 600 },
+      "regular": { "value": 400 }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@freud-ds/icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zenklub/freud-ds.git"
+  },
+  "version": "0.0.9",
+  "description": "Zenklub DS - Iconography",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "css",
+    "scss",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && mkdir css && sass scss/grid.scss css/grid.css",
+    "clean": "rm -rf css",
+    "prepublishOnly": "npm run build",
+    "_postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag tokens-v$PACKAGE_VERSION && git push --tags",
+    "test": "jest"
+  },
+  "author": "Zenklub",
+  "license": "Apache-2.0"
+}

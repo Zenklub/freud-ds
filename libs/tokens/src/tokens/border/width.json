@@ -1,0 +1,12 @@
+{
+  "size": {
+    "border width": {
+      "none": { "value": 0 },
+      "sm": { "value": "1px" },
+      "md": { "value": "2px" },
+      "lg": { "value": "4px" },
+      "xl": { "value": "8px" },
+      "xxl": { "value": "16px" }
+    }
+  }
+}

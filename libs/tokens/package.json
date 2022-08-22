@@ -1,0 +1,32 @@
+{
+  "name": "@freud-ds/tokens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zenklub/freud-ds.git"
+  },
+  "version": "0.0.9",
+  "description": "Zenklub DS Freud Core",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "fonts",
+    "css",
+    "scss",
+    "ios",
+    "android",
+    "react-native",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "ts-node src/index.ts -- build",
+    "clean": "ts-node src/index.ts -- cleanup",
+    "prepublishOnly": "npm run build",
+    "_postpublish": "exit 0; PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag tokens-v$PACKAGE_VERSION && git push --tags",
+    "test": "yarn test:ios && yarn test:android",
+    "test:ios": "xcodebuild test -project ios/FreudDSTheme.xcodeproj -scheme FreudDSThemeTests -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.4'",
+    "test:android": "./android/gradlew -p ./android test"
+  },
+  "author": "Zenklub",
+  "license": "Apache-2.0"
+}

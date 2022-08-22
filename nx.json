@@ -23,7 +23,12 @@
       }
     }
   },
-  "projects": { "core-web": { "tags": [] }, "core-support": { "tags": [] } },
+  "projects": {
+    "core-web": { "tags": [] },
+    "tokens": { "tags": [] },
+    "icons": { "tags": [] },
+    "grid": { "tags": [] }
+  },
   "cli": { "defaultCollection": "@nrwl/angular" },
   "generators": {
     "@nrwl/angular": {

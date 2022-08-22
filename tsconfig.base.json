@@ -10,13 +10,27 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@freud-ds/core-web": ["libs/core-web/src/index.ts"],
-      "@freud-ds/core-support": ["libs/core-support/src/index.ts"]
+      "@freud-ds/tokens": ["libs/tokens/src/index.ts"],
+      "@ds-freud/icons": ["libs/icons/src/index.ts"],
+      "@ds-freud/grid": ["libs/grid/src/index.ts"]
+    }
+  },
+  "ts-node": {
+    // It is faster to skip typechecking.
+    // Remove if you want ts-node to do typechecking.
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      // compilerOptions specified here will override those declared below,
+      // but *only* in ts-node.  Useful if you want ts-node and tsc to use
+      // different options with a single tsconfig.json.
     }
   },
   "exclude": ["node_modules", "tmp"]

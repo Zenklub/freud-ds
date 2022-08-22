@@ -14,7 +14,7 @@
 #         - minor
 
 # jobs:
-#   publish-core-support:
+#   publish-tokens:
 #     runs-on: ubuntu-latest
 #     steps:
 #       - uses: actions/checkout@v3
@@ -35,12 +35,12 @@
 #       - name: Run patch version
 #         if: github.event.inputs.release-type == 'patch'
 #         run: |
-#           cd libs/core-support
+#           cd libs/tokens
 #           npm version patch
 #       - name: Run patch version
 #         if: github.event.inputs.release-type == 'minor'
 #         run: |
-#           cd libs/core-support
+#           cd libs/tokens
 #           npm version minor
 
 #       # Push new version
@@ -53,7 +53,7 @@
 #       # Release package in npm
 #       - name: Release version on npm
 #         run: |
-#           cd libs/core-support
+#           cd libs/tokens
 #           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 #           echo "unsafe-perm = true" >> ~/.npmrc
 #           npm publish --access public

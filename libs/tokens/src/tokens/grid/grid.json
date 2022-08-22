@@ -1,0 +1,34 @@
+{
+  "size": {
+    "grid": {
+      "margin": {
+        "value": {
+          "lg": "24px",
+          "md": "24px",
+          "sm": "16px"
+        },
+        "group-list": true
+      },
+      "gutter": {
+        "value": {
+          "lg": "24px",
+          "md": "16px",
+          "sm": "16px"
+        }
+      },
+      "columns": {
+        "value": 12
+      },
+      "max-width": {
+        "value": null
+      }
+    },
+    "breakpoints": {
+      "value": {
+        "lg": "1366px",
+        "md": "768px",
+        "sm": "0px"
+      }
+    }
+  }
+}

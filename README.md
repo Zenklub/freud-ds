@@ -17,7 +17,7 @@ Através do Freud DS queremos propagar pelo mundo a importância de criar produt
 ## Projetos
 
 
-### @freud-ds/core-support
+### @freud-ds/tokens
 
 Biblioteca que auxilia na composição dos componentes e interfaces como ícones, marcas, grids e utilities.
 
@@ -44,4 +44,4 @@ Se você nunca encontrou nenhum deles antes, recomendamos algumas horas para se 
 
 ## Como instalar o Freud em seu projeto Angular
 
-[Somente o core (Tokens, grid, icones e emojis)](./libs/core-support/README.md)
+[Somente o core (Tokens, grid, icones e emojis)](./libs/tokens/README.md)

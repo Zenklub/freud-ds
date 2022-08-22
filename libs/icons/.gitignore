@@ -1,0 +1,8 @@
+build/
+dist/
+node_modules/
+
+# Build results
+freud-icons
+freud-emoji
+freud-brand

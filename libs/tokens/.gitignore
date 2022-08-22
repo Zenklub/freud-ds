@@ -1,0 +1,20 @@
+build/
+dist/
+node_modules/
+
+# Auto generated files
+fonts/
+css/
+scss/
+mobile/
+
+# Android Auto generated files
+android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/FreudDSTokens.kt
+android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/FreudDSFontFamily.kt
+android/freud-ds-theme/src/main/res/fonts
+
+# iOS Auto generated files
+ios/FreudDSTheme/FreudDSFontFamily+Values.swift
+ios/FreudDSTheme/FreudDSTokens+Values.swift
+ios/FreudDSTheme/Assets/fonts
+

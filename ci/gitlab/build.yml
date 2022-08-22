@@ -15,7 +15,7 @@ build:
     when: runner_system_failure
   script:
     - npm ci --quiet --no-optional
-    - npm run build:core-support
+    - npm run build:tokens
   artifacts:
     expire_in: 1 week
     paths:

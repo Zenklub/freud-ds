@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A795AFBB28B18B000034B99D /* FreudDSTheme.docc in Sources */ = {isa = PBXBuildFile; fileRef = A795AFBA28B18B000034B99D /* FreudDSTheme.docc */; };
+		A795AFC128B18B010034B99D /* FreudDSTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A795AFB628B18B000034B99D /* FreudDSTheme.framework */; };
+		A795AFC628B18B010034B99D /* FreudDSThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFC528B18B010034B99D /* FreudDSThemeTests.swift */; };
+		A795AFC728B18B010034B99D /* FreudDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = A795AFB928B18B000034B99D /* FreudDSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A795AFD128B18B570034B99D /* FreudDSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFD028B18B570034B99D /* FreudDSTheme.swift */; };
+		A795AFD328B18C7D0034B99D /* FreudDSTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFD228B18C7D0034B99D /* FreudDSTokens.swift */; };
+		A795AFD528B18D870034B99D /* FreudDSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFD428B18D870034B99D /* FreudDSShadow.swift */; };
+		A795AFD728B3B1C00034B99D /* FreudDSTokens+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFD628B3B1C00034B99D /* FreudDSTokens+Values.swift */; };
+		A795AFE328B3EE910034B99D /* FreudDSFontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFE228B3EE910034B99D /* FreudDSFontFamily.swift */; };
+		A795AFE528B3F43C0034B99D /* FreudDSFontFamily+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795AFE428B3F43C0034B99D /* FreudDSFontFamily+Values.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A795AFC228B18B010034B99D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A795AFAD28B18B000034B99D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A795AFB528B18B000034B99D;
+			remoteInfo = FreudDSTheme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A795AFB628B18B000034B99D /* FreudDSTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FreudDSTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A795AFB928B18B000034B99D /* FreudDSTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreudDSTheme.h; sourceTree = "<group>"; };
+		A795AFBA28B18B000034B99D /* FreudDSTheme.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FreudDSTheme.docc; sourceTree = "<group>"; };
+		A795AFC028B18B010034B99D /* FreudDSThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreudDSThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A795AFC528B18B010034B99D /* FreudDSThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreudDSThemeTests.swift; sourceTree = "<group>"; };
+		A795AFD028B18B570034B99D /* FreudDSTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreudDSTheme.swift; sourceTree = "<group>"; };
+		A795AFD228B18C7D0034B99D /* FreudDSTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreudDSTokens.swift; sourceTree = "<group>"; };
+		A795AFD428B18D870034B99D /* FreudDSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreudDSShadow.swift; sourceTree = "<group>"; };
+		A795AFD628B3B1C00034B99D /* FreudDSTokens+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FreudDSTokens+Values.swift"; sourceTree = "<group>"; };
+		A795AFE228B3EE910034B99D /* FreudDSFontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreudDSFontFamily.swift; sourceTree = "<group>"; };
+		A795AFE428B3F43C0034B99D /* FreudDSFontFamily+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FreudDSFontFamily+Values.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A795AFB328B18B000034B99D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A795AFBD28B18B010034B99D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A795AFC128B18B010034B99D /* FreudDSTheme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A795AFAC28B18B000034B99D = {
+			isa = PBXGroup;
+			children = (
+				A795AFB828B18B000034B99D /* FreudDSTheme */,
+				A795AFC428B18B010034B99D /* FreudDSThemeTests */,
+				A795AFB728B18B000034B99D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A795AFB728B18B000034B99D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A795AFB628B18B000034B99D /* FreudDSTheme.framework */,
+				A795AFC028B18B010034B99D /* FreudDSThemeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A795AFB828B18B000034B99D /* FreudDSTheme */ = {
+			isa = PBXGroup;
+			children = (
+				A795AFDC28B3D38D0034B99D /* Assets */,
+				A795AFB928B18B000034B99D /* FreudDSTheme.h */,
+				A795AFBA28B18B000034B99D /* FreudDSTheme.docc */,
+				A795AFD028B18B570034B99D /* FreudDSTheme.swift */,
+				A795AFD228B18C7D0034B99D /* FreudDSTokens.swift */,
+				A795AFD428B18D870034B99D /* FreudDSShadow.swift */,
+				A795AFD628B3B1C00034B99D /* FreudDSTokens+Values.swift */,
+				A795AFE228B3EE910034B99D /* FreudDSFontFamily.swift */,
+				A795AFE428B3F43C0034B99D /* FreudDSFontFamily+Values.swift */,
+			);
+			path = FreudDSTheme;
+			sourceTree = "<group>";
+		};
+		A795AFC428B18B010034B99D /* FreudDSThemeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A795AFC528B18B010034B99D /* FreudDSThemeTests.swift */,
+			);
+			path = FreudDSThemeTests;
+			sourceTree = "<group>";
+		};
+		A795AFDC28B3D38D0034B99D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A795AFB128B18B000034B99D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A795AFC728B18B010034B99D /* FreudDSTheme.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A795AFB528B18B000034B99D /* FreudDSTheme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A795AFCA28B18B010034B99D /* Build configuration list for PBXNativeTarget "FreudDSTheme" */;
+			buildPhases = (
+				A795AFB128B18B000034B99D /* Headers */,
+				A795AFB228B18B000034B99D /* Sources */,
+				A795AFB328B18B000034B99D /* Frameworks */,
+				A795AFB428B18B000034B99D /* Resources */,
+				A795AFDE28B3D4550034B99D /* Copy Assets Folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreudDSTheme;
+			productName = FreudDSTheme;
+			productReference = A795AFB628B18B000034B99D /* FreudDSTheme.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A795AFBF28B18B010034B99D /* FreudDSThemeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A795AFCD28B18B010034B99D /* Build configuration list for PBXNativeTarget "FreudDSThemeTests" */;
+			buildPhases = (
+				A795AFBC28B18B010034B99D /* Sources */,
+				A795AFBD28B18B010034B99D /* Frameworks */,
+				A795AFBE28B18B010034B99D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A795AFC328B18B010034B99D /* PBXTargetDependency */,
+			);
+			name = FreudDSThemeTests;
+			productName = FreudDSThemeTests;
+			productReference = A795AFC028B18B010034B99D /* FreudDSThemeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A795AFAD28B18B000034B99D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					A795AFB528B18B000034B99D = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					A795AFBF28B18B010034B99D = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A795AFB028B18B000034B99D /* Build configuration list for PBXProject "FreudDSTheme" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A795AFAC28B18B000034B99D;
+			productRefGroup = A795AFB728B18B000034B99D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A795AFB528B18B000034B99D /* FreudDSTheme */,
+				A795AFBF28B18B010034B99D /* FreudDSThemeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A795AFB428B18B000034B99D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A795AFBE28B18B010034B99D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A795AFDE28B3D4550034B99D /* Copy Assets Folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Assets Folder";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ASSETS_FOLDER=\"${SRCROOT}/FreudDSTheme/Assets\"\nAPP_FOLDER=\"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/\"\n\ncp -R ${ASSETS_FOLDER}/* \"${APP_FOLDER}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A795AFB228B18B000034B99D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A795AFE528B3F43C0034B99D /* FreudDSFontFamily+Values.swift in Sources */,
+				A795AFE328B3EE910034B99D /* FreudDSFontFamily.swift in Sources */,
+				A795AFD728B3B1C00034B99D /* FreudDSTokens+Values.swift in Sources */,
+				A795AFBB28B18B000034B99D /* FreudDSTheme.docc in Sources */,
+				A795AFD528B18D870034B99D /* FreudDSShadow.swift in Sources */,
+				A795AFD328B18C7D0034B99D /* FreudDSTokens.swift in Sources */,
+				A795AFD128B18B570034B99D /* FreudDSTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A795AFBC28B18B010034B99D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A795AFC628B18B010034B99D /* FreudDSThemeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A795AFC328B18B010034B99D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A795AFB528B18B000034B99D /* FreudDSTheme */;
+			targetProxy = A795AFC228B18B010034B99D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A795AFC828B18B010034B99D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A795AFC928B18B010034B99D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A795AFCB28B18B010034B99D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KP2P7YWM27;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenklub.freudds.theme;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A795AFCC28B18B010034B99D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KP2P7YWM27;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenklub.freudds.theme;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A795AFCE28B18B010034B99D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KP2P7YWM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenklub.freudds.FreudDSThemeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A795AFCF28B18B010034B99D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KP2P7YWM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenklub.freudds.FreudDSThemeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A795AFB028B18B000034B99D /* Build configuration list for PBXProject "FreudDSTheme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A795AFC828B18B010034B99D /* Debug */,
+				A795AFC928B18B010034B99D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A795AFCA28B18B010034B99D /* Build configuration list for PBXNativeTarget "FreudDSTheme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A795AFCB28B18B010034B99D /* Debug */,
+				A795AFCC28B18B010034B99D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A795AFCD28B18B010034B99D /* Build configuration list for PBXNativeTarget "FreudDSThemeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A795AFCE28B18B010034B99D /* Debug */,
+				A795AFCF28B18B010034B99D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A795AFAD28B18B000034B99D /* Project object */;
+}

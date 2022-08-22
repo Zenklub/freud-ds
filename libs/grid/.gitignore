@@ -1,0 +1,11 @@
+build/
+dist/
+node_modules/
+
+# Build results
+icons/
+tokens/
+fonts/
+css/
+scss/
+mobile/

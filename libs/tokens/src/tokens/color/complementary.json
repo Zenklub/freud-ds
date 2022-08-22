@@ -1,0 +1,12 @@
+{
+  "color": {
+    "complementary": {
+      "color": {
+        "pure": { "value": "#DF3CCF" },
+        "01": { "value": "#FDE0FA" },
+        "02": { "value": "#F9A1F0" },
+        "03": { "value": "#62275C" }
+      }
+    }
+  }
+}
