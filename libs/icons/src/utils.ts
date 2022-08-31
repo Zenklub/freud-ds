@@ -19,20 +19,21 @@ const terminalSize = {
 }
 const MAX_COL_PROGRESS = 100;
 
-export function copyFileSync(source: string, target: string) {
+function copyFileSync(source: string, target: string, fileNameTransform?: (name: string) => string) {
   let targetFile = target;
   // If target is a directory, a new file with the same name will be created
   if (fs.existsSync(target)) {
     if (fs.lstatSync(target).isDirectory()) {
-      targetFile = path.join(target, path.basename(source));
+      const baseName = path.basename(source)
+      targetFile = path.join(target, fileNameTransform?.(baseName) || baseName);
     }
   }
 
   fs.writeFileSync(targetFile, fs.readFileSync(source));
 }
 
-export function copyFolderRecursiveSync(source: string, target: string, options?: {includingFolder: boolean}) {
-  const { includingFolder = false } = options || {};
+export function copyFolderRecursiveSync(source: string, target: string, options?: { includingFolder?: boolean, filter?: (file: string, index: number) => boolean, fileNameTransform?: (name: string) => string }) {
+  const { includingFolder = false, filter, fileNameTransform } = options || {};
   let files = [];
 
   // Check if folder needs to be created or integrated
@@ -42,12 +43,13 @@ export function copyFolderRecursiveSync(source: string, target: string, options?
   }
   if (fs.lstatSync(source).isDirectory()) {
     files = fs.readdirSync(source);
+    if (filter) files = files.filter(filter)
     files.forEach(function (file) {
       const curSource = path.join(source, file);
       if (fs.lstatSync(curSource).isDirectory()) {
-        copyFolderRecursiveSync(curSource, targetFolder, { includingFolder: true });
+        copyFolderRecursiveSync(curSource, targetFolder, { includingFolder: true, filter, fileNameTransform });
       } else {
-        copyFileSync(curSource, targetFolder);
+        copyFileSync(curSource, targetFolder, fileNameTransform);
       }
     });
   }
@@ -74,6 +76,7 @@ export function clearLines(numOfLines = 1) {
     readline.clearLine(process.stdout, 1) // from cursor to end
   }
 }
+
 export class ProgressBar {
   private total = 100;
   private history: ({position: number, info?: string[]})[] = [];

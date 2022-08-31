@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  MIT License
+  
+  Copyright (c) 2022 Zenklub
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  Do not edit directly
+  Generated on Tue, 30 Aug 2022 21:22:43 GMT
+-->
+<resources>
+  <color name="brand_color_pure">#ff6732d1</color>
+  <color name="brand_color_01">#ffe1d6f6</color>
+  <color name="brand_color_02">#ffa484e3</color>
+  <color name="brand_color_03">#ff291454</color>
+  <color name="complementary_color_pure">#ffdf3ccf</color>
+  <color name="complementary_color_01">#fffde0fa</color>
+  <color name="complementary_color_02">#fff9a1f0</color>
+  <color name="complementary_color_03">#ff62275c</color>
+  <color name="feedback_color_positive_pure">#ff46da6b</color>
+  <color name="feedback_color_positive_01">#ffebf9ec</color>
+  <color name="feedback_color_positive_02">#ffc2ecc5</color>
+  <color name="feedback_color_positive_03">#ff3d5a3f</color>
+  <color name="feedback_color_negative_pure">#ffff3b30</color>
+  <color name="feedback_color_negative_01">#ffffe4e1</color>
+  <color name="feedback_color_negative_02">#ffffbdb9</color>
+  <color name="feedback_color_negative_03">#ff661f1a</color>
+  <color name="feedback_color_warning_pure">#fffed223</color>
+  <color name="feedback_color_warning_01">#fffff6dd</color>
+  <color name="feedback_color_warning_02">#ffffe59a</color>
+  <color name="feedback_color_warning_03">#ff615121</color>
+  <color name="neutral_color_dark_pure">#ff212529</color>
+  <color name="neutral_color_dark_01">#ff333b43</color>
+  <color name="neutral_color_dark_02">#ff5a6570</color>
+  <color name="neutral_color_dark_03">#ff848e99</color>
+  <color name="neutral_color_light_pure">#ffffffff</color>
+  <color name="neutral_color_light_01">#fff7f9fa</color>
+  <color name="neutral_color_light_02">#fff0f2f5</color>
+  <color name="neutral_color_light_03">#ffe1e6eb</color>
+  
+</resources>

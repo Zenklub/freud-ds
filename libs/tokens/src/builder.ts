@@ -19,6 +19,10 @@ export class Builder {
     return path.resolve('./src/assets');
   }
 
+  private get assetsFontsFoldersPath() {
+    return path.resolve('./src/assets/fonts');
+  }
+
   private get tmpFolderPath() {
     return path.resolve('./tmp');
   }
@@ -27,25 +31,29 @@ export class Builder {
     return path.resolve('./');
   }
 
-  private get iosAssetsFolder() {
-    return path.resolve('ios/FreudDSTheme/Assets');
+  private get iosFontsAssetFolder() {
+    return path.resolve('../../ios/FreudDSTheme/Fonts');
   }
 
-  private get androidAssetsFolder() {
-    return path.resolve('android/freud-ds-theme/src/main/res');
+  private get storybookFontsAssetFolder() {
+    return path.resolve('../../.storybook/assets/fonts');
+  }
+
+  private get androidFontsAssetFolder() {
+    return path.resolve('../../android/freud-ds-theme/src/main/res/font');
   }
 
   private copyResources() {
-    copyFolderRecursiveSync(this.assetsFoldersPath, this.iosAssetsFolder, { includingFolder: false });
-    copyFolderRecursiveSync(this.assetsFoldersPath, this.androidAssetsFolder, { includingFolder: false });
-    copyFolderRecursiveSync(this.assetsFoldersPath, this.rootFolderPath);
+    const ttfOnlyFilter = (file: string) => /\.ttf$/gi.test(file)
+    const transformResourceName = (name: string) => name.toLowerCase().replace(/[^a-z0-9_.]+/gi, '_')
+    copyFolderRecursiveSync(this.assetsFontsFoldersPath, this.iosFontsAssetFolder, { includingFolder: false, filter: ttfOnlyFilter });
+    copyFolderRecursiveSync(this.assetsFontsFoldersPath, this.androidFontsAssetFolder, { includingFolder: false, filter: ttfOnlyFilter, fileNameTransform: transformResourceName });
+    copyFolderRecursiveSync(this.assetsFontsFoldersPath, this.androidFontsAssetFolder, { includingFolder: false, filter: ttfOnlyFilter, fileNameTransform: transformResourceName });
+    copyFolderRecursiveSync(this.assetsFontsFoldersPath, this.storybookFontsAssetFolder, { includingFolder: false });
   }
 
   private async buildStyleTokens() {
     console.log(chalk.bold.yellow('> Generating tokens'));
-
-    // Copies assets folders
-    this.copyResources();
 
     // Creates tokens
     for(const dictionary of Object.values(Dictionaries)) {
@@ -58,7 +66,6 @@ export class Builder {
   }
 
   async cleanUp(recreate = false) {
-
     const folders = ['css', 'scss', this.tmpFolderPath];
     const files = ['index.js', 'index.d.ts'];
 
@@ -72,8 +79,8 @@ export class Builder {
     const assetsFolders = getDirectories(this.assetsFoldersPath);
     for(const folder of assetsFolders) {
       const rootReferenceFolder = path.join(this.rootFolderPath, folder.replace(this.assetsFoldersPath, ''));
-      const iosReferenceFolder = path.join(this.rootFolderPath, folder.replace(this.iosAssetsFolder, ''));
-      const androidReferenceFolder = path.join(this.rootFolderPath, folder.replace(this.androidAssetsFolder, ''));
+      const iosReferenceFolder = path.join(this.rootFolderPath, folder.replace(this.iosFontsAssetFolder, ''));
+      const androidReferenceFolder = path.join(this.rootFolderPath, folder.replace(this.androidFontsAssetFolder, ''));
       fs.rmSync(path.resolve(rootReferenceFolder), { recursive: true, force: true });
       fs.rmSync(path.resolve(iosReferenceFolder), { recursive: true, force: true });
       fs.rmSync(path.resolve(androidReferenceFolder), { recursive: true, force: true });
@@ -89,6 +96,9 @@ export class Builder {
     try {
       await this.cleanUp(true);
       await this.buildStyleTokens();
+
+      // Copies assets folders
+      this.copyResources();
 
       console.log(chalk.bold.green('\nBuild completed successfully!'));
     } catch(e) {

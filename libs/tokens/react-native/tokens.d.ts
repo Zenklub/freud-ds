@@ -22,7 +22,7 @@
  * SOFTWARE.
  * 
  * Do not edit directly
- * Generated on Mon, 22 Aug 2022 18:39:03 GMT
+ * Generated on Tue, 30 Aug 2022 21:22:43 GMT
  */
 
 export default tokens;

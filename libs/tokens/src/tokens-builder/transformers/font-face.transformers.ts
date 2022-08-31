@@ -8,8 +8,6 @@ export const FontFaceTransformers: TransformersType[] = [
       return {
         category: token.path[0],
         type: token.path[1],
-        paths: token.paths[2],
-        name: token.paths[3]
       }
     }
   }

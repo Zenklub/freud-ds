@@ -4,9 +4,11 @@ import { Config } from "style-dictionary";
 
 let licenseContents = [];
 
+const root = path.resolve('../../');
+
 function getLicenseContents() {
   if (!licenseContents.length) {
-    const licensePath = path.resolve('../../LICENSE');
+    const licensePath = path.resolve(root, 'LICENSE');
     licenseContents = fs.readFileSync(licensePath, 'utf8').split('\n');
   }
   return licenseContents;
@@ -24,7 +26,7 @@ export const fontFaceDictionary: Config = {
     license: getLicenseHeaders,
   },
   source: [
-    "src/tokens/asset/font.json"
+    `${root}/resources/tokens/asset/font.json`
   ],
   platforms: {
     'Font Face (css)': {
@@ -42,7 +44,7 @@ export const fontFaceDictionary: Config = {
           },
           options: {
             fileHeader: 'license',
-            fontPathPrefix: '../'
+            fontPathPrefix: 'fonts/'
           }
         }
       ]
@@ -62,14 +64,14 @@ export const fontFaceDictionary: Config = {
           },
           options: {
             fileHeader: 'license',
-            fontPathPrefix: '#{$font-path}/'
+            fontPathPrefix: 'fonts/'
           }
         }
       ]
     },
     'Font Face (ios)': {
       transforms: ['attribute/font'],
-      buildPath: 'ios/FreudDSTheme/',
+      buildPath: `${root}/ios/FreudDSTheme/`,
       files: [
         {
           destination: 'FreudDSFontFamily+Values.swift',
@@ -89,11 +91,11 @@ export const fontFaceDictionary: Config = {
     },
     'Font Face (android)': {
       transforms: ['attribute/font'],
-      buildPath: "android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/",
+      buildPath: `${root}/android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/`,
       files: [
         {
-          destination: 'FreudDSFontFamily.kt',
-          format: 'font/face/kotlin',
+          destination: 'FreudDSDefaultFonts.java',
+          format: 'font/face/java',
           filter: {
             attributes: {
               category: 'asset',
@@ -115,7 +117,7 @@ export const tokensDictionary: Config = {
     license: getLicenseHeaders,
   },
   source: [
-    "src/tokens/{border,color,font,opacity,shadow,spacing}/*.json"
+    `${root}/resources/tokens/asset/{border,color,font,opacity,shadow,spacing}/*.json`
   ],
   platforms: {
     css: {
@@ -159,7 +161,7 @@ export const tokensDictionary: Config = {
     },
     ios: {
       transformGroup: "freud/ios/swift",
-      buildPath: "ios/FreudDSTheme/",
+      buildPath: `${root}/ios/FreudDSTheme/`,
       files: [
         {
           format: "freud/ios/extension.swift",
@@ -173,12 +175,104 @@ export const tokensDictionary: Config = {
       ],
     },
     android: {
-      transformGroup: "freud/android/kotlin",
-      buildPath: "android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/",
+      transformGroup: "freud/android/java",
+      buildPath: `${root}/android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/`,
       files: [
         {
-          format: "freud/android/kotlin",
-          destination: "FreudDSTokens.kt",
+          format: "freud/android/java",
+          destination: "FreudDSTokens.java",
+          options: {
+            fileHeader: 'license',
+          }
+        },
+      ],
+    },
+    'android (dimensions)': {
+      transformGroup: "android",
+      transforms: [
+       "attribute/cti",
+       "color/hex8android",
+       'size/platformSpecific',
+       'size/percentageToScale',
+       'freud/shadow/android',
+       "size/pxToDp",
+       "name/ti/snake",
+      ],
+      buildPath: `${root}/android/freud-ds-theme/src/main/res/values/`,
+      files: [
+        {
+          format: "android/resources",
+          destination: "freud_sizes.xml",
+          filter: "isSize",
+          options: {
+            fileHeader: 'license',
+          }
+        },
+      ],
+    },
+    'android (colors)': {
+      transformGroup: "android",
+      transforms: [
+       "attribute/cti",
+       "color/hex8android",
+       'size/platformSpecific',
+       'size/percentageToScale',
+       'freud/shadow/android',
+       "size/pxToDp",
+       "name/ti/snake",
+      ],
+      buildPath: `${root}/android/freud-ds-theme/src/main/res/values/`,
+      files: [
+        {
+          format: "android/resources",
+          destination: "freud_colors.xml",
+          filter: "isColor",
+          options: {
+            fileHeader: 'license',
+          }
+        },
+      ],
+    },
+    'android (opacities)': {
+      transformGroup: "android",
+      transforms: [
+       "attribute/cti",
+       "color/hex8android",
+       'size/platformSpecific',
+       'size/percentageToScale',
+       'freud/shadow/android',
+       "size/pxToDp",
+       "name/ti/snake",
+      ],
+      buildPath:`${root}/android/freud-ds-theme/src/main/res/values/`,
+      files: [
+        {
+          format: "android/resources",
+          destination: "freud_opacities.xml",
+          filter: "isOpacity",
+          options: {
+            fileHeader: 'license',
+          }
+        },
+      ],
+    },
+    'android (shadows)': {
+      transformGroup: "android",
+      transforms: [
+       "attribute/cti",
+       "color/hex8android",
+       'size/platformSpecific',
+       'size/percentageToScale',
+       'freud/shadow/android',
+       "size/pxToDp",
+       "name/ti/snake",
+      ],
+      buildPath: `${root}/android/freud-ds-theme/src/main/res/values/`,
+      files: [
+        {
+          format: "freud/android/shadowResources",
+          destination: "freud_shadows.xml",
+          filter: "isShadow",
           options: {
             fileHeader: 'license',
           }

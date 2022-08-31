@@ -30,7 +30,7 @@ export const TransformersGroupsList: TransformersGroupsType[] = [
     ]
   },
   {
-    name: 'freud/android/kotlin',
+    name: 'freud/android/java',
     transforms: [
       'attribute/cti',
       'name/ti/camel',

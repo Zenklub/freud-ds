@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MIT License
+  
+  Copyright (c) 2022 Zenklub
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  Do not edit directly
+  Generated on Tue, 30 Aug 2022 21:22:43 GMT
+-->
+
+<resources>
+	<!-- Shadow level 1 -->
+	<dimen name="shadow_level_1_offset_x">0.00dp</dimen>
+	<dimen name="shadow_level_1_offset_y">4.00dp</dimen>
+	<dimen name="shadow_level_1_blur_radius">4.00dp</dimen>
+	<dimen name="shadow_level_1_spread_radius">4.00dp</dimen>
+	<bool name="shadow_level_1_inset">false</bool>
+	<color name="shadow_level_1_color">#29212529</color>
+	
+	<!-- Shadow level 2 -->
+	<dimen name="shadow_level_2_offset_x">0.00dp</dimen>
+	<dimen name="shadow_level_2_offset_y">8.00dp</dimen>
+	<dimen name="shadow_level_2_blur_radius">8.00dp</dimen>
+	<dimen name="shadow_level_2_spread_radius">8.00dp</dimen>
+	<bool name="shadow_level_2_inset">false</bool>
+	<color name="shadow_level_2_color">#29212529</color>
+	
+	<!-- Shadow level 3 -->
+	<dimen name="shadow_level_3_offset_x">0.00dp</dimen>
+	<dimen name="shadow_level_3_offset_y">12.00dp</dimen>
+	<dimen name="shadow_level_3_blur_radius">12.00dp</dimen>
+	<dimen name="shadow_level_3_spread_radius">12.00dp</dimen>
+	<bool name="shadow_level_3_inset">false</bool>
+	<color name="shadow_level_3_color">#29212529</color>
+	
+	<!-- Shadow level 4 -->
+	<dimen name="shadow_level_4_offset_x">0.00dp</dimen>
+	<dimen name="shadow_level_4_offset_y">12.00dp</dimen>
+	<dimen name="shadow_level_4_blur_radius">12.00dp</dimen>
+	<dimen name="shadow_level_4_spread_radius">12.00dp</dimen>
+	<bool name="shadow_level_4_inset">false</bool>
+	<color name="shadow_level_4_color">#29212529</color>
+	
+	<!-- Shadow level 5 -->
+	<dimen name="shadow_level_5_offset_x">0.00dp</dimen>
+	<dimen name="shadow_level_5_offset_y">16.00dp</dimen>
+	<dimen name="shadow_level_5_blur_radius">16.00dp</dimen>
+	<dimen name="shadow_level_5_spread_radius">16.00dp</dimen>
+	<bool name="shadow_level_5_inset">false</bool>
+	<color name="shadow_level_5_color">#52212529</color>
+	
+</resources>

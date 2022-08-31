@@ -32,10 +32,13 @@ Pod::Spec.new do |s|
 
   s.cocoapods_version = '>= 1.4.0'
   s.prefix_header_file = false
-
+  
+  s.ios.resource_bundle = {
+    'FreudDSThemeFonts' => 'libs/tokens/ios/FreudDSTheme/**/*.ttf'
+  }
+  
   s.source_files = [
-    'libs/tokens/ios/*.swift',
-    'libs/tokens/ios/*.ttf',
-    'libs/tokens/ios/*.h',
+    'libs/tokens/ios/FreudDSTheme/**/*.swift',
+    'libs/tokens/ios/FreudDSTheme/**/*.h',
   ]
 end

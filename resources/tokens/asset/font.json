@@ -1,0 +1,50 @@
+{
+  "asset": {
+    "font": {
+      "base": {
+        "value": {
+          "regular": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-Regular",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 400
+          },
+          "semibold": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-SemiBold",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 600
+          },
+          "bold": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-Bold",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 700
+          }
+        }
+      },
+      "highlight": {
+        "value": {
+          "regular": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-Regular",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 400
+          },
+          "semibold": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-SemiBold",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 600
+          },
+          "bold": {
+            "family": "Source Sans Pro",
+            "font": "SourceSansPro-Bold",
+            "extensions": ["ttf", "woff2", "woff"],
+            "weight": 700
+          }
+        }
+      }
+    }
+  }
+}

@@ -32,4 +32,12 @@ export const ShadowsTransformers: TransformersType[] = [
       return transformer(prop, options, true);
     }
   },
+  {
+    name: 'freud/shadow/androidXml',
+    type: 'value',
+    matcher: isShadow,
+    transformer: function(prop, options) {
+      return transformer(prop, options, true);
+    }
+  }
 ]

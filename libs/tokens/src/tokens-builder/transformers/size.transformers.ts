@@ -17,6 +17,19 @@ export const SizeTransformers: TransformersType[] = [
     }
   },
   {
+    name: 'size/pxToDp',
+    type: 'value',
+    matcher: function(token) {
+      return token.value?.toString()?.includes('px');
+    },
+    transformer: function(token) {
+      const val = parseFloat(token.value);
+      if (isNaN(val)) throwSizeError(token.name, token.value, "pxToDp");
+
+      return `${val.toFixed(SCALE_PRECISION)}dp`;
+    }
+  },
+  {
     name: 'size/percentageToScale',
     type: 'value',
     matcher: function(prop) {

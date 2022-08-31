@@ -2,11 +2,13 @@ import * as fs from "fs";
 import StyleDictionary, { Config } from "style-dictionary";
 import { TransformersGroupsList, TransformersList } from "./transformers";
 import { FormattersList } from "./formatters";
+import { FiltersList } from "./filters";
 
 export class StyleTokensBuilder {
   constructor() {
     this.registerTransforms();
     this.registerFormats();
+    this.registerFilters();
   };
 
   // Register the custom transforms
@@ -24,6 +26,13 @@ export class StyleTokensBuilder {
   private registerFormats() {
     FormattersList.forEach((formatter) => {
       StyleDictionary.registerFormat(formatter);
+    });
+  }
+
+  // Register the custom filters
+  private registerFilters() {
+    FiltersList.forEach((filter) => {
+      StyleDictionary.registerFilter(filter);
     });
   }
 

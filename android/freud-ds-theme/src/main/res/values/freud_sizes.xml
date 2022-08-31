@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  MIT License
+  
+  Copyright (c) 2022 Zenklub
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  Do not edit directly
+  Generated on Tue, 30 Aug 2022 21:22:43 GMT
+-->
+<resources>
+  <dimen name="border_radius_none">0</dimen>
+  <dimen name="border_radius_sm">4.00dp</dimen>
+  <dimen name="border_radius_md">8.00dp</dimen>
+  <dimen name="border_radius_lg">16.00dp</dimen>
+  <dimen name="border_radius_xl">24.00dp</dimen>
+  <dimen name="border_radius_pill">999.00dp</dimen>
+  <dimen name="border_radius_circular">0.5</dimen>
+  <dimen name="border_width_none">0</dimen>
+  <dimen name="border_width_sm">1.00dp</dimen>
+  <dimen name="border_width_md">2.00dp</dimen>
+  <dimen name="border_width_lg">4.00dp</dimen>
+  <dimen name="border_width_xl">8.00dp</dimen>
+  <dimen name="border_width_xxl">16.00dp</dimen>
+  <dimen name="line_height_none">1</dimen>
+  <dimen name="line_height_xs">1.1</dimen>
+  <dimen name="line_height_sm">1.2</dimen>
+  <dimen name="line_height_md">1.3</dimen>
+  <dimen name="line_height_lg">1.5</dimen>
+  <dimen name="line_height_xl">1.7</dimen>
+  <dimen name="line_height_xxl">2</dimen>
+  <dimen name="font_size_xxxs">12.00dp</dimen>
+  <dimen name="font_size_xxs">14.00dp</dimen>
+  <dimen name="font_size_xs">16.00dp</dimen>
+  <dimen name="font_size_sm">20.00dp</dimen>
+  <dimen name="font_size_md">24.00dp</dimen>
+  <dimen name="font_size_lg">32.00dp</dimen>
+  <dimen name="font_size_xl">40.00dp</dimen>
+  <dimen name="font_size_xxl">48.00dp</dimen>
+  <dimen name="font_size_xxxl">64.00dp</dimen>
+  <dimen name="font_size_display">72.00dp</dimen>
+  <dimen name="font_size_giant">80.00dp</dimen>
+  <dimen name="font_weight_bold">700</dimen>
+  <dimen name="font_weight_semibold">600</dimen>
+  <dimen name="font_weight_regular">400</dimen>
+  <dimen name="spacing_minimum">2.00dp</dimen>
+  <dimen name="spacing_quark">4.00dp</dimen>
+  <dimen name="spacing_nano">8.00dp</dimen>
+  <dimen name="spacing_xxxs">16.00dp</dimen>
+  <dimen name="spacing_xxs">24.00dp</dimen>
+  <dimen name="spacing_xs">32.00dp</dimen>
+  <dimen name="spacing_sm">40.00dp</dimen>
+  <dimen name="spacing_md">48.00dp</dimen>
+  <dimen name="spacing_lg">56.00dp</dimen>
+  <dimen name="spacing_xl">64.00dp</dimen>
+  <dimen name="spacing_xxl">80.00dp</dimen>
+  <dimen name="spacing_xxxl">88.00dp</dimen>
+  <dimen name="spacing_big">120.00dp</dimen>
+  <dimen name="spacing_huge">160.00dp</dimen>
+  <dimen name="spacing_giant">200.00dp</dimen>
+  
+</resources>

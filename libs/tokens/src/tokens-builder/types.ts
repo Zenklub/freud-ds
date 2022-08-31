@@ -2,6 +2,7 @@ import StyleDictionary from "style-dictionary";
 
 export type FormattersType = Parameters<typeof StyleDictionary.registerFormat>[0];
 export type TransformersType = Parameters<typeof StyleDictionary.registerTransform>[0];
+export type FilterType = Parameters<typeof StyleDictionary.registerFilter>[0];
 export type TransformersGroupsType = Parameters<typeof StyleDictionary.registerTransformGroup>[0];
 
 export interface ShadowComponent {
