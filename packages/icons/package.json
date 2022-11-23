@@ -1,6 +1,6 @@
 {
   "name": "@freud-ds/icons",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Zenklub - Freud DS Icons",
   "author": "Zenklub",
   "homepage": "",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && node ./build.js",
+    "build": "npm run clean && node ./build.js && cp package.json dist/package.json",
     "clean": "rm -rf dist"
   }
 }
