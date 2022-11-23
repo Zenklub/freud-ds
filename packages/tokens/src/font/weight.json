@@ -1,9 +1,11 @@
 {
   "font": {
     "weight": {
+      "black": { "value": 900 },
       "bold": { "value": 700 },
       "semibold": { "value": 600 },
-      "regular": { "value": 400 }
+      "regular": { "value": 400 },
+      "light": { "value": 300 }
     }
   }
 }

@@ -1,23 +1,50 @@
 {
   "feedback": {
     "color": {
-      "positive": {
-        "pure": { "value": "#46DA6B" },
-        "01": { "value": "#EBF9EC" },
-        "02": { "value": "#C2ECC5" },
-        "03": { "value": "#3D5A3F" }
+      "neutral": {
+        "pure": { "value": "#1764E3" },
+        "01": { "value": "#E3EBF9" },
+        "02": { "value": "#93B7F2" },
+        "03": { "value": "#558DEB" },
+        "04": { "value": "#1353BD" },
+        "05": { "value": "#0F4397" },
+        "06": { "value": "#0C3272" }
       },
-      "negative": {
-        "pure": { "value": "#FF3B30" },
-        "01": { "value": "#FFE4E1" },
-        "02": { "value": "#FFBDB9" },
-        "03": { "value": "#661F1A" }
+      "positive": {
+        "pure": { "value": "#22C55E" },
+        "01": { "value": "#DDF3E5" },
+        "02": { "value": "#98E4B4" },
+        "03": { "value": "#5DD589" },
+        "04": { "value": "#1CA44E" },
+        "05": { "value": "#17833F" },
+        "06": { "value": "#105C2C" }
       },
       "warning": {
-        "pure": { "value": "#FED223" },
-        "01": { "value": "#FFF6DD" },
-        "02": { "value": "#FFE59A" },
-        "03": { "value": "#615121" }
+        "pure": { "value": "#FDBE08" },
+        "01": { "value": "#FFF9E8" },
+        "02": { "value": "#FEE18C" },
+        "03": { "value": "#FECF4A" },
+        "04": { "value": "#C69506" },
+        "05": { "value": "#8F6C05" },
+        "06": { "value": "#594303" }
+      },
+      "alert": {
+        "pure": { "value": "#FF7A16" },
+        "01": { "value": "#FFF2E8" },
+        "02": { "value": "#FFC192" },
+        "03": { "value": "#FF9E54" },
+        "04": { "value": "#C86011" },
+        "05": { "value": "#91450D" },
+        "06": { "value": "#592B08" }
+      },
+      "negative": {
+        "pure": { "value": "#FF2026" },
+        "01": { "value": "#FFE8E9" },
+        "02": { "value": "#FF979A" },
+        "03": { "value": "#FF5C60" },
+        "04": { "value": "#C8191E" },
+        "05": { "value": "#911216" },
+        "06": { "value": "#590B0D" }
       }
     }
   }

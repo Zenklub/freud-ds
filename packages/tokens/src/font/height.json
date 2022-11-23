@@ -1,13 +1,11 @@
 {
   "line": {
     "height": {
-      "none": { "value": "100%" },
-      "xs": { "value": "115%" },
+      "auto": { "value": "auto" },
+      "xs": { "value": "100%" },
       "sm": { "value": "120%" },
-      "md": { "value": "133%" },
-      "lg": { "value": "150%" },
-      "xl": { "value": "170%" },
-      "xxl": { "value": "200%" }
+      "md": { "value": "150%" },
+      "lg": { "value": "200%" }
     }
   }
 }
