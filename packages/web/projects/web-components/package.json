@@ -1,5 +1,6 @@
 {
   "name": "@freud-ds/web-components",
+  "description": "Zenklub - Freud DS Web components",
   "version": "2.0.0",
   "scripts": {
     "build": "ng-packagr"
