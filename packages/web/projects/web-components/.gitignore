@@ -43,10 +43,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-yarn.lock
-
-.history
-.scannerwork
-.vscode
-coverage
-test-report.xml

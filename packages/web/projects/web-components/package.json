@@ -1,0 +1,15 @@
+{
+  "name": "@freud-ds/web-components",
+  "version": "2.0.0",
+  "scripts": {
+    "build": "ng-packagr"
+  },
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "primeng": "^12.2.2"
+  }
+}

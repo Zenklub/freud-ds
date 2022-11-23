@@ -1,0 +1,48 @@
+.freud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  min-width: 120px;
+
+  box-sizing: border-box;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.freud-btn.freud-btn-loading {
+  pointer-events: none;
+}
+
+.freud-btn.freud-btn-color {
+
+  &-primary {
+    color: red;
+    background-color: purple;
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+}
