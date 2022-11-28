@@ -9,13 +9,7 @@ on:
     types:
       - completed
     branches:
-      - feat/*
-      - feature/*
-      - fix/*
-      - hotfix/*
-      - master
-      - main
-      - develop
+      - 1.x.x
     pull_request:
 
 jobs:

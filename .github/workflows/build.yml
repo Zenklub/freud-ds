@@ -7,13 +7,7 @@ on:
   pull_request:
   push:
     branches:
-    - feat/*
-    - feature/*
-    - fix/*
-    - hotfix/*
-    - master
-    - main
-    - develop
+    - 1.x.x
 
 jobs:
   build:

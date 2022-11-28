@@ -2,7 +2,7 @@ name: Core-web - Deploy & Publish
 on:
   push:
     branches:
-      - develop
+      - 1.x.x
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
