@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
+import { 
+  Primary,
+  Secondary,
+  Ghost
+} from './Button.stories.ts';
+
+<Meta 
+  decorators={[
+    moduleMetadata({
+      imports: [FreudButtonModule],
+    })
+  ]}
+ title="@freud-ds/core-web/Button(Em criação)" component={FreudButtonComponent} />
+
+Header com imagem
+
+## <a id="importing"></a>Import teste
+
+```ts
+import FreudButtonModule from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Variações
+
+#### Secondary
+<Canvas>
+  <Story story={Secondary}/>
+</Canvas>
+
+#### Ghost
+<Canvas>
+  <Story story={Ghost}/>
+  <Story story={Primary} name="teste"/>
+</Canvas>
+
+### Tamanhos
+<Canvas>
+<freud-button>teste</freud-button>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudButtonComponent} />

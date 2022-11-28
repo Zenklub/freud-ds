@@ -4,14 +4,19 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "button": [
-        "dist/button/button",
-        "dist/button"
+      "@freud-ds/web-components": ["projects/web-components/src/public-api"],
+      "@angular/*": [
+        "../../node_modules/@angular/*",
       ],
-      "components": [
-        "dist/components/components",
-        "dist/components"
-      ]
+      "primeng/*": [
+        "../../node_modules/primeng/*",
+      ],
+      "primeicons/*": [
+        "../../node_modules/primeicons/*",
+      ],
+      "@freud-ds/tokens": [
+        "../tokens/dist",
+      ],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -3,14 +3,18 @@
   "description": "Zenklub - Freud DS Web components",
   "version": "2.0.0",
   "scripts": {
-    "build": "ng-packagr"
+    "build": "ng-packagr",
+    "build:lib": "ng build testlib"
   },
   "peerDependencies": {
     "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0"
+    "@angular/core": "^12.2.0",
+    "@angular/animations": "~12.2.0",
+    "@angular/cdk": "~12.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "primeng": "^12.2.2"
+    "primeng": "^12.2.2",
+    "primeicons": "^6.0.1"
   }
 }

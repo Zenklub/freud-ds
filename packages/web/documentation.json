@@ -1,0 +1,1268 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [
+        {
+            "name": "BadgeDirective",
+            "id": "component-Badge-c47389dc5fcc8b7875aca5e40cda796622e9cb00ce3fb8a8e0af4011798933961538dc5a9ca33d07ddc45ac3eadfc0a25119506e7aba1e2cee62e8b425ac7091",
+            "file": "projects/web-components/src/components/badge/badge.api.module.ts",
+            "type": "component",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { NgModule, Component, ChangeDetectionStrategy, ViewEncapsulation, Input, QueryList, ContentChildren, TemplateRef, Directive, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SharedModule } from 'primeng/api';\r\nimport { DomHandler } from 'primeng/dom';\r\nimport { UniqueComponentId } from 'primeng/utils';\r\n\r\n@Directive({\r\n    selector: '[pBadge]',\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class BadgeDirective implements AfterViewInit, OnDestroy {\r\n\r\n    @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';\r\n\r\n    public _value!: string;\r\n\r\n    public initialized!: boolean;\r\n\r\n    private id!: string;\r\n\r\n    constructor(public el: ElementRef) {}\r\n\r\n    ngAfterViewInit() {\r\n        this.id = UniqueComponentId() + '_badge';\r\n        let el = this.el.nativeElement.nodeName.indexOf(\"-\") != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\r\n\r\n        let badge = document.createElement('span');\r\n        badge.id = this.id ;\r\n        badge.className = 'p-badge p-component';\r\n\r\n        if (this.severity) {\r\n            DomHandler.addClass(badge, 'p-badge-' + this.severity);\r\n        }\r\n\r\n        if (this.value != null) {\r\n            badge.appendChild(document.createTextNode(this.value));\r\n\r\n            if (String(this.value).length === 1) {\r\n                DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n            }\r\n        }\r\n        else {\r\n            DomHandler.addClass(badge, 'p-badge-dot');\r\n        }\r\n\r\n        DomHandler.addClass(el, 'p-overlay-badge');\r\n        el.appendChild(badge);\r\n\r\n        this.initialized = true;\r\n    }\r\n\r\n    @Input() get value(): string {\r\n        return this._value;\r\n    }\r\n\r\n    set value(val: string) {\r\n        if (val !== this._value) {\r\n            this._value = val;\r\n\r\n            if (this.initialized) {\r\n                let badge = document.getElementById(this.id)!;\r\n\r\n                if (this._value) {\r\n                    if (DomHandler.hasClass(badge, 'p-badge-dot'))\r\n                        DomHandler.removeClass(badge, 'p-badge-dot');\r\n\r\n                    if (String(this._value).length === 1) {\r\n                        DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                    else {\r\n                        DomHandler.removeClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                }\r\n                else if (!this._value && !DomHandler.hasClass(badge, 'p-badge-dot')) {\r\n                    DomHandler.addClass(badge, 'p-badge-dot');\r\n                }\r\n\r\n                badge.innerHTML = '';\r\n                badge.appendChild(document.createTextNode(this._value));\r\n            }\r\n        }\r\n    }\r\n\r\n    @Input() severity!: string;\r\n\r\n    ngOnDestroy() {\r\n        this.initialized = false;\r\n    }\r\n}\r\n\r\n@Component({\r\n    selector: 'p-badge',\r\n    template: `\r\n        <span [ngClass]=\"containerClass()\" [class]=\"styleClass\" [ngStyle]=\"style\">\r\n                {{value}}\r\n        </span>\r\n    `,\r\n    changeDetection: ChangeDetectionStrategy.OnPush,\r\n    encapsulation: ViewEncapsulation.None,\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class Badge {\r\n\r\n    @Input() styleClass!: string;\r\n\r\n    @Input() style: any;\r\n\r\n    @Input() size!: string;\r\n\r\n    @Input() severity!: string;\r\n\r\n    @Input() value!: string;\r\n\r\n    containerClass() {\r\n        return {\r\n            'p-badge p-component': true,\r\n            'p-badge-no-gutter': this.value != undefined && String(this.value).length === 1,\r\n            'p-badge-lg': this.size === 'large',\r\n            'p-badge-xl': this.size === 'xlarge',\r\n            'p-badge-info': this.severity === 'info',\r\n            'p-badge-success': this.severity === 'success',\r\n            'p-badge-warning': this.severity === 'warning',\r\n            'p-badge-danger': this.severity === 'danger'\r\n        };\r\n    }\r\n}\r\n\r\n@NgModule({\r\n    imports: [CommonModule],\r\n    exports: [Badge, BadgeDirective, SharedModule],\r\n    declarations: [Badge, BadgeDirective]\r\n})\r\nexport class BadgeModule { }",
+            "selector": "[pBadge]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+                    "decorators": []
+                },
+                {
+                    "name": "severity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 86,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 54,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "_value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "el",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "initialized",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 88,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "implements": [
+                "AfterViewInit",
+                "OnDestroy"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "value": {
+                    "name": "value",
+                    "setSignature": {
+                        "name": "value",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "val",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 58,
+                        "jsdoctags": [
+                            {
+                                "name": "val",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "value",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 54
+                    }
+                }
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "AvatarComponent",
+            "id": "component-AvatarComponent-448f2cf40acf78deb92326540da3779a8c67816b88715fd1b7d23639df794f98585123209065b5667c98cf6ae1804f53de77759b8efe740c353a59926e45b628",
+            "file": "projects/web-components/src/components/avatar/avatar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-avatar",
+            "styleUrls": [
+                "./avatar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./avatar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-avatar',\n  templateUrl: './avatar.component.html',\n  styleUrls: ['./avatar.component.css']\n})\nexport class AvatarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./avatar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>avatar works!</p>\n"
+        },
+        {
+            "name": "Badge",
+            "id": "component-Badge-c47389dc5fcc8b7875aca5e40cda796622e9cb00ce3fb8a8e0af4011798933961538dc5a9ca33d07ddc45ac3eadfc0a25119506e7aba1e2cee62e8b425ac7091",
+            "file": "projects/web-components/src/components/badge/badge.api.module.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-badge",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<span [ngClass]=\"containerClass()\" [class]=\"styleClass\" [ngStyle]=\"style\">\n        {{value}}\n</span>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "severity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 114,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 112,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "style",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 110,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "styleClass",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 108,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 116,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "containerClass",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{ 'p-badge p-component': boolean; 'p-badge-no-gutter': boolean; 'p-badge-lg': boolean; 'p-badge-xl': boolean; 'p-badge-info': boolean; 'p-badge-success': boolean; 'p-badge-warning': boolean; 'p-badge-danger': boolean; }",
+                    "typeParameters": [],
+                    "line": 118,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { NgModule, Component, ChangeDetectionStrategy, ViewEncapsulation, Input, QueryList, ContentChildren, TemplateRef, Directive, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SharedModule } from 'primeng/api';\r\nimport { DomHandler } from 'primeng/dom';\r\nimport { UniqueComponentId } from 'primeng/utils';\r\n\r\n@Directive({\r\n    selector: '[pBadge]',\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class BadgeDirective implements AfterViewInit, OnDestroy {\r\n\r\n    @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';\r\n\r\n    public _value!: string;\r\n\r\n    public initialized!: boolean;\r\n\r\n    private id!: string;\r\n\r\n    constructor(public el: ElementRef) {}\r\n\r\n    ngAfterViewInit() {\r\n        this.id = UniqueComponentId() + '_badge';\r\n        let el = this.el.nativeElement.nodeName.indexOf(\"-\") != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\r\n\r\n        let badge = document.createElement('span');\r\n        badge.id = this.id ;\r\n        badge.className = 'p-badge p-component';\r\n\r\n        if (this.severity) {\r\n            DomHandler.addClass(badge, 'p-badge-' + this.severity);\r\n        }\r\n\r\n        if (this.value != null) {\r\n            badge.appendChild(document.createTextNode(this.value));\r\n\r\n            if (String(this.value).length === 1) {\r\n                DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n            }\r\n        }\r\n        else {\r\n            DomHandler.addClass(badge, 'p-badge-dot');\r\n        }\r\n\r\n        DomHandler.addClass(el, 'p-overlay-badge');\r\n        el.appendChild(badge);\r\n\r\n        this.initialized = true;\r\n    }\r\n\r\n    @Input() get value(): string {\r\n        return this._value;\r\n    }\r\n\r\n    set value(val: string) {\r\n        if (val !== this._value) {\r\n            this._value = val;\r\n\r\n            if (this.initialized) {\r\n                let badge = document.getElementById(this.id)!;\r\n\r\n                if (this._value) {\r\n                    if (DomHandler.hasClass(badge, 'p-badge-dot'))\r\n                        DomHandler.removeClass(badge, 'p-badge-dot');\r\n\r\n                    if (String(this._value).length === 1) {\r\n                        DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                    else {\r\n                        DomHandler.removeClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                }\r\n                else if (!this._value && !DomHandler.hasClass(badge, 'p-badge-dot')) {\r\n                    DomHandler.addClass(badge, 'p-badge-dot');\r\n                }\r\n\r\n                badge.innerHTML = '';\r\n                badge.appendChild(document.createTextNode(this._value));\r\n            }\r\n        }\r\n    }\r\n\r\n    @Input() severity!: string;\r\n\r\n    ngOnDestroy() {\r\n        this.initialized = false;\r\n    }\r\n}\r\n\r\n@Component({\r\n    selector: 'p-badge',\r\n    template: `\r\n        <span [ngClass]=\"containerClass()\" [class]=\"styleClass\" [ngStyle]=\"style\">\r\n                {{value}}\r\n        </span>\r\n    `,\r\n    changeDetection: ChangeDetectionStrategy.OnPush,\r\n    encapsulation: ViewEncapsulation.None,\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class Badge {\r\n\r\n    @Input() styleClass!: string;\r\n\r\n    @Input() style: any;\r\n\r\n    @Input() size!: string;\r\n\r\n    @Input() severity!: string;\r\n\r\n    @Input() value!: string;\r\n\r\n    containerClass() {\r\n        return {\r\n            'p-badge p-component': true,\r\n            'p-badge-no-gutter': this.value != undefined && String(this.value).length === 1,\r\n            'p-badge-lg': this.size === 'large',\r\n            'p-badge-xl': this.size === 'xlarge',\r\n            'p-badge-info': this.severity === 'info',\r\n            'p-badge-success': this.severity === 'success',\r\n            'p-badge-warning': this.severity === 'warning',\r\n            'p-badge-danger': this.severity === 'danger'\r\n        };\r\n    }\r\n}\r\n\r\n@NgModule({\r\n    imports: [CommonModule],\r\n    exports: [Badge, BadgeDirective, SharedModule],\r\n    declarations: [Badge, BadgeDirective]\r\n})\r\nexport class BadgeModule { }",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        },
+        {
+            "name": "ChipComponent",
+            "id": "component-ChipComponent-783eeb704e6c07686bc4a00cfbe84bc9c461e34f758d2b06e2a8d8f4d3465eccdfb0c4eb3b2cfb6a912c2b25b9e99765a90e6550842050794f0dba333ef4d041",
+            "file": "projects/web-components/src/components/chip/chip.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-chip",
+            "styleUrls": [
+                "./chip.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chip.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.css']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chip.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>chip works!</p>\n"
+        },
+        {
+            "name": "FreudBadgeComponent",
+            "id": "component-FreudBadgeComponent-8135b496f88dfa08ecafe1f69d44eda6a32dc5e50a5501f3da965260797ca28b2b100a802412c7f6ac80a2cce890d2c76973c6951e8672185ef1a0b0963026c8",
+            "file": "projects/web-components/src/components/badge/badge.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-badge",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./badge.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'freud-badge',\n  templateUrl: './badge.component.html',\n})\nexport class FreudBadgeComponent {\n\n  @Input() value?: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "teste\r\n<p-badge value=\"20\"></p-badge>"
+        },
+        {
+            "name": "FreudButtonComponent",
+            "id": "component-FreudButtonComponent-76b9a279776665d5fb646f325cd5cd0269773f4f3bbda01a15be5fc2c76023f14c43d3c92c7c340df255c35bbbb545477c2c224b1d2b0a52fedad949d7ae68a5",
+            "file": "projects/web-components/src/components/button/button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-button>\n  <ng-content></ng-content>\n</p-button>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "buttonColors",
+                    "decorators": []
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "buttonSizes",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\r\n\r\ntype buttonSizes = 'sm' | 'md' | 'lg';\r\ntype buttonColors = 'primary' | 'secondary' | 'ghost';\r\n\r\n@Component({\r\n  selector: 'freud-button',\r\n  styleUrls: ['./button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `\r\n    <p-button>\r\n      <ng-content></ng-content>\r\n    </p-button>\r\n  `,\r\n  host: {\r\n    class: 'freud-btn',\r\n    '[class.freud-btn-color-primary]': `color === 'primary'`,\r\n    '[class.freud-btn-color-secondary]': `color === 'secondary'`,\r\n\r\n    '[class.freud-btn-bgcolor]': `bgColor`,\r\n    '[class.freud-btn-loading]': `loading`,\r\n\r\n    '[class.freud-btn-size-small]': `size === 'sm'`,\r\n    '[class.freud-btn-size-medium]': `size === 'md'`,\r\n  }\r\n})\r\nexport class FreudButtonComponent {\r\n\r\n  @Input() size: buttonSizes = 'md';\r\n  @Input() color: buttonColors = 'primary';\r\n  @Input() bgColor = false;\r\n  @Input() loading = false;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".freud-btn p-button {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  width: auto;\r\n  overflow: visible;\r\n  background: transparent;\r\n  color: inherit;\r\n  cursor: pointer;\r\n  min-width: 120px;\r\n\r\n  box-sizing: border-box;\r\n  user-select: none;\r\n\r\n  &:focus {\r\n    outline: none;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &:focus-visible {\r\n    outline-offset: 2px;\r\n  }\r\n\r\n  &[disabled] {\r\n    cursor: default;\r\n    pointer-events: none;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-loading {\r\n  pointer-events: none;\r\n}\r\n\r\n.freud-btn.freud-btn-color {\r\n\r\n  &-primary {\r\n    color: red;\r\n    background-color: purple;\r\n\r\n    &:hover {\r\n      color: white;\r\n      background-color: black;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "SpeedDialComponent",
+            "id": "component-SpeedDialComponent-86b0dd2100b7e433ad638105b25b59f1d60c46ceba4dce534f358d0cde68c4630cac8b50d1bb9fe40155853b4f1f831f8146b072e7c47b72ece9e633eae0ba18",
+            "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-speed-dial",
+            "styleUrls": [
+                "./speed-dial.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./speed-dial.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-speed-dial',\n  templateUrl: './speed-dial.component.html',\n  styleUrls: ['./speed-dial.component.css']\n})\nexport class SpeedDialComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./speed-dial.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>speed-dial works!</p>\n"
+        },
+        {
+            "name": "SplitButtonComponent",
+            "id": "component-SplitButtonComponent-4976ab2b1fc70745215c42a6b2902ae421958853d3b1b12c9337fb0f5f07edbe4330d697100dc6aa60bde9a18cecf4eddede3e012853ca3a071b6cadd263101b",
+            "file": "projects/web-components/src/components/split-button/split-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-split-button",
+            "styleUrls": [
+                "./split-button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./split-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-split-button',\n  templateUrl: './split-button.component.html',\n  styleUrls: ['./split-button.component.css']\n})\nexport class SplitButtonComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./split-button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>split-button works!</p>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "BadgeModule",
+            "id": "module-BadgeModule-c47389dc5fcc8b7875aca5e40cda796622e9cb00ce3fb8a8e0af4011798933961538dc5a9ca33d07ddc45ac3eadfc0a25119506e7aba1e2cee62e8b425ac7091",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/badge/badge.api.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule, Component, ChangeDetectionStrategy, ViewEncapsulation, Input, QueryList, ContentChildren, TemplateRef, Directive, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SharedModule } from 'primeng/api';\r\nimport { DomHandler } from 'primeng/dom';\r\nimport { UniqueComponentId } from 'primeng/utils';\r\n\r\n@Directive({\r\n    selector: '[pBadge]',\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class BadgeDirective implements AfterViewInit, OnDestroy {\r\n\r\n    @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';\r\n\r\n    public _value!: string;\r\n\r\n    public initialized!: boolean;\r\n\r\n    private id!: string;\r\n\r\n    constructor(public el: ElementRef) {}\r\n\r\n    ngAfterViewInit() {\r\n        this.id = UniqueComponentId() + '_badge';\r\n        let el = this.el.nativeElement.nodeName.indexOf(\"-\") != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\r\n\r\n        let badge = document.createElement('span');\r\n        badge.id = this.id ;\r\n        badge.className = 'p-badge p-component';\r\n\r\n        if (this.severity) {\r\n            DomHandler.addClass(badge, 'p-badge-' + this.severity);\r\n        }\r\n\r\n        if (this.value != null) {\r\n            badge.appendChild(document.createTextNode(this.value));\r\n\r\n            if (String(this.value).length === 1) {\r\n                DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n            }\r\n        }\r\n        else {\r\n            DomHandler.addClass(badge, 'p-badge-dot');\r\n        }\r\n\r\n        DomHandler.addClass(el, 'p-overlay-badge');\r\n        el.appendChild(badge);\r\n\r\n        this.initialized = true;\r\n    }\r\n\r\n    @Input() get value(): string {\r\n        return this._value;\r\n    }\r\n\r\n    set value(val: string) {\r\n        if (val !== this._value) {\r\n            this._value = val;\r\n\r\n            if (this.initialized) {\r\n                let badge = document.getElementById(this.id)!;\r\n\r\n                if (this._value) {\r\n                    if (DomHandler.hasClass(badge, 'p-badge-dot'))\r\n                        DomHandler.removeClass(badge, 'p-badge-dot');\r\n\r\n                    if (String(this._value).length === 1) {\r\n                        DomHandler.addClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                    else {\r\n                        DomHandler.removeClass(badge, 'p-badge-no-gutter');\r\n                    }\r\n                }\r\n                else if (!this._value && !DomHandler.hasClass(badge, 'p-badge-dot')) {\r\n                    DomHandler.addClass(badge, 'p-badge-dot');\r\n                }\r\n\r\n                badge.innerHTML = '';\r\n                badge.appendChild(document.createTextNode(this._value));\r\n            }\r\n        }\r\n    }\r\n\r\n    @Input() severity!: string;\r\n\r\n    ngOnDestroy() {\r\n        this.initialized = false;\r\n    }\r\n}\r\n\r\n@Component({\r\n    selector: 'p-badge',\r\n    template: `\r\n        <span [ngClass]=\"containerClass()\" [class]=\"styleClass\" [ngStyle]=\"style\">\r\n                {{value}}\r\n        </span>\r\n    `,\r\n    changeDetection: ChangeDetectionStrategy.OnPush,\r\n    encapsulation: ViewEncapsulation.None,\r\n    host: {\r\n        'class': 'p-element'\r\n    }\r\n})\r\nexport class Badge {\r\n\r\n    @Input() styleClass!: string;\r\n\r\n    @Input() style: any;\r\n\r\n    @Input() size!: string;\r\n\r\n    @Input() severity!: string;\r\n\r\n    @Input() value!: string;\r\n\r\n    containerClass() {\r\n        return {\r\n            'p-badge p-component': true,\r\n            'p-badge-no-gutter': this.value != undefined && String(this.value).length === 1,\r\n            'p-badge-lg': this.size === 'large',\r\n            'p-badge-xl': this.size === 'xlarge',\r\n            'p-badge-info': this.severity === 'info',\r\n            'p-badge-success': this.severity === 'success',\r\n            'p-badge-warning': this.severity === 'warning',\r\n            'p-badge-danger': this.severity === 'danger'\r\n        };\r\n    }\r\n}\r\n\r\n@NgModule({\r\n    imports: [CommonModule],\r\n    exports: [Badge, BadgeDirective, SharedModule],\r\n    declarations: [Badge, BadgeDirective]\r\n})\r\nexport class BadgeModule { }",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Badge"
+                        },
+                        {
+                            "name": "BadgeDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Badge"
+                        },
+                        {
+                            "name": "BadgeDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudBadgeModule",
+            "id": "module-FreudBadgeModule-f35198641f2c709b1b97e3b863b9b940f910295f99085bc505329fcbf1a40290a2b460c79c759fe814463207f7e10a61eb5d3f7f59533bda84ecbfcf9ab71dd1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/badge/badge.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ButtonModule } from 'primeng/button';\r\nimport { PanelModule } from 'primeng/panel';\r\nimport { TabViewModule } from 'primeng/tabview';\r\n\r\nimport { FreudBadgeComponent } from './badge.component';\r\nimport { BadgeModule } from './badge.api.module';\r\n// import { BadgeModule } from 'primeng/badge';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ButtonModule, BadgeModule],\r\n  declarations: [FreudBadgeComponent],\r\n  exports: [FreudBadgeComponent],\r\n})\r\nexport class FreudBadgeModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudBadgeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "BadgeModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudBadgeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudButtonModule",
+            "id": "module-FreudButtonModule-2e87d3b09d3ef4faf9ca0ac3cdcdb5406f8b8aa485cf3943cb222f5f9affe2d0ee2544067b7e6bd5a747f0bb6016a65908528a7a8fe2b95c8d2ea27b1e0c2fc9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/button/button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ButtonModule } from 'primeng/button';\r\n\r\nimport { FreudButtonComponent } from './button.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ButtonModule],\r\n  declarations: [FreudButtonComponent],\r\n  exports: [FreudButtonComponent]\r\n})\r\nexport class FreudButtonModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/web-components/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "decorators",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudButtonModule],\n  })\n]"
+            },
+            {
+                "name": "decorators",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudBadgeModule],\n  })\n]"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Ghost",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/web-components/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-button [color]=\"color\">\n    Button {{color}}</freud-button>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudBadgeComponent>",
+                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge></freud-badge>\n  `,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "buttonColors",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"ghost\"",
+                "file": "projects/web-components/src/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "buttonSizes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "projects/web-components/src/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/web-components/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/web-components/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/web-components/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "stories/button/Button.stories.ts": [
+                {
+                    "name": "decorators",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudButtonModule],\n  })\n]"
+                },
+                {
+                    "name": "Ghost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-button [color]=\"color\">\n    Button {{color}}</freud-button>\n  `,\n})"
+                }
+            ],
+            "stories/badge/Badge.stories.ts": [
+                {
+                    "name": "decorators",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudBadgeModule],\n  })\n]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudBadgeComponent>",
+                    "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge></freud-badge>\n  `,\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/web-components/src/components/button/button.component.ts": [
+                {
+                    "name": "buttonColors",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"ghost\"",
+                    "file": "projects/web-components/src/components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "buttonSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "projects/web-components/src/components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/web-components/src/components/avatar/avatar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AvatarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/badge/badge.api.module.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Badge",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/badge/badge.api.module.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/badge/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudBadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/chip/chip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SpeedDialComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/split-button/split-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SplitButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "decorators",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "decorators",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Ghost",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

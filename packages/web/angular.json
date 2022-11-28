@@ -7,11 +7,12 @@
       "projectType": "library",
       "root": "projects/web-components",
       "sourceRoot": "projects/web-components/src",
-      "prefix": "lib",
+      "prefix": "freud",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
+            "tsConfig": "projects/web-components/tsconfig.lib.prod.json",
             "project": "projects/web-components/ng-package.json"
           },
           "configurations": {
@@ -30,6 +31,22 @@
             "main": "projects/web-components/src/test.ts",
             "tsConfig": "projects/web-components/tsconfig.spec.json",
             "karmaConfig": "projects/web-components/karma.conf.js"
+          }
+        }
+      }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "stories",
+      "sourceRoot": "stories",
+      "architect": {
+        "build": {
+          "options": {
+            "tsConfig": "tsconfig.json",
+            "styles": [
+              "./projects/web-components/scss/styles.scss"
+            ],
+            "scripts": []
           }
         }
       }

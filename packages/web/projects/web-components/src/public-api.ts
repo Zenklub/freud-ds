@@ -2,4 +2,5 @@
  * Public API Surface of components
  */
 
-export * from './button';
+export * from './components/badge';
+export * from './components/button';

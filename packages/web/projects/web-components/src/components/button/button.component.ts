@@ -9,7 +9,7 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
-    <p-button label="small">
+    <p-button>
       <ng-content></ng-content>
     </p-button>
   `,

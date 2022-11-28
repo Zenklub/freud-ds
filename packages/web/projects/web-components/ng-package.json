@@ -9,6 +9,7 @@
     "./scss"
   ],
   "allowedNonPeerDependencies": [
-    "primeng"
+    "primeng",
+    "primeicons"
   ]
 }
