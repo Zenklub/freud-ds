@@ -160,6 +160,7 @@ export type iconNames =
   | 'mail'
   | 'map-pin-off'
   | 'map-pin'
+  | 'meditation'
   | 'menu'
   | 'message-circle-off'
   | 'message-circle'
