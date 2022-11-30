@@ -9,20 +9,22 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
-    <p-button>
-      <ng-content></ng-content>
+    <p-button [disabled]="disabled" [loading]="loading">
+      <div class="button-content"><ng-content></ng-content></div>
     </p-button>
   `,
   host: {
     class: 'freud-btn',
-    '[class.freud-btn-color-primary]': `color === 'primary'`,
+    '[class.freud-btn-color-primary]': `!['secondary', 'ghost'].includes(color)`,
     '[class.freud-btn-color-secondary]': `color === 'secondary'`,
+    '[class.freud-btn-color-ghost]': `color === 'ghost'`,
 
     '[class.freud-btn-bgcolor]': `bgColor`,
     '[class.freud-btn-loading]': `loading`,
 
     '[class.freud-btn-size-small]': `size === 'sm'`,
     '[class.freud-btn-size-medium]': `size === 'md'`,
+    '[class.freud-btn-size-large]': `size === 'lg'`,
   }
 })
 export class FreudButtonComponent {
@@ -30,6 +32,7 @@ export class FreudButtonComponent {
   @Input() size: buttonSizes = 'md';
   @Input() color: buttonColors = 'primary';
   @Input() bgColor = false;
+  @Input() disabled = false;
   @Input() loading = false;
 
 }

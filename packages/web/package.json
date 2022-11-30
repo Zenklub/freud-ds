@@ -33,15 +33,16 @@
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "~12.2.0",
     "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0",
-    "@freud-ds/tokens": "^2.0.1"
+    "@angular/core": "^12.2.0"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "0.1202.18",
     "@angular-devkit/build-angular": "~12.2.18",
     "@angular/cli": "~12.2.18",
     "@angular/compiler-cli": "~12.2.0",
     "@babel/core": "^7.20.2",
     "@compodoc/compodoc": "^1.1.19",
+    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -60,6 +61,8 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^12.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "~4.3.5"
   }
 }

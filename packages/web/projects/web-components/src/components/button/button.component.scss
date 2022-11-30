@@ -1,48 +1,122 @@
-.freud-btn p-button {
+// TODO: Verificar o import
+@import '../../../../../../tokens/dist/style/scss/_variables.scss';
+
+.freud-btn:not(.freud-btn-bgcolor) {
+  &.freud-btn-color-primary {
+    $freud-btn-background: $brand-color-pure;
+    $freud-btn-color: $neutral-color-white;
+    $freud-btn-border: $brand-color-pure;
+    .p-button {
+      background-color: $freud-btn-background;
+      border-color: $freud-btn-border;
+      color: $freud-btn-color;
+    }
+  }
+  
+  &.freud-btn-color-secondary {
+    $freud-btn-background: $neutral-color-white;
+    $freud-btn-color: $brand-color-pure;
+    $freud-btn-border: $brand-color-pure;
+    .p-button {
+      background-color: $freud-btn-background;
+      border-color: $freud-btn-border;
+      color: $freud-btn-color;
+    }
+  }
+  
+  &.freud-btn-color-ghost {
+    $freud-btn-background: transparent;
+    $freud-btn-color: $brand-color-pure;
+    $freud-btn-border: transparent;
+    .p-button {
+      background-color: $freud-btn-background;
+      border-color: $freud-btn-border;
+      color: $freud-btn-color;
+    }
+  }
+
+  .p-button:enabled:hover {
+    background: $brand-color-01;
+    border-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+}
+
+.freud-btn.freud-btn-bgcolor {
+  &.freud-btn-color-primary {
+    .p-button {
+      background-color: $neutral-color-white;
+      border-color: $neutral-color-white;
+      color: $brand-color-pure;
+    }
+  }
+  
+  &.freud-btn-color-secondary {
+    .p-button {
+      background-color: $brand-color-pure;
+      border-color: $neutral-color-white;
+      color: $neutral-color-white;
+    }
+  }
+  
+  &.freud-btn-color-ghost {
+    .p-button {
+      background-color: transparent;
+      border-color: transparent;
+      color: $neutral-color-white;
+    }
+  }
+
+  .p-button[disabled] {
+    opacity: $opacity-level-5;
+    color: $brand-color-pure;
+  }
+
+  .p-button:enabled:hover {
+    background: $brand-color-03;
+    border-color: $brand-color-03;
+    color: $neutral-color-white;
+  }
+}
+
+
+.freud-btn .p-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  min-width: 120px;
-
-  box-sizing: border-box;
-  user-select: none;
-
-  &:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:focus-visible {
-    outline-offset: 2px;
-  }
-
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-bold;
   &[disabled] {
-    cursor: default;
-    pointer-events: none;
+    opacity: $opacity-level-5;
+  }
+  &:focus {
+    box-shadow: unset;
   }
 }
 
-.freud-btn.freud-btn-loading {
-  pointer-events: none;
+
+.freud-btn-size-small {
+  .p-button {
+    font-size: $font-size-xxs;
+    padding: 0 $spacing-size-nano;
+    height: 32px;
+  }
 }
 
-.freud-btn.freud-btn-color {
-
-  &-primary {
-    color: red;
-    background-color: purple;
-
-    &:hover {
-      color: white;
-      background-color: black;
-    }
+.freud-btn-size-medium {
+  .p-button {
+    padding: 0 $spacing-size-xxxs;
+    height: 40px;
   }
+}
+
+.freud-btn-size-large {
+  .p-button {
+    padding: 0 $spacing-size-xxs;
+    height: 48px;
+  }
+}
+
+.button-content:not(:empty) + .p-button-icon {
+  margin-left: $spacing-size-xxxs;
 }

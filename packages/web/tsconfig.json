@@ -5,17 +5,8 @@
     "baseUrl": "./",
     "paths": {
       "@freud-ds/web-components": ["projects/web-components/src/public-api"],
-      "@angular/*": [
-        "../../node_modules/@angular/*",
-      ],
-      "primeng/*": [
-        "../../node_modules/primeng/*",
-      ],
-      "primeicons/*": [
-        "../../node_modules/primeicons/*",
-      ],
       "@freud-ds/tokens": [
-        "../tokens/dist",
+        "../tokens",
       ],
     },
     "outDir": "./dist/out-tsc",

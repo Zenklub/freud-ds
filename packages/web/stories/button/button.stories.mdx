@@ -4,7 +4,15 @@ import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-component
 import { 
   Primary,
   Secondary,
-  Ghost
+  Ghost,
+  PrimaryBackground,
+  SecondaryBackground,
+  GhostBackground,
+  SizeSM,
+  SizeMD,
+  SizeLG,
+  Disabled,
+  Loading
 } from './Button.stories.ts';
 
 <Meta 
@@ -13,32 +21,57 @@ import {
       imports: [FreudButtonModule],
     })
   ]}
- title="@freud-ds/core-web/Button(Em criação)" component={FreudButtonComponent} />
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent} />
 
 Header com imagem
 
-## <a id="importing"></a>Import teste
+## <a id="importing"></a>Import
 
 ```ts
 import FreudButtonModule from '@freud-ds/web-components';
 ```
 
-## <a id="exemplos"></a>Variações
+## <a id="exemplos"></a>Exemplos
 
-#### Secondary
+### Cores
 <Canvas>
+  <Story story={Primary}/>
   <Story story={Secondary}/>
+  <Story story={Ghost}/>
 </Canvas>
 
-#### Ghost
-<Canvas>
-  <Story story={Ghost}/>
-  <Story story={Primary} name="teste"/>
+### Com background
+<Canvas style={{ backgroundColor: '#6732D1' }}>
+  <Story story={PrimaryBackground}/>
+  <Story story={SecondaryBackground}/>
+  <Story story={GhostBackground}/>
 </Canvas>
 
 ### Tamanhos
 <Canvas>
-<freud-button>teste</freud-button>
+  <Story story={SizeSM}/>
+  <Story story={SizeMD}/>
+  <Story story={SizeLG}/>
+</Canvas>
+
+### Desabilitado
+<Canvas>
+  <Story story={Disabled}/>
+</Canvas>
+
+### Loading
+<Canvas>
+  <Story story={Loading}/>
 </Canvas>
 
 ## <a id="api"></a>API
