@@ -8,68 +8,6 @@
     "directives": [],
     "components": [
         {
-            "name": "AvatarComponent",
-            "id": "component-AvatarComponent-448f2cf40acf78deb92326540da3779a8c67816b88715fd1b7d23639df794f98585123209065b5667c98cf6ae1804f53de77759b8efe740c353a59926e45b628",
-            "file": "projects/web-components/src/components/avatar/avatar.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-avatar",
-            "styleUrls": [
-                "./avatar.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./avatar.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-avatar',\n  templateUrl: './avatar.component.html',\n  styleUrls: ['./avatar.component.css']\n})\nexport class AvatarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./avatar.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>avatar works!</p>\n"
-        },
-        {
             "name": "ChipComponent",
             "id": "component-ChipComponent-783eeb704e6c07686bc4a00cfbe84bc9c461e34f758d2b06e2a8d8f4d3465eccdfb0c4eb3b2cfb6a912c2b25b9e99765a90e6550842050794f0dba333ef4d041",
             "file": "projects/web-components/src/components/chip/chip.component.ts",
@@ -132,27 +70,148 @@
             "templateData": "<p>chip works!</p>\n"
         },
         {
-            "name": "FreudBadgeComponent",
-            "id": "component-FreudBadgeComponent-8135b496f88dfa08ecafe1f69d44eda6a32dc5e50a5501f3da965260797ca28b2b100a802412c7f6ac80a2cce890d2c76973c6951e8672185ef1a0b0963026c8",
-            "file": "projects/web-components/src/components/badge/badge.component.ts",
-            "encapsulation": [],
+            "name": "FreudAvatarComponent",
+            "id": "component-FreudAvatarComponent-cef58f1a625a060d9dbab6f3e4be82cd3d0cf05b8eccc3372143718503ab8e141d99ae6237721bc47298dcacc020029e26ecf0f7fe85821b3d22d41d404604e0",
+            "file": "projects/web-components/src/components/avatar/avatar.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-avatar",
+            "styleUrls": [
+                "./avatar.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  [att.pBadge]=\"!!badge\"\n  [value]=\"badge\"\n  [image]=\"image\">\n</p-avatar>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "badge",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "iconName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "image",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "avatarSizes",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      [att.pBadge]=\"!!badge\"\n      [value]=\"badge\"\n      [image]=\"image\">\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-avatar .p-avatar {\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-avatar-size-small .p-avatar {\r\n    width: 28px;\r\n    height: 28px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar-size-medium .p-avatar {\r\n    width: 42px;\r\n    height: 42px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar-size-large .p-avatar {\r\n    width: 56px;\r\n    height: 56px;\r\n    font-size: $font-size-md;\r\n}\r\n\r\n.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {\r\n    background-color: $neutral-color-light-02;\r\n    color: $neutral-color-dark-03;\r\n}\r\n\r\n.freud-avatar.freud-avatar-bgcolor .p-avatar {\r\n    background-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n}",
+                    "styleUrl": "./avatar.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudBadgeComponent",
+            "id": "component-FreudBadgeComponent-eca901960c524d460a139a1ccc03ab08b612031f99584ed7218981c86e6bd36dfbaba096f1e996b94bf8fe4c6b4a8f7a3c2433d3bcf7dac336c543524cf93b01",
+            "file": "projects/web-components/src/components/badge/badge.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "freud-badge",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./badge.component.html"
+            "styleUrls": [
+                "./badge.component.scss"
             ],
+            "styles": [],
+            "template": "<p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n",
+            "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "value",
+                    "name": "color",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 24,
+                    "type": "colors",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "sizes",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 }
@@ -167,15 +226,19 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'freud-badge',\n  templateUrl: './badge.component.html',\n})\nexport class FreudBadgeComponent {\n\n  @Input() value?: string;\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "templateData": "teste\r\n<p-badge value=\"20\"></p-badge>"
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-badge .p-badge {\r\n    background-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-badge p-badge {\r\n  &.freud-color-success span {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  &.freud-color-info span {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  &.freud-color-warning span {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  &.freud-color-error span {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n  &.freud-color-actived span {\r\n    background-color: $complementary-color-like-03;\r\n  }\r\n}\r\n\r\n.freud-badge:not(.size-small) .p-badge {\r\n    border-radius: 12px;\r\n    font-size: $font-size-xs;\r\n}\r\n.size-small .p-badge {\r\n    border-radius: $border-radius-md;\r\n    min-width: 16px;\r\n    height: 16px;\r\n    line-height: 16px;\r\n}\r\n",
+                    "styleUrl": "./badge.component.scss"
+                }
+            ],
+            "stylesData": ""
         },
         {
             "name": "FreudButtonComponent",
-            "id": "component-FreudButtonComponent-8e281801cc3da6695aa3356afa0111401164b8b21abbf76757897d6ebdda4d8fd9b8fbf0f9d53ca8ac261308077e0b934ddd8c9b3e4de173e20ea1213ddad2cd",
+            "id": "component-FreudButtonComponent-4b197284d2b4c8b7c7d09b2a030578a6f394f3d31a9f104e9968fd58ed68ecfbc8f90529db34aa795d0c9e3524d09143fc7d6c2e8cec3b363c6b511e0480ef82",
             "file": "projects/web-components/src/components/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -191,7 +254,7 @@
                 "./button.component.scss"
             ],
             "styles": [],
-            "template": "<p-button>\n  <ng-content></ng-content>\n</p-button>\n",
+            "template": "<p-button [disabled]=\"disabled\" [loading]=\"loading\">\n  <div class=\"button-content\"><ng-content></ng-content></div>\n</p-button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -200,7 +263,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 34,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -209,8 +272,17 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "buttonColors",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -218,7 +290,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 36,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -227,7 +299,7 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 32,
                     "type": "buttonSizes",
                     "decorators": []
                 }
@@ -242,12 +314,65 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\r\n\r\ntype buttonSizes = 'sm' | 'md' | 'lg';\r\ntype buttonColors = 'primary' | 'secondary' | 'ghost';\r\n\r\n@Component({\r\n  selector: 'freud-button',\r\n  styleUrls: ['./button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `\r\n    <p-button>\r\n      <ng-content></ng-content>\r\n    </p-button>\r\n  `,\r\n  host: {\r\n    class: 'freud-btn',\r\n    '[class.freud-btn-color-primary]': `color === 'primary'`,\r\n    '[class.freud-btn-color-secondary]': `color === 'secondary'`,\r\n\r\n    '[class.freud-btn-bgcolor]': `bgColor`,\r\n    '[class.freud-btn-loading]': `loading`,\r\n\r\n    '[class.freud-btn-size-small]': `size === 'sm'`,\r\n    '[class.freud-btn-size-medium]': `size === 'md'`,\r\n    '[class.freud-btn-size-large]': `size === 'lg'`,\r\n  }\r\n})\r\nexport class FreudButtonComponent {\r\n\r\n  @Input() size: buttonSizes = 'md';\r\n  @Input() color: buttonColors = 'primary';\r\n  @Input() bgColor = false;\r\n  @Input() loading = false;\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\r\n\r\ntype buttonSizes = 'sm' | 'md' | 'lg';\r\ntype buttonColors = 'primary' | 'secondary' | 'ghost';\r\n\r\n@Component({\r\n  selector: 'freud-button',\r\n  styleUrls: ['./button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `\r\n    <p-button [disabled]=\"disabled\" [loading]=\"loading\">\r\n      <div class=\"button-content\"><ng-content></ng-content></div>\r\n    </p-button>\r\n  `,\r\n  host: {\r\n    class: 'freud-btn',\r\n    '[class.freud-btn-color-primary]': `!['secondary', 'ghost'].includes(color)`,\r\n    '[class.freud-btn-color-secondary]': `color === 'secondary'`,\r\n    '[class.freud-btn-color-ghost]': `color === 'ghost'`,\r\n\r\n    '[class.freud-btn-bgcolor]': `bgColor`,\r\n    '[class.freud-btn-loading]': `loading`,\r\n\r\n    '[class.freud-btn-size-small]': `size === 'sm'`,\r\n    '[class.freud-btn-size-medium]': `size === 'md'`,\r\n    '[class.freud-btn-size-large]': `size === 'lg'`,\r\n  }\r\n})\r\nexport class FreudButtonComponent {\r\n\r\n  @Input() size: buttonSizes = 'md';\r\n  @Input() color: buttonColors = 'primary';\r\n  @Input() bgColor = false;\r\n  @Input() disabled = false;\r\n  @Input() loading = false;\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  width: auto;\r\n  overflow: visible;\r\n  background: transparent;\r\n  color: inherit;\r\n  cursor: pointer;\r\n  min-width: 120px;\r\n\r\n  box-sizing: border-box;\r\n  user-select: none;\r\n\r\n  &:focus {\r\n    outline: none;\r\n    box-shadow: none;\r\n  }\r\n\r\n  &:focus-visible {\r\n    outline-offset: 2px;\r\n  }\r\n\r\n  &[disabled] {\r\n    cursor: default;\r\n    pointer-events: none;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-loading {\r\n  pointer-events: none;\r\n}\r\n\r\n.freud-btn.freud-btn-color {\r\n\r\n  &-primary {\r\n    color: red;\r\n    background-color: purple;\r\n\r\n    &:hover {\r\n      color: white;\r\n      background-color: black;\r\n    }\r\n  }\r\n}\r\n\r\n.freud-btn-size-small {\r\n\r\n}\r\n\r\n.freud-btn-size-large {\r\n  \r\n}\r\n\r\n.freud-btn-size-large {\r\n  \r\n}",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    $freud-btn-background: $brand-color-pure;\r\n    $freud-btn-color: $neutral-color-white;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  font-weight: $font-weight-bold;\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudTypographyComponent",
+            "id": "component-FreudTypographyComponent-6465d5d956bcb61b750afd1c241ba87bda02006fd91490504182be0fe7b0a020bc6ed8d552d616cc3a1292383769af6910196fd511c8916712718f31eaa5eedf",
+            "file": "projects/web-components/src/components/typography/typography.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "freudTypography",
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[freud-typography]",
+            "styleUrls": [
+                "./typography.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "'body-sm-regular'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 55,
+                    "type": "fontTypes",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  Input,\r\n  ViewEncapsulation,\r\n} from '@angular/core';\r\n\r\nexport const types = [\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const;\r\ntype fontTypes = typeof types[number];\r\n\r\n@Component({\r\n  selector: '[freud-typography]',\r\n  exportAs: 'freudTypography',\r\n  styleUrls: ['./typography.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `<ng-content></ng-content> `,\r\n  host: {\r\n    class: 'freud-typography',\r\n    '[class.freud-typography-type-display]': 'type === \"display\"',\r\n    '[class.freud-typography-type-heading-xl]': 'type === \"heading-xl\"',\r\n    '[class.freud-typography-type-heading-lg]': 'type === \"heading-lg\"',\r\n    '[class.freud-typography-type-heading-md]': 'type === \"heading-md\"',\r\n    '[class.freud-typography-type-heading-sm]': 'type === \"heading-sm\"',\r\n    '[class.freud-typography-type-subtitle-lg]': 'type === \"subtitle-lg\"',\r\n    '[class.freud-typography-type-subtitle-md]': 'type === \"subtitle-md\"',\r\n    '[class.freud-typography-type-subtitle-sm]': 'type === \"subtitle-sm\"',\r\n    '[class.freud-typography-type-body-lg-bold]': 'type === \"body-lg-bold\"',\r\n    '[class.freud-typography-type-body-lg-regular]':\r\n      'type === \"body-lg-regular\"',\r\n    '[class.freud-typography-type-body-sm-bold]': 'type === \"body-sm-bold\"',\r\n    '[class.freud-typography-type-body-sm-regular]':\r\n      'type === \"body-sm-regular\"',\r\n    '[class.freud-typography-type-caption]': 'type === \"caption\"',\r\n    '[class.freud-typography-type-title-highlight]':\r\n      'type === \"title-highlight\"',\r\n  },\r\n})\r\nexport class FreudTypographyComponent {\r\n  @Input() type: fontTypes = 'body-sm-regular';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use 'sass:map';\r\n// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n@import '../../../../../../grid/src/scss/grid-variables.scss';\r\n\r\n\r\n.freud-typography {\r\n  font-family: $font-family-base;\r\n  margin: 0;\r\n}\r\n\r\n.freud-typography-type {\r\n\r\n  &-display {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-xxxl;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-heading-xl {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-xxl;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-heading-lg {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-lg;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-heading-md {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-md;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-heading-sm {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-subtitle-lg {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-md;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-subtitle-md {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-subtitle-sm {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-body-lg-bold {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-body-lg-regular {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-body-sm-bold {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-body-sm-regular {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-caption {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xxs;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-title-highlight {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xxs;\r\n    line-height: $line-height-sm;\r\n    text-transform: uppercase;\r\n    letter-spacing: 4px;\r\n  }\r\n}\r\n\r\n\r\n@media (max-width: map.get($breakpoints, \"md\")) {\r\n  .freud-typography-type {\r\n    &-display {\r\n      font-size: $font-size-xl;\r\n    }\r\n\r\n    &-heading-xl {\r\n      font-size: $font-size-lg;\r\n    }\r\n\r\n    &-heading-lg {\r\n      font-size: $font-size-md;\r\n    }\r\n\r\n    &-heading-md {\r\n      font-size: $font-size-sm;\r\n    }\r\n\r\n    &-heading-sm {\r\n      font-size: $font-size-xs;\r\n    }\r\n\r\n    &-subtitle-lg {\r\n      font-size: $font-size-sm;\r\n    }\r\n\r\n    &-subtitle-md {\r\n      font-size: $font-size-xs;\r\n    }\r\n\r\n    &-subtitle-sm {\r\n      font-size: $font-size-xxs;\r\n    }\r\n\r\n    &-body-lg-bold {\r\n      font-size: $font-size-xs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-lg-regular {\r\n      font-size: $font-size-xs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-sm-bold {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-sm-regular {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-caption {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-xs;\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "styleUrl": "./typography.component.scss"
                 }
             ],
             "stylesData": ""
@@ -379,6 +504,50 @@
     ],
     "modules": [
         {
+            "name": "FreudAvatarModule",
+            "id": "module-FreudAvatarModule-a9c112deaff5705c8a58cc69977a4c527ebe79997e4166d1b8e6e68f46b995d2253ac023a849c8ab82900073636d5892c692ca130b9bef932215a4142ac75378",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/avatar/avatar.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { AvatarModule } from 'primeng/avatar';\r\n\r\nimport { FreudAvatarComponent } from './avatar.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, AvatarModule],\r\n  declarations: [FreudAvatarComponent],\r\n  exports: [FreudAvatarComponent]\r\n})\r\nexport class FreudAvatarModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudAvatarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudAvatarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "FreudBadgeModule",
             "id": "module-FreudBadgeModule-cb68a687561b658c92aa8a6ac6f26eca6d5640eda702091624d0c42f4c0e3d9737b97fd9672761fc6fbce79b64b7b3f464434d75b1741f6b460ef309189ea7d7",
             "description": "",
@@ -465,10 +634,74 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "FreudTypographyModule",
+            "id": "module-FreudTypographyModule-763a06fdd0b7c597320200983edb506c090417074deb81fbb891a289348ef0701360036a4c1f4b11135a3af4b9e98889a91ae71b1eb7850cb5307f6b4e593cef",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/typography/typography.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FreudTypographyComponent } from './typography.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule],\r\n  declarations: [FreudTypographyComponent],\r\n  exports: [FreudTypographyComponent],\r\n})\r\nexport class FreudTypographyModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudTypographyComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudTypographyComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "Actived",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -480,17 +713,17 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "decorators",
+                "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudBadgeModule],\n  })\n]"
+                "type": "",
+                "defaultValue": "TemplateDisabled.bind({})"
             },
             {
-                "name": "Default",
+                "name": "Error",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/badge/Badge.stories.ts",
@@ -510,7 +743,87 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "GhostBackground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Imagem",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Info",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateLoading.bind({})"
+            },
+            {
+                "name": "Medium",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryBackground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button/Button.stories.ts",
@@ -532,14 +845,14 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
+                "name": "SecondaryBackground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button/Button.stories.ts",
@@ -547,6 +860,76 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SizeLG",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateSize.bind({})"
+            },
+            {
+                "name": "SizeMD",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateSize.bind({})"
+            },
+            {
+                "name": "SizeSM",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateSize.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudAvatarComponent>",
+                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -556,7 +939,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudBadgeComponent>",
-                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge></freud-badge>\n  `,\n})"
+                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -566,11 +959,92 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
-                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-button [color]=\"color\">\n      Button {{color}}\n    </freud-button>\n  `,\n})"
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
+            },
+            {
+                "name": "TemplateDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Disabled'),\n})"
+            },
+            {
+                "name": "templateHTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\">{{label}}</freud-button>\n`"
+            },
+            {
+                "name": "TemplateLoading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button'),\n})"
+            },
+            {
+                "name": "TemplateSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{size}}'),\n})"
+            },
+            {
+                "name": "types",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/web-components/src/components/typography/typography.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "[\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const"
+            },
+            {
+                "name": "Typography",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Warning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "avatarSizes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "projects/web-components/src/components/avatar/avatar.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
             {
                 "name": "buttonColors",
                 "ctype": "miscellaneous",
@@ -592,10 +1066,187 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 186
+            },
+            {
+                "name": "colors",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
+                "file": "projects/web-components/src/components/badge/badge.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "fontTypes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/web-components/src/components/typography/typography.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "sizes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\"",
+                "file": "projects/web-components/src/components/badge/badge.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
             }
         ],
         "enumerations": [],
         "groupedVariables": {
+            "stories/badge/Badge.stories.ts": [
+                {
+                    "name": "Actived",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Info",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudBadgeComponent>",
+                    "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
+                },
+                {
+                    "name": "Warning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/badge/Badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "stories/avatar/Avatar.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Imagem",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Medium",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudAvatarComponent>",
+                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                }
+            ],
             "projects/web-components/src/test.ts": [
                 {
                     "name": "context",
@@ -617,49 +1268,17 @@
                     "type": "literal type"
                 }
             ],
-            "stories/badge/Badge.stories.ts": [
-                {
-                    "name": "decorators",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/badge/Badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  moduleMetadata({\n    imports: [FreudBadgeModule],\n  })\n]"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/badge/Badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/badge/Badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/badge/Badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudBadgeComponent>",
-                    "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge></freud-badge>\n  `,\n})"
-                }
-            ],
             "stories/button/Button.stories.ts": [
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateDisabled.bind({})"
+                },
                 {
                     "name": "Ghost",
                     "ctype": "miscellaneous",
@@ -669,6 +1288,26 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "GhostBackground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateLoading.bind({})"
                 },
                 {
                     "name": "Primary",
@@ -681,6 +1320,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "PrimaryBackground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -691,6 +1340,46 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "SecondaryBackground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SizeLG",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSize.bind({})"
+                },
+                {
+                    "name": "SizeMD",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSize.bind({})"
+                },
+                {
+                    "name": "SizeSM",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSize.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -698,13 +1387,100 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudButtonComponent>",
-                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-button [color]=\"color\">\n      Button {{color}}\n    </freud-button>\n  `,\n})"
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
+                },
+                {
+                    "name": "TemplateDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Disabled'),\n})"
+                },
+                {
+                    "name": "templateHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\">{{label}}</freud-button>\n`"
+                },
+                {
+                    "name": "TemplateLoading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button'),\n})"
+                },
+                {
+                    "name": "TemplateSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{size}}'),\n})"
+                }
+            ],
+            "stories/typography/typography.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "Typography",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/web-components/src/components/typography/typography.component.ts": [
+                {
+                    "name": "types",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/web-components/src/components/typography/typography.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "[\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/web-components/src/components/avatar/avatar.component.ts": [
+                {
+                    "name": "avatarSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "projects/web-components/src/components/avatar/avatar.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
             "projects/web-components/src/components/button/button.component.ts": [
                 {
                     "name": "buttonColors",
@@ -728,6 +1504,43 @@
                     "description": "",
                     "kind": 186
                 }
+            ],
+            "projects/web-components/src/components/badge/badge.component.ts": [
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/web-components/src/components/typography/typography.component.ts": [
+                {
+                    "name": "fontTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/web-components/src/components/typography/typography.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
             ]
         }
     },
@@ -740,9 +1553,9 @@
                 "filePath": "projects/web-components/src/components/avatar/avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "AvatarComponent",
+                "name": "FreudAvatarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -751,7 +1564,7 @@
                 "linktype": "component",
                 "name": "FreudBadgeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -760,7 +1573,7 @@
                 "linktype": "component",
                 "name": "FreudButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -791,6 +1604,25 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/web-components/src/components/typography/typography.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudTypographyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/typography/typography.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "types",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/web-components/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -811,11 +1643,61 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/badge/Badge.stories.ts",
+                "filePath": "stories/avatar/Avatar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "decorators",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Imagem",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Medium",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -825,7 +1707,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Actived",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -835,7 +1717,47 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "Error",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Info",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -846,6 +1768,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/badge/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Warning",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -865,7 +1807,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "GhostBackground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryBackground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -885,7 +1857,107 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "SecondaryBackground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SizeLG",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SizeMD",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SizeSM",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "templateHTML",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateLoading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Typography",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

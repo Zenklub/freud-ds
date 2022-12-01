@@ -1,0 +1,162 @@
+@use 'sass:map';
+// TODO: Verificar o import
+@import '../../../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../../../../grid/src/scss/grid-variables.scss';
+
+
+.freud-typography {
+  font-family: $font-family-base;
+  margin: 0;
+}
+
+.freud-typography-type {
+
+  &-display {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xxxl;
+    line-height: $line-height-xs;
+  }
+
+  &-heading-xl {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xxl;
+    line-height: $line-height-xs;
+  }
+
+  &-heading-lg {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    line-height: $line-height-sm;
+  }
+
+  &-heading-md {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    line-height: $line-height-sm;
+  }
+
+  &-heading-sm {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  &-subtitle-lg {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-md;
+    line-height: $line-height-xs;
+  }
+
+  &-subtitle-md {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+  }
+
+  &-subtitle-sm {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xs;
+    line-height: $line-height-md;
+  }
+
+  &-body-lg-bold {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  &-body-lg-regular {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  &-body-sm-bold {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xs;
+    line-height: $line-height-md;
+  }
+
+  &-body-sm-regular {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xs;
+    line-height: $line-height-md;
+  }
+
+  &-caption {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xxs;
+    line-height: $line-height-xs;
+  }
+
+  &-title-highlight {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xxs;
+    line-height: $line-height-sm;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+}
+
+
+@media (max-width: map.get($breakpoints, "md")) {
+  .freud-typography-type {
+    &-display {
+      font-size: $font-size-xl;
+    }
+
+    &-heading-xl {
+      font-size: $font-size-lg;
+    }
+
+    &-heading-lg {
+      font-size: $font-size-md;
+    }
+
+    &-heading-md {
+      font-size: $font-size-sm;
+    }
+
+    &-heading-sm {
+      font-size: $font-size-xs;
+    }
+
+    &-subtitle-lg {
+      font-size: $font-size-sm;
+    }
+
+    &-subtitle-md {
+      font-size: $font-size-xs;
+    }
+
+    &-subtitle-sm {
+      font-size: $font-size-xxs;
+    }
+
+    &-body-lg-bold {
+      font-size: $font-size-xs;
+      line-height: $line-height-md;
+    }
+
+    &-body-lg-regular {
+      font-size: $font-size-xs;
+      line-height: $line-height-md;
+    }
+
+    &-body-sm-bold {
+      font-size: $font-size-xxs;
+      line-height: $line-height-md;
+    }
+
+    &-body-sm-regular {
+      font-size: $font-size-xxs;
+      line-height: $line-height-md;
+    }
+
+    &-caption {
+      font-size: $font-size-xxs;
+      line-height: $line-height-xs;
+    }
+  }
+
+}

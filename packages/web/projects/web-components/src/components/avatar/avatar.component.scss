@@ -1,0 +1,34 @@
+// TODO: Verificar o import
+@import '../../../../../../tokens/dist/style/scss/_variables.scss';
+
+.freud-avatar .p-avatar {
+    font-family: $font-family-base;
+}
+
+.freud-avatar-size-small .p-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: $font-size-xs;
+}
+
+.freud-avatar-size-medium .p-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: $font-size-xs;
+}
+
+.freud-avatar-size-large .p-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: $font-size-md;
+}
+
+.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {
+    background-color: $neutral-color-light-02;
+    color: $neutral-color-dark-03;
+}
+
+.freud-avatar.freud-avatar-bgcolor .p-avatar {
+    background-color: $brand-color-03;
+    color: $neutral-color-white;
+}
