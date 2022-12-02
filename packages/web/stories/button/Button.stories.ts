@@ -7,7 +7,10 @@ const templateHTML = `
       [bgColor]="bgColor"
       [size]="size"
       [disabled]="disabled"
-      [loading]="loading">{{label}}</freud-button>
+      [loading]="loading"
+      freudBadge
+      value="1"
+      >{{label}}</freud-button>
 `;
 
 // Collors

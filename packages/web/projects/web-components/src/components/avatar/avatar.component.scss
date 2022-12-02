@@ -5,19 +5,24 @@
     font-family: $font-family-base;
 }
 
-.freud-avatar-size-small .p-avatar {
+.freud-avatar {
+    position: relative;
+    display: block;
+}
+
+.freud-avatar.freud-avatar-size-small, .freud-avatar-size-small .p-avatar {
     width: 28px;
     height: 28px;
     font-size: $font-size-xs;
 }
 
-.freud-avatar-size-medium .p-avatar {
+.freud-avatar.freud-avatar-size-medium, .freud-avatar-size-medium .p-avatar {
     width: 42px;
     height: 42px;
     font-size: $font-size-xs;
 }
 
-.freud-avatar-size-large .p-avatar {
+.freud-avatar.freud-avatar-size-large, .freud-avatar-size-large .p-avatar {
     width: 56px;
     height: 56px;
     font-size: $font-size-md;
@@ -31,4 +36,9 @@
 .freud-avatar.freud-avatar-bgcolor .p-avatar {
     background-color: $brand-color-03;
     color: $neutral-color-white;
+}
+freud-badge {
+    position: absolute;
+    top: -12px;
+    right: -4px;
 }

@@ -1,12 +1,17 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudAvatarComponent, FreudAvatarModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../header/header.component';
 import { 
   Small,
   Medium,
   Large,
   BgColor,
-  Imagem
+  Imagem,
+  ImagemEBadge,
+  BadgeSmall,
+  BadgeMedium,
+  BadgeLarge
 } from './Avatar.stories.ts';
 
 <Meta 
@@ -37,6 +42,16 @@ import {
   component={FreudAvatarComponent}
 />
 
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Avatar",
+      description: "É normalmente usado para exibir imagens de perfil de usuário."
+    },
+  }}
+</Story>
+
 ## <a id="importing"></a>Import
 
 ```ts
@@ -60,6 +75,7 @@ import FreudAvatarModule from '@freud-ds/web-components';
 #### Imagem
 <Canvas>
   <Story story={Imagem}/>
+  <Story story={ImagemEBadge}/>
 </Canvas>
 
 #### Com icone
@@ -69,7 +85,9 @@ import FreudAvatarModule from '@freud-ds/web-components';
 
 #### Com badge
 <Canvas>
-  Em andamento
+  <Story story={BadgeSmall}/>
+  <Story story={BadgeMedium}/>
+  <Story story={BadgeLarge}/>
 </Canvas>
 
 

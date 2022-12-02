@@ -9,8 +9,8 @@
     "components": [
         {
             "name": "ChipComponent",
-            "id": "component-ChipComponent-783eeb704e6c07686bc4a00cfbe84bc9c461e34f758d2b06e2a8d8f4d3465eccdfb0c4eb3b2cfb6a912c2b25b9e99765a90e6550842050794f0dba333ef4d041",
-            "file": "projects/web-components/src/components/chip/chip.component.ts",
+            "id": "component-ChipComponent-8f046df4b38f304164c6233b06770d82908c26daf3051974b3163dfec6c1d2c11452b9816cbfb9c62d8d177b2706278ae5db24a828912a3f73ea79cb0cd2df24",
+            "file": "projects/web-components/src/components/header/chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -18,7 +18,7 @@
             "providers": [],
             "selector": "lib-chip",
             "styleUrls": [
-                "./chip.component.css"
+                "./chip.component.scss"
             ],
             "styles": [],
             "templateUrl": [
@@ -47,12 +47,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.css']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./chip.component.css"
+                    "styleUrl": "./chip.component.scss"
                 }
             ],
             "stylesData": "",
@@ -70,8 +70,71 @@
             "templateData": "<p>chip works!</p>\n"
         },
         {
+            "name": "ChipComponent",
+            "id": "component-ChipComponent-df008d0e733fb0a41c96ad99b42db18a5a6b0954d83dfd39108a96fa770067052b4d3b20762e5d8085b12c674af0a4ec4119d7c35829e815e62f21f10f280028-1",
+            "file": "projects/web-components/src/components/chip/chip.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-chip",
+            "styleUrls": [
+                "./chip.component.scss"
+            ],
+            "styles": [],
+            "template": "./chip.component.html",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  template: `./chip.component.html`,\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chip.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ChipComponent-1"
+        },
+        {
             "name": "FreudAvatarComponent",
-            "id": "component-FreudAvatarComponent-cef58f1a625a060d9dbab6f3e4be82cd3d0cf05b8eccc3372143718503ab8e141d99ae6237721bc47298dcacc020029e26ecf0f7fe85821b3d22d41d404604e0",
+            "id": "component-FreudAvatarComponent-a26ebada00f52f0c26267eb89c45d94c48471bba334eb25947d75050aa6700dc750b7d92bdf5050d81f85bd6c8b346b23e90ad113d171c591660f6dade814648",
             "file": "projects/web-components/src/components/avatar/avatar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -87,7 +150,7 @@
                 "./avatar.component.scss"
             ],
             "styles": [],
-            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  [att.pBadge]=\"!!badge\"\n  [value]=\"badge\"\n  [image]=\"image\">\n</p-avatar>\n",
+            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  freudBadge\n  value=\"1\"\n  [image]=\"image\">\n</p-avatar>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -156,7 +219,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      [att.pBadge]=\"!!badge\"\n      [value]=\"badge\"\n      [image]=\"image\">\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      freudBadge\n      value=\"1\"\n      [image]=\"image\">\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -168,7 +231,7 @@
         },
         {
             "name": "FreudBadgeComponent",
-            "id": "component-FreudBadgeComponent-eca901960c524d460a139a1ccc03ab08b612031f99584ed7218981c86e6bd36dfbaba096f1e996b94bf8fe4c6b4a8f7a3c2433d3bcf7dac336c543524cf93b01",
+            "id": "component-FreudBadgeComponent-29b78429badcaf2ea901f463d6464adb44a289c1946645bbf9a51a6095a5ed7646ca872fcd5033763701c856de6d9d33c94e8f28863fb5d7a441af5eabe9466b",
             "file": "projects/web-components/src/components/badge/badge.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -193,7 +256,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 122,
                     "type": "colors",
                     "decorators": []
                 },
@@ -202,7 +265,7 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 121,
                     "type": "sizes",
                     "decorators": []
                 },
@@ -211,7 +274,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 120,
                     "type": "string",
                     "decorators": []
                 }
@@ -226,15 +289,232 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
+            "sourceCode": "import { AfterViewInit, ChangeDetectionStrategy,\n  Component, Directive, ElementRef, Input, OnDestroy, ViewEncapsulation } from '@angular/core';\nimport { UniqueComponentId } from 'primeng/utils';\nimport { DomHandler } from 'primeng/dom';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\ntype BadgeDirectiveIconPosition = 'left' | 'right' | 'top' | 'bottom';\n\n@Component({\n  selector: '[freudBadge]',\n  styleUrls: ['./badge.component.scss'],\n  exportAs: 'freudBadge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `<ng-content></ng-content> `,\n  host: {\n      class: 'p-element'\n  }\n})\nexport class FreudBadgeDirective implements AfterViewInit, OnDestroy {\n  @Input() iconPos: BadgeDirectiveIconPosition = 'left';\n\n  public _value!: string;\n\n  public initialized!: boolean;\n\n  private id!: string;\n\n  constructor(public el: ElementRef) {}\n\n  ngAfterViewInit() {\n      this.id = UniqueComponentId() + '_badge';\n      let el = this.el.nativeElement.nodeName.indexOf('-') != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\n\n      let badge = document.createElement('freud-badge');\n      badge.className = 'freud-badge';\n      if (this.size === 'sm') {\n        badge.classList.add('size-small');\n      }\n      let badgeP = document.createElement('p-badge');\n      badgeP.className = `freud-color-${this.color}`;\n\n      let badgeSpan = document.createElement('span');\n      badgeSpan.className = 'p-badge p-component';\n      badgeSpan.id = this.id;\n\n      badgeP.appendChild(badgeSpan);\n      badge.appendChild(badgeP);\n\n      if (this.value != null) {\n        badgeSpan.appendChild(document.createTextNode(this.value));\n\n          if (String(this.value).length === 1) {\n              DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n          }\n      } else {\n          DomHandler.addClass(badgeSpan, 'p-badge-dot');\n      }\n\n      DomHandler.addClass(el, 'p-overlay-badge');\n      el.appendChild(badge);\n\n      this.initialized = true;\n  }\n\n  @Input() get value(): string {\n      return this._value;\n  }\n\n  set value(val: string) {\n      if (val !== this._value) {\n          this._value = val;\n\n          if (this.initialized) {\n              let badgeSpan = document.getElementById(this.id)!;\n\n              if (this._value) {\n                  if (DomHandler.hasClass(badgeSpan, 'p-badge-dot')) DomHandler.removeClass(badgeSpan, 'p-badge-dot');\n\n                  if (String(this._value).length === 1) {\n                      DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n                  } else {\n                      DomHandler.removeClass(badgeSpan, 'p-badge-no-gutter');\n                  }\n              } else if (!this._value && !DomHandler.hasClass(badgeSpan, 'p-badge-dot')) {\n                  DomHandler.addClass(badgeSpan, 'p-badge-dot');\n              }\n\n              badgeSpan.innerHTML = '';\n              badgeSpan.appendChild(document.createTextNode(this._value));\n          }\n      }\n  }\n\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n\n  ngOnDestroy() {\n      this.initialized = false;\n  }\n}\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-badge .p-badge {\r\n    background-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-badge p-badge {\r\n  &.freud-color-success span {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  &.freud-color-info span {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  &.freud-color-warning span {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  &.freud-color-error span {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n  &.freud-color-actived span {\r\n    background-color: $complementary-color-like-03;\r\n  }\r\n}\r\n\r\n.freud-badge:not(.size-small) .p-badge {\r\n    border-radius: 12px;\r\n    font-size: $font-size-xs;\r\n}\r\n.size-small .p-badge {\r\n    border-radius: $border-radius-md;\r\n    min-width: 16px;\r\n    height: 16px;\r\n    line-height: 16px;\r\n}\r\n",
+                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-badge span.p-badge {\r\n    background-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n    font-family: $font-family-base;\r\n    display: inline-block;\r\n}\r\n\r\n.freud-badge {\r\n  .freud-color-success span {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  .freud-color-info span {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  .freud-color-warning span {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  .freud-color-error span {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n  .freud-color-actived span {\r\n    background-color: $complementary-color-like-03;\r\n  }\r\n}\r\n\r\n.freud-badge:not(.size-small) span.p-badge {\r\n    border-radius: 12px;\r\n    font-size: $font-size-xs;\r\n    display: inline-block;\r\n    line-height: 24px;\r\n}\r\n.freud-badge.size-small span.p-badge {\r\n    border-radius: $border-radius-md;\r\n    min-width: 16px;\r\n    height: 16px;\r\n    line-height: 16px;\r\n}\r\n",
                     "styleUrl": "./badge.component.scss"
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "FreudBadgeDirective",
+            "id": "component-FreudBadgeDirective-29b78429badcaf2ea901f463d6464adb44a289c1946645bbf9a51a6095a5ed7646ca872fcd5033763701c856de6d9d33c94e8f28863fb5d7a441af5eabe9466b",
+            "file": "projects/web-components/src/components/badge/badge.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "freudBadge",
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[freudBadge]",
+            "styleUrls": [
+                "./badge.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 98,
+                    "type": "colors",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "BadgeDirectiveIconPosition",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 97,
+                    "type": "sizes",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "el",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "initialized",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 100,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, ChangeDetectionStrategy,\n  Component, Directive, ElementRef, Input, OnDestroy, ViewEncapsulation } from '@angular/core';\nimport { UniqueComponentId } from 'primeng/utils';\nimport { DomHandler } from 'primeng/dom';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\ntype BadgeDirectiveIconPosition = 'left' | 'right' | 'top' | 'bottom';\n\n@Component({\n  selector: '[freudBadge]',\n  styleUrls: ['./badge.component.scss'],\n  exportAs: 'freudBadge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `<ng-content></ng-content> `,\n  host: {\n      class: 'p-element'\n  }\n})\nexport class FreudBadgeDirective implements AfterViewInit, OnDestroy {\n  @Input() iconPos: BadgeDirectiveIconPosition = 'left';\n\n  public _value!: string;\n\n  public initialized!: boolean;\n\n  private id!: string;\n\n  constructor(public el: ElementRef) {}\n\n  ngAfterViewInit() {\n      this.id = UniqueComponentId() + '_badge';\n      let el = this.el.nativeElement.nodeName.indexOf('-') != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\n\n      let badge = document.createElement('freud-badge');\n      badge.className = 'freud-badge';\n      if (this.size === 'sm') {\n        badge.classList.add('size-small');\n      }\n      let badgeP = document.createElement('p-badge');\n      badgeP.className = `freud-color-${this.color}`;\n\n      let badgeSpan = document.createElement('span');\n      badgeSpan.className = 'p-badge p-component';\n      badgeSpan.id = this.id;\n\n      badgeP.appendChild(badgeSpan);\n      badge.appendChild(badgeP);\n\n      if (this.value != null) {\n        badgeSpan.appendChild(document.createTextNode(this.value));\n\n          if (String(this.value).length === 1) {\n              DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n          }\n      } else {\n          DomHandler.addClass(badgeSpan, 'p-badge-dot');\n      }\n\n      DomHandler.addClass(el, 'p-overlay-badge');\n      el.appendChild(badge);\n\n      this.initialized = true;\n  }\n\n  @Input() get value(): string {\n      return this._value;\n  }\n\n  set value(val: string) {\n      if (val !== this._value) {\n          this._value = val;\n\n          if (this.initialized) {\n              let badgeSpan = document.getElementById(this.id)!;\n\n              if (this._value) {\n                  if (DomHandler.hasClass(badgeSpan, 'p-badge-dot')) DomHandler.removeClass(badgeSpan, 'p-badge-dot');\n\n                  if (String(this._value).length === 1) {\n                      DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n                  } else {\n                      DomHandler.removeClass(badgeSpan, 'p-badge-no-gutter');\n                  }\n              } else if (!this._value && !DomHandler.hasClass(badgeSpan, 'p-badge-dot')) {\n                  DomHandler.addClass(badgeSpan, 'p-badge-dot');\n              }\n\n              badgeSpan.innerHTML = '';\n              badgeSpan.appendChild(document.createTextNode(this._value));\n          }\n      }\n  }\n\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n\n  ngOnDestroy() {\n      this.initialized = false;\n  }\n}\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-badge span.p-badge {\r\n    background-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n    font-family: $font-family-base;\r\n    display: inline-block;\r\n}\r\n\r\n.freud-badge {\r\n  .freud-color-success span {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  .freud-color-info span {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  .freud-color-warning span {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  .freud-color-error span {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n  .freud-color-actived span {\r\n    background-color: $complementary-color-like-03;\r\n  }\r\n}\r\n\r\n.freud-badge:not(.size-small) span.p-badge {\r\n    border-radius: 12px;\r\n    font-size: $font-size-xs;\r\n    display: inline-block;\r\n    line-height: 24px;\r\n}\r\n.freud-badge.size-small span.p-badge {\r\n    border-radius: $border-radius-md;\r\n    min-width: 16px;\r\n    height: 16px;\r\n    line-height: 16px;\r\n}\r\n",
+                    "styleUrl": "./badge.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 29,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "AfterViewInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "value": {
+                    "name": "value",
+                    "setSignature": {
+                        "name": "value",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "val",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 72,
+                        "jsdoctags": [
+                            {
+                                "name": "val",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "value",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 68
+                    }
+                }
+            }
         },
         {
             "name": "FreudButtonComponent",
@@ -320,6 +600,61 @@
                 {
                     "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    $freud-btn-background: $brand-color-pure;\r\n    $freud-btn-color: $neutral-color-white;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n  \r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  font-weight: $font-weight-bold;\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudHeaderComponent",
+            "id": "component-FreudHeaderComponent-9b7bfa49224a9e8c7e600ed32c9713e6aad67aa3da17694f47d0728a4e620326aeac2bcdb09ee372e57d3f1474480ac5f3f9e787401776aeb0091be87ec0c263",
+            "file": "stories/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "template": "<div class=\"header\">\n  <div class=\"container\">\n    <h2 class=\"title\">{{title}}</h2>\n    <p>{{description}}</p>\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'freud-header',\n  template: `\n    <div class=\"header\">\n      <div class=\"container\">\n        <h2 class=\"title\">{{title}}</h2>\n        <p>{{description}}</p>\n      </div>\n    </div>\n  `,\n  styleUrls: ['./header.component.scss']\n})\nexport class FreudHeaderComponent {\n\n  @Input() title!: string;\n  @Input() description!: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../tokens/dist/style/scss/_variables.scss';\r\n\r\ndiv.header {\r\n  font-family: $font-family-base;\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n  margin-bottom: 32px;\r\n  background: url(./bg.png) center no-repeat;\r\n  z-index: 0;\r\n\r\n  & > div {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  max-width: 87%;\r\n  padding-bottom: 90px;\r\n}\r\n\r\nh2.title {\r\n  align-items: center;\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: row;\r\n  font-size: 40px;\r\n  font-weight: 700;\r\n  letter-spacing: -1px;\r\n  line-height: 60px;\r\n  margin: 0 0 30px 0;\r\n  padding: 90px 0 0 0;\r\n  text-align: left;\r\n}\r\n\r\np {\r\n  color: white;\r\n}",
+                    "styleUrl": "./header.component.scss"
                 }
             ],
             "stylesData": ""
@@ -505,13 +840,13 @@
     "modules": [
         {
             "name": "FreudAvatarModule",
-            "id": "module-FreudAvatarModule-a9c112deaff5705c8a58cc69977a4c527ebe79997e4166d1b8e6e68f46b995d2253ac023a849c8ab82900073636d5892c692ca130b9bef932215a4142ac75378",
+            "id": "module-FreudAvatarModule-09e343142257badaf18803b90b479bd7b0299c84dc8b07153326734a0f36c51074d6c1ecd0219aa987c05bb0b42cc5a2bf18417c3e1779ed93a0482ca1794bc1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/avatar/avatar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { AvatarModule } from 'primeng/avatar';\r\n\r\nimport { FreudAvatarComponent } from './avatar.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, AvatarModule],\r\n  declarations: [FreudAvatarComponent],\r\n  exports: [FreudAvatarComponent]\r\n})\r\nexport class FreudAvatarModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { AvatarModule } from 'primeng/avatar';\r\n\r\nimport { FreudAvatarComponent } from './avatar.component';\r\nimport { FreudBadgeModule } from '../badge';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, AvatarModule, FreudBadgeModule],\r\n  declarations: [FreudAvatarComponent],\r\n  exports: [FreudAvatarComponent]\r\n})\r\nexport class FreudAvatarModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -527,7 +862,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "FreudBadgeModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -549,13 +888,13 @@
         },
         {
             "name": "FreudBadgeModule",
-            "id": "module-FreudBadgeModule-cb68a687561b658c92aa8a6ac6f26eca6d5640eda702091624d0c42f4c0e3d9737b97fd9672761fc6fbce79b64b7b3f464434d75b1741f6b460ef309189ea7d7",
+            "id": "module-FreudBadgeModule-58c16afdd306333aa201a5bd806329418bc299490d3518e16ef92aa75251428daf697b995a2e6162c588b627715491da70ad3ee628f2aa70bbe90ed374d2c2c7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/badge/badge.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BadgeModule } from 'primeng/badge';\r\n\r\nimport { FreudBadgeComponent } from './badge.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, BadgeModule],\r\n  declarations: [FreudBadgeComponent],\r\n  exports: [FreudBadgeComponent],\r\n})\r\nexport class FreudBadgeModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BadgeModule } from 'primeng/badge';\r\n\r\nimport { FreudBadgeComponent, FreudBadgeDirective } from './badge.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, BadgeModule],\r\n  declarations: [FreudBadgeComponent, FreudBadgeDirective],\r\n  exports: [FreudBadgeComponent, FreudBadgeDirective],\r\n})\r\nexport class FreudBadgeModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -566,6 +905,9 @@
                     "elements": [
                         {
                             "name": "FreudBadgeComponent"
+                        },
+                        {
+                            "name": "FreudBadgeDirective"
                         }
                     ]
                 },
@@ -578,6 +920,9 @@
                     "elements": [
                         {
                             "name": "FreudBadgeComponent"
+                        },
+                        {
+                            "name": "FreudBadgeDirective"
                         }
                     ]
                 },
@@ -622,6 +967,50 @@
                     "elements": [
                         {
                             "name": "FreudButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudHeaderModule",
+            "id": "module-FreudHeaderModule-181e311e2883a4712b7efd44fc7c78607023de0da0ee346af9932247a7e06607754a09bccfbaa9204d369e00ff986da3d0251902cfbdd4e804b0a800f1faff62",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "stories/header/header.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudHeaderComponent } from './header.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule],\r\n  declarations: [FreudHeaderComponent],\r\n  exports: [FreudHeaderComponent]\r\n})\r\nexport class FreudHeaderModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudHeaderComponent"
                         }
                     ]
                 },
@@ -895,7 +1284,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/avatar/Avatar.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -905,7 +1294,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -925,16 +1314,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/avatar/Avatar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudAvatarComponent>",
-                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -945,11 +1324,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/typography/typography.stories.ts",
+                "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
+                "type": "Story<FreudAvatarComponent>",
+                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -960,6 +1339,16 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
                 "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
             },
             {
                 "name": "TemplateDisabled",
@@ -979,7 +1368,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\">{{label}}</freud-button>\n`"
+                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      freudBadge\n      value=\"1\"\n      >{{label}}</freud-button>\n`"
             },
             {
                 "name": "TemplateLoading",
@@ -1040,6 +1429,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"sm\" | \"md\" | \"lg\"",
                 "file": "projects/web-components/src/components/avatar/avatar.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "BadgeDirectiveIconPosition",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+                "file": "projects/web-components/src/components/badge/badge.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1407,7 +1807,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\">{{label}}</freud-button>\n`"
+                    "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      freudBadge\n      value=\"1\"\n      >{{label}}</freud-button>\n`"
                 },
                 {
                     "name": "TemplateLoading",
@@ -1481,6 +1881,41 @@
                     "kind": 186
                 }
             ],
+            "projects/web-components/src/components/badge/badge.component.ts": [
+                {
+                    "name": "BadgeDirectiveIconPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
             "projects/web-components/src/components/button/button.component.ts": [
                 {
                     "name": "buttonColors",
@@ -1499,30 +1934,6 @@
                     "subtype": "typealias",
                     "rawtype": "\"sm\" | \"md\" | \"lg\"",
                     "file": "projects/web-components/src/components/button/button.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                }
-            ],
-            "projects/web-components/src/components/badge/badge.component.ts": [
-                {
-                    "name": "colors",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
-                    "file": "projects/web-components/src/components/badge/badge.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                },
-                {
-                    "name": "sizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"sm\" | \"md\"",
-                    "file": "projects/web-components/src/components/badge/badge.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1568,6 +1979,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/web-components/src/components/badge/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudBadgeDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/web-components/src/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1578,6 +1998,15 @@
             },
             {
                 "filePath": "projects/web-components/src/components/chip/chip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/header/chip.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ChipComponent",
@@ -1940,6 +2369,15 @@
                 "name": "TemplateSize",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

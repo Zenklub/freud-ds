@@ -9,9 +9,8 @@ type avatarSizes = 'sm' | 'md' | 'lg';
     <p-avatar
       [label]="image ? '' : label"
       shape="circle"
-      [att.pBadge]="!!badge"
-      [value]="badge"
       [image]="image">
+      <freud-badge *ngIf="badge" [value]="badge" size="sm" color="error"></freud-badge>
     </p-avatar>
   `,
   styleUrls: ['./avatar.component.scss'],

@@ -1,6 +1,7 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../header/header.component';
 import { 
   Primary,
   Secondary,
@@ -33,7 +34,15 @@ import {
   }}
 title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent} />
 
-Header com imagem
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Button",
+      description: "O componente Button é usado para acionar uma ação ou evento."
+    },
+  }}
+</Story>
 
 ## <a id="importing"></a>Import
 

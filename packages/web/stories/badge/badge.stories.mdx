@@ -1,6 +1,7 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudBadgeComponent, FreudBadgeModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../header/header.component';
 import { 
   Small,
   Primary,
@@ -38,6 +39,16 @@ import {
   title="@freud-ds/web-components/Feedback/Badge"
   component={FreudBadgeComponent}
 />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Badge",
+      description: "O emblema é um pequeno indicador de status para outro elemento."
+    },
+  }}
+</Story>
 
 ## <a id="importing"></a>Import
 

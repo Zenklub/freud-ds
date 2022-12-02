@@ -1,35 +1,38 @@
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
 
-.freud-badge .p-badge {
+.freud-badge span.p-badge {
     background-color: $brand-color-pure;
     font-weight: $font-weight-bold;
     font-family: $font-family-base;
+    display: inline-block;
 }
 
-.freud-badge p-badge {
-  &.freud-color-success span {
+.freud-badge {
+  .freud-color-success span {
     background-color: $feedback-color-positive-04;
   }
-  &.freud-color-info span {
+  .freud-color-info span {
     background-color: $feedback-color-neutral-pure;
   }
-  &.freud-color-warning span {
+  .freud-color-warning span {
     background-color: $feedback-color-warning-pure;
     color: $neutral-color-black;
   }
-  &.freud-color-error span {
+  .freud-color-error span {
     background-color: $feedback-color-negative-04;
   }
-  &.freud-color-actived span {
+  .freud-color-actived span {
     background-color: $complementary-color-like-03;
   }
 }
 
-.freud-badge:not(.size-small) .p-badge {
+.freud-badge:not(.size-small) span.p-badge {
     border-radius: 12px;
     font-size: $font-size-xs;
+    display: inline-block;
+    line-height: 24px;
 }
-.size-small .p-badge {
+.freud-badge.size-small span.p-badge {
     border-radius: $border-radius-md;
     min-width: 16px;
     height: 16px;
