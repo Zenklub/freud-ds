@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "StepMenu",
-            "id": "interface-StepMenu-2faa2277fe2da18784d7ded691f204aec9e3335b63285c2330aa6e1b92a4d3bd6c5bf9b4d86bde5c55b50b63775bc7ede59240e97ab97bb838c29e829f3009b2",
+            "id": "interface-StepMenu-3b4e52980a7d192ba7764d60147fb313bfb38a75b7bbe8762694eb3ee4399b0a0325461853d4cd4321631b8fa2c2a4237c5554cea50d43a9fcb0d79b46512795",
             "file": "projects/web-components/src/components/steps/steps.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -21,66 +21,6 @@
     "classes": [],
     "directives": [],
     "components": [
-        {
-            "name": "ChipComponent",
-            "id": "component-ChipComponent-973932848e251e5a3ef08248edaa443978491f15a247c70101e4ca8a91c6e2d23e54ddc707cad2631143f89cb63679ba5b294bcfea415eee54b9df1a041310af",
-            "file": "projects/web-components/src/components/header/chip.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-chip",
-            "styleUrls": [
-                "./chip.component.scss"
-            ],
-            "styles": [],
-            "template": "./chip.component.html",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  template: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./chip.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ]
-        },
         {
             "name": "FreudAvatarComponent",
             "id": "component-FreudAvatarComponent-f20f91e19c76fcebc322d273f9e4cf3b2eff40cf22957105bb4511276430e0c6d62d4a9eab4ecc9b2b2fb0d102ea55dbfb407fd3c95902f86fe101dcb2694e28",
@@ -392,10 +332,232 @@
             "stylesData": ""
         },
         {
+            "name": "FreudKnobComponent",
+            "id": "component-FreudKnobComponent-4c2fd4c29e493d28a7133bc03a5e0d0c9dfd7798d78ec0c6389120ee289263749bb5316b79a70ac9e71cd7177914fe544f2168c17250d9a06741da670c24fad9",
+            "file": "projects/web-components/src/components/knob/knob.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-knob",
+            "styleUrls": [
+                "./knob.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-knob\n  [(ngModel)]=\"value\"\n  (onChange)=\"onChangeValue($event)\"\n  [min]=\"min\"\n  [max]=\"max\"\n  [size]=\"size\"\n  [step]=\"step\"\n  [readonly]=\"readonly\"\n  [valueColor]=\"bgColor ? 'white' : '#6732D1'\"\n  [rangeColor]=\"bgColor ? '#5127A4' : '#F0F2F5'\"\n  [textColor]=\"bgColor ? 'white' : '#6B7280'\"\n  [disabled]=\"disabled\"></p-knob>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "max",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter<number>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onChangeValue",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  template: `\n    <p-knob\n      [(ngModel)]=\"value\"\n      (onChange)=\"onChangeValue($event)\"\n      [min]=\"min\"\n      [max]=\"max\"\n      [size]=\"size\"\n      [step]=\"step\"\n      [readonly]=\"readonly\"\n      [valueColor]=\"bgColor ? 'white' : '#6732D1'\"\n      [rangeColor]=\"bgColor ? '#5127A4' : '#F0F2F5'\"\n      [textColor]=\"bgColor ? 'white' : '#6B7280'\"\n      [disabled]=\"disabled\"></p-knob>\n  `,\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-knob',\n    '[class.freud-knob-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudKnobComponent {\n\n  @Input() value: number = 0;\n  @Input() max: number = 100;\n  @Input() min: number = 0;\n  @Input() step: number = 1;\n  @Input() size: number = 100;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Output() valueChange: EventEmitter<number> = new EventEmitter<number>();\n\n  onChangeValue($event: any) {\n    console.warn(this.value, $event);\n    this.valueChange.emit(this.value);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./knob.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudKnobComponent",
+            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6-1",
+            "file": "projects/web-components/src/components/rating/knob.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-knob",
+            "styleUrls": [
+                "./knob.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./knob.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./knob.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "FreudKnobComponent-1",
+            "templateData": "<p>knob works!</p>\n"
+        },
+        {
             "name": "FreudStepsComponent",
-            "id": "component-FreudStepsComponent-2faa2277fe2da18784d7ded691f204aec9e3335b63285c2330aa6e1b92a4d3bd6c5bf9b4d86bde5c55b50b63775bc7ede59240e97ab97bb838c29e829f3009b2",
+            "id": "component-FreudStepsComponent-3b4e52980a7d192ba7764d60147fb313bfb38a75b7bbe8762694eb3ee4399b0a0325461853d4cd4321631b8fa2c2a4237c5554cea50d43a9fcb0d79b46512795",
             "file": "projects/web-components/src/components/steps/steps.component.ts",
-            "encapsulation": [],
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "host": {},
             "inputs": [],
@@ -415,7 +577,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 29,
                     "type": "number",
                     "decorators": []
                 },
@@ -424,7 +586,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -432,7 +594,7 @@
                     "name": "model",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 26,
                     "type": "StepMenu[]",
                     "decorators": []
                 },
@@ -441,7 +603,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 27,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -452,7 +614,7 @@
                     "defaultValue": "new EventEmitter<number>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 30,
                     "type": "EventEmitter<number>"
                 }
             ],
@@ -465,11 +627,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-steps {\r\n  .p-steps .p-steps-item:before {\r\n    border-top: 1px solid $neutral-color-light-03;\r\n  }\r\n\r\n  .p-steps-item {\r\n    opacity: 1 !important;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-steps .p-steps-item:not(.p-highlight) .p-menuitem-link .p-steps-number {\r\n    color: $neutral-color-dark-01;\r\n  }\r\n  .p-steps .p-steps-item.p-highlight .p-steps-number {\r\n    background-color: $brand-color-pure;\r\n    color: $neutral-color-white;\r\n    border: $brand-color-pure;\r\n  }\r\n\r\n  &:not(.freud-steps-bgcolor) {\r\n    .p-steps .p-steps-item .p-menuitem-link .p-steps-title {\r\n      color: $neutral-color-dark-03;\r\n    }\r\n  }\r\n\r\n  &.freud-steps-bgcolor {\r\n    .p-steps .p-steps-item .p-menuitem-link {\r\n      background-color: transparent;\r\n    }\r\n    .p-steps .p-steps-item .p-menuitem-link .p-steps-title {\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./steps.component.scss"
                 }
             ],
@@ -974,14 +1136,98 @@
             ]
         },
         {
+            "name": "FreudKnobModule",
+            "id": "module-FreudKnobModule-9a5b6f3e860e63416f9fa8367d70c8ae6acbfecb0d60e00a4c2a504a63c7362d131e178b3a4dd3b47bffcd3bfc569c3e1d415ea76983e9214ec0c01b5be1fd81",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/knob/knob.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule, FormsModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudKnobComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudKnobComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudKnobModule",
+            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe-1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/rating/knob.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudKnobComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "FreudStepsModule",
-            "id": "module-FreudStepsModule-19d1ff515a73db2bbb1f89344f138536fa0049c1449cee09ee11d54cbfde2d0c9b87c5ef7f1b2b57d4f9cfbf429e26d99f60f33448fc0216431f36741c8d68b8",
+            "id": "module-FreudStepsModule-06c0e29b5142632969f575193eca81c047388808934318a5a9fa1c6b7b2f394d4fa6c8aa63255ae01bc20a10dd2e8d00ea3b5b29e009821227f50c055ac4c2a9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/steps/steps.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { StepsModule } from 'primeng/steps';\r\n\r\nimport { FreudStepsComponent } from './steps.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, StepsModule],\r\n  declarations: [FreudStepsComponent],\r\n  exports: [FreudStepsComponent]\r\n})\r\nexport class FreudStepsModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { StepsModule } from 'primeng/steps';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\nimport { FreudStepsComponent } from './steps.component';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, StepsModule, RouterModule, BrowserAnimationsModule],\r\n  declarations: [FreudStepsComponent],\r\n  exports: [FreudStepsComponent]\r\n})\r\nexport class FreudStepsModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1206,6 +1452,16 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1217,6 +1473,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColorDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1246,7 +1512,27 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1406,7 +1692,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1416,7 +1702,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1437,6 +1723,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Readonly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1532,16 +1828,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "StepsEnabled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/steps/Steps.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Success",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1575,16 +1861,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudButtonComponent>",
-                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1595,21 +1871,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/steps/Steps.stories.ts",
+                "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudStepsComponent>",
-                "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"itens\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                "type": "Story<FreudKnobComponent>",
+                "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [readonly]=\"readonly\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/tag/Tag.stories.ts",
+                "file": "stories/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudTagComponent>",
-                "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
+                "type": "Story<FreudStepsComponent>",
+                "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
             },
             {
                 "name": "Template",
@@ -1630,6 +1916,16 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
                 "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTagComponent>",
+                "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
             },
             {
                 "name": "TemplateDisabled",
@@ -1999,6 +2295,68 @@
                     "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
                 }
             ],
+            "stories/knob/Knob.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BgColorDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Readonly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudKnobComponent>",
+                    "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [readonly]=\"readonly\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
+                }
+            ],
             "stories/steps/Steps.stories.ts": [
                 {
                     "name": "BgColor",
@@ -2031,16 +2389,6 @@
                     "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
                 },
                 {
-                    "name": "StepsEnabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/steps/Steps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2048,7 +2396,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudStepsComponent>",
-                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"itens\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
                 }
             ],
             "stories/tooltip/Tooltip.stories.ts": [
@@ -2541,10 +2889,19 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/web-components/src/components/header/chip.component.ts",
+                "filePath": "projects/web-components/src/components/knob/knob.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ChipComponent",
+                "name": "FreudKnobComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/rating/knob.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudKnobComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -2992,6 +3349,66 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColorDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Readonly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/knob/Knob.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/steps/Steps.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3017,16 +3434,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "itens",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/steps/Steps.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "StepsEnabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
