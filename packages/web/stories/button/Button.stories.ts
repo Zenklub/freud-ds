@@ -8,8 +8,6 @@ const templateHTML = `
       [size]="size"
       [disabled]="disabled"
       [loading]="loading"
-      freudBadge
-      value="1"
       >{{label}}</freud-button>
 `;
 

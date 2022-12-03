@@ -1,6 +1,20 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "StepMenu",
+            "id": "interface-StepMenu-2faa2277fe2da18784d7ded691f204aec9e3335b63285c2330aa6e1b92a4d3bd6c5bf9b4d86bde5c55b50b63775bc7ede59240e97ab97bb838c29e829f3009b2",
+            "file": "projects/web-components/src/components/steps/steps.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": "MenuItem"
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -9,70 +23,8 @@
     "components": [
         {
             "name": "ChipComponent",
-            "id": "component-ChipComponent-8f046df4b38f304164c6233b06770d82908c26daf3051974b3163dfec6c1d2c11452b9816cbfb9c62d8d177b2706278ae5db24a828912a3f73ea79cb0cd2df24",
+            "id": "component-ChipComponent-973932848e251e5a3ef08248edaa443978491f15a247c70101e4ca8a91c6e2d23e54ddc707cad2631143f89cb63679ba5b294bcfea415eee54b9df1a041310af",
             "file": "projects/web-components/src/components/header/chip.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-chip",
-            "styleUrls": [
-                "./chip.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./chip.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./chip.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>chip works!</p>\n"
-        },
-        {
-            "name": "ChipComponent",
-            "id": "component-ChipComponent-df008d0e733fb0a41c96ad99b42db18a5a6b0954d83dfd39108a96fa770067052b4d3b20762e5d8085b12c674af0a4ec4119d7c35829e815e62f21f10f280028-1",
-            "file": "projects/web-components/src/components/chip/chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -108,7 +60,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  template: `./chip.component.html`,\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  template: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -127,14 +79,11 @@
             },
             "implements": [
                 "OnInit"
-            ],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ChipComponent-1"
+            ]
         },
         {
             "name": "FreudAvatarComponent",
-            "id": "component-FreudAvatarComponent-a26ebada00f52f0c26267eb89c45d94c48471bba334eb25947d75050aa6700dc750b7d92bdf5050d81f85bd6c8b346b23e90ad113d171c591660f6dade814648",
+            "id": "component-FreudAvatarComponent-f20f91e19c76fcebc322d273f9e4cf3b2eff40cf22957105bb4511276430e0c6d62d4a9eab4ecc9b2b2fb0d102ea55dbfb407fd3c95902f86fe101dcb2694e28",
             "file": "projects/web-components/src/components/avatar/avatar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -150,7 +99,7 @@
                 "./avatar.component.scss"
             ],
             "styles": [],
-            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  freudBadge\n  value=\"1\"\n  [image]=\"image\">\n</p-avatar>\n",
+            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  [image]=\"image\">\n  <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n</p-avatar>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -159,7 +108,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 36,
                     "type": "string",
                     "decorators": []
                 },
@@ -168,7 +117,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 35,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -177,7 +126,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -186,7 +135,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 37,
                     "type": "string",
                     "decorators": []
                 },
@@ -195,7 +144,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -204,7 +153,7 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 32,
                     "type": "avatarSizes",
                     "decorators": []
                 }
@@ -219,11 +168,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      freudBadge\n      value=\"1\"\n      [image]=\"image\">\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      [image]=\"image\">\n      <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-avatar .p-avatar {\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-avatar-size-small .p-avatar {\r\n    width: 28px;\r\n    height: 28px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar-size-medium .p-avatar {\r\n    width: 42px;\r\n    height: 42px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar-size-large .p-avatar {\r\n    width: 56px;\r\n    height: 56px;\r\n    font-size: $font-size-md;\r\n}\r\n\r\n.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {\r\n    background-color: $neutral-color-light-02;\r\n    color: $neutral-color-dark-03;\r\n}\r\n\r\n.freud-avatar.freud-avatar-bgcolor .p-avatar {\r\n    background-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n}",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-avatar .p-avatar {\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-avatar {\r\n    position: relative;\r\n    display: block;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-small, .freud-avatar-size-small .p-avatar {\r\n    width: 28px;\r\n    height: 28px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-medium, .freud-avatar-size-medium .p-avatar {\r\n    width: 42px;\r\n    height: 42px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-large, .freud-avatar-size-large .p-avatar {\r\n    width: 56px;\r\n    height: 56px;\r\n    font-size: $font-size-md;\r\n}\r\n\r\n.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {\r\n    background-color: $neutral-color-light-02;\r\n    color: $neutral-color-dark-03;\r\n}\r\n\r\n.freud-avatar.freud-avatar-bgcolor .p-avatar {\r\n    background-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n}\r\nfreud-badge {\r\n    position: absolute;\r\n    top: -12px;\r\n    right: -4px;\r\n}",
                     "styleUrl": "./avatar.component.scss"
                 }
             ],
@@ -231,7 +180,7 @@
         },
         {
             "name": "FreudBadgeComponent",
-            "id": "component-FreudBadgeComponent-29b78429badcaf2ea901f463d6464adb44a289c1946645bbf9a51a6095a5ed7646ca872fcd5033763701c856de6d9d33c94e8f28863fb5d7a441af5eabe9466b",
+            "id": "component-FreudBadgeComponent-eca901960c524d460a139a1ccc03ab08b612031f99584ed7218981c86e6bd36dfbaba096f1e996b94bf8fe4c6b4a8f7a3c2433d3bcf7dac336c543524cf93b01",
             "file": "projects/web-components/src/components/badge/badge.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -256,7 +205,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 122,
+                    "line": 24,
                     "type": "colors",
                     "decorators": []
                 },
@@ -265,7 +214,7 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 121,
+                    "line": 23,
                     "type": "sizes",
                     "decorators": []
                 },
@@ -274,7 +223,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 120,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 }
@@ -289,7 +238,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, ChangeDetectionStrategy,\n  Component, Directive, ElementRef, Input, OnDestroy, ViewEncapsulation } from '@angular/core';\nimport { UniqueComponentId } from 'primeng/utils';\nimport { DomHandler } from 'primeng/dom';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\ntype BadgeDirectiveIconPosition = 'left' | 'right' | 'top' | 'bottom';\n\n@Component({\n  selector: '[freudBadge]',\n  styleUrls: ['./badge.component.scss'],\n  exportAs: 'freudBadge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `<ng-content></ng-content> `,\n  host: {\n      class: 'p-element'\n  }\n})\nexport class FreudBadgeDirective implements AfterViewInit, OnDestroy {\n  @Input() iconPos: BadgeDirectiveIconPosition = 'left';\n\n  public _value!: string;\n\n  public initialized!: boolean;\n\n  private id!: string;\n\n  constructor(public el: ElementRef) {}\n\n  ngAfterViewInit() {\n      this.id = UniqueComponentId() + '_badge';\n      let el = this.el.nativeElement.nodeName.indexOf('-') != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\n\n      let badge = document.createElement('freud-badge');\n      badge.className = 'freud-badge';\n      if (this.size === 'sm') {\n        badge.classList.add('size-small');\n      }\n      let badgeP = document.createElement('p-badge');\n      badgeP.className = `freud-color-${this.color}`;\n\n      let badgeSpan = document.createElement('span');\n      badgeSpan.className = 'p-badge p-component';\n      badgeSpan.id = this.id;\n\n      badgeP.appendChild(badgeSpan);\n      badge.appendChild(badgeP);\n\n      if (this.value != null) {\n        badgeSpan.appendChild(document.createTextNode(this.value));\n\n          if (String(this.value).length === 1) {\n              DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n          }\n      } else {\n          DomHandler.addClass(badgeSpan, 'p-badge-dot');\n      }\n\n      DomHandler.addClass(el, 'p-overlay-badge');\n      el.appendChild(badge);\n\n      this.initialized = true;\n  }\n\n  @Input() get value(): string {\n      return this._value;\n  }\n\n  set value(val: string) {\n      if (val !== this._value) {\n          this._value = val;\n\n          if (this.initialized) {\n              let badgeSpan = document.getElementById(this.id)!;\n\n              if (this._value) {\n                  if (DomHandler.hasClass(badgeSpan, 'p-badge-dot')) DomHandler.removeClass(badgeSpan, 'p-badge-dot');\n\n                  if (String(this._value).length === 1) {\n                      DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n                  } else {\n                      DomHandler.removeClass(badgeSpan, 'p-badge-no-gutter');\n                  }\n              } else if (!this._value && !DomHandler.hasClass(badgeSpan, 'p-badge-dot')) {\n                  DomHandler.addClass(badgeSpan, 'p-badge-dot');\n              }\n\n              badgeSpan.innerHTML = '';\n              badgeSpan.appendChild(document.createTextNode(this._value));\n          }\n      }\n  }\n\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n\n  ngOnDestroy() {\n      this.initialized = false;\n  }\n}\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -298,223 +247,6 @@
                 }
             ],
             "stylesData": ""
-        },
-        {
-            "name": "FreudBadgeDirective",
-            "id": "component-FreudBadgeDirective-29b78429badcaf2ea901f463d6464adb44a289c1946645bbf9a51a6095a5ed7646ca872fcd5033763701c856de6d9d33c94e8f28863fb5d7a441af5eabe9466b",
-            "file": "projects/web-components/src/components/badge/badge.component.ts",
-            "changeDetection": "ChangeDetectionStrategy.OnPush",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
-            "entryComponents": [],
-            "exportAs": "freudBadge",
-            "host": {},
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "[freudBadge]",
-            "styleUrls": [
-                "./badge.component.scss"
-            ],
-            "styles": [],
-            "template": "<ng-content></ng-content>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "color",
-                    "defaultValue": "'primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 98,
-                    "type": "colors",
-                    "decorators": []
-                },
-                {
-                    "name": "iconPos",
-                    "defaultValue": "'left'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 23,
-                    "type": "BadgeDirectiveIconPosition",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'md'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 97,
-                    "type": "sizes",
-                    "decorators": []
-                },
-                {
-                    "name": "value",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 68,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "_value",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 25,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "el",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ElementRef",
-                    "optional": false,
-                    "description": "",
-                    "line": 31,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 29,
-                    "modifierKind": [
-                        121
-                    ]
-                },
-                {
-                    "name": "initialized",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 27,
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngAfterViewInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 33,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 100,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { AfterViewInit, ChangeDetectionStrategy,\n  Component, Directive, ElementRef, Input, OnDestroy, ViewEncapsulation } from '@angular/core';\nimport { UniqueComponentId } from 'primeng/utils';\nimport { DomHandler } from 'primeng/dom';\n\n\ntype sizes = 'sm' | 'md';\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';\ntype BadgeDirectiveIconPosition = 'left' | 'right' | 'top' | 'bottom';\n\n@Component({\n  selector: '[freudBadge]',\n  styleUrls: ['./badge.component.scss'],\n  exportAs: 'freudBadge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `<ng-content></ng-content> `,\n  host: {\n      class: 'p-element'\n  }\n})\nexport class FreudBadgeDirective implements AfterViewInit, OnDestroy {\n  @Input() iconPos: BadgeDirectiveIconPosition = 'left';\n\n  public _value!: string;\n\n  public initialized!: boolean;\n\n  private id!: string;\n\n  constructor(public el: ElementRef) {}\n\n  ngAfterViewInit() {\n      this.id = UniqueComponentId() + '_badge';\n      let el = this.el.nativeElement.nodeName.indexOf('-') != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;\n\n      let badge = document.createElement('freud-badge');\n      badge.className = 'freud-badge';\n      if (this.size === 'sm') {\n        badge.classList.add('size-small');\n      }\n      let badgeP = document.createElement('p-badge');\n      badgeP.className = `freud-color-${this.color}`;\n\n      let badgeSpan = document.createElement('span');\n      badgeSpan.className = 'p-badge p-component';\n      badgeSpan.id = this.id;\n\n      badgeP.appendChild(badgeSpan);\n      badge.appendChild(badgeP);\n\n      if (this.value != null) {\n        badgeSpan.appendChild(document.createTextNode(this.value));\n\n          if (String(this.value).length === 1) {\n              DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n          }\n      } else {\n          DomHandler.addClass(badgeSpan, 'p-badge-dot');\n      }\n\n      DomHandler.addClass(el, 'p-overlay-badge');\n      el.appendChild(badge);\n\n      this.initialized = true;\n  }\n\n  @Input() get value(): string {\n      return this._value;\n  }\n\n  set value(val: string) {\n      if (val !== this._value) {\n          this._value = val;\n\n          if (this.initialized) {\n              let badgeSpan = document.getElementById(this.id)!;\n\n              if (this._value) {\n                  if (DomHandler.hasClass(badgeSpan, 'p-badge-dot')) DomHandler.removeClass(badgeSpan, 'p-badge-dot');\n\n                  if (String(this._value).length === 1) {\n                      DomHandler.addClass(badgeSpan, 'p-badge-no-gutter');\n                  } else {\n                      DomHandler.removeClass(badgeSpan, 'p-badge-no-gutter');\n                  }\n              } else if (!this._value && !DomHandler.hasClass(badgeSpan, 'p-badge-dot')) {\n                  DomHandler.addClass(badgeSpan, 'p-badge-dot');\n              }\n\n              badgeSpan.innerHTML = '';\n              badgeSpan.appendChild(document.createTextNode(this._value));\n          }\n      }\n  }\n\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n\n  ngOnDestroy() {\n      this.initialized = false;\n  }\n}\n\n@Component({\n  selector: 'freud-badge',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-badge [value]=\"value!\" class=\"freud-color-{{color}}\"></p-badge>\n  `,\n  styleUrls: ['./badge.component.scss'],\n  host: {\n    class: 'freud-badge',\n    '[class.size-small]':  'size === \"sm\"'\n  }\n})\nexport class FreudBadgeComponent {\n\n  @Input() value: string = '';\n  @Input() size: sizes = 'md';\n  @Input() color: colors = 'primary';\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-badge span.p-badge {\r\n    background-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n    font-family: $font-family-base;\r\n    display: inline-block;\r\n}\r\n\r\n.freud-badge {\r\n  .freud-color-success span {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  .freud-color-info span {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  .freud-color-warning span {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  .freud-color-error span {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n  .freud-color-actived span {\r\n    background-color: $complementary-color-like-03;\r\n  }\r\n}\r\n\r\n.freud-badge:not(.size-small) span.p-badge {\r\n    border-radius: 12px;\r\n    font-size: $font-size-xs;\r\n    display: inline-block;\r\n    line-height: 24px;\r\n}\r\n.freud-badge.size-small span.p-badge {\r\n    border-radius: $border-radius-md;\r\n    min-width: 16px;\r\n    height: 16px;\r\n    line-height: 16px;\r\n}\r\n",
-                    "styleUrl": "./badge.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 29,
-                "jsdoctags": [
-                    {
-                        "name": "el",
-                        "type": "ElementRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "implements": [
-                "AfterViewInit",
-                "OnDestroy"
-            ],
-            "accessors": {
-                "value": {
-                    "name": "value",
-                    "setSignature": {
-                        "name": "value",
-                        "type": "void",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "args": [
-                            {
-                                "name": "val",
-                                "type": "string",
-                                "deprecated": false,
-                                "deprecationMessage": ""
-                            }
-                        ],
-                        "returnType": "void",
-                        "line": 72,
-                        "jsdoctags": [
-                            {
-                                "name": "val",
-                                "type": "string",
-                                "deprecated": false,
-                                "deprecationMessage": "",
-                                "tagName": {
-                                    "text": "param"
-                                }
-                            }
-                        ]
-                    },
-                    "getSignature": {
-                        "name": "value",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 68
-                    }
-                }
-            }
         },
         {
             "name": "FreudButtonComponent",
@@ -655,6 +387,229 @@
                 {
                     "data": "// TODO: Verificar o import\r\n@import '../../../tokens/dist/style/scss/_variables.scss';\r\n\r\ndiv.header {\r\n  font-family: $font-family-base;\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n  margin-bottom: 32px;\r\n  background: url(./bg.png) center no-repeat;\r\n  z-index: 0;\r\n\r\n  & > div {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  max-width: 87%;\r\n  padding-bottom: 90px;\r\n}\r\n\r\nh2.title {\r\n  align-items: center;\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: row;\r\n  font-size: 40px;\r\n  font-weight: 700;\r\n  letter-spacing: -1px;\r\n  line-height: 60px;\r\n  margin: 0 0 30px 0;\r\n  padding: 90px 0 0 0;\r\n  text-align: left;\r\n}\r\n\r\np {\r\n  color: white;\r\n}",
                     "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudStepsComponent",
+            "id": "component-FreudStepsComponent-2faa2277fe2da18784d7ded691f204aec9e3335b63285c2330aa6e1b92a4d3bd6c5bf9b4d86bde5c55b50b63775bc7ede59240e97ab97bb838c29e829f3009b2",
+            "file": "projects/web-components/src/components/steps/steps.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-steps",
+            "styleUrls": [
+                "./steps.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-steps\n  [model]=\"model\"\n  [activeIndex]=\"activeIndex\"\n  [readonly]=\"readonly\"\n  (activeIndexChange)=\"activeIndexChange.emit($event)\">\n</p-steps>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "activeIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "StepMenu[]",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "activeIndexChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "EventEmitter<number>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./steps.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudTagComponent",
+            "id": "component-FreudTagComponent-ca7a6ff04cfb08e71fcfbd778dcc695a5be17787e244cf0e3fc783f51d6e5b82c08415a3642357feb81b143975a8865519e774ed47e1d061ae96dceda833620d",
+            "file": "projects/web-components/src/components/tag/tag.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-tag",
+            "styleUrls": [
+                "./tag.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-tag [value]=\"value\" class=\"freud-tag-{{color || 'primary'}}\" [rounded]=\"true\"></p-tag>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "colors",
+                    "decorators": []
+                },
+                {
+                    "name": "outline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype colors = 'primary' | 'success' | 'info' | 'warning' | 'error';\n\n@Component({\n  selector: 'freud-tag',\n  template: `\n    <p-tag [value]=\"value\" class=\"freud-tag-{{color || 'primary'}}\" [rounded]=\"true\"></p-tag>\n  `,\n  host: {\n    class: 'freud-tag',\n    '[class.outline]':  'outline'\n  },\n  styleUrls: ['./tag.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudTagComponent {\n\n  @Input() value!: string;\n  @Input() color: colors = 'primary';\n  @Input() outline: boolean = false;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-tag .p-tag {\r\n    padding: 3px $spacing-size-nano;\r\n    font-weight: $font-weight-semibold;\r\n}\r\n\r\n.freud-tag:not(.outline) {\r\n\r\n  .freud-tag-primary .p-tag {\r\n    background-color: $brand-color-pure;\r\n  }\r\n\r\n  .freud-tag-success .p-tag {\r\n    background-color: $feedback-color-positive-04;\r\n  }\r\n  .freud-tag-info .p-tag {\r\n    background-color: $feedback-color-neutral-pure;\r\n  }\r\n  .freud-tag-warning .p-tag {\r\n    background-color: $feedback-color-warning-pure;\r\n    color: $neutral-color-black;\r\n  }\r\n  .freud-tag-error .p-tag {\r\n    background-color: $feedback-color-negative-04;\r\n  }\r\n}\r\n\r\n.freud-tag.outline {\r\n  .p-tag {\r\n    background-color: $neutral-color-white;\r\n  }\r\n\r\n  .freud-tag-primary .p-tag {\r\n    border: 1px solid $brand-color-pure;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .freud-tag-success .p-tag {\r\n    border: 1px solid $feedback-color-positive-04;\r\n    color: $feedback-color-positive-04;\r\n  }\r\n  .freud-tag-info .p-tag {\r\n    border: 1px solid $feedback-color-neutral-pure;\r\n    color: $feedback-color-neutral-pure;\r\n  }\r\n  .freud-tag-warning .p-tag {\r\n    border: 1px solid $feedback-color-warning-pure;\r\n    color: $feedback-color-warning-pure;\r\n  }\r\n  .freud-tag-error .p-tag {\r\n    border: 1px solid $feedback-color-negative-04;\r\n    color: $feedback-color-negative-04;\r\n  }\r\n}",
+                    "styleUrl": "./tag.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudTooltipComponent",
+            "id": "component-FreudTooltipComponent-bb9ccabfca305ea7279cda01611d411a55ab6ab9471629a9b589e92ee6343170f32e5fa2f4e9bbbefb705f9287abf464d3d6b3d7b07c75e931868fb5ce77a438",
+            "file": "projects/web-components/src/components/tooltip/tooltip.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "freudTooltip",
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[freud-tooltip]",
+            "styleUrls": [
+                "./tooltip.component.scss"
+            ],
+            "styles": [],
+            "template": "<div [pTooltip]=\"tooltipLabel\" [tooltipPosition]=\"tooltipPosition\" [class.bgColor]=\"bgColor\"\n    [tooltipStyleClass]=\"bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'\" class=\"freud-tooltip-container\">\n  <ng-content></ng-content>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipPosition",
+                    "defaultValue": "'top'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "position",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { Component, Input } from '@angular/core';\n\ntype position = 'top' | 'bottom' | 'left' | 'right';\n\n@Component({\n  selector: '[freud-tooltip]',\n  exportAs: 'freudTooltip',\n  template: `\n    <div [pTooltip]=\"tooltipLabel\" [tooltipPosition]=\"tooltipPosition\" [class.bgColor]=\"bgColor\"\n        [tooltipStyleClass]=\"bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'\" class=\"freud-tooltip-container\">\n      <ng-content></ng-content>\n    </div>\n  `,\n  styleUrls: ['./tooltip.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None\n})\nexport class FreudTooltipComponent {\n\n  @Input() tooltipLabel: string = '';\n  @Input() tooltipPosition: position = 'top';\n  @Input() bgColor: boolean = false;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-tooltip-container {\r\n    display:inline-block;\r\n    position:relative;\r\n}\r\n\r\n.p-tooltip {\r\n    .p-tooltip-text {\r\n        padding: 10.5px;\r\n        color: $neutral-color-white;\r\n        font-weight: $font-weight-regular;\r\n        font-size: $font-size-sm;\r\n        line-height: 24px;\r\n        border-radius: $border-radius-md;\r\n        background-color:  $neutral-color-dark-03;\r\n    }\r\n}\r\n\r\n.p-tooltip.freud-bg-color {\r\n\r\n  &.p-tooltip-right .p-tooltip-arrow {\r\n    border-right-color: $neutral-color-white;\r\n  }\r\n  &.p-tooltip-left .p-tooltip-arrow {\r\n    border-left-color: $neutral-color-white;\r\n  }\r\n  &.p-tooltip-top .p-tooltip-arrow {\r\n    border-top-color: $neutral-color-white;\r\n  }\r\n  &.p-tooltip-bottom .p-tooltip-arrow {\r\n    border-bottom-color: $neutral-color-white;\r\n  }\r\n\r\n  .p-tooltip-text{\r\n    color: $neutral-color-dark-03;\r\n    background-color: $neutral-color-white;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./tooltip.component.scss"
                 }
             ],
             "stylesData": ""
@@ -888,13 +843,13 @@
         },
         {
             "name": "FreudBadgeModule",
-            "id": "module-FreudBadgeModule-58c16afdd306333aa201a5bd806329418bc299490d3518e16ef92aa75251428daf697b995a2e6162c588b627715491da70ad3ee628f2aa70bbe90ed374d2c2c7",
+            "id": "module-FreudBadgeModule-cb68a687561b658c92aa8a6ac6f26eca6d5640eda702091624d0c42f4c0e3d9737b97fd9672761fc6fbce79b64b7b3f464434d75b1741f6b460ef309189ea7d7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/badge/badge.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BadgeModule } from 'primeng/badge';\r\n\r\nimport { FreudBadgeComponent, FreudBadgeDirective } from './badge.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, BadgeModule],\r\n  declarations: [FreudBadgeComponent, FreudBadgeDirective],\r\n  exports: [FreudBadgeComponent, FreudBadgeDirective],\r\n})\r\nexport class FreudBadgeModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BadgeModule } from 'primeng/badge';\r\n\r\nimport { FreudBadgeComponent } from './badge.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, BadgeModule],\r\n  declarations: [FreudBadgeComponent],\r\n  exports: [FreudBadgeComponent],\r\n})\r\nexport class FreudBadgeModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -905,9 +860,6 @@
                     "elements": [
                         {
                             "name": "FreudBadgeComponent"
-                        },
-                        {
-                            "name": "FreudBadgeDirective"
                         }
                     ]
                 },
@@ -920,9 +872,6 @@
                     "elements": [
                         {
                             "name": "FreudBadgeComponent"
-                        },
-                        {
-                            "name": "FreudBadgeDirective"
                         }
                     ]
                 },
@@ -1025,6 +974,138 @@
             ]
         },
         {
+            "name": "FreudStepsModule",
+            "id": "module-FreudStepsModule-19d1ff515a73db2bbb1f89344f138536fa0049c1449cee09ee11d54cbfde2d0c9b87c5ef7f1b2b57d4f9cfbf429e26d99f60f33448fc0216431f36741c8d68b8",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/steps/steps.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { StepsModule } from 'primeng/steps';\r\n\r\nimport { FreudStepsComponent } from './steps.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, StepsModule],\r\n  declarations: [FreudStepsComponent],\r\n  exports: [FreudStepsComponent]\r\n})\r\nexport class FreudStepsModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudStepsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudStepsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudTagModule",
+            "id": "module-FreudTagModule-eba9628c1ea690c965640583d11a54bc3dde16d2cf3e40a2825f85ee0d84f27f92609b872951bff6b7b18d4bc56c1c5aeddfdce37e0cc7e4a305b23b2652c967",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/tag/tag.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TagModule  } from 'primeng/tag';\r\n\r\nimport { FreudTagComponent } from './tag.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, TagModule],\r\n  declarations: [FreudTagComponent],\r\n  exports: [FreudTagComponent]\r\n})\r\nexport class FreudTagModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudTagComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudTagComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudTooltipModule",
+            "id": "module-FreudTooltipModule-7a4dbe2e52b385b237b72a5f80f960bbaf77c340077a1b2f207f107659a3577d712996079f2bc3b89f27f0ebb8e1b61f8b70e5ad8ad48ecf37fd7c950a876614",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/tooltip/tooltip.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudTooltipComponent } from './tooltip.component';\r\nimport { TooltipModule } from 'primeng/tooltip';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, TooltipModule],\r\n  declarations: [FreudTooltipComponent],\r\n  exports: [FreudTooltipComponent]\r\n})\r\nexport class FreudTooltipModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudTooltipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudTooltipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "FreudTypographyModule",
             "id": "module-FreudTypographyModule-763a06fdd0b7c597320200983edb506c090417074deb81fbb891a289348ef0701360036a4c1f4b11135a3af4b9e98889a91ae71b1eb7850cb5307f6b4e593cef",
             "description": "",
@@ -1082,10 +1163,70 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "BadgeLarge",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BadgeMedium",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BadgeSmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Bottom",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1102,6 +1243,16 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1116,6 +1267,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Error",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1152,6 +1313,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "ImagemEBadge",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Info",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1162,10 +1333,40 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Info",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "itens",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StepMenu[]",
+                "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Left",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1192,6 +1393,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Outline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1205,7 +1426,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
+                "file": "stories/tag/Tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1229,6 +1450,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "Right",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Secondary",
@@ -1284,7 +1515,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1294,7 +1525,17 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/avatar/Avatar.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "StepsEnabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1311,14 +1552,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Template",
+                "name": "Success",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/tag/Tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudBadgeComponent>",
-                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -1339,6 +1580,46 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
                 "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudBadgeComponent>",
+                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudStepsComponent>",
+                "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"itens\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTagComponent>",
+                "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTooltipComponent>",
+                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -1368,7 +1649,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      freudBadge\n      value=\"1\"\n      >{{label}}</freud-button>\n`"
+                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      >{{label}}</freud-button>\n`"
             },
             {
                 "name": "TemplateLoading",
@@ -1389,6 +1670,16 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
                 "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{size}}'),\n})"
+            },
+            {
+                "name": "Top",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "types",
@@ -1419,6 +1710,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Warning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -1429,17 +1730,6 @@
                 "subtype": "typealias",
                 "rawtype": "\"sm\" | \"md\" | \"lg\"",
                 "file": "projects/web-components/src/components/avatar/avatar.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 186
-            },
-            {
-                "name": "BadgeDirectiveIconPosition",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
-                "file": "projects/web-components/src/components/badge/badge.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1479,6 +1769,17 @@
                 "kind": 186
             },
             {
+                "name": "colors",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\"",
+                "file": "projects/web-components/src/components/tag/tag.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
                 "name": "fontTypes",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1488,6 +1789,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 193
+            },
+            {
+                "name": "position",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+                "file": "projects/web-components/src/components/tooltip/tooltip.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
             },
             {
                 "name": "sizes",
@@ -1587,6 +1899,36 @@
             ],
             "stories/avatar/Avatar.stories.ts": [
                 {
+                    "name": "BadgeLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BadgeMedium",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BadgeSmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "BgColor",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1598,6 +1940,16 @@
                 },
                 {
                     "name": "Imagem",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ImagemEBadge",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/avatar/Avatar.stories.ts",
@@ -1645,6 +1997,120 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudAvatarComponent>",
                     "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                }
+            ],
+            "stories/steps/Steps.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "itens",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StepMenu[]",
+                    "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
+                },
+                {
+                    "name": "StepsEnabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudStepsComponent>",
+                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"itens\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/tooltip/Tooltip.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Bottom",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Left",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Right",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTooltipComponent>",
+                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "Top",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "projects/web-components/src/test.ts": [
@@ -1807,7 +2273,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      freudBadge\n      value=\"1\"\n      >{{label}}</freud-button>\n`"
+                    "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      >{{label}}</freud-button>\n`"
                 },
                 {
                     "name": "TemplateLoading",
@@ -1828,6 +2294,78 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudButtonComponent>",
                     "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{size}}'),\n})"
+                }
+            ],
+            "stories/tag/Tag.stories.ts": [
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Info",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTagComponent>",
+                    "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
+                },
+                {
+                    "name": "Warning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "stories/typography/typography.stories.ts": [
@@ -1881,41 +2419,6 @@
                     "kind": 186
                 }
             ],
-            "projects/web-components/src/components/badge/badge.component.ts": [
-                {
-                    "name": "BadgeDirectiveIconPosition",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
-                    "file": "projects/web-components/src/components/badge/badge.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                },
-                {
-                    "name": "colors",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
-                    "file": "projects/web-components/src/components/badge/badge.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                },
-                {
-                    "name": "sizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"sm\" | \"md\"",
-                    "file": "projects/web-components/src/components/badge/badge.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                }
-            ],
             "projects/web-components/src/components/button/button.component.ts": [
                 {
                     "name": "buttonColors",
@@ -1940,6 +2443,43 @@
                     "kind": 186
                 }
             ],
+            "projects/web-components/src/components/badge/badge.component.ts": [
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"actived\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\"",
+                    "file": "projects/web-components/src/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/web-components/src/components/tag/tag.component.ts": [
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"success\" | \"info\" | \"warning\" | \"error\"",
+                    "file": "projects/web-components/src/components/tag/tag.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
             "projects/web-components/src/components/typography/typography.component.ts": [
                 {
                     "name": "fontTypes",
@@ -1951,6 +2491,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
+                }
+            ],
+            "projects/web-components/src/components/tooltip/tooltip.component.ts": [
+                {
+                    "name": "position",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+                    "file": "projects/web-components/src/components/tooltip/tooltip.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
                 }
             ]
         }
@@ -1979,30 +2532,12 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/web-components/src/components/badge/badge.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FreudBadgeDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/12",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/web-components/src/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FreudButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/web-components/src/components/chip/chip.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ChipComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2030,6 +2565,42 @@
                 "name": "SplitButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/steps/steps.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudStepsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/steps/steps.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "StepMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/tag/tag.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudTagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/tooltip/tooltip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudTooltipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2076,6 +2647,36 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "BadgeLarge",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BadgeMedium",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BadgeSmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "BgColor",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -2087,6 +2688,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Imagem",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImagemEBadge",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2378,6 +2989,186 @@
                 "name": "FreudHeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/steps/Steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/steps/Steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/steps/Steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "itens",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/steps/Steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "StepsEnabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/steps/Steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Error",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Info",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Outline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Warning",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Bottom",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Left",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Right",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tooltip/Tooltip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Top",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

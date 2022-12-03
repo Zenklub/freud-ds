@@ -1,17 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
 type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
 
 @Component({
   selector: 'freud-tag',
   template: `
-    <p-tag [value]="value" class="freud-tag-{{color}}"></p-tag>
+    <p-tag [value]="value" class="freud-tag-{{color || 'primary'}}" [rounded]="true"></p-tag>
   `,
   host: {
     class: 'freud-tag',
     '[class.outline]':  'outline'
   },
-  styleUrls: ['./chip.component.scss']
+  styleUrls: ['./tag.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class FreudTagComponent {
 

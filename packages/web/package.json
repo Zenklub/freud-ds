@@ -10,7 +10,7 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "chromatic": "npx chromatic --project-token=8fdc06c43311"
+    "chromatic": "npx chromatic --project-token=8fdc06c43311 --auto-accept-changes"
   },
   "dependencies": {
     "@angular/animations": "~12.2.0",
