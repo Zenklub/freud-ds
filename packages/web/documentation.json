@@ -333,7 +333,71 @@
         },
         {
             "name": "FreudKnobComponent",
-            "id": "component-FreudKnobComponent-4c2fd4c29e493d28a7133bc03a5e0d0c9dfd7798d78ec0c6389120ee289263749bb5316b79a70ac9e71cd7177914fe544f2168c17250d9a06741da670c24fad9",
+            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6",
+            "file": "projects/web-components/src/components/rating/knob.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-knob",
+            "styleUrls": [
+                "./knob.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./knob.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./knob.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>knob works!</p>\n"
+        },
+        {
+            "name": "FreudKnobComponent",
+            "id": "component-FreudKnobComponent-b548b7156c198663907f5947d1c639299d44fdd227248b593aef4abe228415dcf5799941732e3ca757843c61b5f9f7aba3f619bce41a27443fd70842af206399-1",
             "file": "projects/web-components/src/components/knob/knob.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -441,8 +505,8 @@
                     "name": "onChangeValue",
                     "args": [
                         {
-                            "name": "$event",
-                            "type": "any",
+                            "name": "value",
+                            "type": "number",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -455,8 +519,8 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "name": "$event",
-                            "type": "any",
+                            "name": "value",
+                            "type": "number",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -473,59 +537,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  template: `\n    <p-knob\n      [(ngModel)]=\"value\"\n      (onChange)=\"onChangeValue($event)\"\n      [min]=\"min\"\n      [max]=\"max\"\n      [size]=\"size\"\n      [step]=\"step\"\n      [readonly]=\"readonly\"\n      [valueColor]=\"bgColor ? 'white' : '#6732D1'\"\n      [rangeColor]=\"bgColor ? '#5127A4' : '#F0F2F5'\"\n      [textColor]=\"bgColor ? 'white' : '#6B7280'\"\n      [disabled]=\"disabled\"></p-knob>\n  `,\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-knob',\n    '[class.freud-knob-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudKnobComponent {\n\n  @Input() value: number = 0;\n  @Input() max: number = 100;\n  @Input() min: number = 0;\n  @Input() step: number = 1;\n  @Input() size: number = 100;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Output() valueChange: EventEmitter<number> = new EventEmitter<number>();\n\n  onChangeValue($event: any) {\n    console.warn(this.value, $event);\n    this.valueChange.emit(this.value);\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./knob.component.scss"
-                }
-            ],
-            "stylesData": ""
-        },
-        {
-            "name": "FreudKnobComponent",
-            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6-1",
-            "file": "projects/web-components/src/components/rating/knob.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "freud-knob",
-            "styleUrls": [
-                "./knob.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./knob.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 13,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  template: `\n    <p-knob\n      [(ngModel)]=\"value\"\n      (onChange)=\"onChangeValue($event)\"\n      [min]=\"min\"\n      [max]=\"max\"\n      [size]=\"size\"\n      [step]=\"step\"\n      [readonly]=\"readonly\"\n      [valueColor]=\"bgColor ? 'white' : '#6732D1'\"\n      [rangeColor]=\"bgColor ? '#5127A4' : '#F0F2F5'\"\n      [textColor]=\"bgColor ? 'white' : '#6B7280'\"\n      [disabled]=\"disabled\"></p-knob>\n  `,\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-knob',\n    '[class.freud-knob-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudKnobComponent {\n\n  @Input() value: number = 0;\n  @Input() max: number = 100;\n  @Input() min: number = 0;\n  @Input() step: number = 1;\n  @Input() size: number = 100;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Output() valueChange: EventEmitter<number> = new EventEmitter<number>();\n\n  onChangeValue(value: number) {\n    this.value = value;\n    this.valueChange.emit(this.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -534,21 +546,9 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 9
-            },
-            "implements": [
-                "OnInit"
-            ],
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "FreudKnobComponent-1",
-            "templateData": "<p>knob works!</p>\n"
+            "duplicateName": "FreudKnobComponent-1"
         },
         {
             "name": "FreudStepsComponent",
@@ -778,7 +778,7 @@
         },
         {
             "name": "FreudTypographyComponent",
-            "id": "component-FreudTypographyComponent-6465d5d956bcb61b750afd1c241ba87bda02006fd91490504182be0fe7b0a020bc6ed8d552d616cc3a1292383769af6910196fd511c8916712718f31eaa5eedf",
+            "id": "component-FreudTypographyComponent-b3ac01eadd582b6f919b66c573f3221f2967b68f68f5e33e155d5fc7f62d8cb24f0c70fe9a83553d2d446fc33d9933b592eceab3bedb2f82a3ccc9304fbab047",
             "file": "projects/web-components/src/components/typography/typography.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -800,11 +800,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "type",
-                    "defaultValue": "'body-sm-regular'",
+                    "name": "fontType",
+                    "defaultValue": "'bodyRegular1-5'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 55,
+                    "line": 26,
                     "type": "fontTypes",
                     "decorators": []
                 }
@@ -819,11 +819,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  Input,\r\n  ViewEncapsulation,\r\n} from '@angular/core';\r\n\r\nexport const types = [\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const;\r\ntype fontTypes = typeof types[number];\r\n\r\n@Component({\r\n  selector: '[freud-typography]',\r\n  exportAs: 'freudTypography',\r\n  styleUrls: ['./typography.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `<ng-content></ng-content> `,\r\n  host: {\r\n    class: 'freud-typography',\r\n    '[class.freud-typography-type-display]': 'type === \"display\"',\r\n    '[class.freud-typography-type-heading-xl]': 'type === \"heading-xl\"',\r\n    '[class.freud-typography-type-heading-lg]': 'type === \"heading-lg\"',\r\n    '[class.freud-typography-type-heading-md]': 'type === \"heading-md\"',\r\n    '[class.freud-typography-type-heading-sm]': 'type === \"heading-sm\"',\r\n    '[class.freud-typography-type-subtitle-lg]': 'type === \"subtitle-lg\"',\r\n    '[class.freud-typography-type-subtitle-md]': 'type === \"subtitle-md\"',\r\n    '[class.freud-typography-type-subtitle-sm]': 'type === \"subtitle-sm\"',\r\n    '[class.freud-typography-type-body-lg-bold]': 'type === \"body-lg-bold\"',\r\n    '[class.freud-typography-type-body-lg-regular]':\r\n      'type === \"body-lg-regular\"',\r\n    '[class.freud-typography-type-body-sm-bold]': 'type === \"body-sm-bold\"',\r\n    '[class.freud-typography-type-body-sm-regular]':\r\n      'type === \"body-sm-regular\"',\r\n    '[class.freud-typography-type-caption]': 'type === \"caption\"',\r\n    '[class.freud-typography-type-title-highlight]':\r\n      'type === \"title-highlight\"',\r\n  },\r\n})\r\nexport class FreudTypographyComponent {\r\n  @Input() type: fontTypes = 'body-sm-regular';\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  HostBinding,\r\n  Input,\r\n  ViewEncapsulation,\r\n} from '@angular/core';\r\nimport { bodyTypes, headingTypes } from './typrography.type';\r\n\r\nexport const types = headingTypes.concat(bodyTypes);\r\n\r\ntype fontTypes = typeof types[number];\r\n\r\n@Component({\r\n  selector: '[freud-typography]',\r\n  exportAs: 'freudTypography',\r\n  styleUrls: ['./typography.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `<ng-content></ng-content> `,\r\n  host: {\r\n    class: 'freud-typography'\r\n  },\r\n})\r\nexport class FreudTypographyComponent {\r\n  @HostBinding('class') @Input() fontType: fontTypes = 'bodyRegular1-5';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'sass:map';\r\n// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n@import '../../../../../../grid/src/scss/grid-variables.scss';\r\n\r\n\r\n.freud-typography {\r\n  font-family: $font-family-base;\r\n  margin: 0;\r\n}\r\n\r\n.freud-typography-type {\r\n\r\n  &-display {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-xxxl;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-heading-xl {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-xxl;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-heading-lg {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-lg;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-heading-md {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-md;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-heading-sm {\r\n    font-weight: $font-weight-bold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-subtitle-lg {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-md;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-subtitle-md {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-subtitle-sm {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-body-lg-bold {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-body-lg-regular {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-sm;\r\n    line-height: $line-height-sm;\r\n  }\r\n\r\n  &-body-sm-bold {\r\n    font-weight: $font-weight-semibold;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-body-sm-regular {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xs;\r\n    line-height: $line-height-md;\r\n  }\r\n\r\n  &-caption {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xxs;\r\n    line-height: $line-height-xs;\r\n  }\r\n\r\n  &-title-highlight {\r\n    font-weight: $font-weight-regular;\r\n    font-size: $font-size-xxs;\r\n    line-height: $line-height-sm;\r\n    text-transform: uppercase;\r\n    letter-spacing: 4px;\r\n  }\r\n}\r\n\r\n\r\n@media (max-width: map.get($breakpoints, \"md\")) {\r\n  .freud-typography-type {\r\n    &-display {\r\n      font-size: $font-size-xl;\r\n    }\r\n\r\n    &-heading-xl {\r\n      font-size: $font-size-lg;\r\n    }\r\n\r\n    &-heading-lg {\r\n      font-size: $font-size-md;\r\n    }\r\n\r\n    &-heading-md {\r\n      font-size: $font-size-sm;\r\n    }\r\n\r\n    &-heading-sm {\r\n      font-size: $font-size-xs;\r\n    }\r\n\r\n    &-subtitle-lg {\r\n      font-size: $font-size-sm;\r\n    }\r\n\r\n    &-subtitle-md {\r\n      font-size: $font-size-xs;\r\n    }\r\n\r\n    &-subtitle-sm {\r\n      font-size: $font-size-xxs;\r\n    }\r\n\r\n    &-body-lg-bold {\r\n      font-size: $font-size-xs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-lg-regular {\r\n      font-size: $font-size-xs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-sm-bold {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-body-sm-regular {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-md;\r\n    }\r\n\r\n    &-caption {\r\n      font-size: $font-size-xxs;\r\n      line-height: $line-height-xs;\r\n    }\r\n  }\r\n\r\n}\r\n",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n@mixin typography($fontSize, $lineHeight, $fontWeight) {\r\n  font-size: $fontSize;\r\n  font-weight: $lineHeight;\r\n  line-height: $fontWeight;\r\n}\r\n\r\n.freud-typography {\r\n  font-family: $font-family-base;\r\n  margin: 0;\r\n\r\n  // Text Regular\r\n  &.smallRegular1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1.5);\r\n  }\r\n  &.boryRegular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1.5);\r\n  }\r\n  &.smallRegular1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1.2);\r\n  }\r\n  &.bodyRegular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1.2);\r\n  }\r\n  &.smallRegular1 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1);\r\n  }\r\n  &.bodyRegular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1);\r\n  }\r\n  &.smallRegularAuto {\r\n    @include typography($font-size-xxxs, $font-weight-regular, auto);\r\n  }\r\n  &.bodyRegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  // Text Semibold\r\n  &.smallSemibold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1.5);\r\n  }\r\n  &.borySemibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1.5);\r\n  }\r\n  &.smallSemibold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1.2);\r\n  }\r\n  &.bodySemibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1.2);\r\n  }\r\n  &.smallSemibold1 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1);\r\n  }\r\n  &.bodySemibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1);\r\n  }\r\n  &.smallSemiboldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, auto);\r\n  }\r\n  &.bodySemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  // Text Bold\r\n  &.smallBold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1.5);\r\n  }\r\n  &.boryBold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1.5);\r\n  }\r\n  &.smallBold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1.2);\r\n  }\r\n  &.bodyBold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1.2);\r\n  }\r\n  &.smallBold1 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1);\r\n  }\r\n  &.bodyBold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1);\r\n  }\r\n  &.smallBoldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-bold, auto);\r\n  }\r\n  &.bodyBoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n\r\n  // Heading\r\n  // Regular\r\n  &.h1Regular1-5 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 60px);\r\n  }\r\n  &.h2Regular1-5 {\r\n    @include typography(30px, $font-weight-regular, 45px);\r\n  }\r\n  &.h3Regular1-5 {\r\n    @include typography($font-size-lg, $font-weight-regular, 36px);\r\n  }\r\n  &.h4Regular1-5 {\r\n    @include typography($font-size-md, $font-weight-regular, 30px);\r\n  }\r\n  &.h5Regular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 24px);\r\n  }\r\n  &.h6Regular1-5 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 21px);\r\n  }\r\n  \r\n  &.h1Regular1-2 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 48px);\r\n  }\r\n  &.h2Regular1-2 {\r\n    @include typography(30px, $font-weight-regular, 36px);\r\n  }\r\n  &.h3Regular1-2 {\r\n    @include typography($font-size-lg, $font-weight-regular, 28.8px);\r\n  }\r\n  &.h4Regular1-2 {\r\n    @include typography($font-size-md, $font-weight-regular, 24px);\r\n  }\r\n  &.h5Regular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 19.2px);\r\n  }\r\n  &.h6Regular1-2 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 17px);\r\n  }\r\n\r\n  &.h1Regular1 {\r\n    @include typography($font-size-xxl, $font-weight-regular, $font-size-xxl);\r\n  }\r\n  &.h2Regular1 {\r\n    @include typography(30px, $font-weight-regular, 30px);\r\n  }\r\n  &.h3Regular1 {\r\n    @include typography($font-size-lg, $font-weight-regular, $font-size-lg);\r\n  }\r\n  &.h4Regular1 {\r\n    @include typography($font-size-md, $font-weight-regular, $font-size-md);\r\n  }\r\n  &.h5Regular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, $font-size-xs);\r\n  }\r\n  &.h6Regular1 {\r\n    @include typography($font-size-xxs, $font-weight-regular, $font-size-xxs);\r\n  }\r\n\r\n  &.h1RegularAuto {\r\n    @include typography($font-size-xxl, $font-weight-regular, auto);\r\n  }\r\n  &.h2RegularAuto {\r\n    @include typography(30px, $font-weight-regular, auto);\r\n  }\r\n  &.h3RegularAuto {\r\n    @include typography($font-size-lg, $font-weight-regular, auto);\r\n  }\r\n  &.h4RegularAuto {\r\n    @include typography($font-size-md, $font-weight-regular, auto);\r\n  }\r\n  &.h5RegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  &.h6RegularAuto {\r\n    @include typography($font-size-xxs, $font-weight-regular, auto);\r\n  }\r\n\r\n  // Semibold\r\n  &.h1Semibold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 60px);\r\n  }\r\n  &.h2Semibold1-5 {\r\n    @include typography(30px, $font-weight-semibold, 45px);\r\n  }\r\n  &.h3Semibold1-5 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 36px);\r\n  }\r\n  &.h4Semibold1-5 {\r\n    @include typography($font-size-md, $font-weight-semibold, 30px);\r\n  }\r\n  &.h5Semibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 24px);\r\n  }\r\n  &.h6Semibold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 21px);\r\n  }\r\n  \r\n  &.h1Semibold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 48px);\r\n  }\r\n  &.h2Semibold1-2 {\r\n    @include typography(30px, $font-weight-semibold, 36px);\r\n  }\r\n  &.h3Semibold1-2 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 28.8px);\r\n  }\r\n  &.h4Semibold1-2 {\r\n    @include typography($font-size-md, $font-weight-semibold, 24px);\r\n  }\r\n  &.h5Semibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 19.2px);\r\n  }\r\n  &.h6Semibold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 17px);\r\n  }\r\n\r\n  &.h1Semibold1 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, $font-size-xxl);\r\n  }\r\n  &.h2Semibold1 {\r\n    @include typography(30px, $font-weight-semibold, 30px);\r\n  }\r\n  &.h3Semibold1 {\r\n    @include typography($font-size-lg, $font-weight-semibold, $font-size-lg);\r\n  }\r\n  &.h4Semibold1 {\r\n    @include typography($font-size-md, $font-weight-semibold, $font-size-md);\r\n  }\r\n  &.h5Semibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, $font-size-xs);\r\n  }\r\n  &.h6Semibold1 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1SemiboldAuto {\r\n    @include typography($font-size-xxl, $font-weight-semibold, auto);\r\n  }\r\n  &.h2SemiboldAuto {\r\n    @include typography(30px, $font-weight-semibold, auto);\r\n  }\r\n  &.h3SemiboldAuto {\r\n    @include typography($font-size-lg, $font-weight-semibold, auto);\r\n  }\r\n  &.h4SemiboldAuto {\r\n    @include typography($font-size-md, $font-weight-semibold, auto);\r\n  }\r\n  &.h5SemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  &.h6SemiboldAuto {\r\n    @include typography($font-size-xxs, $font-weight-semibold, auto);\r\n  }\r\n\r\n  // Bold\r\n  &.h1Bold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 60px);\r\n  }\r\n  &.h2Bold1-5 {\r\n    @include typography(30px, $font-weight-bold, 45px);\r\n  }\r\n  &.h3Bold1-5 {\r\n    @include typography($font-size-lg, $font-weight-bold, 36px);\r\n  }\r\n  &.h4Bold1-5 {\r\n    @include typography($font-size-md, $font-weight-bold, 30px);\r\n  }\r\n  &.h5Bold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 24px);\r\n  }\r\n  &.h6Bold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 21px);\r\n  }\r\n  \r\n  &.h1Bold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 48px);\r\n  }\r\n  &.h2Bold1-2 {\r\n    @include typography(30px, $font-weight-bold, 36px);\r\n  }\r\n  &.h3Bold1-2 {\r\n    @include typography($font-size-lg, $font-weight-bold, 28.8px);\r\n  }\r\n  &.h4Bold1-2 {\r\n    @include typography($font-size-md, $font-weight-bold, 24px);\r\n  }\r\n  &.h5Bold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 19.2px);\r\n  }\r\n  &.h6Bold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 17px);\r\n  }\r\n\r\n  &.h1Bold1 {\r\n    @include typography($font-size-xxl, $font-weight-bold, $font-size-xxl);\r\n  }\r\n  &.h2Bold1 {\r\n    @include typography(30px, $font-weight-bold, 30px);\r\n  }\r\n  &.h3Bold1 {\r\n    @include typography($font-size-lg, $font-weight-bold, $font-size-lg);\r\n  }\r\n  &.h4Bold1 {\r\n    @include typography($font-size-md, $font-weight-bold, $font-size-md);\r\n  }\r\n  &.h5Bold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, $font-size-xs);\r\n  }\r\n  &.h6Bold1 {\r\n    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1BoldAuto {\r\n    @include typography($font-size-xxl, $font-weight-bold, auto);\r\n  }\r\n  &.h2BoldAuto {\r\n    @include typography(30px, $font-weight-bold, auto);\r\n  }\r\n  &.h3BoldAuto {\r\n    @include typography($font-size-lg, $font-weight-bold, auto);\r\n  }\r\n  &.h4BoldAuto {\r\n    @include typography($font-size-md, $font-weight-bold, auto);\r\n  }\r\n  &.h5BoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n  &.h6BoldAuto {\r\n    @include typography($font-size-xxs, $font-weight-bold, auto);\r\n  }\r\n  \r\n}\r\n",
                     "styleUrl": "./typography.component.scss"
                 }
             ],
@@ -1137,13 +1137,13 @@
         },
         {
             "name": "FreudKnobModule",
-            "id": "module-FreudKnobModule-9a5b6f3e860e63416f9fa8367d70c8ae6acbfecb0d60e00a4c2a504a63c7362d131e178b3a4dd3b47bffcd3bfc569c3e1d415ea76983e9214ec0c01b5be1fd81",
+            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/knob/knob.module.ts",
+            "file": "projects/web-components/src/components/rating/knob.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule, FormsModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1181,13 +1181,13 @@
         },
         {
             "name": "FreudKnobModule",
-            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe-1",
+            "id": "module-FreudKnobModule-9a5b6f3e860e63416f9fa8367d70c8ae6acbfecb0d60e00a4c2a504a63c7362d131e178b3a4dd3b47bffcd3bfc569c3e1d415ea76983e9214ec0c01b5be1fd81-1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/rating/knob.module.ts",
+            "file": "projects/web-components/src/components/knob/knob.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule, FormsModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1489,6 +1489,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "bodyTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/web-components/src/components/typography/typrography.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  // Regular\r\n  'smallRegular1-5',\r\n  'bodyRegular1-5',\r\n\r\n  'smallRegular1-2',\r\n  'bodyRegular1-2',\r\n\r\n  'smallRegular1',\r\n  'bodyRegular1',\r\n  \r\n  'smallRegularAuto',\r\n  'bodyRegularAuto',\r\n\r\n  // Semibold\r\n  'smallSemibold1-5',\r\n  'bodySemibold1-5',\r\n\r\n  'smallSemibold1-2',\r\n  'bodySemibold1-2',\r\n\r\n  'smallSemibold1',\r\n  'bodySemibold1',\r\n\r\n  'smallSemiboldAuto',\r\n  'bodySemiboldAuto',\r\n\r\n  // Bold\r\n  'smallBold1-5',\r\n  'bodyBold1-5',\r\n\r\n  'smallBold1-2',\r\n  'bodyBold1-2',\r\n\r\n  'smallBold1',\r\n  'bodyBold1',\r\n\r\n  'smallBoldAuto',\r\n  'bodyBoldAuto',\r\n]"
+            },
+            {
                 "name": "Bottom",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1532,21 +1542,21 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/knob/Knob.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Disabled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "TemplateDisabled.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Error",
@@ -1587,6 +1597,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "headingTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/web-components/src/components/typography/typrography.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  // Regular\r\n  'h1Regular1-5',\r\n  'h2Regular1-5',\r\n  'h3Regular1-5',\r\n  'h4Regular1-5',\r\n  'h5Regular1-5',\r\n  'h6Regular1-5',\r\n\r\n  'h1Regular1-2',\r\n  'h2Regular1-2',\r\n  'h3Regular1-2',\r\n  'h4Regular1-2',\r\n  'h5Regular1-2',\r\n  'h6Regular1-2',\r\n\r\n  'h1Regular1',\r\n  'h2Regular1',\r\n  'h3Regular1',\r\n  'h4Regular1',\r\n  'h5Regular1',\r\n  'h6Regular1',\r\n  \r\n  'h1RegularAuto',\r\n  'h2RegularAuto',\r\n  'h3RegularAuto',\r\n  'h4RegularAuto',\r\n  'h5RegularAuto',\r\n  'h6RegularAuto',\r\n\r\n  // Semibold\r\n  'h1Semibold1-5',\r\n  'h2Semibold1-5',\r\n  'h3Semibold1-5',\r\n  'h4Semibold1-5',\r\n  'h5Semibold1-5',\r\n  'h6Semibold1-5',\r\n\r\n  'h1Semibold1-2',\r\n  'h2Semibold1-2',\r\n  'h3Semibold1-2',\r\n  'h4Semibold1-2',\r\n  'h5Semibold1-2',\r\n  'h6Semibold1-2',\r\n\r\n  'h1Semibold1',\r\n  'h2Semibold1',\r\n  'h3Semibold1',\r\n  'h4Semibold1',\r\n  'h5Semibold1',\r\n  'h6Semibold1',\r\n\r\n  'h1SemiboldAuto',\r\n  'h2SemiboldAuto',\r\n  'h3SemiboldAuto',\r\n  'h4SemiboldAuto',\r\n  'h5SemiboldAuto',\r\n  'h6SemiboldAuto',\r\n\r\n  // Bold\r\n  'h1Bold1-5',\r\n  'h2Bold1-5',\r\n  'h3Bold1-5',\r\n  'h4Bold1-5',\r\n  'h5Bold1-5',\r\n  'h6Bold1-5',\r\n\r\n  'h1Bold1-2',\r\n  'h2Bold1-2',\r\n  'h3Bold1-2',\r\n  'h4Bold1-2',\r\n  'h5Bold1-2',\r\n  'h6Bold1-2',\r\n\r\n  'h1Bold1',\r\n  'h2Bold1',\r\n  'h3Bold1',\r\n  'h4Bold1',\r\n  'h5Bold1',\r\n  'h6Bold1',\r\n\r\n  'h1BoldAuto',\r\n  'h2BoldAuto',\r\n  'h3BoldAuto',\r\n  'h4BoldAuto',\r\n  'h5BoldAuto',\r\n  'h6BoldAuto',\r\n]"
             },
             {
                 "name": "Imagem",
@@ -1692,7 +1712,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1702,7 +1722,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1861,6 +1881,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1891,16 +1921,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudButtonComponent>",
-                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/tooltip/Tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1911,21 +1931,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/typography/typography.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/tag/Tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTagComponent>",
                 "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\">Text</p>\r\n  `,\r\n})"
             },
             {
                 "name": "TemplateDisabled",
@@ -1985,7 +2005,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "[\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const"
+                "defaultValue": "headingTypes.concat(bodyTypes)"
             },
             {
                 "name": "Typography",
@@ -2461,6 +2481,28 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "projects/web-components/src/components/typography/typrography.type.ts": [
+                {
+                    "name": "bodyTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/web-components/src/components/typography/typrography.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  // Regular\r\n  'smallRegular1-5',\r\n  'bodyRegular1-5',\r\n\r\n  'smallRegular1-2',\r\n  'bodyRegular1-2',\r\n\r\n  'smallRegular1',\r\n  'bodyRegular1',\r\n  \r\n  'smallRegularAuto',\r\n  'bodyRegularAuto',\r\n\r\n  // Semibold\r\n  'smallSemibold1-5',\r\n  'bodySemibold1-5',\r\n\r\n  'smallSemibold1-2',\r\n  'bodySemibold1-2',\r\n\r\n  'smallSemibold1',\r\n  'bodySemibold1',\r\n\r\n  'smallSemiboldAuto',\r\n  'bodySemiboldAuto',\r\n\r\n  // Bold\r\n  'smallBold1-5',\r\n  'bodyBold1-5',\r\n\r\n  'smallBold1-2',\r\n  'bodyBold1-2',\r\n\r\n  'smallBold1',\r\n  'bodyBold1',\r\n\r\n  'smallBoldAuto',\r\n  'bodyBoldAuto',\r\n]"
+                },
+                {
+                    "name": "headingTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/web-components/src/components/typography/typrography.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  // Regular\r\n  'h1Regular1-5',\r\n  'h2Regular1-5',\r\n  'h3Regular1-5',\r\n  'h4Regular1-5',\r\n  'h5Regular1-5',\r\n  'h6Regular1-5',\r\n\r\n  'h1Regular1-2',\r\n  'h2Regular1-2',\r\n  'h3Regular1-2',\r\n  'h4Regular1-2',\r\n  'h5Regular1-2',\r\n  'h6Regular1-2',\r\n\r\n  'h1Regular1',\r\n  'h2Regular1',\r\n  'h3Regular1',\r\n  'h4Regular1',\r\n  'h5Regular1',\r\n  'h6Regular1',\r\n  \r\n  'h1RegularAuto',\r\n  'h2RegularAuto',\r\n  'h3RegularAuto',\r\n  'h4RegularAuto',\r\n  'h5RegularAuto',\r\n  'h6RegularAuto',\r\n\r\n  // Semibold\r\n  'h1Semibold1-5',\r\n  'h2Semibold1-5',\r\n  'h3Semibold1-5',\r\n  'h4Semibold1-5',\r\n  'h5Semibold1-5',\r\n  'h6Semibold1-5',\r\n\r\n  'h1Semibold1-2',\r\n  'h2Semibold1-2',\r\n  'h3Semibold1-2',\r\n  'h4Semibold1-2',\r\n  'h5Semibold1-2',\r\n  'h6Semibold1-2',\r\n\r\n  'h1Semibold1',\r\n  'h2Semibold1',\r\n  'h3Semibold1',\r\n  'h4Semibold1',\r\n  'h5Semibold1',\r\n  'h6Semibold1',\r\n\r\n  'h1SemiboldAuto',\r\n  'h2SemiboldAuto',\r\n  'h3SemiboldAuto',\r\n  'h4SemiboldAuto',\r\n  'h5SemiboldAuto',\r\n  'h6SemiboldAuto',\r\n\r\n  // Bold\r\n  'h1Bold1-5',\r\n  'h2Bold1-5',\r\n  'h3Bold1-5',\r\n  'h4Bold1-5',\r\n  'h5Bold1-5',\r\n  'h6Bold1-5',\r\n\r\n  'h1Bold1-2',\r\n  'h2Bold1-2',\r\n  'h3Bold1-2',\r\n  'h4Bold1-2',\r\n  'h5Bold1-2',\r\n  'h6Bold1-2',\r\n\r\n  'h1Bold1',\r\n  'h2Bold1',\r\n  'h3Bold1',\r\n  'h4Bold1',\r\n  'h5Bold1',\r\n  'h6Bold1',\r\n\r\n  'h1BoldAuto',\r\n  'h2BoldAuto',\r\n  'h3BoldAuto',\r\n  'h4BoldAuto',\r\n  'h5BoldAuto',\r\n  'h6BoldAuto',\r\n]"
+                }
+            ],
             "projects/web-components/src/test.ts": [
                 {
                     "name": "context",
@@ -2725,7 +2767,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [type]=\"type\">{{ label }}</p>\r\n  `,\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\">Text</p>\r\n  `,\r\n})"
                 },
                 {
                     "name": "Typography",
@@ -2747,7 +2789,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "[\r\n  'display',\r\n  'heading-xl',\r\n  'heading-lg',\r\n  'heading-md',\r\n  'heading-sm',\r\n  'subtitle-lg',\r\n  'subtitle-md',\r\n  'subtitle-sm',\r\n  'body-lg-bold',\r\n  'body-lg-regular',\r\n  'body-sm-bold',\r\n  'body-sm-regular',\r\n  'caption',\r\n  'title-highlight',\r\n] as const"
+                    "defaultValue": "headingTypes.concat(bodyTypes)"
                 }
             ]
         },
@@ -2975,6 +3017,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "types",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/typography/typrography.type.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bodyTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/components/typography/typrography.type.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headingTypes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

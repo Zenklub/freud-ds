@@ -28,9 +28,9 @@ describe('TypographyComponent', () => {
 
     expect(getClass('freud-typography')).toBe(true);
     types.forEach((type) => {
-      component.type = type;
+      component.fontType = type;
       fixture.detectChanges();
-      expect(getClass(`freud-typography-type-${type}`)).toBe(true);
+      expect(getClass(`${type}`)).toBe(true);
     });
   });
 });
