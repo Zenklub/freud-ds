@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpeedDialComponent } from './speed-dial.component';
+import { FreudSpeedDialComponent } from './speed-dial.component';
 
-describe('SpeedDialComponent', () => {
-  let component: SpeedDialComponent;
-  let fixture: ComponentFixture<SpeedDialComponent>;
+describe('FreudSpeedDialComponent', () => {
+  let component: FreudSpeedDialComponent;
+  let fixture: ComponentFixture<FreudSpeedDialComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpeedDialComponent ]
+      declarations: [ FreudSpeedDialComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpeedDialComponent);
+    fixture = TestBed.createComponent(FreudSpeedDialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

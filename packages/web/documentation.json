@@ -512,38 +512,155 @@
             "stylesData": ""
         },
         {
-            "name": "FreudKnobComponent",
-            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6-1",
-            "file": "projects/web-components/src/components/rating/knob.component.ts",
+            "name": "FreudRatingComponent",
+            "id": "component-FreudRatingComponent-0c8f805a20e9afc251305076e0a0b0effa5da2bfea5841a0f2a5dadbd9bc173122478e3fa466296443ac5ebeef42fe471c1f68aa0090233e08d946cea7578ebb",
+            "file": "projects/web-components/src/components/rating/rating.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
             "entryComponents": [],
+            "host": {},
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "freud-knob",
+            "selector": "freud-rating",
             "styleUrls": [
-                "./knob.component.scss"
+                "./rating.component.scss"
             ],
             "styles": [],
-            "templateUrl": [
-                "./knob.component.html"
-            ],
+            "template": "<p-rating\n  [(ngModel)]=\"value\"\n  [stars]=\"stars\"\n  [cancel]=\"cancel\"\n  [disabled]=\"disabled\"\n  [readonly]=\"readonly\"\n  [iconOnClass]=\"iconOnClass\"\n  [iconOffClass]=\"iconOffClass\"\n  [iconCancelClass]=\"iconCancelClass\"\n  (onRate)=\"onRateChange($event)\"\n  (onCancel)=\"onCancel.emit()\">\n</p-rating>\n",
+            "templateUrl": [],
             "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "cancel",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "iconCancelClass",
+                    "defaultValue": "'freud-icon freud-icon-star'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconOffClass",
+                    "defaultValue": "'freud-icon freud-icon-star'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconOnClass",
+                    "defaultValue": "'freud-icon freud-icon-star'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "stars",
+                    "defaultValue": "5",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCancel",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "onRate",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "EventEmitter<any>"
+                }
+            ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
+                    "name": "onRateChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 40,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -553,30 +670,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-rating',\n  template: `\n    <p-rating\n      [(ngModel)]=\"value\"\n      [stars]=\"stars\"\n      [cancel]=\"cancel\"\n      [disabled]=\"disabled\"\n      [readonly]=\"readonly\"\n      [iconOnClass]=\"iconOnClass\"\n      [iconOffClass]=\"iconOffClass\"\n      [iconCancelClass]=\"iconCancelClass\"\n      (onRate)=\"onRateChange($event)\"\n      (onCancel)=\"onCancel.emit()\">\n    </p-rating>\n  `,\n  styleUrls: ['./rating.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-rating',\n    '[class.freud-rating-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudRatingComponent {\n\n  @Input() value: number = 0;\n  @Input() stars: number = 5;\n  @Input() cancel: boolean = false;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() iconOnClass: string = 'freud-icon freud-icon-star';\n  @Input() iconOffClass: string = 'freud-icon freud-icon-star';\n  @Input() iconCancelClass: string = 'freud-icon freud-icon-star';\n  @Input() bgColor: boolean = false;\n  @Output() onRate: EventEmitter<any> = new EventEmitter<any>();\n  @Output() onCancel: EventEmitter<any> = new EventEmitter<any>();\n\n  onRateChange(event: any) {\n    console.log(event);\n    this.onRate.emit(event);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./knob.component.scss"
+                    "styleUrl": "./rating.component.scss"
                 }
             ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 9
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "FreudKnobComponent-1",
-            "templateData": "<p>knob works!</p>\n"
+            "stylesData": ""
         },
         {
             "name": "FreudSelectButtonComponent",
@@ -698,8 +800,164 @@
             "stylesData": ""
         },
         {
+            "name": "FreudSpeedDialComponent",
+            "id": "component-FreudSpeedDialComponent-7878025c9a1235cd349e30ec11e83066d953fc189d751a1b1f944acab45753ccd4d119a9bdf9c6db30286be9de7701b1436bcf56fa4a3ce2c7c469d0096375f0",
+            "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-speed-dial",
+            "styleUrls": [
+                "./speed-dial.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-speedDial\n  [id]=\"id\"\n  [visible]=\"visible\"\n  [mask]=\"mask\"\n  [disabled]=\"disabled\"\n  [showIcon]=\"showIcon\"\n  [hideIcon]=\"hideIcon\"\n  [type]=\"type\"\n  [direction]=\"direction\"\n  [model]=\"items\"\n  (onShow)=\"onShow.emit()\"\n  (onHide)=\"onHide.emit()\"\n  (onVisibleChange)=\"onVisibleChange.emit()\">\n</p-speedDial>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "direction",
+                    "defaultValue": "'up'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "directions",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hideIcon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "FreudMenuItem[]",
+                    "decorators": []
+                },
+                {
+                    "name": "mask",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showIcon",
+                    "defaultValue": "'freud-icon freud-icon-plus'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'linear'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "types",
+                    "decorators": []
+                },
+                {
+                    "name": "visible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onHide",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 45,
+                    "type": "EventEmitter<void>"
+                },
+                {
+                    "name": "onShow",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 44,
+                    "type": "EventEmitter<void>"
+                },
+                {
+                    "name": "onVisibleChange",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"@freud-ds/web-components\";\n\ntype directions = 'up' | 'down' | 'left' | 'right' | 'up-left' | 'up-right' | 'down-left' | 'down-right';\ntype types = 'linear' | 'circle' | 'semi-circle' | 'quarter-circle';\n@Component({\n  selector: 'freud-speed-dial',\n  template: `\n    <p-speedDial\n      [id]=\"id\"\n      [visible]=\"visible\"\n      [mask]=\"mask\"\n      [disabled]=\"disabled\"\n      [showIcon]=\"showIcon\"\n      [hideIcon]=\"hideIcon\"\n      [type]=\"type\"\n      [direction]=\"direction\"\n      [model]=\"items\"\n      (onShow)=\"onShow.emit()\"\n      (onHide)=\"onHide.emit()\"\n      (onVisibleChange)=\"onVisibleChange.emit()\">\n    </p-speedDial>\n  `,\n  styleUrls: ['./speed-dial.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-speed-dial',\n    '[class.freud-speed-dial-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSpeedDialComponent {\n\n  @Input() id: string = '';\n  @Input() visible: boolean = false;\n  @Input() mask: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() disabled: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() showIcon: string = 'freud-icon freud-icon-plus';\n  @Input() hideIcon: string = '';\n  @Input() type: types = 'linear';\n  @Input() direction: directions = 'up';\n  @Output() onVisibleChange: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onShow: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onHide: EventEmitter<void> = new EventEmitter<void>();\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./speed-dial.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
             "name": "FreudSplitButtonComponent",
-            "id": "component-FreudSplitButtonComponent-8a06a7f25e46e5d451d86c5967119d5eba10e8c500935b6eed0c4caa14f41857716bdd5c2f54f490054203ae33864a40edbfbe6bc9046da4e7e4045dd98385bc",
+            "id": "component-FreudSplitButtonComponent-874038a7195627fac84c186fbea325f14d101e51a3bbf12e5b6a726af9e1c95a9826d21632070a65df5d1bfc35015a7fa09c028e06447c9dfd28081eca1ae916",
             "file": "projects/web-components/src/components/split-button/split-button.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -714,7 +972,7 @@
                 "./split-button.component.scss"
             ],
             "styles": [],
-            "template": "<p-splitButton\n  [label]=\"label\"\n  [icon]=\"icon\"\n  [iconPos]=\"iconPos\"\n  [disabled]=\"disabled\"\n  [model]=\"items\"\n  (onDropdownClick)=\"dropdownClicked($event)\"\n  (onClick)=\"onClick.emit()\">\n</p-splitButton>\n",
+            "template": "<p-splitButton\n  [label]=\"label\"\n  [icon]=\"icon\"\n  [iconPos]=\"iconPos\"\n  [disabled]=\"disabled\"\n  [model]=\"items\"\n  (onDropdownClick)=\"onDropdownClick.emit($event)\"\n  (onClick)=\"onClick.emit()\">\n</p-splitButton>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -790,36 +1048,7 @@
                 }
             ],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "dropdownClicked",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 35,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -827,11 +1056,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api\";\n\n@Component({\n  selector: 'freud-split-button',\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [icon]=\"icon\"\n      [iconPos]=\"iconPos\"\n      [disabled]=\"disabled\"\n      [model]=\"items\"\n      (onDropdownClick)=\"dropdownClicked($event)\"\n      (onClick)=\"onClick.emit()\">\n    </p-splitButton>\n  `,\n  styleUrls: ['./split-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-split-button',\n    '[class.freud-split-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSplitButtonComponent {\n\n  @Input() label!: string;\n  @Input() icon: string = '';\n  @Input() iconPos: \"left\" | \"right\" = 'right';\n  @Input() disabled: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() bgColor: boolean = false;\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();\n\n  dropdownClicked(event: any) {\n    this.onDropdownClick.emit(event);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api\";\n\n@Component({\n  selector: 'freud-split-button',\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [icon]=\"icon\"\n      [iconPos]=\"iconPos\"\n      [disabled]=\"disabled\"\n      [model]=\"items\"\n      (onDropdownClick)=\"onDropdownClick.emit($event)\"\n      (onClick)=\"onClick.emit()\">\n    </p-splitButton>\n  `,\n  styleUrls: ['./split-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-split-button',\n    '[class.freud-split-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSplitButtonComponent {\n\n  @Input() label!: string;\n  @Input() icon: string = '';\n  @Input() iconPos: \"left\" | \"right\" = 'right';\n  @Input() disabled: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() bgColor: boolean = false;\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-split-button:not(.freud-split-bgcolor) {\r\n  .p-button {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-pure;\r\n  }\r\n}\r\n\r\n//box-shadow: 0 0 0 1px $brand-color-01;\r\n//border-color: $brand-color-01;\r\n//background-color: $brand-color-01;\r\n//color: $brand-color-pure;\r\n//font-weight: $font-weight-regular;\r\n",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-split-button:not(.freud-split-bgcolor) {\r\n  .p-button {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-split-button.freud-split-bgcolor {\r\n  .p-button {\r\n    background-color: $neutral-color-white;\r\n    border-color: $neutral-color-white;\r\n    font-weight: $font-weight-bold;\r\n    color: $brand-color-pure;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $neutral-color-white;\r\n  }\r\n}\r\n\r\n.freud-split-button {\r\n  .p-menu .p-menuitem-link:hover {\r\n    background-color: $neutral-color-light-02;\r\n  }\r\n  .p-splitbutton-defaultbutton {\r\n    border-radius: $border-radius-md 0 0 $border-radius-md;\r\n  }\r\n  .p-splitbutton-menubutton {\r\n    border-radius: 0 $border-radius-md $border-radius-md 0;\r\n  }\r\n\r\n  .p-menu a.p-menuitem-link .p-menuitem-text {\r\n    color: $neutral-color-dark-03;\r\n  }\r\n  .p-menuitem-link:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-01;\r\n    background-color: $brand-color-01;\r\n  }\r\n  .p-menu-overlay {\r\n    border-radius: $border-radius-md;\r\n  }\r\n}\r\n\r\n//box-shadow: 0 0 0 1px $brand-color-01;\r\n//border-color: $brand-color-01;\r\n//background-color: $brand-color-01;\r\n//color: $brand-color-pure;\r\n//font-weight: $font-weight-regular;\r\n",
                     "styleUrl": "./split-button.component.scss"
                 }
             ],
@@ -1124,68 +1353,6 @@
                 }
             ],
             "stylesData": ""
-        },
-        {
-            "name": "SpeedDialComponent",
-            "id": "component-SpeedDialComponent-86b0dd2100b7e433ad638105b25b59f1d60c46ceba4dce534f358d0cde68c4630cac8b50d1bb9fe40155853b4f1f831f8146b072e7c47b72ece9e633eae0ba18",
-            "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-speed-dial",
-            "styleUrls": [
-                "./speed-dial.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./speed-dial.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-speed-dial',\n  templateUrl: './speed-dial.component.html',\n  styleUrls: ['./speed-dial.component.css']\n})\nexport class SpeedDialComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./speed-dial.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>speed-dial works!</p>\n"
         }
     ],
     "modules": [
@@ -1414,14 +1581,14 @@
             ]
         },
         {
-            "name": "FreudKnobModule",
-            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe-1",
+            "name": "FreudRatingModule",
+            "id": "module-FreudRatingModule-86984f9dac0e52b4c7ca32137cd604f55510450431cc5275eabc0a5f84d98a2935e5c24fb00fd6f19067841d44e70c69a2c3dba3435288529088a2e957e2c77f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/rating/knob.module.ts",
+            "file": "projects/web-components/src/components/rating/rating.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RatingModule } from \"primeng/rating\";\r\n\r\nimport { FreudRatingComponent } from './rating.component';\r\nimport { FormsModule } from \"@angular/forms\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, RatingModule, FormsModule],\r\n  declarations: [FreudRatingComponent],\r\n  exports: [FreudRatingComponent]\r\n})\r\nexport class FreudRatingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1431,7 +1598,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "FreudKnobComponent"
+                            "name": "FreudRatingComponent"
                         }
                     ]
                 },
@@ -1441,7 +1608,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "FreudRatingComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -1484,6 +1655,50 @@
                     "elements": [
                         {
                             "name": "FreudSelectButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudSpeedDialModule",
+            "id": "module-FreudSpeedDialModule-4d5e4426c6484b12c0c6941a813327f966cb36aa066b700c4d0592d7d8eae96717d6e69a9b0886a074defa2f9c6a9e7ccce0d55cfbe43b9244b852b853a67f1c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/speed-dial/speed-dial.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudSpeedDialComponent } from './speed-dial.component';\r\nimport { SpeedDialModule } from \"primeng/speeddial\";\r\n\r\n@NgModule({\r\n    imports: [CommonModule, SpeedDialModule],\r\n  declarations: [FreudSpeedDialComponent],\r\n  exports: [FreudSpeedDialComponent]\r\n})\r\nexport class FreudSpeedDialModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudSpeedDialComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudSpeedDialComponent"
                         }
                     ]
                 },
@@ -1794,7 +2009,7 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/steps/Steps.stories.ts",
+                "file": "stories/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1814,7 +2029,17 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/typography/typography.stories.ts",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1831,10 +2056,40 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "BgColorDisabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColorDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColorDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1861,6 +2116,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "CancelButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1869,16 +2134,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/select-button/SelectButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -1894,7 +2149,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/steps/Steps.stories.ts",
+                "file": "stories/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1911,10 +2176,60 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "DefaultEditavel",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DirectionDown",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DirectionDownRight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DirectionLeft",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DirectionUp",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1934,16 +2249,6 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/select-button/SelectButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Disabled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1954,7 +2259,37 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2141,6 +2476,16 @@
                 "defaultValue": "[\n  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {\n      console.log('Evento update')\n    }\n  },\n  {\n    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {\n      console.log('Evento delete')\n    },\n  },\n  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\n  {separator: true},\n  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}\n]"
             },
             {
+                "name": "itemsWithLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "FreudMenuItem[]",
+                "defaultValue": "[\r\n  {label: 'Label1', icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    label: 'Label2', icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\r\n  {icon: 'freud-icon freud-icon-cog'}\r\n]"
+            },
+            {
                 "name": "itemsWithoutIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2199,6 +2544,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "(evento: string, value: any) => {\n  console.log(evento, value);\n}"
+            },
+            {
+                "name": "Mask",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Medium",
@@ -2295,6 +2650,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Readonly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2443,6 +2808,26 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudKnobComponent>",
+                "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [readonly]=\"readonly\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudRatingComponent>",
+                "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [cancel]=\"cancel\"\r\n      [disabled]=\"disabled\"\r\n      [readonly]=\"readonly\"\r\n      [iconOnClass]=\"iconOnClass\"\r\n      [iconOffClass]=\"iconOffClass\"\r\n      [iconCancelClass]=\"iconCancelClass\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/select-button/SelectButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2453,11 +2838,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/knob/Knob.stories.ts",
+                "file": "stories/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudKnobComponent>",
-                "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [readonly]=\"readonly\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
+                "type": "Story<FreudSplitButtonComponent>",
+                "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
             },
             {
                 "name": "Template",
@@ -2473,11 +2858,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudSplitButtonComponent>",
-                "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+                "type": "Story<FreudSpeedDialComponent>",
+                "defaultValue": "(\r\n  args: FreudSpeedDialComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-speed-dial\r\n      [id]=\"id\"\r\n      [visible]=\"visible\"\r\n      [mask]=\"mask\"\r\n      [disabled]=\"disabled\"\r\n      [showIcon]=\"showIcon\"\r\n      [hideIcon]=\"hideIcon\"\r\n      [type]=\"type\"\r\n      [direction]=\"direction\"\r\n      [items]=\"items\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-speed-dial>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTooltipComponent>",
+                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -2498,16 +2893,6 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
                 "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\" [fontBgColor]=\"fontBgColor\">{{label}}</p>\r\n  `\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/tooltip/Tooltip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudTooltipComponent>",
-                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
             },
             {
                 "name": "TemplateBold",
@@ -2680,6 +3065,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "TypeCircle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "TypeQuarterCircle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "types",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2768,6 +3173,17 @@
                 "kind": 186
             },
             {
+                "name": "directions",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"up\" | \"down\" | \"left\" | \"right\" | \"up-left\" | \"up-right\" | \"down-left\" | \"down-right\"",
+                "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
                 "name": "fontTypes",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -2795,6 +3211,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"sm\" | \"md\"",
                 "file": "projects/web-components/src/components/badge/badge.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "types",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"linear\" | \"circle\" | \"semi-circle\" | \"quarter-circle\"",
+                "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3161,12 +3588,32 @@
                     "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [readonly]=\"readonly\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
                 }
             ],
-            "stories/steps/Steps.stories.ts": [
+            "stories/rating/Rating.stories.ts": [
                 {
                     "name": "BgColor",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/steps/Steps.stories.ts",
+                    "file": "stories/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BgColorDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "CancelButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/rating/Rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -3176,31 +3623,41 @@
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/steps/Steps.stories.ts",
+                    "file": "stories/rating/Rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "itens",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/steps/Steps.stories.ts",
+                    "file": "stories/rating/Rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StepMenu[]",
-                    "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Readonly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/steps/Steps.stories.ts",
+                    "file": "stories/rating/Rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FreudStepsComponent>",
-                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                    "type": "Story<FreudRatingComponent>",
+                    "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [cancel]=\"cancel\"\r\n      [disabled]=\"disabled\"\r\n      [readonly]=\"readonly\"\r\n      [iconOnClass]=\"iconOnClass\"\r\n      [iconOffClass]=\"iconOffClass\"\r\n      [iconCancelClass]=\"iconCancelClass\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
                 }
             ],
             "stories/split-button/SplitButton.stories.ts": [
@@ -3293,6 +3750,232 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [icon]=\"icon\"\n        [iconPos]=\"iconPos\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+                }
+            ],
+            "stories/steps/Steps.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "itens",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StepMenu[]",
+                    "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudStepsComponent>",
+                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/speed-dial/SpeedDial.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BgColorDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DirectionDown",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DirectionDownRight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DirectionLeft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DirectionUp",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "itemsWithLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FreudMenuItem[]",
+                    "defaultValue": "[\r\n  {label: 'Label1', icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    label: 'Label2', icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\r\n  {icon: 'freud-icon freud-icon-cog'}\r\n]"
+                },
+                {
+                    "name": "Mask",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSpeedDialComponent>",
+                    "defaultValue": "(\r\n  args: FreudSpeedDialComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-speed-dial\r\n      [id]=\"id\"\r\n      [visible]=\"visible\"\r\n      [mask]=\"mask\"\r\n      [disabled]=\"disabled\"\r\n      [showIcon]=\"showIcon\"\r\n      [hideIcon]=\"hideIcon\"\r\n      [type]=\"type\"\r\n      [direction]=\"direction\"\r\n      [items]=\"items\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-speed-dial>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "TypeCircle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "TypeQuarterCircle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/speed-dial/SpeedDial.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "stories/tooltip/Tooltip.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Bottom",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Left",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Right",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTooltipComponent>",
+                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "Top",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "stories/typography/typography.stories.ts": [
@@ -3445,68 +4128,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "TemplateTextSemibold.bind({})"
-                }
-            ],
-            "stories/tooltip/Tooltip.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Bottom",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Left",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Right",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudTooltipComponent>",
-                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
-                },
-                {
-                    "name": "Top",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
                 }
             ],
             "projects/web-components/src/components/typography/typrography.type.ts": [
@@ -3896,6 +4517,30 @@
                     "kind": 186
                 }
             ],
+            "projects/web-components/src/components/speed-dial/speed-dial.component.ts": [
+                {
+                    "name": "directions",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"up\" | \"down\" | \"left\" | \"right\" | \"up-left\" | \"up-right\" | \"down-left\" | \"down-right\"",
+                    "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "types",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"linear\" | \"circle\" | \"semi-circle\" | \"quarter-circle\"",
+                    "file": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
             "projects/web-components/src/components/typography/typography.component.ts": [
                 {
                     "name": "fontTypes",
@@ -3975,12 +4620,12 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/web-components/src/components/rating/knob.component.ts",
+                "filePath": "projects/web-components/src/components/rating/rating.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "FreudKnobComponent",
+                "name": "FreudRatingComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -3996,9 +4641,9 @@
                 "filePath": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "SpeedDialComponent",
+                "name": "FreudSpeedDialComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -4007,7 +4652,7 @@
                 "linktype": "component",
                 "name": "FreudSplitButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -4574,6 +5219,76 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColorDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CancelButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Readonly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/select-button/SelectButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -4649,6 +5364,126 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "templateHTML",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColorDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DirectionDown",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DirectionDownRight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DirectionLeft",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DirectionUp",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "itemsWithLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Mask",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TypeCircle",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/speed-dial/SpeedDial.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TypeQuarterCircle",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

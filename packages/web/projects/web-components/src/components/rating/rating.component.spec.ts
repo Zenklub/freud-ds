@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreudKnobComponent } from './knob.component';
+import { FreudRatingComponent } from './rating.component';
 
-describe('FreudKnobComponent', () => {
-  let component: FreudKnobComponent;
-  let fixture: ComponentFixture<FreudKnobComponent>;
+describe('FreudRatingComponent', () => {
+  let component: FreudRatingComponent;
+  let fixture: ComponentFixture<FreudRatingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudKnobComponent ]
+      declarations: [ FreudRatingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreudKnobComponent);
+    fixture = TestBed.createComponent(FreudRatingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

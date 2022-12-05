@@ -25,10 +25,6 @@ const itemsWithoutIcon: FreudMenuItem[] = [
   {label: 'Zenklub', url: 'http://zenklub.com'}
 ]
 
-export const log = (evento: string, value: any) => {
-  console.log(evento, value);
-}
-
 const templateHTML = `
     <freud-split-button
         [label]="label"

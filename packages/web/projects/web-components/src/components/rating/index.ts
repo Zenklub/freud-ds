@@ -1,2 +1,2 @@
-export * from './knob.component';
-export * from './knob.module';
+export * from './rating.component';
+export * from './rating.module';

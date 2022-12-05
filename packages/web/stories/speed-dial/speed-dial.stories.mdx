@@ -1,0 +1,121 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSpeedDialComponent, FreudSpeedDialModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../header/header.component';
+import {
+  DirectionLeft,
+  DirectionDown,
+  Disabled,
+  BgColor,
+  BgColorDisabled,
+  TypeCircle,
+  TypeQuarterDownRight,
+  TypeQuarterCircle,
+  Mask
+} from './SpeedDial.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudSpeedDialModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    docs: { iframeHeight: '500px' },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Buttons/SpeedDial" component={FreudSpeedDialComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "SpeedDial",
+      description: "Quando pressionado, um botão de ação flutuante pode exibir várias ações primárias que podem ser executadas em uma página."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudSpeedDialModule } from '@freud-ds/web-components';
+```
+
+## <a id="importing"></a>Declaração dos items
+```ts
+// No Componente declare a lista de opções de acordo com a interface "FreudMenuItem"
+import { FreudMenuItem } from '@freud-ds/web-components';
+export class Componente {
+    items: FreudMenuItem[];
+    constructor() {
+        this.items = [
+            {icon: 'freud-icon freud-icon-refresh', command: () => this.update.bind(this)},
+            {icon: 'freud-icon freud-icon-delete', command: () => {this.delete();}},
+            {label: 'Angular.io', icon: 'freud-icon freud-icon-info', url: 'http://angular.io'},
+            {label: 'Setup', icon: 'freud-icon freud-icon-cog', routerLink: ['/setup']}
+        ];
+    }
+    update() {
+      // Ação quando o usuário clicar no botão de update
+    }
+
+    delete() {
+        // Ação quando o usuário clicar no botão de delete
+    }
+}
+```
+
+## <a id="exemplos"></a>Exemplos
+
+### Direções
+Especifica a direção de abertura das ações. Para `linear` e `semi-circle` tipos; up, down, left e right. Para `quarter-circle` tipos; up-left, up-right, down-left and down-right.
+
+Nos exemplos abaixo estão sendo utilizados as opções `down` e `left` respectivamente, utilize a aba canvas para visualizar
+as outras opções.
+<Canvas>
+  <Story story={DirectionDown}/>
+  <Story story={DirectionLeft}/>
+</Canvas>
+
+### Tipos
+SpeedDial tem 4 tipos; `linear`, `circle`, `semi-circle`, `quarter-circle`.
+
+1 - Type: `circle`
+
+2 - Type: `quarter-circle` | Direction: `down-right`
+
+3 - Type: `quarter-circle` | Direction: `up-right`
+<Canvas>
+  <Story story={TypeCircle}/>
+  <Story story={TypeQuarterDownRight}/>
+  <Story story={TypeQuarterCircle}/>
+</Canvas>
+
+
+### Disabled
+<Canvas>
+  <Story story={Disabled}/>
+</Canvas>
+
+### Com background(bgColor)
+<Canvas style={{ backgroundColor: '#3B1C78' }}>
+  <Story story={BgColor} />
+  <Story story={BgColorDisabled}/>
+</Canvas>
+
+### Com mascara
+<Canvas>
+  <Story story={Mask} />
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSpeedDialComponent} />

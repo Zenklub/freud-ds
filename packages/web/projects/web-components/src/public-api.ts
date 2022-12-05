@@ -10,6 +10,8 @@ export * from './components/steps';
 export * from './components/tag';
 export * from './components/tooltip';
 export * from './components/select-button';
+export * from './components/speed-dial';
+export * from './components/rating';
 export * from './components/split-button';
 export * from './components/typography';
 
