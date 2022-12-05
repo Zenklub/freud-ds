@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
-import { 
+import {
   Primary,
   Secondary,
   Ghost,
@@ -13,10 +13,11 @@ import {
   SizeMD,
   SizeLG,
   Disabled,
-  Loading
+  Loading,
+  Icon
 } from './Button.stories.ts';
 
-<Meta 
+<Meta
   decorators={[
     moduleMetadata({
       imports: [FreudButtonModule],
@@ -81,6 +82,11 @@ import FreudButtonModule from '@freud-ds/web-components';
 ### Loading
 <Canvas>
   <Story story={Loading}/>
+</Canvas>
+
+### Icon
+<Canvas>
+  <Story story={Icon}/>
 </Canvas>
 
 ## <a id="api"></a>API

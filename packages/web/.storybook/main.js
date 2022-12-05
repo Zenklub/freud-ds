@@ -1,7 +1,7 @@
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(ts)"
+    "../stories/**/*.story.@(ts)" // Adicione o .stories caso queia mapear as histórias padrões
   ],
   "addons": [
     "@storybook/addon-links",
@@ -27,5 +27,5 @@ module.exports = {
     modernInlineRender: false,
     buildStoriesJson: true
   }
-    
+
 }

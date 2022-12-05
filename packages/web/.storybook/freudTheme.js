@@ -21,5 +21,5 @@ export default create({
   fontBase: '"Fira Sans", sans-serif',
   brandTitle: 'Freud DS',
   brandUrl: 'https://zenklub.com.br',
-  brandImage: 'assets/img/logo_ds.png',
+  brandImage: 'assets/img/logo-freud.svg',
 });

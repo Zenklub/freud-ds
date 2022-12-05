@@ -28,6 +28,19 @@
     font-size: $font-size-md;
 }
 
+.freud-avatar.freud-avatar-size-medium {
+  .freud-icon {
+    font-size: 24px;
+  }
+}
+
+.freud-avatar.freud-avatar-size-large {
+  .freud-icon {
+    font-size: 30px;
+  }
+}
+
+
 .freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {
     background-color: $neutral-color-light-02;
     color: $neutral-color-dark-03;

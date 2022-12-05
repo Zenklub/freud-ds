@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { FreudMenuItem } from "../../api";
 
 @Component({
-  selector: 'lib-split-button',
-  templateUrl: './split-button.component.html',
-  styleUrls: ['./split-button.component.css']
-})
-export class SplitButtonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  selector: 'freud-split-button',
+  template: `
+    <p-splitButton
+      [label]="label"
+      [icon]="icon"
+      [iconPos]="iconPos"
+      [disabled]="disabled"
+      [model]="items"
+      (onDropdownClick)="onDropdownClick.emit($event)"
+      (onClick)="onClick.emit()">
+    </p-splitButton>
+  `,
+  styleUrls: ['./split-button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'freud-split-button',
+    '[class.freud-split-bgcolor]': `bgColor`,
   }
+})
+export class FreudSplitButtonComponent {
+
+  @Input() label!: string;
+  @Input() icon: string = '';
+  @Input() iconPos: "left" | "right" = 'right';
+  @Input() disabled: boolean = false;
+  @Input() items!: FreudMenuItem[];
+  @Input() bgColor: boolean = false;
+  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();
 
 }

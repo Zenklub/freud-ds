@@ -2,20 +2,48 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "StepMenu",
-            "id": "interface-StepMenu-3b4e52980a7d192ba7764d60147fb313bfb38a75b7bbe8762694eb3ee4399b0a0325461853d4cd4321631b8fa2c2a4237c5554cea50d43a9fcb0d79b46512795",
-            "file": "projects/web-components/src/components/steps/steps.component.ts",
+            "name": "FreudMenuItem",
+            "id": "interface-FreudMenuItem-af2b5b3e3f637b798bde09db072b1a1d141c94149bafb44d030ae4512a7c424e42996d1042c3cb983a22b777e2f5806454ede1aaa8c669c8b9c7c7c050184d67",
+            "file": "projects/web-components/src/api/menu.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "sourceCode": "import { MenuItem } from \"primeng/api\";\r\n\r\nexport interface FreudMenuItem extends MenuItem {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
             "extends": "MenuItem"
+        },
+        {
+            "name": "StepMenu",
+            "id": "interface-StepMenu-70bb36fc3f5f89d11219246de13e2db8f8e909a39e3ff295c315f83cfa60cb11edbd93fe7db21ed46042bee68eb784c0871f1cd3f818e9f46feac5fef8432c06",
+            "file": "projects/web-components/src/components/steps/steps.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api/menu.interface\";\n\nexport interface StepMenu extends FreudMenuItem {}\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": "FreudMenuItem"
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "FreudConfirmationService",
+            "id": "injectable-FreudConfirmationService-be087ef6af9897dd0f9af61260b4d12754d03dc3e91288cadb6f72e6b48af8ad3941ffb46f32878184cd1afe95497026e716e27c058903d29f6eca89deea16ae",
+            "file": "projects/web-components/src/services/confirmation.service.ts",
+            "properties": [],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ConfirmationService } from 'primeng/api';\n\n@Injectable()\nexport class FreudConfirmationService  extends ConfirmationService { }\n",
+            "extends": "ConfirmationService",
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -23,7 +51,7 @@
     "components": [
         {
             "name": "FreudAvatarComponent",
-            "id": "component-FreudAvatarComponent-f20f91e19c76fcebc322d273f9e4cf3b2eff40cf22957105bb4511276430e0c6d62d4a9eab4ecc9b2b2fb0d102ea55dbfb407fd3c95902f86fe101dcb2694e28",
+            "id": "component-FreudAvatarComponent-2f742bd84ee1c1ce2edbe1df881ebbb10305e4c0320a5c9e17987b7a9a1a2e3abf87c8d4e623e30f849c9534dc88341f6aff9f799286bbf202be8842424c62b8",
             "file": "projects/web-components/src/components/avatar/avatar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -39,7 +67,7 @@
                 "./avatar.component.scss"
             ],
             "styles": [],
-            "template": "<p-avatar\n  [label]=\"image ? '' : label\"\n  shape=\"circle\"\n  [image]=\"image\">\n  <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n</p-avatar>\n",
+            "template": "<p-avatar\n  [label]=\"(image || withIcon) ? '' : label\"\n  [icon]=\"(withIcon || !label) ? 'freud-icon freud-icon-user' : ''\"\n  shape=\"circle\"\n  [image]=\"image\">\n  <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n</p-avatar>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -48,7 +76,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -57,12 +85,12 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 32,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "iconName",
+                    "name": "image",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -71,20 +99,11 @@
                     "decorators": []
                 },
                 {
-                    "name": "image",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 37,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "label",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -93,8 +112,17 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 29,
                     "type": "avatarSizes",
+                    "decorators": []
+                },
+                {
+                    "name": "withIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -108,11 +136,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"image ? '' : label\"\n      shape=\"circle\"\n      [image]=\"image\">\n      <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-color-primary]': `!['secondary', 'ghost'].includes(color)`,\n    '[class.freud-avatar-color-secondary]': `color === 'secondary'`,\n    '[class.freud-avatar-color-ghost]': `color === 'ghost'`,\n\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() iconName: string = '';\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = ''; \n  @Input() image: string = '';\n\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';\n\ntype avatarSizes = 'sm' | 'md' | 'lg';\n@Component({\n  selector: 'freud-avatar',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-avatar\n      [label]=\"(image || withIcon) ? '' : label\"\n      [icon]=\"(withIcon || !label) ? 'freud-icon freud-icon-user' : ''\"\n      shape=\"circle\"\n      [image]=\"image\">\n      <freud-badge *ngIf=\"badge\" [value]=\"badge\" size=\"sm\" color=\"error\"></freud-badge>\n    </p-avatar>\n  `,\n  styleUrls: ['./avatar.component.scss'],\n  host: {\n    class: 'freud-avatar',\n    '[class.freud-avatar-bgcolor]': `bgColor`,\n\n    '[class.freud-avatar-size-small]': `size === 'sm'`,\n    '[class.freud-avatar-size-medium]': `size === 'md'`,\n    '[class.freud-avatar-size-large]': `size === 'lg'`,\n  }\n})\nexport class FreudAvatarComponent {\n\n  @Input() size: avatarSizes = 'md';\n  @Input() label: string = '';\n  @Input() withIcon: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() badge: string = '';\n  @Input() image: string = '';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-avatar .p-avatar {\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-avatar {\r\n    position: relative;\r\n    display: block;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-small, .freud-avatar-size-small .p-avatar {\r\n    width: 28px;\r\n    height: 28px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-medium, .freud-avatar-size-medium .p-avatar {\r\n    width: 42px;\r\n    height: 42px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-large, .freud-avatar-size-large .p-avatar {\r\n    width: 56px;\r\n    height: 56px;\r\n    font-size: $font-size-md;\r\n}\r\n\r\n.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {\r\n    background-color: $neutral-color-light-02;\r\n    color: $neutral-color-dark-03;\r\n}\r\n\r\n.freud-avatar.freud-avatar-bgcolor .p-avatar {\r\n    background-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n}\r\nfreud-badge {\r\n    position: absolute;\r\n    top: -12px;\r\n    right: -4px;\r\n}",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-avatar .p-avatar {\r\n    font-family: $font-family-base;\r\n}\r\n\r\n.freud-avatar {\r\n    position: relative;\r\n    display: block;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-small, .freud-avatar-size-small .p-avatar {\r\n    width: 28px;\r\n    height: 28px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-medium, .freud-avatar-size-medium .p-avatar {\r\n    width: 42px;\r\n    height: 42px;\r\n    font-size: $font-size-xs;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-large, .freud-avatar-size-large .p-avatar {\r\n    width: 56px;\r\n    height: 56px;\r\n    font-size: $font-size-md;\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-medium {\r\n  .freud-icon {\r\n    font-size: 24px;\r\n  }\r\n}\r\n\r\n.freud-avatar.freud-avatar-size-large {\r\n  .freud-icon {\r\n    font-size: 30px;\r\n  }\r\n}\r\n\r\n\r\n.freud-avatar:not(.freud-avatar-bgcolor) .p-avatar {\r\n    background-color: $neutral-color-light-02;\r\n    color: $neutral-color-dark-03;\r\n}\r\n\r\n.freud-avatar.freud-avatar-bgcolor .p-avatar {\r\n    background-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n}\r\nfreud-badge {\r\n    position: absolute;\r\n    top: -12px;\r\n    right: -4px;\r\n}\r\n",
                     "styleUrl": "./avatar.component.scss"
                 }
             ],
@@ -333,71 +361,7 @@
         },
         {
             "name": "FreudKnobComponent",
-            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6",
-            "file": "projects/web-components/src/components/rating/knob.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "freud-knob",
-            "styleUrls": [
-                "./knob.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./knob.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 13,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./knob.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 9
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>knob works!</p>\n"
-        },
-        {
-            "name": "FreudKnobComponent",
-            "id": "component-FreudKnobComponent-b548b7156c198663907f5947d1c639299d44fdd227248b593aef4abe228415dcf5799941732e3ca757843c61b5f9f7aba3f619bce41a27443fd70842af206399-1",
+            "id": "component-FreudKnobComponent-b548b7156c198663907f5947d1c639299d44fdd227248b593aef4abe228415dcf5799941732e3ca757843c61b5f9f7aba3f619bce41a27443fd70842af206399",
             "file": "projects/web-components/src/components/knob/knob.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -545,14 +509,337 @@
                     "styleUrl": "./knob.component.scss"
                 }
             ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudKnobComponent",
+            "id": "component-FreudKnobComponent-e57d207cdba763571baa58074d0030df5f5dfc76fee88130b5843e7d7662e68c81f2a3ba26c6fe46e4538583e593ffa9d76bf044f17221ef3810d377279b99e6-1",
+            "file": "projects/web-components/src/components/rating/knob.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-knob",
+            "styleUrls": [
+                "./knob.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./knob.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-knob',\n  templateUrl: './knob.component.html',\n  styleUrls: ['./knob.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FreudKnobComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./knob.component.scss"
+                }
+            ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "FreudKnobComponent-1"
+            "duplicateName": "FreudKnobComponent-1",
+            "templateData": "<p>knob works!</p>\n"
+        },
+        {
+            "name": "FreudSelectButtonComponent",
+            "id": "component-FreudSelectButtonComponent-cb19b1e39ab3021b5d5efe7477e17c1e187ac738736cf32f2426e0b6375bad336b570133fb91990379dc43f528c1743a22dc6119572dd7b431dcb8fb781f6c2f",
+            "file": "projects/web-components/src/components/select-button/select-button.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-select-button",
+            "styleUrls": [
+                "./select-button.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-selectButton\n  [options]=\"options\"\n  [(ngModel)]=\"selectedOption\"\n  [multiple]=\"multiple\"\n  [tabindex]=\"tabindex\"\n  [optionDisabled]=\"optionDisabled\"\n  [optionLabel]=\"optionLabel\"\n  [disabled]=\"disabled\"\n  (onChange)=\"selectedOptionChange.emit($event)\">\n</p-selectButton>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "optionDisabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "optionLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedOption",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "tabindex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectedOptionChange",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';\n\n@Component({\n  selector: 'freud-select-button',\n  template: `\n    <p-selectButton\n      [options]=\"options\"\n      [(ngModel)]=\"selectedOption\"\n      [multiple]=\"multiple\"\n      [tabindex]=\"tabindex\"\n      [optionDisabled]=\"optionDisabled\"\n      [optionLabel]=\"optionLabel\"\n      [disabled]=\"disabled\"\n      (onChange)=\"selectedOptionChange.emit($event)\">\n    </p-selectButton>\n  `,\n  styleUrls: ['./select-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-select-button',\n    '[class.freud-select-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSelectButtonComponent {\n\n  @Input() options!: any[];\n  @Input() optionLabel!: string;\n  @Input() selectedOption!: any;\n  @Input() multiple: boolean = false;\n  @Input() disabled: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() optionDisabled!: string;\n  @Input() tabindex: number = 0;\n\n  @Output() selectedOptionChange: EventEmitter<any> = new EventEmitter<any>();\n\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-select-button.freud-select-bgcolor {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    color: $brand-color-04;\r\n    background: $neutral-color-white;\r\n    border: 1px solid $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $brand-color-05;\r\n    background: $brand-color-04;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n.freud-select-button {\r\n  .p-selectbutton .p-button {\r\n    font-weight: $font-weight-bold;\r\n    border-radius: $border-radius-md;\r\n  }\r\n}\r\n\r\n.p-button:focus {\r\n  box-shadow: 0 0 0 1px $brand-color-pure;\r\n}\r\n\r\n\r\n.freud-select-button:not(.freud-select-bgcolor) {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    color: $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $neutral-color-light-04;\r\n    color: $neutral-color-dark-03;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./select-button.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "FreudSplitButtonComponent",
+            "id": "component-FreudSplitButtonComponent-8a06a7f25e46e5d451d86c5967119d5eba10e8c500935b6eed0c4caa14f41857716bdd5c2f54f490054203ae33864a40edbfbe6bc9046da4e7e4045dd98385bc",
+            "file": "projects/web-components/src/components/split-button/split-button.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-split-button",
+            "styleUrls": [
+                "./split-button.component.scss"
+            ],
+            "styles": [],
+            "template": "<p-splitButton\n  [label]=\"label\"\n  [icon]=\"icon\"\n  [iconPos]=\"iconPos\"\n  [disabled]=\"disabled\"\n  [model]=\"items\"\n  (onDropdownClick)=\"dropdownClicked($event)\"\n  (onClick)=\"onClick.emit()\">\n</p-splitButton>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'right'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "FreudMenuItem[]",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter<void>"
+                },
+                {
+                    "name": "onDropdownClick",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "dropdownClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api\";\n\n@Component({\n  selector: 'freud-split-button',\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [icon]=\"icon\"\n      [iconPos]=\"iconPos\"\n      [disabled]=\"disabled\"\n      [model]=\"items\"\n      (onDropdownClick)=\"dropdownClicked($event)\"\n      (onClick)=\"onClick.emit()\">\n    </p-splitButton>\n  `,\n  styleUrls: ['./split-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-split-button',\n    '[class.freud-split-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSplitButtonComponent {\n\n  @Input() label!: string;\n  @Input() icon: string = '';\n  @Input() iconPos: \"left\" | \"right\" = 'right';\n  @Input() disabled: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() bgColor: boolean = false;\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();\n\n  dropdownClicked(event: any) {\n    this.onDropdownClick.emit(event);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-split-button:not(.freud-split-bgcolor) {\r\n  .p-button {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-pure;\r\n  }\r\n}\r\n\r\n//box-shadow: 0 0 0 1px $brand-color-01;\r\n//border-color: $brand-color-01;\r\n//background-color: $brand-color-01;\r\n//color: $brand-color-pure;\r\n//font-weight: $font-weight-regular;\r\n",
+                    "styleUrl": "./split-button.component.scss"
+                }
+            ],
+            "stylesData": ""
         },
         {
             "name": "FreudStepsComponent",
-            "id": "component-FreudStepsComponent-3b4e52980a7d192ba7764d60147fb313bfb38a75b7bbe8762694eb3ee4399b0a0325461853d4cd4321631b8fa2c2a4237c5554cea50d43a9fcb0d79b46512795",
+            "id": "component-FreudStepsComponent-70bb36fc3f5f89d11219246de13e2db8f8e909a39e3ff295c315f83cfa60cb11edbd93fe7db21ed46042bee68eb784c0871f1cd3f818e9f46feac5fef8432c06",
             "file": "projects/web-components/src/components/steps/steps.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -627,7 +914,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\nexport interface StepMenu extends MenuItem {};\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api/menu.interface\";\n\nexport interface StepMenu extends FreudMenuItem {}\n\n@Component({\n  selector: 'freud-steps',\n  template: `\n    <p-steps\n      [model]=\"model\"\n      [activeIndex]=\"activeIndex\"\n      [readonly]=\"readonly\"\n      (activeIndexChange)=\"activeIndexChange.emit($event)\">\n    </p-steps>\n  `,\n  styleUrls: ['./steps.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-steps',\n    '[class.freud-steps-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudStepsComponent {\n\n  @Input() model!: StepMenu[];\n  @Input() readonly: boolean = false;\n  @Input() bgColor: boolean = false;\n  @Input() activeIndex: number = 0;\n  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -778,7 +1065,7 @@
         },
         {
             "name": "FreudTypographyComponent",
-            "id": "component-FreudTypographyComponent-b3ac01eadd582b6f919b66c573f3221f2967b68f68f5e33e155d5fc7f62d8cb24f0c70fe9a83553d2d446fc33d9933b592eceab3bedb2f82a3ccc9304fbab047",
+            "id": "component-FreudTypographyComponent-7723528e8d15aa76f1a73336eff2cac9ab15804bb4605eeb6c7276d239ae97134967bcaba44d064e12cabeb2805ad69f5c24c7ede8f9ba0be5065a8668011771",
             "file": "projects/web-components/src/components/typography/typography.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -800,11 +1087,20 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "fontBgColor",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "fontType",
                     "defaultValue": "'bodyRegular1-5'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "fontTypes",
                     "decorators": []
                 }
@@ -819,11 +1115,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  HostBinding,\r\n  Input,\r\n  ViewEncapsulation,\r\n} from '@angular/core';\r\nimport { bodyTypes, headingTypes } from './typrography.type';\r\n\r\nexport const types = headingTypes.concat(bodyTypes);\r\n\r\ntype fontTypes = typeof types[number];\r\n\r\n@Component({\r\n  selector: '[freud-typography]',\r\n  exportAs: 'freudTypography',\r\n  styleUrls: ['./typography.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `<ng-content></ng-content> `,\r\n  host: {\r\n    class: 'freud-typography'\r\n  },\r\n})\r\nexport class FreudTypographyComponent {\r\n  @HostBinding('class') @Input() fontType: fontTypes = 'bodyRegular1-5';\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  HostBinding,\r\n  Input,\r\n  ViewEncapsulation,\r\n} from '@angular/core';\r\nimport { bodyTypes, headingTypes } from './typrography.type';\r\n\r\nexport const types = headingTypes.concat(bodyTypes);\r\n\r\ntype fontTypes = typeof types[number];\r\n\r\n@Component({\r\n  selector: '[freud-typography]',\r\n  exportAs: 'freudTypography',\r\n  styleUrls: ['./typography.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  template: `<ng-content></ng-content> `,\r\n  host: {\r\n    class: 'freud-typography',\r\n    '[class.typography-bg-color]': `fontBgColor`,\r\n  },\r\n})\r\nexport class FreudTypographyComponent {\r\n  @HostBinding('class') @Input() fontType: fontTypes = 'bodyRegular1-5';\r\n  @Input() fontBgColor: boolean = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n@mixin typography($fontSize, $lineHeight, $fontWeight) {\r\n  font-size: $fontSize;\r\n  font-weight: $lineHeight;\r\n  line-height: $fontWeight;\r\n}\r\n\r\n.freud-typography {\r\n  font-family: $font-family-base;\r\n  margin: 0;\r\n\r\n  // Text Regular\r\n  &.smallRegular1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1.5);\r\n  }\r\n  &.boryRegular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1.5);\r\n  }\r\n  &.smallRegular1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1.2);\r\n  }\r\n  &.bodyRegular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1.2);\r\n  }\r\n  &.smallRegular1 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 1);\r\n  }\r\n  &.bodyRegular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, 1);\r\n  }\r\n  &.smallRegularAuto {\r\n    @include typography($font-size-xxxs, $font-weight-regular, auto);\r\n  }\r\n  &.bodyRegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  // Text Semibold\r\n  &.smallSemibold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1.5);\r\n  }\r\n  &.borySemibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1.5);\r\n  }\r\n  &.smallSemibold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1.2);\r\n  }\r\n  &.bodySemibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1.2);\r\n  }\r\n  &.smallSemibold1 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 1);\r\n  }\r\n  &.bodySemibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 1);\r\n  }\r\n  &.smallSemiboldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, auto);\r\n  }\r\n  &.bodySemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  // Text Bold\r\n  &.smallBold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1.5);\r\n  }\r\n  &.boryBold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1.5);\r\n  }\r\n  &.smallBold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1.2);\r\n  }\r\n  &.bodyBold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1.2);\r\n  }\r\n  &.smallBold1 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 1);\r\n  }\r\n  &.bodyBold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, 1);\r\n  }\r\n  &.smallBoldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-bold, auto);\r\n  }\r\n  &.bodyBoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n\r\n  // Heading\r\n  // Regular\r\n  &.h1Regular1-5 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 60px);\r\n  }\r\n  &.h2Regular1-5 {\r\n    @include typography(30px, $font-weight-regular, 45px);\r\n  }\r\n  &.h3Regular1-5 {\r\n    @include typography($font-size-lg, $font-weight-regular, 36px);\r\n  }\r\n  &.h4Regular1-5 {\r\n    @include typography($font-size-md, $font-weight-regular, 30px);\r\n  }\r\n  &.h5Regular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 24px);\r\n  }\r\n  &.h6Regular1-5 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 21px);\r\n  }\r\n  \r\n  &.h1Regular1-2 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 48px);\r\n  }\r\n  &.h2Regular1-2 {\r\n    @include typography(30px, $font-weight-regular, 36px);\r\n  }\r\n  &.h3Regular1-2 {\r\n    @include typography($font-size-lg, $font-weight-regular, 28.8px);\r\n  }\r\n  &.h4Regular1-2 {\r\n    @include typography($font-size-md, $font-weight-regular, 24px);\r\n  }\r\n  &.h5Regular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 19.2px);\r\n  }\r\n  &.h6Regular1-2 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 17px);\r\n  }\r\n\r\n  &.h1Regular1 {\r\n    @include typography($font-size-xxl, $font-weight-regular, $font-size-xxl);\r\n  }\r\n  &.h2Regular1 {\r\n    @include typography(30px, $font-weight-regular, 30px);\r\n  }\r\n  &.h3Regular1 {\r\n    @include typography($font-size-lg, $font-weight-regular, $font-size-lg);\r\n  }\r\n  &.h4Regular1 {\r\n    @include typography($font-size-md, $font-weight-regular, $font-size-md);\r\n  }\r\n  &.h5Regular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, $font-size-xs);\r\n  }\r\n  &.h6Regular1 {\r\n    @include typography($font-size-xxs, $font-weight-regular, $font-size-xxs);\r\n  }\r\n\r\n  &.h1RegularAuto {\r\n    @include typography($font-size-xxl, $font-weight-regular, auto);\r\n  }\r\n  &.h2RegularAuto {\r\n    @include typography(30px, $font-weight-regular, auto);\r\n  }\r\n  &.h3RegularAuto {\r\n    @include typography($font-size-lg, $font-weight-regular, auto);\r\n  }\r\n  &.h4RegularAuto {\r\n    @include typography($font-size-md, $font-weight-regular, auto);\r\n  }\r\n  &.h5RegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  &.h6RegularAuto {\r\n    @include typography($font-size-xxs, $font-weight-regular, auto);\r\n  }\r\n\r\n  // Semibold\r\n  &.h1Semibold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 60px);\r\n  }\r\n  &.h2Semibold1-5 {\r\n    @include typography(30px, $font-weight-semibold, 45px);\r\n  }\r\n  &.h3Semibold1-5 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 36px);\r\n  }\r\n  &.h4Semibold1-5 {\r\n    @include typography($font-size-md, $font-weight-semibold, 30px);\r\n  }\r\n  &.h5Semibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 24px);\r\n  }\r\n  &.h6Semibold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 21px);\r\n  }\r\n  \r\n  &.h1Semibold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 48px);\r\n  }\r\n  &.h2Semibold1-2 {\r\n    @include typography(30px, $font-weight-semibold, 36px);\r\n  }\r\n  &.h3Semibold1-2 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 28.8px);\r\n  }\r\n  &.h4Semibold1-2 {\r\n    @include typography($font-size-md, $font-weight-semibold, 24px);\r\n  }\r\n  &.h5Semibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 19.2px);\r\n  }\r\n  &.h6Semibold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 17px);\r\n  }\r\n\r\n  &.h1Semibold1 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, $font-size-xxl);\r\n  }\r\n  &.h2Semibold1 {\r\n    @include typography(30px, $font-weight-semibold, 30px);\r\n  }\r\n  &.h3Semibold1 {\r\n    @include typography($font-size-lg, $font-weight-semibold, $font-size-lg);\r\n  }\r\n  &.h4Semibold1 {\r\n    @include typography($font-size-md, $font-weight-semibold, $font-size-md);\r\n  }\r\n  &.h5Semibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, $font-size-xs);\r\n  }\r\n  &.h6Semibold1 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1SemiboldAuto {\r\n    @include typography($font-size-xxl, $font-weight-semibold, auto);\r\n  }\r\n  &.h2SemiboldAuto {\r\n    @include typography(30px, $font-weight-semibold, auto);\r\n  }\r\n  &.h3SemiboldAuto {\r\n    @include typography($font-size-lg, $font-weight-semibold, auto);\r\n  }\r\n  &.h4SemiboldAuto {\r\n    @include typography($font-size-md, $font-weight-semibold, auto);\r\n  }\r\n  &.h5SemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  &.h6SemiboldAuto {\r\n    @include typography($font-size-xxs, $font-weight-semibold, auto);\r\n  }\r\n\r\n  // Bold\r\n  &.h1Bold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 60px);\r\n  }\r\n  &.h2Bold1-5 {\r\n    @include typography(30px, $font-weight-bold, 45px);\r\n  }\r\n  &.h3Bold1-5 {\r\n    @include typography($font-size-lg, $font-weight-bold, 36px);\r\n  }\r\n  &.h4Bold1-5 {\r\n    @include typography($font-size-md, $font-weight-bold, 30px);\r\n  }\r\n  &.h5Bold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 24px);\r\n  }\r\n  &.h6Bold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 21px);\r\n  }\r\n  \r\n  &.h1Bold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 48px);\r\n  }\r\n  &.h2Bold1-2 {\r\n    @include typography(30px, $font-weight-bold, 36px);\r\n  }\r\n  &.h3Bold1-2 {\r\n    @include typography($font-size-lg, $font-weight-bold, 28.8px);\r\n  }\r\n  &.h4Bold1-2 {\r\n    @include typography($font-size-md, $font-weight-bold, 24px);\r\n  }\r\n  &.h5Bold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 19.2px);\r\n  }\r\n  &.h6Bold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 17px);\r\n  }\r\n\r\n  &.h1Bold1 {\r\n    @include typography($font-size-xxl, $font-weight-bold, $font-size-xxl);\r\n  }\r\n  &.h2Bold1 {\r\n    @include typography(30px, $font-weight-bold, 30px);\r\n  }\r\n  &.h3Bold1 {\r\n    @include typography($font-size-lg, $font-weight-bold, $font-size-lg);\r\n  }\r\n  &.h4Bold1 {\r\n    @include typography($font-size-md, $font-weight-bold, $font-size-md);\r\n  }\r\n  &.h5Bold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, $font-size-xs);\r\n  }\r\n  &.h6Bold1 {\r\n    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1BoldAuto {\r\n    @include typography($font-size-xxl, $font-weight-bold, auto);\r\n  }\r\n  &.h2BoldAuto {\r\n    @include typography(30px, $font-weight-bold, auto);\r\n  }\r\n  &.h3BoldAuto {\r\n    @include typography($font-size-lg, $font-weight-bold, auto);\r\n  }\r\n  &.h4BoldAuto {\r\n    @include typography($font-size-md, $font-weight-bold, auto);\r\n  }\r\n  &.h5BoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n  &.h6BoldAuto {\r\n    @include typography($font-size-xxs, $font-weight-bold, auto);\r\n  }\r\n  \r\n}\r\n",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n@mixin typography($fontSize, $lineHeight, $fontWeight) {\r\n  font-size: $fontSize;\r\n  font-weight: $lineHeight;\r\n  line-height: $fontWeight;\r\n}\r\n\r\n.freud-typography {\r\n  font-family: $font-family-base;\r\n  margin: 0;\r\n\r\n  &.typography-bg-color {\r\n    color: $neutral-color-white;\r\n  }\r\n\r\n  // Text Regular\r\n  &.smallRegular1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 18px);\r\n  }\r\n  &.bodyRegular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 24px);\r\n  }\r\n  &.smallRegular1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 14.4px);\r\n  }\r\n  &.bodyRegular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 19.2px);\r\n  }\r\n  &.smallRegular1 {\r\n    @include typography($font-size-xxxs, $font-weight-regular, 12px);\r\n  }\r\n  &.bodyRegular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, 16px);\r\n  }\r\n  &.smallRegularAuto {\r\n    @include typography($font-size-xxxs, $font-weight-regular, auto);\r\n  }\r\n  &.bodyRegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  // Text Semibold\r\n  &.smallSemibold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 18px);\r\n  }\r\n  &.bodySemibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 24px);\r\n  }\r\n  &.smallSemibold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 14.4px);\r\n  }\r\n  &.bodySemibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 19.2px);\r\n  }\r\n  &.smallSemibold1 {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, 12px);\r\n  }\r\n  &.bodySemibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 16px);\r\n  }\r\n  &.smallSemiboldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-semibold, auto);\r\n  }\r\n  &.bodySemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  // Text Bold\r\n  &.smallBold1-5 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 18px);\r\n  }\r\n  &.bodyBold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 24px);\r\n  }\r\n  &.smallBold1-2 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 14.4px);\r\n  }\r\n  &.bodyBold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 19.2px);\r\n  }\r\n  &.smallBold1 {\r\n    @include typography($font-size-xxxs, $font-weight-bold, 12px);\r\n  }\r\n  &.bodyBold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, 16px);\r\n  }\r\n  &.smallBoldAuto {\r\n    @include typography($font-size-xxxs, $font-weight-bold, auto);\r\n  }\r\n  &.bodyBoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n\r\n  // Heading\r\n  // Regular\r\n  &.h1Regular1-5 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 60px);\r\n  }\r\n  &.h2Regular1-5 {\r\n    @include typography(30px, $font-weight-regular, 45px);\r\n  }\r\n  &.h3Regular1-5 {\r\n    @include typography($font-size-lg, $font-weight-regular, 36px);\r\n  }\r\n  &.h4Regular1-5 {\r\n    @include typography($font-size-md, $font-weight-regular, 30px);\r\n  }\r\n  &.h5Regular1-5 {\r\n    @include typography($font-size-xs, $font-weight-regular, 24px);\r\n  }\r\n  &.h6Regular1-5 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 21px);\r\n  }\r\n  \r\n  &.h1Regular1-2 {\r\n    @include typography($font-size-xxl, $font-weight-regular, 48px);\r\n  }\r\n  &.h2Regular1-2 {\r\n    @include typography(30px, $font-weight-regular, 36px);\r\n  }\r\n  &.h3Regular1-2 {\r\n    @include typography($font-size-lg, $font-weight-regular, 28.8px);\r\n  }\r\n  &.h4Regular1-2 {\r\n    @include typography($font-size-md, $font-weight-regular, 24px);\r\n  }\r\n  &.h5Regular1-2 {\r\n    @include typography($font-size-xs, $font-weight-regular, 19.2px);\r\n  }\r\n  &.h6Regular1-2 {\r\n    @include typography($font-size-xxs, $font-weight-regular, 17px);\r\n  }\r\n\r\n  &.h1Regular1 {\r\n    @include typography($font-size-xxl, $font-weight-regular, $font-size-xxl);\r\n  }\r\n  &.h2Regular1 {\r\n    @include typography(30px, $font-weight-regular, 30px);\r\n  }\r\n  &.h3Regular1 {\r\n    @include typography($font-size-lg, $font-weight-regular, $font-size-lg);\r\n  }\r\n  &.h4Regular1 {\r\n    @include typography($font-size-md, $font-weight-regular, $font-size-md);\r\n  }\r\n  &.h5Regular1 {\r\n    @include typography($font-size-xs, $font-weight-regular, $font-size-xs);\r\n  }\r\n  &.h6Regular1 {\r\n    @include typography($font-size-xxs, $font-weight-regular, $font-size-xxs);\r\n  }\r\n\r\n  &.h1RegularAuto {\r\n    @include typography($font-size-xxl, $font-weight-regular, auto);\r\n  }\r\n  &.h2RegularAuto {\r\n    @include typography(30px, $font-weight-regular, auto);\r\n  }\r\n  &.h3RegularAuto {\r\n    @include typography($font-size-lg, $font-weight-regular, auto);\r\n  }\r\n  &.h4RegularAuto {\r\n    @include typography($font-size-md, $font-weight-regular, auto);\r\n  }\r\n  &.h5RegularAuto {\r\n    @include typography($font-size-xs, $font-weight-regular, auto);\r\n  }\r\n  &.h6RegularAuto {\r\n    @include typography($font-size-xxs, $font-weight-regular, auto);\r\n  }\r\n\r\n  // Semibold\r\n  &.h1Semibold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 60px);\r\n  }\r\n  &.h2Semibold1-5 {\r\n    @include typography(30px, $font-weight-semibold, 45px);\r\n  }\r\n  &.h3Semibold1-5 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 36px);\r\n  }\r\n  &.h4Semibold1-5 {\r\n    @include typography($font-size-md, $font-weight-semibold, 30px);\r\n  }\r\n  &.h5Semibold1-5 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 24px);\r\n  }\r\n  &.h6Semibold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 21px);\r\n  }\r\n  \r\n  &.h1Semibold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, 48px);\r\n  }\r\n  &.h2Semibold1-2 {\r\n    @include typography(30px, $font-weight-semibold, 36px);\r\n  }\r\n  &.h3Semibold1-2 {\r\n    @include typography($font-size-lg, $font-weight-semibold, 28.8px);\r\n  }\r\n  &.h4Semibold1-2 {\r\n    @include typography($font-size-md, $font-weight-semibold, 24px);\r\n  }\r\n  &.h5Semibold1-2 {\r\n    @include typography($font-size-xs, $font-weight-semibold, 19.2px);\r\n  }\r\n  &.h6Semibold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, 17px);\r\n  }\r\n\r\n  &.h1Semibold1 {\r\n    @include typography($font-size-xxl, $font-weight-semibold, $font-size-xxl);\r\n  }\r\n  &.h2Semibold1 {\r\n    @include typography(30px, $font-weight-semibold, 30px);\r\n  }\r\n  &.h3Semibold1 {\r\n    @include typography($font-size-lg, $font-weight-semibold, $font-size-lg);\r\n  }\r\n  &.h4Semibold1 {\r\n    @include typography($font-size-md, $font-weight-semibold, $font-size-md);\r\n  }\r\n  &.h5Semibold1 {\r\n    @include typography($font-size-xs, $font-weight-semibold, $font-size-xs);\r\n  }\r\n  &.h6Semibold1 {\r\n    @include typography($font-size-xxs, $font-weight-semibold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1SemiboldAuto {\r\n    @include typography($font-size-xxl, $font-weight-semibold, auto);\r\n  }\r\n  &.h2SemiboldAuto {\r\n    @include typography(30px, $font-weight-semibold, auto);\r\n  }\r\n  &.h3SemiboldAuto {\r\n    @include typography($font-size-lg, $font-weight-semibold, auto);\r\n  }\r\n  &.h4SemiboldAuto {\r\n    @include typography($font-size-md, $font-weight-semibold, auto);\r\n  }\r\n  &.h5SemiboldAuto {\r\n    @include typography($font-size-xs, $font-weight-semibold, auto);\r\n  }\r\n  &.h6SemiboldAuto {\r\n    @include typography($font-size-xxs, $font-weight-semibold, auto);\r\n  }\r\n\r\n  // Bold\r\n  &.h1Bold1-5 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 60px);\r\n  }\r\n  &.h2Bold1-5 {\r\n    @include typography(30px, $font-weight-bold, 45px);\r\n  }\r\n  &.h3Bold1-5 {\r\n    @include typography($font-size-lg, $font-weight-bold, 36px);\r\n  }\r\n  &.h4Bold1-5 {\r\n    @include typography($font-size-md, $font-weight-bold, 30px);\r\n  }\r\n  &.h5Bold1-5 {\r\n    @include typography($font-size-xs, $font-weight-bold, 24px);\r\n  }\r\n  &.h6Bold1-5 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 21px);\r\n  }\r\n  \r\n  &.h1Bold1-2 {\r\n    @include typography($font-size-xxl, $font-weight-bold, 48px);\r\n  }\r\n  &.h2Bold1-2 {\r\n    @include typography(30px, $font-weight-bold, 36px);\r\n  }\r\n  &.h3Bold1-2 {\r\n    @include typography($font-size-lg, $font-weight-bold, 28.8px);\r\n  }\r\n  &.h4Bold1-2 {\r\n    @include typography($font-size-md, $font-weight-bold, 24px);\r\n  }\r\n  &.h5Bold1-2 {\r\n    @include typography($font-size-xs, $font-weight-bold, 19.2px);\r\n  }\r\n  &.h6Bold1-2 {\r\n    @include typography($font-size-xxs, $font-weight-bold, 17px);\r\n  }\r\n\r\n  &.h1Bold1 {\r\n    @include typography($font-size-xxl, $font-weight-bold, $font-size-xxl);\r\n  }\r\n  &.h2Bold1 {\r\n    @include typography(30px, $font-weight-bold, 30px);\r\n  }\r\n  &.h3Bold1 {\r\n    @include typography($font-size-lg, $font-weight-bold, $font-size-lg);\r\n  }\r\n  &.h4Bold1 {\r\n    @include typography($font-size-md, $font-weight-bold, $font-size-md);\r\n  }\r\n  &.h5Bold1 {\r\n    @include typography($font-size-xs, $font-weight-bold, $font-size-xs);\r\n  }\r\n  &.h6Bold1 {\r\n    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);\r\n  }\r\n\r\n  &.h1BoldAuto {\r\n    @include typography($font-size-xxl, $font-weight-bold, auto);\r\n  }\r\n  &.h2BoldAuto {\r\n    @include typography(30px, $font-weight-bold, auto);\r\n  }\r\n  &.h3BoldAuto {\r\n    @include typography($font-size-lg, $font-weight-bold, auto);\r\n  }\r\n  &.h4BoldAuto {\r\n    @include typography($font-size-md, $font-weight-bold, auto);\r\n  }\r\n  &.h5BoldAuto {\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n  }\r\n  &.h6BoldAuto {\r\n    @include typography($font-size-xxs, $font-weight-bold, auto);\r\n  }\r\n  \r\n}\r\n",
                     "styleUrl": "./typography.component.scss"
                 }
             ],
@@ -890,68 +1186,6 @@
                 "OnInit"
             ],
             "templateData": "<p>speed-dial works!</p>\n"
-        },
-        {
-            "name": "SplitButtonComponent",
-            "id": "component-SplitButtonComponent-4976ab2b1fc70745215c42a6b2902ae421958853d3b1b12c9337fb0f5f07edbe4330d697100dc6aa60bde9a18cecf4eddede3e012853ca3a071b6cadd263101b",
-            "file": "projects/web-components/src/components/split-button/split-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-split-button",
-            "styleUrls": [
-                "./split-button.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./split-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-split-button',\n  templateUrl: './split-button.component.html',\n  styleUrls: ['./split-button.component.css']\n})\nexport class SplitButtonComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./split-button.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>split-button works!</p>\n"
         }
     ],
     "modules": [
@@ -1137,13 +1371,13 @@
         },
         {
             "name": "FreudKnobModule",
-            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe",
+            "id": "module-FreudKnobModule-9a5b6f3e860e63416f9fa8367d70c8ae6acbfecb0d60e00a4c2a504a63c7362d131e178b3a4dd3b47bffcd3bfc569c3e1d415ea76983e9214ec0c01b5be1fd81",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/rating/knob.module.ts",
+            "file": "projects/web-components/src/components/knob/knob.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule, FormsModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1181,13 +1415,13 @@
         },
         {
             "name": "FreudKnobModule",
-            "id": "module-FreudKnobModule-9a5b6f3e860e63416f9fa8367d70c8ae6acbfecb0d60e00a4c2a504a63c7362d131e178b3a4dd3b47bffcd3bfc569c3e1d415ea76983e9214ec0c01b5be1fd81-1",
+            "id": "module-FreudKnobModule-e47371b3f5f00c5d5f1ce80683258140ba22a3c56f7f85668f1fa54cb8f89ba09458e38504a1895eef79cd3d1df5c52e2a57173308c1463ba3f9f15ad5b089fe-1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/knob/knob.module.ts",
+            "file": "projects/web-components/src/components/rating/knob.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule, FormsModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { KnobModule } from 'primeng/knob';\r\n\r\nimport { FreudKnobComponent } from './knob.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, KnobModule],\r\n  declarations: [FreudKnobComponent],\r\n  exports: [FreudKnobComponent]\r\n})\r\nexport class FreudKnobModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1208,6 +1442,94 @@
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudSelectButtonModule",
+            "id": "module-FreudSelectButtonModule-097a49c02ac7d56cb40c03fce8fd080ba07cac43006ee63e69f6f64cef6811e8adece1116a2585101c325229b90a0351aab438a4f7e1856202fc44e5808bd30d",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/select-button/select-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SelectButtonModule } from 'primeng/selectbutton';\r\n\r\nimport { FreudSelectButtonComponent } from './select-button.component';\r\nimport {FormsModule} from \"@angular/forms\";\r\n\r\n@NgModule({\r\n    imports: [CommonModule, SelectButtonModule, FormsModule],\r\n  declarations: [FreudSelectButtonComponent],\r\n  exports: [FreudSelectButtonComponent]\r\n})\r\nexport class FreudSelectButtonModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudSelectButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudSelectButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FreudSplitButtonModule",
+            "id": "module-FreudSplitButtonModule-159a536ce319318fa41d128a50d55eefa2a709cf8499da060ea40ab5d23971dce3be056aa89a782eb9454859b5c2fc32c0dfc80500c56c9de5cd82aab2701701",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/split-button/split-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SplitButtonModule } from 'primeng/splitbutton';\r\n\r\nimport { FreudSplitButtonComponent } from './split-button.component';\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\n\r\n@NgModule({\r\n    imports: [CommonModule, SplitButtonModule, BrowserAnimationsModule, BrowserModule],\r\n  declarations: [FreudSplitButtonComponent],\r\n  exports: [FreudSplitButtonComponent]\r\n})\r\nexport class FreudSplitButtonModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FreudSplitButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FreudSplitButtonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -1409,6 +1731,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Background",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "BadgeLarge",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1472,6 +1804,26 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/tooltip/Tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1522,6 +1874,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1533,6 +1895,26 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultEditavel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1552,7 +1934,27 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/knob/Knob.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1599,6 +2001,36 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "HeadingBold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateBold.bind({})"
+            },
+            {
+                "name": "HeadingRegular",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateRegular.bind({})"
+            },
+            {
+                "name": "HeadingSemibold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateSemibold.bind({})"
+            },
+            {
                 "name": "headingTypes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1607,6 +2039,56 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\r\n  // Regular\r\n  'h1Regular1-5',\r\n  'h2Regular1-5',\r\n  'h3Regular1-5',\r\n  'h4Regular1-5',\r\n  'h5Regular1-5',\r\n  'h6Regular1-5',\r\n\r\n  'h1Regular1-2',\r\n  'h2Regular1-2',\r\n  'h3Regular1-2',\r\n  'h4Regular1-2',\r\n  'h5Regular1-2',\r\n  'h6Regular1-2',\r\n\r\n  'h1Regular1',\r\n  'h2Regular1',\r\n  'h3Regular1',\r\n  'h4Regular1',\r\n  'h5Regular1',\r\n  'h6Regular1',\r\n  \r\n  'h1RegularAuto',\r\n  'h2RegularAuto',\r\n  'h3RegularAuto',\r\n  'h4RegularAuto',\r\n  'h5RegularAuto',\r\n  'h6RegularAuto',\r\n\r\n  // Semibold\r\n  'h1Semibold1-5',\r\n  'h2Semibold1-5',\r\n  'h3Semibold1-5',\r\n  'h4Semibold1-5',\r\n  'h5Semibold1-5',\r\n  'h6Semibold1-5',\r\n\r\n  'h1Semibold1-2',\r\n  'h2Semibold1-2',\r\n  'h3Semibold1-2',\r\n  'h4Semibold1-2',\r\n  'h5Semibold1-2',\r\n  'h6Semibold1-2',\r\n\r\n  'h1Semibold1',\r\n  'h2Semibold1',\r\n  'h3Semibold1',\r\n  'h4Semibold1',\r\n  'h5Semibold1',\r\n  'h6Semibold1',\r\n\r\n  'h1SemiboldAuto',\r\n  'h2SemiboldAuto',\r\n  'h3SemiboldAuto',\r\n  'h4SemiboldAuto',\r\n  'h5SemiboldAuto',\r\n  'h6SemiboldAuto',\r\n\r\n  // Bold\r\n  'h1Bold1-5',\r\n  'h2Bold1-5',\r\n  'h3Bold1-5',\r\n  'h4Bold1-5',\r\n  'h5Bold1-5',\r\n  'h6Bold1-5',\r\n\r\n  'h1Bold1-2',\r\n  'h2Bold1-2',\r\n  'h3Bold1-2',\r\n  'h4Bold1-2',\r\n  'h5Bold1-2',\r\n  'h6Bold1-2',\r\n\r\n  'h1Bold1',\r\n  'h2Bold1',\r\n  'h3Bold1',\r\n  'h4Bold1',\r\n  'h5Bold1',\r\n  'h6Bold1',\r\n\r\n  'h1BoldAuto',\r\n  'h2BoldAuto',\r\n  'h3BoldAuto',\r\n  'h4BoldAuto',\r\n  'h5BoldAuto',\r\n  'h6BoldAuto',\r\n]"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateIcon.bind({})"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLarge",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconMedium",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconSmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Imagem",
@@ -1649,6 +2131,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "items",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "FreudMenuItem[]",
+                "defaultValue": "[\n  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {\n      console.log('Evento update')\n    }\n  },\n  {\n    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {\n      console.log('Evento delete')\n    },\n  },\n  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\n  {separator: true},\n  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}\n]"
+            },
+            {
+                "name": "itemsWithoutIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "FreudMenuItem[]",
+                "defaultValue": "[\n  {label: 'Update', command: () => {console.log('Evento update')}\n  },\n  {\n    label: 'Delete', command: () => {console.log('Evento delete')},\n  },\n  {label: 'Zenklub', url: 'http://zenklub.com'}\n]"
+            },
+            {
                 "name": "itens",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1689,6 +2191,16 @@
                 "defaultValue": "TemplateLoading.bind({})"
             },
             {
+                "name": "log",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(evento: string, value: any) => {\n  console.log(evento, value);\n}"
+            },
+            {
                 "name": "Medium",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1697,6 +2209,36 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "OptionDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "options",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {label: 'Item1'},\n  {label: 'Item2'},\n  {label: 'Item3'},\n  {label: 'Item4'}\n]"
+            },
+            {
+                "name": "optionsDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {label: 'Item1', disabled: true},\n  {label: 'Item2'},\n  {label: 'Item3'},\n  {label: 'Item4'}\n]"
             },
             {
                 "name": "Outline",
@@ -1712,7 +2254,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1722,7 +2264,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1875,7 +2417,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudAvatarComponent>",
-                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudBadgeComponent>",
+                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -1891,11 +2443,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/select-button/SelectButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudBadgeComponent>",
-                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
+                "type": "Story<FreudSelectButtonComponent>",
+                "defaultValue": "(args: FreudSelectButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
             },
             {
                 "name": "Template",
@@ -1921,11 +2473,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/tooltip/Tooltip.stories.ts",
+                "file": "stories/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudTooltipComponent>",
-                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
+                "type": "Story<FreudSplitButtonComponent>",
+                "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
             },
             {
                 "name": "Template",
@@ -1945,7 +2497,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\">Text</p>\r\n  `,\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\" [fontBgColor]=\"fontBgColor\">{{label}}</p>\r\n  `\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTooltipComponent>",
+                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Tooltip in span tag</span>\r\n  `,\r\n})"
+            },
+            {
+                "name": "TemplateBold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-1 (h1BoldAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TemplateDisabled",
@@ -1968,6 +2540,36 @@
                 "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      >{{label}}</freud-button>\n`"
             },
             {
+                "name": "templateHTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/select-button/SelectButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <freud-select-button\n        [options]=\"options\"\n        [multiple]=\"multiple\"\n        [tabindex]=\"tabindex\"\n        [bgColor]=\"bgColor\"\n        [disabled]=\"disabled\"\n        [selectedOption]=\"selectedOption\"\n        [optionDisabled]=\"optionDisabled\"\n        [optionLabel]=\"optionLabel\"></freud-select-button>\n`"
+            },
+            {
+                "name": "templateHTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [icon]=\"icon\"\n        [iconPos]=\"iconPos\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+            },
+            {
+                "name": "TemplateIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace(\n    '{{label}}',\n    '<span class=\"freud-icon freud-icon-check freud-icon-20px\"></span>'\n  ),\n})"
+            },
+            {
                 "name": "TemplateLoading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1978,6 +2580,26 @@
                 "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button'),\n})"
             },
             {
+                "name": "TemplateRegular",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+            },
+            {
+                "name": "TemplateSemibold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+            },
+            {
                 "name": "TemplateSize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1986,6 +2608,66 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudButtonComponent>",
                 "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{size}}'),\n})"
+            },
+            {
+                "name": "TemplateTextBold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
+            },
+            {
+                "name": "TemplateTextRegular",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1-5'\">small/regular-400/line-height-1.5 (smallRegular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1-5'\">body/regular-400/line-height-1.5 (bodyRegular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1-2'\">small/regular-400/line-height-1.2 (smallRegular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1-2'\">body/regular-400/line-height-1.2 (bodyRegular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1'\">small/regular-400/line-height-1 (smallRegular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1'\">body/regular-400/line-height-1 (bodyRegular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegularAuto'\">small/regular-400/line-height-Auto (smallRegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegularAuto'\">body/regular-400/line-height-Auto (bodyRegularAuto)</p>\r\n  `\r\n})"
+            },
+            {
+                "name": "TemplateTextSemibold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTypographyComponent>",
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
+            },
+            {
+                "name": "TextBold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateTextBold.bind({})"
+            },
+            {
+                "name": "TextRegular",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateTextRegular.bind({})"
+            },
+            {
+                "name": "TextSemibold",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateTextSemibold.bind({})"
             },
             {
                 "name": "Top",
@@ -2006,16 +2688,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "headingTypes.concat(bodyTypes)"
-            },
-            {
-                "name": "Typography",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/typography/typography.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Warning",
@@ -2213,6 +2885,88 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "stories/select-button/SelectButton.stories.ts": [
+                {
+                    "name": "Background",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "OptionDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "options",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {label: 'Item1'},\n  {label: 'Item2'},\n  {label: 'Item3'},\n  {label: 'Item4'}\n]"
+                },
+                {
+                    "name": "optionsDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {label: 'Item1', disabled: true},\n  {label: 'Item2'},\n  {label: 'Item3'},\n  {label: 'Item4'}\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSelectButtonComponent>",
+                    "defaultValue": "(args: FreudSelectButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+                },
+                {
+                    "name": "templateHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/select-button/SelectButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <freud-select-button\n        [options]=\"options\"\n        [multiple]=\"multiple\"\n        [tabindex]=\"tabindex\"\n        [bgColor]=\"bgColor\"\n        [disabled]=\"disabled\"\n        [selectedOption]=\"selectedOption\"\n        [optionDisabled]=\"optionDisabled\"\n        [optionLabel]=\"optionLabel\"></freud-select-button>\n`"
+                }
+            ],
             "stories/avatar/Avatar.stories.ts": [
                 {
                     "name": "BadgeLarge",
@@ -2246,6 +3000,36 @@
                 },
                 {
                     "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconMedium",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconSmall",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/avatar/Avatar.stories.ts",
@@ -2312,7 +3096,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudAvatarComponent>",
-                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [icon]=\"icon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
                 }
             ],
             "stories/knob/Knob.stories.ts": [
@@ -2417,6 +3201,250 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudStepsComponent>",
                     "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/split-button/SplitButton.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "items",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FreudMenuItem[]",
+                    "defaultValue": "[\n  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {\n      console.log('Evento update')\n    }\n  },\n  {\n    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {\n      console.log('Evento delete')\n    },\n  },\n  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\n  {separator: true},\n  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}\n]"
+                },
+                {
+                    "name": "itemsWithoutIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FreudMenuItem[]",
+                    "defaultValue": "[\n  {label: 'Update', command: () => {console.log('Evento update')}\n  },\n  {\n    label: 'Delete', command: () => {console.log('Evento delete')},\n  },\n  {label: 'Zenklub', url: 'http://zenklub.com'}\n]"
+                },
+                {
+                    "name": "log",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(evento: string, value: any) => {\n  console.log(evento, value);\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSplitButtonComponent>",
+                    "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+                },
+                {
+                    "name": "templateHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [icon]=\"icon\"\n        [iconPos]=\"iconPos\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+                }
+            ],
+            "stories/typography/typography.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultEditavel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "HeadingBold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateBold.bind({})"
+                },
+                {
+                    "name": "HeadingRegular",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateRegular.bind({})"
+                },
+                {
+                    "name": "HeadingSemibold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSemibold.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\" [fontBgColor]=\"fontBgColor\">{{label}}</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateBold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-1 (h1BoldAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateRegular",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateSemibold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateTextBold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateTextRegular",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1-5'\">small/regular-400/line-height-1.5 (smallRegular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1-5'\">body/regular-400/line-height-1.5 (bodyRegular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1-2'\">small/regular-400/line-height-1.2 (smallRegular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1-2'\">body/regular-400/line-height-1.2 (bodyRegular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegular1'\">small/regular-400/line-height-1 (smallRegular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegular1'\">body/regular-400/line-height-1 (bodyRegular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallRegularAuto'\">small/regular-400/line-height-Auto (smallRegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyRegularAuto'\">body/regular-400/line-height-Auto (bodyRegularAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TemplateTextSemibold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTypographyComponent>",
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
+                },
+                {
+                    "name": "TextBold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateTextBold.bind({})"
+                },
+                {
+                    "name": "TextRegular",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateTextRegular.bind({})"
+                },
+                {
+                    "name": "TextSemibold",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateTextSemibold.bind({})"
                 }
             ],
             "stories/tooltip/Tooltip.stories.ts": [
@@ -2556,6 +3584,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateIcon.bind({})"
+                },
+                {
                     "name": "Loading",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2666,6 +3704,16 @@
                     "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      >{{label}}</freud-button>\n`"
                 },
                 {
+                    "name": "TemplateIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudButtonComponent>",
+                    "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace(\n    '{{label}}',\n    '<span class=\"freud-icon freud-icon-check freud-icon-20px\"></span>'\n  ),\n})"
+                },
+                {
                     "name": "TemplateLoading",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2752,28 +3800,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/tag/Tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "stories/typography/typography.stories.ts": [
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/typography/typography.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p freud-typography [fontType]=\"fontType\">Text</p>\r\n  `,\r\n})"
-                },
-                {
-                    "name": "Typography",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/typography/typography.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2904,6 +3930,15 @@
         "status": "low",
         "files": [
             {
+                "filePath": "projects/web-components/src/api/menu.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FreudMenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/web-components/src/components/avatar/avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2949,6 +3984,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/web-components/src/components/select-button/select-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FreudSelectButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/web-components/src/components/speed-dial/speed-dial.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2961,9 +4005,9 @@
                 "filePath": "projects/web-components/src/components/split-button/split-button.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "SplitButtonComponent",
+                "name": "FreudSplitButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -3008,7 +4052,7 @@
                 "linktype": "component",
                 "name": "FreudTypographyComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -3037,6 +4081,15 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "headingTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-components/src/services/confirmation.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "FreudConfirmationService",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3097,6 +4150,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLarge",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconMedium",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/avatar/Avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconSmall",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3276,6 +4359,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Loading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3386,6 +4479,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "TemplateIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "TemplateLoading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3466,6 +4569,176 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Background",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OptionDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "options",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "optionsDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/select-button/SelectButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "templateHTML",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "items",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "itemsWithoutIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "log",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/split-button/SplitButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "templateHTML",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3645,6 +4918,56 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "BgColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultEditavel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeadingBold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeadingRegular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeadingSemibold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3655,7 +4978,87 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Typography",
+                "name": "TemplateBold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateRegular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateSemibold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateTextBold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateTextRegular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateTextSemibold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextBold",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextRegular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextSemibold",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

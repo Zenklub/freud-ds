@@ -84,3 +84,15 @@ export const SizeLG = TemplateSize.bind({});
 SizeLG.args = {
   size: 'lg',
 };
+
+const TemplateIcon: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
+  props: { ...args },
+  template: templateHTML.replace(
+    '{{label}}',
+    '<span class="freud-icon freud-icon-check freud-icon-20px"></span>'
+  ),
+});
+export const Icon = TemplateIcon.bind({});
+Icon.args = {
+  size: 'lg',
+};

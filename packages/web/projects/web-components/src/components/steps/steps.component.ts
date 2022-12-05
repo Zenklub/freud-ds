@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { FreudMenuItem } from "../../api/menu.interface";
 
-export interface StepMenu extends MenuItem {};
+export interface StepMenu extends FreudMenuItem {}
 
 @Component({
   selector: 'freud-steps',

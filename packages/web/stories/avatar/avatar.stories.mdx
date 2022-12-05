@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudAvatarComponent, FreudAvatarModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
-import { 
+import {
   Small,
   Medium,
   Large,
@@ -11,10 +11,11 @@ import {
   ImagemEBadge,
   BadgeSmall,
   BadgeMedium,
-  BadgeLarge
+  BadgeLarge,
+  IconSmall, IconMedium, IconLarge,
 } from './Avatar.stories.ts';
 
-<Meta 
+<Meta
   decorators={[
     moduleMetadata({
       imports: [FreudAvatarModule],
@@ -88,6 +89,13 @@ import FreudAvatarModule from '@freud-ds/web-components';
   <Story story={BadgeSmall}/>
   <Story story={BadgeMedium}/>
   <Story story={BadgeLarge}/>
+</Canvas>
+
+#### Com Icone
+<Canvas>
+  <Story story={IconSmall}/>
+  <Story story={IconMedium}/>
+  <Story story={IconLarge}/>
 </Canvas>
 
 

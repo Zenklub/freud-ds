@@ -4,18 +4,19 @@
 
 // TODO: Verificar o import
 @import '../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../../icons/src/style/style.css';
 
 @font-face {
     font-family: "Source Sans Pro";
     src: local("Source Sans Pro"), url(../../../../tokens/assets/fonts/SourceSansPro-Regular.ttf) format("truetype");
   }
-  
+
   @font-face {
     font-family: "Source Sans Pro";
     src: local("Source Sans Pro"), url(../../../../tokens/assets/fonts/SourceSansPro-SemiBold.ttf) format("truetype");
     font-weight: 600;
   }
-  
+
   @font-face {
     font-family: "Source Sans Pro";
     src: local("Source Sans Pro"), url(../../../../tokens/assets/fonts/SourceSansPro-Bold.ttf) format("truetype");

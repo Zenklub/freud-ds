@@ -9,9 +9,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+    expand: true
   },
   viewMode: 'docs',
-  controls: { expand: true },
   options: { showPanel: true },
   previewTabs: {
     'storybook/docs/panel': {

@@ -4,7 +4,7 @@ import { Story } from '@storybook/angular';
 const Template: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
   props: { ...args },
   template: `
-    <freud-avatar [size]="size" [label]="label" [badge]="badge" [bgColor]="bgColor" [icon]="icon" [image]="image"></freud-avatar>
+    <freud-avatar [size]="size" [label]="label" [badge]="badge" [bgColor]="bgColor" [withIcon]="withIcon" [image]="image"></freud-avatar>
   `,
 });
 
@@ -67,4 +67,27 @@ BadgeLarge.args = {
   label: 'A',
   size: 'lg',
   badge: '9'
+};
+
+// Badge
+export const IconSmall = Template.bind({});
+IconSmall.args = {
+  label: '',
+  size: 'sm',
+  badge: '2',
+  withIcon: true
+};
+export const IconMedium = Template.bind({});
+IconMedium.args = {
+  label: '',
+  size: 'md',
+  badge: '5',
+  withIcon: true
+};
+export const IconLarge = Template.bind({});
+IconLarge.args = {
+  label: '',
+  size: 'lg',
+  badge: '9',
+  withIcon: true
 };
