@@ -1,5 +1,5 @@
-// TODO: Verificar o import
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../scss/typography.scss';
 
 .freud-btn:not(.freud-btn-bgcolor) {
   &.freud-btn-color-primary {
@@ -12,7 +12,7 @@
       color: $freud-btn-color;
     }
   }
-  
+
   &.freud-btn-color-secondary {
     $freud-btn-background: $neutral-color-white;
     $freud-btn-color: $brand-color-pure;
@@ -23,7 +23,7 @@
       color: $freud-btn-color;
     }
   }
-  
+
   &.freud-btn-color-ghost {
     $freud-btn-background: transparent;
     $freud-btn-color: $brand-color-pure;
@@ -50,7 +50,7 @@
       color: $brand-color-pure;
     }
   }
-  
+
   &.freud-btn-color-secondary {
     .p-button {
       background-color: $brand-color-pure;
@@ -58,7 +58,7 @@
       color: $neutral-color-white;
     }
   }
-  
+
   &.freud-btn-color-ghost {
     .p-button {
       background-color: transparent;
@@ -86,12 +86,15 @@
   align-items: center;
   justify-content: center;
   border-radius: $border-radius-md;
-  font-weight: $font-weight-bold;
+  @include typography($font-size-xs, $font-weight-bold, auto);
   &[disabled] {
     opacity: $opacity-level-5;
   }
   &:focus {
     box-shadow: unset;
+  }
+  &.p-button-icon-only {
+    width: auto;
   }
 }
 

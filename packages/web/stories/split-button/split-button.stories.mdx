@@ -5,8 +5,7 @@ import { FreudHeaderComponent } from '../header/header.component';
 import {
   Default,
   BgColor,
-  Disabled,
-  Icon
+  Disabled
 } from './SplitButton.stories.ts';
 
 <Meta
@@ -68,29 +67,23 @@ export class Componente {
 ```
 
 ## <a id="exemplos"></a>Exemplos
+<br />
 
 ### Default
 <Canvas>
   <Story story={Default}/>
 </Canvas>
 
-### Com background
+### BG Color
 <Canvas style={{ backgroundColor: '#6732D1' }}>
   <Story story={BgColor}/>
 </Canvas>
 
 
-### Desabilitado
+### Disabled
 <Canvas>
   <Story story={Disabled}/>
 </Canvas>
-
-### Com Icone
-É possível posicionar o icone com o parametro `iconPos`, Valores: `left` | `right`
-<Canvas>
-  <Story story={Icon}/>
-</Canvas>
-
 
 ## <a id="api"></a>API
 

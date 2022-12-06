@@ -1,5 +1,6 @@
 // TODO: Verificar o import
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../scss/typography.scss';
 
 .freud-tooltip-container {
     display:inline-block;
@@ -10,11 +11,10 @@
     .p-tooltip-text {
         padding: 10.5px;
         color: $neutral-color-white;
-        font-weight: $font-weight-regular;
-        font-size: $font-size-sm;
-        line-height: 24px;
+        @include typography($font-size-xs, $font-weight-regular, 24px);
         border-radius: $border-radius-md;
         background-color:  $neutral-color-dark-03;
+        box-shadow: $shadow-level-3;
     }
 }
 

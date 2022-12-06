@@ -11,7 +11,7 @@ const itemsWithLabel: FreudMenuItem[] = [
       console.log('Evento delete')
     },
   },
-  {icon: 'freud-icon freud-icon-cog', url: 'http://zenklub.com'}
+  {icon: 'freud-icon freud-icon-check'}
 ]
 
 const Template: Story<FreudSpeedDialComponent> = (

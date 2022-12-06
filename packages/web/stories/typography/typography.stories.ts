@@ -1,7 +1,6 @@
 import { Story } from '@storybook/angular';
 
-import { FreudTypographyComponent, types } from '@freud-ds/web-components';
-import { headingTypes } from '../../projects/web-components/src/components/typography/typrography.type';
+import { FreudTypographyComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudTypographyComponent> = (
   args: FreudTypographyComponent
@@ -11,13 +10,6 @@ const Template: Story<FreudTypographyComponent> = (
     <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">{{label}}</p>
   `
 });
-
-export const DefaultEditavel = Template.bind({});
-
-DefaultEditavel.args = {
-  fontType: 'h1BoldAuto',
-};
-
 export const BgColor = Template.bind({});
 BgColor.args = {
   fontType: 'h1BoldAuto',
@@ -58,7 +50,7 @@ const TemplateRegular: Story<FreudTypographyComponent> = (
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h4RegularAuto'">h4/regular-400/line-height-Auto (h4RegularAuto)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h3RegularAuto'">h3/regular-400/line-height-Auto (h3RegularAuto)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h2RegularAuto'">h2/regular-400/line-height-Auto (h2RegularAuto)</p>
-    <p freud-typography [fontType]="'h1RegularAuto'">h1/regular-400/line-height-1 (h1RegularAuto)</p>
+    <p freud-typography [fontType]="'h1RegularAuto'">h1/regular-400/line-height-auto (h1RegularAuto)</p>
   `
 });
 
@@ -92,14 +84,14 @@ const TemplateSemibold: Story<FreudTypographyComponent> = (
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3Semibold1'">h3/Semibold-400/line-height-1 (h3Semibold1)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2Semibold1'">h2/Semibold-400/line-height-1 (h2Semibold1)</p>
   <p freud-typography [fontType]="'h1Semibold1'">h1/Semibold-400/line-height-1 (h1Regular1)</p>
-  
+
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h6SemiboldAuto'">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h5SemiboldAuto'">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h4SemiboldAuto'">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3SemiboldAuto'">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2SemiboldAuto'">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>
-  <p freud-typography [fontType]="'h1SemiboldAuto'">h1/Semibold-400/line-height-1 (h1RegularAuto)</p>
+  <p freud-typography [fontType]="'h1SemiboldAuto'">h1/Semibold-400/line-height-auto (h1RegularAuto)</p>
   `
 });
 
@@ -133,14 +125,14 @@ const TemplateBold: Story<FreudTypographyComponent> = (
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3Bold1'">h3/Bold-400/line-height-1 (h3Bold1)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2Bold1'">h2/Bold-400/line-height-1 (h2Bold1)</p>
   <p freud-typography [fontType]="'h1Bold1'">h1/Bold-400/line-height-1 (h1Bold1)</p>
-  
+
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h6BoldAuto'">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h5BoldAuto'">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h4BoldAuto'">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3BoldAuto'">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2BoldAuto'">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>
-  <p freud-typography [fontType]="'h1BoldAuto'">h1/Bold-400/line-height-1 (h1BoldAuto)</p>
+  <p freud-typography [fontType]="'h1BoldAuto'">h1/Bold-400/line-height-auto (h1BoldAuto)</p>
   `
 });
 
@@ -188,7 +180,7 @@ const TemplateTextSemibold: Story<FreudTypographyComponent> = (
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallSemibold1'">small/Semibold-400/line-height-1 (smallSemibold1)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodySemibold1'">body/Semibold-400/line-height-1 (bodySemibold1)</p>
-  
+
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallSemiboldAuto'">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodySemiboldAuto'">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>
@@ -213,7 +205,7 @@ const TemplateTextBold: Story<FreudTypographyComponent> = (
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallBold1'">small/Bold-400/line-height-1 (smallBold1)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodyBold1'">body/Bold-400/line-height-1 (bodyBold1)</p>
-  
+
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallBoldAuto'">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodyBoldAuto'">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>

@@ -11,7 +11,7 @@ type avatarSizes = 'sm' | 'md' | 'lg';
       [icon]="(withIcon || !label) ? 'freud-icon freud-icon-user' : ''"
       shape="circle"
       [image]="image">
-      <freud-badge *ngIf="badge" [value]="badge" size="sm" color="error"></freud-badge>
+      <freud-badge *ngIf="badge" [value]="badge" color="error"></freud-badge>
     </p-avatar>
   `,
   styleUrls: ['./avatar.component.scss'],

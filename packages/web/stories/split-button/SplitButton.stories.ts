@@ -28,8 +28,6 @@ const itemsWithoutIcon: FreudMenuItem[] = [
 const templateHTML = `
     <freud-split-button
         [label]="label"
-        [icon]="icon"
-        [iconPos]="iconPos"
         [disabled]="disabled"
         [items]="items"
         [bgColor]="bgColor">
@@ -52,14 +50,6 @@ BgColor.args = {
   label: 'Button bg Color',
   items: itemsWithoutIcon,
   bgColor: true
-};
-
-export const Icon = Template.bind({});
-Icon.args = {
-  label: 'With Icon',
-  items: itemsWithoutIcon,
-  icon: 'freud-icon freud-icon-camera',
-  iconPos: 'right'
 };
 export const Disabled = Template.bind({});
 Disabled.args = {

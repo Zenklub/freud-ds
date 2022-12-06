@@ -2,15 +2,15 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudKnobComponent, FreudKnobModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
-import { 
+import {
   Default,
   Disabled,
   Readonly,
   BgColor,
-  BgColorDisabled
+  BgColorDisabled, SizeDefault, SizeLarge
 } from './Knob.stories.ts';
 
-<Meta 
+<Meta
   decorators={[
     moduleMetadata({
       imports: [FreudKnobModule],
@@ -45,6 +45,7 @@ import { FreudKnobModule, StepMenu } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+<br />
 
 ### Default
 <Canvas>
@@ -56,15 +57,16 @@ import { FreudKnobModule, StepMenu } from '@freud-ds/web-components';
   <Story story={Disabled}/>
 </Canvas>
 
-### Readonly
-<Canvas>
-  <Story story={Readonly}/>
-</Canvas>
-
-### Com background(bgColor)
+### BG Color
 <Canvas style={{ backgroundColor: '#3B1C78' }}>
   <Story story={BgColor}/>
   <Story story={BgColorDisabled}/>
+</Canvas>
+
+### Sizes (Default, Large)
+<Canvas>
+  <Story story={SizeDefault}/>
+  <Story story={SizeLarge}/>
 </Canvas>
 
 ## <a id="api"></a>API

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
 
-type sizes = 'sm' | 'md';
+type sizes = 'default' | 'large';
 type colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';
 
 @Component({
@@ -14,12 +14,12 @@ type colors = 'primary' | 'success' | 'info' | 'warning' | 'error' | 'actived';
   styleUrls: ['./badge.component.scss'],
   host: {
     class: 'freud-badge',
-    '[class.size-small]':  'size === "sm"'
+    '[class.size-large]':  'size === "large"'
   }
 })
 export class FreudBadgeComponent {
 
   @Input() value: string = '';
-  @Input() size: sizes = 'md';
+  @Input() size: sizes = 'default';
   @Input() color: colors = 'primary';
 }

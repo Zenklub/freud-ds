@@ -8,6 +8,12 @@ const Template: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
   `,
 });
 
+// With Label
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  label: 'A',
+};
+
 // Sizes
 export const Small = Template.bind({});
 Small.args = {
@@ -41,53 +47,19 @@ Imagem.args = {
   size: 'lg',
   image: 'assets/img/avatar.png'
 };
-export const ImagemEBadge = Template.bind({});
-ImagemEBadge.args = {
+// Badge
+export const WithBadge = Template.bind({});
+WithBadge.args = {
   label: 'BG',
-  size: 'lg',
+  size: 'md',
   badge: '7',
   image: 'assets/img/avatar.png'
 };
 
-// Badge
-export const BadgeSmall = Template.bind({});
-BadgeSmall.args = {
-  label: 'A',
-  size: 'sm',
-  badge: '2'
-};
-export const BadgeMedium = Template.bind({});
-BadgeMedium.args = {
-  label: 'A',
-  size: 'md',
-  badge: '5'
-};
-export const BadgeLarge = Template.bind({});
-BadgeLarge.args = {
-  label: 'A',
-  size: 'lg',
-  badge: '9'
-};
-
-// Badge
-export const IconSmall = Template.bind({});
-IconSmall.args = {
-  label: '',
-  size: 'sm',
-  badge: '2',
-  withIcon: true
-};
 export const IconMedium = Template.bind({});
 IconMedium.args = {
   label: '',
   size: 'md',
   badge: '5',
-  withIcon: true
-};
-export const IconLarge = Template.bind({});
-IconLarge.args = {
-  label: '',
-  size: 'lg',
-  badge: '9',
   withIcon: true
 };

@@ -1,7 +1,5 @@
 import { Story } from '@storybook/angular';
 import { FreudBadgeComponent } from '@freud-ds/web-components';
-
-
 const Template: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
   props: { ...args },
   template: `
@@ -9,11 +7,37 @@ const Template: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
   `,
 });
 
+const TemplateBlank: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+  props: { ...args },
+  template: `
+    <freud-badge [size]="size" [color]="color" [value]="value" style="position: relative;top: 6px;"></freud-badge>
+  `,
+});
+
+const TemplateBgColor: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+  props: { ...args },
+  template: `
+    <freud-badge style="margin-right: 8px;" [color]="'primary'" [value]="'1'"></freud-badge>
+    <freud-badge style="margin-right: 8px;" [color]="'success'" [value]="'10'"></freud-badge>
+    <freud-badge style="margin-right: 8px;" [color]="'info'" [value]="'5'"></freud-badge>
+    <freud-badge style="margin-right: 8px;" [color]="'warning'" [value]="'99'"></freud-badge>
+    <freud-badge style="margin-right: 8px;" [color]="'error'" [value]="'A'"></freud-badge>
+    <freud-badge style="position: relative;top: 6px;" [color]="'actived'" [value]="''"></freud-badge>
+  `,
+});
+
 // Sizes
-export const Small = Template.bind({});
-Small.args = {
+export const Default = Template.bind({});
+Default.args = {
   value: '1',
-  size: 'sm',
+  size: 'default',
+  color: 'primary'
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  value: '1',
+  size: 'large',
   color: 'primary'
 };
 
@@ -43,8 +67,11 @@ Error.args = {
   value: 'A',
   color: 'error'
 };
-export const Actived = Template.bind({});
+export const Actived = TemplateBlank.bind({});
 Actived.args = {
-  value: 'B',
+  value: '',
   color: 'actived'
 };
+
+
+export const BgColor = TemplateBgColor.bind({});

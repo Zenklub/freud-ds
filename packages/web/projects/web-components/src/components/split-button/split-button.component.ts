@@ -6,8 +6,6 @@ import { FreudMenuItem } from "../../api";
   template: `
     <p-splitButton
       [label]="label"
-      [icon]="icon"
-      [iconPos]="iconPos"
       [disabled]="disabled"
       [model]="items"
       (onDropdownClick)="onDropdownClick.emit($event)"
@@ -24,8 +22,6 @@ import { FreudMenuItem } from "../../api";
 export class FreudSplitButtonComponent {
 
   @Input() label!: string;
-  @Input() icon: string = '';
-  @Input() iconPos: "left" | "right" = 'right';
   @Input() disabled: boolean = false;
   @Input() items!: FreudMenuItem[];
   @Input() bgColor: boolean = false;

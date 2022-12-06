@@ -14,7 +14,7 @@ import {
   SizeLG,
   Disabled,
   Loading,
-  Icon
+  Icon, IconButtonRight
 } from './Button.stories.ts';
 
 <Meta
@@ -52,29 +52,30 @@ import FreudButtonModule from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+<br />
 
-### Cores
+### Theme
 <Canvas>
   <Story story={Primary}/>
   <Story story={Secondary}/>
   <Story story={Ghost}/>
 </Canvas>
 
-### Com background
+### BG Color
 <Canvas style={{ backgroundColor: '#6732D1' }}>
   <Story story={PrimaryBackground}/>
   <Story story={SecondaryBackground}/>
   <Story story={GhostBackground}/>
 </Canvas>
 
-### Tamanhos
+### Size
 <Canvas>
   <Story story={SizeSM}/>
   <Story story={SizeMD}/>
   <Story story={SizeLG}/>
 </Canvas>
 
-### Desabilitado
+### Disabled
 <Canvas>
   <Story story={Disabled}/>
 </Canvas>
@@ -84,9 +85,14 @@ import FreudButtonModule from '@freud-ds/web-components';
   <Story story={Loading}/>
 </Canvas>
 
-### Icon
+### Icon-Only
 <Canvas>
   <Story story={Icon}/>
+</Canvas>
+
+### With Icon - Right
+<Canvas>
+  <Story story={IconButtonRight}/>
 </Canvas>
 
 ## <a id="api"></a>API

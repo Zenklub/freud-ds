@@ -2,17 +2,19 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudBadgeComponent, FreudBadgeModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
-import { 
-  Small,
+import {
+  Default,
+  Large,
   Primary,
   Success,
   Info,
   Warning,
   Error,
-  Actived
+  Actived,
+  BgColor
 } from './Badge.stories.ts';
 
-<Meta 
+<Meta
   decorators={[
     moduleMetadata({
       imports: [FreudBadgeModule],
@@ -56,9 +58,10 @@ import {
 import FreudBadgeModule from '@freud-ds/web-components';
 ```
 
-## <a id="exemplosw"></a>Exemplos
+## <a id="exemplos"></a>Exemplos
+<br />
 
-#### Cores
+### Options
 <Canvas>
   <Story story={Primary}/>
   <Story story={Success}/>
@@ -68,9 +71,15 @@ import FreudBadgeModule from '@freud-ds/web-components';
   <Story story={Actived}/>
 </Canvas>
 
-#### Small
+### BG Color
+<Canvas style={{ backgroundColor: '#3B1C78' }}>
+  <Story story={BgColor}/>
+</Canvas>
+
+### Size (Default, Large)
 <Canvas>
-  <Story story={Small}/>
+  <Story story={Default}/>
+  <Story story={Large}/>
 </Canvas>
 
 ## <a id="api"></a>API

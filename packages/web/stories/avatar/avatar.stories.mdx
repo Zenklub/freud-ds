@@ -8,11 +8,9 @@ import {
   Large,
   BgColor,
   Imagem,
-  ImagemEBadge,
-  BadgeSmall,
-  BadgeMedium,
-  BadgeLarge,
-  IconSmall, IconMedium, IconLarge,
+  IconMedium,
+  WithLabel,
+  WithBadge
 } from './Avatar.stories.ts';
 
 <Meta
@@ -59,45 +57,40 @@ import {
 import FreudAvatarModule from '@freud-ds/web-components';
 ```
 
-## <a id="exemplosw"></a>Exemplos
+## <a id="exemplos"></a>Exemplos
+<br />
 
-#### Tamanhos
+### With Label
+<Canvas>
+  <Story story={WithLabel}/>
+</Canvas>
+
+### Image
+<Canvas>
+  <Story story={Imagem}/>
+</Canvas>
+
+### Icon
+<Canvas>
+  <Story story={IconMedium}/>
+</Canvas>
+
+### With Badge
+<Canvas>
+  <Story story={WithBadge}/>
+</Canvas>
+
+### Size (SM, MD, LG)
 <Canvas>
   <Story story={Small}/>
   <Story story={Medium}/>
   <Story story={Large}/>
 </Canvas>
 
-#### Com background
+### BG Color
 <Canvas style={{ backgroundColor: '#6732D1' }}>
   <Story story={BgColor}/>
 </Canvas>
-
-#### Imagem
-<Canvas>
-  <Story story={Imagem}/>
-  <Story story={ImagemEBadge}/>
-</Canvas>
-
-#### Com icone
-<Canvas>
-  Aguardando a finalização do componente de icones
-</Canvas>
-
-#### Com badge
-<Canvas>
-  <Story story={BadgeSmall}/>
-  <Story story={BadgeMedium}/>
-  <Story story={BadgeLarge}/>
-</Canvas>
-
-#### Com Icone
-<Canvas>
-  <Story story={IconSmall}/>
-  <Story story={IconMedium}/>
-  <Story story={IconLarge}/>
-</Canvas>
-
 
 ## <a id="api"></a>API
 

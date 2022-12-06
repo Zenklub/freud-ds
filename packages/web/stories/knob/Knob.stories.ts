@@ -12,7 +12,6 @@ const Template: Story<FreudKnobComponent> = (
       [max]="max"
       [step]="step"
       [size]="size"
-      [readonly]="readonly"
       [disabled]="disabled"
       [bgColor]="bgColor">
     </freud-knob>
@@ -28,21 +27,29 @@ Disabled.args = {
   value: 50,
   disabled: true
 };
-export const Readonly = Template.bind({});
-Readonly.args = {
-  value: 50,
-  readonly: true
-};
 
 export const BgColor = Template.bind({});
 BgColor.args = {
-  value: 80,
+  value: 50,
   bgColor: true,
 };
 
 export const BgColorDisabled = Template.bind({});
 BgColorDisabled.args = {
-  value: 80,
+  value: 50,
   bgColor: true,
   disabled: true
+};
+
+
+export const SizeDefault = Template.bind({});
+SizeDefault.args = {
+  value: 50,
+  size: 'default'
+};
+
+export const SizeLarge = Template.bind({});
+SizeLarge .args = {
+  value: 50,
+  size: 'large'
 };

@@ -8,6 +8,7 @@ const templateHTML = `
       [size]="size"
       [disabled]="disabled"
       [loading]="loading"
+      [icon]="icon"
       >{{label}}</freud-button>
 `;
 
@@ -93,6 +94,7 @@ const TemplateIcon: Story<FreudButtonComponent> = (args: FreudButtonComponent) =
   ),
 });
 export const Icon = TemplateIcon.bind({});
-Icon.args = {
-  size: 'lg',
-};
+export const IconButtonRight = TemplateLoading .bind({});
+IconButtonRight.args = {
+  icon: 'freud-icon freud-icon-check'
+}

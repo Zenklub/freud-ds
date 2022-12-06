@@ -2,8 +2,12 @@
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
 
 .freud-tag .p-tag {
-    padding: 3px $spacing-size-nano;
+  padding: 3px $spacing-size-nano;
+}
+.freud-tag .p-tag-value {
     font-weight: $font-weight-semibold;
+    font-size: $font-size-xxxs;
+    line-height: 18px;
 }
 
 .freud-tag:not(.outline) {

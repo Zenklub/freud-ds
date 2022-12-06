@@ -1,0 +1,326 @@
+// TODO: Verificar o import
+@import '../../../../tokens/dist/style/scss/_variables.scss';
+
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $lineHeight;
+  line-height: $fontWeight;
+}
+
+.freud-typography {
+  font-family: $font-family-base;
+  margin: 0;
+
+  &.typography-bg-color {
+    color: $neutral-color-white;
+  }
+
+  // Text Regular
+  &.smallRegular1-5 {
+    @include typography($font-size-xxxs, $font-weight-regular, 18px);
+  }
+  &.bodyRegular1-5 {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+  &.smallRegular1-2 {
+    @include typography($font-size-xxxs, $font-weight-regular, 14.4px);
+  }
+  &.bodyRegular1-2 {
+    @include typography($font-size-xs, $font-weight-regular, 19.2px);
+  }
+  &.smallRegular1 {
+    @include typography($font-size-xxxs, $font-weight-regular, 12px);
+  }
+  &.bodyRegular1 {
+    @include typography($font-size-xs, $font-weight-regular, 16px);
+  }
+  &.smallRegularAuto {
+    @include typography($font-size-xxxs, $font-weight-regular, auto);
+  }
+  &.bodyRegularAuto {
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+  // Text Semibold
+  &.smallSemibold1-5 {
+    @include typography($font-size-xxxs, $font-weight-semibold, 18px);
+  }
+  &.bodySemibold1-5 {
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
+  }
+  &.smallSemibold1-2 {
+    @include typography($font-size-xxxs, $font-weight-semibold, 14.4px);
+  }
+  &.bodySemibold1-2 {
+    @include typography($font-size-xs, $font-weight-semibold, 19.2px);
+  }
+  &.smallSemibold1 {
+    @include typography($font-size-xxxs, $font-weight-semibold, 12px);
+  }
+  &.bodySemibold1 {
+    @include typography($font-size-xs, $font-weight-semibold, 16px);
+  }
+  &.smallSemiboldAuto {
+    @include typography($font-size-xxxs, $font-weight-semibold, auto);
+  }
+  &.bodySemiboldAuto {
+    @include typography($font-size-xs, $font-weight-semibold, auto);
+  }
+  // Text Bold
+  &.smallBold1-5 {
+    @include typography($font-size-xxxs, $font-weight-bold, 18px);
+  }
+  &.bodyBold1-5 {
+    @include typography($font-size-xs, $font-weight-bold, 24px);
+  }
+  &.smallBold1-2 {
+    @include typography($font-size-xxxs, $font-weight-bold, 14.4px);
+  }
+  &.bodyBold1-2 {
+    @include typography($font-size-xs, $font-weight-bold, 19.2px);
+  }
+  &.smallBold1 {
+    @include typography($font-size-xxxs, $font-weight-bold, 12px);
+  }
+  &.bodyBold1 {
+    @include typography($font-size-xs, $font-weight-bold, 16px);
+  }
+  &.smallBoldAuto {
+    @include typography($font-size-xxxs, $font-weight-bold, auto);
+  }
+  &.bodyBoldAuto {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+
+  // Heading
+  // Regular
+  &.h1Regular1-5 {
+    @include typography($font-size-xxl, $font-weight-regular, 60px);
+  }
+  &.h2Regular1-5 {
+    @include typography(30px, $font-weight-regular, 45px);
+  }
+  &.h3Regular1-5 {
+    @include typography($font-size-lg, $font-weight-regular, 36px);
+  }
+  &.h4Regular1-5 {
+    @include typography($font-size-md, $font-weight-regular, 30px);
+  }
+  &.h5Regular1-5 {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+  &.h6Regular1-5 {
+    @include typography($font-size-xxs, $font-weight-regular, 21px);
+  }
+
+  &.h1Regular1-2 {
+    @include typography($font-size-xxl, $font-weight-regular, 48px);
+  }
+  &.h2Regular1-2 {
+    @include typography(30px, $font-weight-regular, 36px);
+  }
+  &.h3Regular1-2 {
+    @include typography($font-size-lg, $font-weight-regular, 28.8px);
+  }
+  &.h4Regular1-2 {
+    @include typography($font-size-md, $font-weight-regular, 24px);
+  }
+  &.h5Regular1-2 {
+    @include typography($font-size-xs, $font-weight-regular, 19.2px);
+  }
+  &.h6Regular1-2 {
+    @include typography($font-size-xxs, $font-weight-regular, 17px);
+  }
+
+  &.h1Regular1 {
+    @include typography($font-size-xxl, $font-weight-regular, $font-size-xxl);
+  }
+  &.h2Regular1 {
+    @include typography(30px, $font-weight-regular, 30px);
+  }
+  &.h3Regular1 {
+    @include typography($font-size-lg, $font-weight-regular, $font-size-lg);
+  }
+  &.h4Regular1 {
+    @include typography($font-size-md, $font-weight-regular, $font-size-md);
+  }
+  &.h5Regular1 {
+    @include typography($font-size-xs, $font-weight-regular, $font-size-xs);
+  }
+  &.h6Regular1 {
+    @include typography($font-size-xxs, $font-weight-regular, $font-size-xxs);
+  }
+
+  &.h1RegularAuto {
+    @include typography($font-size-xxl, $font-weight-regular, auto);
+  }
+  &.h2RegularAuto {
+    @include typography(30px, $font-weight-regular, auto);
+  }
+  &.h3RegularAuto {
+    @include typography($font-size-lg, $font-weight-regular, auto);
+  }
+  &.h4RegularAuto {
+    @include typography($font-size-md, $font-weight-regular, auto);
+  }
+  &.h5RegularAuto {
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+  &.h6RegularAuto {
+    @include typography($font-size-xxs, $font-weight-regular, auto);
+  }
+
+  // Semibold
+  &.h1Semibold1-5 {
+    @include typography($font-size-xxl, $font-weight-semibold, 60px);
+  }
+  &.h2Semibold1-5 {
+    @include typography(30px, $font-weight-semibold, 45px);
+  }
+  &.h3Semibold1-5 {
+    @include typography($font-size-lg, $font-weight-semibold, 36px);
+  }
+  &.h4Semibold1-5 {
+    @include typography($font-size-md, $font-weight-semibold, 30px);
+  }
+  &.h5Semibold1-5 {
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
+  }
+  &.h6Semibold1-5 {
+    @include typography($font-size-xxs, $font-weight-semibold, 21px);
+  }
+
+  &.h1Semibold1-2 {
+    @include typography($font-size-xxl, $font-weight-semibold, 48px);
+  }
+  &.h2Semibold1-2 {
+    @include typography(30px, $font-weight-semibold, 36px);
+  }
+  &.h3Semibold1-2 {
+    @include typography($font-size-lg, $font-weight-semibold, 28.8px);
+  }
+  &.h4Semibold1-2 {
+    @include typography($font-size-md, $font-weight-semibold, 24px);
+  }
+  &.h5Semibold1-2 {
+    @include typography($font-size-xs, $font-weight-semibold, 19.2px);
+  }
+  &.h6Semibold1-2 {
+    @include typography($font-size-xxs, $font-weight-semibold, 17px);
+  }
+
+  &.h1Semibold1 {
+    @include typography($font-size-xxl, $font-weight-semibold, $font-size-xxl);
+  }
+  &.h2Semibold1 {
+    @include typography(30px, $font-weight-semibold, 30px);
+  }
+  &.h3Semibold1 {
+    @include typography($font-size-lg, $font-weight-semibold, $font-size-lg);
+  }
+  &.h4Semibold1 {
+    @include typography($font-size-md, $font-weight-semibold, $font-size-md);
+  }
+  &.h5Semibold1 {
+    @include typography($font-size-xs, $font-weight-semibold, $font-size-xs);
+  }
+  &.h6Semibold1 {
+    @include typography($font-size-xxs, $font-weight-semibold, $font-size-xxs);
+  }
+
+  &.h1SemiboldAuto {
+    @include typography($font-size-xxl, $font-weight-semibold, auto);
+  }
+  &.h2SemiboldAuto {
+    @include typography(30px, $font-weight-semibold, auto);
+  }
+  &.h3SemiboldAuto {
+    @include typography($font-size-lg, $font-weight-semibold, auto);
+  }
+  &.h4SemiboldAuto {
+    @include typography($font-size-md, $font-weight-semibold, auto);
+  }
+  &.h5SemiboldAuto {
+    @include typography($font-size-xs, $font-weight-semibold, auto);
+  }
+  &.h6SemiboldAuto {
+    @include typography($font-size-xxs, $font-weight-semibold, auto);
+  }
+
+  // Bold
+  &.h1Bold1-5 {
+    @include typography($font-size-xxl, $font-weight-bold, 60px);
+  }
+  &.h2Bold1-5 {
+    @include typography(30px, $font-weight-bold, 45px);
+  }
+  &.h3Bold1-5 {
+    @include typography($font-size-lg, $font-weight-bold, 36px);
+  }
+  &.h4Bold1-5 {
+    @include typography($font-size-md, $font-weight-bold, 30px);
+  }
+  &.h5Bold1-5 {
+    @include typography($font-size-xs, $font-weight-bold, 24px);
+  }
+  &.h6Bold1-5 {
+    @include typography($font-size-xxs, $font-weight-bold, 21px);
+  }
+
+  &.h1Bold1-2 {
+    @include typography($font-size-xxl, $font-weight-bold, 48px);
+  }
+  &.h2Bold1-2 {
+    @include typography(30px, $font-weight-bold, 36px);
+  }
+  &.h3Bold1-2 {
+    @include typography($font-size-lg, $font-weight-bold, 28.8px);
+  }
+  &.h4Bold1-2 {
+    @include typography($font-size-md, $font-weight-bold, 24px);
+  }
+  &.h5Bold1-2 {
+    @include typography($font-size-xs, $font-weight-bold, 19.2px);
+  }
+  &.h6Bold1-2 {
+    @include typography($font-size-xxs, $font-weight-bold, 17px);
+  }
+
+  &.h1Bold1 {
+    @include typography($font-size-xxl, $font-weight-bold, $font-size-xxl);
+  }
+  &.h2Bold1 {
+    @include typography(30px, $font-weight-bold, 30px);
+  }
+  &.h3Bold1 {
+    @include typography($font-size-lg, $font-weight-bold, $font-size-lg);
+  }
+  &.h4Bold1 {
+    @include typography($font-size-md, $font-weight-bold, $font-size-md);
+  }
+  &.h5Bold1 {
+    @include typography($font-size-xs, $font-weight-bold, $font-size-xs);
+  }
+  &.h6Bold1 {
+    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);
+  }
+
+  &.h1BoldAuto {
+    @include typography($font-size-xxl, $font-weight-bold, auto);
+  }
+  &.h2BoldAuto {
+    @include typography(30px, $font-weight-bold, auto);
+  }
+  &.h3BoldAuto {
+    @include typography($font-size-lg, $font-weight-bold, auto);
+  }
+  &.h4BoldAuto {
+    @include typography($font-size-md, $font-weight-bold, auto);
+  }
+  &.h5BoldAuto {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+  &.h6BoldAuto {
+    @include typography($font-size-xxs, $font-weight-bold, auto);
+  }
+
+}

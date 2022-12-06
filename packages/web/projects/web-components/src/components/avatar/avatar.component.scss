@@ -1,10 +1,9 @@
-// TODO: Verificar o import
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../scss/typography.scss';
 
 .freud-avatar .p-avatar {
     font-family: $font-family-base;
 }
-
 .freud-avatar {
     position: relative;
     display: block;
@@ -13,19 +12,19 @@
 .freud-avatar.freud-avatar-size-small, .freud-avatar-size-small .p-avatar {
     width: 28px;
     height: 28px;
-    font-size: $font-size-xs;
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
 }
 
 .freud-avatar.freud-avatar-size-medium, .freud-avatar-size-medium .p-avatar {
     width: 42px;
     height: 42px;
-    font-size: $font-size-xs;
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
 }
 
 .freud-avatar.freud-avatar-size-large, .freud-avatar-size-large .p-avatar {
     width: 56px;
     height: 56px;
-    font-size: $font-size-md;
+    @include typography($font-size-md, $font-weight-semibold, 30px);
 }
 
 .freud-avatar.freud-avatar-size-medium {

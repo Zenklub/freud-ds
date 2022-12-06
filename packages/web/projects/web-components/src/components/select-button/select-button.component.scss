@@ -1,5 +1,5 @@
-// TODO: Verificar o import
 @import '../../../../../../tokens/dist/style/scss/_variables.scss';
+@import '../../../scss/typography.scss';
 
 .freud-select-button.freud-select-bgcolor {
   .p-selectbutton .p-button.p-highlight {
@@ -16,7 +16,7 @@
 
 .freud-select-button {
   .p-selectbutton .p-button {
-    font-weight: $font-weight-bold;
+    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);
     border-radius: $border-radius-md;
   }
 }

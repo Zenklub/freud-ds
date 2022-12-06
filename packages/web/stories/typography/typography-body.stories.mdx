@@ -4,13 +4,13 @@ import { FreudTypographyComponent, FreudTypographyModule } from '@freud-ds/web-c
 import { FreudHeaderComponent } from '../header/header.component';
 import { headingTypes } from '../../projects/web-components/src/components/typography/typrography.type';
 
-import { 
+import {
   TextRegular,
   TextSemibold,
   TextBold
 } from './typography.stories.ts';
 
-<Meta 
+<Meta
   decorators={[
     moduleMetadata({
       imports: [FreudTypographyModule],
@@ -18,6 +18,10 @@ import {
   ]}
   parameters={{
     layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
     backgrounds: {
       default: 'Default',
       values: [
@@ -50,8 +54,8 @@ title="@freud-ds/web-components/Typography/Text" component={FreudTypographyCompo
   {{
     component: FreudHeaderComponent,
     props: {
-      title: "Typography Text",
-      description: "Typography Text"
+      title: "Text",
+      description: "Temos dois padrões de textos: Body e Small. Ambos possuem sua versão regular, semibold e bold e também opções de lineheight (1, 1.2, 1.5 e auto)"
     },
   }}
 </Story>
@@ -63,21 +67,19 @@ import { FreudTypographyModule, StepMenu } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+<br />
 
 ### Regular
-Não permite edição em tempo real pela aba "Canvas"
 <Canvas>
   <Story story={TextRegular}/>
 </Canvas>
 
 ### Semibold
-Não permite edição em tempo real pela aba "Canvas"
 <Canvas>
   <Story story={TextSemibold}/>
 </Canvas>
 
 ### Bold
-Não permite edição em tempo real pela aba "Canvas"
 <Canvas>
   <Story story={TextBold}/>
 </Canvas>

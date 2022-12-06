@@ -8,7 +8,7 @@ type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
     <p-tag [value]="value" class="freud-tag-{{color || 'primary'}}" [rounded]="true"></p-tag>
   `,
   host: {
-    class: 'freud-tag',
+    class: 'freud-tag freud-typography smallSemibold1-5',
     '[class.outline]':  'outline'
   },
   styleUrls: ['./tag.component.scss'],

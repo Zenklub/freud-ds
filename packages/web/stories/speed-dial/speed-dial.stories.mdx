@@ -40,6 +40,12 @@ title="@freud-ds/web-components/Buttons/SpeedDial" component={FreudSpeedDialComp
       title: "SpeedDial",
       description: "Quando pressionado, um botão de ação flutuante pode exibir várias ações primárias que podem ser executadas em uma página."
     },
+    parameters: {
+      viewMode: 'docs',
+      previewTabs: {
+        canvas: { hidden: true }
+      },
+    }
   }}
 </Story>
 
@@ -74,8 +80,9 @@ export class Componente {
 ```
 
 ## <a id="exemplos"></a>Exemplos
+<br />
 
-### Direções
+### Directions
 Especifica a direção de abertura das ações. Para `linear` e `semi-circle` tipos; up, down, left e right. Para `quarter-circle` tipos; up-left, up-right, down-left and down-right.
 
 Nos exemplos abaixo estão sendo utilizados as opções `down` e `left` respectivamente, utilize a aba canvas para visualizar
@@ -85,7 +92,7 @@ as outras opções.
   <Story story={DirectionLeft}/>
 </Canvas>
 
-### Tipos
+### Others
 SpeedDial tem 4 tipos; `linear`, `circle`, `semi-circle`, `quarter-circle`.
 
 1 - Type: `circle`
@@ -99,21 +106,21 @@ SpeedDial tem 4 tipos; `linear`, `circle`, `semi-circle`, `quarter-circle`.
   <Story story={TypeQuarterCircle}/>
 </Canvas>
 
+### With Mask
+<Canvas>
+  <Story story={Mask} />
+</Canvas>
+
 
 ### Disabled
 <Canvas>
   <Story story={Disabled}/>
 </Canvas>
 
-### Com background(bgColor)
+### BG Color
 <Canvas style={{ backgroundColor: '#3B1C78' }}>
   <Story story={BgColor} />
   <Story story={BgColorDisabled}/>
-</Canvas>
-
-### Com mascara
-<Canvas>
-  <Story story={Mask} />
 </Canvas>
 
 ## <a id="api"></a>API
