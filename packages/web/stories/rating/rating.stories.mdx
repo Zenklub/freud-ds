@@ -5,10 +5,8 @@ import { FreudHeaderComponent } from '../header/header.component';
 import {
   Default,
   Disabled,
-  Readonly,
   BgColor,
   BgColorDisabled,
-  CancelButton
 } from './Rating.stories.ts';
 
 <Meta
@@ -27,7 +25,7 @@ import {
       ],
     }
   }}
-title="@freud-ds/web-components/Feedback/Rating(Em andamento)" component={FreudRatingComponent} />
+title="@freud-ds/web-components/Feedback/Rating" component={FreudRatingComponent} />
 
 <Story name="Storyname-hidden">
   {{
@@ -58,21 +56,10 @@ import { FreudRatingComponent } from '@freud-ds/web-components';
   <Story story={Disabled}/>
 </Canvas>
 
-### Readonly
-<Canvas>
-  <Story story={Readonly}/>
-</Canvas>
-
 ### BG Color
 <Canvas style={{ backgroundColor: '#3B1C78' }}>
   <Story story={BgColor}/>
   <Story story={BgColorDisabled}/>
-</Canvas>
-
-### Com botão de cancelar
-Ao cancelar é emitido um output no output `onCancel`
-<Canvas>
-  <Story story={CancelButton}/>
 </Canvas>
 
 

@@ -306,7 +306,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n@import '../../../../../../icons/src/style/style.css';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    $freud-btn-background: $brand-color-pure;\r\n    $freud-btn-color: $neutral-color-white;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  font-weight: $font-weight-bold;\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
+                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n@import '../../../scss/typography.scss';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    $freud-btn-background: $brand-color-pure;\r\n    $freud-btn-color: $neutral-color-white;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  @include typography($font-size-xs, $font-weight-bold, auto);\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n  &.p-button-icon-only {\r\n    width: auto;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -792,7 +792,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-select-button.freud-select-bgcolor {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    color: $brand-color-04;\r\n    background: $neutral-color-white;\r\n    border: 1px solid $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $brand-color-05;\r\n    background: $brand-color-04;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n.freud-select-button {\r\n  .p-selectbutton .p-button {\r\n    font-weight: $font-weight-bold;\r\n    border-radius: $border-radius-md;\r\n  }\r\n}\r\n\r\n.p-button:focus {\r\n  box-shadow: 0 0 0 1px $brand-color-pure;\r\n}\r\n\r\n\r\n.freud-select-button:not(.freud-select-bgcolor) {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    color: $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $neutral-color-light-04;\r\n    color: $neutral-color-dark-03;\r\n  }\r\n}\r\n",
+                    "data": "@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n@import '../../../scss/typography.scss';\r\n\r\n.freud-select-button.freud-select-bgcolor {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    color: $brand-color-04;\r\n    background: $neutral-color-white;\r\n    border: 1px solid $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $brand-color-05;\r\n    background: $brand-color-04;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n.freud-select-button {\r\n  .p-selectbutton .p-button {\r\n    @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);\r\n    border-radius: $border-radius-md;\r\n  }\r\n}\r\n\r\n.p-button:focus {\r\n  box-shadow: 0 0 0 1px $brand-color-pure;\r\n}\r\n\r\n\r\n.freud-select-button:not(.freud-select-bgcolor) {\r\n  .p-selectbutton .p-button.p-highlight {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    color: $neutral-color-white;\r\n  }\r\n  .p-selectbutton .p-button {\r\n    border: 1px solid $neutral-color-light-04;\r\n    color: $neutral-color-dark-03;\r\n  }\r\n}\r\n",
                     "styleUrl": "./select-button.component.scss"
                 }
             ],
@@ -956,7 +956,7 @@
         },
         {
             "name": "FreudSplitButtonComponent",
-            "id": "component-FreudSplitButtonComponent-874038a7195627fac84c186fbea325f14d101e51a3bbf12e5b6a726af9e1c95a9826d21632070a65df5d1bfc35015a7fa09c028e06447c9dfd28081eca1ae916",
+            "id": "component-FreudSplitButtonComponent-501887a6871f88fa145b5ea6c6fe2a2e2e32b6acee4a0d80976cdbee00927e797ec3daee87566b9bc2bbf5486295de61235e7232ab467ad0411853fe7c5aee96",
             "file": "projects/web-components/src/components/split-button/split-button.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -971,7 +971,7 @@
                 "./split-button.component.scss"
             ],
             "styles": [],
-            "template": "<p-splitButton\n  [label]=\"label\"\n  [icon]=\"icon\"\n  [iconPos]=\"iconPos\"\n  [disabled]=\"disabled\"\n  [model]=\"items\"\n  (onDropdownClick)=\"onDropdownClick.emit($event)\"\n  (onClick)=\"onClick.emit()\">\n</p-splitButton>\n",
+            "template": "<p-splitButton\n  [label]=\"label\"\n  [disabled]=\"disabled\"\n  [model]=\"items\"\n  (onDropdownClick)=\"onDropdownClick.emit($event)\"\n  (onClick)=\"onClick.emit()\">\n</p-splitButton>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -980,7 +980,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 27,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -989,33 +989,15 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 25,
                     "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "icon",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 27,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "iconPos",
-                    "defaultValue": "'right'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 28,
-                    "type": "\"left\" | \"right\"",
                     "decorators": []
                 },
                 {
                     "name": "items",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 26,
                     "type": "FreudMenuItem[]",
                     "decorators": []
                 },
@@ -1023,7 +1005,7 @@
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 }
@@ -1034,7 +1016,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 28,
                     "type": "EventEmitter<void>"
                 },
                 {
@@ -1042,7 +1024,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 29,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1055,11 +1037,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api\";\n\n@Component({\n  selector: 'freud-split-button',\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [icon]=\"icon\"\n      [iconPos]=\"iconPos\"\n      [disabled]=\"disabled\"\n      [model]=\"items\"\n      (onDropdownClick)=\"onDropdownClick.emit($event)\"\n      (onClick)=\"onClick.emit()\">\n    </p-splitButton>\n  `,\n  styleUrls: ['./split-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-split-button',\n    '[class.freud-split-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSplitButtonComponent {\n\n  @Input() label!: string;\n  @Input() icon: string = '';\n  @Input() iconPos: \"left\" | \"right\" = 'right';\n  @Input() disabled: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() bgColor: boolean = false;\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';\nimport { FreudMenuItem } from \"../../api\";\n\n@Component({\n  selector: 'freud-split-button',\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [disabled]=\"disabled\"\n      [model]=\"items\"\n      (onDropdownClick)=\"onDropdownClick.emit($event)\"\n      (onClick)=\"onClick.emit()\">\n    </p-splitButton>\n  `,\n  styleUrls: ['./split-button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-split-button',\n    '[class.freud-split-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudSplitButtonComponent {\n\n  @Input() label!: string;\n  @Input() disabled: boolean = false;\n  @Input() items!: FreudMenuItem[];\n  @Input() bgColor: boolean = false;\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\n  @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-split-button:not(.freud-split-bgcolor) {\r\n  .p-button {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-split-button.freud-split-bgcolor {\r\n  .p-button {\r\n    background-color: $neutral-color-white;\r\n    border-color: $neutral-color-white;\r\n    font-weight: $font-weight-bold;\r\n    color: $brand-color-pure;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: 0 0 0 1px $neutral-color-white;\r\n  }\r\n}\r\n\r\n.freud-split-button {\r\n  .p-menu .p-menuitem-link:hover {\r\n    background-color: $neutral-color-light-02;\r\n  }\r\n  .p-splitbutton-defaultbutton {\r\n    border-radius: $border-radius-md 0 0 $border-radius-md;\r\n  }\r\n  .p-splitbutton-menubutton {\r\n    border-radius: 0 $border-radius-md $border-radius-md 0;\r\n  }\r\n\r\n  .p-menu a.p-menuitem-link .p-menuitem-text {\r\n    color: $neutral-color-dark-03;\r\n  }\r\n  .p-menuitem-link:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-01;\r\n    background-color: $brand-color-01;\r\n  }\r\n  .p-menu-overlay {\r\n    border-radius: $border-radius-md;\r\n  }\r\n}\r\n\r\n//box-shadow: 0 0 0 1px $brand-color-01;\r\n//border-color: $brand-color-01;\r\n//background-color: $brand-color-01;\r\n//color: $brand-color-pure;\r\n//font-weight: $font-weight-regular;\r\n",
+                    "data": "// TODO: Verificar o import\r\n@import '../../../../../../tokens/dist/style/scss/_variables.scss';\r\n\r\n.freud-split-button:not(.freud-split-bgcolor) {\r\n  .p-button {\r\n    background-color: $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    font-weight: $font-weight-bold;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: unset;\r\n  }\r\n}\r\n\r\n.freud-split-button.freud-split-bgcolor {\r\n  .p-button {\r\n    background-color: $neutral-color-white;\r\n    border-color: $neutral-color-white;\r\n    font-weight: $font-weight-bold;\r\n    color: $brand-color-pure;\r\n  }\r\n  .p-button:focus {\r\n    box-shadow: unset;\r\n  }\r\n}\r\n\r\n.freud-split-button {\r\n  .p-menu .p-menuitem-link:hover {\r\n    background-color: $neutral-color-light-02;\r\n  }\r\n  .p-splitbutton-defaultbutton {\r\n    border-radius: $border-radius-md 0 0 $border-radius-md;\r\n  }\r\n  .p-splitbutton-menubutton {\r\n    border-radius: 0 $border-radius-md $border-radius-md 0;\r\n  }\r\n\r\n  .p-menu a.p-menuitem-link .p-menuitem-text,\r\n  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,\r\n  .p-menu .p-menuitem-link .p-menuitem-icon {\r\n    color: $neutral-color-dark-03;\r\n  }\r\n  .p-menuitem-link:focus {\r\n    box-shadow: 0 0 0 1px $brand-color-01;\r\n    background-color: $brand-color-01;\r\n  }\r\n  .p-menu-overlay {\r\n    border-radius: $border-radius-md;\r\n    box-shadow: $shadow-level-3;\r\n  }\r\n}\r\n",
                     "styleUrl": "./split-button.component.scss"
                 }
             ],
@@ -1962,21 +1944,21 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "TemplateBgColor.bind({})"
-            },
-            {
-                "name": "BgColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateBgColor.bind({})"
             },
             {
                 "name": "BgColor",
@@ -2002,7 +1984,27 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2027,26 +2029,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "TemplateBgColor.bind({})"
-            },
-            {
-                "name": "BgColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BgColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/tooltip/Tooltip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "BgColor",
@@ -2182,7 +2164,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/steps/Steps.stories.ts",
+                "file": "stories/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2192,17 +2174,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultEditavel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/typography/typography.stories.ts",
+                "file": "stories/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2272,7 +2244,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/speed-dial/SpeedDial.stories.ts",
+                "file": "stories/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2282,7 +2254,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
+                "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2379,16 +2351,6 @@
                 "defaultValue": "TemplateIcon.bind({})"
             },
             {
-                "name": "Icon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "IconButtonRight",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2396,7 +2358,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "TemplateLoading .bind({})"
             },
             {
                 "name": "IconMedium",
@@ -2456,7 +2418,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "FreudMenuItem[]",
-                "defaultValue": "[\r\n  {icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-cog', url: 'http://zenklub.com'}\r\n]"
+                "defaultValue": "[\r\n  {icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-check'}\r\n]"
             },
             {
                 "name": "itemsWithoutIcon",
@@ -2482,7 +2444,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
+                "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2492,7 +2454,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/avatar/Avatar.stories.ts",
+                "file": "stories/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2791,21 +2753,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/badge/Badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudBadgeComponent>",
-                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudAvatarComponent>",
                 "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudBadgeComponent>",
+                "defaultValue": "(args: FreudBadgeComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-badge [size]=\"size\" [color]=\"color\" [value]=\"value\"></freud-badge>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -2851,11 +2813,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/split-button/SplitButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudSplitButtonComponent>",
+                "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudSpeedDialComponent>",
                 "defaultValue": "(\r\n  args: FreudSpeedDialComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"height: 250px; width: 120px\">\r\n      <freud-speed-dial\r\n        [id]=\"id\"\r\n        [visible]=\"visible\"\r\n        [mask]=\"mask\"\r\n        [disabled]=\"disabled\"\r\n        [showIcon]=\"showIcon\"\r\n        [hideIcon]=\"hideIcon\"\r\n        [type]=\"type\"\r\n        [direction]=\"direction\"\r\n        [items]=\"items\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-speed-dial>\r\n  </div>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tooltip/Tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudTooltipComponent>",
+                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -2876,26 +2858,6 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudTagComponent>",
                 "defaultValue": "(args: FreudTagComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tag [outline]=\"outline\" [color]=\"color\" [value]=\"value\"></freud-tag>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/split-button/SplitButton.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudSplitButtonComponent>",
-                "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/tooltip/Tooltip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudTooltipComponent>",
-                "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -2945,7 +2907,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-1 (h1BoldAuto)</p>\r\n  `\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-auto (h1BoldAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TemplateCircle",
@@ -2995,7 +2957,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [icon]=\"icon\"\n        [iconPos]=\"iconPos\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+                "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
             },
             {
                 "name": "TemplateIcon",
@@ -3025,7 +2987,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-auto (h1RegularAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TemplateSemibold",
@@ -3035,7 +2997,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-auto (h1RegularAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TemplateSize",
@@ -3055,7 +3017,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TemplateTextRegular",
@@ -3075,7 +3037,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudTypographyComponent>",
-                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
+                "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
             },
             {
                 "name": "TextBold",
@@ -3293,7 +3255,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"default\" | \"large\"",
-                "file": "projects/web-components/src/components/badge/badge.component.ts",
+                "file": "projects/web-components/src/components/knob/knob.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3304,7 +3266,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"default\" | \"large\"",
-                "file": "projects/web-components/src/components/knob/knob.component.ts",
+                "file": "projects/web-components/src/components/badge/badge.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3764,6 +3726,78 @@
                     "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
                 }
             ],
+            "stories/split-button/SplitButton.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "items",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FreudMenuItem[]",
+                    "defaultValue": "[\n  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {\n      console.log('Evento update')\n    }\n  },\n  {\n    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {\n      console.log('Evento delete')\n    },\n  },\n  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\n  {separator: true},\n  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}\n]"
+                },
+                {
+                    "name": "itemsWithoutIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FreudMenuItem[]",
+                    "defaultValue": "[\n  {label: 'Update', command: () => {console.log('Evento update')}\n  },\n  {\n    label: 'Delete', command: () => {console.log('Evento delete')},\n  },\n  {label: 'Zenklub', url: 'http://zenklub.com'}\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSplitButtonComponent>",
+                    "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+                },
+                {
+                    "name": "templateHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/split-button/SplitButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+                }
+            ],
             "stories/speed-dial/SpeedDial.stories.ts": [
                 {
                     "name": "BgColor",
@@ -3823,7 +3857,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "FreudMenuItem[]",
-                    "defaultValue": "[\r\n  {icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-cog', url: 'http://zenklub.com'}\r\n]"
+                    "defaultValue": "[\r\n  {icon: 'freud-icon freud-icon-refresh', command: () => {\r\n      console.log('Evento update')\r\n    }\r\n  },\r\n  {\r\n    icon: 'freud-icon freud-icon-close', command: () => {\r\n      console.log('Evento delete')\r\n    },\r\n  },\r\n  {icon: 'freud-icon freud-icon-check'}\r\n]"
                 },
                 {
                     "name": "Mask",
@@ -3884,6 +3918,68 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "TemplateCircle.bind({})"
+                }
+            ],
+            "stories/tooltip/Tooltip.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Bottom",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Left",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Right",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTooltipComponent>",
+                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "Top",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "stories/steps/Steps.stories.ts": [
@@ -4070,163 +4166,9 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "stories/split-button/SplitButton.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Icon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "items",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "FreudMenuItem[]",
-                    "defaultValue": "[\n  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {\n      console.log('Evento update')\n    }\n  },\n  {\n    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {\n      console.log('Evento delete')\n    },\n  },\n  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},\n  {separator: true},\n  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}\n]"
-                },
-                {
-                    "name": "itemsWithoutIcon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "FreudMenuItem[]",
-                    "defaultValue": "[\n  {label: 'Update', command: () => {console.log('Evento update')}\n  },\n  {\n    label: 'Delete', command: () => {console.log('Evento delete')},\n  },\n  {label: 'Zenklub', url: 'http://zenklub.com'}\n]"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudSplitButtonComponent>",
-                    "defaultValue": "(args: FreudSplitButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
-                },
-                {
-                    "name": "templateHTML",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/split-button/SplitButton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [icon]=\"icon\"\n        [iconPos]=\"iconPos\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
-                }
-            ],
-            "stories/tooltip/Tooltip.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Bottom",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Left",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Right",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudTooltipComponent>",
-                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
-                },
-                {
-                    "name": "Top",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
             "stories/typography/typography.stories.ts": [
                 {
                     "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/typography/typography.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultEditavel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/typography/typography.stories.ts",
@@ -4283,7 +4225,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-1 (h1BoldAuto)</p>\r\n  `\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-5'\">h6/Bold-400/line-height-1.5 (h6Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-5'\">h5/Bold-400/line-height-1.5 (h5Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-5'\">h4/Bold-400/line-height-1.5 (h4Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-5'\">h3/Bold-400/line-height-1.5 (h3Bold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-5'\">h2/Bold-400/line-height-1.5 (h2Bold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-5'\">h1/regular-400/line-height-1.5 (h1Bold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1-2'\">h6/Bold-400/line-height-1.2 (h6Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1-2'\">h5/Bold-400/line-height-1.2 (h5Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1-2'\">h4/Bold-400/line-height-1.2 (h4Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1-2'\">h3/Bold-400/line-height-1.2 (h3Bold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1-2'\">h2/Bold-400/line-height-1.2 (h2Bold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1-2'\">h1/Bold-400/line-height-1.2 (h1Bold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Bold1'\">h6/Bold-400/line-height-1 (h6Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Bold1'\">h5/Bold-400/line-height-1 (h5Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Bold1'\">h4/Bold-400/line-height-1 (h4Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Bold1'\">h3/Bold-400/line-height-1 (h3Bold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Bold1'\">h2/Bold-400/line-height-1 (h2Bold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Bold1'\">h1/Bold-400/line-height-1 (h1Bold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6BoldAuto'\">h6/Boldold-400/line-height-Auto (h6BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5BoldAuto'\">h5/Boldold-400/line-height-Auto (h5BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4BoldAuto'\">h4/Boldold-400/line-height-Auto (h4BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3BoldAuto'\">h3/Boldold-400/line-height-Auto (h3BoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2BoldAuto'\">h2/Boldold-400/line-height-Auto (h2BoldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1BoldAuto'\">h1/Bold-400/line-height-auto (h1BoldAuto)</p>\r\n  `\r\n})"
                 },
                 {
                     "name": "TemplateRegular",
@@ -4293,7 +4235,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-5'\">h6/regular-400/line-height-1.5 (h6Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-5'\">h5/regular-400/line-height-1.5 (h5Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-5'\">h4/regular-400/line-height-1.5 (h4Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-5'\">h3/regular-400/line-height-1.5 (h3Regular1-5)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-5'\">h2/regular-400/line-height-1.5 (h2Regular1-5)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-5'\">h1/regular-400/line-height-1.5 (h1Regular1-5)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1-2'\">h6/regular-400/line-height-1.2 (h6Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1-2'\">h5/regular-400/line-height-1.2 (h5Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1-2'\">h4/regular-400/line-height-1.2 (h4Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1-2'\">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1-2'\">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1-2'\">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Regular1'\">h6/regular-400/line-height-1 (h6Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Regular1'\">h5/regular-400/line-height-1 (h5Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Regular1'\">h4/regular-400/line-height-1 (h4Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Regular1'\">h3/regular-400/line-height-1 (h3Regular1)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Regular1'\">h2/regular-400/line-height-1 (h2Regular1)</p>\r\n    <p freud-typography [fontType]=\"'h1Regular1'\">h1/regular-400/line-height-1 (h1Regular1)</p>\r\n\r\n    <br><br>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6RegularAuto'\">h6/regular-400/line-height-Auto (h6RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5RegularAuto'\">h5/regular-400/line-height-Auto (h5RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4RegularAuto'\">h4/regular-400/line-height-Auto (h4RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3RegularAuto'\">h3/regular-400/line-height-Auto (h3RegularAuto)</p>\r\n    <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2RegularAuto'\">h2/regular-400/line-height-Auto (h2RegularAuto)</p>\r\n    <p freud-typography [fontType]=\"'h1RegularAuto'\">h1/regular-400/line-height-auto (h1RegularAuto)</p>\r\n  `\r\n})"
                 },
                 {
                     "name": "TemplateSemibold",
@@ -4303,7 +4245,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-1 (h1RegularAuto)</p>\r\n  `\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-5'\">h6/Semibold-400/line-height-1.5 (h6Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-5'\">h5/Semibold-400/line-height-1.5 (h5Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-5'\">h4/Semibold-400/line-height-1.5 (h4Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-5'\">h3/Semibold-400/line-height-1.5 (h3Semibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-5'\">h2/Semibold-400/line-height-1.5 (h2Semibold1-5)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-5'\">h1/regular-400/line-height-1.5 (h1Semibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1-2'\">h6/Semibold-400/line-height-1.2 (h6Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1-2'\">h5/Semibold-400/line-height-1.2 (h5Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1-2'\">h4/Semibold-400/line-height-1.2 (h4Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1-2'\">h3/Semibold-400/line-height-1.2 (h3Semibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1-2'\">h2/Semibold-400/line-height-1.2 (h2Semibold1-2)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1-2'\">h1/Semibold-400/line-height-1.2 (h1Semibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6Semibold1'\">h6/Semibold-400/line-height-1 (h6Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5Semibold1'\">h5/Semibold-400/line-height-1 (h5Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4Semibold1'\">h4/Semibold-400/line-height-1 (h4Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3Semibold1'\">h3/Semibold-400/line-height-1 (h3Semibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2Semibold1'\">h2/Semibold-400/line-height-1 (h2Semibold1)</p>\r\n  <p freud-typography [fontType]=\"'h1Semibold1'\">h1/Semibold-400/line-height-1 (h1Regular1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h6SemiboldAuto'\">h6/Semibold-400/line-height-Auto (h6SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h5SemiboldAuto'\">h5/Semibold-400/line-height-Auto (h5SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h4SemiboldAuto'\">h4/Semibold-400/line-height-Auto (h4SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h3SemiboldAuto'\">h3/Semibold-400/line-height-Auto (h3SemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'h2SemiboldAuto'\">h2/Semibold-400/line-height-Auto (h2SemiboldAuto)</p>\r\n  <p freud-typography [fontType]=\"'h1SemiboldAuto'\">h1/Semibold-400/line-height-auto (h1RegularAuto)</p>\r\n  `\r\n})"
                 },
                 {
                     "name": "TemplateTextBold",
@@ -4313,7 +4255,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-5'\">small/Bold-400/line-height-1.5 (smallBold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-5'\">body/Bold-400/line-height-1.5 (bodyBold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1-2'\">small/Bold-400/line-height-1.2 (smallBold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1-2'\">body/Bold-400/line-height-1.2 (bodyBold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBold1'\">small/Bold-400/line-height-1 (smallBold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBold1'\">body/Bold-400/line-height-1 (bodyBold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallBoldAuto'\">small/Boldold-400/line-height-Auto (smallBoldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodyBoldAuto'\">body/Boldold-400/line-height-Auto (bodyBoldAuto)</p>\r\n  `\r\n})"
                 },
                 {
                     "name": "TemplateTextRegular",
@@ -4333,7 +4275,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FreudTypographyComponent>",
-                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n  \r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
+                    "defaultValue": "(\r\n  args: FreudTypographyComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-5'\">small/Semibold-400/line-height-1.5 (smallSemibold1-5)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-5'\">body/Semibold-400/line-height-1.5 (bodySemibold1-5)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1-2'\">small/Semibold-400/line-height-1.2 (smallSemibold1-2)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1-2'\">body/Semibold-400/line-height-1.2 (bodySemibold1-2)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemibold1'\">small/Semibold-400/line-height-1 (smallSemibold1)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemibold1'\">body/Semibold-400/line-height-1 (bodySemibold1)</p>\r\n\r\n  <br><br>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'smallSemiboldAuto'\">small/Semibold-400/line-height-Auto (smallSemiboldAuto)</p>\r\n  <p style=\"margin-bottom: 8px\" freud-typography [fontType]=\"'bodySemiboldAuto'\">body/Semibold-400/line-height-Auto (bodySemiboldAuto)</p>\r\n  `\r\n})"
                 },
                 {
                     "name": "TextBold",
@@ -4458,7 +4400,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "TemplateLoading .bind({})"
                 },
                 {
                     "name": "Loading",
@@ -4839,7 +4781,7 @@
                 "linktype": "component",
                 "name": "FreudSplitButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -5730,16 +5672,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Icon",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/split-button/SplitButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "items",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -6021,16 +5953,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "BgColor",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/typography/typography.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultEditavel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
