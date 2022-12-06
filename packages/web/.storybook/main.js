@@ -1,5 +1,6 @@
 module.exports = {
   "stories": [
+    "../stories/welcome/welcome.stories.mdx",
     "../stories/**/*.stories.mdx",
     "../stories/**/*.story.@(ts)" // Adicione o .stories caso queia mapear as histórias padrões
   ],
