@@ -382,7 +382,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n@import '../../../../scss/typography';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    $freud-btn-background: $brand-color-pure;\r\n    $freud-btn-color: $neutral-color-white;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  @include typography($font-size-xs, $font-weight-bold, auto);\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n  &.p-button-icon-only {\r\n    width: auto;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
+                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n@import '../../../../scss/typography';\r\n\r\n.freud-btn:not(.freud-btn-bgcolor) {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color:  $brand-color-pure;\r\n      border-color: $brand-color-pure;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    $freud-btn-background: $neutral-color-white;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: $brand-color-pure;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    $freud-btn-background: transparent;\r\n    $freud-btn-color: $brand-color-pure;\r\n    $freud-btn-border: transparent;\r\n    .p-button {\r\n      background-color: $freud-btn-background;\r\n      border-color: $freud-btn-border;\r\n      color: $freud-btn-color;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n\r\n.freud-btn.freud-btn-bgcolor {\r\n  &.freud-btn-color-primary {\r\n    .p-button {\r\n      background-color: $neutral-color-white;\r\n      border-color: $neutral-color-white;\r\n      color: $brand-color-pure;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-secondary {\r\n    .p-button {\r\n      background-color: $brand-color-pure;\r\n      border-color: $neutral-color-white;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  &.freud-btn-color-ghost {\r\n    .p-button {\r\n      background-color: transparent;\r\n      border-color: transparent;\r\n      color: $neutral-color-white;\r\n    }\r\n  }\r\n\r\n  .p-button[disabled] {\r\n    opacity: $opacity-level-5;\r\n    color: $brand-color-pure;\r\n  }\r\n\r\n  .p-button:enabled:hover {\r\n    background: $brand-color-03;\r\n    border-color: $brand-color-03;\r\n    color: $neutral-color-white;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn .p-button {\r\n  font-family: $font-family-base;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: $border-radius-md;\r\n  @include typography($font-size-xs, $font-weight-bold, auto);\r\n  &[disabled] {\r\n    opacity: $opacity-level-5;\r\n  }\r\n  &:focus {\r\n    box-shadow: unset;\r\n  }\r\n  &.p-button-icon-only {\r\n    width: auto;\r\n  }\r\n}\r\n\r\n\r\n.freud-btn-size-small {\r\n  .p-button {\r\n    font-size: $font-size-xxs;\r\n    padding: 0 $spacing-size-nano;\r\n    height: 32px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-medium {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n  }\r\n}\r\n\r\n.freud-btn-size-large {\r\n  .p-button {\r\n    padding: 0 $spacing-size-xxs;\r\n    height: 48px;\r\n  }\r\n}\r\n\r\n.button-content:not(:empty) + .p-button-icon {\r\n  margin-left: $spacing-size-xxxs;\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -390,7 +390,7 @@
         },
         {
             "name": "FreudFileUploadComponent",
-            "id": "component-FreudFileUploadComponent-d6558379f8f34de1263fa9512f7b745c61b868d8caf68022627b536bd97b10f6693cd9f0f8bd0e00427102c119632e8d38692b50de961eeca17b8acd3421658f",
+            "id": "component-FreudFileUploadComponent-68c2e1d7ef880f98af21633012fb0e688c9e7f684077c834a78fa6329b782df677de51e0d82b7226a29f1b47fed9f1a4e2409c1867d2754872a21f50189adb75",
             "file": "projects/web-components/src/components/media/fille-upload/file-upload.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -413,7 +413,7 @@
                     "name": "accept",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 53,
+                    "line": 52,
                     "type": "string",
                     "decorators": []
                 },
@@ -422,16 +422,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 54,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "bgColor",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 76,
+                    "line": 53,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -440,7 +431,7 @@
                     "defaultValue": "'freud-icon freud-icon-times'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 66,
+                    "line": 65,
                     "type": "string",
                     "decorators": []
                 },
@@ -449,7 +440,7 @@
                     "defaultValue": "'Cancelar'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 69,
+                    "line": 68,
                     "type": "string",
                     "decorators": []
                 },
@@ -458,7 +449,7 @@
                     "defaultValue": "'freud-icon freud-icon-plus'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 64,
+                    "line": 63,
                     "type": "string",
                     "decorators": []
                 },
@@ -467,7 +458,7 @@
                     "defaultValue": "'Escolha'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 67,
+                    "line": 66,
                     "type": "string",
                     "decorators": []
                 },
@@ -476,7 +467,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 60,
+                    "line": 59,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -484,7 +475,7 @@
                     "name": "fileLimit",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 59,
+                    "line": 58,
                     "type": "number",
                     "decorators": []
                 },
@@ -492,7 +483,7 @@
                     "name": "headers",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 63,
+                    "line": 62,
                     "type": "HttpHeaders",
                     "decorators": []
                 },
@@ -501,7 +492,7 @@
                     "defaultValue": "'limite é de {0} no máximo.'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 73,
+                    "line": 72,
                     "type": "string",
                     "decorators": []
                 },
@@ -510,7 +501,7 @@
                     "defaultValue": "'Número máximo de arquivos excedido, '",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 74,
+                    "line": 73,
                     "type": "string",
                     "decorators": []
                 },
@@ -519,7 +510,7 @@
                     "defaultValue": "'o tamanho máximo de upload é {0}.'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 70,
                     "type": "string",
                     "decorators": []
                 },
@@ -528,7 +519,7 @@
                     "defaultValue": "'{0}: Tamanho do arquivo inválido, '",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 70,
+                    "line": 69,
                     "type": "string",
                     "decorators": []
                 },
@@ -537,7 +528,7 @@
                     "defaultValue": "'tipos de arquivo permitidos: {0}.'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 75,
+                    "line": 74,
                     "type": "string",
                     "decorators": []
                 },
@@ -546,7 +537,7 @@
                     "defaultValue": "'{0}: tipo de arquivo inválido, '",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 72,
+                    "line": 71,
                     "type": "string",
                     "decorators": []
                 },
@@ -555,7 +546,7 @@
                     "defaultValue": "'post'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 57,
+                    "line": 56,
                     "type": "\"post\" | \"put\"",
                     "decorators": []
                 },
@@ -564,7 +555,7 @@
                     "defaultValue": "'advanced'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 58,
+                    "line": 57,
                     "type": "\"advanced\" | \"basic\"",
                     "decorators": []
                 },
@@ -573,7 +564,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 55,
+                    "line": 54,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -582,7 +573,7 @@
                     "defaultValue": "'file[]'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 51,
+                    "line": 50,
                     "type": "string",
                     "decorators": []
                 },
@@ -591,7 +582,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 62,
+                    "line": 61,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -600,7 +591,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 61,
+                    "line": 60,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -609,7 +600,7 @@
                     "defaultValue": "'freud-icon freud-icon-upload'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 65,
+                    "line": 64,
                     "type": "string",
                     "decorators": []
                 },
@@ -618,7 +609,7 @@
                     "defaultValue": "'Enviar'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 68,
+                    "line": 67,
                     "type": "string",
                     "decorators": []
                 },
@@ -626,7 +617,7 @@
                     "name": "url",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 52,
+                    "line": 51,
                     "type": "string",
                     "decorators": []
                 },
@@ -635,7 +626,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 56,
+                    "line": 55,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -646,7 +637,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 79,
+                    "line": 77,
                     "type": "EventEmitter"
                 },
                 {
@@ -654,7 +645,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 81,
+                    "line": 79,
                     "type": "EventEmitter"
                 },
                 {
@@ -662,7 +653,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 84,
+                    "line": 82,
                     "type": "EventEmitter"
                 },
                 {
@@ -670,7 +661,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 82,
+                    "line": 80,
                     "type": "EventEmitter"
                 },
                 {
@@ -678,7 +669,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 83,
+                    "line": 81,
                     "type": "EventEmitter"
                 },
                 {
@@ -686,7 +677,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 80,
+                    "line": 78,
                     "type": "EventEmitter"
                 },
                 {
@@ -694,7 +685,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 77,
+                    "line": 75,
                     "type": "EventEmitter"
                 },
                 {
@@ -702,7 +693,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 78,
+                    "line": 76,
                     "type": "EventEmitter"
                 }
             ],
@@ -715,11 +706,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, ViewEncapsulation, EventEmitter, Output } from '@angular/core';\nimport { HttpHeaders } from \"@angular/common/http\";\n\n\n@Component({\n  selector: 'freud-file-upload',\n  template: `\n    <p-fileUpload [name]=\"name\"\n                  [url]=\"url\"\n                  [auto]=\"auto\"\n                  [accept]=\"accept\"\n                  [multiple]=\"multiple\"\n                  [method]=\"method\"\n                  [fileLimit]=\"fileLimit\"\n                  [chooseLabel]=\"chooseLabel\"\n                  [uploadLabel]=\"uploadLabel\"\n                  [cancelLabel]=\"cancelLabel\"\n                  [chooseIcon]=\"chooseIcon\"\n                  [uploadIcon]=\"uploadIcon\"\n                  [cancelIcon]=\"cancelIcon\"\n                  [withCredentials]=\"withCredentials\"\n                  [mode]=\"mode\"\n                  [customUpload]=\"customUpload\"\n                  [showUploadButton]=\"showUploadButton\"\n                  [showCancelButton]=\"showCancelButton\"\n                  [headers]=\"headers\"\n                  [invalidFileSizeMessageSummary]=\"invalidFileSizeMessageSummary\"\n                  [invalidFileSizeMessageDetail]=\"invalidFileSizeMessageDetail\"\n                  [invalidFileTypeMessageSummary]=\"invalidFileTypeMessageSummary\"\n                  [invalidFileLimitMessageDetail]=\"invalidFileLimitMessageDetail\"\n                  [invalidFileLimitMessageSummary]=\"invalidFileLimitMessageSummary\"\n                  [invalidFileTypeMessageDetail]=\"invalidFileTypeMessageDetail\"\n                  (onBeforeUpload)=\"onBeforeUpload.emit($event)\"\n                  (onSend)=\"onSend.emit($event)\"\n                  (onError)=\"onError.emit($event)\"\n                  (onRemove)=\"onRemove.emit($event)\"\n                  (onSelect)=\"onSelect.emit($event)\"\n                  (onProgress)=\"onProgress.emit($event)\"\n                  (uploadHandler)=\"uploadHandler.emit($event)\"\n                  (onUpload)=\"onUpload.emit($event)\">\n    </p-fileUpload>\n  `,\n  styleUrls: ['./file-upload.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-file-upload',\n    '[class.freud-bgcolor]': `bgColor`,\n  }\n})\nexport class FreudFileUploadComponent {\n  @Input() name: string = 'file[]';\n  @Input() url!: string;\n  @Input() accept!: string;\n  @Input() auto: boolean = false;\n  @Input() multiple: boolean = false;\n  @Input() withCredentials: boolean = false;\n  @Input() method: 'post' | 'put' = 'post';\n  @Input() mode: 'advanced' | 'basic' = 'advanced';\n  @Input() fileLimit!: number;\n  @Input() customUpload: boolean = false;\n  @Input() showUploadButton: boolean = true;\n  @Input() showCancelButton: boolean = true;\n  @Input() headers!: HttpHeaders;\n  @Input() chooseIcon: string = 'freud-icon freud-icon-plus';\n  @Input() uploadIcon: string = 'freud-icon freud-icon-upload';\n  @Input() cancelIcon: string = 'freud-icon freud-icon-times';\n  @Input() chooseLabel: string = 'Escolha';\n  @Input() uploadLabel: string = 'Enviar';\n  @Input() cancelLabel: string = 'Cancelar';\n  @Input() invalidFileSizeMessageSummary: string = '{0}: Tamanho do arquivo inválido, ';\n  @Input() invalidFileSizeMessageDetail: string = 'o tamanho máximo de upload é {0}.';\n  @Input() invalidFileTypeMessageSummary: string = '{0}: tipo de arquivo inválido, ';\n  @Input() invalidFileLimitMessageDetail: string = 'limite é de {0} no máximo.';\n  @Input() invalidFileLimitMessageSummary: string = 'Número máximo de arquivos excedido, ';\n  @Input() invalidFileTypeMessageDetail: string = 'tipos de arquivo permitidos: {0}.';\n  @Input() bgColor: boolean = false;\n  @Output() onUpload = new EventEmitter();\n  @Output() uploadHandler = new EventEmitter();\n  @Output() onBeforeUpload = new EventEmitter();\n  @Output() onSend = new EventEmitter();\n  @Output() onError = new EventEmitter();\n  @Output() onRemove = new EventEmitter();\n  @Output() onSelect = new EventEmitter();\n  @Output() onProgress = new EventEmitter();\n\n}\n",
+            "sourceCode": "import { Component, Input, ViewEncapsulation, EventEmitter, Output } from '@angular/core';\nimport { HttpHeaders } from \"@angular/common/http\";\n\n\n@Component({\n  selector: 'freud-file-upload',\n  template: `\n    <p-fileUpload [name]=\"name\"\n                  [url]=\"url\"\n                  [auto]=\"auto\"\n                  [accept]=\"accept\"\n                  [multiple]=\"multiple\"\n                  [method]=\"method\"\n                  [fileLimit]=\"fileLimit\"\n                  [chooseLabel]=\"chooseLabel\"\n                  [uploadLabel]=\"uploadLabel\"\n                  [cancelLabel]=\"cancelLabel\"\n                  [chooseIcon]=\"chooseIcon\"\n                  [uploadIcon]=\"uploadIcon\"\n                  [cancelIcon]=\"cancelIcon\"\n                  [withCredentials]=\"withCredentials\"\n                  [mode]=\"mode\"\n                  [customUpload]=\"customUpload\"\n                  [showUploadButton]=\"showUploadButton\"\n                  [showCancelButton]=\"showCancelButton\"\n                  [headers]=\"headers\"\n                  [invalidFileSizeMessageSummary]=\"invalidFileSizeMessageSummary\"\n                  [invalidFileSizeMessageDetail]=\"invalidFileSizeMessageDetail\"\n                  [invalidFileTypeMessageSummary]=\"invalidFileTypeMessageSummary\"\n                  [invalidFileLimitMessageDetail]=\"invalidFileLimitMessageDetail\"\n                  [invalidFileLimitMessageSummary]=\"invalidFileLimitMessageSummary\"\n                  [invalidFileTypeMessageDetail]=\"invalidFileTypeMessageDetail\"\n                  (onBeforeUpload)=\"onBeforeUpload.emit($event)\"\n                  (onSend)=\"onSend.emit($event)\"\n                  (onError)=\"onError.emit($event)\"\n                  (onRemove)=\"onRemove.emit($event)\"\n                  (onSelect)=\"onSelect.emit($event)\"\n                  (onProgress)=\"onProgress.emit($event)\"\n                  (uploadHandler)=\"uploadHandler.emit($event)\"\n                  (onUpload)=\"onUpload.emit($event)\">\n    </p-fileUpload>\n  `,\n  styleUrls: ['./file-upload.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-file-upload',\n  }\n})\nexport class FreudFileUploadComponent {\n  @Input() name: string = 'file[]';\n  @Input() url!: string;\n  @Input() accept!: string;\n  @Input() auto: boolean = false;\n  @Input() multiple: boolean = false;\n  @Input() withCredentials: boolean = false;\n  @Input() method: 'post' | 'put' = 'post';\n  @Input() mode: 'advanced' | 'basic' = 'advanced';\n  @Input() fileLimit!: number;\n  @Input() customUpload: boolean = false;\n  @Input() showUploadButton: boolean = true;\n  @Input() showCancelButton: boolean = true;\n  @Input() headers!: HttpHeaders;\n  @Input() chooseIcon: string = 'freud-icon freud-icon-plus';\n  @Input() uploadIcon: string = 'freud-icon freud-icon-upload';\n  @Input() cancelIcon: string = 'freud-icon freud-icon-times';\n  @Input() chooseLabel: string = 'Escolha';\n  @Input() uploadLabel: string = 'Enviar';\n  @Input() cancelLabel: string = 'Cancelar';\n  @Input() invalidFileSizeMessageSummary: string = '{0}: Tamanho do arquivo inválido, ';\n  @Input() invalidFileSizeMessageDetail: string = 'o tamanho máximo de upload é {0}.';\n  @Input() invalidFileTypeMessageSummary: string = '{0}: tipo de arquivo inválido, ';\n  @Input() invalidFileLimitMessageDetail: string = 'limite é de {0} no máximo.';\n  @Input() invalidFileLimitMessageSummary: string = 'Número máximo de arquivos excedido, ';\n  @Input() invalidFileTypeMessageDetail: string = 'tipos de arquivo permitidos: {0}.';\n  @Output() onUpload = new EventEmitter();\n  @Output() uploadHandler = new EventEmitter();\n  @Output() onBeforeUpload = new EventEmitter();\n  @Output() onSend = new EventEmitter();\n  @Output() onError = new EventEmitter();\n  @Output() onRemove = new EventEmitter();\n  @Output() onSelect = new EventEmitter();\n  @Output() onProgress = new EventEmitter();\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n\r\n.freud-file-upload:not(.freud-bgcolor) {\r\n\r\n}\r\n.file-upload.freud-bgcolor {\r\n\r\n}\r\n",
+                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n@import '../../../../scss/typography';\r\n\r\n.freud-file-upload {\r\n  .p-fileupload .p-fileupload-buttonbar {\r\n    border: 1px solid $neutral-color-light-03;\r\n    background-color: 1px solid $neutral-color-light-03;\r\n    border-top-right-radius: $border-radius-md;\r\n    border-top-left-radius: $border-radius-md;\r\n  }\r\n  .p-fileupload .p-fileupload-content {\r\n    border: 1px solid $neutral-color-light-03;\r\n    border-bottom-right-radius: $border-radius-md;\r\n    border-bottom-left-radius: $border-radius-md;\r\n  }\r\n  .p-button {\r\n    background-color:  $brand-color-pure;\r\n    border-color: $brand-color-pure;\r\n    color: $neutral-color-white;\r\n    padding: 0 $spacing-size-xxxs;\r\n    height: 40px;\r\n    border-radius: $border-radius-md;\r\n    @include typography($font-size-xs, $font-weight-bold, auto);\r\n    &[disabled] {\r\n      opacity: $opacity-level-5;\r\n    }\r\n    &:focus {\r\n      box-shadow: unset;\r\n    }\r\n  }\r\n\r\n  .p-button:enabled:hover, .p-fileupload-choose:not(.p-disabled):hover {\r\n    background: $brand-color-01;\r\n    border-color: $brand-color-01;\r\n    color: $brand-color-pure;\r\n  }\r\n}\r\n",
                     "styleUrl": "./file-upload.component.scss"
                 }
             ],
@@ -876,7 +867,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n",
+                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\r\n\r\n.freud-image {\r\n  .p-image-toolbar {\r\n    z-index: 100000;\r\n  }\r\n  .p-link:focus {\r\n    box-shadow: 0 0 0 0.2rem $brand-color-pure;\r\n  }\r\n}\r\n",
                     "styleUrl": "./image.component.scss"
                 }
             ],
@@ -1416,7 +1407,7 @@
         {
             "name": "FreudSkeletonComponent",
             "id": "component-FreudSkeletonComponent-c93669ce5126df2e9cf53b500f9e6f6cf185717940e437b34d58ab4c811600e9dc815f3c7b85ca3f6a7016da8d9bf461c2a8dd45077bbb9781a7404ba5123bb5",
-            "file": "projects/web-components/src/components/media/gallery_/skeleton.component.ts",
+            "file": "projects/web-components/src/components/feedback/skeleton/skeleton.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -1485,7 +1476,7 @@
         {
             "name": "FreudSkeletonComponent",
             "id": "component-FreudSkeletonComponent-c93669ce5126df2e9cf53b500f9e6f6cf185717940e437b34d58ab4c811600e9dc815f3c7b85ca3f6a7016da8d9bf461c2a8dd45077bbb9781a7404ba5123bb5-1",
-            "file": "projects/web-components/src/components/feedback/skeleton/skeleton.component.ts",
+            "file": "projects/web-components/src/components/media/gallery_/skeleton.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -2326,13 +2317,13 @@
         },
         {
             "name": "FreudFileUploadModule",
-            "id": "module-FreudFileUploadModule-758621e7867ab016d13e8c1d70981fa45e4503a3ded0aaf000dec7776cb315e6341247cc17b7009a4dee8f71afdca257360af44bd5ce23144caf41cf902b58e2",
+            "id": "module-FreudFileUploadModule-08f9eec237ffb45112a4b04a608f344660e55e3822069378f203a7e93441b98a354bf93ff994d83ab5169b065da3171dce7dcc29c87d14359932ce6053f38df5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/media/fille-upload/file-upload.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudFileUploadComponent } from './file-upload.component';\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { FileUploadModule } from \"primeng/fileupload\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, FileUploadModule, BrowserModule, BrowserAnimationsModule, FormsModule],\r\n  declarations: [FreudFileUploadComponent],\r\n  exports: [FreudFileUploadComponent]\r\n})\r\nexport class FreudFileUploadModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudFileUploadComponent } from './file-upload.component';\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { FileUploadModule } from \"primeng/fileupload\";\r\nimport { HttpClientModule } from \"@angular/common/http\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, FileUploadModule, BrowserModule, BrowserAnimationsModule, FormsModule, HttpClientModule],\r\n  declarations: [FreudFileUploadComponent],\r\n  exports: [FreudFileUploadComponent]\r\n})\r\nexport class FreudFileUploadModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2414,13 +2405,13 @@
         },
         {
             "name": "FreudImageModule",
-            "id": "module-FreudImageModule-191647c6b203ef83c607a4f0984a7357b9f83f15ac232513b8afc0b6ec57b36ceb973ce907bbab17fb5f75c774d811bfa8a3241ab196bf53292679fe7f36f773",
+            "id": "module-FreudImageModule-429921443999467e3b5e88ff1165f3f48f6d3ffdee41d5da11d38a7ad30e9ef8ab51dfb20f841be0478664d1614b4b561c7f2611715fd097a2d3d10b38494aec",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/media/image/image.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudImageComponent } from './image.component';\r\nimport { ImageModule } from \"primeng/image\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ImageModule],\r\n  declarations: [FreudImageComponent],\r\n  exports: [FreudImageComponent]\r\n})\r\nexport class FreudImageModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudImageComponent } from './image.component';\r\nimport { ImageModule } from \"primeng/image\";\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, ImageModule, BrowserModule, BrowserAnimationsModule],\r\n  declarations: [FreudImageComponent],\r\n  exports: [FreudImageComponent]\r\n})\r\nexport class FreudImageModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2682,7 +2673,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/media/gallery_/skeleton.module.ts",
+            "file": "projects/web-components/src/components/feedback/skeleton/skeleton.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudSkeletonComponent } from './skeleton.component';\r\nimport { SkeletonModule } from \"primeng/skeleton\";\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, SkeletonModule, BrowserModule, BrowserAnimationsModule],\r\n  declarations: [FreudSkeletonComponent],\r\n  exports: [FreudSkeletonComponent]\r\n})\r\nexport class FreudSkeletonModule { }\r\n",
             "children": [
@@ -2726,7 +2717,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/web-components/src/components/feedback/skeleton/skeleton.module.ts",
+            "file": "projects/web-components/src/components/media/gallery_/skeleton.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FreudSkeletonComponent } from './skeleton.component';\r\nimport { SkeletonModule } from \"primeng/skeleton\";\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\n\r\n@NgModule({\r\n  imports: [CommonModule, SkeletonModule, BrowserModule, BrowserAnimationsModule],\r\n  declarations: [FreudSkeletonComponent],\r\n  exports: [FreudSkeletonComponent]\r\n})\r\nexport class FreudSkeletonModule { }\r\n",
             "children": [
@@ -3100,6 +3091,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "BasicUi",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3114,16 +3115,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/buttons/speed-dial/SpeedDial.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BgColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3153,17 +3144,7 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BgColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                "file": "stories/feedback/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3193,7 +3174,7 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/media/avatar/Avatar.stories.ts",
+                "file": "stories/feedback/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3213,7 +3194,27 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
+                "file": "stories/feedback/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BgColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/avatar/Avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3233,7 +3234,7 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/steps/Steps.stories.ts",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3243,7 +3244,7 @@
                 "name": "BgColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3313,16 +3314,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/knob/Knob.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/feedback/badge/Badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3343,17 +3334,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                "file": "stories/feedback/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3383,7 +3364,27 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
+                "file": "stories/feedback/steps/Steps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/rating/Rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3403,6 +3404,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/others/select-button/SelectButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3413,17 +3424,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/steps/Steps.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3453,16 +3454,6 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/buttons/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "TemplateDisabled.bind({})"
-            },
-            {
-                "name": "Disabled",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/buttons/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3473,7 +3464,7 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/knob/Knob.stories.ts",
+                "file": "stories/buttons/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3483,7 +3474,17 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/buttons/split-button/SplitButton.stories.ts",
+                "file": "stories/buttons/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateDisabled.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3823,7 +3824,7 @@
                 "name": "Preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
+                "file": "stories/media/image/Image.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3833,17 +3834,7 @@
                 "name": "Preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/media/image/Image.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/buttons/button/Button.stories.ts",
+                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3854,6 +3845,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/feedback/badge/Badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3992,31 +3993,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/buttons/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudButtonComponent>",
-                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/buttons/speed-dial/SpeedDial.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudSpeedDialComponent>",
                 "defaultValue": "(\r\n  args: FreudSpeedDialComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"height: 250px; width: 120px\">\r\n      <freud-speed-dial\r\n        [id]=\"id\"\r\n        [visible]=\"visible\"\r\n        [mask]=\"mask\"\r\n        [disabled]=\"disabled\"\r\n        [showIcon]=\"showIcon\"\r\n        [hideIcon]=\"hideIcon\"\r\n        [type]=\"type\"\r\n        [direction]=\"direction\"\r\n        [items]=\"items\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-speed-dial>\r\n  </div>\r\n  `,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/knob/Knob.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudKnobComponent>",
-                "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -4042,21 +4023,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
+                "file": "stories/buttons/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudRatingComponent>",
-                "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
+                "type": "Story<FreudButtonComponent>",
+                "defaultValue": "(args: FreudButtonComponent) => ({\n  props: { ...args },\n  template: templateHTML.replace('{{label}}', 'Button {{color}}'),\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                "file": "stories/feedback/knob/Knob.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudSkeletonComponent>",
-                "defaultValue": "(\r\n  args: FreudSkeletonComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"width: 350px\">\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'350px'\"\r\n        [height]=\"'70px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <div style=\"display: flex\">\r\n        <freud-skeleton style=\"margin-right: 10px\"\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n        <freud-skeleton\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n      </div>\r\n  </div>\r\n  `,\r\n})"
+                "type": "Story<FreudKnobComponent>",
+                "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -4082,11 +4063,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/media/avatar/Avatar.stories.ts",
+                "file": "stories/feedback/steps/Steps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudAvatarComponent>",
-                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                "type": "Story<FreudStepsComponent>",
+                "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -4102,11 +4083,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
+                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudImageComponent>",
-                "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
+                "type": "Story<FreudRatingComponent>",
+                "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudSkeletonComponent>",
+                "defaultValue": "(\r\n  args: FreudSkeletonComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"width: 350px\">\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'350px'\"\r\n        [height]=\"'70px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <div style=\"display: flex\">\r\n        <freud-skeleton style=\"margin-right: 10px\"\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n        <freud-skeleton\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n      </div>\r\n  </div>\r\n  `,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudAvatarComponent>",
+                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -4122,6 +4123,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudFileUploadComponent>",
+                "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [chooseLabel]=\"chooseLabel\"\n        [uploadLabel]=\"uploadLabel\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/others/select-button/SelectButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4132,21 +4143,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/steps/Steps.stories.ts",
+                "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudStepsComponent>",
-                "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudFileUploadComponent>",
-                "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
+                "type": "Story<FreudImageComponent>",
+                "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
             },
             {
                 "name": "TemplateBgColor",
@@ -4212,21 +4213,21 @@
                 "name": "templateHTML",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/buttons/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      [icon]=\"icon\"\n      >{{label}}</freud-button>\n`"
-            },
-            {
-                "name": "templateHTML",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/buttons/split-button/SplitButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
+            },
+            {
+                "name": "templateHTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <freud-button\n      [color]=\"color\"\n      [bgColor]=\"bgColor\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      [icon]=\"icon\"\n      >{{label}}</freud-button>\n`"
             },
             {
                 "name": "templateHTML",
@@ -4789,6 +4790,48 @@
                     "defaultValue": "`\n    <freud-select-button\n        [options]=\"options\"\n        [multiple]=\"multiple\"\n        [tabindex]=\"tabindex\"\n        [bgColor]=\"bgColor\"\n        [disabled]=\"disabled\"\n        [selectedOption]=\"selectedOption\"\n        [optionDisabled]=\"optionDisabled\"\n        [optionLabel]=\"optionLabel\"></freud-select-button>\n`"
                 }
             ],
+            "stories/media/file-upload/FileUpload.stories.ts": [
+                {
+                    "name": "BasicUi",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudFileUploadComponent>",
+                    "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [chooseLabel]=\"chooseLabel\"\n        [uploadLabel]=\"uploadLabel\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
+                }
+            ],
             "stories/typography/typography.stories.ts": [
                 {
                     "name": "BgColor",
@@ -5063,68 +5106,6 @@
                     "defaultValue": "TemplateCircle.bind({})"
                 }
             ],
-            "stories/feedback/knob/Knob.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Size",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "TemplateSize.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudKnobComponent>",
-                    "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
-                },
-                {
-                    "name": "TemplateSize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/knob/Knob.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudKnobComponent>",
-                    "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <div style=\"display: flex; align-items: center;\">\r\n      <freud-knob style=\"margin-right: 20px\"\r\n        [value]=\"'50'\"\r\n        [size]=\"'default'\">\r\n      </freud-knob>\r\n\r\n      <freud-knob\r\n        [value]=\"'50'\"\r\n        [size]=\"'large'\">\r\n      </freud-knob>\r\n    </div>\r\n  `,\r\n})"
-                }
-            ],
             "stories/buttons/split-button/SplitButton.stories.ts": [
                 {
                     "name": "BgColor",
@@ -5197,12 +5178,12 @@
                     "defaultValue": "`\n    <freud-split-button\n        [label]=\"label\"\n        [disabled]=\"disabled\"\n        [items]=\"items\"\n        [bgColor]=\"bgColor\">\n    </freud-split-button>\n    <p *ngIf=\"!disabled\" style=\"margin-bottom: 150px\"></p>\n`"
                 }
             ],
-            "stories/feedback/rating/Rating.stories.ts": [
+            "stories/feedback/knob/Knob.stories.ts": [
                 {
                     "name": "BgColor",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5212,7 +5193,7 @@
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5222,53 +5203,41 @@
                     "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSize.bind({})"
                 },
                 {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FreudRatingComponent>",
-                    "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
-                }
-            ],
-            "stories/feedback/skeleton/Skeleton.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story<FreudKnobComponent>",
+                    "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-knob\r\n      [value]=\"value\"\r\n      [min]=\"min\"\r\n      [max]=\"max\"\r\n      [step]=\"step\"\r\n      [size]=\"size\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-knob>\r\n  `,\r\n})"
                 },
                 {
-                    "name": "Default",
+                    "name": "TemplateSize",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                    "file": "stories/feedback/knob/Knob.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudSkeletonComponent>",
-                    "defaultValue": "(\r\n  args: FreudSkeletonComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"width: 350px\">\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'350px'\"\r\n        [height]=\"'70px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <div style=\"display: flex\">\r\n        <freud-skeleton style=\"margin-right: 10px\"\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n        <freud-skeleton\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n      </div>\r\n  </div>\r\n  `,\r\n})"
+                    "type": "Story<FreudKnobComponent>",
+                    "defaultValue": "(\r\n  args: FreudKnobComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <div style=\"display: flex; align-items: center;\">\r\n      <freud-knob style=\"margin-right: 20px\"\r\n        [value]=\"'50'\"\r\n        [size]=\"'default'\">\r\n      </freud-knob>\r\n\r\n      <freud-knob\r\n        [value]=\"'50'\"\r\n        [size]=\"'large'\">\r\n      </freud-knob>\r\n    </div>\r\n  `,\r\n})"
                 }
             ],
             "stories/feedback/progress-spinner/ProgressSpinner.stories.ts": [
@@ -5445,6 +5414,184 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "stories/feedback/steps/Steps.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "itens",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StepMenu[]",
+                    "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudStepsComponent>",
+                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/feedback/tooltip/Tooltip.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Bottom",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Left",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Right",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudTooltipComponent>",
+                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "Top",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "stories/feedback/rating/Rating.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/rating/Rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudRatingComponent>",
+                    "defaultValue": "(\r\n  args: FreudRatingComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-rating\r\n      [value]=\"value\"\r\n      [stars]=\"stars\"\r\n      [disabled]=\"disabled\"\r\n      [bgColor]=\"bgColor\">\r\n    </freud-rating>\r\n  `,\r\n})"
+                }
+            ],
+            "stories/feedback/skeleton/Skeleton.stories.ts": [
+                {
+                    "name": "BgColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/skeleton/Skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSkeletonComponent>",
+                    "defaultValue": "(\r\n  args: FreudSkeletonComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n  <div style=\"width: 350px\">\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'100%'\"\r\n        [height]=\"'15px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <freud-skeleton\r\n        [width]=\"'350px'\"\r\n        [height]=\"'70px'\"\r\n        [bgColor]=\"bgColor\">\r\n      </freud-skeleton>\r\n      <br>\r\n      <div style=\"display: flex\">\r\n        <freud-skeleton style=\"margin-right: 10px\"\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n        <freud-skeleton\r\n          [width]=\"'170px'\"\r\n          [height]=\"'70px'\"\r\n          [bgColor]=\"bgColor\">\r\n        </freud-skeleton>\r\n      </div>\r\n  </div>\r\n  `,\r\n})"
+                }
+            ],
             "stories/media/avatar/Avatar.stories.ts": [
                 {
                     "name": "BgColor",
@@ -5537,110 +5684,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "stories/feedback/tooltip/Tooltip.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Bottom",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Left",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Right",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudTooltipComponent>",
-                    "defaultValue": "(\r\n  args: FreudTooltipComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <span freud-tooltip style=\"color:{{bgColor ? 'white' : 'black'}}\"\r\n      [tooltipLabel]=\"tooltipLabel\"\r\n      [tooltipPosition]=\"tooltipPosition\"\r\n      [bgColor]=\"bgColor\">Passe o mouse aqui!</span>\r\n  `,\r\n})"
-                },
-                {
-                    "name": "Top",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/tooltip/Tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "stories/structure/breadcrumb/Breadcrumb.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Preview",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudImageComponent>",
-                    "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
-                }
-            ],
             "stories/media/image/Image.stories.ts": [
                 {
                     "name": "BgColor",
@@ -5683,12 +5726,12 @@
                     "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
                 }
             ],
-            "stories/feedback/steps/Steps.stories.ts": [
+            "stories/structure/breadcrumb/Breadcrumb.stories.ts": [
                 {
                     "name": "BgColor",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5698,49 +5741,17 @@
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/steps/Steps.stories.ts",
+                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "itens",
+                    "name": "Preview",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/feedback/steps/Steps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StepMenu[]",
-                    "defaultValue": "[\r\n  {label: 'Item1'},\r\n  {label: 'Item2'},\r\n  {label: 'Item3'},\r\n  {label: 'Item4'}\r\n]"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/steps/Steps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudStepsComponent>",
-                    "defaultValue": "(\r\n  args: FreudStepsComponent\r\n) => ({\r\n  props: { ...args },\r\n  template: `\r\n    <freud-steps [model]=\"model\" [readonly]=\"readonly\" [activeIndex]=\"activeIndex\" [bgColor]=\"bgColor\"></freud-steps>\r\n  `,\r\n})"
-                }
-            ],
-            "stories/media/file-upload/FileUpload.stories.ts": [
-                {
-                    "name": "BgColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/file-upload/FileUpload.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5750,11 +5761,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/media/file-upload/FileUpload.stories.ts",
+                    "file": "stories/structure/breadcrumb/Breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FreudFileUploadComponent>",
-                    "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
+                    "type": "Story<FreudImageComponent>",
+                    "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
                 }
             ],
             "projects/web-components/src/components/typography/typrography.type.ts": [
@@ -6284,7 +6295,7 @@
                 "linktype": "component",
                 "name": "FreudFileUploadComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/35",
+                "coverageCount": "0/34",
                 "status": "low"
             },
             {
@@ -7404,6 +7415,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/media/file-upload/FileUpload.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicUi",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
