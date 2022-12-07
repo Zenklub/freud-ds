@@ -9,6 +9,7 @@ div.header {
   align-items: flex-start;
   margin-bottom: 32px;
   background: url(./bg.png) center no-repeat;
+  background-size: 100% 300px;
   z-index: 0;
 
   & > div {

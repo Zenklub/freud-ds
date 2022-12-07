@@ -3,11 +3,11 @@ import { moduleMetadata } from '@storybook/angular';
 import { FreudTagComponent, FreudTagModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
 import {
-  Primary,
+  Default,
   Success,
   Info,
   Warning,
-  Error, OutlinePrimary, OutlineSuccess, OutlineInfo, OutlineWarning, OutlineError, BgColor, BgColorOutLine,
+  Error, OutlineDefault, OutlineSuccess, OutlineInfo, OutlineWarning, OutlineError, BgColor, BgColorOutline,
 } from './Tag.stories.ts';
 
 <Meta
@@ -57,9 +57,9 @@ import FreudTagModule from '@freud-ds/web-components';
 ## <a id="exemplos"></a>Exemplos
 <br />
 
-### Cores
+### Theme
 <Canvas>
-  <Story story={Primary}/>
+  <Story story={Default}/>
   <Story story={Success}/>
   <Story story={Info}/>
   <Story story={Warning}/>
@@ -68,7 +68,7 @@ import FreudTagModule from '@freud-ds/web-components';
 
 ### Outline
 <Canvas>
-  <Story story={OutlinePrimary}/>
+  <Story story={OutlineDefault}/>
   <Story story={OutlineSuccess}/>
   <Story story={OutlineInfo}/>
   <Story story={OutlineWarning}/>
@@ -80,9 +80,9 @@ import FreudTagModule from '@freud-ds/web-components';
   <Story story={BgColor}/>
 </Canvas>
 
-### BG Color
+### BG Color Outline
 <Canvas style={{ backgroundColor: '#3B1C78' }}>
-  <Story story={BgColorOutLine}/>
+  <Story story={BgColorOutline}/>
 </Canvas>
 
 ## <a id="api"></a>API

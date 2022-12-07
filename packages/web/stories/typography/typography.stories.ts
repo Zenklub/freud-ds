@@ -16,6 +16,12 @@ BgColor.args = {
   fontBgColor: true
 };
 
+export const BGColor = Template.bind({});
+BGColor.args = {
+  fontType: 'bodyRegular1-5',
+  fontBgColor: true
+};
+
 const TemplateRegular: Story<FreudTypographyComponent> = (
   args: FreudTypographyComponent
 ) => ({

@@ -5,9 +5,8 @@ import { FreudHeaderComponent } from '../header/header.component';
 import {
   Default,
   Disabled,
-  Readonly,
   BgColor,
-  BgColorDisabled, SizeDefault, SizeLarge
+  Size
 } from './Knob.stories.ts';
 
 <Meta
@@ -60,13 +59,11 @@ import { FreudKnobModule, StepMenu } from '@freud-ds/web-components';
 ### BG Color
 <Canvas style={{ backgroundColor: '#3B1C78' }}>
   <Story story={BgColor}/>
-  <Story story={BgColorDisabled}/>
 </Canvas>
 
-### Sizes (Default, Large)
+### Size (Default, Large)
 <Canvas>
-  <Story story={SizeDefault}/>
-  <Story story={SizeLarge}/>
+  <Story story={Size}/>
 </Canvas>
 
 ## <a id="api"></a>API

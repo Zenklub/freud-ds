@@ -93,8 +93,8 @@ const TemplateIcon: Story<FreudButtonComponent> = (args: FreudButtonComponent) =
     '<span class="freud-icon freud-icon-check freud-icon-20px"></span>'
   ),
 });
-export const Icon = TemplateIcon.bind({});
-export const IconButtonRight = TemplateLoading .bind({});
-IconButtonRight.args = {
+export const IconOnly = TemplateIcon.bind({});
+export const WithIconRight = TemplateLoading .bind({});
+WithIconRight.args = {
   icon: 'freud-icon freud-icon-check'
 }

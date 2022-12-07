@@ -56,8 +56,8 @@ WithBadge.args = {
   image: 'assets/img/avatar.png'
 };
 
-export const IconMedium = Template.bind({});
-IconMedium.args = {
+export const Icon = Template.bind({});
+Icon.args = {
   label: '',
   size: 'md',
   badge: '5',

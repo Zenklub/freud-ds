@@ -9,8 +9,8 @@ const Template: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
 });
 
 // Colors
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   value: 'Default',
   color: 'primary'
 };
@@ -36,9 +36,9 @@ Error.args = {
 };
 
 // outline
-export const OutlinePrimary = Template.bind({});
-OutlinePrimary.args = {
-  value: 'Primary',
+export const OutlineDefault = Template.bind({});
+OutlineDefault.args = {
+  value: 'Default',
   outline: true
 };
 export const OutlineSuccess = Template.bind({});
@@ -70,7 +70,7 @@ OutlineError.args = {
 const TemplateBgColor: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
   props: { ...args },
   template: `
-    <freud-tag style="margin-right: 8px" [outline]="outline" [value]="'Primary'"></freud-tag>
+    <freud-tag style="margin-right: 8px" [outline]="outline" [value]="'Default'"></freud-tag>
     <freud-tag style="margin-right: 8px" [outline]="outline" [color]="'success'" [value]="'Success'"></freud-tag>
     <freud-tag style="margin-right: 8px" [outline]="outline" [color]="'info'" [value]="'Info'"></freud-tag>
     <freud-tag style="margin-right: 8px" [outline]="outline" [color]="'warning'" [value]="'Warning'"></freud-tag>
@@ -83,7 +83,7 @@ BgColor.args = {
   outline: false
 };
 
-export const BgColorOutLine = TemplateBgColor.bind({});
-BgColorOutLine.args = {
+export const BgColorOutline = TemplateBgColor.bind({});
+BgColorOutline.args = {
   outline: true
 };

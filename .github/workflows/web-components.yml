@@ -21,7 +21,7 @@ jobs:
         run: |
           npm i -g npm@8
           npm ci --quiet
-          cd packages/web/projects/web-components
+          cd packages/web
           npm ci --quiet
 
       - name: Configure git

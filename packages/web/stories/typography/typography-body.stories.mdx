@@ -7,7 +7,8 @@ import { headingTypes } from '../../projects/web-components/src/components/typog
 import {
   TextRegular,
   TextSemibold,
-  TextBold
+  TextBold,
+  BGColor
 } from './typography.stories.ts';
 
 <Meta
@@ -40,7 +41,7 @@ import {
     label: {
       name: 'Texto',
       type: { name: 'string', required: false },
-      defaultValue: 'Texto',
+      defaultValue: 'Texto exclusivo Zenklub',
       description: 'Texto a ser exibido',
       table: {
         type: { summary: 'string' },
@@ -85,6 +86,11 @@ Utilize a diretiva `freud-typography` com o tipo de fonte para definit a tipogra
 ### Bold
 <Canvas>
   <Story story={TextBold}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#6732D1' }}>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API

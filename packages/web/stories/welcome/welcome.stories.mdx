@@ -1,6 +1,15 @@
 import imageUrl from '../../.storybook/assets/img/welcome.png';
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Introdução"/>
+<Meta
+  title="Welcome"
+  parameters={{
+    layout: 'full',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+  }}
+/>
 
 <img src={imageUrl} alt="Welcome" />

@@ -34,22 +34,23 @@ BgColor.args = {
   bgColor: true,
 };
 
-export const BgColorDisabled = Template.bind({});
-BgColorDisabled.args = {
-  value: 50,
-  bgColor: true,
-  disabled: true
-};
 
+const TemplateSize: Story<FreudKnobComponent> = (
+  args: FreudKnobComponent
+) => ({
+  props: { ...args },
+  template: `
+    <div style="display: flex; align-items: center;">
+      <freud-knob style="margin-right: 20px"
+        [value]="'50'"
+        [size]="'default'">
+      </freud-knob>
 
-export const SizeDefault = Template.bind({});
-SizeDefault.args = {
-  value: 50,
-  size: 'default'
-};
-
-export const SizeLarge = Template.bind({});
-SizeLarge .args = {
-  value: 50,
-  size: 'large'
-};
+      <freud-knob
+        [value]="'50'"
+        [size]="'large'">
+      </freud-knob>
+    </div>
+  `,
+});
+export const Size = TemplateSize.bind({});
