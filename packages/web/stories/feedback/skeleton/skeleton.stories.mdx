@@ -1,0 +1,63 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSkeletonComponent, FreudSkeletonModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BgColor,
+} from './Skeleton.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudSkeletonModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Feedback/Skeleton" component={FreudSkeletonComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Skeleton",
+      description: "Exibe uma visualização do espaço reservado de seu conteúdo antes que os dados sejam carregados, reduzindo a sensação de lentidão do tempo de carregamento."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudSkeletonComponent } from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#3B1C78' }}>
+  <Story story={BgColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSkeletonComponent} />

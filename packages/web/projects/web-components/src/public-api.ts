@@ -5,25 +5,31 @@
 export * from './components/typography';
 
 // Button
-export * from './components/button';
-export * from './components/speed-dial';
-export * from './components/split-button';
+export * from './components/buttons/button';
+export * from './components/buttons/speed-dial';
+export * from './components/buttons/split-button';
 
 // Feedback
-export * from './components/knob'
-export * from './components/steps';
-export * from './components/tag';
-export * from './components/tooltip';
-export * from './components/skeleton';
-export * from './components/progress-spinner';
-export * from './components/rating';
-export * from './components/badge';
+export * from './components/feedback/knob'
+export * from './components/feedback/steps';
+export * from './components/feedback/tag';
+export * from './components/feedback/tooltip';
+export * from './components/feedback/skeleton';
+export * from './components/feedback/progress-spinner';
+export * from './components/feedback/rating';
+export * from './components/feedback/badge';
 
 // Media
-export * from './components/avatar';
-export * from './components/fille-upload';
+export * from './components/media/avatar';
+export * from './components/media/fille-upload';
+export * from './components/media/image';
 
 // Others
-export * from './components/select-button';
+export * from './components/others/select-button';
+
+// Structure
+export * from './components/structure/menubar';
+export * from './components/structure/breadcrumb';
+export * from './components/structure/tab-menu';
 
 export * from './api';

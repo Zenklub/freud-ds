@@ -1,0 +1,35 @@
+@import '../../../../../../../tokens/dist/style/scss/variables.scss';
+
+.freud-steps {
+  .p-steps .p-steps-item:before {
+    border-top: 1px solid $neutral-color-light-03;
+  }
+
+  .p-steps-item {
+    opacity: 1 !important;
+    font-weight: $font-weight-bold;
+  }
+  .p-steps .p-steps-item:not(.p-highlight) .p-menuitem-link .p-steps-number {
+    color: $neutral-color-dark-01;
+  }
+  .p-steps .p-steps-item.p-highlight .p-steps-number {
+    background-color: $brand-color-pure;
+    color: $neutral-color-white;
+    border: $brand-color-pure;
+  }
+
+  &:not(.freud-steps-bgcolor) {
+    .p-steps .p-steps-item .p-menuitem-link .p-steps-title {
+      color: $neutral-color-dark-03;
+    }
+  }
+
+  &.freud-steps-bgcolor {
+    .p-steps .p-steps-item .p-menuitem-link {
+      background-color: transparent;
+    }
+    .p-steps .p-steps-item .p-menuitem-link .p-steps-title {
+      color: $neutral-color-white;
+    }
+  }
+}
