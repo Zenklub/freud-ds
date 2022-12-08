@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FreudMenubarComponent } from './menubar.component';
 import { MenubarModule } from "primeng/menubar";
+import { SharedModule } from "primeng/api";
 
 @NgModule({
-  imports: [CommonModule, MenubarModule],
+    imports: [CommonModule, MenubarModule, SharedModule],
   declarations: [FreudMenubarComponent],
   exports: [FreudMenubarComponent]
 })
