@@ -1,9 +1,13 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { FreudMenuItem } from "../../../api";
 
 @Component({
   selector: 'freud-tab-menu',
   template: `
-    // Tabmenu
+    <p-tabMenu
+      [model]="items"
+      [styleClass]="'freud-typography bodyBoldAuto'"
+      [activeItem]="activeItem"></p-tabMenu>
   `,
   styleUrls: ['./tab-menu.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -14,6 +18,8 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class FreudTabMenuComponent {
 
+  @Input() items!: FreudMenuItem[];
+  @Input() activeItem!: FreudMenuItem;
   @Input() bgColor: boolean = false;
 
 }

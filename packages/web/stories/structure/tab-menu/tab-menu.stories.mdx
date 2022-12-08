@@ -1,0 +1,84 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudTabMenuComponent, FreudTabMenuModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BgColor,
+} from './TabMenu.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({imports: [FreudTabMenuModule]})
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+  title="@freud-ds/web-components/Structure/TabMenu"
+  component={FreudTabMenuComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "TabMenu",
+      description: "É um componente de navegação que exibe itens como cabeçalhos de guia."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudTabMenuComponent } from '@freud-ds/web-components';
+```
+
+## Getting Started
+FreudTabMenu requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+```ts
+import { FreudMenuItem } from '@freud-ds/web-components';
+
+items: FreudMenuItem[] = [
+  {label: 'Home', command: () => { /* Ação quando for clicado na opção */}},
+  {label: 'Calendar', command: () => { /* Ação quando for clicado na opção */}},
+  {label: 'Edit', command: () => { /* Ação quando for clicado na opção */}},
+  {label: 'Documentation', command: () => { /* Ação quando for clicado na opção */}},
+  {label: 'Settings', command: () => { /* Ação quando for clicado na opção */}}
+]
+```
+```html
+      <freud-tab-menu
+          [items]="items"
+          [activeItem]="items[0]"
+          [bgColor]="bgColor">
+</freud-tab-menu>
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#6732D1' }}>
+  <Story story={BgColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudTabMenuComponent} />
