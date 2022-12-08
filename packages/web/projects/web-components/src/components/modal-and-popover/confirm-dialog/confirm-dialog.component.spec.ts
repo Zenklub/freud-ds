@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreudSkeletonComponent } from './skeleton.component';
+import { FreudConfirmDialogComponent } from './confirm-dialog.component';
 
-describe('FreudSkeletonComponent', () => {
-  let component: FreudSkeletonComponent;
-  let fixture: ComponentFixture<FreudSkeletonComponent>;
+describe('FreudConfirmDialogComponent', () => {
+  let component: FreudConfirmDialogComponent;
+  let fixture: ComponentFixture<FreudConfirmDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudSkeletonComponent ]
+      declarations: [ FreudConfirmDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreudSkeletonComponent);
+    fixture = TestBed.createComponent(FreudConfirmDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

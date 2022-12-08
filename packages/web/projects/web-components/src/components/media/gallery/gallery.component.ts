@@ -1,21 +1,18 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'freud-skeleton',
+  selector: 'freud-gallery',
   template: `
-    <p-skeleton
-      [width]="width"
-      [height]="height"
-    ></p-skeleton>
+    // Em andamento
   `,
-  styleUrls: ['./skeleton.component.scss'],
+  styleUrls: ['./gallery.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'freud-skeleton',
+    class: 'freud-gallery',
     '[class.freud-bgcolor]': `bgColor`,
   }
 })
-export class FreudSkeletonComponent {
+export class FreudGalleryComponent {
   @Input() width: string = '100%';
   @Input() height: string = '100px';
   @Input() bgColor: boolean = false;
