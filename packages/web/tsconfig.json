@@ -4,14 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "button": [
-        "dist/button/button",
-        "dist/button"
+      "@freud-ds/web-components": ["projects/web-components/src/public-api"],
+      "@freud-ds/tokens": [
+        "../tokens",
       ],
-      "components": [
-        "dist/components/components",
-        "dist/components"
-      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

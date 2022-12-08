@@ -1,0 +1,22 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-confirm-dialod {
+  .p-dialog.p-confirm-dialog {
+    max-width: 700px;
+  }
+  .p-dialog-footer {
+    display: flex;
+    place-content: flex-end;
+  }
+
+  .p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-dialog .p-dialog-header .p-dialog-title {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, 19.2px);
+  }
+}

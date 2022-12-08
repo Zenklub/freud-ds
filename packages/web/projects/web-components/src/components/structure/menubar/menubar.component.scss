@@ -1,0 +1,99 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+
+.freud-menubar:not(.freud-bgcolor) {
+  .p-menubar {
+    background-color: $neutral-color-white;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+    color: $neutral-color-dark-03;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+    @media screen and (min-width: 961px) {
+      background-color: $neutral-color-light-02;
+    }
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+    @media screen and (min-width: 961px) {
+      color: $brand-color-pure !important;
+    }
+  }
+}
+.freud-menubar.freud-bgcolor {
+  .p-menubar {
+    background-color: $brand-color-pure;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+    @media screen and (min-width: 961px) {
+      color: $neutral-color-white;
+    }
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+    @media screen and (min-width: 961px) {
+      background-color: $brand-color-04;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .p-menubar .p-menubar-button {
+      color: $neutral-color-white;
+    }
+    .p-menubar .p-menubar-button:focus {
+      box-shadow: unset;
+    }
+  }
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+  box-shadow: unset;
+}
+
+.freud-menubar {
+  .p-menubar {
+    border: unset;
+    height: 60px;
+    padding: 0 $spacing-size-xxs;
+    border-radius: 0;
+  }
+  .menubar-home-logo {
+    text-align: center;
+    display: flex;
+  }
+
+  p-menubarsub {
+    width: 100%;
+    ul {
+      float: right;
+    }
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    height: 60px;
+    border-radius: 0;
+    @include typography($font-size-xxs, $font-weight-regular, auto);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .menubar-home-logo {
+    display: none !important;
+  }
+}

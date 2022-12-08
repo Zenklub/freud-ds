@@ -50,3 +50,8 @@ yarn.lock
 .vscode
 coverage
 test-report.xml
+
+
+# Dist global
+*/*/dist
+*/*/node_modules

@@ -1,0 +1,90 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSelectButtonComponent, FreudSelectButtonModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  Background,
+  Disabled, OptionDisabled,
+} from './SelectButton.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudSelectButtonModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Others/SelectButton" component={FreudSelectButtonComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Select Button",
+      description: "É um componente de formulário para escolher um valor em uma lista de opções usando elementos de botão."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import e utilização
+
+```ts
+// Adicione o modulo do Freud Select Button
+import { FreudSelectButtonModule } from '@freud-ds/web-components';
+
+// No Componente declare a lista de opções e o item selecionado por padrão
+export class Componente {
+    items: any[];
+    selectedItem: any;
+    constructor() {
+        this.items = [
+            {name: 'New York', code: 'NY'},
+            {name: 'Rome', code: 'RM'},
+            {name: 'London', code: 'LDN'},
+            {name: 'Istanbul', code: 'IST'},
+            {name: 'Paris', code: 'PRS'}
+        ];
+    }
+}
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#6732D1' }}>
+  <Story story={Background}/>
+</Canvas>
+
+
+### Disabled
+<Canvas>
+  <Story story={Disabled}/>
+</Canvas>
+
+### Opções desabilitadas
+Opções específicas podem ser impedidas de seleção passando o atributo `disabled` como `true` no objeto.
+Caso queira usar uma propriedade personalizada passe o nome parametro no campo `optionDisabled`
+<Canvas>
+  <Story story={OptionDisabled}/>
+</Canvas>
+
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSelectButtonComponent} />

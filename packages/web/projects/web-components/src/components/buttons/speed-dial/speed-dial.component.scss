@@ -1,0 +1,42 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-speed-dial:not(.freud-speed-dial-bgcolor) {
+  .p-button, .p-button:hover {
+    background: $brand-color-pure;
+    border: 1px solid $brand-color-pure;
+    box-shadow: 0 0 0 2px $brand-color-pure;
+  }
+  .p-speeddial-action {
+    background-color: $brand-color-05;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.freud-speed-dial {
+  .p-speeddial-button.p-button.p-button-icon-only {
+    width: 56px;
+    height: 56px;
+  }
+  .p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
+    font-size: $font-size-lg;
+  }
+  .p-speeddial-action-icon {
+    font-size: $font-size-md;
+  }
+}
+
+.freud-speed-dial.freud-speed-dial-bgcolor {
+  .p-button, .p-button:hover {
+    background: $neutral-color-white;
+    border: 1px solid $neutral-color-white;
+    box-shadow: 0 0 0 2px $neutral-color-white;
+    color: $brand-color-pure;
+  }
+  .p-speeddial-action {
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
+    width: 42px;
+    height: 42px;
+  }
+}

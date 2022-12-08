@@ -9,6 +9,8 @@
     "./scss"
   ],
   "allowedNonPeerDependencies": [
-    "primeng"
+    "primeng",
+    "primeicons",
+    "@freud-ds/tokens"
   ]
 }
