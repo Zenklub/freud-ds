@@ -1,8 +1,37 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
 .freud-breadcrumb:not(.freud-bgcolor) {
+  .p-breadcrumb ul li.p-breadcrumb-chevron {
+    font-size: $font-size-xxxs;
+    color: $neutral-color-dark-03;
+  }
+
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon, .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+    color: $neutral-color-dark-03;
+  }
 
 }
 .freud-breadcrumb.freud-bgcolor {
+  .p-breadcrumb ul li.p-breadcrumb-chevron {
+    font-size: $font-size-xxxs;
+    color: $neutral-color-white;
+  }
 
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon, .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+    color: $neutral-color-white;
+  }
+}
+
+.p-breadcrumb {
+  background: transparent;
+  border: none;
+}
+
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon {
+  font-size: $font-size-sm;
+  line-height: $font-size-md;
+}
+
+.p-breadcrumb ul li .p-menuitem-link:focus {
+  box-shadow: unset;
 }

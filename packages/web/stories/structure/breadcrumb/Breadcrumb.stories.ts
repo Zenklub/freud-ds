@@ -1,34 +1,31 @@
-import { FreudImageComponent } from '@freud-ds/web-components';
+import { FreudBreadcrumbComponent, FreudMenuItem } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
-const Template: Story<FreudImageComponent> = (args: FreudImageComponent) => ({
+const items: FreudMenuItem[] = [
+  {label: 'Item1'},
+  {label: 'Item2'},
+  {label: 'Item3'},
+  {label: 'Item4'}
+]
+const home: FreudMenuItem = {
+  icon: 'freud-icon freud-icon-home'
+}
+
+const Template: Story<FreudBreadcrumbComponent> = (args: FreudBreadcrumbComponent) => ({
   props: { ...args },
   template: `
-    <freud-image [preview]="preview" [alt]="alt" [src]="src" [height]="height" [width]="width"></freud-image>
+    <freud-breadcrumb [bgColor]="bgColor" [items]="items" [home]="home"></freud-breadcrumb>
   `,
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  src: '/assets/img/img.png',
-  height: '300px',
-  width: '300px',
-  alt: 'Zenklub Image',
+  items: items,
+  home: home,
 };
-
-export const Preview = Template.bind({});
-Preview.args = {
-  src: '/assets/img/img.png',
-  height: '300px',
-  width: '300px',
-  alt: 'Zenklub Image',
-  preview: true
-};
-
 export const BgColor = Template.bind({});
 BgColor.args = {
-  src: '/assets/img/img.png',
-  height: '300px',
-  width: '300px',
-  alt: 'Zenklub Image',
+  items: items,
+  home: home,
+  bgColor: true
 };

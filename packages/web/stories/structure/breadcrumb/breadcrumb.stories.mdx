@@ -13,6 +13,10 @@ import {
   ]}
   parameters={{
     layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
     backgrounds: {
       default: 'Default',
       values: [
@@ -21,7 +25,7 @@ import {
       ],
     }
   }}
-  title="@freud-ds/web-components/Structure/Breadcrumb (Em andamento)"
+  title="@freud-ds/web-components/Structure/Breadcrumb"
   component={FreudBreadcrumbComponent}
 />
 
@@ -39,6 +43,31 @@ import {
 
 ```ts
 import { FreudBreadcrumbComponent } from '@freud-ds/web-components';
+```
+
+## Getting Started
+Breadcrumb requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+```ts
+import { FreudMenuItem } from '@freud-ds/web-components';
+
+items: FreudMenuItem[] = [
+  {label: 'Item1'},
+  {label: 'Item2'},
+  {label: 'Item3'},
+  {label: 'Item4'}
+]
+
+home: FreudMenuItem = {
+  icon: 'freud-icon freud-icon-home'
+}
+```
+```html
+    <freud-breadcrumb
+    [bgColor]="false"
+    [items]="items"
+    [home]="home"
+    (onItemClick)="aoClicarNoItem($event)">
+</freud-breadcrumb>
 ```
 
 ## <a id="exemplos"></a>Exemplos

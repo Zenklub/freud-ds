@@ -7,6 +7,7 @@ import { FreudMenuItem } from "../../../api";
     <p-breadcrumb
       [model]="items"
       [home]="home"
+      styleClass="freud-typography h6RegularAuto"
       (onItemClick)="onItemClick.emit($event)"></p-breadcrumb>
   `,
   styleUrls: ['./breadcrumb.component.scss'],
