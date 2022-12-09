@@ -22,7 +22,7 @@ export * from './components/feedback/badge';
 // Media
 export * from './components/media/avatar';
 export * from './components/media/fille-upload';
-// export * from './components/media/gallery';
+export * from './components/media/gallery';
 export * from './components/media/image';
 
 // Others

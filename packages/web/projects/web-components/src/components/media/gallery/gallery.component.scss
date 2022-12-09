@@ -5,3 +5,18 @@
 }
 .freud-gallery.freud-bgcolor {
 }
+
+.freud-gallery {
+  .p-link:focus {
+    box-shadow: unset;
+  }
+  .p-galleria .p-galleria-indicators .p-galleria-indicator.p-highlight button {
+    background-color: $brand-color-pure;
+  }
+  .p-galleria .p-galleria-indicators .p-galleria-indicator button {
+    background-color: $neutral-color-light-03;
+  }
+  .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-item-content:focus {
+    box-shadow: 0 0 0 0.2rem $brand-color-pure;
+  }
+}
