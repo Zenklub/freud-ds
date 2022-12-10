@@ -10,12 +10,15 @@ export * from './components/buttons/speed-dial';
 export * from './components/buttons/split-button';
 
 // Feedback
+export * from './components/feedback/alert-messages';
 export * from './components/feedback/knob'
 export * from './components/feedback/steps';
 export * from './components/feedback/tag';
+export * from './components/feedback/toast';
 export * from './components/feedback/tooltip';
 export * from './components/feedback/skeleton';
 export * from './components/feedback/progress-spinner';
+export * from './components/feedback/progress-bar';
 export * from './components/feedback/rating';
 export * from './components/feedback/badge';
 

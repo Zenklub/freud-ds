@@ -1,0 +1,75 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-toast {
+  .p-toast .p-toast-message {
+    border: unset;
+    border-radius: $border-radius-md;
+    color: $neutral-color-dark-04;
+    box-shadow: unset;
+
+    &.p-toast-message-success {
+      background-color: $feedback-color-positive-01;
+      .p-toast-message-icon {
+        color: $feedback-color-positive-pure;
+      }
+    }
+
+    &.p-toast-message-info {
+      background-color: $feedback-color-neutral-01;
+      .p-toast-message-icon {
+        color: $feedback-color-neutral-pure;
+      }
+    }
+
+    &.p-toast-message-warn {
+      background-color: $feedback-color-warning-01;
+      .p-toast-message-icon {
+        color: $feedback-color-alert-pure;
+      }
+    }
+
+    &.p-toast-message-error {
+      background-color: $feedback-color-negative-01;
+      .p-toast-message-icon {
+        color: $feedback-color-negative-pure;
+      }
+    }
+
+    .freud-icon {
+      font-size: 31px;
+      margin-left: -5px;
+      margin-right: 4px;
+    }
+  }
+
+  .p-toast .p-toast-icon-close {
+    color:$neutral-color-dark-04 !important;
+  }
+  .p-toast .p-toast-message .p-toast-icon-close:focus {
+    box-shadow: unset;
+  }
+
+  .p-toast .p-message-summary {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+
+  .p-toast-detail {
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+
+  .pi-exclamation-triangle:before, .pi-info-circle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e903";
+  }
+
+  .pi-times-circle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e9b9";
+  }
+  .pi-check:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e973";
+  }
+
+}
