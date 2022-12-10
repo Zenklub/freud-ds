@@ -1,0 +1,52 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+
+.freud-tab-menu {
+
+  &:not(.freud-bgcolor) {
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+      color: $neutral-color-dark-02;
+    }
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+      border-color: $brand-color-pure;
+      color: $brand-color-pure;
+    }
+
+    .p-tabmenu .p-tabmenu-nav {
+      border-color: $neutral-color-light-03;
+      border-width: 0 0 2px 0;
+    }
+  }
+
+  &.freud-bgcolor {
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+      color: $brand-color-03;
+      border-color: $brand-color-03;
+      border-width: 0 0 2px 0;
+    }
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link,
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+      background-color: transparent;
+      border-color: $brand-color-01;
+      color: $brand-color-01;
+    }
+
+    .p-tabmenu .p-tabmenu-nav {
+      border-color: $brand-color-03;
+      border-width: 0 0 2px 0;
+      background: transparent;
+    }
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+      background-color: transparent;
+    }
+  }
+
+  .p-menuitem-text {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+
+  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+    box-shadow: unset;
+  }
+}

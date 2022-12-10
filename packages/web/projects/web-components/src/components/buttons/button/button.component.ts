@@ -9,7 +9,7 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
-    <p-button [disabled]="disabled" [loading]="loading" [icon]="icon">
+    <p-button [disabled]="disabled" [loading]="loading" [icon]="icon" [type]="type">
       <div class="button-content"><ng-content></ng-content></div>
     </p-button>
   `,
@@ -33,6 +33,7 @@ export class FreudButtonComponent {
   @Input() color: buttonColors = 'primary';
   @Input() bgColor = false;
   @Input() disabled = false;
+  @Input() type!: string;
   @Input() loading = false;
   @Input() icon!: string;
 
