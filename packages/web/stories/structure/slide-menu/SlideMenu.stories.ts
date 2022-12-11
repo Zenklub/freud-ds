@@ -1,0 +1,46 @@
+import { FreudMenuItem, FreudSlideMenuComponent } from '@freud-ds/web-components';
+import { Story } from '@storybook/angular';
+
+const items: FreudMenuItem[] = [{
+  label: 'Options',
+  items: [{
+    label: 'Update',
+    icon: 'freud-icon freud-icon-refresh',
+    command: () => {/* Comando */ }
+  },
+    {
+      label: 'Delete',
+      icon: 'freud-icon freud-icon-times'
+    }
+  ]},
+  {
+    label: 'Navigate',
+    items: [{
+      label: 'Update',
+      icon: 'freud-icon freud-icon-external-link',
+    },
+      {
+        label: 'Router',
+        icon: 'freud-icon freud-icon-upload',
+        routerLink: '/fileupload'
+      }
+    ]}
+]
+
+
+const Template: Story<FreudSlideMenuComponent> = (args: FreudSlideMenuComponent) => ({
+  props: { ...args },
+  template: `
+    <freud-slide-menu [items]="items"></freud-slide-menu>
+  `,
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  items: items,
+}
+
+export const BgColor = Template.bind({});
+BgColor.args = {
+  items: items,
+}

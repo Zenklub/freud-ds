@@ -1,14 +1,19 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-tab-menu {
+.freud-scroll-panel {
 
-  &:not(.freud-bgcolor) {
-
+  .p-scrollpanel, p-scrollpanel-bar {
+    background-color: $neutral-color-white;
+    padding: 14px 14px 14px 14px;
+    border-radius: $border-radius-md;
   }
-
-  &.freud-bgcolor {
-
+  .p-scrollpanel .p-scrollpanel-bar {
+    margin-left: -20px;
+    background-color: $neutral-color-dark-01;
+  }
+  .p-scrollpanel-content {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
   }
 
 }

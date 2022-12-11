@@ -2,5 +2,8 @@
 @import '../../../../scss/typography';
 
 .freud-splitter {
+  .p-splitter {
+    border-radius: $border-radius-md;
+  }
 
 }
