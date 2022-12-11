@@ -9,6 +9,9 @@ export * from './components/buttons/button';
 export * from './components/buttons/speed-dial';
 export * from './components/buttons/split-button';
 
+// Input
+export * from './components/forms/input-text';
+
 // Feedback
 export * from './components/feedback/alert-messages';
 export * from './components/feedback/knob'
