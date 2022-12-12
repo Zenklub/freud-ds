@@ -21,7 +21,7 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
         [id]="id"
         [class.ng-invalid]="invalid"
         [class.ng-dirty]="invalid"
-        pInputText [(ngModel)]="value"
+        [(ngModel)]="value"
         [placeholder]="placeholder || ''"
         [disabled]="disabled"
         [required]="required"

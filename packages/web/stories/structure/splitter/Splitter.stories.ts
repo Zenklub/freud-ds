@@ -26,4 +26,4 @@ Vertical.args = {
   layout: 'vertical'
 }
 
-export const BgColor = Template.bind({});
+export const BGColor = Template.bind({});

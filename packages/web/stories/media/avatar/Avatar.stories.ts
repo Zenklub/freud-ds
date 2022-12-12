@@ -33,8 +33,8 @@ Large.args = {
 
 
 // BgColor
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   label: 'BG',
   size: 'lg',
   bgColor: true

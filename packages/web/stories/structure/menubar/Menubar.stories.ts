@@ -77,8 +77,8 @@ Default.args = {
   items: items,
   startImgSrc: 'assets/img/zenklub.svg'
 };
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   items: items,
   startImgSrc: 'assets/img/zenklub-white.svg',
   bgColor: true

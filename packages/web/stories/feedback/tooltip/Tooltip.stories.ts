@@ -35,8 +35,8 @@ Left.args = {
 };
 
 // BgColor
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   tooltipLabel: 'Com bgColor',
   tooltipPosition: 'bottom',
   bgColor: true

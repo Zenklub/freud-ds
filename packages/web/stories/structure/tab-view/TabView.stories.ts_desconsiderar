@@ -33,7 +33,7 @@ Scrollable.args = {
   scrollable: true
 };
 
-export const BgColor = Template.bind({});
+export const BGColor = Template.bind({});
 BgColor.args = {
   activeIndex: 1,
   bgColor: true

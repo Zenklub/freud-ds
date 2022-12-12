@@ -1,10 +1,10 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudMenuComponent, FreudMenuModule, FreudButtonModule } from '@freud-ds/web-components';
+import { FreudMenuComponent, FreudMenuModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  BgColor,
+  BGColor,
 } from './Menu.stories.ts'; import {RouterTestingModule} from "@angular/router/testing";
 
 <Meta
@@ -82,7 +82,7 @@ O menu é embutido por padrão, o modo pop-up também é compatível com a ativa
 
 ### BG Color
 <Canvas style={{ backgroundColor: '#6732D1' }}>
-  <Story story={BgColor}/>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API

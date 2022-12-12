@@ -10,8 +10,8 @@ const Template: Story<FreudTypographyComponent> = (
     <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">{{label}}</p>
   `
 });
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const HeadingBGColor = Template.bind({});
+HeadingBGColor.args = {
   fontType: 'h1BoldAuto',
   fontBgColor: true
 };

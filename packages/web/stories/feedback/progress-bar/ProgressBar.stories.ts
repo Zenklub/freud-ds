@@ -21,7 +21,7 @@ Indeterminate.args = {
   bgColor: false,
   mode: 'indeterminate'
 }
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   bgColor: true
 }

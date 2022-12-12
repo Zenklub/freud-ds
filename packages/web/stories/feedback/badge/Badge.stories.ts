@@ -74,4 +74,4 @@ Actived.args = {
 };
 
 
-export const BgColor = TemplateBgColor.bind({});
+export const BGColor = TemplateBgColor.bind({});

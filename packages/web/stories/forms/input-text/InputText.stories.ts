@@ -38,8 +38,8 @@ Icon.args = {
   rightIcon: 'freud-icon freud-icon-box'
 };
 
-export const HelpText = Template.bind({});
-HelpText.args = {
+export const HelperText = Template.bind({});
+HelperText.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   helpText: 'Helper Text',
@@ -47,8 +47,8 @@ HelpText.args = {
 
 
 
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   bgColor: true,

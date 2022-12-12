@@ -87,8 +87,8 @@ WithoutThumbnail.args = {
   showThumbnails: false
 };
 
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   images: images,
   showThumbnails: false,
   bgColor: true

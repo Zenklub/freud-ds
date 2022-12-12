@@ -45,8 +45,8 @@ Default.args = {
   items: items
 };
 
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   label: 'Button bg Color',
   items: itemsWithoutIcon,
   bgColor: true

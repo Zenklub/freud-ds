@@ -11,4 +11,4 @@ const Template: Story<FreudScrollPanelComponent> = (args: FreudScrollPanelCompon
 
 export const Default = Template.bind({});
 
-export const BgColor = Template.bind({});
+export const BGColor = Template.bind({});

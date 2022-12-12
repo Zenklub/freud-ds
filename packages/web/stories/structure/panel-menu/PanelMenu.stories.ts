@@ -90,7 +90,7 @@ export const Default = Template.bind({});
 Default.args = {
   items: items,
 };
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   items: items
 };

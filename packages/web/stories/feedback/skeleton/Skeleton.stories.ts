@@ -45,7 +45,7 @@ export const Default = Template.bind({});
 Default.args = {
   bgColor: false
 }
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   bgColor: true
 }

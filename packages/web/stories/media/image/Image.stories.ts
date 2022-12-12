@@ -25,8 +25,8 @@ Preview.args = {
   preview: true
 };
 
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   src: '/assets/img/img.png',
   height: '300px',
   width: '300px',

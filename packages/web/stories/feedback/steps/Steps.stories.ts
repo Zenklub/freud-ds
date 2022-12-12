@@ -24,8 +24,8 @@ Default.args = {
   model: itens
 };
 
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   readonly: true,
   activeIndex: 0,
   model: itens,

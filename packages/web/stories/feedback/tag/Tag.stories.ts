@@ -78,12 +78,12 @@ const TemplateBgColor: Story<FreudTagComponent> = (args: FreudTagComponent) => (
   `,
 });
 
-export const BgColor = TemplateBgColor.bind({});
-BgColor.args = {
+export const BGColor = TemplateBgColor.bind({});
+BGColor.args = {
   outline: false
 };
 
-export const BgColorOutline = TemplateBgColor.bind({});
-BgColorOutline.args = {
+export const BGColorOutline = TemplateBgColor.bind({});
+BGColorOutline.args = {
   outline: true
 };

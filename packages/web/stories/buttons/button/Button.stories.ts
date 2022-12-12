@@ -31,18 +31,18 @@ Ghost.args = {
 };
 
 // Background
-export const PrimaryBackground = Template.bind({});
-PrimaryBackground.args = {
+export const PrimaryBGColor = Template.bind({});
+PrimaryBGColor.args = {
   color: 'primary',
   bgColor: true,
 };
-export const SecondaryBackground = Template.bind({});
-SecondaryBackground.args = {
+export const SecondaryBGColor = Template.bind({});
+SecondaryBGColor.args = {
   color: 'secondary',
   bgColor: true,
 };
-export const GhostBackground = Template.bind({});
-GhostBackground.args = {
+export const GhostBGColor = Template.bind({});
+GhostBGColor.args = {
   color: 'ghost',
   bgColor: true,
 };

@@ -42,8 +42,8 @@ BasicUi.args = {
 
 
 // BgColor
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   multiple: true,
   url: './upload.php',
 };

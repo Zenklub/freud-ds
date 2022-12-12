@@ -24,8 +24,8 @@ Disabled.args = {
   value: 2,
   disabled: true
 };
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   value: 2,
   bgColor: true,
 };
