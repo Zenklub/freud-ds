@@ -43,7 +43,7 @@
   }
 
   .p-menuitem-text {
-    @include typography($font-size-xs, $font-weight-bold, auto);
+    @include typography($font-size-xs, $font-weight-semibold, auto);
   }
 
   .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {

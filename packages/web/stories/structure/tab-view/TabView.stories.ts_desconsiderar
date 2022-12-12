@@ -34,7 +34,7 @@ Scrollable.args = {
 };
 
 export const BGColor = Template.bind({});
-BgColor.args = {
+BGColor.args = {
   activeIndex: 1,
   bgColor: true
 };

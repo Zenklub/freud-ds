@@ -12,7 +12,7 @@ export const Default = Template.bind({});
 Default.args = {
   src: '/assets/img/img.png',
   height: '300px',
-  width: '300px',
+  width: 'auto',
   alt: 'Zenklub Image',
 };
 
@@ -20,7 +20,7 @@ export const Preview = Template.bind({});
 Preview.args = {
   src: '/assets/img/img.png',
   height: '300px',
-  width: '300px',
+  width: 'auto',
   alt: 'Zenklub Image',
   preview: true
 };
@@ -29,6 +29,6 @@ export const BGColor = Template.bind({});
 BGColor.args = {
   src: '/assets/img/img.png',
   height: '300px',
-  width: '300px',
+  width: 'auto',
   alt: 'Zenklub Image',
 };

@@ -18,5 +18,11 @@
   .p-dialog .p-dialog-header .p-dialog-title {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-bold, 19.2px);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .p-dialog .p-dialog-footer {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 }

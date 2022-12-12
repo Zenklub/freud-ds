@@ -3,9 +3,8 @@ import { moduleMetadata } from '@storybook/angular';
 import { FreudBadgeComponent, FreudBadgeModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
+  Size,
   Default,
-  Large,
-  Primary,
   Success,
   Info,
   Warning,
@@ -61,7 +60,7 @@ import FreudBadgeModule from '@freud-ds/web-components';
 
 ### Options
 <Canvas>
-  <Story story={Primary}/>
+  <Story story={Default}/>
   <Story story={Success}/>
   <Story story={Info}/>
   <Story story={Warning}/>
@@ -76,10 +75,20 @@ import FreudBadgeModule from '@freud-ds/web-components';
 
 ### Size (Default, Large)
 <Canvas>
-  <Story story={Default}/>
-  <Story story={Large}/>
+  <Story story={Size}/>
 </Canvas>
 
 ## <a id="api"></a>API
+
+### Colors
+
+Os tipos de colors disponíveis são:
+
+- primary
+- success
+- info
+- warning
+- error
+- actived
 
 <ArgsTable of={FreudBadgeComponent} />

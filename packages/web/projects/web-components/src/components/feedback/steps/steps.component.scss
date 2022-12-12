@@ -1,4 +1,5 @@
 @import '../../../../../../../tokens/dist/style/scss/variables.scss';
+@import '../../../../scss/typography';
 
 .freud-steps {
   .p-steps .p-steps-item:before {
@@ -22,6 +23,10 @@
     .p-steps .p-steps-item .p-menuitem-link .p-steps-title {
       color: $neutral-color-dark-03;
     }
+  }
+
+  .p-steps .p-steps-item .p-menuitem-link .p-steps-title {
+    @include typography($font-size-xs, $font-weight-semibold, auto);
   }
 
   &.freud-steps-bgcolor {

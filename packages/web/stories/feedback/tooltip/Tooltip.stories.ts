@@ -9,6 +9,7 @@ const Template: Story<FreudTooltipComponent> = (
     <span freud-tooltip style="color:{{bgColor ? 'white' : 'black'}}"
       [tooltipLabel]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
+      style="font-family: 'Source Sans Pro'"
       [bgColor]="bgColor">Passe o mouse aqui!</span>
   `,
 });

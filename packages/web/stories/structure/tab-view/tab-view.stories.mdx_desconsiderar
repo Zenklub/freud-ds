@@ -4,7 +4,7 @@ import { FreudTabViewComponent, FreudTabPanelComponent, FreudTabViewModule } fro
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  BgColor, Scrollable,
+  BGColor, Scrollable,
 } from './TabView.stories.ts_desconsiderar';
 
 <Meta
@@ -74,7 +74,7 @@ FreudTabView requer uma coleção de itens de menu, para isso utilize a interfac
 
 ### BG Color
 <Canvas style={{ backgroundColor: '#6732D1' }}>
-  <Story story={BgColor}/>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API TabView

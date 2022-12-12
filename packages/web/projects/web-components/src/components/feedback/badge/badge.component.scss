@@ -31,10 +31,11 @@
   border-radius: $border-radius-md;
   min-width: 16px;
   height: 16px;
-  @include typography($font-size-xxxs, $font-weight-bold, 14.4px);
+  line-height: $font-size-xs;
+  @include typography($font-size-xxxs, $font-weight-semibold, auto);
 }
 .freud-badge.size-large span.p-badge {
   border-radius: 12px;
-  @include typography($font-size-xs, $font-weight-bold, auto);
+  @include typography($font-size-xs, $font-weight-semibold, auto);
   display: inline-block;
 }
