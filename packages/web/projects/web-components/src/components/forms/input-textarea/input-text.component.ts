@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   forwardRef,
@@ -12,12 +11,11 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
 @Component({
   selector: 'freud-input-text',
   styleUrls: ['./input-text.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
       <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <span [class.p-input-icon-right]="rightIcon">
+      <span [class.p-input-icon-right]="rightIcon">
           <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
           <input
             [id]="id"

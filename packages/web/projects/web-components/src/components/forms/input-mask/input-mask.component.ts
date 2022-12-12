@@ -10,53 +10,48 @@ import {
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
-  selector: 'freud-input-text',
-  styleUrls: ['./input-text.component.scss'],
+  selector: 'freud-input-mask',
+  styleUrls: ['./input-mask.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
       <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <span [class.p-input-icon-right]="rightIcon">
-          <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
-          <input
-            [id]="id"
-            type="text"
-            [class.ng-invalid]="invalid"
-            [class.ng-dirty]="invalid"
-            aria-describedby="{{id}}-help"
-            pInputText [(ngModel)]="value"
-            [placeholder]="placeholder || ''"
-            [disabled]="disabled"
-            [required]="required"
-            (focus)="onFocus.emit($event)"
-            (blur)="onBlur.emit($event)"
-            (input)="onInput.emit($event)"
-            (keydown)="onKeydown.emit($event)"
-          />
-        </span>
-      <small id="{{id}}-help"
-             [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+      <p-inputMask
+        [id]="id"
+        [class.ng-invalid]="invalid"
+        [class.ng-dirty]="invalid"
+        pInputText [(ngModel)]="value"
+        [placeholder]="placeholder || ''"
+        [disabled]="disabled"
+        [required]="required"
+        (onFocus)="onFocus.emit($event)"
+        (onBlur)="onBlur.emit($event)"
+        (onInput)="onInput.emit($event)"
+        (onKeydown)="onKeydown.emit($event)"
+      />
+      <small
+        [class.disabled]="disabled"
+        *ngIf="helpText"
+        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
     </div>
   `,
   host: {
-    class: 'freud-input-text',
+    class: 'freud-input-mask',
     '[class.freud-bgcolor]': `bgColor`,
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FreudInputTextComponent),
+      useExisting: forwardRef(() => FreudInputMaskComponent),
       multi: true
     }
   ]
 })
-export class FreudInputTextComponent {
+export class FreudInputMaskComponent {
   @Input() label: string = '';
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
-  @Input() rightIcon!: string;
   @Input() invalid: boolean = false;
   @Input() bgColor = false;
   @Input() disabled = false;
