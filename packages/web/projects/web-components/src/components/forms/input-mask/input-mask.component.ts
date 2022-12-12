@@ -7,7 +7,7 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
   selector: 'freud-input-mask',
@@ -22,14 +22,20 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
         [class.ng-invalid]="invalid"
         [class.ng-dirty]="invalid"
         [(ngModel)]="value"
+        [mask]="mask"
+        [unmask]="unmask"
+        [slotChar]="slotChar"
+        [characterPattern]="characterPattern"
         [placeholder]="placeholder || ''"
         [disabled]="disabled"
         [required]="required"
+        [autoClear]="false"
         (onFocus)="onFocus.emit($event)"
         (onBlur)="onBlur.emit($event)"
         (onInput)="onInput.emit($event)"
+        (onComplete)="onComplete.emit($event)"
         (onKeydown)="onKeydown.emit($event)"
-      />
+      ></p-inputMask>
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
@@ -48,11 +54,16 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
     }
   ]
 })
-export class FreudInputMaskComponent {
+export class FreudInputMaskComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
   @Input() invalid: boolean = false;
+  @Input() mask: string = '';
+  @Input() unmask: boolean = false;
+  @Input() slotChar: string = '';
+  @Input() characterPattern: string = '';
+  @Input() autoClear: boolean = true;
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
@@ -65,8 +76,32 @@ export class FreudInputMaskComponent {
   @Output() onInput: EventEmitter<any> = new EventEmitter();
 
   @Output() onKeydown: EventEmitter<any> = new EventEmitter();
+  @Output() onComplete: EventEmitter<any> = new EventEmitter();
 
   private _value!: string;
+
+  writeValue(obj: any): void {
+    this._value = obj;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onModelChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onModelTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+  }
+
+  onModelChange: any = () => { };
+
+  onModelTouched: any = () => { };
+
+  onSomeEventOccured(newValue: string){
+    this.value = newValue;
+  }
 
   public get value(){
     return this._value;
@@ -74,30 +109,8 @@ export class FreudInputMaskComponent {
 
   public set value(v){
     this._value = v;
-    this.onChange(this._value);
-    this.onTouched();
+    this.onModelChange(this._value);
+    this.onModelTouched();
   }
 
-  writeValue(obj: any): void {
-    this._value = obj;
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-  }
-
-  onChange: any = () => { };
-
-  onTouched: any = () => { };
-
-  onSomeEventOccured(newValue: string){
-    this.value = newValue;
-  }
 }

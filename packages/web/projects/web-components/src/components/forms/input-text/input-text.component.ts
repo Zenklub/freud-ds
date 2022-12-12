@@ -7,7 +7,7 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
   selector: 'freud-input-text',
@@ -25,10 +25,12 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
             [class.ng-invalid]="invalid"
             [class.ng-dirty]="invalid"
             aria-describedby="{{id}}-help"
-            pInputText [(ngModel)]="value"
+            pInputText
+            [(ngModel)]="value"
             [placeholder]="placeholder || ''"
             [disabled]="disabled"
             [required]="required"
+            (ngModelChange)="modelValueChange()"
             (focus)="onFocus.emit($event)"
             (blur)="onBlur.emit($event)"
             (input)="onInput.emit($event)"
@@ -52,7 +54,7 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
     }
   ]
 })
-export class FreudInputTextComponent {
+export class FreudInputTextComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
@@ -64,14 +66,21 @@ export class FreudInputTextComponent {
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
-
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
-
   @Output() onInput: EventEmitter<any> = new EventEmitter();
 
   @Output() onKeydown: EventEmitter<any> = new EventEmitter();
 
   private _value!: string;
+
+  modelValueChange() {
+    this.valueChange.emit(this.value);
+  }
+
+  onModelChange: any = (_: string) => { };
+
+  onModelTouched: any = () => { };
 
   public get value(){
     return this._value;
@@ -79,8 +88,8 @@ export class FreudInputTextComponent {
 
   public set value(v){
     this._value = v;
-    this.onChange(this._value);
-    this.onTouched();
+    this.onModelChange(this._value);
+    this.onModelTouched();
   }
 
   writeValue(obj: any): void {
@@ -88,19 +97,15 @@ export class FreudInputTextComponent {
   }
 
   registerOnChange(fn: any): void {
-    this.onChange = fn;
+    this.onModelChange = fn;
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouched = fn;
+    this.onModelTouched = fn;
   }
 
   setDisabledState?(isDisabled: boolean): void {
   }
-
-  onChange: any = () => { };
-
-  onTouched: any = () => { };
 
   onSomeEventOccured(newValue: string){
     this.value = newValue;

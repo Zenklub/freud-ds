@@ -6,7 +6,7 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
   selector: 'freud-input-text',
@@ -50,7 +50,7 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
     }
   ]
 })
-export class FreudInputTextComponent {
+export class FreudInputTextComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
