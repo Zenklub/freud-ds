@@ -11,6 +11,7 @@ export * from './components/buttons/split-button';
 
 // Input
 export * from './components/forms/input-text';
+export * from './components/forms/input-textarea';
 export * from './components/forms/input-mask';
 
 // Feedback

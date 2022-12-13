@@ -10,7 +10,7 @@ const Template: Story<FreudImageComponent> = (args: FreudImageComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  src: '/assets/img/img.png',
+  src: 'assets/img/img.png',
   height: '300px',
   width: 'auto',
   alt: 'Zenklub Image',
@@ -18,7 +18,7 @@ Default.args = {
 
 export const Preview = Template.bind({});
 Preview.args = {
-  src: '/assets/img/img.png',
+  src: 'assets/img/img.png',
   height: '300px',
   width: 'auto',
   alt: 'Zenklub Image',
@@ -27,7 +27,7 @@ Preview.args = {
 
 export const BGColor = Template.bind({});
 BGColor.args = {
-  src: '/assets/img/img.png',
+  src: 'assets/img/img.png',
   height: '300px',
   width: 'auto',
   alt: 'Zenklub Image',

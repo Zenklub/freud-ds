@@ -9,53 +9,56 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
-  selector: 'freud-input-text',
-  styleUrls: ['./input-text.component.scss'],
+  selector: 'freud-input-textarea',
+  styleUrls: ['./input-textarea.component.scss'],
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
       <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-      <span [class.p-input-icon-right]="rightIcon">
-          <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
-          <input
-            [id]="id"
-            type="text"
-            [class.ng-invalid]="invalid"
-            [class.ng-dirty]="invalid"
-            aria-describedby="{{id}}-help"
-            pInputText [(ngModel)]="value"
-            [placeholder]="placeholder || ''"
-            [disabled]="disabled"
-            [required]="required"
-            (focus)="onFocus.emit($event)"
-            (blur)="onBlur.emit($event)"
-            (input)="onInput.emit($event)"
-            (keydown)="onKeydown.emit($event)"
-          />
-        </span>
+        <textarea
+          [id]="id"
+          type="text"
+          [class.ng-invalid]="invalid"
+          [class.ng-dirty]="invalid"
+          aria-describedby="{{id}}-help"
+          [(ngModel)]="value"
+          [rows]="rows"
+          [cols]="cols"
+          [autoResize]="autoResize"
+          pInputTextarea
+          [placeholder]="placeholder || ''"
+          [disabled]="disabled"
+          [required]="required"
+          (focus)="onFocus.emit($event)"
+          (blur)="onBlur.emit($event)"
+          (input)="onInput.emit($event)"
+          (keydown)="onKeydown.emit($event)"
+        ></textarea>
       <small id="{{id}}-help"
              [class.disabled]="disabled"
              class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
     </div>
   `,
   host: {
-    class: 'freud-input-text',
+    class: 'freud-input-textarea',
     '[class.freud-bgcolor]': `bgColor`,
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FreudInputTextComponent),
+      useExisting: forwardRef(() => FreudInputTextAreaComponent),
       multi: true
     }
   ]
 })
-export class FreudInputTextComponent implements ControlValueAccessor {
+export class FreudInputTextAreaComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
-  @Input() rightIcon!: string;
+  @Input() cols!: number;
+  @Input() rows!: number;
   @Input() invalid: boolean = false;
+  @Input() autoResize: boolean = false;
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;

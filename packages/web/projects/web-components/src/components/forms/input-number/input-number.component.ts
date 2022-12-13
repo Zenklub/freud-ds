@@ -10,53 +10,92 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
-  selector: 'freud-input-text',
-  styleUrls: ['./input-text.component.scss'],
+  selector: 'freud-input-number',
+  styleUrls: ['./input-number.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
       <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <span [class.p-input-icon-right]="rightIcon">
-          <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
-          <input
+          <p-inputNumber
             [id]="id"
+            [inputId]="id"
             type="text"
             [class.ng-invalid]="invalid"
             [class.ng-dirty]="invalid"
-            pInputText
             [(ngModel)]="value"
             [placeholder]="placeholder || ''"
             [disabled]="disabled"
             [required]="required"
+
+            [format]="format"
+            [buttonLayout]="buttonLayout"
+            [incrementButtonIcon]="incrementButtonIcon"
+            [decrementButtonIcon]="decrementButtonIcon"
+            [showButtons]="showButtons"
+            [locale]="locale"
+            [localeMatcher]="localeMatcher"
+            [mode]="mode"
+
+            [prefix]="prefix"
+            [useGrouping]="useGrouping"
+            [suffix]="suffix"
+            [currency]="currency"
+            [currencyDisplay]="currencyDisplay"
+
+            [minFractionDigits]="minFractionDigits"
+            [maxFractionDigits]="maxFractionDigits"
+
+            [min]="min"
+            [max]="max"
+
+            [step]="step"
+            [allowEmpty]="allowEmpty"
+
             (ngModelChange)="modelValueChange()"
             (focus)="onFocus.emit($event)"
             (blur)="onBlur.emit($event)"
             (input)="onInput.emit($event)"
             (keydown)="onKeydown.emit($event)"
-          />
-        </span>
-      <small [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+          ></p-inputNumber>
     </div>
   `,
   host: {
-    class: 'freud-input-text',
+    class: 'freud-input-number',
     '[class.freud-bgcolor]': `bgColor`,
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FreudInputTextComponent),
+      useExisting: forwardRef(() => FreudInputNumberComponent),
       multi: true
     }
   ]
 })
-export class FreudInputTextComponent implements ControlValueAccessor {
+
+export class FreudInputNumberComponent implements ControlValueAccessor {
   @Input() label: string = '';
-  @Input() helpText: string = '';
+  @Input() format: boolean = true;
+  @Input() allowEmpty: boolean = true;
+  @Input() useGrouping: boolean = true;
+  @Input() showButtons: boolean = false;
+  @Input() buttonLayout: 'stacked' | 'horizontal' | 'vertical' = 'stacked';
+  @Input() incrementButtonIcon: string = 'freud-icon freud-icon-chevron-up';
+  @Input() decrementButtonIcon: string = 'freud-icon freud-icon-chevron-down';
+  @Input() locale!: string;
+  @Input() localeMatcher: "lookup" | "best fit" = 'best fit';
+  @Input() mode: "decimal" | "currency" = "decimal";
+  @Input() currencyDisplay: string = "symbol";
+  @Input() currency!: string;
+  @Input() prefix!: string;
+  @Input() suffix!: string;
+  @Input() minFractionDigits!: number;
+  @Input() maxFractionDigits!: number;
+  @Input() min!: number;
+  @Input() max!: number;
+  @Input() step: number = 1;
+
   @Input() placeholder: string = '';
-  @Input() rightIcon!: string;
   @Input() invalid: boolean = false;
   @Input() bgColor = false;
   @Input() disabled = false;

@@ -14,6 +14,14 @@
 }
 
 .freud-input-text {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .p-input-icon-left>i, .p-input-icon-right>i {
+    margin-top: -10px;
+    font-size: 20px;
+  }
+
   .freud-field {
     display: flex;
     flex-flow: column;

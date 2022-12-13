@@ -98,13 +98,6 @@ BGColor.args = {
   direction: 'down',
   bgColor: true
 };
-export const BGColorDisabled = Template.bind({});
-BGColorDisabled.args = {
-  items: itemsWithLabel,
-  bgColor: true,
-  disabled: true,
-  direction: 'down'
-};
 export const Mask = Template.bind({});
 Mask.args = {
   items: itemsWithLabel,

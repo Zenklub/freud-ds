@@ -3,14 +3,14 @@ import { Story } from '@storybook/angular';
 
 const images = [
   {
-    "previewImageSrc": "/assets/img/gallery/galleria1.jpg",
-    "thumbnailImageSrc": "/assets/img/gallery/galleria1.jpg",
+    "previewImageSrc": "assets/img/gallery/galleria1.jpg",
+    "thumbnailImageSrc": "assets/img/gallery/galleria1.jpg",
     "alt": "Description for Image 1",
     "title": "Title 1"
   },
   {
-    "previewImageSrc": "/assets/img/gallery/galleria2.jpg",
-    "thumbnailImageSrc": "/assets/img/gallery/galleria2.jpg",
+    "previewImageSrc": "assets/img/gallery/galleria2.jpg",
+    "thumbnailImageSrc": "assets/img/gallery/galleria2.jpg",
     "alt": "Description for Image 2",
     "title": "Title 2"
   },

@@ -1,22 +1,19 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-input-mask:not(.freud-bgcolor) {
+.freud-input-number:not(.freud-bgcolor) {
   .freud-label, .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
-.freud-input-mask.freud-bgcolor {
+.freud-input-number.freud-bgcolor {
   .freud-label, .help-text {
     color: $neutral-color-white;
   }
 }
 
-.freud-input-mask {
-  .help-text {
-    margin-top: $spacing-size-quark;
-  }
+.freud-input-number {
   .freud-field {
     display: flex;
     flex-flow: column;
@@ -55,3 +52,4 @@
     border-color: $brand-color-pure;
   }
 }
+

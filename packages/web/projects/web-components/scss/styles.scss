@@ -31,3 +31,89 @@
 .disabled {
   opacity: $opacity-level-7;
 }
+
+
+// Input group
+.freud-input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+
+  .freud-input-text {
+    width: 100%;
+  }
+}
+
+.freud-input-group .freud-input-group-addon {
+  background: #e9ecef;
+  color: #6c757d;
+  border-top: 1px solid #ced4da;
+  border-left: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  padding: 0.5rem 0.5rem;
+  min-width: 2.357rem;
+}
+.freud-input-group .freud-input-group-addon:last-child {
+  border-right: 1px solid #ced4da;
+}
+
+.freud-input-group > .p-component,
+.freud-input-group > .p-element,
+.freud-input-group > .freud-input-text .freud-field .p-inputtext,
+.freud-input-group > .p-float-label > .p-component {
+  border-radius: 0;
+  margin: 0;
+}
+.freud-input-group > .p-component + .freud-input-group-addon,
+.freud-input-group > .p-element + .freud-input-group-addon,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext + .freud-input-group-addon,
+.freud-input-group > .p-float-label > .p-component + .freud-input-group-addon {
+  border-left: 0 none;
+}
+.freud-input-group > .p-component:focus,
+.freud-input-group > .p-element:focus,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext:focus,
+.freud-input-group > .p-float-label > .p-component:focus {
+  z-index: 1;
+}
+.freud-input-group > .p-component:focus ~ label,
+.freud-input-group > .p-element:focus ~ label,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext:focus ~ label,
+.freud-input-group > .p-float-label > .p-component:focus ~ label {
+  z-index: 1;
+}
+
+.freud-input-group .freud-input-group-addon:first-child,
+.freud-input-group .freud-button button:first-child,
+.freud-input-group freud-input:first-child input,
+.freud-input-group > .p-inputwrapper:first-child > .p-component,
+.freud-input-group > .p-inputwrapper:first-child > .p-component > .p-inputtext {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.freud-input-group .p-float-label:first-child freud-input-text {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.freud-input-group .freud-input-group-addon:last-child,
+.freud-input-group freud-button:last-child > button,
+.freud-input-group .freud-input-text:last-child  input,
+.freud-input-group > .p-inputwrapper:last-child > .p-component,
+.freud-input-group > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.freud-input-group .p-float-label:last-child input {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.p-fluid .freud-input-group .p-button {
+  width: auto;
+}
+.p-fluid .freud-input-group .p-button.p-button-icon-only {
+  width: 2.357rem;
+}
