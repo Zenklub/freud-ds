@@ -6,22 +6,23 @@ const items = [
   {name: 'Rome', code: 'RM', disabled: true},
   {name: 'London', code: 'LDN'},
   {name: 'Istanbul', code: 'IST'},
-  {name: 'Paris', code: 'PRS'}
 ];
 
 const templateHTML = `
-    <freud-select
-        [(ngModel)]="value"
-        [disabled]="disabled"
-        [label]="label"
-        [options]="options"
-        [optionLabel]="optionLabel"
-        [optionValue]="optionValue"
-        [placeholder]="placeholder"
-        [helpText]="helpText"
-        [invalid]="invalid"
-        [bgColor]="bgColor">
-    </freud-select>
+    <div style="height: 250px">
+        <freud-select
+          [(ngModel)]="value"
+          [disabled]="disabled"
+          [label]="label"
+          [options]="options"
+          [optionLabel]="optionLabel"
+          [optionValue]="optionValue"
+          [placeholder]="placeholder"
+          [helpText]="helpText"
+          [invalid]="invalid"
+          [bgColor]="bgColor">
+      </freud-select>
+    </div>
 `;
 
 const Template: Story<FreudSelectComponent> = (args: FreudSelectComponent) => ({
@@ -52,15 +53,6 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Label',
   disabled: true,
-  options: items,
-  optionLabel: 'name',
-  optionValue: 'code'
-};
-
-export const AutoResize = Template.bind({});
-AutoResize.args = {
-  label: 'Label',
-  placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
   optionValue: 'code'

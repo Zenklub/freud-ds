@@ -26,32 +26,47 @@
   }
 
   .p-inputtext {
-    height: 40px;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-dropdown {
     border-radius: $border-radius-md;
     border: 1px solid $neutral-color-light-03;
     width: 100%;
-    &::placeholder {
-      color: $neutral-color-dark-02;
-      opacity: 1;
-      @include typography($font-size-xs, $font-weight-regular, 24px);
-    }
   }
 
   .p-inputtext.ng-invalid {
     border: 1px solid $feedback-color-negative-04;
-    &::placeholder {
-      color: $feedback-color-negative-04;
-      opacity: 1;
-      @include typography($font-size-xs, $font-weight-regular, 24px);
-    }
+    @include typography($font-size-xs, $font-weight-regular, 24px);
   }
 
-  .p-inputtext:enabled:focus {
+  .p-dropdown:not(.p-disabled).p-focus {
     box-shadow: $shadow-focused-zen;
     border-color: $brand-color-pure;
   }
 
-  .p-inputtext:enabled:hover {
+  .p-dropdown:not(.p-disabled):hover {
     border-color: $brand-color-pure;
   }
+  .p-dropdown .p-dropdown-panel {
+    border-radius: $border-radius-md;
+    margin-top: 1px;
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 12px 1rem;
+    color: $neutral-color-dark-03;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+  }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+    color: $neutral-color-dark-03;
+    background-color: $neutral-color-light-02;
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
 }
+
