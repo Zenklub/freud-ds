@@ -1,19 +1,22 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-input-number:not(.freud-bgcolor) {
+.freud-select:not(.freud-bgcolor) {
   .freud-label, .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
-.freud-input-number.freud-bgcolor {
+.freud-select.freud-bgcolor {
   .freud-label, .help-text {
     color: $neutral-color-white;
   }
 }
 
-.freud-input-number {
+.freud-select {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
   .freud-field {
     display: flex;
     flex-flow: column;
@@ -22,14 +25,11 @@
     margin-bottom: $spacing-size-quark;
   }
 
-  .p-inputnumber:not(.p-inputnumber-buttons-vertical) {
-    width: 100%;
-  }
-
   .p-inputtext {
     height: 40px;
     border-radius: $border-radius-md;
     border: 1px solid $neutral-color-light-03;
+    width: 100%;
     &::placeholder {
       color: $neutral-color-dark-02;
       opacity: 1;
@@ -54,15 +54,4 @@
   .p-inputtext:enabled:hover {
     border-color: $brand-color-pure;
   }
-  .p-button:hover {
-    background: $brand-color-03;
-    border-radius: $border-radius-md;
-    border: 1px solid $brand-color-03;
-  }
-  .p-button {
-    border-radius: $border-radius-md;
-    background-color: $brand-color-pure;
-    border: 1px solid $brand-color-pure;
-  }
 }
-
