@@ -1,0 +1,102 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "FreudDSIcons-debug.module": ["<FreudDSIcons-debug.module>"]
+  "FreudDSPackageTests-debug.test": ["<FreudDSPackageTests-debug.test>"]
+  "FreudDSTests-debug.module": ["<FreudDSTests-debug.module>"]
+  "FreudDSTheme-debug.module": ["<FreudDSTheme-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<FreudDSIcons-debug.module>","<FreudDSTheme-debug.module>"]
+  "test": ["<FreudDSIcons-debug.module>","<FreudDSPackageTests-debug.test>","<FreudDSTests-debug.module>","<FreudDSTheme-debug.module>"]
+default: "main"
+nodes:
+  "/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/":
+    is-directory-structure: true
+  "/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/":
+    is-directory-structure: true
+  "/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Tests/":
+    is-directory-structure: true
+commands:
+  "<FreudDSIcons-debug.module>":
+    tool: phony
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FontRegister.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FreudDSFreudIcons.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.swiftmodule"]
+    outputs: ["<FreudDSIcons-debug.module>"]
+
+  "<FreudDSPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSPackageTests.xctest/Contents/MacOS/FreudDSPackageTests"]
+    outputs: ["<FreudDSPackageTests-debug.test>"]
+
+  "<FreudDSTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.build/FreudDSTests.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.swiftmodule"]
+    outputs: ["<FreudDSTests-debug.module>"]
+
+  "<FreudDSTheme-debug.module>":
+    tool: phony
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSShadow.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.swiftmodule"]
+    outputs: ["<FreudDSTheme-debug.module>"]
+
+  "C.FreudDSIcons-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/FontRegister.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/FreudDSFreudIcons.swift"]
+    outputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FontRegister.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FreudDSFreudIcons.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "FreudDSIcons"
+    module-output-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.swiftmodule"
+    import-paths: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build"
+    objects: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FontRegister.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FreudDSFreudIcons.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.12","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FreudDSIcons-Swift.h","-Xcc","-I/Users/erick/Workspace/Zenklub/freud-ds/ios","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/FontRegister.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/FreudDSFreudIcons.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.FreudDSPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.build/FreudDSTests.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSShadow.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens.swift.o"]
+    outputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSPackageTests.xctest/Contents/MacOS/FreudDSPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/FreudDSPackageTests.xctest/Contents/MacOS/FreudDSPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug","-o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSPackageTests.xctest/Contents/MacOS/FreudDSPackageTests","-module-name","FreudDSPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-target","x86_64-apple-macosx11.0","-Xlinker","-add_ast_path","-Xlinker","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.FreudDSTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Tests/FreudDSTests.swift","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.swiftmodule"]
+    outputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.build/FreudDSTests.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "FreudDSTests"
+    module-output-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.swiftmodule"
+    import-paths: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.build"
+    objects: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTests.build/FreudDSTests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx11.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Tests/FreudDSTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.FreudDSTheme-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSFontFamily+Values.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSFontFamily.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSShadow.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTheme.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTokens+Values.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTokens.swift"]
+    outputs: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSShadow.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "FreudDSTheme"
+    module-output-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.swiftmodule"
+    import-paths: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build"
+    objects: ["/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSFontFamily.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSShadow.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens+Values.swift.o","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTokens.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.12","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme-Swift.h","-Xcc","-I/Users/erick/Workspace/Zenklub/freud-ds/ios","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSFontFamily+Values.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSFontFamily.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSShadow.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTheme.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTokens+Values.swift","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/FreudDSTokens.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSIcons/Sources/","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Sources/","/Users/erick/Workspace/Zenklub/freud-ds/ios/FreudDSTheme/Tests/","/Users/erick/Workspace/Zenklub/freud-ds/Package.swift","/Users/erick/Workspace/Zenklub/freud-ds/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

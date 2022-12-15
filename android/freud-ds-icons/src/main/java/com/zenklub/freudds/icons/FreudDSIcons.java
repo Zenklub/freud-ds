@@ -23,7 +23,7 @@
  * 
  * 
  * Do not edit directly
- * Generated on Wed, 31 Aug 2022 13:03:09 GMT
+ * Generated on Wed, 31 Aug 2022 19:34:14 GMT
 */
 
 package com.zenklub.freudds.icons;

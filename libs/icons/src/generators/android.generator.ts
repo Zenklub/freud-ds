@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import chalk from 'chalk';
-import { iconTemplate, enumNameTemplate, stringTemplate, stringResourceTemplate } from '../templates/android-icon.template';
+import { androidIconTemplate, androidEnumNameTemplate, androidStringTemplate, androidStringResourceTemplate } from '../templates/android-icon.template';
 import { TemplateBuilder } from '../templates/template-builder';
 import capitalize from 'lodash/capitalize';
 import { IconographyGenerator } from './iconography.generator';
@@ -70,7 +70,7 @@ export class AndroidIconographyGenerator {
     const strings = Object.keys(charsMap).map((key) => {
       const name = `${this.iconName}_${key.replace(/-/gi, "_").toLowerCase()}`
       return TemplateBuilder
-        .with(stringTemplate)
+        .with(androidStringTemplate)
         .setReplacement('NAME', name)
         .setReplacement('CODE', `&#x${Number(charsMap[key]).toString(16)};`)
         .build()
@@ -90,7 +90,7 @@ export class AndroidIconographyGenerator {
     const header = this.getXmlHeader();
 
     const content = TemplateBuilder
-      .with(stringResourceTemplate)
+      .with(androidStringResourceTemplate)
       .setReplacement('HEADER', header)
       .setReplacement('RESOURCES', `  ${current}${strings}`)
       .build();
@@ -104,14 +104,14 @@ export class AndroidIconographyGenerator {
 
     const enumValues = Object.keys(charsMap).map((key) => {
       return TemplateBuilder
-        .with(enumNameTemplate)
+        .with(androidEnumNameTemplate)
         .setReplacement('NAME', key.replace(/-/gi, "_").toUpperCase())
         .setReplacement('CODE', `0x${Number(charsMap[key]).toString(16)}`)
         .build()
     }).join(",\n  ")
 
     const code = TemplateBuilder
-      .with(iconTemplate)
+      .with(androidIconTemplate)
       .setReplacement('ENUM_VALUES', enumValues)
       .setReplacement('ENUM_NAME', this.className)
       .setReplacement('ICON_FAMILY', this.familyName)

@@ -1,6 +1,6 @@
-export const enumNameTemplate = `{{NAME}}({{CODE}})`;
+export const androidEnumNameTemplate = `{{NAME}}({{CODE}})`;
 
-export const iconTemplate = `
+export const androidIconTemplate = `
 package com.zenklub.freudds.icons;
 
 public enum {{ENUM_NAME}} {
@@ -18,5 +18,5 @@ public enum {{ENUM_NAME}} {
 }
 `;
 
-export const stringResourceTemplate = `<?xml version="1.0" encoding="utf-8"?>\n{{HEADER}}\n<resources>\n{{RESOURCES}}\n</resources>`;
-export const stringTemplate = `<string name="{{NAME}}">{{CODE}}</string>`;
+export const androidStringResourceTemplate = `<?xml version="1.0" encoding="utf-8"?>\n{{HEADER}}\n<resources>\n{{RESOURCES}}\n</resources>`;
+export const androidStringTemplate = `<string name="{{NAME}}">{{CODE}}</string>`;

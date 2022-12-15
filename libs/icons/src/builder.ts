@@ -4,6 +4,7 @@ import chalk from 'chalk';
 import { copyFolderRecursiveSync, logSymbols } from './utils';
 import { IconographyGenerator } from './generators/iconography.generator';
 import { AndroidIconographyGenerator } from './generators/android.generator';
+import { SwiftIconographyGenerator } from './generators/swift.generator';
 
 
 export class Builder {
@@ -22,6 +23,13 @@ export class Builder {
     await generator.generate();
 
     await AndroidIconographyGenerator
+      .with(generator)
+      .setLicenseText(this.licenseContents)
+      .setResource('brand', 'freud-brand')
+      .setResource('emoji', 'freud-emoji')
+      .generate()
+
+    await SwiftIconographyGenerator
       .with(generator)
       .setLicenseText(this.licenseContents)
       .setResource('brand', 'freud-brand')
@@ -55,8 +63,8 @@ export class Builder {
 
   async build() {
     try {
-      await this.cleanUp(true);
-      await this.copyResources();
+      // await this.cleanUp(true);
+      // await this.copyResources();
       await this.generateIconography();
 
       console.log(chalk.bold.green('\nBuild completed successfully!'));

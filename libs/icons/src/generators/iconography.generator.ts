@@ -32,8 +32,8 @@ export class IconographyGenerator {
   public async generate() {
     console.log(chalk.bold.yellow(`> Transforming ${this.sourceFolder} into font (${this.fontName})\n`));
 
-    await this.clearFont();
-    await this.convertSvgToFontStep();
+    // await this.clearFont();
+    // await this.convertSvgToFontStep();
 
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     this._charsMap = require(path.resolve(this.destinationDir, `${this.fontName}.json`));
@@ -67,7 +67,7 @@ export class IconographyGenerator {
     }
 
     this.progress.clear();
-    console.log(logSymbols.success, chalk.bold.green('Done'));
+    console.log(logSymbols.success, chalk.bold.green('Done\n'));
   }
 
   async convertSvgToFontStep() {
@@ -103,6 +103,6 @@ export class IconographyGenerator {
     createDir(iconsConfig.outputDir);
 
     await generateFonts(iconsConfig);
-    console.log(logSymbols.success, chalk.bold.green('Done\n\n'));
+    console.log(logSymbols.success, chalk.bold.green('Done\n'));
   }
 }

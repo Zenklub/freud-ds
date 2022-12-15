@@ -1,0 +1,4 @@
+module FreudDSTheme {
+    header "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSTheme.build/FreudDSTheme-Swift.h"
+    requires objc
+}
