@@ -15,6 +15,8 @@ export * from './components/forms/input-textarea';
 export * from './components/forms/input-number';
 export * from './components/forms/input-mask';
 export * from './components/forms/select';
+export * from './components/forms/multi-select';
+export * from './components/forms/cascade-select';
 
 // Feedback
 export * from './components/feedback/alert-messages';
