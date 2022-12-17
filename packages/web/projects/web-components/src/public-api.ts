@@ -22,6 +22,7 @@ export * from './components/forms/cascade-select';
 export * from './components/forms/listbox';
 export * from './components/forms/checkbox';
 export * from './components/forms/switch';
+export * from './components/forms/radio-button';
 
 // Feedback
 export * from './components/feedback/alert-messages';

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreudInputPasswordComponent } from './radio-button.component';
+import { FreudRadioButtonComponent } from './radio-button.component';
 
 describe('FreudInputTextComponent', () => {
-  let component: FreudInputPasswordComponent;
-  let fixture: ComponentFixture<FreudInputPasswordComponent>;
+  let component: FreudRadioButtonComponent;
+  let fixture: ComponentFixture<FreudRadioButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudInputPasswordComponent ]
+      declarations: [ FreudRadioButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreudInputPasswordComponent);
+    fixture = TestBed.createComponent(FreudRadioButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

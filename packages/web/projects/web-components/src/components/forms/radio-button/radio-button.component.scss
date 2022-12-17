@@ -1,55 +1,33 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-input-password:not(.freud-bgcolor) {
-  .freud-label {
+.freud-radio-button:not(.freud-bgcolor) {
+  .p-radiobutton-label {
     color: $neutral-color-dark-04;
   }
 }
 
-.freud-input-password.freud-bgcolor {
-  .freud-label {
+.freud-radio-button.freud-bgcolor {
+  .p-radiobutton-label {
     color: $neutral-color-white;
   }
 }
 
-.freud-input-password {
-  .freud-field {
-    display: flex;
-    flex-flow: column;
-  }
-  .freud-label {
-    margin-bottom: $spacing-size-quark;
-  }
-
-  .p-inputtext {
-    height: 40px;
-    border-radius: $border-radius-md;
-    border: 1px solid $neutral-color-light-03;
-    width: 100%;
-    &::placeholder {
-      color: $neutral-color-dark-02;
-      opacity: 1;
-      @include typography($font-size-xs, $font-weight-regular, 24px);
-    }
-  }
-
-  .p-inputtext.ng-invalid {
-    border: 1px solid $feedback-color-negative-04;
-    &::placeholder {
-      color: $feedback-color-negative-04;
-      opacity: 1;
-      @include typography($font-size-xs, $font-weight-regular, 24px);
-    }
-  }
-
-  .p-inputtext:enabled:focus {
-    box-shadow: $shadow-focused-zen;
+.freud-radio-button {
+  .p-radiobutton .p-radiobutton-box.p-highlight,
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-highlight:hover {
+    background-color: $brand-color-pure;
     border-color: $brand-color-pure;
   }
 
-  .p-inputtext:enabled:hover {
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box:hover,
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus {
     border-color: $brand-color-pure;
+  }
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus {
+    box-shadow: $shadow-focused-zen !important;
+  }
+  .p-radiobutton-label {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
   }
 }
-

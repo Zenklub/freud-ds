@@ -13,33 +13,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   styleUrls: ['./radio-button.component.scss'],
   encapsulation: ViewEncapsulation.None,
   template: `
-    <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <p-password
-          [id]="id"
-          [class.ng-invalid]="invalid"
-          [class.ng-dirty]="invalid"
-          [(ngModel)]="value"
-          [placeholder]="placeholder || ''"
-          [disabled]="disabled"
-          [required]="required"
-          [toggleMask]="toggleMask"
-          [feedback]="feedback"
+    <p-radioButton
+      [id]="id"
+      [(ngModel)]="value"
+      [disabled]="disabled"
+      [name]="name"
+      [value]="radioValue"
+      [label]="label"
+      [inputId]="inputId"
 
-          [promptLabel]="promptLabel"
-          [mediumRegex]="mediumRegex"
-          [strongRegex]="strongRegex"
-          [weakLabel]="weakLabel"
-          [mediumLabel]="mediumLabel"
-          [strongLabel]="strongLabel"
-
-          (ngModelChange)="modelValueChange()"
-          (focus)="onFocus.emit($event)"
-          (blur)="onBlur.emit($event)"
-          (input)="onInput.emit($event)"
-          (keydown)="onKeydown.emit($event)">
-        </p-password>
-    </div>
+      (focus)="onFocus.emit($event)"
+      (blur)="onBlur.emit($event)">
+    </p-radioButton>
   `,
   host: {
     class: 'freud-radio-button',
@@ -48,36 +33,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FreudInputPasswordComponent),
+      useExisting: forwardRef(() => FreudRadioButtonComponent),
       multi: true
     }
   ]
 })
-export class FreudInputPasswordComponent implements ControlValueAccessor {
+export class FreudRadioButtonComponent implements ControlValueAccessor {
   @Input() label: string = '';
-  @Input() placeholder: string = '';
-  @Input() promptLabel!: string;
-  @Input() mediumRegex: string = '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})';
-  @Input() strongRegex: string = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})';
-  @Input() weakLabel!: string;
-  @Input() mediumLabel!: string;
-  @Input() strongLabel!: string;
-  @Input() invalid: boolean = false;
-  @Input() toggleMask: boolean = false;
-  @Input() feedback: boolean = true;
-  @Input() bgColor = false;
+  @Input() bgColor: boolean = false;
+  @Input() inputId!: string;
+  @Input() name!: string;
   @Input() disabled = false;
+  @Input() radioValue!: any;
   @Input() required: boolean = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
-  @Output() onInput: EventEmitter<any> = new EventEmitter();
 
-  @Output() onKeydown: EventEmitter<any> = new EventEmitter();
-
-  private _value!: string;
+  private _value!: any;
 
   modelValueChange() {
     this.valueChange.emit(this.value);
