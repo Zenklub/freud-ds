@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   forwardRef,
@@ -14,7 +13,6 @@ export type listboxFilterMatchModes = "contains" | "startsWith" | "endsWith" | "
 @Component({
   selector: 'freud-listbox',
   styleUrls: ['./listbox.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">

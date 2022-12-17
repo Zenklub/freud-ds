@@ -6,7 +6,6 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
 @Component({
   selector: 'freud-button',
   styleUrls: ['./button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <p-button [disabled]="disabled" [loading]="loading" [icon]="icon" [type]="type">

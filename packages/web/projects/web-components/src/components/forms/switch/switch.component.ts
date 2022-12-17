@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   forwardRef,
@@ -12,7 +11,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 @Component({
   selector: 'freud-input-switch',
   styleUrls: ['./switch.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <p-inputSwitch
@@ -42,19 +40,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 export class FreudSwitchComponent implements ControlValueAccessor {
   @Input() invalid: boolean = false;
   @Input() disabled = false;
-  @Input() name!: string;
-  @Input() falseValue!: any;
-  @Input() trueValue!: any;
+  @Input() name: string = '';
+  @Input() falseValue: any = false;
+  @Input() trueValue: any = true;
   @Input() required: boolean = false;
   @Input() id: string = Math.random().toString(36).substring(2);
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
-  private _value!: any;
-
-  modelValueChange() {
-    this.valueChange.emit(this.value);
-  }
+  private _value!: boolean;
 
   onModelChange: any = (_: string) => { };
 
@@ -66,6 +60,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
 
   public set value(v){
     this._value = v;
+    this.onChange.emit(v);
     this.onModelChange(this._value);
     this.onModelTouched();
   }
@@ -85,7 +80,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
   }
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: boolean){
     this.value = newValue;
   }
 }

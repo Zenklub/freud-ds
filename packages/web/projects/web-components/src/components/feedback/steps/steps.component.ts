@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { FreudMenuItem } from "../../../api/menu.interface";
 
 export interface StepMenu extends FreudMenuItem {}
@@ -14,7 +14,6 @@ export interface StepMenu extends FreudMenuItem {}
     </p-steps>
   `,
   styleUrls: ['./steps.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-steps',

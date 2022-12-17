@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 type avatarSizes = 'sm' | 'md' | 'lg';
 @Component({
   selector: 'freud-avatar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
     <p-avatar

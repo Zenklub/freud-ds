@@ -25,7 +25,7 @@
     border-color: $brand-color-pure;
   }
   .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
-    box-shadow: unset !important;
+    box-shadow: $shadow-focused-zen !important;
   }
   .p-checkbox-label {
     @include typography($font-size-xs, $font-weight-regular, 24px);

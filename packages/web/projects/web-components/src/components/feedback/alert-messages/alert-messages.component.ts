@@ -10,7 +10,6 @@ type severities = 'success' | 'info' | 'warn' | 'error';
     <p-messages [(value)]="messages" [closable]="closable"></p-messages>
   `,
   styleUrls: ['./alert-messages.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-alert-messages'
@@ -31,7 +30,6 @@ export class FreudAlertMessagesComponent {
     <p-message [severity]="severity" [text]="text"></p-message>
   `,
   styleUrls: ['./alert-messages.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-alert-messages'

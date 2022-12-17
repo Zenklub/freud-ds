@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 import { Component, Input } from '@angular/core';
 
 type position = 'top' | 'bottom' | 'left' | 'right';
@@ -13,7 +13,6 @@ type position = 'top' | 'bottom' | 'left' | 'right';
     </div>
   `,
   styleUrls: ['./tooltip.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class FreudTooltipComponent {

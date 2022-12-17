@@ -6,13 +6,13 @@ import {
   Default,
   BGColor,
   Disabled,
-  Invalid
 } from './Switch.stories.ts';
+import {FormsModule} from "@angular/forms";
 
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudSwitchModule],
+      imports: [FreudSwitchModule, FormsModule],
     })
   ]}
   parameters={{
@@ -49,11 +49,6 @@ import { FreudSwitchModule } from '@freud-ds/web-components';
 ### Default
 <Canvas>
   <Story story={Default}/>
-</Canvas>
-
-### Invalid
-<Canvas>
-  <Story story={Invalid}/>
 </Canvas>
 
 ### Disabled

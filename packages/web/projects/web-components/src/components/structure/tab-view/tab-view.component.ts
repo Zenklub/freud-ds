@@ -1,5 +1,5 @@
 import {
-  AfterContentInit, AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef,
+  AfterContentInit, AfterViewChecked, ChangeDetectorRef,
   Component,
   ContentChildren, ElementRef,
   EventEmitter,
@@ -89,7 +89,6 @@ export class FreudTabPanelComponent {
   `,
   styleUrls: ['./tab-view.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'freud-tab-view p-element',
     '[class.freud-bgcolor]': `bgColor`,

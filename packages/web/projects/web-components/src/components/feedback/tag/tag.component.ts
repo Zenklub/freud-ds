@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
 
@@ -12,7 +12,6 @@ type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
     '[class.outline]':  'outline'
   },
   styleUrls: ['./tag.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class FreudTagComponent {
