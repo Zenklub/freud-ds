@@ -6,7 +6,7 @@ import {
   Default,
   BGColor,
   Disabled,
-  Invalid
+  Label
 } from './Checkbox.stories.ts';
 
 <Meta
@@ -43,6 +43,19 @@ title="@freud-ds/web-components/Forms/Checkbox" component={FreudCheckboxComponen
 import { FreudCheckboxModule } from '@freud-ds/web-components';
 ```
 
+## Getting Started
+O modo múltiplo é ativado por padrão, a propriedade ngModel refere-se a uma matriz para vincular os valores selecionados.
+
+### Model Driven Forms
+A caixa de seleção também pode ser usada em um formulário orientado a modelo.
+Neste caso, devido a um problema no Angular, vincule a instância formControl em vez de usar formControlName.
+```html<!-- Wrong -->
+<freud-checkbox formControlName="cities"></freud-checkbox>
+
+<!-- Correct -->
+<freud-checkbox [formControl]="myFormGroup.controls['cities']"></freud-checkbox>
+```
+
 ## <a id="exemplos"></a>Exemplos
 <br />
 
@@ -51,9 +64,9 @@ import { FreudCheckboxModule } from '@freud-ds/web-components';
   <Story story={Default}/>
 </Canvas>
 
-### Invalid
+### Label
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Label}/>
 </Canvas>
 
 ### Disabled
@@ -67,5 +80,8 @@ import { FreudCheckboxModule } from '@freud-ds/web-components';
 </Canvas>
 
 ## <a id="api"></a>API
+
+### Label
+O atributo `label` fornece um texto de rótulo para a caixa de seleção. Esse rótulo também pode ser clicado e alterna o estado marcado.
 
 <ArgsTable of={FreudCheckboxComponent} />

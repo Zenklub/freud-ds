@@ -34,6 +34,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   `,
   host: {
     class: 'freud-checkbox',
+    '[class.freud-bgcolor]': `bgColor`,
   },
   providers: [
     {
@@ -45,12 +46,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 })
 export class FreudCheckboxComponent implements ControlValueAccessor {
   @Input() invalid: boolean = false;
-  @Input() binary: boolean = false;
+  @Input() binary: boolean = true;
   @Input() disabled = false;
   @Input() label!: string;
+  @Input() bgColor: boolean = false;
   @Input() name!: string;
-  @Input() falseValue!: any;
-  @Input() trueValue!: any;
+  @Input() falseValue: any = false;
+  @Input() trueValue: any = true;
 
   @Input() checkboxIcon: string = 'freud-icon freud-icon-check';
   @Input() inputId!: string;

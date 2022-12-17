@@ -7,6 +7,7 @@ const templateHTML = `
         [(ngModel)]="value"
         [disabled]="disabled"
         [label]="label"
+        [bgColor]="bgColor"
         [invalid]="invalid">
     </freud-checkbox>
 `;
@@ -17,13 +18,13 @@ const Template: Story<FreudCheckboxComponent> = (args: FreudCheckboxComponent) =
 });
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Label',
-  value: '',
+  value: false,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   label: 'Label',
+  bgColor: true
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
@@ -31,8 +32,8 @@ Disabled.args = {
   disabled: true,
 };
 
-export const Invalid = Template.bind({});
-Invalid.args = {
+export const Label = Template.bind({});
+Label.args = {
   label: 'Label',
 };
 
