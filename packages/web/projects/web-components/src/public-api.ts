@@ -20,6 +20,8 @@ export * from './components/forms/auto-complete';
 export * from './components/forms/multi-select';
 export * from './components/forms/cascade-select';
 export * from './components/forms/listbox';
+export * from './components/forms/checkbox';
+// export * from './components/forms/radio-button';
 
 // Feedback
 export * from './components/feedback/alert-messages';
