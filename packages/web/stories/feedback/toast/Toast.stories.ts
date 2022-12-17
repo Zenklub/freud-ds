@@ -1,5 +1,6 @@
 import { FreudToastComponent, FreudMessage } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { HeadingBGColor } from "../../typography/typography.stories";
 
 const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
   props: { ...args },
@@ -10,3 +11,4 @@ const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
 });
 
 export const Default = Template.bind({});
+Default.storyName = 'Theme'

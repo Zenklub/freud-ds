@@ -33,3 +33,8 @@ const TemplateInline: Story<FreudAlertMessagesComponent> = (args: FreudAlertMess
 });
 export const Inline = TemplateInline.bind({});
 
+export const BGColor = Template.bind({});
+BGColor.args = {
+  messages: messages
+}
+

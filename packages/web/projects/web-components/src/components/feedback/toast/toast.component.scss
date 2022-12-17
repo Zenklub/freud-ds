@@ -8,6 +8,10 @@
     color: $neutral-color-dark-04;
     box-shadow: unset;
 
+    .p-toast-message-content .p-toast-message-icon {
+      font-size: 24px;
+    }
+
     &.p-toast-message-success {
       background-color: $feedback-color-positive-01;
       .p-toast-message-icon {

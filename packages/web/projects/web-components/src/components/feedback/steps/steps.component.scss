@@ -12,6 +12,7 @@
   }
   .p-steps .p-steps-item:not(.p-highlight) .p-menuitem-link .p-steps-number {
     color: $neutral-color-dark-01;
+    @include typography($font-size-xs, $font-weight-semibold, auto);
   }
   .p-steps .p-steps-item.p-highlight .p-steps-number {
     background-color: $brand-color-pure;
@@ -25,7 +26,8 @@
     }
   }
 
-  .p-steps .p-steps-item .p-menuitem-link .p-steps-title {
+  .p-steps .p-steps-item .p-menuitem-link .p-steps-title,
+  .p-steps .p-steps-item.p-highlight .p-steps-number {
     @include typography($font-size-xs, $font-weight-semibold, auto);
   }
 

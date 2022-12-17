@@ -4,7 +4,8 @@ import { FreudAlertMessagesComponent, FreudAlertMessagesModule } from '@freud-ds
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  Inline
+  Inline,
+  BGColor
 } from './AlertMessages.stories.ts';
 
 <Meta
@@ -57,6 +58,11 @@ import { FreudAlertMessagesComponent  } from '@freud-ds/web-components';
 Para os alertas inline utilize o componente `freud-alert-message`
 <Canvas>
   <Story story={Inline}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## API
