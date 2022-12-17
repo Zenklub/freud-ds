@@ -11,6 +11,10 @@
     place-content: flex-end;
   }
 
+  .p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+    font-size: 24px;
+  }
+
   .p-dialog.p-confirm-dialog .p-confirm-dialog-message {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-regular, 24px);

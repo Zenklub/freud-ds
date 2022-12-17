@@ -20,6 +20,11 @@
     border-color: $brand-color-pure;
   }
 
+  .p-radiobutton .p-radiobutton-box {
+    width: 19px;
+    height: 19px;
+  }
+
   .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box:hover,
   .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus {
     border-color: $brand-color-pure;

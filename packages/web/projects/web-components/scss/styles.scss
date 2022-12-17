@@ -50,20 +50,26 @@
 }
 
 .freud-input-group .freud-input-group-addon {
-  background: #e9ecef;
+  background: $neutral-color-light-02;
   color: #6c757d;
-  border-top: 1px solid #ced4da;
-  border-left: 1px solid #ced4da;
-  border-bottom: 1px solid #ced4da;
-  padding: 0.5rem 0.5rem;
-  min-width: 2.357rem;
+  padding: 8px;
+  border-top: 1px solid $neutral-color-light-02;
+  border-left: 1px solid $neutral-color-light-02;
+  border-bottom: 1px solid $neutral-color-light-02;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  @include typography($font-size-xs, $font-weight-bold, auto);
+  font-family: $font-family-base;
 }
 .freud-input-group .freud-input-group-addon:last-child {
-  border-right: 1px solid #ced4da;
+  border-right: 1px solid $neutral-color-light-02;
 }
 
 .freud-input-group > .p-component,
 .freud-input-group > .p-element,
+.freud-input-group > .freud-btn .p-button,
 .freud-input-group > .freud-input-text .freud-field .p-inputtext,
 .freud-input-group > .p-float-label > .p-component {
   border-radius: 0;
@@ -89,8 +95,8 @@
 }
 
 .freud-input-group .freud-input-group-addon:first-child,
-.freud-input-group .freud-button button:first-child,
-.freud-input-group freud-input:first-child input,
+.freud-input-group .freud-btn:first-child .p-button,
+.freud-input-group freud-input-text:first-child .freud-field .p-inputtext,
 .freud-input-group > .p-inputwrapper:first-child > .p-component,
 .freud-input-group > .p-inputwrapper:first-child > .p-component > .p-inputtext {
   border-top-left-radius: 8px;
@@ -103,8 +109,8 @@
 }
 
 .freud-input-group .freud-input-group-addon:last-child,
-.freud-input-group freud-button:last-child > button,
-.freud-input-group .freud-input-text:last-child  input,
+.freud-input-group .freud-btn:last-child .p-button,
+.freud-input-group .freud-input-text:last-child  .freud-field .p-inputtext,
 .freud-input-group > .p-inputwrapper:last-child > .p-component,
 .freud-input-group > .p-inputwrapper:last-child > .p-component > .p-inputtext {
   border-top-right-radius: 8px;
