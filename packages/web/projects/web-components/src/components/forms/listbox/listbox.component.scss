@@ -1,0 +1,78 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+
+.freud-listbox {
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .p-inputtext {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-listbox {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    box-shadow: $shadow-level-3;
+  }
+
+  .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
+    color: $neutral-color-dark-03;
+    background-color: $neutral-color-light-02;
+  }
+
+  .p-listbox .p-listbox-list .p-listbox-item {
+    color: $neutral-color-dark-03;
+  }
+  .p-listbox .p-listbox-list .p-listbox-item:focus {
+    box-shadow: unset;
+  }
+
+  .p-listbox .p-listbox-list .p-listbox-item.p-highlight {
+    color: $brand-color-pure;
+    background-color: $brand-color-01;
+  }
+
+  // Input
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-inputtext:enabled:hover {
+    border-color: $brand-color-pure;
+  }
+
+  .p-listbox .p-listbox-header {
+    background-color: $neutral-color-light-01;
+  }
+
+  // Checkbox
+  .p-checkbox .p-checkbox-box.p-highlight,
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background-color: $brand-color-pure;
+    border-color: $brand-color-pure;
+  }
+
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: $brand-color-pure;
+  }
+
+}
+
