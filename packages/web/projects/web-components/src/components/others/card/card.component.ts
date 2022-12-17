@@ -7,6 +7,13 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
       [header]="header"
       [subheader]="subheader"
       [style]="style">
+      <ng-template pTemplate="header">
+        <ng-content select="[freudTemplateHeader]"></ng-content>
+      </ng-template>
+      <ng-content></ng-content>
+      <ng-template pTemplate="footer">
+        <ng-content select="[freudTemplatefooter]"></ng-content>
+      </ng-template>
     </p-card>
   `,
   styleUrls: ['./card.component.scss'],

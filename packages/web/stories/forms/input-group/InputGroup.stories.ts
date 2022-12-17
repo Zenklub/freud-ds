@@ -61,7 +61,7 @@ const TemplateCheckboxAndText: Story<FreudInputTextComponent> = (args: FreudInpu
         <freud-checkbox></freud-checkbox>
       </span>
       <freud-input-text placeholder="Username"></freud-input-text>
-      <span class="freud-input-group-addon">www</span>
+      <span class="freud-input-group-addon">ww</span>
     </div>
   `,
 })

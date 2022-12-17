@@ -45,6 +45,7 @@ export * from './components/media/image';
 
 // Others
 export * from './components/others/select-button';
+export * from './components/others/card';
 
 // Structure
 export * from './components/structure/menubar';
