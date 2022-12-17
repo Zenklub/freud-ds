@@ -58,8 +58,8 @@
     border-radius: 0;
   }
   .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-dark-03;
-    background-color: $neutral-color-light-02;
+    color: $brand-color-pure;
+    background-color: $brand-color-01;
   }
 
   .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item.p-highlight {
