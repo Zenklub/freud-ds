@@ -46,6 +46,11 @@ export * from './components/media/image';
 // Others
 export * from './components/others/select-button';
 export * from './components/others/card';
+export * from './components/others/block-ui';
+export * from './components/others/calendar';
+export * from './components/others/divider';
+export * from './components/others/scroll-top';
+export * from './components/others/slider';
 
 // Structure
 export * from './components/structure/menubar';

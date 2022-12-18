@@ -2,42 +2,43 @@ import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation }
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
-  selector: 'freud-select-button',
+  selector: 'freud-slider',
   template: `
-    <p-selectButton
-      [options]="options"
-      [(ngModel)]="selectedOption"
-      [multiple]="multiple"
+    <p-slider
+      [(ngModel)]="value"
+      [min]="min"
+      [max]="max"
+      [step]="step"
+      [range]="range"
+      [orientation]="orientation"
       [tabindex]="tabindex"
-      [optionDisabled]="optionDisabled"
-      [optionLabel]="optionLabel"
       [disabled]="disabled"
+      (ngModelChange)="modelValueChange()"
       (onChange)="selectedOptionChange.emit($event)">
-    </p-selectButton>
+    </p-slider>
   `,
-  styleUrls: ['./select-button.component.scss'],
+  styleUrls: ['./slider.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'freud-select-button',
-    '[class.freud-select-bgcolor]': `bgColor`,
+    class: 'freud-slider',
+    '[class.freud-bgcolor]': `bgColor`,
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FreudSelectButtonComponent),
+      useExisting: forwardRef(() => FreudSliderComponent),
       multi: true
     }
   ]
 })
-export class FreudSelectButtonComponent implements ControlValueAccessor {
-
-  @Input() options!: any[];
-  @Input() optionLabel!: string;
-  @Input() selectedOption!: any;
-  @Input() multiple: boolean = false;
+export class FreudSliderComponent implements ControlValueAccessor {
+  @Input() min: number = 0;
+  @Input() max: number = 100;
+  @Input() step: number = 1;
+  @Input() range: boolean = false;
+  @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
   @Input() disabled: boolean = false;
   @Input() bgColor: boolean = false;
-  @Input() optionDisabled!: string;
   @Input() tabindex: number = 0;
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() selectedOptionChange: EventEmitter<any> = new EventEmitter<any>();

@@ -1,9 +1,11 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Card } from "primeng/card";
 
 @Component({
   selector: 'freud-card',
   template: `
     <p-card
+      #cardElement
       [header]="header"
       [subheader]="subheader"
       [style]="style">
@@ -27,5 +29,10 @@ export class FreudCardComponent {
   @Input() header!: string;
   @Input() subheader!: string;
   @Input() style!: string;
+  @ViewChild('cardElement') cardElement!: Card;
+
+  getBlockableElement() {
+    return this.cardElement.getBlockableElement();
+  }
 
 }

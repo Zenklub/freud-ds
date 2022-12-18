@@ -1,0 +1,40 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-slider:not(.freud-bgcolor) {
+  .p-slider .p-slider-range {
+    background-color: $brand-color-pure;
+  }
+  .p-slider .p-slider-handle {
+    background-color: $brand-color-pure;
+    border-color: $brand-color-pure;
+  }
+  .p-slider {
+    background: $neutral-color-light-02;
+  }
+}
+
+.freud-slider.freud-bgcolor {
+  .p-slider .p-slider-range {
+    background-color: $neutral-color-white;
+  }
+  .p-slider .p-slider-handle {
+    background-color: $neutral-color-white;
+    border-color: $neutral-color-white;
+  }
+  .p-slider {
+    background: $brand-color-04;
+  }
+}
+.freud-slider {
+  .p-slider .p-slider-handle {
+    width: 16px;
+    height: 16px;
+  }
+  .p-slider.p-slider-vertical .p-slider-handle {
+    margin-left: -8px;
+    margin-bottom: -8px;
+  }
+  .p-slider .p-slider-handle:focus {
+    box-shadow: unset;
+  }
+}
