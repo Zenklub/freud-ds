@@ -21,8 +21,12 @@
   }
 
   .p-radiobutton .p-radiobutton-box {
-    width: 19px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
+  }
+  .p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    width: 8px;
+    height: 8px
   }
 
   .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box:hover,
@@ -34,5 +38,6 @@
   }
   .p-radiobutton-label {
     @include typography($font-size-xs, $font-weight-regular, 24px);
+    font-family: $font-family-base;
   }
 }

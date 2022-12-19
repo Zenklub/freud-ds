@@ -1,2 +1,2 @@
-export * from './select-button.component';
-export * from './select-button.module';
+export * from './calendar.component';
+export * from './calendar.module';

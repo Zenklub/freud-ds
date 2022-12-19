@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreudSelectButtonComponent } from './select-button.component';
+import { FreudCalendarComponent } from './calendar.component';
 
-describe('FreudSelectButtonComponent', () => {
-  let component: FreudSelectButtonComponent;
-  let fixture: ComponentFixture<FreudSelectButtonComponent>;
+describe('FreudCalendarComponent', () => {
+  let component: FreudCalendarComponent;
+  let fixture: ComponentFixture<FreudCalendarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudSelectButtonComponent ]
+      declarations: [ FreudCalendarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreudSelectButtonComponent);
+    fixture = TestBed.createComponent(FreudCalendarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

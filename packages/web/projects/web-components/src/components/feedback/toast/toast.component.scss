@@ -62,9 +62,14 @@
     @include typography($font-size-xs, $font-weight-regular, auto);
   }
 
-  .pi-exclamation-triangle:before, .pi-info-circle:before {
+  .pi-exclamation-triangle:before {
     font-family: 'Freud Icon' !important;
     content: "\e903";
+  }
+
+  .pi-info-circle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e9ed";
   }
 
   .pi-times-circle:before {

@@ -57,6 +57,10 @@ O card é definido com o elemento `freud-card`.
 2 modelos estão incluídos para personalizar a sobreposição. Estes são `header` e `footer`. Veja o exemplo `Advanced` abaixo
 ```html
 <freud-card header="Advanced card">
+    <ng-container freudTemplateHeader>
+      <img alt="Card" src="assets/img/img.png" style="height: 150px">
+    </ng-container>
+
     Card Content
     <ng-container freudTemplatefooter>
         <div style="display: flex; gap: 4px">

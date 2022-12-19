@@ -41,6 +41,30 @@
     }
   }
 
+  .p-button {
+    background: $neutral-color-white;
+    border: 1px solid $neutral-color-light-03;;
+    border-radius: $border-radius-md;
+    border-left: unset;
+  }
+
+  .p-button:hover {
+    background: $neutral-color-white;
+  }
+
+  .p-button:focus {
+    box-shadow: $shadow-focused-zen;
+  }
+
+  .p-autocomplete-dd .p-inputtext {
+    border-right: unset;
+  }
+
+  .p-button-icon {
+    font-size: 14px;
+    color: $neutral-color-dark-02;
+  }
+
   .p-inputtext:enabled:focus {
     box-shadow: $shadow-focused-zen;
     border-color: $brand-color-pure;
@@ -70,6 +94,9 @@
   .p-autocomplete:not(.p-disabled):hover,
   .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover {
     border-color: $brand-color-pure;
+    .p-inputtext, .p-button {
+      border-color: $brand-color-pure;
+    }
   }
   .p-autocomplete .p-autocomplete-panel {
     border-radius: $border-radius-md;
@@ -83,8 +110,8 @@
     border-radius: 0;
   }
   .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-dark-03;
-    background-color: $neutral-color-light-02;
+    color: $brand-color-pure;
+    background-color: $brand-color-01;
   }
 
   .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {

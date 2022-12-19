@@ -8,6 +8,10 @@
   .p-rating .p-rating-icon:not(.freud-icon-star-fill) {
     color: $neutral-color-dark-01;
   }
+
+  .p-rating .p-rating-icon {
+    font-size: 16px;
+  }
 }
 .freud-rating.freud-rating-bgcolor {
   .p-rating .p-rating-icon:not(.freud-icon-star-fill) {

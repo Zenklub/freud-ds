@@ -24,4 +24,11 @@
     padding: 0;
   }
 
+  .p-card-header {
+    img {
+      border-top-left-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
+    }
+  }
+
 }
