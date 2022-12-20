@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 type buttonSizes = 'sm' | 'md' | 'lg';
 type buttonColors = 'primary' | 'secondary' | 'ghost';

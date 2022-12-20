@@ -14,7 +14,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./confirm-dialog.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'freud-confirm-dialod'
+    class: 'freud-confirm-dialog'
   }
 })
 export class FreudConfirmDialogComponent { }

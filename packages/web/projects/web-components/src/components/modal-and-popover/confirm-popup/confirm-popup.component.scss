@@ -1,0 +1,68 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-confirm-popup {
+  &.p-confirm-popup {
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: $shadow-level-3;
+  }
+  .p-dialog-footer {
+    display: flex;
+    place-content: flex-end;
+  }
+
+  &.p-confirm-popup .p-confirm-popup-icon {
+    font-size: 24px;
+  }
+
+  .p-confirm-popup-message {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-confirm-popup-header .p-confirm-popup-title {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, 19.2px);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .p-confirm-popup-footer {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-bottom: $spacing-size-xxxs;
+
+    .p-confirm-popup-reject {
+      background-color: transparent;
+      border-color: $brand-color-pure;
+      color: $brand-color-pure;
+    }
+
+    .p-confirm-popup-accept {
+      background-color:  $brand-color-pure;
+      border-color: $brand-color-pure;
+      color: $neutral-color-white;
+    }
+
+    .p-button:enabled:hover {
+      background: $brand-color-01;
+      border-color: $brand-color-01;
+      color: $brand-color-pure;
+    }
+
+    .p-button {
+      font-family: $font-family-base;
+      border-radius: $border-radius-md;
+      @include typography($font-size-xs, $font-weight-semibold, auto);
+      &[disabled] {
+        opacity: $opacity-level-5;
+      }
+      &:focus {
+        box-shadow: unset;
+      }
+      &.p-button-icon-only {
+        width: auto;
+      }
+    }
+  }
+}
