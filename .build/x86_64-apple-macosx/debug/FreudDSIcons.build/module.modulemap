@@ -1,4 +1,0 @@
-module FreudDSIcons {
-    header "/Users/erick/Workspace/Zenklub/freud-ds/.build/x86_64-apple-macosx/debug/FreudDSIcons.build/FreudDSIcons-Swift.h"
-    requires objc
-}
