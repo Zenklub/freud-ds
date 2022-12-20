@@ -16,11 +16,11 @@ export class Builder {
   private tokensBuilder = new StyleTokensBuilder();
 
   private get assetsFoldersPath() {
-    return path.resolve('./src/assets');
+    return path.resolve('../../resources');
   }
 
   private get assetsFontsFoldersPath() {
-    return path.resolve('./src/assets/fonts');
+    return path.resolve(this.assetsFoldersPath, 'fonts');
   }
 
   private get tmpFolderPath() {

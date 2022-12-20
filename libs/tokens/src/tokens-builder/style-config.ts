@@ -69,46 +69,46 @@ export const fontFaceDictionary: Config = {
         }
       ]
     },
-    'Font Face (ios)': {
-      transforms: ['attribute/font'],
-      buildPath: `${root}/ios/FreudDSTheme/`,
-      files: [
-        {
-          destination: 'FreudDSFontFamily+Values.swift',
-          format: 'font/face/swift',
-          filter: {
-            attributes: {
-              category: 'asset',
-              type: 'font'
-            }
-          },
-          options: {
-            fileHeader: 'license',
-            fontPathPrefix: '#{$font-path}/'
-          }
-        }
-      ]
-    },
-    'Font Face (android)': {
-      transforms: ['attribute/font'],
-      buildPath: `${root}/android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/`,
-      files: [
-        {
-          destination: 'FreudDSDefaultFonts.java',
-          format: 'font/face/java',
-          filter: {
-            attributes: {
-              category: 'asset',
-              type: 'font'
-            }
-          },
-          options: {
-            fileHeader: 'license',
-            fontPathPrefix: '#{$font-path}/'
-          }
-        }
-      ]
-    }
+    // 'Font Face (ios)': {
+    //   transforms: ['attribute/font'],
+    //   buildPath: `${root}/ios/FreudDSTheme/`,
+    //   files: [
+    //     {
+    //       destination: 'FreudDSFontFamily+Values.swift',
+    //       format: 'font/face/swift',
+    //       filter: {
+    //         attributes: {
+    //           category: 'asset',
+    //           type: 'font'
+    //         }
+    //       },
+    //       options: {
+    //         fileHeader: 'license',
+    //         fontPathPrefix: '#{$font-path}/'
+    //       }
+    //     }
+    //   ]
+    // },
+    // 'Font Face (android)': {
+    //   transforms: ['attribute/font'],
+    //   buildPath: `${root}/android/freud-ds-theme/src/main/java/com/zenklub/freudds/theme/`,
+    //   files: [
+    //     {
+    //       destination: 'FreudDSDefaultFonts.java',
+    //       format: 'font/face/java',
+    //       filter: {
+    //         attributes: {
+    //           category: 'asset',
+    //           type: 'font'
+    //         }
+    //       },
+    //       options: {
+    //         fileHeader: 'license',
+    //         fontPathPrefix: '#{$font-path}/'
+    //       }
+    //     }
+    //   ]
+    // }
   }
 }
 
@@ -117,7 +117,7 @@ export const tokensDictionary: Config = {
     license: getLicenseHeaders,
   },
   source: [
-    `${root}/resources/tokens/asset/{border,color,font,opacity,shadow,spacing}/*.json`
+    `${root}/resources/tokens/{border,color,font,opacity,shadow,spacing}/*.json`
   ],
   platforms: {
     css: {

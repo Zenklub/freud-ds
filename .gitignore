@@ -504,3 +504,6 @@ fabric.properties
 
 # Secrets
 *.gpg
+
+# Swift
+.build
