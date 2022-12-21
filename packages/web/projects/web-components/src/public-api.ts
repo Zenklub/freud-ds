@@ -52,6 +52,7 @@ export * from './components/others/divider';
 export * from './components/others/scroll-top';
 export * from './components/others/slider';
 export * from './components/others/action-icon';
+export * from './components/others/paginator';
 
 // Structure
 export * from './components/structure/menubar';

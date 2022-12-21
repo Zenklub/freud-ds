@@ -5,15 +5,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   selector: 'freud-calendar',
   template: `
     <p-calendar
-      [id]="id"
-      [selectionMode]="selectionMode"
       [(ngModel)]="value"
-      [dateFormat]="dateFormat"
+      [id]="id"
       [inline]="inline"
+      [view]="view"
+      [selectionMode]="selectionMode"
+      [dateFormat]="dateFormat"
       [showOtherMonths]="showOtherMonths"
       [selectOtherMonths]="selectOtherMonths"
       [showWeek]="showWeek"
-      [view]="view"
       [yearNavigator]="yearNavigator"
       [yearRange]="yearRange"
       [defaultDate]="defaultDate"
@@ -23,6 +23,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [timeOnly]="timeOnly"
       [required]="required"
       [maxDate]="maxDate"
+      [monthNavigator]="monthNavigator"
+      [disabledDates]="disabledDates"
       [minDate]="minDate"
       (ngModelChange)="modelValueChange()"
       (onSelect)="onSelect.emit($event)"
@@ -56,8 +58,11 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Input() view: 'date' | 'month' = 'date';
   @Input() inline: boolean = true;
   @Input() yearRange!: string;
+  @Input() disabledDates!: Date[];
+  @Input() disabledDays!: number[];
 
   @Input() yearNavigator: boolean = false;
+  @Input() monthNavigator: boolean = false;
   @Input() timeOnly: boolean = false;
   @Input() showOtherMonths: boolean = true;
   @Input() selectOtherMonths: boolean = true;

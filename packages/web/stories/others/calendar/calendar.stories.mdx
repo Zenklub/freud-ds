@@ -4,7 +4,10 @@ import { FreudCalendarComponent, FreudCalendarModule, FreudButtonModule } from '
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  BGColor
+  BGColor,
+  TimeOnly,
+  MonthView,
+  YearNavigator
 } from './Calendar.stories.ts';
 
 <Meta
@@ -55,10 +58,56 @@ O card é definido com o elemento `freud-calendar`.
   <Story story={Default}/>
 </Canvas>
 
+### TimeOnly
+Utilize a propriedade `timeOnly` para exibir somente as horas, e a propriedade `hourFormat` para alternar a visualização
+entre `12` e `24` horas
+<Canvas>
+  <Story story={TimeOnly}/>
+</Canvas>
+
+### MonthView
+Utilize a propriedade `view` para exibir o calendário em formato de Mês.
+<Canvas>
+  <Story story={MonthView}/>
+</Canvas>
+
+### YearNavigator
+<Canvas>
+  <Story story={YearNavigator}/>
+</Canvas>
+
 ### BG Color
 <Canvas style={{ backgroundColor: '#241249' }}>
   <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API
+
+### DateFormat
+Default date format is dd/mm/yy, to customize this use dateFormat property.
+
+```html
+<freud-calendar [(ngModel)]="dateValue" dateFormat="dd.mm.yy"></freud-calendar>
+```
+Following options can be a part of the format.
+
+- d - day of month (no leading zero)
+- dd - day of month (two digit)
+- o - day of the year (no leading zeros)
+- oo - day of the year (three digit)
+- D - day name short
+- DD - day name long
+- m - month of year (no leading zero)
+- mm - month of year (two digit)
+- M - month name short
+- MM - month name long
+- y - year (two digit)
+- yy - year (four digit)
+- @ - Unix timestamp (ms since 01/01/1970)
+- ! - Windows ticks (100ns since 01/01/0001)
+- '...' - literal text
+- '' - single quote
+- anything else - literal text
+
+
 <ArgsTable of={FreudCalendarComponent} />
