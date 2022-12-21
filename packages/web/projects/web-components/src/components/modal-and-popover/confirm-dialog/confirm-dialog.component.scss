@@ -1,13 +1,18 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-confirm-dialod {
+.freud-confirm-dialog {
   .p-dialog.p-confirm-dialog {
     max-width: 700px;
+    border-radius: 8px;
   }
   .p-dialog-footer {
     display: flex;
     place-content: flex-end;
+  }
+
+  .p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+    font-size: 24px;
   }
 
   .p-dialog.p-confirm-dialog .p-confirm-dialog-message {
@@ -15,8 +20,14 @@
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
 
-  .p-dialog .p-dialog-header .p-dialog-title {
+  .p-dialog .p-dialog-header .p-dialog-title, .p-dialog .p-dialog-header {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-bold, 19.2px);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .p-dialog .p-dialog-footer {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 }

@@ -1,0 +1,20 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+
+.freud-slide-menu {
+  .p-slidemenu .p-menuitem-link .p-menuitem-text {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, 16px);
+  }
+  .p-slidemenu {
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-level-1;
+  }
+  .p-slidemenu .p-slidemenu-wrapper, .p-slidemenu .p-slidemenu-rootlist {
+    width: 100% !important;
+  }
+  .p-slidemenu .p-menuitem-link:focus {
+    box-shadow: unset;
+  }
+}

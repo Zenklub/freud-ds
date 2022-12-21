@@ -29,24 +29,6 @@ export const Ghost = Template.bind({});
 Ghost.args = {
   color: 'ghost'
 };
-
-// Background
-export const PrimaryBackground = Template.bind({});
-PrimaryBackground.args = {
-  color: 'primary',
-  bgColor: true,
-};
-export const SecondaryBackground = Template.bind({});
-SecondaryBackground.args = {
-  color: 'secondary',
-  bgColor: true,
-};
-export const GhostBackground = Template.bind({});
-GhostBackground.args = {
-  color: 'ghost',
-  bgColor: true,
-};
-
 // Disabled
 const TemplateDisabled: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
   props: { ...args },
@@ -69,22 +51,33 @@ Loading.args = {
 }
 
 // Sizes
+
+const templateHTMLSize = `
+    <div style="display: flex;gap: 16px;align-items: center">
+      <freud-button [bgColor]="bgColor" [color]="color" [size]="'sm'">Button sm</freud-button>
+      <freud-button [bgColor]="bgColor" [size]="'md'">Button md</freud-button>
+      <freud-button [bgColor]="bgColor" [size]="'lg'">Button lg</freud-button>
+    </div>
+`;
 const TemplateSize: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
   props: { ...args },
-  template: templateHTML.replace('{{label}}', 'Button {{size}}'),
+  template: templateHTMLSize,
 });
-export const SizeSM = TemplateSize.bind({});
-SizeSM.args = {
-  size: 'sm',
-};
-export const SizeMD = TemplateSize.bind({});
-SizeMD.args = {
-  size: 'md',
-};
-export const SizeLG = TemplateSize.bind({});
-SizeLG.args = {
-  size: 'lg',
-};
+export const Size = TemplateSize.bind({});
+
+// Background
+const templateHTMLBgColor = `
+    <div style="display: flex;gap: 16px;align-items: center">
+      <freud-button [bgColor]="true" [color]="'primary'">Button primary</freud-button>
+      <freud-button [bgColor]="true" [color]="'secondary'">Button secondary</freud-button>
+      <freud-button [bgColor]="true" [color]="'ghost'">Button ghost</freud-button>
+    </div>
+`;
+const TemplateBGColor: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
+  props: { ...args },
+  template: templateHTMLBgColor,
+});
+export const BGColor = TemplateBGColor.bind({});
 
 const TemplateIcon: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
   props: { ...args },

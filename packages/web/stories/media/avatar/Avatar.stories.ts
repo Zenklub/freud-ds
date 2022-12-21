@@ -8,6 +8,17 @@ const Template: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
   `,
 });
 
+const TemplateSize: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
+  props: { ...args },
+  template: `
+    <div style="display: flex; align-items: center">
+        <freud-avatar style="margin-right: 16px;" [size]="'sm'" [label]="'A'"></freud-avatar>
+        <freud-avatar style="margin-right: 16px;" [size]="'md'" [label]="'A'"></freud-avatar>
+        <freud-avatar style="margin-right: 16px;" [size]="'lg'" [label]="'A'"></freud-avatar>
+    </div>
+  `,
+});
+
 // With Label
 export const WithLabel = Template.bind({});
 WithLabel.args = {
@@ -15,28 +26,13 @@ WithLabel.args = {
 };
 
 // Sizes
-export const Small = Template.bind({});
-Small.args = {
-  label: 'A',
-  size: 'sm',
-};
-export const Medium = Template.bind({});
-Medium.args = {
-  label: 'A',
-  size: 'md',
-};
-export const Large = Template.bind({});
-Large.args = {
-  label: 'A',
-  size: 'lg',
-};
-
+export const Size = TemplateSize.bind({});
 
 // BgColor
-export const BgColor = Template.bind({});
-BgColor.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   label: 'BG',
-  size: 'lg',
+  size: 'md',
   bgColor: true
 };
 
@@ -44,7 +40,7 @@ BgColor.args = {
 export const Imagem = Template.bind({});
 Imagem.args = {
   label: 'BG',
-  size: 'lg',
+  size: 'md',
   image: 'assets/img/avatar.png'
 };
 // Badge

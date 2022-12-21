@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 type buttonSizes = 'sm' | 'md' | 'lg';
 type buttonColors = 'primary' | 'secondary' | 'ghost';
@@ -6,10 +6,9 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
 @Component({
   selector: 'freud-button',
   styleUrls: ['./button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `
-    <p-button [disabled]="disabled" [loading]="loading" [icon]="icon">
+    <p-button [disabled]="disabled" [loading]="loading" [icon]="icon" [type]="type">
       <div class="button-content"><ng-content></ng-content></div>
     </p-button>
   `,
@@ -33,6 +32,7 @@ export class FreudButtonComponent {
   @Input() color: buttonColors = 'primary';
   @Input() bgColor = false;
   @Input() disabled = false;
+  @Input() type!: string;
   @Input() loading = false;
   @Input() icon!: string;
 

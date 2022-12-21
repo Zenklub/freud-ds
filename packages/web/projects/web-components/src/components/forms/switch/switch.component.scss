@@ -1,0 +1,22 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-input-switch {
+  .p-inputswitch .p-inputswitch-slider {
+    background-color: $neutral-color-dark-01;
+  }
+  .p-inputswitch:not(.p-disabled):hover .p-inputswitch-slider {
+    background-color: $neutral-color-dark-02;
+  }
+
+  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background-color: $brand-color-pure;
+  }
+
+  .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+    background-color: $brand-color-04;
+  }
+
+  .p-inputswitch.p-focus .p-inputswitch-slider {
+    box-shadow: $shadow-focused-zen;
+  }
+}

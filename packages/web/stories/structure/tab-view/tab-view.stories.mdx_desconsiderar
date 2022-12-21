@@ -1,0 +1,86 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudTabViewComponent, FreudTabPanelComponent, FreudTabViewModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor, Scrollable,
+} from './TabView.stories.ts_desconsiderar';
+
+<Meta
+  decorators={[
+    moduleMetadata({imports: [FreudTabViewModule]})
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+  title="@freud-ds/web-components/Structure/TabView"
+  component={FreudTabViewComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Tab (View)",
+      description: "As abas facilitam a exploração e alternam entre diferentes visualizações."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudTabViewModule } from '@freud-ds/web-components';
+```
+
+## Getting Started
+FreudTabView requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+```html
+    <freud-tab-view
+      [activeIndex]="activeIndex"
+      [controlClose]="true"
+      [scrollable]="false"
+      [bgColor]="false"
+      (onClose)="handleClose($event)">
+        <freud-tab-panel header="Header 1">
+            Content 1
+        </freud-tab-panel>
+        <freud-tab-panel header="Header 2" [disabled]="true">
+            Content 2
+        </freud-tab-panel>
+        <freud-tab-panel header="Header 3">
+            Content 3
+        </freud-tab-panel>
+    </freud-tab-view>
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### Scrollable
+<Canvas>
+  <Story story={Scrollable}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API TabView
+
+<ArgsTable of={FreudTabViewComponent} />
+
+## <a id="api-tab-panel"></a>API TabPanel
+
+<ArgsTable of={FreudTabPanelComponent} />

@@ -1,0 +1,73 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudBlockUIComponent, FreudBlockUIModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  Panel,
+} from './BlockUI.stories.ts';
+import {FreudBlockExampleModule} from "./block-example/example.module";
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudBlockUIModule, FreudBlockExampleModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Others/BlockUI" component={FreudBlockUIComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "BlockUI",
+      description: "BlockUI pode bloquear outros componentes ou a página inteira."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudBlockUIModule } from '@freud-ds/web-components';
+```
+
+## Getting Started
+BlockUI é controlado usando a propriedade bloqueada e o componente a ser bloqueado é definido como destino.
+Se o destino não for fornecido, o próprio documento será selecionado como o destino do bloco.
+```html
+<freud-block-ui [blocked]="blocked"></freud-block-ui>
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### Panel
+É possível passar uma referencia de componente no parametro `target`.
+Importante: O target precisa ter a implementação de um metodo com o nome `getBlockableElement` que retorna o elemento.
+<Canvas>
+  <Story story={Panel}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudBlockUIComponent} />

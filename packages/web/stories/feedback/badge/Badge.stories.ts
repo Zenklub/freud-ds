@@ -10,40 +10,36 @@ const Template: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
 const TemplateBlank: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
   props: { ...args },
   template: `
-    <freud-badge [size]="size" [color]="color" [value]="value" style="position: relative;top: 6px;"></freud-badge>
+    <freud-badge [size]="size" [color]="color" [value]="value" style="position: relative;top: 4px;"></freud-badge>
   `,
 });
 
 const TemplateBgColor: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
   props: { ...args },
   template: `
-    <freud-badge style="margin-right: 8px;" [color]="'primary'" [value]="'1'"></freud-badge>
-    <freud-badge style="margin-right: 8px;" [color]="'success'" [value]="'10'"></freud-badge>
-    <freud-badge style="margin-right: 8px;" [color]="'info'" [value]="'5'"></freud-badge>
-    <freud-badge style="margin-right: 8px;" [color]="'warning'" [value]="'99'"></freud-badge>
-    <freud-badge style="margin-right: 8px;" [color]="'error'" [value]="'A'"></freud-badge>
-    <freud-badge style="position: relative;top: 6px;" [color]="'actived'" [value]="''"></freud-badge>
+    <freud-badge style="margin-right: 16px;" [color]="'primary'" [value]="'1'"></freud-badge>
+    <freud-badge style="margin-right: 16px;" [color]="'success'" [value]="'10'"></freud-badge>
+    <freud-badge style="margin-right: 16px;" [color]="'info'" [value]="'5'"></freud-badge>
+    <freud-badge style="margin-right: 16px;" [color]="'warning'" [value]="'99'"></freud-badge>
+    <freud-badge style="margin-right: 16px;" [color]="'error'" [value]="'A'"></freud-badge>
+    <freud-badge style="position: relative;top: 4px;" [color]="'actived'" [value]="''"></freud-badge>
+  `,
+});
+
+const TemplateSizes: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+  props: { ...args },
+  template: `
+    <freud-badge style="margin-right: 16px;" [size]="'default'" [color]="'primary'" [value]="'1'"></freud-badge>
+    <freud-badge [size]="'large'" [color]="'primary'" [value]="'1'"></freud-badge>
   `,
 });
 
 // Sizes
-export const Default = Template.bind({});
-Default.args = {
-  value: '1',
-  size: 'default',
-  color: 'primary'
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  value: '1',
-  size: 'large',
-  color: 'primary'
-};
+export const Size = TemplateSizes.bind({});
 
 // Colors
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   value: '1',
   color: 'primary',
 };
@@ -74,4 +70,4 @@ Actived.args = {
 };
 
 
-export const BgColor = TemplateBgColor.bind({});
+export const BGColor = TemplateBgColor.bind({});

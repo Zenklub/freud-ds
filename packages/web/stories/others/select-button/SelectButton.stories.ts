@@ -31,8 +31,8 @@ Default.args = {
   selectedOption: options[1]
 };
 
-export const Background = Template.bind({});
-Background.args = {
+export const BGColor = Template.bind({});
+BGColor.args = {
   options: options,
   optionLabel: 'label',
   tabindex: 1,

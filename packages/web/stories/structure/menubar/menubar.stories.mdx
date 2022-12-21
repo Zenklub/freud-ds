@@ -4,7 +4,7 @@ import { FreudMenubarComponent, FreudMenubarModule } from '@freud-ds/web-compone
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  BgColor,
+  BGColor,
 } from './Menubar.stories.ts';
 
 <Meta
@@ -71,13 +71,13 @@ items: FreudMenuItem[] = [
 <br />
 
 ### Default
-<Canvas>
+<Canvas style={{ backgroundColor: '#F7F9FA' }}>
   <Story story={Default}/>
 </Canvas>
 
 ### BG Color
-<Canvas>
-  <Story story={BgColor}/>
+<Canvas style={{ backgroundColor: '#F7F9FA' }}>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API

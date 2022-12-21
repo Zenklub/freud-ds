@@ -1,0 +1,32 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-menu {
+  .p-menu .p-menuitem-link .p-menuitem-text {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, 16px);
+  }
+
+  .p-menu .p-submenu-header {
+    @include typography($font-size-xs, $font-weight-semibold, auto);
+    color: $neutral-color-dark-03;
+  }
+
+  .p-menu .p-menuitem-link:not(.p-disabled):hover {
+    background-color: $brand-color-01;
+  }
+
+  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
+  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
+    color: $brand-color-pure;
+  }
+
+  .p-menu .p-menuitem-link:focus {
+    box-shadow: unset;
+  }
+
+  .p-menu {
+    border-radius: $border-radius-md;
+  }
+
+}

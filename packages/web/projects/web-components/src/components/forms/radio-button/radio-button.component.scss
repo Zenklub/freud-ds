@@ -1,0 +1,43 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-radio-button:not(.freud-bgcolor) {
+  .p-radiobutton-label {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-radio-button.freud-bgcolor {
+  .p-radiobutton-label {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-radio-button {
+  .p-radiobutton .p-radiobutton-box.p-highlight,
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-highlight:hover {
+    background-color: $brand-color-pure;
+    border-color: $brand-color-pure;
+  }
+
+  .p-radiobutton .p-radiobutton-box {
+    width: 20px;
+    height: 20px;
+  }
+  .p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    width: 8px;
+    height: 8px
+  }
+
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box:hover,
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus {
+    border-color: $brand-color-pure;
+  }
+  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus {
+    box-shadow: $shadow-focused-zen !important;
+  }
+  .p-radiobutton-label {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+    font-family: $font-family-base;
+  }
+}

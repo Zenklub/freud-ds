@@ -1,0 +1,53 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-panel-menu {
+
+  .p-panelmenu .p-panelmenu-panel {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a, {
+    border-top-right-radius: $border-radius-md;
+    border-top-left-radius: $border-radius-md;
+  }
+
+  .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-header:not(.p-highlight) > a {
+    border-bottom-right-radius: $border-radius-md;
+    border-bottom-left-radius: $border-radius-md;
+  }
+
+  .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
+    background-color: $neutral-color-light-01;
+  }
+
+  .p-panelmenu .p-panelmenu-header:not(.p-highlight) > a {
+    border-radius: $border-radius-md;
+  }
+
+  .p-panelmenu .p-panelmenu-header.p-highlight > a {
+    border-top-right-radius: $border-radius-md;
+    border-top-left-radius: $border-radius-md;
+  }
+
+  .p-panelmenu .p-panelmenu-panel .p-panelmenu-content {
+    border-bottom-right-radius: $border-radius-md;
+    border-bottom-left-radius: $border-radius-md;
+  }
+
+  .p-panelmenu .p-panelmenu-header > a {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, 16px);
+  }
+
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+
+  .p-panelmenu .p-panelmenu-header > a:focus,
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+    box-shadow: unset;
+  }
+
+}

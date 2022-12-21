@@ -1,0 +1,132 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-auto-complete:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-auto-complete.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-auto-complete {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-inputtext {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-button {
+    background: $neutral-color-white;
+    border: 1px solid $neutral-color-light-03;;
+    border-radius: $border-radius-md;
+    border-left: unset;
+  }
+
+  .p-button:hover {
+    background: $neutral-color-white;
+  }
+
+  .p-button:focus {
+    box-shadow: $shadow-focused-zen;
+  }
+
+  .p-autocomplete-dd .p-inputtext {
+    border-right: unset;
+  }
+
+  .p-button-icon {
+    font-size: 14px;
+    color: $neutral-color-dark-02;
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-inputtext:enabled:hover {
+    border-color: $brand-color-pure;
+  }
+
+  .p-autocomplete {
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-autocomplete:not(.p-disabled).p-focus,
+  .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-autocomplete:not(.p-disabled):hover,
+  .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover {
+    border-color: $brand-color-pure;
+    .p-inputtext, .p-button {
+      border-color: $brand-color-pure;
+    }
+  }
+  .p-autocomplete .p-autocomplete-panel {
+    border-radius: $border-radius-md;
+    margin-top: 1px;
+  }
+
+  .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+    padding: 12px 1rem;
+    color: $neutral-color-dark-03;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+  }
+  .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:not(.p-highlight):not(.p-disabled):hover {
+    color: $brand-color-pure;
+    background-color: $brand-color-01;
+  }
+
+  .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+
+  // Chip
+  .p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token {
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    @include typography($font-size-xxs, $font-weight-regular, 21px);
+    background: $brand-color-01;
+    color: $brand-color-pure;
+    border-radius: $border-radius-md;
+  }
+}
+
