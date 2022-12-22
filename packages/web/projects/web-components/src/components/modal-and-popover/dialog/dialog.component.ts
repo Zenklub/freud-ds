@@ -1,6 +1,7 @@
 import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
+type positions = "center" | "top" | "bottom" | "left" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right";
 @Component({
   selector: 'freud-dialog',
   template: `
@@ -9,6 +10,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [modal]="modal"
       [draggable]="draggable"
       [closable]="closable"
+      [showHeader]="showHeader"
+      [position]="position"
       [resizable]="resizable"
       [closeIcon]="closeIcon"
       [minimizeIcon]="minimizeIcon"
@@ -40,8 +43,10 @@ export class FreudDialogComponent implements ControlValueAccessor {
   @Input() modal: boolean = false;
   @Input() draggable: boolean = true;
   @Input() resizable: boolean = false;
+  @Input() showHeader: boolean = true;
   @Input() maximizable: boolean = false;
   @Input() closable: boolean = true;
+  @Input() position:	positions	= 'center';
   @Input() closeIcon: string = 'freud-icon freud-icon-times';
   @Input() minimizeIcon: string = 'freud-icon freud-icon-window-minimize';
   @Input() maximizeIcon: string = 'freud-icon freud-icon-window-maximize';
