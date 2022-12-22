@@ -54,6 +54,7 @@ export * from './components/others/slider';
 export * from './components/others/action-icon';
 export * from './components/others/paginator';
 export * from './components/others/chip';
+export * from './components/others/captcha';
 
 // Structure
 export * from './components/structure/menubar';
