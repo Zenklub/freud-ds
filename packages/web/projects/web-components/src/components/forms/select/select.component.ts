@@ -92,6 +92,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Output() onShow: EventEmitter<any> = new EventEmitter();
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
 
   private _value!: string;
@@ -127,6 +128,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
 }

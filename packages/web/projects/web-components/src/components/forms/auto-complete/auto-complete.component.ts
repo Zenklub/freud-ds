@@ -95,6 +95,7 @@ export class FreudAutoCompleteComponent implements ControlValueAccessor {
   @Output() onShow: EventEmitter<any> = new EventEmitter();
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
 
   private _value!: any;
@@ -129,6 +130,7 @@ export class FreudAutoCompleteComponent implements ControlValueAccessor {
   public set value(v){
     this._value = v;
     this.onModelChange(this._value);
+    this.valueChange.emit(this._value);
     this.onModelTouched();
   }
 

@@ -77,6 +77,7 @@ export class FreudCascadeSelectComponent implements ControlValueAccessor {
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
   @Output() onBeforeHide: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   @Output() onFilter: EventEmitter<any> = new EventEmitter();
   @Output() onShow: EventEmitter<any> = new EventEmitter();
@@ -116,6 +117,7 @@ export class FreudCascadeSelectComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
 }

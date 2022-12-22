@@ -90,6 +90,7 @@ export class FreudMultiSelectComponent implements ControlValueAccessor {
   @Output() onFilter: EventEmitter<any> = new EventEmitter();
   @Output() onPanelShow: EventEmitter<any> = new EventEmitter();
   @Output() onPanelHide: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   private _value!: any;
 
@@ -124,6 +125,7 @@ export class FreudMultiSelectComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
 }

@@ -75,6 +75,7 @@ export class FreudInputMaskComponent implements ControlValueAccessor {
 
   @Output() onKeydown: EventEmitter<any> = new EventEmitter();
   @Output() onComplete: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   private _value!: string;
 
@@ -109,6 +110,7 @@ export class FreudInputMaskComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(this._value);
   }
 
 }

@@ -101,6 +101,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   public set value(v){
     this._value = v;
     this.onModelChange(this._value);
+    this.modelValueChange();
     this.onModelTouched();
   }
 

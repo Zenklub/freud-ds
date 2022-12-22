@@ -61,6 +61,7 @@ export class FreudSliderComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.modelValueChange();
   }
 
   writeValue(obj: any): void {

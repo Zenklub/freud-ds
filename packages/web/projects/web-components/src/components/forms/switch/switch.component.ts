@@ -63,6 +63,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
     this.onChange.emit(v);
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
   writeValue(obj: any): void {

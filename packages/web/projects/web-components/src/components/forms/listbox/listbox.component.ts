@@ -80,6 +80,7 @@ export class FreudListboxComponent implements ControlValueAccessor {
   @Output() onDblClick: EventEmitter<any> = new EventEmitter();
   @Output() onClick: EventEmitter<any> = new EventEmitter();
   @Output() onChange: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   filterValue = '';
 
@@ -116,6 +117,7 @@ export class FreudListboxComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
 }
