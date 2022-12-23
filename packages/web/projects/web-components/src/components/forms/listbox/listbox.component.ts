@@ -75,7 +75,7 @@ export class FreudListboxComponent implements ControlValueAccessor {
   @Input() autoClear: boolean = true;
   @Input() disabled = false;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
 
   @Output() onDblClick: EventEmitter<any> = new EventEmitter();
   @Output() onClick: EventEmitter<any> = new EventEmitter();

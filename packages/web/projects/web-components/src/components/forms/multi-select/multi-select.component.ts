@@ -79,7 +79,7 @@ export class FreudMultiSelectComponent implements ControlValueAccessor {
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
