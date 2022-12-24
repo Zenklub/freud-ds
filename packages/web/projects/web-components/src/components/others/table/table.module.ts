@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FreudTableComponent } from './table.component';
+import { FreudSortableColumn, FreudSortIcon, FreudTableComponent } from './table.component';
 import { CardModule } from "primeng/card";
+import { TableModule, TableService } from "primeng/table";
+import { FreudTemplateModule } from "../../directive/template";
 
 @NgModule({
-  imports: [CommonModule, CardModule],
-  declarations: [FreudTableComponent],
-  exports: [FreudTableComponent]
+  imports: [CommonModule, CardModule, TableModule, FreudTemplateModule],
+  declarations: [FreudTableComponent, FreudSortableColumn, FreudSortIcon],
+  exports: [FreudTableComponent, FreudSortableColumn, FreudSortIcon],
+  providers: [TableService]
 })
 export class FreudTableModule { }

@@ -75,4 +75,7 @@ export * from './components/modal-and-popover/confirm-dialog';
 export * from './components/modal-and-popover/confirm-popup';
 export * from './components/modal-and-popover/dialog';
 
+// Directive
+export * from './components/directive/template';
+
 export * from './api';
