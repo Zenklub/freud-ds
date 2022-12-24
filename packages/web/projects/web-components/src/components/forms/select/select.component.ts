@@ -80,7 +80,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
@@ -92,6 +92,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Output() onShow: EventEmitter<any> = new EventEmitter();
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
 
   private _value!: string;
@@ -127,6 +128,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
 }

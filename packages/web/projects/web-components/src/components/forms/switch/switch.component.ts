@@ -44,7 +44,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
   @Input() falseValue: any = false;
   @Input() trueValue: any = true;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
@@ -63,6 +63,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
     this.onChange.emit(v);
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.valueChange.emit(v);
   }
 
   writeValue(obj: any): void {

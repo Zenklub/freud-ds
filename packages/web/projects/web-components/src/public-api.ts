@@ -53,6 +53,11 @@ export * from './components/others/scroll-top';
 export * from './components/others/slider';
 export * from './components/others/action-icon';
 export * from './components/others/paginator';
+export * from './components/others/chip';
+export * from './components/others/captcha';
+export * from './components/others/table';
+export * from './components/others/full-calendar';
+export * from './components/others/accordion';
 
 // Structure
 export * from './components/structure/menubar';
@@ -69,5 +74,9 @@ export * from './components/structure/tab-view';
 // Modal and popover
 export * from './components/modal-and-popover/confirm-dialog';
 export * from './components/modal-and-popover/confirm-popup';
+export * from './components/modal-and-popover/dialog';
+
+// Directive
+export * from './components/directive/template';
 
 export * from './api';

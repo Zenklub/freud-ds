@@ -1,0 +1,17 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-table {
+  .p-datatable .p-datatable-thead > tr > th,
+  .p-datatable .p-datatable-header {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td,
+  .p-datatable .p-datatable-footer {
+    color: $neutral-color-dark-02;
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+
+}

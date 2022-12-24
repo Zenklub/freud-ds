@@ -46,7 +46,7 @@ export class FreudRadioButtonComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() radioValue!: any;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
@@ -70,6 +70,7 @@ export class FreudRadioButtonComponent implements ControlValueAccessor {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
+    this.modelValueChange();
   }
 
   writeValue(obj: any): void {

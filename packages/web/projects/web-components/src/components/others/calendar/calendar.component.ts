@@ -6,7 +6,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   template: `
     <p-calendar
       [(ngModel)]="value"
-      [id]="id"
       [inline]="inline"
       [view]="view"
       [selectionMode]="selectionMode"
@@ -73,7 +72,6 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Input() minDate!: Date;
   @Input() maxDate!: Date;
   @Input() defaultDate!: Date;
-  @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onSelect: EventEmitter<any> = new EventEmitter();
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -101,6 +99,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   public set value(v){
     this._value = v;
     this.onModelChange(this._value);
+    this.modelValueChange();
     this.onModelTouched();
   }
 

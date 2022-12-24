@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "1000",
+      "code": "f230fh0g3",
+      "name": "Bamboo Watch",
+      "description": "Product Description",
+      "image": "bamboo-watch.jpg",
+      "price": 65,
+      "category": "Accessories"
+    },
+    {
+      "id": "1001",
+      "code": "nvklal433",
+      "name": "Black Watch",
+      "description": "Product Description",
+      "image": "black-watch.jpg",
+      "price": 72,
+      "category": "Accessories"
+    },
+    {
+      "id": "1002",
+      "code": "zz21cz3c1",
+      "name": "Blue Band",
+      "description": "Product Description",
+      "image": "blue-band.jpg",
+      "price": 79,
+      "category": "Fitness"
+    },
+    {
+      "id": "1003",
+      "code": "244wgerg2",
+      "name": "Blue T-Shirt",
+      "description": "Product Description",
+      "image": "blue-t-shirt.jpg",
+      "price": 29,
+      "category": "Clothing"
+    },
+    {
+      "id": "1004",
+      "code": "h456wer53",
+      "name": "Bracelet",
+      "description": "Product Description",
+      "image": "bracelet.jpg",
+      "price": 15,
+      "category": "Accessories"
+    },
+    {
+      "id": "1005",
+      "code": "av2231fwg",
+      "name": "Brown Purse",
+      "description": "Product Description",
+      "image": "brown-purse.jpg",
+      "price": 120,
+      "category": "Accessories"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+name: Web Components - Deploy & Publish Storybook
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: |
+          npm i -g npm@8
+          npm ci --quiet
+          cd packages/web
+          npm ci --quiet
+
+
+      - name: Install and Build 🔧
+        run: |
+          npm run build-storybook
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: storybook-static

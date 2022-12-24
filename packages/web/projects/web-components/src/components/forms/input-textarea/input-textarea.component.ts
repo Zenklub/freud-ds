@@ -62,7 +62,7 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
-  @Input() id: string = Math.random().toString(36).substring(2);
+  @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
@@ -71,6 +71,7 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
   @Output() onInput: EventEmitter<any> = new EventEmitter();
 
   @Output() onKeydown: EventEmitter<any> = new EventEmitter();
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   private _value!: string;
 
@@ -82,6 +83,7 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
     this._value = v;
     this.onChange(this._value);
     this.onTouched();
+    this.valueChange.emit(v);
   }
 
   writeValue(obj: any): void {
