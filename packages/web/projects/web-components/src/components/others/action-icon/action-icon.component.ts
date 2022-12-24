@@ -4,7 +4,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'freud-action-icon',
   template: `
     <button type="button">
-      <span class="freud-icon freud-icon-chevron-left"></span>
+      <span class="freud-icon freud-icon-times"></span>
     </button>
   `,
   styleUrls: ['./action-icon.component.scss'],

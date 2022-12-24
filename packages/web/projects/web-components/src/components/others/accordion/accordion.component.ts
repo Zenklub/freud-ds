@@ -1,15 +1,19 @@
-import { Component, ContentChildren, EventEmitter, Input, Output, QueryList, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  EventEmitter,
+  Input,
+  Output,
+  QueryList, ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'freud-accordion-tab',
   template: `
-    <p-accordionTab
-      [disabled]="disabled"
-      [selected]="selected"
-      [tabindex]="tabindex"
-      [header]="header"
-      [style]="style">
-    </p-accordionTab>
+    <div #ref>
+      <ng-content></ng-content>
+    </div>
   `,
   styleUrls: ['./accordion.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -26,6 +30,7 @@ export class FreudAccordionTabComponent {
   @Input() header!: string;
   @Input() style!: string;
   @Input() bgColor: boolean = false;
+  @ViewChild('ref') ref!: any;
 
 }
 
@@ -41,6 +46,16 @@ export class FreudAccordionTabComponent {
       [style]="style"
       (onOpen)="onOpen.emit($event)"
       (onClose)="onClose.emit($event)">
+        <ng-container *ngFor="let template of templates">
+          <p-accordionTab
+            [disabled]="template.disabled"
+            [selected]="template.selected"
+            [tabindex]="template.tabindex"
+            [header]="template.header"
+            [style]="template.style">
+            <div [innerHTML]="template.ref?.nativeElement?.innerHTML"></div>
+          </p-accordionTab>
+        </ng-container>
     </p-accordion>
   `,
   styleUrls: ['./accordion.component.scss'],
@@ -59,7 +74,7 @@ export class FreudAccordionComponent {
   @Input() expandIcon: string = 'freud-icon freud-icon-chevron-right';
   @Input() activeIndex!: number;
   @Input() bgColor: boolean = false;
-  @ContentChildren(FreudAccordionTabComponent) templates!: QueryList<any>;
+  @ContentChildren(FreudAccordionTabComponent) templates!: QueryList<FreudAccordionTabComponent>;
   @Output() onClose: EventEmitter<any> = new EventEmitter<any>();
   @Output() onOpen: EventEmitter<any> = new EventEmitter<any>();
 
