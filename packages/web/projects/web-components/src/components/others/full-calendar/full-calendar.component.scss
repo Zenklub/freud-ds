@@ -8,6 +8,38 @@
       @include typography(30px, $font-weight-semibold, 36px);
       color: $neutral-color-white;
     }
+    .fc.fc-theme-standard .fc-toolbar {
+      .fc-prev-button,
+      .fc-next-button,
+      .fc-today-button.fc-button {
+        background-color: $neutral-color-white;
+        border-color: $neutral-color-white;
+        color: $brand-color-pure;
+        &:focus {
+          box-shadow: unset;
+        }
+      }
+      .fc-today-button.fc-button {
+        border-radius: $border-radius-md;
+      }
+
+      .fc-button.fc-dayGridMonth-button,
+      .fc-button.fc-timeGridWeek-button,
+      .fc-button.fc-timeGridDay-button {
+        background-color: $brand-color-04;
+        border-color: $brand-color-05;
+        color: $neutral-color-white;
+        &.fc-button-active {
+          background-color: $neutral-color-white;
+          border-color: $neutral-color-light-04;
+          color: $neutral-color-dark-03;
+        }
+        &:focus {
+          box-shadow: unset;
+        }
+      }
+    }
+
   }
   &:not(.freud-bgcolor) {
     .fc-toolbar-title {
@@ -77,5 +109,16 @@
     background: $brand-color-01;
     border-color: $brand-color-01;
     color: $brand-color-pure;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
+    color: $neutral-color-dark-03;
+  }
+  .fc .fc-daygrid-day-number {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+  .fc.fc-theme-standard a {
+    color: $neutral-color-dark-03;
   }
 }

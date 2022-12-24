@@ -22,7 +22,7 @@ const calendarOptions: CalendarOptions = {
 const Template: Story<FreudFullCalendarComponent> = (args: FreudFullCalendarComponent) => ({
   props: { ...args },
   template: `
-    <freud-full-calendar [events]="events" [options]="options">
+    <freud-full-calendar [bgColor]="bgColor" [events]="events" [options]="options">
     </freud-full-calendar>
   `,
 });
@@ -43,4 +43,10 @@ Default.args = {
 export const CustomHeader = Template.bind({});
 CustomHeader.args = {
   options: calendarOptions
+}
+
+export const BGColor = Template.bind({});
+BGColor.args = {
+  options: calendarOptions,
+  bgColor: true
 }

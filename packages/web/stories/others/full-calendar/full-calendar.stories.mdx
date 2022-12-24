@@ -4,7 +4,8 @@ import { FreudFullCalendarComponent, FreudFullCalendarModule, FreudButtonModule 
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  CustomHeader
+  CustomHeader,
+  BGColor
 } from './FullCalendar.stories.ts';
 
 <Meta
@@ -101,6 +102,11 @@ const calendarOptions: CalendarOptions = {
 ```
 <Canvas>
   <Story story={CustomHeader}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
 </Canvas>
 
 ## <a id="api"></a>API
