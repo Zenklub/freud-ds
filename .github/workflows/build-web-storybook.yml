@@ -23,9 +23,10 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          cd packages/web
           npm run build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: storybook-static
+          folder: packages/web/storybook-static

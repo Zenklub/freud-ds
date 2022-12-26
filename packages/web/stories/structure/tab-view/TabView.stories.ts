@@ -1,4 +1,4 @@
-import { FreudTabViewComponent, FreudMenuItem } from '@freud-ds/web-components';
+import { FreudTabViewComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
 const Template: Story<FreudTabViewComponent> = (args: FreudTabViewComponent) => ({
