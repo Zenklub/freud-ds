@@ -20,7 +20,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
           type="text"
           [class.ng-invalid]="invalid"
           [class.ng-dirty]="invalid"
-          aria-describedby="{{id}}-help"
           [(ngModel)]="value"
           [rows]="rows"
           [cols]="cols"
