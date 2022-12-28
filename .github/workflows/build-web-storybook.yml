@@ -18,6 +18,7 @@ jobs:
           cd packages/web
           npm i -g npm@8
           npm ci --quiet
+          cd node_modules
           ls -la
 #          npm run build-storybook
 #      - name: Deploy 🚀
