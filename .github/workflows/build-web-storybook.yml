@@ -18,9 +18,10 @@ jobs:
           cd packages/web
           npm i -g npm@8
           npm ci --quiet
-          npm run build-storybook
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: packages/web/storybook-static
+          ls -la
+#          npm run build-storybook
+#      - name: Deploy 🚀
+#        uses: JamesIves/github-pages-deploy-action@v4
+#        with:
+#          branch: gh-pages
+#          folder: packages/web/storybook-static

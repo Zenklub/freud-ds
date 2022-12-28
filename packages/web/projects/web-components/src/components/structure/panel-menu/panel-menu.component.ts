@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api";
+import { FreudMenuItem } from "../../../api/menu.interface";
 
 @Component({
   selector: 'freud-panel-menu',

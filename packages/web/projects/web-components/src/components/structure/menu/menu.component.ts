@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api";
+import { FreudMenuItem } from "../../../api/menu.interface";
 
 @Component({
   selector: 'freud-menu',

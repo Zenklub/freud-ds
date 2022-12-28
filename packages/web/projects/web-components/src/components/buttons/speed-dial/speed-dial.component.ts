@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api";
+import { FreudMenuItem } from "../../../api/menu.interface";
 
 type directions = 'up' | 'down' | 'left' | 'right' | 'up-left' | 'up-right' | 'down-left' | 'down-right';
 type types = 'linear' | 'circle' | 'semi-circle' | 'quarter-circle';

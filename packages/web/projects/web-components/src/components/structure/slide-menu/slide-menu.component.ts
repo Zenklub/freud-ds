@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api";
+import { FreudMenuItem } from "../../../api/menu.interface";
 import { SlideMenu } from "primeng/slidemenu";
 
 @Component({
