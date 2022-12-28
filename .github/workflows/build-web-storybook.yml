@@ -17,13 +17,11 @@ jobs:
         run: |
           npm i -g npm@8
           npm ci --quiet
-          cd packages/web
-          npm ci --quiet
-
 
       - name: Install and Build 🔧
         run: |
           cd packages/web
+          npm ci --quiet
           npm run build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
