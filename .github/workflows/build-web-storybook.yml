@@ -15,8 +15,11 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm run bootstrap
+          rm -rf package.json
+          rm -rf package-lock.json
           cd packages/web
+          npm i -g npm@8
+          npm i --quiet
           npm run build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
