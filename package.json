@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap && lerna exec npm install",
     "build:tokens": "lerna run build --scope @freud-ds/tokens",
     "build:logos": "lerna run build --scope @freud-ds/logos",
     "build:icons": "lerna run build --scope @freud-ds/icons",
