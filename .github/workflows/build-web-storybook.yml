@@ -13,19 +13,14 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
+      - name: Install and Build 🔧
         run: |
+          cd packages/web
           npm i -g npm@8
-          npm --version
-#          npm ci --quiet
-
-#      - name: Install and Build 🔧
-#        run: |
-#          cd packages/web
-#          npm ci --quiet
-#          npm run build-storybook
-#      - name: Deploy 🚀
-#        uses: JamesIves/github-pages-deploy-action@v4
-#        with:
-#          branch: gh-pages
-#          folder: packages/web/storybook-static
+          npm ci --quiet
+          npm run build-storybook
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: packages/web/storybook-static
