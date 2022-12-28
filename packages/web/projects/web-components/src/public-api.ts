@@ -65,6 +65,7 @@ export * from './components/structure/breadcrumb';
 export * from './components/structure/tab-menu';
 
 export * from './components/structure/menu';
+export * from './components/structure/panel';
 export * from './components/structure/panel-menu';
 export * from './components/structure/scroll-panel';
 export * from './components/structure/slide-menu';
@@ -75,6 +76,7 @@ export * from './components/structure/tab-view';
 export * from './components/modal-and-popover/confirm-dialog';
 export * from './components/modal-and-popover/confirm-popup';
 export * from './components/modal-and-popover/dialog';
+export * from './components/modal-and-popover/dynamic-dialog';
 
 // Directive
 export * from './components/directive/template';

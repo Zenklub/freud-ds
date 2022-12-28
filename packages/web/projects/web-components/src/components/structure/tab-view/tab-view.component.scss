@@ -3,10 +3,68 @@
 
 .freud-tab-view {
 
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link,
+  .p-tabview .p-tabview-panels,
+  .p-tabview .p-tabview-nav {
+    background-color: transparent;
+  }
+
+  .p-tabview-title {
+    @include typography($font-size-xs, $font-weight-semibold, auto);
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+    box-shadow: unset;
+  }
+
+  .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    border-color: $brand-color-02;
+    background-color: transparent;
+    color: $brand-color-02;
+  }
+
+  .freud-icon {
+    font-size: 14px;
+  }
+
+  .p-tabview-panel {
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+
   &:not(.freud-bgcolor) {
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+      color: $neutral-color-dark-02;
+      border-color: $neutral-color-light-03;
+    }
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+      color: $brand-color-pure;
+      border-color: $brand-color-pure;
+      .freud-icon {
+        color: $brand-color-pure;
+      }
+    }
+    .p-tabview-panel {
+      color: $neutral-color-dark-03;
+    }
   }
 
   &.freud-bgcolor {
-
+    .p-tabview-panel {
+      color: $neutral-color-white;
+    }
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+      color: $brand-color-01;
+      border-color: $brand-color-01;
+      .freud-icon {
+        color: $brand-color-01;
+      }
+    }
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+      color: $brand-color-03;
+      border-color: $brand-color-03;
+    }
+    .p-tabview .p-tabview-nav {
+      border-color: $brand-color-03;
+    }
   }
 }

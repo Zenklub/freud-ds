@@ -128,3 +128,16 @@
 .p-fluid .freud-input-group .p-button.p-button-icon-only {
   width: 2.357rem;
 }
+
+
+// Dialog
+
+.p-dialog .p-dialog-header {
+  border-top-right-radius: $border-radius-md;
+  border-top-left-radius: $border-radius-md;
+}
+
+.p-dialog .p-dialog-content {
+  border-bottom-right-radius: $border-radius-md;
+  border-bottom-left-radius: $border-radius-md;
+}

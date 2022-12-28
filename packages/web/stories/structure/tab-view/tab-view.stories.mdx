@@ -5,6 +5,7 @@ import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor, Scrollable,
+  Icon
 } from './TabView.stories';
 
 <Meta
@@ -39,7 +40,7 @@ import { FreudTabViewModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
-FreudTabView requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+FreudTabView requer uma coleção de templates `freud-tab-panel`.
 ```html
     <freud-tab-view
       [activeIndex]="activeIndex"
@@ -70,6 +71,12 @@ FreudTabView requer uma coleção de itens de menu, para isso utilize a interfac
 ### Scrollable
 <Canvas>
   <Story story={Scrollable}/>
+</Canvas>
+
+### Icon
+Utilize as propriedades `rightIcon` e `leftIcon` para incluir icones nos headers.
+<Canvas>
+  <Story story={Icon}/>
 </Canvas>
 
 ### BG Color
