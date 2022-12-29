@@ -12,7 +12,11 @@
   "scripts": {
     "build": "npm run clean && node ./build.js && npm run copy",
     "copy": "cp -r assets dist/ && cp package.json dist/package.json",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "copy-readme": "cp ./README.md ./dist",
+    "copy-license": "cp ./LICENSE ./dist",
+    "copy-changelog": "cp ./Changelog.md ./dist",
+    "copy-files": "npm run copy-readme && npm run copy-license && npm run copy-changelog"
   },
   "devDependencies": {
     "style-dictionary": "3.7.0"

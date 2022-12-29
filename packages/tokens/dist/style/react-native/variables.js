@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 28 Nov 2022 17:09:14 GMT
+ * Generated on Thu, 29 Dec 2022 03:40:35 GMT
  */
 
 export const assetFontSourcesansproName = "Source Sans Pro";
@@ -82,7 +82,7 @@ export const neutralColorWhite = "#FFFFFF";
 export const neutralColorBlack = "#000000";
 export const neutralColorDark01 = "#9CA3AF";
 export const neutralColorDark02 = "#6B7280";
-export const neutralColorDark03 = "#374151";
+export const neutralColorDark03 = "#384252";
 export const neutralColorDark04 = "#1F2937";
 export const neutralColorLight01 = "#F7F9FA";
 export const neutralColorLight02 = "#F0F2F5";

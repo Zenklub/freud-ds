@@ -19,7 +19,9 @@ jobs:
           node-version: 16
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          cd packages/tokens
+          npm install
 
       - name: Configure git
         run: |
@@ -42,7 +44,10 @@ jobs:
 
       - name: Publish
         run: |
-          cd packages/tokens/dist
+          cd packages/tokens
+          ls -la
+          cd dist
+          ls la
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
           echo "unsafe-perm = true" >> ~/.npmrc
           npm publish --access public
