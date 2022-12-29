@@ -44,10 +44,10 @@ jobs:
 
       - name: Publish
         run: |
-          cd packages/tokens
-          ls
-          cd dist
-          ls
+          cd packages/tokens/dist
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          echo "unsafe-perm = true" >> ~/.npmrc
+          npm publish --access public
 
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}

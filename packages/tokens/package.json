@@ -7,11 +7,11 @@
   "license": "ISC",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist", "assets", "style"
   ],
   "scripts": {
     "build": "npm run clean && node ./build.js && npm run copy",
-    "copy": "cp -r assets dist/ && cp package.json dist/package.json",
+    "copy": "cp -r assets dist/ && cp package.json dist/package.json && npm run copy-files",
     "clean": "rm -rf dist",
     "copy-readme": "cp ./README.md ./dist",
     "copy-license": "cp ./LICENSE ./dist",
