@@ -16,7 +16,7 @@
     "copy-readme": "cp ./README.md ./dist",
     "copy-license": "cp ./LICENSE ./dist",
     "copy-changelog": "cp ./Changelog.md ./dist",
-    "copy-files": "npm run copy-readme && npm run copy-license && npm run copy-changelog"
+    "copy-files": "npm run copy-readme && npm run copy-changelog"
   },
   "devDependencies": {
     "style-dictionary": "3.7.0"
