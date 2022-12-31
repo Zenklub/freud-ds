@@ -21,11 +21,13 @@ import { PrimeTemplate } from "primeng/api";
       [panelStyle]="panelStyle"
       (onResizeEnd)="onResizeEnd.emit($event)"
       (onResizeStart)="onResizeStart.emit($event)">
-      <ng-template ngFor let-panel let-i="index" [ngForOf]="panels">
-        <ng-template pTemplate>
-          <ng-container *ngTemplateOutlet="panel"></ng-container>
+      <ng-container *ngIf="panels">
+        <ng-template ngFor let-panel let-i="index" [ngForOf]="panels">
+          <ng-template pTemplate>
+            <ng-container *ngTemplateOutlet="panel"></ng-container>
+          </ng-template>
         </ng-template>
-      </ng-template>
+      </ng-container>
     </p-splitter>
   `,
   styleUrls: ['./splitter.component.scss'],

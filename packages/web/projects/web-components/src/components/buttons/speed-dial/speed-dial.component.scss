@@ -22,7 +22,7 @@
     font-size: $font-size-lg;
   }
   .p-speeddial-action-icon {
-    font-size: $font-size-md;
+    font-size: $font-size-lg;
   }
 }
 
@@ -34,8 +34,8 @@
     color: $brand-color-pure;
   }
   .p-speeddial-action {
-    background-color: $brand-color-02;
-    color: $brand-color-pure;
+    background-color: $brand-color-pure;
+    color: $neutral-color-white;
     width: 42px;
     height: 42px;
   }

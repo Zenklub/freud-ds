@@ -25,6 +25,10 @@
     margin-bottom: $spacing-size-quark;
   }
 
+  .p-dropdown-panel {
+    box-shadow: $shadow-level-3;
+  }
+
   .p-inputtext {
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
@@ -60,8 +64,8 @@
     border-radius: 0;
   }
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-dark-03;
-    background-color: $neutral-color-light-02;
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
   }
 
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {

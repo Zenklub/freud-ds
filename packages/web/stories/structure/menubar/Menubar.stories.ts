@@ -60,7 +60,7 @@ const home: FreudMenuItem = {
 const Template: Story<FreudMenubarComponent> = (args: FreudMenubarComponent) => ({
   props: { ...args },
   template: `
-    <div style="height: 220px;width: 100%">
+    <div style="height: 240px;width: 100%">
       <freud-menubar
           [startImgAlt]="'Home'"
           [startImgSrc]="startImgSrc"

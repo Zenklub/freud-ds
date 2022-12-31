@@ -6,36 +6,36 @@ const items: FreudMenuItem[] = [
     label: 'File',
     items: [{
       label: 'New',
-      icon: 'pi pi-fw pi-plus',
+      icon: 'freud-icon freud-icon-fw freud-icon-plus',
       items: [
-        {label: 'User', icon: 'pi pi-fw pi-user-plus'},
-        {label: 'Filter', icon: 'pi pi-fw pi-filter'}
+        {label: 'User', icon: 'freud-icon freud-icon-fw freud-icon-user-plus'},
+        {label: 'Filter', icon: 'freud-icon freud-icon-fw freud-icon-filter'}
       ]
     },
-      {label: 'Open', icon: 'pi pi-fw pi-external-link'},
+      {label: 'Open', icon: 'freud-icon freud-icon-fw freud-icon-external-link'},
       {separator: true},
-      {label: 'Quit', icon: 'pi pi-fw pi-times'}
+      {label: 'Quit', icon: 'freud-icon freud-icon-fw freud-icon-times'}
     ]
   },
   {
     label: 'Edit',
-    icon: 'pi pi-fw pi-pencil',
+    icon: 'freud-icon freud-icon-fw freud-icon-pencil',
     items: [
-      {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-      {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+      {label: 'Delete', icon: 'freud-icon freud-icon-fw freud-icon-trash'},
+      {label: 'Refresh', icon: 'freud-icon freud-icon-fw freud-icon-refresh'}
     ]
   },
   {
     label: 'Help',
-    icon: 'pi pi-fw pi-question',
+    icon: 'freud-icon freud-icon-fw freud-icon-question',
     items: [
       {
         label: 'Contents',
-        icon: 'pi pi-pi pi-bars'
+        icon: 'freud-icon freud-icon-freud-icon freud-icon-bars'
       },
       {
         label: 'Search',
-        icon: 'pi pi-pi pi-search',
+        icon: 'freud-icon freud-icon-freud-icon freud-icon-search',
         items: [
           {
             label: 'Text',
@@ -47,28 +47,28 @@ const items: FreudMenuItem[] = [
           },
           {
             label: 'User',
-            icon: 'pi pi-fw pi-file',
+            icon: 'freud-icon freud-icon-fw freud-icon-file',
           }
         ]}
     ]
   },
   {
     label: 'Actions',
-    icon: 'pi pi-fw pi-cog',
+    icon: 'freud-icon freud-icon-fw freud-icon-cog',
     items: [
       {
         label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
+        icon: 'freud-icon freud-icon-fw freud-icon-pencil',
         items: [
-          {label: 'Save', icon: 'pi pi-fw pi-save'},
-          {label: 'Update', icon: 'pi pi-fw pi-save'},
+          {label: 'Save', icon: 'freud-icon freud-icon-fw freud-icon-save'},
+          {label: 'Update', icon: 'freud-icon freud-icon-fw freud-icon-save'},
         ]
       },
       {
         label: 'Other',
-        icon: 'pi pi-fw pi-tags',
+        icon: 'freud-icon freud-icon-fw freud-icon-tags',
         items: [
-          {label: 'Delete', icon: 'pi pi-fw pi-minus'}
+          {label: 'Delete', icon: 'freud-icon freud-icon-fw freud-icon-minus'}
         ]
       }
     ]

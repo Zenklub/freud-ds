@@ -3,6 +3,15 @@
 
 .freud-panel-menu {
 
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon,
+  .p-panelmenu .p-panelmenu-header > a .p-menuitem-icon {
+    font-size: 14px;
+  }
+
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+    color: $neutral-color-dark-02;
+  }
+
   .p-panelmenu .p-panelmenu-panel {
     margin-bottom: $spacing-size-quark;
   }
@@ -21,6 +30,12 @@
     background-color: $neutral-color-light-01;
   }
 
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover,
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover span {
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
+  }
+
   .p-panelmenu .p-panelmenu-header:not(.p-highlight) > a {
     border-radius: $border-radius-md;
   }
@@ -33,10 +48,12 @@
   .p-panelmenu .p-panelmenu-panel .p-panelmenu-content {
     border-bottom-right-radius: $border-radius-md;
     border-bottom-left-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-02;
   }
 
   .p-panelmenu .p-panelmenu-header > a {
     color: $neutral-color-dark-03;
+    border: unset;
     @include typography($font-size-xs, $font-weight-bold, 16px);
   }
 

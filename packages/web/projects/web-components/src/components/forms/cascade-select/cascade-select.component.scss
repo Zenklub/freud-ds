@@ -14,6 +14,13 @@
 }
 
 .freud-cascade-select {
+
+  .p-cascadeselect-panel {
+    box-shadow: $shadow-level-3;
+  }
+  .pi {
+    font-size: 14px;
+  }
   .help-text {
     margin-top: $spacing-size-quark;
   }

@@ -1,11 +1,11 @@
-// TODO: Verificar o import
 @import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
 
 .freud-split-button:not(.freud-split-bgcolor) {
   .p-button {
     background-color: $brand-color-pure;
     border-color: $brand-color-pure;
-    font-weight: $font-weight-bold;
+    @include typography($font-size-xs, $font-weight-semibold, auto);
   }
   .p-button:focus {
     box-shadow: unset;
@@ -16,7 +16,7 @@
   .p-button {
     background-color: $neutral-color-white;
     border-color: $neutral-color-white;
-    font-weight: $font-weight-bold;
+    @include typography($font-size-xs, $font-weight-semibold, auto);
     color: $brand-color-pure;
   }
   .p-button:focus {
@@ -25,8 +25,11 @@
 }
 
 .freud-split-button {
-  .p-menu .p-menuitem-link:hover {
-    background-color: $neutral-color-light-02;
+  .p-menu .p-menuitem-link:hover,
+  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
+  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
   }
   .p-splitbutton-defaultbutton {
     border-radius: $border-radius-md 0 0 $border-radius-md;
@@ -35,10 +38,18 @@
     border-radius: 0 $border-radius-md $border-radius-md 0;
   }
 
-  .p-menu a.p-menuitem-link .p-menuitem-text,
-  .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
+  .p-button-icon {
+    font-size: 14px;
+  }
+
   .p-menu .p-menuitem-link .p-menuitem-icon {
+    font-size: 14px;
+    color: $neutral-color-dark-02;
+  }
+
+  .p-menu a.p-menuitem-link .p-menuitem-text{
     color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
   }
   .p-menuitem-link:focus {
     box-shadow: 0 0 0 1px $brand-color-01;

@@ -32,7 +32,7 @@ const templateHTML = `
         [items]="items"
         [bgColor]="bgColor">
     </freud-split-button>
-    <p *ngIf="!disabled" style="margin-bottom: 150px"></p>
+    <p *ngIf="!disabled" style="margin-bottom: 180px"></p>
 `;
 
 const Template: Story<FreudSplitButtonComponent> = (args: FreudSplitButtonComponent) => ({

@@ -14,7 +14,7 @@
 
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
   .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
     @media screen and (min-width: 961px) {
       background-color: $neutral-color-light-02;
     }
@@ -25,6 +25,12 @@
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
     @media screen and (min-width: 961px) {
       color: $brand-color-pure !important;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .p-menubar .p-menubar-button:focus {
+      box-shadow: unset;
     }
   }
 }
@@ -50,7 +56,7 @@
   .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
   .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
     @media screen and (min-width: 961px) {
-      background-color: $brand-color-04;
+      background-color: $brand-color-03;
     }
   }
 
@@ -61,6 +67,11 @@
     .p-menubar .p-menubar-button:focus {
       box-shadow: unset;
     }
+
+    .p-menubar .p-menubar-button:hover {
+      background-color: $brand-color-03;
+    }
+
   }
 }
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
@@ -90,7 +101,51 @@
     border-radius: 0;
     @include typography($font-size-xxs, $font-weight-regular, auto);
   }
+
+  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link,
+  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link span.p-submenu-icon,
+  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
+  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
+  }
+
+  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon {
+    font-size: 14px;
+  }
+
+  .p-menubar .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+    font-size: 14px;
+    color: $neutral-color-dark-02;
+  }
+
+  @media screen and (min-width: 961px) {
+    .p-menubar .p-submenu-list {
+      border-radius: $border-radius-md;
+      border: unset;
+      box-shadow: $shadow-level-3;
+    }
+  }
+
+  .p-menubar .p-menuitem-link:focus {
+    box-shadow: unset;
+  }
+
+  @media screen and (max-width: 960px) {
+    .p-menubar-root-list {
+      border-radius: $border-radius-md;
+      border: unset;
+      box-shadow: $shadow-level-3;
+    }
+
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
+    .p-menubar .p-menubar-root-list ul li a {
+      background-color: $brand-color-02;
+      color: $brand-color-pure;
+    }
+  }
 }
+
 
 @media screen and (max-width: 960px) {
   .menubar-home-logo {

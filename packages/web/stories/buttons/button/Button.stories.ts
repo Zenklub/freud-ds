@@ -83,10 +83,13 @@ const TemplateIcon: Story<FreudButtonComponent> = (args: FreudButtonComponent) =
   props: { ...args },
   template: templateHTML.replace(
     '{{label}}',
-    '<span class="freud-icon freud-icon-check freud-icon-20px"></span>'
+    ''
   ),
 });
 export const IconOnly = TemplateIcon.bind({});
+IconOnly.args = {
+  icon: 'freud-icon freud-icon-check'
+}
 export const WithIconRight = TemplateLoading .bind({});
 WithIconRight.args = {
   icon: 'freud-icon freud-icon-check'

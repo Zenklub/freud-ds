@@ -27,27 +27,13 @@
 }
 
 /*Sizes*/
-.freud-icon-16px {
-  font-size: 16px;
-}
-.freud-icon-20px {
-  font-size: 20px;
+.freud-icon-small {
+  font-size: 14px;
 }
 .freud-icon-24px {
   font-size: 24px;
 }
-.freud-icon-32px {
-  font-size: 32px;
-}
-.freud-icon-40px {
-  font-size: 40px;
-}
-.freud-icon-48px {
-  font-size: 48px;
-}
-.freud-icon-56px {
-  font-size: 56px;
-}
+
 
 .freud-icon-accessible:before {
   content: "\e900";

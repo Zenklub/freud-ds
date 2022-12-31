@@ -27,6 +27,12 @@
 
   .p-menu {
     border-radius: $border-radius-md;
+    border: unset;
+    box-shadow: $shadow-level-3;
+  }
+
+  .freud-icon {
+    font-size: 14px;
   }
 
 }

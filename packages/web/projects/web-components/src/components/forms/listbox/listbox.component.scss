@@ -21,8 +21,8 @@
   }
 
   .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-dark-03;
-    background-color: $neutral-color-light-02;
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
   }
 
   .p-listbox .p-listbox-list .p-listbox-item {

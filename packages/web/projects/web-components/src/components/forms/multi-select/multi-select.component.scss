@@ -50,6 +50,7 @@
   }
   .p-multiselect .p-multiselect-panel {
     border-radius: $border-radius-md;
+    box-shadow: $shadow-level-3;
     margin-top: 1px;
   }
 
@@ -60,8 +61,8 @@
     border-radius: 0;
   }
   .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-dark-03;
-    background-color: $neutral-color-light-02;
+    background-color: $brand-color-02;
+    color: $brand-color-pure;
   }
 
   .p-multiselect-panel .p-multiselect-header {

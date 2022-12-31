@@ -20,6 +20,12 @@
     padding: 0 $spacing-size-xxxs;
     height: 40px;
     border-radius: $border-radius-md;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    .p-button-icon-left {
+      margin-right: 0;
+      margin-left: 8px;
+    }
     @include typography($font-size-xs, $font-weight-bold, auto);
     &[disabled] {
       opacity: $opacity-level-5;
