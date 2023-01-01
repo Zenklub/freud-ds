@@ -21,6 +21,7 @@ jobs:
         run: |
           npm i -g npm@8
           npm ci --quiet
+          ls
           cd packages/web
           npm ci --quiet
 

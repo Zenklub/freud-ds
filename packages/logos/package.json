@@ -15,6 +15,6 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "fs-extra": "^11.1.0"
+    "fs-extra": "11.1.0"
   }
 }
