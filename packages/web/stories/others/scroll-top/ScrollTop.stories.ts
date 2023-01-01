@@ -13,8 +13,8 @@ export const Default = Template.bind({});
 const TemplateTarget: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
   props: { ...args },
   template: `
-    <div style="height: 250px;width: 250px; overflow: auto">
-        <p>
+    <div style="height: 250px;width: 300px; overflow: auto">
+        <p style="font-family: Source Sans Pro;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Vitae et leo duis ut diam.
           Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.
@@ -36,7 +36,7 @@ const TemplateTargetBGColor: Story<FreudScrollTopComponent> = (args: FreudScroll
   props: { ...args },
   template: `
     <div style="height: 250px;width: 300px; padding: 10px; overflow: auto;background-color: #241249; color: white">
-        <p>
+        <p style="font-family: Source Sans Pro;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Vitae et leo duis ut diam.
           Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.

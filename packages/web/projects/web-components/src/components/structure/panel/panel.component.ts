@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
       [expandIcon]="expandIcon"
       [showHeader]="showHeader"
       [toggler]="toggler"
+      [style]="style"
       [collapseIcon]="collapseIcon"
       [toggleable]="toggleable"
       (onBeforeToggle)="onBeforeToggle.emit($event)"

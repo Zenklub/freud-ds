@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudScrollTopComponent, FreudScrollTopModule } from '@freud-ds/web-components';
+import { FreudScrollTopComponent, FreudScrollTopModule, FreudPanelModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   BGColor,
@@ -11,7 +11,7 @@ import {
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudScrollTopModule],
+      imports: [FreudScrollTopModule, FreudPanelModule],
     })
   ]}
   parameters={{
