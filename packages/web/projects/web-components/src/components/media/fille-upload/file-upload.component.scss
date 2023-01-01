@@ -13,6 +13,11 @@
     border-bottom-right-radius: $border-radius-md;
     border-bottom-left-radius: $border-radius-md;
   }
+  .p-fileupload-advanced .p-button .p-button-icon-left {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+
   .p-button {
     background-color:  $brand-color-pure;
     border-color: $brand-color-pure;
@@ -22,10 +27,6 @@
     border-radius: $border-radius-md;
     display: inline-flex;
     flex-direction: row-reverse;
-    .p-button-icon-left {
-      margin-right: 0;
-      margin-left: 8px;
-    }
     @include typography($font-size-xs, $font-weight-bold, auto);
     &[disabled] {
       opacity: $opacity-level-5;
