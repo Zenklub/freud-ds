@@ -1,7 +1,6 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-
 .freud-slide-menu {
   .p-slidemenu .p-menuitem-link .p-menuitem-text {
     color: $neutral-color-dark-03;
@@ -16,5 +15,16 @@
   }
   .p-slidemenu .p-menuitem-link:focus {
     box-shadow: unset;
+  }
+  .freud-icon {
+    color: $neutral-color-dark-02;
+    font-size: 14px;
+  }
+  .p-slidemenu .p-menuitem-link:not(.p-disabled):hover,
+  .p-slidemenu .p-menuitem-link:not(.p-disabled):hover .freud-icon,
+  .p-slidemenu .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon,
+  .p-slidemenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: $brand-color-pure;
+    background-color: $brand-color-02;
   }
 }

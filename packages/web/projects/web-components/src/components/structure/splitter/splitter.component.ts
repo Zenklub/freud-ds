@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   Component,
   ContentChildren, EventEmitter,
   Input,
@@ -21,10 +20,10 @@ import { PrimeTemplate } from "primeng/api";
       [panelStyle]="panelStyle"
       (onResizeEnd)="onResizeEnd.emit($event)"
       (onResizeStart)="onResizeStart.emit($event)">
-      <ng-container *ngIf="panels">
-        <ng-template ngFor let-panel let-i="index" [ngForOf]="panels">
+      <ng-container *ngIf="templates">
+        <ng-template ngFor let-panel let-i="index" [ngForOf]="templates">
           <ng-template pTemplate>
-            <ng-container *ngTemplateOutlet="panel"></ng-container>
+            <ng-container *ngTemplateOutlet="panel.template"></ng-container>
           </ng-template>
         </ng-template>
       </ng-container>
@@ -36,24 +35,17 @@ import { PrimeTemplate } from "primeng/api";
     class: 'freud-splitter',
   }
 })
-export class FreudSplitterComponent implements AfterContentInit {
+export class FreudSplitterComponent {
 
-  @Input() panelSizes!: number[];
-  @Input() minSizes!: number[];
+  @Input() panelSizes: number[] = [];
+  @Input() minSizes: number[] = [];
   @Input() layout: "horizontal" | "vertical" = 'horizontal';
   @Input() panelStyleClass!: string;
   @Input() gutterSize: number = 4;
   @Input() panelStyle!: Object;
   @Input() style!: any;
-  panels: any[] = [];
   @ContentChildren(PrimeTemplate) templates!: QueryList<any>;
   @Output() onResizeStart: EventEmitter<any> = new EventEmitter<any>();
   @Output() onResizeEnd: EventEmitter<any> = new EventEmitter<any>();
-
-  ngAfterContentInit() {
-    this.templates.forEach((item) => {
-      this.panels.push(item.template);
-    });
-  }
 
 }

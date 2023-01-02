@@ -8,8 +8,12 @@
   .p-paginator .p-paginator-pages .p-paginator-page {
     @include typography($font-size-xs, $font-weight-regular, auto);
   }
-  .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
-    background-color: $brand-color-02;
+  .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover,
+  .p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+    background-color: $brand-color-03;
     color: $neutral-color-white;
     border-radius: 50%;
   }

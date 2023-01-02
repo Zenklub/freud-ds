@@ -38,8 +38,8 @@
   }
 
   .p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
-    color: $neutral-color-white;
-    background-color: $brand-color-03;
+    color: $neutral-color-dark-02;
+    background-color: $neutral-color-light-03;
   }
 
   table {
@@ -62,8 +62,8 @@
       }
     }
     td.p-datepicker-today > span {
-      color: $neutral-color-white;
-      background-color: $brand-color-02;
+      color: $neutral-color-dark-02;
+      background-color: $neutral-color-light-04;
     }
     td.p-datepicker-today > span.p-highlight,
     td > span.p-highlight {
