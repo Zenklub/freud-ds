@@ -12,5 +12,8 @@
   "scripts": {
     "build": "npm run clean && node ./build.js && cp package.json dist/package.json",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0"
   }
 }
