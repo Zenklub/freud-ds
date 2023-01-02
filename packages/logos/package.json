@@ -10,11 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && node ./build.js && npm run copy",
+    "build": "npm run clean && cp -r assets ./dist && npm run copy",
     "copy": "cp package.json dist/package.json && cp README.md dist/README.md",
     "clean": "rm -rf dist"
-  },
-  "dependencies": {
-    "fs-extra": "11.1.0"
   }
 }
