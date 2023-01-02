@@ -11,6 +11,7 @@
   "allowedNonPeerDependencies": [
     "primeng",
     "primeicons",
-    "@freud-ds/tokens"
+    "@freud-ds/tokens",
+    "@freud-ds/icons"
   ]
 }
