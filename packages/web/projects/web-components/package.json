@@ -12,7 +12,7 @@
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "~12.2.0",
     "@freud-ds/tokens": "^2.0.7",
-    "@freud-ds/icons": "^2.0.2",
+    "@freud-ds/icons": "^2.0.3",
     "@fullcalendar/angular": "^6.0.1",
     "@fullcalendar/core": "^6.0.1",
     "@fullcalendar/daygrid": "^6.0.1",
