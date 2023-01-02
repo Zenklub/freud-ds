@@ -1,5 +1,4 @@
-// TODO: Verificar o import
-@import '../../../../tokens/dist/style/scss/_variables.scss';
+@import '@freud-ds/tokens/style/scss/_variables.scss';
 
 @mixin typography($fontSize, $lineHeight, $fontWeight) {
   font-size: $fontSize;
