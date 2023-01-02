@@ -3,8 +3,8 @@
 @import "primeicons/primeicons.css";
 @import "./typography.scss";
 
-@import '@freud-ds/tokens/style/scss/_variables.scss';
-@import '@freud-ds/icons/style/style.css';
+@import '~@freud-ds/tokens/style/scss/_variables.scss';
+@import '~@freud-ds/icons/style/style.css';
 
 @font-face {
     font-family: "Source Sans Pro";
