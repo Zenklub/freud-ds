@@ -37,7 +37,9 @@ jobs:
           git push
 
       - name: Build
-        run: npm run build:grid
+        run: |
+          cd packages/grid
+          npm run build
 
       - name: Publish
         run: |
