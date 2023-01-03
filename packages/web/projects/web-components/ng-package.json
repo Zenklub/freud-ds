@@ -6,7 +6,7 @@
     "cssUrl": "inline"
   },
   "assets": [
-    "./scss"
+    "./scss", "./fonts"
   ],
   "allowedNonPeerDependencies": [
     "primeng",
