@@ -35,14 +35,16 @@ jobs:
           cd packages/web/projects/web-components
           npm version ${{ github.event.inputs.version }}
 
+      - name: Build
+        run: |
+          cd packages/web
+          npm run build
+
       - name: Push new version
         run: |
           git add .
           git commit -m "chore(web-components): automatic version update"
           git push
-
-      - name: Build
-        run: npm run build:web
 
       - name: Publish
         run: |

@@ -13,6 +13,8 @@
   },
   "devDependencies": {
     "lerna": "^6.0.3",
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
+    "@freud-ds/tokens": "^2.0.7",
+    "@freud-ds/icons": "^2.0.3"
   }
 }
