@@ -9,10 +9,12 @@
   "files": [
     "dist",
     "grid.scss",
+    "grid-variables.scss",
+    "mixins.scss",
     "scss"
   ],
   "scripts": {
-    "build": "npm run clean && cp -r src/scss dist && cp package.json dist/package.json && cp ./README.md ./dist",
+    "build": "npm run clean && cp -r src dist && cp package.json dist/package.json && cp ./README.md ./dist",
     "clean": "rm -rf dist"
   }
 }
