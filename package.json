@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap && lerna exec npm install",
+    "build:tokens": "lerna run build --scope @freud-ds/tokens",
+    "build:logos": "lerna run build --scope @freud-ds/logos",
+    "build:icons": "lerna run build --scope @freud-ds/icons",
+    "build:grid": "lerna run build --scope @freud-ds/grid",
+    "build:web": "lerna run build --scope @freud-ds/web"
+  },
+  "devDependencies": {
+    "lerna": "^6.0.3",
+    "fs-extra": "^10.1.0",
+    "@freud-ds/tokens": "^2.0.7",
+    "@freud-ds/icons": "^2.0.3"
+  }
+}

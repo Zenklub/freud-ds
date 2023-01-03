@@ -42,6 +42,7 @@ jobs:
 
       - name: Push new version
         run: |
+          cd packages/web
           git add .
           git commit -m "chore(web-components): automatic version update"
           git push
