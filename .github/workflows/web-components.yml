@@ -19,6 +19,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          rm -rf package.json
+          rm -rf package-lock.json
           npm i -g npm@8
           cd packages/web
           npm ci --quiet
@@ -35,8 +37,6 @@ jobs:
 
       - name: Build
         run: |
-          rm -rf package.json
-          rm -rf package-lock.json
           cd packages/web
           npm run build
 
