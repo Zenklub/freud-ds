@@ -7,10 +7,11 @@
   "license": "ISC",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "grid.scss"
   ],
   "scripts": {
-    "build": "npm run clean && cp -r src/scss dist/ && cp package.json dist/package.json && cp ./README.md ./dist",
+    "build": "npm run clean && cp -r src/scss/* dist/ && cp package.json dist/package.json && cp ./README.md ./dist",
     "clean": "rm -rf dist"
   }
 }
