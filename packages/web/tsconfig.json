@@ -5,9 +5,6 @@
     "baseUrl": "./",
     "paths": {
       "@freud-ds/web-components": ["projects/web-components/src/public-api"],
-      "@freud-ds/tokens": [
-        "../tokens",
-      ],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
