@@ -1,6 +1,6 @@
 {
   "name": "@freud-ds/grid",
-  "version": "2.0.6",
+  "version": "2.0.5",
   "description": "Zenklub - Freud DS Grid",
   "author": "Zenklub",
   "homepage": "",
@@ -16,4 +16,4 @@
     "clean": "rm -rf dist"
   }
 }
-s
+
