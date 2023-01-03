@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && cp -r src/scss ./dist && cp package.json dist/package.json",
+    "build": "npm run clean && cp -r src/scss ./dist && cp package.json dist/package.json && cp ./README.md ./dist",
     "clean": "rm -rf dist"
   }
 }
