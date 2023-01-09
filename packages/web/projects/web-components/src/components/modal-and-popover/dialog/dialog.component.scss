@@ -17,6 +17,8 @@ $maxDialogWidth: 700px;
 
   .p-dialog .p-dialog-content {
     color: $neutral-color-dark-03;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
 

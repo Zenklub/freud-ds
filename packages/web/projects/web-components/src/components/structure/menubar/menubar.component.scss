@@ -55,7 +55,7 @@
 
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
   .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
     @media screen and (min-width: 961px) {
       background-color: $brand-color-03;
     }
@@ -103,11 +103,11 @@
     @include typography($font-size-xxs, $font-weight-regular, auto);
   }
 
-  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link span.p-submenu-icon,
-  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
-  .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
-    background-color: $brand-color-02;
+  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link,
+  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link span.p-submenu-icon,
+  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
+  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+    background-color: $brand-color-01;
     color: $brand-color-pure;
   }
 
@@ -140,8 +140,10 @@
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
-    .p-menubar .p-menubar-root-list ul li a {
-      background-color: $brand-color-02;
+    .p-menubar .p-menuitem-link:not(.p-disabled):hover,
+    .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
+    .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+      background-color: $brand-color-01;
       color: $brand-color-pure;
     }
   }

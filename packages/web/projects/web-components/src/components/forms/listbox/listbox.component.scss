@@ -15,13 +15,13 @@
   .p-listbox {
     @include typography($font-size-xs, $font-weight-regular, 24px);
     border-radius: $border-radius-md;
-    border: 1px solid $neutral-color-light-03;
+    border: unset;
     width: 100%;
     box-shadow: $shadow-level-3;
   }
 
   .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
-    background-color: $brand-color-02;
+    background-color: $brand-color-01;
     color: $brand-color-pure;
   }
 

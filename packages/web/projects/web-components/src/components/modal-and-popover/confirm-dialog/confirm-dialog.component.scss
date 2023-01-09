@@ -30,4 +30,8 @@
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
   }
+  .p-dialog .p-dialog-content {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }

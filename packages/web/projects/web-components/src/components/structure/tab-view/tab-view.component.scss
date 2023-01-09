@@ -31,6 +31,14 @@
     @include typography($font-size-xs, $font-weight-regular, auto);
   }
 
+  .p-tabview .p-tabview-nav-btn.p-link {
+    color: $brand-color-pure;
+  }
+
+  .p-tabview .p-tabview-nav-btn.p-link:focus {
+    box-shadow: unset;
+  }
+
   &:not(.freud-bgcolor) {
     .p-tabview .p-tabview-nav li .p-tabview-nav-link {
       color: $neutral-color-dark-02;

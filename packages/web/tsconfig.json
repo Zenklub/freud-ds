@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@freud-ds/web-components": ["projects/web-components/src/public-api"],
+      "@freud-ds/web-components": ["projects/web-components/src/public-api"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

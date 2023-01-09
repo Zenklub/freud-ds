@@ -14,4 +14,13 @@
     @include typography($font-size-xs, $font-weight-regular, auto);
   }
 
+  .p-datatable .p-sortable-column.p-highlight:hover,
+  .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+    color: $brand-color-pure;
+  }
+
+  .p-datatable .p-sortable-column:focus {
+    box-shadow: unset;
+  }
+
 }

@@ -61,8 +61,12 @@
   }
 
   .p-button-icon {
-    font-size: 14px;
+    font-size: 24px;
     color: $neutral-color-dark-02;
+  }
+
+  .p-button.p-button-icon-only {
+    padding: 0;
   }
 
   .p-inputtext:enabled:focus {
@@ -128,5 +132,9 @@
     color: $brand-color-pure;
     border-radius: $border-radius-md;
   }
+}
+
+.freud-auto-complete .p-autocomplete:not(.p-disabled):hover .p-inputtext, .freud-auto-complete .p-autocomplete:not(.p-disabled):hover .p-button, .freud-auto-complete .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-inputtext, .freud-auto-complete .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-button {
+  border: unset;
 }
 

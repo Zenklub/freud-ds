@@ -3,6 +3,10 @@
 
 .freud-full-calendar {
   font-family: $font-family-base;
+
+  .fc .fc-daygrid-day.fc-day-today {
+    background-color: $brand-color-01;
+  }
   &.freud-bgcolor {
     .fc-toolbar-title {
       @include typography(30px, $font-weight-semibold, 36px);

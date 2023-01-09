@@ -141,3 +141,22 @@
   border-bottom-right-radius: $border-radius-md;
   border-bottom-left-radius: $border-radius-md;
 }
+
+
+// Block UI
+@keyframes p-component-overlay-enter-animation {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba($neutral-color-dark-03, $opacity-level-4);
+  }
+}
+@keyframes p-component-overlay-leave-animation {
+  from {
+    background-color: rgba($neutral-color-dark-03, $opacity-level-4);
+  }
+  to {
+    background-color: transparent;
+  }
+}

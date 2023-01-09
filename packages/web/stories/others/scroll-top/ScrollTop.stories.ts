@@ -13,8 +13,7 @@ export const Default = Template.bind({});
 const TemplateTarget: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
   props: { ...args },
   template: `
-    <div style="height: 250px;width: 300px; overflow: auto">
-        <p style="font-family: Source Sans Pro;">
+    <freud-scroll-panel [style]="{height: '200px', width: '300px'}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Vitae et leo duis ut diam.
           Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.
@@ -26,17 +25,15 @@ const TemplateTarget: Story<FreudScrollTopComponent> = (args: FreudScrollTopComp
           Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris.
           Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer.
           Mattis aliquam faucibus purus in massa tempor nec.
-      </p>
-        <freud-scroll-top [target]="'parent'" [threshold]="100"></freud-scroll-top>
-    </div>
+      <freud-scroll-top [target]="'parent'" [threshold]="100"></freud-scroll-top>
+    </freud-scroll-panel>
   `,
 });
 
 const TemplateTargetBGColor: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
   props: { ...args },
   template: `
-    <div style="height: 250px;width: 300px; padding: 10px; overflow: auto;background-color: #241249; color: white">
-        <p style="font-family: Source Sans Pro;">
+    <freud-scroll-panel [style]="{height: '200px', width: '300px', backgroundColor: '#241249', color: 'white'}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Vitae et leo duis ut diam.
           Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.
@@ -48,9 +45,8 @@ const TemplateTargetBGColor: Story<FreudScrollTopComponent> = (args: FreudScroll
           Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris.
           Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer.
           Mattis aliquam faucibus purus in massa tempor nec.
-      </p>
         <freud-scroll-top [target]="'parent'" [threshold]="100" [bgColor]="true"></freud-scroll-top>
-    </div>
+    </freud-scroll-panel>
   `,
 });
 export const TargetElement = TemplateTarget.bind({});
