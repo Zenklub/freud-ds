@@ -56,6 +56,10 @@
     box-shadow: $shadow-focused-zen;
   }
 
+  .p-autocomplete-panel {
+    box-shadow: $shadow-level-3;
+  }
+
   .p-autocomplete-dd .p-inputtext {
     border-right: unset;
   }
@@ -80,7 +84,7 @@
 
   .p-autocomplete {
     border-radius: $border-radius-md;
-    border: 1px solid $neutral-color-light-03;
+    border: 1px solid transparent;
     width: 100%;
   }
 
@@ -134,7 +138,10 @@
   }
 }
 
-.freud-auto-complete .p-autocomplete:not(.p-disabled):hover .p-inputtext, .freud-auto-complete .p-autocomplete:not(.p-disabled):hover .p-button, .freud-auto-complete .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-inputtext, .freud-auto-complete .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-button {
+.freud-auto-complete .p-element:not(.p-inputwrapper-focus) .p-autocomplete:not(.p-disabled):hover .p-inputtext,
+.freud-auto-complete .p-element:not(.p-inputwrapper-focus) .p-autocomplete:not(.p-disabled):hover .p-button,
+.freud-auto-complete .p-element:not(.p-inputwrapper-focus) .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-inputtext,
+.freud-auto-complete .p-element:not(.p-inputwrapper-focus) .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover .p-button {
   border: unset;
 }
 
