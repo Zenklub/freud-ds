@@ -8,7 +8,8 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "brand"
+    "brand",
+    "assets"
   ],
   "scripts": {
     "build": "npm run clean && cp -r assets ./dist && npm run copy",
