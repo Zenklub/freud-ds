@@ -10,26 +10,26 @@
 
 import React from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
-  View,
+  View
 } from 'react-native';
 
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
-  ReloadInstructions,
+  ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
 
 const Section: React.FC<{
   title: string;
-}> = ({children, title}) => {
+}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -39,7 +39,8 @@ const Section: React.FC<{
           {
             color: isDarkMode ? Colors.white : Colors.black,
           },
-        ]}>
+        ]}
+      >
         {title}
       </Text>
       <Text
@@ -48,7 +49,8 @@ const Section: React.FC<{
           {
             color: isDarkMode ? Colors.light : Colors.dark,
           },
-        ]}>
+        ]}
+      >
         {children}
       </Text>
     </View>
@@ -67,12 +69,19 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+        style={backgroundStyle}
+      >
+        <Image
+          style={{ height: 200, width: 200 }}
+          source={{
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
+          }}
+        />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
+          }}
+        >
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
