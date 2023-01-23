@@ -1,5 +1,6 @@
 {
   "name": "@freud-ds/logos",
+  "private": true,
   "version": "2.0.2",
   "description": "Zenklub - Freud DS Logos",
   "author": "Zenklub",

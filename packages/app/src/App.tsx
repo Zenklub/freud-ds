@@ -26,3 +26,4 @@ export default App;
 
 /// Making components avaliable
 export * from './Components';
+export { theme } from './Theme';

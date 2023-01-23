@@ -1,5 +1,6 @@
 {
   "name": "@freud-ds/grid",
+  "private": true,
   "version": "2.0.8",
   "description": "Zenklub - Freud DS Grid",
   "author": "Zenklub",
