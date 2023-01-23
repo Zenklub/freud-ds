@@ -7,28 +7,28 @@ export const Text = {
   baseStyle: ({ colorMode }) => {
     return {
       color: colorMode === 'dark' ? theme.colors.neutral.white : theme.colors.neutral.dark.dark04,
-      fontWeight: typography.fontWeights.medium,
+      fontWeight: typography.fontWeights.regular,
     };
   },
   sizes: {
     '6xl': {
       fontSize: { base: typography.fontSizes['6xl'], md: 0 }, //7xl
-      letterSpacing: -0.05,
+      letterSpacing: 0,
       lineHeight: '1.5em',
     },
     '5xl': {
       fontSize: { base: typography.fontSizes['5xl'], md: 0 }, //7xl
-      letterSpacing: -0.05,
+      letterSpacing: 0,
       lineHeight: '1.5em',
     },
     '4xl': {
       fontSize: { base: typography.fontSizes['4xl'], md: 0 }, //7xl
-      letterSpacing: -0.05,
+      letterSpacing: 0,
       lineHeight: '1.5em',
     },
     '3xl': {
       fontSize: { base: typography.fontSizes['3xl'], md: 0 },
-      letterSpacing: -0.05,
+      letterSpacing: 0,
       lineHeight: '1.5em',
     },
     '2xl': {
@@ -37,12 +37,12 @@ export const Text = {
       lineHeight: '1.5em',
     },
     xl: {
-      fontSize: { base: 'xl', md: 0 },
+      fontSize: { base: typography.fontSizes.xl, md: 0 },
       letterSpacing: 0,
       lineHeight: '1.5em',
     },
     lg: {
-      fontSize: { base: 'lg', md: 0 },
+      fontSize: { base: typography.fontSizes.lg, md: 0 },
       letterSpacing: 0,
       lineHeight: '1.5em',
     },
@@ -68,6 +68,6 @@ export const Text = {
     },
   },
   defaultProps: {
-    size: 'xl',
+    size: 'md',
   },
 };

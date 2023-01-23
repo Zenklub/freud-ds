@@ -29,12 +29,12 @@ export const Heading = {
       lineHeight: '1.25em',
     },
     xl: {
-      fontSize: { base: '3xl', md: 0 },
+      fontSize: { base: typography.fontSizes['3xl'], md: 0 },
       letterSpacing: 0,
       lineHeight: '1.25em',
     },
     lg: {
-      fontSize: { base: '2xl', md: 0 },
+      fontSize: { base: typography.fontSizes['2xl'], md: 0 },
       letterSpacing: 0,
       lineHeight: '1.25em',
     },

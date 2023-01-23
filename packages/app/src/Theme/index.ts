@@ -8,7 +8,7 @@ export const theme = extendTheme({
   colors: zenTheme.colors,
   opacity: zenTheme.opacity,
   radii: zenTheme.radii,
-  shadow: zenTheme.shadow,
+  shadows: zenTheme.shadow,
   spacing: zenTheme.spacing,
   ...zenTheme.typography,
   components: Components,
