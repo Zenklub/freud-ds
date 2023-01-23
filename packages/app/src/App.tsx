@@ -1,6 +1,6 @@
 import { Center, NativeBaseProvider, ScrollView } from 'native-base';
 import React from 'react';
-import { ZHeading, ZText } from './Components';
+import { FreudHeading, FreudText } from './Components';
 import { theme } from './Theme';
 
 const App: React.FC = () => {
@@ -14,8 +14,8 @@ const App: React.FC = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <ZHeading>Default Heading</ZHeading>
-          <ZText>Default Text</ZText>
+          <FreudHeading>Default Heading</FreudHeading>
+          <FreudText>Default Text</FreudText>
         </Center>
       </ScrollView>
     </NativeBaseProvider>
