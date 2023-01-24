@@ -1,12 +1,15 @@
 /**
  * Do not edit directly
- * Generated on Thu, 29 Dec 2022 03:40:35 GMT
+ * Generated on Thu, 19 Jan 2023 08:09:43 GMT
  */
 
 export const assetFontSourcesansproName = "Source Sans Pro";
-export const assetFontSourcesansproRegularTtf = "assets/fonts/SourceSansPro-Regular.ttf";
-export const assetFontSourcesansproSemiboldTtf = "assets/fonts/SourceSansPro-SemiBold.ttf";
-export const assetFontSourcesansproBoldTtf = "assets/fonts/SourceSansPro-Bold.ttf";
+export const assetFontSourcesansproRegularTtf =
+  "assets/fonts/SourceSansPro-Regular.ttf";
+export const assetFontSourcesansproSemiboldTtf =
+  "assets/fonts/SourceSansPro-SemiBold.ttf";
+export const assetFontSourcesansproBoldTtf =
+  "assets/fonts/SourceSansPro-Bold.ttf";
 export const assetFontFreudiconName = "Freud Icon";
 export const assetFontFreudiconDefaultTtf = "assets/fonts/freud-icon.ttf";
 export const borderRadiusNone = 0;
