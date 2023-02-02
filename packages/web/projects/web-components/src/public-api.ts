@@ -26,7 +26,8 @@ export * from './components/forms/radio-button';
 
 // Feedback
 export * from './components/feedback/alert-messages';
-export * from './components/feedback/knob'
+export * from './components/feedback/knob';
+export * from './components/feedback/loader';
 export * from './components/feedback/steps';
 export * from './components/feedback/tag';
 export * from './components/feedback/toast';
