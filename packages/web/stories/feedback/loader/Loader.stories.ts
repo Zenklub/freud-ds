@@ -1,5 +1,5 @@
-import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import {FreudLoaderComponent, FreudLoaderModule} from "../../../projects/web-components/src/components/feedback/loader";
+import { Story } from '@storybook/angular';
+import { FreudLoaderComponent } from "../../../projects/web-components/src/components/feedback/loader";
 
 const Template: Story<FreudLoaderComponent> = (
   args: FreudLoaderComponent
