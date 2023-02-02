@@ -1,0 +1,70 @@
+@import '../../../../scss/styles.scss';
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}
+
+.freud-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.freud-loader .spinner {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  font-size: 8px;
+  text-indent: 999em;
+  overflow: hidden;
+  animation: spin 0.8s infinite steps(8);
+}
+
+.freud-loader-size {
+  &-small .spinner {
+    font-size: 4px;
+  }
+
+  &-large .spinner {
+    font-size: 8px;
+  }
+}
+
+.spinner:before,
+.spinner:after,
+.spinner > div:before,
+.spinner > div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2.35em; /* (largura - largura da barra)/2  */
+  width: .3em;
+  height: 1.2em;
+  border-radius: .2em;
+  background: $brand-color-pure;
+  box-shadow: 0 3.8em $brand-color-01; /* altura - altura da barra */
+  transform-origin: 50% 2.5em; /* altura / 2 */
+}
+
+.freud-loader.freud-loader-bgcolor {
+  .spinner:before,
+  .spinner:after,
+  .spinner > div:before,
+  .spinner > div:after {
+    background: $neutral-color-white; /* altura - altura da barra */
+    box-shadow: 0 3.8em $brand-color-02; /* altura / 2 */
+  }
+}
+
+.spinner:after {
+  transform: rotate(-45deg);
+}
+
+.spinner > div:before {
+  transform: rotate(-90deg);
+}
+
+.spinner > div:after {
+  transform: rotate(-135deg);
+}
