@@ -1,4 +1,4 @@
-@import '../../../../scss/styles.scss';
+@import '~@freud-ds/tokens/style/scss/_variables.scss';
 
 @keyframes spin {
   to { transform: rotate(1turn); }
