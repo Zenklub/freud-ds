@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'freud-icon';
-  src:  url('../fonts/freud-icon.eot?nuf3he');
-  src:  url('../fonts/freud-icon.eot?nuf3he#iefix') format('embedded-opentype'),
-  url('../fonts/freud-icon.ttf?nuf3he') format('truetype'),
-  url('../fonts/freud-icon.woff?nuf3he') format('woff'),
-  url('../fonts/freud-icon.svg?nuf3he#freud-icon') format('svg');
+  src:  url('../fonts/freud-icon.eot?erpkop');
+  src:  url('../fonts/freud-icon.eot?erpkop#iefix') format('embedded-opentype'),
+    url('../fonts/freud-icon.ttf?erpkop') format('truetype'),
+    url('../fonts/freud-icon.woff?erpkop') format('woff'),
+    url('../fonts/freud-icon.svg?erpkop#freud-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,15 +25,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/*Sizes*/
-.freud-icon-small {
-  font-size: 14px;
-}
-.freud-icon-24px {
-  font-size: 24px;
-}
-
 
 .freud-icon-accessible:before {
   content: "\e900";
@@ -1310,11 +1301,11 @@
 .freud-icon-vaccine:before {
   content: "\eaa8";
 }
-.freud-icon-verified-professional .path1:before {
+.freud-icon-verificated:before {
   content: "\eaa9";
-  color: rgb(144, 105, 221);
+  color: rgb(0, 0, 0);
 }
-.freud-icon-verified-professional .path2:before {
+.freud-icon-verificated:after {
   content: "\eaaa";
   margin-left: -1em;
   color: rgb(255, 255, 255);
