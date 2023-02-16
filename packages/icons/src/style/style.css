@@ -26,6 +26,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*Sizes*/
+.freud-icon-small {
+  font-size: 14px;
+}
+.freud-icon-24px {
+  font-size: 24px;
+}
+
+
 .freud-icon-accessible:before {
   content: "\e900";
 }
