@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'freud-icon';
+  font-family: 'Freud Icon';
   src:  url('../fonts/freud-icon.eot?gm67xm');
   src:  url('../fonts/freud-icon.eot?gm67xm#iefix') format('embedded-opentype'),
     url('../fonts/freud-icon.ttf?gm67xm') format('truetype'),
@@ -12,7 +12,7 @@
 
 [class^="freud-icon-"], [class*=" freud-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'freud-icon' !important;
+  font-family: 'Freud Icon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
