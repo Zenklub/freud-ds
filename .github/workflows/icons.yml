@@ -38,7 +38,9 @@ jobs:
           git push
 
       - name: Build
-        run: npm run build:icons
+        run: |
+          cd packages/icons
+          npm run build
 
       - name: Publish
         run: |
