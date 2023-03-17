@@ -82,4 +82,10 @@ export * from './components/modal-and-popover/dynamic-dialog';
 // Directive
 export * from './components/directive/template';
 
+// Services
+
+export * from './services';
+
+// Api
+
 export * from './api';
