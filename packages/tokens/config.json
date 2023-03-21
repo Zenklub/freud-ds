@@ -25,7 +25,11 @@
       "files": [
         {
           "destination": "variables.js",
-          "format": "javascript/es6"
+          "format": "javascript/module"
+        },
+        {
+          "format": "typescript/es6-declarations",
+          "destination": "variables.d.ts"
         }
       ]
     }
