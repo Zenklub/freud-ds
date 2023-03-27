@@ -5,6 +5,7 @@ import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
+  Custom,
   Disabled,
 } from './Switch.stories.ts';
 import {FormsModule} from "@angular/forms";
@@ -22,6 +23,7 @@ import {FormsModule} from "@angular/forms";
       values: [
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
+        { name: 'Custom', value: '#84CC16' },
       ],
     }
   }}
@@ -51,6 +53,11 @@ import { FreudSwitchModule } from '@freud-ds/web-components';
   <Story story={Default}/>
 </Canvas>
 
+### Custom
+<Canvas>
+  <Story story={Custom}/>
+</Canvas>
+
 ### Disabled
 <Canvas>
   <Story story={Disabled}/>
@@ -60,6 +67,7 @@ import { FreudSwitchModule } from '@freud-ds/web-components';
 <Canvas style={{ backgroundColor: '#241249' }}>
   <Story story={BGColor}/>
 </Canvas>
+
 
 ## <a id="api"></a>API
 

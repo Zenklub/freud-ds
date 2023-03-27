@@ -7,7 +7,8 @@ const templateHTML = `
       <freud-input-switch
         [(ngModel)]="defaultValue"
         [disabled]="disabled"
-        [invalid]="invalid">
+        [invalid]="invalid"
+        [custom]="custom">
     </freud-input-switch>
 `;
 
@@ -24,6 +25,13 @@ export const BGColor = Template.bind({});
 BGColor.args = {
   value: value
 };
+
+export const Custom = Template.bind({});
+Custom.args = {
+  value: value,
+  custom: true,
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,

@@ -27,7 +27,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     </p-inputSwitch>
   `,
   host: {
-    class: 'freud-input-switch',
+    '[class.freud-input-switch--custom]': 'custom',
+    class: `freud-input-switch`,
   },
   providers: [
     {
@@ -45,6 +46,7 @@ export class FreudSwitchComponent implements ControlValueAccessor {
   @Input() trueValue: any = true;
   @Input() required: boolean = false;
   @Input() id!: string;
+  @Input() custom: boolean = false;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
