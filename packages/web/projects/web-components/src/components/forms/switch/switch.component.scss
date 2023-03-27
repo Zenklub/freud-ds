@@ -19,4 +19,14 @@
   .p-inputswitch.p-focus .p-inputswitch-slider {
     box-shadow: $shadow-focused-zen;
   }
+
+  &--custom {
+    .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+      background-color: $complementary-color-like-pure;
+    }
+
+    .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+      background-color: $complementary-color-like-04;
+    }
+  }
 }
