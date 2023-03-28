@@ -69,6 +69,7 @@ export * from './components/structure/menu';
 export * from './components/structure/panel';
 export * from './components/structure/panel-menu';
 export * from './components/structure/scroll-panel';
+export * from './components/structure/sidebar';
 export * from './components/structure/slide-menu';
 export * from './components/structure/splitter';
 export * from './components/structure/tab-view';
