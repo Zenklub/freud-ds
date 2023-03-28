@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudCascadeSelectComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const items =  [
   {
@@ -132,3 +135,13 @@ Invalid.args = {
   options: items,
 };
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

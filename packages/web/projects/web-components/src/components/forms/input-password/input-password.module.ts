@@ -4,13 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FreudInputPasswordComponent } from './input-password.component';
 import { FormsModule } from "@angular/forms";
 import { PasswordModule } from "primeng/password";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
-    imports: [
-      CommonModule, FormsModule, PasswordModule, BrowserAnimationsModule,
-      BrowserModule],
+  imports: [CommonModule, FormsModule, PasswordModule],
   declarations: [FreudInputPasswordComponent],
   exports: [FreudInputPasswordComponent]
 })

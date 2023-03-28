@@ -1,5 +1,8 @@
 import { FreudGalleryComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const images = [
   {
@@ -93,3 +96,14 @@ BGColor.args = {
   showThumbnails: false,
   bgColor: true
 };
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

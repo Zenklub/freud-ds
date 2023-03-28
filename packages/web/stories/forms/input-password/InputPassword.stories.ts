@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudInputPasswordComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const templateFeedback = `
   <div style="height: 130px">
@@ -106,3 +109,13 @@ CustomTemplate.args = {
   feedback: true
 };
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

@@ -1,5 +1,8 @@
 import { FreudPanelComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudPanelComponent> = (args: FreudPanelComponent) => ({
   props: { ...args },
@@ -57,3 +60,14 @@ const TemplateIcons: Story<FreudPanelComponent> = (args: FreudPanelComponent) =>
 });
 
 export const Icons = TemplateIcons.bind({});
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

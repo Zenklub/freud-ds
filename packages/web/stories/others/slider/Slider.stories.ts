@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudSliderComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const templateHTML = `
     <freud-slider
@@ -40,3 +43,14 @@ Disabled.args = {
   value: 20,
   disabled: true
 };
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

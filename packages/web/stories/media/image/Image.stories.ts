@@ -1,5 +1,8 @@
 import { FreudImageComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudImageComponent> = (args: FreudImageComponent) => ({
   props: { ...args },
@@ -32,3 +35,14 @@ BGColor.args = {
   width: 'auto',
   alt: 'Zenklub Image',
 };
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

@@ -1,5 +1,7 @@
 import { FreudConfirmPopupComponent } from '@freud-ds/web-components';
-import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata, Story } from '@storybook/angular';
 
 const Template: Story<FreudConfirmPopupComponent> = (args: FreudConfirmPopupComponent) => ({
   template: `
@@ -9,3 +11,13 @@ const Template: Story<FreudConfirmPopupComponent> = (args: FreudConfirmPopupComp
 
 export const Default = Template.bind({});
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

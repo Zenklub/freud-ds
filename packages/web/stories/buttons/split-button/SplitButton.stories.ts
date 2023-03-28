@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudSplitButtonComponent, FreudMenuItem } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const items: FreudMenuItem[] = [
   {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {
@@ -57,3 +60,14 @@ Disabled.args = {
   items: items,
   disabled: true
 };
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

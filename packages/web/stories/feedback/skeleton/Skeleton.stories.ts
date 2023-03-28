@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudSkeletonComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudSkeletonComponent> = (
   args: FreudSkeletonComponent
@@ -48,4 +51,15 @@ Default.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   bgColor: true
+}
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
 }

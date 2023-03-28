@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 import { SplitButtonModule } from 'primeng/splitbutton';
 
 import { FreudSplitButtonComponent } from './split-button.component';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
-    imports: [CommonModule, SplitButtonModule, BrowserAnimationsModule, BrowserModule],
+    imports: [CommonModule, SplitButtonModule],
   declarations: [FreudSplitButtonComponent],
   exports: [FreudSplitButtonComponent]
 })

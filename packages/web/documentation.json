@@ -841,6 +841,61 @@
     ],
     "components": [
         {
+            "name": "AppComponent",
+            "id": "component-AppComponent-23e1a664043e03a5c4be54b695cd63ebf6023ca92fbd8993f5c2d176eedd90a6fffffa51c0148e181acd5d3649e46a0d2102c9092cf48e51aabbcf751dae6cb0",
+            "file": "projects/web-components/src/components/app.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "freud-app",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-app',\n  template: `<ng-content></ng-content>`,\n  encapsulation: ViewEncapsulation.None,\n\n})\nexport class AppComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ]
+        },
+        {
             "name": "FreudAccordionComponent",
             "id": "component-FreudAccordionComponent-dc135b89e0df1eeae7ed51ce526b601e2c056bd2029de96334f2946ff48e69f11679a45afd723a804c496eac51f90f19e7902d11dbf51eb587e1be08b2cfda8f",
             "file": "projects/web-components/src/components/others/accordion/accordion.component.ts",
@@ -4179,7 +4234,7 @@
         },
         {
             "name": "FreudConfirmDialogComponent",
-            "id": "component-FreudConfirmDialogComponent-ded65c589a40b410704d19e84bd914bb254f45f5c2a95b329699644d2f1133e0e1097360c8c819111b102786c6bccdfd5c1f7728278fde8792796fe7c6d7b0ff",
+            "id": "component-FreudConfirmDialogComponent-ee7b4aa2243f75acf604126829f10a5e16e0b4e54a6d5a2c7aa032b369680353c68e9e01916f1bbc6c4e8fcda616a8abb752b217ce49e65e6ed67250c64806e5",
             "file": "projects/web-components/src/components/modal-and-popover/confirm-dialog/confirm-dialog.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -4208,7 +4263,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-confirm-dialog',\n  template: `\n    <p-confirmDialog #cd\n      icon=\"freud-icon freud-icon-exclamation-triangle\">\n      <ng-template pTemplate=\"footer\">\n        <freud-button [color]=\"'secondary'\" (click)=\"cd.reject()\">{{cd.rejectButtonLabel}}</freud-button>\n        <freud-button (click)=\"cd.accept()\">{{cd.acceptButtonLabel}}</freud-button>\n      </ng-template>\n    </p-confirmDialog>\n  `,\n  styleUrls: ['./confirm-dialog.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-confirm-dialog'\n  }\n})\nexport class FreudConfirmDialogComponent { }\n",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'freud-confirm-dialog',\n  template: `\n    <p-confirmDialog #cd\n      icon=\"freud-icon freud-icon-exclamation-triangle\">\n      <ng-template pTemplate=\"footer\">\n        <freud-button [color]=\"'secondary'\" (click)=\"cd.reject()\">{{cd.rejectButtonLabel}}</freud-button>\n        <freud-button (click)=\"cd.accept()\">{{cd.acceptButtonLabel}}</freud-button>\n      </ng-template>\n    </p-confirmDialog>\n  `,\n  styleUrls: ['./confirm-dialog.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    class: 'freud-confirm-dialog'\n  }\n})\nexport class FreudConfirmDialogComponent {\n  constructor(){\n    // console.log(Enviroment);\n  }\n }\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4216,7 +4271,15 @@
                     "styleUrl": "./confirm-dialog.component.scss"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 20
+            }
         },
         {
             "name": "FreudConfirmPopupComponent",
@@ -12816,7 +12879,7 @@
         },
         {
             "name": "FreudSwitchComponent",
-            "id": "component-FreudSwitchComponent-209aa18d8c826052e777e919c4e68c470d7a867677c9cb2dd280dc3b54afe328df28a164401affd468b3e2a101470719ee066f8a00198479be956562f8bd8c4b",
+            "id": "component-FreudSwitchComponent-3589eb46a743b9b0f668c090efbee457084a6543ff21d05497014065fc2efc291cbf00c2057afbf568134f3ba4bcc6bc0a8850d3fa7281617b5a42104aa65c28",
             "file": "projects/web-components/src/components/forms/switch/switch.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -13113,11 +13176,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  EventEmitter,\n  forwardRef,\n  Input,\n  Output,\n  ViewEncapsulation\n} from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from \"@angular/forms\";\n\n@Component({\n  selector: 'freud-input-switch',\n  styleUrls: ['./switch.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-inputSwitch\n      [id]=\"id\"\n      [class.ng-invalid]=\"invalid\"\n      [class.ng-dirty]=\"invalid\"\n      [(ngModel)]=\"value\"\n      [disabled]=\"disabled\"\n      [required]=\"required\"\n      [trueValue]=\"trueValue\"\n      [falseValue]=\"falseValue\"\n      [name]=\"name\"\n      (onChange)=\"onChange.emit($event)\">\n    </p-inputSwitch>\n  `,\n  host: {\n    '[class.freud-input-switch-custom]': 'custom',\n    class: `freud-input-switch`,\n  },\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => FreudSwitchComponent),\n      multi: true\n    }\n  ]\n})\nexport class FreudSwitchComponent implements ControlValueAccessor {\n  @Input() invalid: boolean = false;\n  @Input() disabled = false;\n  @Input() name: string = '';\n  @Input() falseValue: any = false;\n  @Input() trueValue: any = true;\n  @Input() required: boolean = false;\n  @Input() id!: string;\n  @Input() custom: boolean = false;\n  @Output() onChange: EventEmitter<any> = new EventEmitter();\n  @Output() valueChange: EventEmitter<any> = new EventEmitter();\n\n  private _value!: boolean;\n\n  onModelChange: any = (_: string) => { };\n\n  onModelTouched: any = () => { };\n\n  public get value(){\n    return this._value;\n  }\n\n  public set value(v){\n    this._value = v;\n    this.onChange.emit(v);\n    this.onModelChange(this._value);\n    this.onModelTouched();\n    this.valueChange.emit(v);\n  }\n\n  writeValue(obj: any): void {\n    this._value = obj;\n  }\n\n  registerOnChange(fn: any): void {\n    this.onModelChange = fn;\n  }\n\n  registerOnTouched(fn: any): void {\n    this.onModelTouched = fn;\n  }\n\n  setDisabledState?(isDisabled: boolean): void {\n  }\n\n  onSomeEventOccured(newValue: boolean){\n    this.value = newValue;\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  EventEmitter,\n  forwardRef,\n  Input,\n  Output,\n  ViewEncapsulation\n} from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from \"@angular/forms\";\n\n@Component({\n  selector: 'freud-input-switch',\n  styleUrls: ['./switch.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <p-inputSwitch\n      [id]=\"id\"\n      [class.ng-invalid]=\"invalid\"\n      [class.ng-dirty]=\"invalid\"\n      [(ngModel)]=\"value\"\n      [disabled]=\"disabled\"\n      [required]=\"required\"\n      [trueValue]=\"trueValue\"\n      [falseValue]=\"falseValue\"\n      [name]=\"name\"\n      (onChange)=\"onChange.emit($event)\">\n    </p-inputSwitch>\n  `,\n  host: {\n    '[class.freud-input-switch--custom]': 'custom',\n    class: `freud-input-switch`,\n  },\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => FreudSwitchComponent),\n      multi: true\n    }\n  ]\n})\nexport class FreudSwitchComponent implements ControlValueAccessor {\n  @Input() invalid: boolean = false;\n  @Input() disabled = false;\n  @Input() name: string = '';\n  @Input() falseValue: any = false;\n  @Input() trueValue: any = true;\n  @Input() required: boolean = false;\n  @Input() id!: string;\n  @Input() custom: boolean = false;\n  @Output() onChange: EventEmitter<any> = new EventEmitter();\n  @Output() valueChange: EventEmitter<any> = new EventEmitter();\n\n  private _value!: boolean;\n\n  onModelChange: any = (_: string) => { };\n\n  onModelTouched: any = () => { };\n\n  public get value(){\n    return this._value;\n  }\n\n  public set value(v){\n    this._value = v;\n    this.onChange.emit(v);\n    this.onModelChange(this._value);\n    this.onModelTouched();\n    this.valueChange.emit(v);\n  }\n\n  writeValue(obj: any): void {\n    this._value = obj;\n  }\n\n  registerOnChange(fn: any): void {\n    this.onModelChange = fn;\n  }\n\n  registerOnTouched(fn: any): void {\n    this.onModelTouched = fn;\n  }\n\n  setDisabledState?(isDisabled: boolean): void {\n  }\n\n  onSomeEventOccured(newValue: boolean){\n    this.value = newValue;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\n\n.freud-input-switch {\n  .p-inputswitch .p-inputswitch-slider {\n    background-color: $neutral-color-dark-01;\n  }\n  .p-inputswitch:not(.p-disabled):hover .p-inputswitch-slider {\n    background-color: $neutral-color-dark-02;\n  }\n\n  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {\n    background-color: $brand-color-pure;\n  }\n\n  .freud-input-switch--custom .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {\n    background-color: $complementary-color-like-pure;\n  }\n\n  .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {\n    background-color: $brand-color-04;\n  }\n\n  .p-inputswitch.p-focus .p-inputswitch-slider {\n    box-shadow: $shadow-focused-zen;\n  }\n}\n",
+                    "data": "@import '../../../../../../../tokens/dist/style/scss/variables';\n\n.freud-input-switch {\n  .p-inputswitch .p-inputswitch-slider {\n    background-color: $neutral-color-dark-01;\n  }\n  .p-inputswitch:not(.p-disabled):hover .p-inputswitch-slider {\n    background-color: $neutral-color-dark-02;\n  }\n\n  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {\n    background-color: $brand-color-pure;\n  }\n\n  .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {\n    background-color: $brand-color-04;\n  }\n\n  .p-inputswitch.p-focus .p-inputswitch-slider {\n    box-shadow: $shadow-focused-zen;\n  }\n\n  &--custom {\n    .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {\n      background-color: $complementary-color-like-pure;\n    }\n\n    .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {\n      background-color: $complementary-color-like-04;\n    }\n  }\n}\n",
                     "styleUrl": "./switch.component.scss"
                 }
             ],
@@ -14183,14 +14246,58 @@
     ],
     "modules": [
         {
+            "name": "AppModule",
+            "id": "module-AppModule-381ba2f0256990a2a71add3b5e2f23e770757e887b71f78f8ae6ae742d1ddff76c4a46ebce45f3a85bfed010d96b2cfebe3fff59cd3056a77a0f44e4306f8c19",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/web-components/src/components/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [\n    CommonModule,\n    BrowserModule,\n    BrowserAnimationsModule,\n  ],\n  exports: [\n    BrowserModule,\n    BrowserAnimationsModule,\n    AppComponent\n  ],\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "FreudAccordionModule",
-            "id": "module-FreudAccordionModule-8626d063200ff59e56c197c92dac9b6453ca685a93dfce2a697c6d39cc5ba63244672875c4b72a3f9b820fcd4442ebbcab5256f4fb12a74073d16adab87653e3",
+            "id": "module-FreudAccordionModule-29c4c0fabca103158b37733277798a277f35f6918587f23ac814fa59304e10ca318effc41b867fdc43ef8affcf76c92d463030b02f60f6d9dc0e603742290cc9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/others/accordion/accordion.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudAccordionComponent, FreudAccordionTabComponent } from './accordion.component';\nimport { Accordion, AccordionModule, AccordionTab } from \"primeng/accordion\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, AccordionModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudAccordionComponent, FreudAccordionTabComponent],\n  exports: [FreudAccordionComponent, FreudAccordionTabComponent, AccordionTab, Accordion]\n})\nexport class FreudAccordionModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudAccordionComponent, FreudAccordionTabComponent } from './accordion.component';\nimport { Accordion, AccordionModule, AccordionTab } from \"primeng/accordion\";\n\n\n\n@NgModule({\n  imports: [CommonModule, AccordionModule],\n  declarations: [FreudAccordionComponent, FreudAccordionTabComponent],\n  exports: [FreudAccordionComponent, FreudAccordionTabComponent, AccordionTab, Accordion]\n})\nexport class FreudAccordionModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14284,13 +14391,13 @@
         },
         {
             "name": "FreudAlertMessagesModule",
-            "id": "module-FreudAlertMessagesModule-3a82a5178ba0a09f1b5a3f3d90ac182ab0f74b2191c49ce03aa08381793656e86b1db32247b1fc119fc9c0d6ed0a97f1d20ccbc4a12236572bd374d36d51ed2a",
+            "id": "module-FreudAlertMessagesModule-caa7acc08964cebbf6b5faa4f2acf952bb2dc9a2785c0853b8b8d7f9e16d58ff2d4314d8f48b59894026f3612cb181beca89245e4a62ffb7efe5e2dd013112da",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/feedback/alert-messages/alert-messages.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MessagesModule } from \"primeng/messages\";\nimport { MessageModule } from 'primeng/message';\n\nimport { FreudAlertMessageComponent, FreudAlertMessagesComponent } from './alert-messages.component';\nimport { FreudMessageService } from \"../../../services/message.service\";\nimport { MessageService } from \"primeng/api\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, MessageModule, MessagesModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudAlertMessagesComponent, FreudAlertMessageComponent],\n  exports: [FreudAlertMessagesComponent, FreudAlertMessageComponent],\n  providers: [FreudMessageService, MessageService]\n})\nexport class FreudAlertMessagesModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MessagesModule } from \"primeng/messages\";\nimport { MessageModule } from 'primeng/message';\n\nimport { FreudAlertMessageComponent, FreudAlertMessagesComponent } from './alert-messages.component';\nimport { FreudMessageService } from \"../../../services/message.service\";\nimport { MessageService } from \"primeng/api\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, MessageModule, MessagesModule],\n  declarations: [FreudAlertMessagesComponent, FreudAlertMessageComponent],\n  exports: [FreudAlertMessagesComponent, FreudAlertMessageComponent],\n  providers: [FreudMessageService, MessageService]\n})\nexport class FreudAlertMessagesModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14386,13 +14493,13 @@
         },
         {
             "name": "FreudAutoCompleteModule",
-            "id": "module-FreudAutoCompleteModule-faafc3c2819585a28057ce0309afcfe8d922a2114635b6cd9ab3ddfa904d909f6d181ad603ca983f5cf22301daf121bc6da4b0224f71720d68f61ba7eec620e6",
+            "id": "module-FreudAutoCompleteModule-e5d753c15a33c9735f25ca360a8a32ea8a3f3f7e51b9517c0f97ebdc86596624b712801fdcbcf19f93ef71c2319f0cda27f62802de38a988c6cfea7fd8f76210",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/auto-complete/auto-complete.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudAutoCompleteComponent } from './auto-complete.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { AutoCompleteModule } from \"primeng/autocomplete\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, AutoCompleteModule, BrowserAnimationsModule, BrowserModule],\n  declarations: [FreudAutoCompleteComponent],\n  exports: [FreudAutoCompleteComponent]\n})\nexport class FreudAutoCompleteModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudAutoCompleteComponent } from './auto-complete.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { AutoCompleteModule } from \"primeng/autocomplete\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, AutoCompleteModule],\n  declarations: [FreudAutoCompleteComponent],\n  exports: [FreudAutoCompleteComponent]\n})\nexport class FreudAutoCompleteModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14708,13 +14815,13 @@
         },
         {
             "name": "FreudCalendarModule",
-            "id": "module-FreudCalendarModule-b01b2889ee948619b18a0b9757c6e39352903cfeb154dfc15e0d4e73a55dd9450fc353699a73c87df35bee5b49a5e3daa698a033fda348e0f209b9ff751e311e",
+            "id": "module-FreudCalendarModule-6dc2eafc031ddeaea9d7fd9d107938aa1d2fa705ac3d8f73d8b80de29ef8713429479bce5680d16fb244a22893afd25f49816cfb82a6dec9d063e76ab7714534",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/others/calendar/calendar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCalendarComponent } from './calendar.component';\nimport {FormsModule} from \"@angular/forms\";\nimport { CalendarModule } from \"primeng/calendar\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, CalendarModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudCalendarComponent],\n  exports: [FreudCalendarComponent]\n})\nexport class FreudCalendarModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCalendarComponent } from './calendar.component';\nimport {FormsModule} from \"@angular/forms\";\nimport { CalendarModule } from \"primeng/calendar\";\n\n\n\n@NgModule({\n  imports: [CommonModule, FormsModule, CalendarModule],\n  declarations: [FreudCalendarComponent],\n  exports: [FreudCalendarComponent]\n})\nexport class FreudCalendarModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14840,13 +14947,13 @@
         },
         {
             "name": "FreudCascadeSelectModule",
-            "id": "module-FreudCascadeSelectModule-e2cebefe63a7d3c825da1e9ed8435fe49b0d864812f38fa287822189918bbb7ba162b55e90ccfebdc81530e76d45f8d001b4a4a4e29db33dc18f8b4885fb465f",
+            "id": "module-FreudCascadeSelectModule-a0215234ef4676f52819dc990ff1a26a711152e9ddceeaeb630f7046337cc0921cbdc60e8a47a718b8782c337f266c9ed9ec6f94f0a418951e26c010b6c8f77d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/cascade-select/cascade-select.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCascadeSelectComponent } from './cascade-select.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { CascadeSelectModule } from \"primeng/cascadeselect\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, CascadeSelectModule, BrowserAnimationsModule, BrowserModule],\n  declarations: [FreudCascadeSelectComponent],\n  exports: [FreudCascadeSelectComponent]\n})\nexport class FreudCascadeSelectModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCascadeSelectComponent } from './cascade-select.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { CascadeSelectModule } from \"primeng/cascadeselect\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, CascadeSelectModule],\n  declarations: [FreudCascadeSelectComponent],\n  exports: [FreudCascadeSelectComponent]\n})\nexport class FreudCascadeSelectModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14884,13 +14991,13 @@
         },
         {
             "name": "FreudCheckboxModule",
-            "id": "module-FreudCheckboxModule-5ef2fed93fb89ca4998b615929d70f8c85cb1802d732d51f7885e6e29f7d980239c0d1316cec4d6a0b9be130406abee195d1cedc4d980792e4096ad055befcaa",
+            "id": "module-FreudCheckboxModule-29c1ac90860eb1be2968a079e0c71c0f6924775fd8592fb6d3da80dd2567c4142812b7b042bff06bd223b369c90e65c33129447444c76327c56970e6a99913e0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/checkbox/checkbox.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCheckboxComponent } from './checkbox.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { CheckboxModule } from \"primeng/checkbox\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n    imports: [CommonModule, CheckboxModule, FormsModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudCheckboxComponent],\n  exports: [FreudCheckboxComponent]\n})\nexport class FreudCheckboxModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudCheckboxComponent } from './checkbox.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { CheckboxModule } from \"primeng/checkbox\";\n@NgModule({\n  imports: [CommonModule, CheckboxModule, FormsModule],\n  declarations: [FreudCheckboxComponent],\n  exports: [FreudCheckboxComponent]\n})\nexport class FreudCheckboxModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -14972,13 +15079,13 @@
         },
         {
             "name": "FreudConfirmDialogModule",
-            "id": "module-FreudConfirmDialogModule-6fcb2582798c1a237738ae3679bbe636973a3aaaf43e19252b6c866bbdbf7fcd7cb790b96abdd0f393559c46a07db8d935d67443cc5fa438c94aab151d437f6a",
+            "id": "module-FreudConfirmDialogModule-0103a3a0f0500763917602a3adad7a90c75475db0412b4e27c14bb7b8a484d58bf06c051e9ad026ed11f0bd6d1d0bef6b70752e94f2e39ba5f788b4fe2c16093",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/modal-and-popover/confirm-dialog/confirm-dialog.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudConfirmDialogComponent } from './confirm-dialog.component';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ConfirmationService } from \"primeng/api\";\nimport { FreudButtonModule } from \"../../buttons/button\";\nimport { FreudConfirmationService } from \"../../../services/confirmation.service\";\n\n@NgModule({\n  imports: [CommonModule, ConfirmDialogModule, BrowserModule, BrowserAnimationsModule, FreudButtonModule],\n  declarations: [FreudConfirmDialogComponent],\n  exports: [FreudConfirmDialogComponent],\n  providers: [\n    FreudConfirmationService,\n    ConfirmationService\n  ]\n})\nexport class FreudConfirmDialogModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudConfirmDialogComponent } from './confirm-dialog.component';\nimport { NoopAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ConfirmationService } from \"primeng/api\";\nimport { FreudButtonModule } from \"../../buttons/button\";\nimport { FreudConfirmationService } from \"../../../services/confirmation.service\";\n\n@NgModule({\n  imports: [CommonModule, ConfirmDialogModule, FreudButtonModule],\n  declarations: [FreudConfirmDialogComponent],\n  exports: [FreudConfirmDialogComponent],\n  providers: [\n    FreudConfirmationService,\n    ConfirmationService\n  ]\n})\nexport class FreudConfirmDialogModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -15075,13 +15182,13 @@
         },
         {
             "name": "FreudConfirmPopupModule",
-            "id": "module-FreudConfirmPopupModule-614007e911d10bbf5a66c4cb7b3c73592fd63a0e3e76ec576e5c719417a973e44a2b22a32955626f04c6ebb9c401a1eb47077695ad69219220d8878e0e99adee",
+            "id": "module-FreudConfirmPopupModule-e4b230f37bd8f7671ffb6a34459eeaad13fbdd9f431127cb4680154d949e386e0cdb41f5bb402ee2bc7dc090949fa7be8fa6de2c772cf701bf4c6c5d098c308c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/modal-and-popover/confirm-popup/confirm-popup.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudConfirmPopupComponent } from './confirm-popup.component';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { ConfirmationService } from \"primeng/api\";\nimport { FreudConfirmationService } from \"../../../services/confirmation.service\";\nimport { ConfirmPopupModule } from \"primeng/confirmpopup\";\n\n@NgModule({\n  imports: [CommonModule, ConfirmPopupModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudConfirmPopupComponent],\n  exports: [FreudConfirmPopupComponent],\n  providers: [\n    FreudConfirmationService,\n    ConfirmationService\n  ]\n})\nexport class FreudConfirmPopupModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudConfirmPopupComponent } from './confirm-popup.component';\n\n\nimport { ConfirmationService } from \"primeng/api\";\nimport { FreudConfirmationService } from \"../../../services/confirmation.service\";\nimport { ConfirmPopupModule } from \"primeng/confirmpopup\";\n\n@NgModule({\n  imports: [CommonModule, ConfirmPopupModule],\n  declarations: [FreudConfirmPopupComponent],\n  exports: [FreudConfirmPopupComponent],\n  providers: [\n    FreudConfirmationService,\n    ConfirmationService\n  ]\n})\nexport class FreudConfirmPopupModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15174,13 +15281,13 @@
         },
         {
             "name": "FreudDialogModule",
-            "id": "module-FreudDialogModule-7d797b9c5031e5c4aac8d8a0c89d670189459c9b449598b3756d52bb5e512ea4daede10302567207dfe84438b3eefc2fd3979e7a339ee309e5302c8cdb01c3e7",
+            "id": "module-FreudDialogModule-2ded676cbf103158339678f8a7bf28e338bf894d7d1dfb74464705c16d1bbe8128abe63610d609e4873966d1cc9a62abdb30f309722bde6a6b7b3334f281438e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/modal-and-popover/dialog/dialog.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudDialogComponent } from './dialog.component';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { DialogModule } from \"primeng/dialog\";\nimport { FormsModule } from \"@angular/forms\";\n\n@NgModule({\n    imports: [CommonModule, DialogModule, BrowserModule, BrowserAnimationsModule, FormsModule],\n  declarations: [FreudDialogComponent],\n  exports: [FreudDialogComponent],\n  providers: []\n})\nexport class FreudDialogModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudDialogComponent } from './dialog.component';\n\n\nimport { DialogModule } from \"primeng/dialog\";\nimport { FormsModule } from \"@angular/forms\";\n\n@NgModule({\n    imports: [CommonModule, DialogModule, FormsModule],\n  declarations: [FreudDialogComponent],\n  exports: [FreudDialogComponent],\n  providers: []\n})\nexport class FreudDialogModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15305,13 +15412,13 @@
         },
         {
             "name": "FreudDynamicExampleModule",
-            "id": "module-FreudDynamicExampleModule-ea1e2778ee963e717276710267acf9a05dbca3377ebbf62c8d8a484974b08791716823f9ebf17d171eec135d0bf3ada7405080038f58965a6d7c7b0c0baa14f1",
+            "id": "module-FreudDynamicExampleModule-29eb3cdeef86b8e1b040fd359beca07d1426fbea1de6e80350f6d5cd31f164a05ae62d0b2501568f630714acf5fceb97048b2783983a3313fbb19ed64cf432c5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "stories/modal-and-popover/dynamic-dialog/dynamic-dialog-example/example.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent } from './example.component';\nimport { FreudButtonModule, FreudDynamicDialogModule } from \"@freud-ds/web-components\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, FreudDynamicDialogModule, FreudButtonModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],\n  exports: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],\n  entryComponents: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent]\n})\nexport class FreudDynamicExampleModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent } from './example.component';\nimport { FreudButtonModule, FreudDynamicDialogModule } from \"@freud-ds/web-components\";\n\n@NgModule({\n  imports: [CommonModule, FreudDynamicDialogModule, FreudButtonModule],\n  declarations: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],\n  exports: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],\n  entryComponents: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent]\n})\nexport class FreudDynamicExampleModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15362,13 +15469,13 @@
         },
         {
             "name": "FreudFileUploadModule",
-            "id": "module-FreudFileUploadModule-c27de61cf920cf7c9441a50d824423172f38f25c058ef969b374076e79d156fcd87244a53a4e1cc956bb5a1b9f8e85b260c673e5b4a335726cffff599448b79d",
+            "id": "module-FreudFileUploadModule-c10b2806f9d67fa3d52345355d9c9d5a1b51fabfe62eb39456db58259d2cb1ad3149abd146940aba7e3b3797c6d2f3938d5c900d60238e7c0166f52377117328",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/media/fille-upload/file-upload.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudFileUploadComponent } from './file-upload.component';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { FormsModule } from \"@angular/forms\";\nimport { FileUploadModule } from \"primeng/fileupload\";\nimport { HttpClientModule } from \"@angular/common/http\";\n\n@NgModule({\n  imports: [CommonModule, FileUploadModule, BrowserModule, BrowserAnimationsModule, FormsModule, HttpClientModule],\n  declarations: [FreudFileUploadComponent],\n  exports: [FreudFileUploadComponent]\n})\nexport class FreudFileUploadModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudFileUploadComponent } from './file-upload.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { FileUploadModule } from \"primeng/fileupload\";\nimport { HttpClientModule } from \"@angular/common/http\";\n\n@NgModule({\n  imports: [CommonModule, FileUploadModule, FormsModule, HttpClientModule],\n  declarations: [FreudFileUploadComponent],\n  exports: [FreudFileUploadComponent]\n})\nexport class FreudFileUploadModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15406,13 +15513,13 @@
         },
         {
             "name": "FreudFullCalendarModule",
-            "id": "module-FreudFullCalendarModule-d05ed94ed1cf4e17ff3b2e3d23a330ce151874dba9da412671f7869f5f67cad85524bf2e4a045dea69bbec95a3188cecd94ded5014b8cfb556581c08a30a9479",
+            "id": "module-FreudFullCalendarModule-a8d50d68dd29eb9352e966c9f3ac2b4a1540e2e1d34793ebe9185217c536c7f6175198630f3aaffb8a892844f0c1b3af010f962fb0e61d5b9a42b6103fbc457f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/others/full-calendar/full-calendar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudFullCalendarComponent } from './full-calendar.component';\nimport {FormsModule} from \"@angular/forms\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { FullCalendarModule } from \"@fullcalendar/angular\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, FullCalendarModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudFullCalendarComponent],\n  exports: [FreudFullCalendarComponent]\n})\nexport class FreudFullCalendarModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudFullCalendarComponent } from './full-calendar.component';\nimport {FormsModule} from \"@angular/forms\";\n\n\nimport { FullCalendarModule } from \"@fullcalendar/angular\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, FullCalendarModule],\n  declarations: [FreudFullCalendarComponent],\n  exports: [FreudFullCalendarComponent]\n})\nexport class FreudFullCalendarModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15450,13 +15557,13 @@
         },
         {
             "name": "FreudGalleryModule",
-            "id": "module-FreudGalleryModule-715c16e0e5149fcf19cf31b343d6eb9cefd413441c6f86fea678382a8877e784541bea40273a1d29ad2cc29275f61680a654c864e41520ca006bf18ac0323434",
+            "id": "module-FreudGalleryModule-c6e3d355e6a723285393cd65459f15c8ba4c7d8fde560aa4325fbfd28536b0053277a917529dfef7d14a77bef208210a5095a04ba5197f46044f70b96b929d83",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/media/gallery/gallery.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudGalleryComponent } from './gallery.component';\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { GalleriaModule } from \"primeng/galleria\";\n\n@NgModule({\n  imports: [CommonModule, GalleriaModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudGalleryComponent],\n  exports: [FreudGalleryComponent]\n})\nexport class FreudGalleryModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudGalleryComponent } from './gallery.component';\nimport { GalleriaModule } from \"primeng/galleria\";\n\n@NgModule({\n  imports: [CommonModule, GalleriaModule],\n  declarations: [FreudGalleryComponent],\n  exports: [FreudGalleryComponent]\n})\nexport class FreudGalleryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15538,13 +15645,13 @@
         },
         {
             "name": "FreudImageModule",
-            "id": "module-FreudImageModule-2c8d472518d45c86040791f69226cf475a118bbff733461ec77d932fcb0a14b0ec85cae1100c0db135fcf69a4984eba97407726fc16947a1807dffd4c3ed8c18",
+            "id": "module-FreudImageModule-f8eef47db97f6dad41c079da5b8e7f3a6dfcf20da2c714ce88d851cb4ff1cd7b3c6663403f347883c21a51385f2ed5a1d3e9f44345e9f0c350b67a839b8c6564",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/media/image/image.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudImageComponent } from './image.component';\nimport { ImageModule } from \"primeng/image\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, ImageModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudImageComponent],\n  exports: [FreudImageComponent]\n})\nexport class FreudImageModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudImageComponent } from './image.component';\nimport { ImageModule } from \"primeng/image\";\n\n@NgModule({\n  imports: [CommonModule, ImageModule],\n  declarations: [FreudImageComponent],\n  exports: [FreudImageComponent]\n})\nexport class FreudImageModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15670,13 +15777,13 @@
         },
         {
             "name": "FreudInputPasswordModule",
-            "id": "module-FreudInputPasswordModule-e1bac75c14219dad8e139b668d4f30fa8657bc1614192e15d426fb2c2da866c15caeb2acb972896af487dca4e6fd32e024916f061cfbdf1c32a0953bddc53ecb",
+            "id": "module-FreudInputPasswordModule-226010b29794e22b9bae2f12dcdfd5d33b87e2c4e7fd023a29ff66fbca690eb5ebde3b6cdb62c6af65d070dc82fab8ae8c523f1464e4bf7de204902be73573ef",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/input-password/input-password.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudInputPasswordComponent } from './input-password.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { PasswordModule } from \"primeng/password\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\n@NgModule({\n    imports: [\n      CommonModule, FormsModule, PasswordModule, BrowserAnimationsModule,\n      BrowserModule],\n  declarations: [FreudInputPasswordComponent],\n  exports: [FreudInputPasswordComponent]\n})\nexport class FreudInputPasswordModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudInputPasswordComponent } from './input-password.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { PasswordModule } from \"primeng/password\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, PasswordModule],\n  declarations: [FreudInputPasswordComponent],\n  exports: [FreudInputPasswordComponent]\n})\nexport class FreudInputPasswordModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15846,13 +15953,13 @@
         },
         {
             "name": "FreudListboxModule",
-            "id": "module-FreudListboxModule-239f36d9a1783edd2081d52a2e3f64d1c384d68164c9d801be38f67ce95221628b9b718bbff80eba7269563d0eb36e2fe1765057ec3ff2e7aef0de6c999672d8",
+            "id": "module-FreudListboxModule-5fa3d554b4adb1680202a5c7b45eaa4fd3f4129f8c9d67fe112e59050e236c157b7d178470002205e5dc10a17f28e9f54986922c1eceb28044d5ce00c7e15e6e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/listbox/listbox.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudListboxComponent } from './listbox.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { ListboxModule } from \"primeng/listbox\";\nimport { FreudInputTextModule } from \"../input-text\";\n\n@NgModule({\n    imports: [CommonModule, FormsModule, ListboxModule, BrowserAnimationsModule, BrowserModule, FreudInputTextModule],\n  declarations: [FreudListboxComponent],\n  exports: [FreudListboxComponent]\n})\nexport class FreudListboxModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudListboxComponent } from './listbox.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { ListboxModule } from \"primeng/listbox\";\nimport { FreudInputTextModule } from \"../input-text\";\n\n@NgModule({\n    imports: [CommonModule, FormsModule, ListboxModule, FreudInputTextModule],\n  declarations: [FreudListboxComponent],\n  exports: [FreudListboxComponent]\n})\nexport class FreudListboxModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -15982,13 +16089,13 @@
         },
         {
             "name": "FreudMenuModule",
-            "id": "module-FreudMenuModule-af450a10d3295803861fa4a1b65a47d209c5ed4072a03fdbb626278f8b91d7f2a304f2b05f714cf3c58e7221b72dced06b0142b4d3d8f4ac6a30c8a9342f18d4",
+            "id": "module-FreudMenuModule-2d08e42360e274842a6e2eda9785070ebac0054f8a2434ab5e453589c9bf05c476f629915ff9603ef4480df4502e540006816df7c7abc5b583ee0dbd97e9f1e3",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/structure/menu/menu.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudMenuComponent } from \"./menu.component\";\nimport { MenuModule } from \"primeng/menu\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { RouterModule } from \"@angular/router\";\n\n@NgModule({\n  imports: [CommonModule, MenuModule, BrowserModule, BrowserAnimationsModule, RouterModule],\n  declarations: [FreudMenuComponent],\n  exports: [FreudMenuComponent]\n})\nexport class FreudMenuModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudMenuComponent } from \"./menu.component\";\nimport { MenuModule } from \"primeng/menu\";\n\n\nimport { RouterModule } from \"@angular/router\";\n\n@NgModule({\n  imports: [CommonModule, MenuModule, RouterModule],\n  declarations: [FreudMenuComponent],\n  exports: [FreudMenuComponent]\n})\nexport class FreudMenuModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16077,13 +16184,13 @@
         },
         {
             "name": "FreudMultiSelectModule",
-            "id": "module-FreudMultiSelectModule-5beccdd5425a71b628c2c6ed91ba1ff6c04ffc2e2f08e65830ca43a113f054a39f91ed9fb0fc9d0739c57d6398ce72a31fba2d36b76a9d121fda01edf18e2faa",
+            "id": "module-FreudMultiSelectModule-69256f7473c23eb94388f4612abaa23e26e3ba5c767d3ff1907ab049e3cb574df6d6440f2eb6eea8a7492629e9d73aae30a038ecd3533f6682eba06f8010ad8d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/multi-select/multi-select.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudMultiSelectComponent } from './multi-select.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { MultiSelectModule } from \"primeng/multiselect\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, MultiSelectModule, BrowserAnimationsModule, BrowserModule],\n  declarations: [FreudMultiSelectComponent],\n  exports: [FreudMultiSelectComponent]\n})\nexport class FreudMultiSelectModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudMultiSelectComponent } from './multi-select.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { MultiSelectModule } from \"primeng/multiselect\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, MultiSelectModule],\n  declarations: [FreudMultiSelectComponent],\n  exports: [FreudMultiSelectComponent]\n})\nexport class FreudMultiSelectModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16165,13 +16272,13 @@
         },
         {
             "name": "FreudPanelMenuModule",
-            "id": "module-FreudPanelMenuModule-649dc373214d914c8b068bcf3214084ad5007ff2029d7ab782b705d479de82831f1a7a7d2f3ebee4aff4e84e8585ea887f3fe88d3beea38a611ad33dcfb7b644",
+            "id": "module-FreudPanelMenuModule-8c68d1c59855a0db0b64c764e034a1dda3bad8e5cb92ae527dbe3fcce7fee1e7f102795e6df66be0afc45526354ab581e80b5eea4010f67a9e374ebf11833195",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/structure/panel-menu/panel-menu.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudPanelMenuComponent } from \"./panel-menu.component\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, PanelMenuModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudPanelMenuComponent],\n  exports: [FreudPanelMenuComponent]\n})\nexport class FreudPanelMenuModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudPanelMenuComponent } from \"./panel-menu.component\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\n\n\n\n@NgModule({\n  imports: [CommonModule, PanelMenuModule],\n  declarations: [FreudPanelMenuComponent],\n  exports: [FreudPanelMenuComponent]\n})\nexport class FreudPanelMenuModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16209,13 +16316,13 @@
         },
         {
             "name": "FreudPanelModule",
-            "id": "module-FreudPanelModule-86f22633a2ea19f7df96e3d7d748736fa6c72de98be3b1cd068077696cd6effccc89eb7aaa8a9d3a32d1fcbdf2ea89fab55de587b191303ea9c0eda7cb0c43d6",
+            "id": "module-FreudPanelModule-3cc81f4ad1101d98b7868239fea67d55b41ec5053b9db2f6d801398a3e4ebb0e620524393ad349f55124ccf8d5d5012e646e569fb5a48bbfda7e7e581ebe3657",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/structure/panel/panel.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudPanelComponent } from \"./panel.component\";\nimport { PanelModule } from \"primeng/panel\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, PanelModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudPanelComponent],\n  exports: [FreudPanelComponent]\n})\nexport class FreudPanelModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudPanelComponent } from \"./panel.component\";\nimport { PanelModule } from \"primeng/panel\";\n\n\n\n@NgModule({\n  imports: [CommonModule, PanelModule],\n  declarations: [FreudPanelComponent],\n  exports: [FreudPanelComponent]\n})\nexport class FreudPanelModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16389,13 +16496,13 @@
         },
         {
             "name": "FreudRadioButtonModule",
-            "id": "module-FreudRadioButtonModule-a3eb2655f3fc2e5aa5ee720c45f0a3bb17c5c7c673443b5401ef138baab9b973460f31eebcee536609e1de4eccf4f33b2b6a93ed9c0cb7d1e295a63b3a85d9c3",
+            "id": "module-FreudRadioButtonModule-2e03a7688e3e74a5ada02d7b189da54b28fd8dea31fd52a36d0ba0af4abd71d181a94262272188bf4c9215c20a9ea5b26f042fdccd4603912c564da7da2de746",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/radio-button/radio-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudRadioButtonComponent } from './radio-button.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { RadioButtonModule } from \"primeng/radiobutton\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n    imports: [CommonModule, RadioButtonModule, FormsModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudRadioButtonComponent],\n  exports: [FreudRadioButtonComponent]\n})\nexport class FreudRadioButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudRadioButtonComponent } from './radio-button.component';\nimport { FormsModule } from \"@angular/forms\";\nimport { RadioButtonModule } from \"primeng/radiobutton\";\n\n@NgModule({\n    imports: [CommonModule, RadioButtonModule, FormsModule],\n  declarations: [FreudRadioButtonComponent],\n  exports: [FreudRadioButtonComponent]\n})\nexport class FreudRadioButtonModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16572,13 +16679,13 @@
         },
         {
             "name": "FreudScrollTopModule",
-            "id": "module-FreudScrollTopModule-ff3a8658b699fe86577cc95619063ee2066c716f4c9e51f551f36ed054c64946f2cf2d80d9364728838ed536d7cf1757703ea14696e3babe24e8bc561138e718",
+            "id": "module-FreudScrollTopModule-621816ca6ed75548295511ff2452ca42e848a484e834f6c46b738eafdb3c3933f611efeefae70343e589e4eec1417c51493ad630efc96ebc3a5fe8b25ee97953",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/others/scroll-top/scroll-top.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudScrollTopComponent } from './scroll-top.component';\nimport { ScrollTopModule } from \"primeng/scrolltop\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, ScrollTopModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudScrollTopComponent],\n  exports: [FreudScrollTopComponent]\n})\nexport class FreudScrollTopModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudScrollTopComponent } from './scroll-top.component';\nimport { ScrollTopModule } from \"primeng/scrolltop\";\n\n\n\n@NgModule({\n  imports: [CommonModule, ScrollTopModule],\n  declarations: [FreudScrollTopComponent],\n  exports: [FreudScrollTopComponent]\n})\nexport class FreudScrollTopModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16700,13 +16807,13 @@
         },
         {
             "name": "FreudSelectModule",
-            "id": "module-FreudSelectModule-20f7fa70fa35e1f602c391e5943fffb0a1f019753fad92f67ee4f149951353e5968f71a0a884694e197be2f6d9d1c23cfbc953feb63ff1dddeb8a8b466618f8b",
+            "id": "module-FreudSelectModule-1dddf9ad9c881a7768f7f471720eed3131612f4070c4afb044847ebac7110ecc7b3d4366a6b8897f250760d6cff7fa479ac6707be22a40c5c8956d2942ed9e2f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/forms/select/select.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSelectComponent } from './select.component';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { DropdownModule } from \"primeng/dropdown\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, DropdownModule, ReactiveFormsModule, BrowserAnimationsModule, BrowserModule],\n  declarations: [FreudSelectComponent],\n  exports: [FreudSelectComponent]\n})\nexport class FreudSelectModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSelectComponent } from './select.component';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { DropdownModule } from \"primeng/dropdown\";\n\n@NgModule({\n  imports: [CommonModule, FormsModule, DropdownModule, ReactiveFormsModule],\n  declarations: [FreudSelectComponent],\n  exports: [FreudSelectComponent]\n})\nexport class FreudSelectModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16744,13 +16851,13 @@
         },
         {
             "name": "FreudSkeletonModule",
-            "id": "module-FreudSkeletonModule-903c9727292ee1fe03c7324529395b7393866a16ad86d3fdf0ab5422c1ccc92cbd097d2daee26c4758cc5d152a291824486576bd228d8e91b9d403d68b0101d4",
+            "id": "module-FreudSkeletonModule-6257561eb75b9a8cc1468e0511af08c8b9165cf5a4087cbc8c3438f5541fa160b73e2d86bb062ca47d571b4852a2e0f6f62462b86d25b5cf173e2fbc4fdfc482",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/feedback/skeleton/skeleton.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSkeletonComponent } from './skeleton.component';\nimport { SkeletonModule } from \"primeng/skeleton\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, SkeletonModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudSkeletonComponent],\n  exports: [FreudSkeletonComponent]\n})\nexport class FreudSkeletonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSkeletonComponent } from './skeleton.component';\nimport { SkeletonModule } from \"primeng/skeleton\";\n\n@NgModule({\n  imports: [CommonModule, SkeletonModule],\n  declarations: [FreudSkeletonComponent],\n  exports: [FreudSkeletonComponent]\n})\nexport class FreudSkeletonModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16788,13 +16895,13 @@
         },
         {
             "name": "FreudSlideMenuModule",
-            "id": "module-FreudSlideMenuModule-583f5fe8ab838ed88b0dbe8a16c8be311a0842f0a6346ed53ecd75a88de8dbd522daadaee5a9f279247444b4438c220f7359806fad08c26f69080641b18d4b4a",
+            "id": "module-FreudSlideMenuModule-9bda3efef444b9266647dbab563f03d012822b48b8f8de25394d855228b281b2651c198f479f8ae69a120498cc0033fb316527b7761b6b42cd4af1d93c4a8c72",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/structure/slide-menu/slide-menu.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSlideMenuComponent } from \"./slide-menu.component\";\nimport { SlideMenuModule } from \"primeng/slidemenu\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, SlideMenuModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudSlideMenuComponent],\n  exports: [FreudSlideMenuComponent]\n})\nexport class FreudSlideMenuModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSlideMenuComponent } from \"./slide-menu.component\";\nimport { SlideMenuModule } from \"primeng/slidemenu\";\n\n\n\n@NgModule({\n  imports: [CommonModule, SlideMenuModule],\n  declarations: [FreudSlideMenuComponent],\n  exports: [FreudSlideMenuComponent]\n})\nexport class FreudSlideMenuModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16832,13 +16939,13 @@
         },
         {
             "name": "FreudSliderModule",
-            "id": "module-FreudSliderModule-d1aa61e85563fdcc12f7a4ac76ea578e580846cb4e79c8a9064ffa2ce6d59a7ccc61a2cafe6aea77c2654e30cfab018faccce0f96401d67cb6aefb734a882800",
+            "id": "module-FreudSliderModule-21455bc58d99c9ea8074449df804aa7b1d5848b8718f7188b2e90b34b4a3a031035a6d814d2abc3fe32101c2921e7d12d02c7c393470b3c87f50268f07f653fe",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/others/slider/slider.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSliderComponent } from './slider.component';\nimport {FormsModule} from \"@angular/forms\";\nimport { SliderModule } from \"primeng/slider\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n    imports: [CommonModule, SliderModule, FormsModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudSliderComponent],\n  exports: [FreudSliderComponent]\n})\nexport class FreudSliderModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudSliderComponent } from './slider.component';\nimport {FormsModule} from \"@angular/forms\";\nimport { SliderModule } from \"primeng/slider\";\n\n\n\n@NgModule({\n    imports: [CommonModule, SliderModule, FormsModule],\n  declarations: [FreudSliderComponent],\n  exports: [FreudSliderComponent]\n})\nexport class FreudSliderModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -16924,13 +17031,13 @@
         },
         {
             "name": "FreudSplitButtonModule",
-            "id": "module-FreudSplitButtonModule-a15b3b77ce55ce215a1133ff40c3c0646cea5ff94118699effab2e6b2c3b8591c349ff91d43e502175f6a0674ee3bc9a86ad664c983d0f7420e9b1d6f8a0db1b",
+            "id": "module-FreudSplitButtonModule-bddce2c46bd3ef63a0430c3b80cf7c6d04a1c6e401e2a3a83ef3cd0c56babc0fbd76663d29c54154e00c2cb9355787980521b9fc70b98019bad4a969eb96f227",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/buttons/split-button/split-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SplitButtonModule } from 'primeng/splitbutton';\n\nimport { FreudSplitButtonComponent } from './split-button.component';\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\n@NgModule({\n    imports: [CommonModule, SplitButtonModule, BrowserAnimationsModule, BrowserModule],\n  declarations: [FreudSplitButtonComponent],\n  exports: [FreudSplitButtonComponent]\n})\nexport class FreudSplitButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SplitButtonModule } from 'primeng/splitbutton';\nimport { FreudSplitButtonComponent } from './split-button.component';\n\n@NgModule({\n    imports: [CommonModule, SplitButtonModule],\n  declarations: [FreudSplitButtonComponent],\n  exports: [FreudSplitButtonComponent]\n})\nexport class FreudSplitButtonModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -17393,13 +17500,13 @@
         },
         {
             "name": "FreudToastModule",
-            "id": "module-FreudToastModule-e9e89d91c2f6a5bfa37f7f0e1b9d12824d2f9e513257cc3ff14e0128288378307891165cbafd25e9ff773e4c0b3874aaf436b938164abbb109cc6dad745db254",
+            "id": "module-FreudToastModule-37f23457eb36dd97baf3f87512ca09171b595d95521319ebfa067ee7226315992fd232650f211babe5bc0aad6b25053c45a862601e0eddb0cc3648fb0b717e51",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/web-components/src/components/feedback/toast/toast.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ToastModule } from \"primeng/toast\";\nimport { MessageService } from \"primeng/api\";\n\nimport { FreudToastComponent } from './toast.component';\nimport { FreudMessageService } from \"../../../services/message.service\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n@NgModule({\n  imports: [CommonModule, ToastModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudToastComponent],\n  exports: [FreudToastComponent],\n  providers: [FreudMessageService, MessageService]\n})\nexport class FreudToastModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ToastModule } from \"primeng/toast\";\nimport { MessageService } from \"primeng/api\";\n\nimport { FreudToastComponent } from './toast.component';\nimport { FreudMessageService } from \"../../../services/message.service\";\n\n@NgModule({\n  imports: [CommonModule, ToastModule],\n  declarations: [FreudToastComponent],\n  exports: [FreudToastComponent],\n  providers: [FreudMessageService, MessageService]\n})\nexport class FreudToastModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -17664,7 +17771,7 @@
                 "name": "BGColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -17675,16 +17782,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -17805,6 +17902,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/forms/input-text/InputText.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18084,16 +18191,6 @@
                 "name": "BGColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/structure/slide-menu/SlideMenu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -18104,7 +18201,7 @@
                 "name": "BGColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/splitter/Splitter.stories.ts",
+                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18115,6 +18212,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/structure/tab-menu/TabMenu.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/structure/splitter/Splitter.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18139,16 +18246,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "TemplateBgColor.bind({})"
-            },
-            {
-                "name": "BGCustom",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/forms/switch/Switch.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "bodyTypes",
@@ -18271,6 +18368,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Custom",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/forms/switch/Switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "CustomHeader",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -18364,7 +18471,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18375,16 +18482,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18494,6 +18591,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/forms/input-textarea/InputTextArea.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -18587,8 +18694,8 @@
                 "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story",
+                "defaultValue": "() => ({\n  props: {},\n  template: pad(`\n  <freud-confirm-dialog-example></freud-confirm-dialog-example>\n`),\n})"
             },
             {
                 "name": "Default",
@@ -18604,7 +18711,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/modal-and-popover/dialog/Dialog.stories.ts",
+                "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18614,7 +18721,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
+                "file": "stories/modal-and-popover/dialog/Dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18774,7 +18881,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/menubar/Menubar.stories.ts",
+                "file": "stories/structure/panel/Panel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18784,7 +18891,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/panel/Panel.stories.ts",
+                "file": "stories/structure/menubar/Menubar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18804,16 +18911,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/structure/slide-menu/SlideMenu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -18824,7 +18921,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/splitter/Splitter.stories.ts",
+                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18835,6 +18932,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/structure/tab-menu/TabMenu.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/structure/splitter/Splitter.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -19069,6 +19176,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "TemplateDropdown.bind({})"
+            },
+            {
+                "name": "Empty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "() => ({\n  props: {},\n})"
             },
             {
                 "name": "Error",
@@ -19771,6 +19888,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "pad",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(content: string) => `\n<freud-app>\n    ${content}\n</freud-app>`"
+            },
+            {
                 "name": "PageReport",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -20073,11 +20200,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                "file": "stories/feedback/rating/Rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudProgressBarComponent>",
-                "defaultValue": "(\n  args: FreudProgressBarComponent\n) => ({\n  props: { ...args },\n  template: `\n      <freud-progress-bar [bgColor]=\"bgColor\" [value]=\"50\" [mode]=\"mode\">\n      </freud-progress-bar>\n  `,\n})"
+                "type": "Story<FreudRatingComponent>",
+                "defaultValue": "(\n  args: FreudRatingComponent\n) => ({\n  props: { ...args },\n  template: `\n    <freud-rating\n      [value]=\"value\"\n      [stars]=\"stars\"\n      [disabled]=\"disabled\"\n      [bgColor]=\"bgColor\">\n    </freud-rating>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20088,16 +20215,6 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudProgressSpinnerComponent>",
                 "defaultValue": "(\n  args: FreudProgressSpinnerComponent\n) => ({\n  props: { ...args },\n  template: `\n  <div style=\"width: 350px\">\n      <freud-progress-spinner [bgColor]=\"bgColor\">\n      </freud-progress-spinner>\n  </div>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/feedback/rating/Rating.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudRatingComponent>",
-                "defaultValue": "(\n  args: FreudRatingComponent\n) => ({\n  props: { ...args },\n  template: `\n    <freud-rating\n      [value]=\"value\"\n      [stars]=\"stars\"\n      [disabled]=\"disabled\"\n      [bgColor]=\"bgColor\">\n    </freud-rating>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20223,6 +20340,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudProgressBarComponent>",
+                "defaultValue": "(\n  args: FreudProgressBarComponent\n) => ({\n  props: { ...args },\n  template: `\n      <freud-progress-bar [bgColor]=\"bgColor\" [value]=\"50\" [mode]=\"mode\">\n      </freud-progress-bar>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/forms/input-textarea/InputTextArea.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -20323,16 +20450,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudConfirmDialogComponent>",
-                "defaultValue": "(args: FreudConfirmDialogComponent) => ({\n  template: `\n    <freud-confirm-dialog-example></freud-confirm-dialog-example>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/modal-and-popover/confirm-popup/ConfirmPopup.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -20343,21 +20460,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/modal-and-popover/dialog/Dialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudDialogExampleComponent>",
-                "defaultValue": "(args: FreudDialogExampleComponent) => ({\n  props: {...args},\n  template: `\n    <freud-dialog-example [view]=\"view\"></freud-dialog-example>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "() => ({\n  template: `\n    <freud-dynamic-dialog-example></freud-dynamic-dialog-example>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/modal-and-popover/dialog/Dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudDialogExampleComponent>",
+                "defaultValue": "(args: FreudDialogExampleComponent) => ({\n  props: {...args},\n  template: `\n    <freud-dialog-example [view]=\"view\"></freud-dialog-example>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20523,21 +20640,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/menubar/Menubar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudMenubarComponent>",
-                "defaultValue": "(args: FreudMenubarComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"height: 240px;width: 100%\">\n      <freud-menubar\n          [startImgAlt]=\"'Home'\"\n          [startImgSrc]=\"startImgSrc\"\n          [startImgHref]=\"'https://zenklub.com.br'\"\n          [items]=\"items\"\n          [bgColor]=\"bgColor\"\n      ></freud-menubar>\n    </div>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/structure/panel/Panel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudPanelComponent>",
                 "defaultValue": "(args: FreudPanelComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-panel [header]=\"'Header'\" [toggleable]=\"toggleable\">\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    </freud-panel>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/structure/menubar/Menubar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudMenubarComponent>",
+                "defaultValue": "(args: FreudMenubarComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"height: 240px;width: 100%\">\n      <freud-menubar\n          [startImgAlt]=\"'Home'\"\n          [startImgSrc]=\"startImgSrc\"\n          [startImgHref]=\"'https://zenklub.com.br'\"\n          [items]=\"items\"\n          [bgColor]=\"bgColor\"\n      ></freud-menubar>\n    </div>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20553,16 +20670,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudScrollPanelComponent>",
-                "defaultValue": "(args: FreudScrollPanelComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-scroll-panel [style]=\"{height: '200px', width: '300px'}\">\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae et leo duis ut diam. Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut. Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus. Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas. Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris. Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer. Mattis aliquam faucibus purus in massa tempor nec.\n</freud-scroll-panel>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/structure/slide-menu/SlideMenu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -20573,11 +20680,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/structure/splitter/Splitter.stories.ts",
+                "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FreudSplitterComponent>",
-                "defaultValue": "(args: FreudSplitterComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-splitter [panelSizes]=\"panelSizes\" [style]=\"{'height': '300px'}\" [layout]=\"layout\">\n      <ng-template pTemplate>\n        <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n          Panel 1\n        </div>\n      </ng-template>\n    <ng-template pTemplate>\n      <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n        Panel 2\n      </div>\n    </ng-template>\n</freud-splitter>\n  `,\n})"
+                "type": "Story<FreudScrollPanelComponent>",
+                "defaultValue": "(args: FreudScrollPanelComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-scroll-panel [style]=\"{height: '200px', width: '300px'}\">\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae et leo duis ut diam. Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut. Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus. Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas. Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris. Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer. Mattis aliquam faucibus purus in massa tempor nec.\n</freud-scroll-panel>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20588,6 +20695,16 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudTabMenuComponent>",
                 "defaultValue": "(args: FreudTabMenuComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tab-menu\n      [items]=\"items\"\n      [activeItem]=\"activeItem\"\n      [bgColor]=\"bgColor\"\n    ></freud-tab-menu>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/structure/splitter/Splitter.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudSplitterComponent>",
+                "defaultValue": "(args: FreudSplitterComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-splitter [panelSizes]=\"panelSizes\" [style]=\"{'height': '300px'}\" [layout]=\"layout\">\n      <ng-template pTemplate>\n        <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n          Panel 1\n        </div>\n      </ng-template>\n    <ng-template pTemplate>\n      <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n        Panel 2\n      </div>\n    </ng-template>\n</freud-splitter>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -20957,7 +21074,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "`\n      <freud-input-switch\n        [(ngModel)]=\"defaultValue\"\n        [disabled]=\"disabled\"\n        [invalid]=\"invalid\">\n    </freud-input-switch>\n`"
+                "defaultValue": "`\n      <freud-input-switch\n        [(ngModel)]=\"defaultValue\"\n        [disabled]=\"disabled\"\n        [invalid]=\"invalid\"\n        [custom]=\"custom\">\n    </freud-input-switch>\n`"
             },
             {
                 "name": "templateHTML",
@@ -22705,80 +22822,6 @@
                     "defaultValue": "(\n  args: FreudLoaderComponent\n) => ({\n  props: { ...args },\n  template: `\n    <div style=\"display: inline-flex;align-items: center;\">\n      <freud-loader style=\"margin-right: 20px;\"\n        [size]=\"'sm'\">\n      </freud-loader>\n\n      <freud-loader\n        [size]=\"'lg'\">\n      </freud-loader>\n    </div>\n  `,\n})"
                 }
             ],
-            "stories/feedback/progress-bar/ProgressBar.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Indeterminate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudProgressBarComponent>",
-                    "defaultValue": "(\n  args: FreudProgressBarComponent\n) => ({\n  props: { ...args },\n  template: `\n      <freud-progress-bar [bgColor]=\"bgColor\" [value]=\"50\" [mode]=\"mode\">\n      </freud-progress-bar>\n  `,\n})"
-                }
-            ],
-            "stories/feedback/progress-spinner/ProgressSpinner.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudProgressSpinnerComponent>",
-                    "defaultValue": "(\n  args: FreudProgressSpinnerComponent\n) => ({\n  props: { ...args },\n  template: `\n  <div style=\"width: 350px\">\n      <freud-progress-spinner [bgColor]=\"bgColor\">\n      </freud-progress-spinner>\n  </div>\n  `,\n})"
-                }
-            ],
             "stories/feedback/rating/Rating.stories.ts": [
                 {
                     "name": "BGColor",
@@ -22819,6 +22862,38 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudRatingComponent>",
                     "defaultValue": "(\n  args: FreudRatingComponent\n) => ({\n  props: { ...args },\n  template: `\n    <freud-rating\n      [value]=\"value\"\n      [stars]=\"stars\"\n      [disabled]=\"disabled\"\n      [bgColor]=\"bgColor\">\n    </freud-rating>\n  `,\n})"
+                }
+            ],
+            "stories/feedback/progress-spinner/ProgressSpinner.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-spinner/ProgressSpinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudProgressSpinnerComponent>",
+                    "defaultValue": "(\n  args: FreudProgressSpinnerComponent\n) => ({\n  props: { ...args },\n  template: `\n  <div style=\"width: 350px\">\n      <freud-progress-spinner [bgColor]=\"bgColor\">\n      </freud-progress-spinner>\n  </div>\n  `,\n})"
                 }
             ],
             "stories/feedback/skeleton/Skeleton.stories.ts": [
@@ -23805,6 +23880,48 @@
                     "defaultValue": "`\n    <freud-input-text\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [placeholder]=\"placeholder\"\n        [helpText]=\"helpText\"\n        [invalid]=\"invalid\"\n        [rightIcon]=\"rightIcon\"\n        [bgColor]=\"bgColor\">\n    </freud-input-text>\n`"
                 }
             ],
+            "stories/feedback/progress-bar/ProgressBar.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Indeterminate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/feedback/progress-bar/ProgressBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudProgressBarComponent>",
+                    "defaultValue": "(\n  args: FreudProgressBarComponent\n) => ({\n  props: { ...args },\n  template: `\n      <freud-progress-bar [bgColor]=\"bgColor\" [value]=\"50\" [mode]=\"mode\">\n      </freud-progress-bar>\n  `,\n})"
+                }
+            ],
             "stories/forms/listbox/Listbox.stories.ts": [
                 {
                     "name": "BGColor",
@@ -24125,7 +24242,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "BGCustom",
+                    "name": "Custom",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/forms/switch/Switch.stories.ts",
@@ -24172,7 +24289,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "`\n      <freud-input-switch\n        [(ngModel)]=\"defaultValue\"\n        [disabled]=\"disabled\"\n        [invalid]=\"invalid\">\n    </freud-input-switch>\n`"
+                    "defaultValue": "`\n      <freud-input-switch\n        [(ngModel)]=\"defaultValue\"\n        [disabled]=\"disabled\"\n        [invalid]=\"invalid\"\n        [custom]=\"custom\">\n    </freud-input-switch>\n`"
                 },
                 {
                     "name": "value",
@@ -25171,38 +25288,6 @@
                     "defaultValue": "(args: FreudPanelMenuComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"width: 400px\">\n        <freud-panel-menu\n          [items]=\"items\"\n        ></freud-panel-menu>\n    </div>\n  `,\n})"
                 }
             ],
-            "stories/structure/scroll-panel/ScrollPanel.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudScrollPanelComponent>",
-                    "defaultValue": "(args: FreudScrollPanelComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-scroll-panel [style]=\"{height: '200px', width: '300px'}\">\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae et leo duis ut diam. Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut. Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus. Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas. Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris. Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer. Mattis aliquam faucibus purus in massa tempor nec.\n</freud-scroll-panel>\n  `,\n})"
-                }
-            ],
             "stories/structure/slide-menu/SlideMenu.stories.ts": [
                 {
                     "name": "BGColor",
@@ -25245,12 +25330,12 @@
                     "defaultValue": "(args: FreudSlideMenuComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-slide-menu [items]=\"items\"></freud-slide-menu>\n  `,\n})"
                 }
             ],
-            "stories/structure/splitter/Splitter.stories.ts": [
+            "stories/structure/scroll-panel/ScrollPanel.stories.ts": [
                 {
                     "name": "BGColor",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -25260,7 +25345,7 @@
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -25270,21 +25355,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "file": "stories/structure/scroll-panel/ScrollPanel.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FreudSplitterComponent>",
-                    "defaultValue": "(args: FreudSplitterComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-splitter [panelSizes]=\"panelSizes\" [style]=\"{'height': '300px'}\" [layout]=\"layout\">\n      <ng-template pTemplate>\n        <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n          Panel 1\n        </div>\n      </ng-template>\n    <ng-template pTemplate>\n      <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n        Panel 2\n      </div>\n    </ng-template>\n</freud-splitter>\n  `,\n})"
-                },
-                {
-                    "name": "Vertical",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/structure/splitter/Splitter.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story<FreudScrollPanelComponent>",
+                    "defaultValue": "(args: FreudScrollPanelComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-scroll-panel [style]=\"{height: '200px', width: '300px'}\">\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae et leo duis ut diam. Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut. Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus. Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas. Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris. Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer. Mattis aliquam faucibus purus in massa tempor nec.\n</freud-scroll-panel>\n  `,\n})"
                 }
             ],
             "stories/structure/tab-menu/TabMenu.stories.ts": [
@@ -25327,6 +25402,48 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudTabMenuComponent>",
                     "defaultValue": "(args: FreudTabMenuComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-tab-menu\n      [items]=\"items\"\n      [activeItem]=\"activeItem\"\n      [bgColor]=\"bgColor\"\n    ></freud-tab-menu>\n  `,\n})"
+                }
+            ],
+            "stories/structure/splitter/Splitter.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudSplitterComponent>",
+                    "defaultValue": "(args: FreudSplitterComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-splitter [panelSizes]=\"panelSizes\" [style]=\"{'height': '300px'}\" [layout]=\"layout\">\n      <ng-template pTemplate>\n        <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n          Panel 1\n        </div>\n      </ng-template>\n    <ng-template pTemplate>\n      <div style=\"display: flex;text-align: center;justify-content: center;width: 100%;flex-direction: column;\">\n        Panel 2\n      </div>\n    </ng-template>\n</freud-splitter>\n  `,\n})"
+                },
+                {
+                    "name": "Vertical",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/structure/splitter/Splitter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "stories/structure/tab-view/TabView.stories.ts": [
@@ -25464,18 +25581,28 @@
                     "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story",
+                    "defaultValue": "() => ({\n  props: {},\n  template: pad(`\n  <freud-confirm-dialog-example></freud-confirm-dialog-example>\n`),\n})"
                 },
                 {
-                    "name": "Template",
+                    "name": "Empty",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FreudConfirmDialogComponent>",
-                    "defaultValue": "(args: FreudConfirmDialogComponent) => ({\n  template: `\n    <freud-confirm-dialog-example></freud-confirm-dialog-example>\n  `,\n})"
+                    "type": "Story",
+                    "defaultValue": "() => ({\n  props: {},\n})"
+                },
+                {
+                    "name": "pad",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(content: string) => `\n<freud-app>\n    ${content}\n</freud-app>`"
                 }
             ],
             "stories/modal-and-popover/confirm-popup/ConfirmPopup.stories.ts": [
@@ -25498,6 +25625,28 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudConfirmPopupComponent>",
                     "defaultValue": "(args: FreudConfirmPopupComponent) => ({\n  template: `\n    <freud-confirm-popup-example></freud-confirm-popup-example>\n  `,\n})"
+                }
+            ],
+            "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "() => ({\n  template: `\n    <freud-dynamic-dialog-example></freud-dynamic-dialog-example>\n  `,\n})"
                 }
             ],
             "stories/modal-and-popover/dialog/Dialog.stories.ts": [
@@ -25540,28 +25689,6 @@
                     "deprecationMessage": "",
                     "type": "Story<FreudDialogExampleComponent>",
                     "defaultValue": "(args: FreudDialogExampleComponent) => ({\n  props: {...args},\n  template: `\n    <freud-dialog-example [view]=\"view\"></freud-dialog-example>\n  `,\n})"
-                }
-            ],
-            "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/modal-and-popover/dynamic-dialog/DynamicDialog.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "() => ({\n  template: `\n    <freud-dynamic-dialog-example></freud-dynamic-dialog-example>\n  `,\n})"
                 }
             ],
             "stories/others/block-ui/BlockUI.stories.ts": [
@@ -25921,6 +26048,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/web-components/src/components/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/web-components/src/components/buttons/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -26241,7 +26377,7 @@
                 "linktype": "component",
                 "name": "FreudConfirmDialogComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -28798,7 +28934,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BGCustom",
+                "name": "Custom",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -29087,7 +29223,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Empty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pad",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

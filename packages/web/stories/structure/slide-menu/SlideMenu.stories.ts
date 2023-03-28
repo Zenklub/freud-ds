@@ -1,5 +1,8 @@
 import { FreudMenuItem, FreudSlideMenuComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const items: FreudMenuItem[] = [{
   label: 'Options',
@@ -43,4 +46,15 @@ Default.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   items: items,
+}
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
 }

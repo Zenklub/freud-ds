@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudAccordionComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudAccordionComponent> = (args: FreudAccordionComponent) => ({
   props: { ...args },
@@ -55,3 +58,14 @@ Multiple.args = {
 export const Disabled = TemplateDisabled.bind({});
 
 export const BGColor = Template.bind({});
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

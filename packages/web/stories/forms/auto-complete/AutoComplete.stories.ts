@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudAutoCompleteComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const templateHTML = `
     <div style="height: 150px">
@@ -60,3 +63,13 @@ Dropdown.args = {
   dropdown: true,
 };
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

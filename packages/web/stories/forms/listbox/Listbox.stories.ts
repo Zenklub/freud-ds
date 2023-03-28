@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudListboxComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const items = [
   {name: 'New York', code: 'NY'},
@@ -77,3 +80,13 @@ CheckboxAndFilter.args = {
   filter: true
 };
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

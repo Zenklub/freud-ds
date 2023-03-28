@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudDialogExampleComponent } from "./dialog-example/example.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudDialogExampleComponent> = (args: FreudDialogExampleComponent) => ({
   props: {...args},
@@ -20,4 +23,15 @@ Modal.args = {
 export const Maximizable = Template.bind({});
 Maximizable.args = {
   view: 'maximizable'
+}
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
 }

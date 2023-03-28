@@ -4,6 +4,9 @@ import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const calendarOptions: CalendarOptions = {
   initialView: 'dayGridMonth',
@@ -49,4 +52,15 @@ export const BGColor = Template.bind({});
 BGColor.args = {
   options: calendarOptions,
   bgColor: true
+}
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
 }

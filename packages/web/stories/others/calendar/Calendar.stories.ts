@@ -1,5 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudCalendarComponent } from '@freud-ds/web-components';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) => ({
   props: { ...args },
@@ -65,4 +68,15 @@ YearNavigator.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   value: new Date(),
+}
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
 }
