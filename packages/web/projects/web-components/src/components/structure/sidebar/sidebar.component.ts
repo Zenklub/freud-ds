@@ -63,11 +63,12 @@ export class FreudSidebarComponent {
     }
 
     show() {
-        this.sidebarViewChild.style.zIndex = String(this.baseZIndex);
+        this.sidebarViewChild.show();
         this.onShow.emit(null);
     }
 
     hide() {
+        this.sidebarViewChild.hide();
         this.onHide.emit(null);
     }
 
