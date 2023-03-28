@@ -1,5 +1,8 @@
 import { FreudAlertMessagesComponent, FreudMessage } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const messages: FreudMessage[] = [
   {severity:'success', summary:'Success', detail:'Message content'},
@@ -38,3 +41,13 @@ BGColor.args = {
   messages: messages
 }
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

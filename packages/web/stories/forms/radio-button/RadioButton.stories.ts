@@ -1,6 +1,8 @@
 import { Story } from '@storybook/angular';
 import { FreudRadioButtonComponent } from '@freud-ds/web-components';
-
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { moduleMetadata } from '@storybook/angular';
 
 const templateHTML = `
         <freud-radio-button-example
@@ -49,3 +51,13 @@ Label.args = {
   label: 'Label',
 };
 
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}

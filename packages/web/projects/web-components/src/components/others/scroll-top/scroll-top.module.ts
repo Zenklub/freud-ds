@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { FreudScrollTopComponent } from './scroll-top.component';
 import { ScrollTopModule } from "primeng/scrolltop";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+
 
 @NgModule({
-  imports: [CommonModule, ScrollTopModule, BrowserModule, BrowserAnimationsModule],
+  imports: [CommonModule, ScrollTopModule],
   declarations: [FreudScrollTopComponent],
   exports: [FreudScrollTopComponent]
 })

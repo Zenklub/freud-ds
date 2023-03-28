@@ -1,5 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudStepsComponent, StepMenu } from '@freud-ds/web-components';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { moduleMetadata } from '@storybook/angular';
 
 const itens: StepMenu[] = [
   {label: 'Item1'},
@@ -31,3 +33,13 @@ BGColor.args = {
   model: itens,
   bgColor: true
 };
+
+export default {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserAnimationsModule
+      ]
+    })
+  ]
+}
