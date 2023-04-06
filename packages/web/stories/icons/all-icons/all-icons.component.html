@@ -1,0 +1,33 @@
+<div
+  freud-typography
+  [fontType]="'smallRegular1-5'"
+  style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      "
+>
+  <ng-container *ngFor="let iconName of iconNames">
+    <div
+      (click)="clipboard(iconName)"
+      title="Send to clipboard"
+      style="
+            cursor: pointer;
+            width: 140px;
+            margin: 8px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+          "
+    >
+      <i
+        class="freud-icon freud-icon-{{ iconName }}"
+        style="font-size: 24px"
+      ></i>
+      <span>{{ iconName }}</span>
+    </div>
+  </ng-container>
+</div>

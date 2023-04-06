@@ -19,11 +19,21 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  font-size: 24px;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/*Sizes*/
+.freud-icon-small {
+  font-size: 14px;
+}
+.freud-icon-24px {
+  font-size: 24px;
+}
+
 
 .freud-icon-accessible:before {
   content: "\e900";
