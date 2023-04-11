@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const sourceDir = path.join(__dirname, "src/icon");
-const outputFolder = path.join(__dirname, '../web/stories/media/icons');
+const outputFolder = path.join(__dirname, '../web/stories/icons/icon-class/all-icons');
 
 console.log('sourceDir', sourceDir);
 console.log('outputFolder', outputFolder);

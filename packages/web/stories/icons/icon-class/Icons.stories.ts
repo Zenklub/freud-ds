@@ -1,9 +1,8 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { FreudTypographyModule } from '@freud-ds/web-components';
 
 import { ClipboardModule, ClipboardService } from 'ngx-clipboard';
 import { AllIconsComponent } from './all-icons/all-icons.component';
-import { BrowserModule } from '@angular/platform-browser';
+
 
 export default {
   title: 'Icons',

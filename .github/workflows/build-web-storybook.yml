@@ -18,7 +18,9 @@ jobs:
         run: |
           rm -rf package.json
           rm -rf package-lock.json
-          cd packages/web
+          cd packages/icons
+          node generateJson.mjs
+          cd ../packages/web
           npm i -g npm@8
           npm i --quiet
           npm run build-storybook
