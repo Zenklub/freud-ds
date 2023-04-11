@@ -1,11 +1,5 @@
 name: Web Components - Deploy & Publish Storybook
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Nova versão
-        default: 2.0.0
-        required: true
   push:
     branches:
       - develop
