@@ -9,8 +9,11 @@ import iconNamesJson from './icon-names.json';
 })
 export class AllIconsComponent implements OnInit {
   iconNames:string[] = [];
+  baseMessage: string = 'Copied to clipboard';
+  message: string = this.baseMessage;
 
   constructor(private clipboardService: ClipboardService) {}
+  // constructor(private clipboardService: ClipboardService, private messageService: FreudMessageService) {}
 
   ngOnInit(): void {
     console.log(iconNamesJson);
@@ -20,6 +23,13 @@ export class AllIconsComponent implements OnInit {
   clipboard(iconName: string) {
     const freudClass = `freud-icon freud-icon-${iconName}`;
     this.clipboardService.copyFromContent(freudClass);
-    console.log(freudClass);
+    this.toast(iconName);
+  }
+
+  toast(iconName: string) {
+    this.message = `"${iconName}" ${this.baseMessage}!`
+    console.log(this.message);
+    // const message = {severity:'success', summary:'Service Message', detail:'Via MessageService'};
+    // this.messageService.add(message);
   }
 }

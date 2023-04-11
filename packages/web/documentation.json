@@ -841,6 +841,143 @@
     ],
     "components": [
         {
+            "name": "AllIconsComponent",
+            "id": "component-AllIconsComponent-78d2898eadaafa96a78c3acf5b4610bca2cb3b441af4eb2e64e6044a9517d546687f0b800710f550970693ffa1487b3e8fb56735e3739e844c0b22b308d7e546",
+            "file": "stories/icons/all-icons/all-icons.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "all-icons",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "all-icons.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "iconNames",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clipboard",
+                    "args": [
+                        {
+                            "name": "iconName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "iconName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toast",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ClipboardService } from 'ngx-clipboard';\nimport { FreudMessageService } from '@freud-ds/web-components';\n\nimport iconNamesJson from './icon-names.json';\n\n@Component({\n  selector: 'all-icons',\n  templateUrl: 'all-icons.component.html',\n})\nexport class AllIconsComponent implements OnInit {\n  iconNames:string[] = [];\n\n  // constructor(private clipboardService: ClipboardService) {}\n  constructor(private clipboardService: ClipboardService, private messageService: FreudMessageService) {}\n\n  ngOnInit(): void {\n    console.log(iconNamesJson);\n    this.iconNames = iconNamesJson;\n  }\n\n  clipboard(iconName: string) {\n    const freudClass = `freud-icon freud-icon-${iconName}`;\n    this.clipboardService.copyFromContent(freudClass);\n    this.toast();\n  }\n\n  toast() {\n    const message = {severity:'success', summary:'Service Message', detail:'Via MessageService'};\n\n    // this.messageService.add(message);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "clipboardService",
+                        "type": "ClipboardService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "messageService",
+                        "type": "FreudMessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "clipboardService",
+                        "type": "ClipboardService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "messageService",
+                        "type": "FreudMessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div\n  freud-typography\n  [fontType]=\"'smallRegular1-5'\"\n  style=\"\n        display: flex;\n        flex-wrap: wrap;\n        justify-content: flex-start;\n      \"\n>\n  <ng-container *ngFor=\"let iconName of iconNames\">\n    <div\n      (click)=\"clipboard(iconName)\"\n      title=\"Send to clipboard\"\n      style=\"\n            cursor: pointer;\n            width: 140px;\n            margin: 8px;\n            padding: 8px;\n            border: 1px solid #ddd;\n            border-radius: 5px;\n            display: flex;\n            flex-flow: column;\n            align-items: center;\n          \"\n    >\n      <i\n        class=\"freud-icon freud-icon-{{ iconName }}\"\n        style=\"font-size: 24px\"\n      ></i>\n      <span>{{ iconName }}</span>\n    </div>\n  </ng-container>\n  <freud-toast [position]=\"'bottom-right'\"></freud-toast>\n</div>\n"
+        },
+        {
             "name": "FreudAccordionComponent",
             "id": "component-FreudAccordionComponent-dc135b89e0df1eeae7ed51ce526b601e2c056bd2029de96334f2946ff48e69f11679a45afd723a804c496eac51f90f19e7902d11dbf51eb587e1be08b2cfda8f",
             "file": "projects/web-components/src/components/others/accordion/accordion.component.ts",
@@ -14346,7 +14483,7 @@
         },
         {
             "name": "FreudToastExampleComponent",
-            "id": "component-FreudToastExampleComponent-c7f2e4988d05c59b827d273486ef97a7819c21dba878e4381573cd34fb93292456d7e8d765b582fe1d8b592eaca2e07edcf392196d6cff2341ad963f7ae3206f",
+            "id": "component-FreudToastExampleComponent-9e0b04f24c5dd8b3ca5def11e7043fc0e4f75f4ef53d2d469c4517fb6dc7f7b093f8d839688122026ec1faf27f165f4342516d356b28b925c41e87aed4beb597",
             "file": "stories/feedback/toast/toast-example/example.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -14416,7 +14553,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { FreudMessageService } from \"../../../../projects/web-components/src/services/message.service\";\n\n@Component({\n  selector: 'freud-toast-examples',\n  template: `\n    <freud-toast></freud-toast>\n    <div style=\"display: flex; gap: 12px\">\n      <freud-button (click)=\"confirm('success', 'Success')\">Success</freud-button>\n      <freud-button (click)=\"confirm('info', 'Info')\">Info</freud-button>\n      <freud-button (click)=\"confirm('warn', 'Warning')\">Warning</freud-button>\n      <freud-button (click)=\"confirm('error', 'Error')\">Error</freud-button>\n    </div>\n  `,\n  styleUrls: ['./example.component.scss']\n})\nexport class FreudToastExampleComponent {\n\n  constructor(private messageService: FreudMessageService) {}\n\n  confirm(severity: string, summary: string) {\n    this.messageService.add({severity:severity, summary:summary, detail:'Message Content', sticky: true, life: 2000});\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { FreudMessageService } from '@freud-ds/web-components';\n\n@Component({\n  selector: 'freud-toast-examples',\n  template: `\n    <freud-toast></freud-toast>\n    <div style=\"display: flex; gap: 12px\">\n      <freud-button (click)=\"confirm('success', 'Success')\">Success</freud-button>\n      <freud-button (click)=\"confirm('info', 'Info')\">Info</freud-button>\n      <freud-button (click)=\"confirm('warn', 'Warning')\">Warning</freud-button>\n      <freud-button (click)=\"confirm('error', 'Error')\">Error</freud-button>\n    </div>\n  `,\n  styleUrls: ['./example.component.scss']\n})\nexport class FreudToastExampleComponent {\n\n  constructor(private messageService: FreudMessageService) {}\n\n  confirm(severity: string, summary: string) {\n    this.messageService.add({severity:severity, summary:summary, detail:'Message Content', sticky: true, life: 2000});\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -14585,6 +14722,54 @@
         }
     ],
     "modules": [
+        {
+            "name": "AllIconsModule",
+            "id": "module-AllIconsModule-40c435e5b9713ec9515c7a74bb6636b07f57b35c9167d42631c7ce9ee62349f1e9b58e35575b1deaded668063cc9f2955fe7f4903f432362f3206e4996ed1439",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "stories/icons/all-icons/all-icons.module.ts",
+            "methods": [],
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\nimport { NgModule } from '@angular/core';\nimport { FreudToastModule  } from '@freud-ds/web-components';\nimport { ClipboardModule } from 'ngx-clipboard';\nimport { AllIconsComponent } from './all-icons.component';\nimport { FreudMessageService } from '@freud-ds/web-components';\n\n@NgModule({\n  declarations: [AllIconsComponent],\n  imports: [BrowserModule, ClipboardModule, FreudToastModule],\n  providers: [FreudMessageService],\n})\nexport class AllIconsModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "FreudMessageService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AllIconsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "FreudToastModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
         {
             "name": "FreudAccordionModule",
             "id": "module-FreudAccordionModule-29c4c0fabca103158b37733277798a277f35f6918587f23ac814fa59304e10ca318effc41b867fdc43ef8affcf76c92d463030b02f60f6d9dc0e603742290cc9",
@@ -17836,13 +18021,13 @@
         },
         {
             "name": "FreudToastExampleModule",
-            "id": "module-FreudToastExampleModule-6440806e56b56185903876149a0312122ee5a24b53c3a133a12492aa37fc4df755039cef069b371feeaa85cc24c8d99bb28cf6a79992258295c0b972889ade32",
+            "id": "module-FreudToastExampleModule-7012c77e553b7d666d6c85f730fb3f0eb2b5c78821cce1ec419a9723b4b3d9a26221ab3b65f3f39fb85fdaf64e6dea1882c1d2b6acdb814df942fb22555620d7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "stories/feedback/toast/toast-example/example.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FreudToastExampleComponent } from './example.component';\nimport { FreudButtonModule, FreudToastModule } from \"@freud-ds/web-components\";\n\n@NgModule({\n  imports: [CommonModule, FreudToastModule, FreudButtonModule],\n  declarations: [FreudToastExampleComponent],\n  exports: [FreudToastExampleComponent]\n})\nexport class FreudToastExampleModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { FreudToastExampleComponent } from './example.component';\nimport { FreudButtonModule, FreudToastModule } from \"@freud-ds/web-components\";\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\n@NgModule({\n  imports: [CommonModule, FreudToastModule, FreudButtonModule, BrowserModule, BrowserAnimationsModule],\n  declarations: [FreudToastExampleComponent],\n  exports: [FreudToastExampleComponent]\n})\nexport class FreudToastExampleModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -18048,11 +18233,11 @@
                 "name": "AllIcons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/media/icons/Icons.stories.ts",
+                "file": "stories/icons/Icons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => {\n  return {\n    template: `\n      <div style=\"display: flex; flex-wrap: wrap;\">\n        <ng-container *ngFor=\"let iconName of iconNames\">\n          <div style=\"padding: 16px;\">\n            <i class=\"freud-icon freud-icon-{{ iconName }}\"></i>\n            <p>{{ iconName }}</p>\n          </div>\n        </ng-container>\n      </div>\n    `,\n    props: {\n      iconNames: iconNamesJson,\n    },\n  };\n}"
+                "defaultValue": "() => ({\n  component: AllIconsComponent,\n})"
             },
             {
                 "name": "AutoResize",
@@ -18258,16 +18443,6 @@
                 "name": "BGColor",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/forms/input-group/InputGroup.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -18279,6 +18454,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/forms/input-mask/InputMask.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/forms/checkbox/Checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18369,6 +18554,46 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/forms/switch/Switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/gallery/gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BGColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/image/Image.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -18503,46 +18728,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "TemplateSort.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/avatar/Avatar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/gallery/gallery.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "BGColor",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/image/Image.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "BGColor",
@@ -19058,6 +19243,36 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/gallery/gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/image/Image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/modal-and-popover/confirm-dialog/ConfirmDialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -19219,36 +19434,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/others/slider/Slider.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/gallery/gallery.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/image/Image.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -20757,21 +20942,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudCheckboxComponent>",
-                "defaultValue": "(args: FreudCheckboxComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/forms/input-mask/InputMask.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FreudInputMaskComponent>",
                 "defaultValue": "(args: FreudInputMaskComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudCheckboxComponent>",
+                "defaultValue": "(args: FreudCheckboxComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
             },
             {
                 "name": "Template",
@@ -20862,6 +21047,46 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudSwitchComponent>",
                 "defaultValue": "(args: FreudSwitchComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/avatar/Avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudAvatarComponent>",
+                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/file-upload/FileUpload.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudFileUploadComponent>",
+                "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [chooseLabel]=\"chooseLabel\"\n        [uploadLabel]=\"uploadLabel\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/gallery/gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudGalleryComponent>",
+                "defaultValue": "(args: FreudGalleryComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-gallery\n        [images]=\"images\"\n        [showThumbnails]=\"showThumbnails\"\n        [bgColor]=\"bgColor\">\n    </freud-gallery>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/media/image/Image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FreudImageComponent>",
+                "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -21042,46 +21267,6 @@
                 "deprecationMessage": "",
                 "type": "Story<FreudTableComponent>",
                 "defaultValue": "(args: FreudTableComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"width: 100% overflow: auto;\">\n        <freud-table [value]=\"value\" [columns]=\"columns\">\n            <ng-template freudTemplate=\"header\" let-columns=\"columns\">\n                  <tr>\n                      <th *ngFor=\"let col of columns\">{{col}}</th>\n                  </tr>\n              </ng-template>\n            <ng-template freudTemplate=\"body\" let-item=\"item\" let-columns=\"columns\">\n                <tr>\n                    <td *ngFor=\"let col of columns\">{{item[col]}}</td>\n                </tr>\n            </ng-template>\n        </freud-table>\n    </div>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/avatar/Avatar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudAvatarComponent>",
-                "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/file-upload/FileUpload.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudFileUploadComponent>",
-                "defaultValue": "(args: FreudFileUploadComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-file-upload\n        [name]=\"'file[]'\"\n        [url]=\"url\"\n        [auto]=\"auto\"\n        [accept]=\"accept\"\n        [multiple]=\"multiple\"\n        [method]=\"method\"\n        [fileLimit]=\"fileLimit\"\n        [chooseIcon]=\"chooseIcon\"\n        [chooseLabel]=\"chooseLabel\"\n        [uploadLabel]=\"uploadLabel\"\n        [uploadIcon]=\"uploadIcon\"\n        [cancelIcon]=\"cancelIcon\"\n        [withCredentials]=\"withCredentials\"\n        [mode]=\"mode\"\n        [customUpload]=\"customUpload\"\n        [showUploadButton]=\"showUploadButton\"\n        [showCancelButton]=\"showCancelButton\"\n        [headers]=\"headers\"\n    ></freud-file-upload>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/gallery/gallery.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudGalleryComponent>",
-                "defaultValue": "(args: FreudGalleryComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-gallery\n        [images]=\"images\"\n        [showThumbnails]=\"showThumbnails\"\n        [bgColor]=\"bgColor\">\n    </freud-gallery>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/media/image/Image.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FreudImageComponent>",
-                "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -21457,21 +21642,21 @@
                 "name": "templateHTML",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "`\n      <freud-checkbox\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [bgColor]=\"bgColor\"\n        [invalid]=\"invalid\">\n    </freud-checkbox>\n`"
-            },
-            {
-                "name": "templateHTML",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/forms/input-mask/InputMask.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "`\n    <freud-input-mask\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [placeholder]=\"placeholder\"\n        [helpText]=\"helpText\"\n        [invalid]=\"invalid\"\n        [mask]=\"mask\"\n        [bgColor]=\"bgColor\">\n    </freud-input-mask>\n`"
+            },
+            {
+                "name": "templateHTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n      <freud-checkbox\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [bgColor]=\"bgColor\"\n        [invalid]=\"invalid\">\n    </freud-checkbox>\n`"
             },
             {
                 "name": "templateHTML",
@@ -21964,6 +22149,26 @@
                 "defaultValue": "false"
             },
             {
+                "name": "Verificated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/icons/Icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => {\n  return {\n    template: `\n      <i class='freud-icon freud-icon-verificated' style='font-size: 24px'></i>\n      <span class='freud-icon freud-icon-verificated' style='font-size: 24px'></span>\n     `\n  };\n}"
+            },
+            {
+                "name": "VerificatedSmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/icons/Icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => {\n  return {\n    template: `\n      <i class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 14px'></i>\n      <span class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 14px'></span>\n     `\n  };\n}"
+            },
+            {
                 "name": "versions",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -22429,16 +22634,36 @@
                     "defaultValue": "(args: FreudCardComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"width: 350px\">\n      <freud-card\n          [header]=\"header\"\n          [subheader]=\"subheader\"\n          [tabindex]=\"tabindex\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam\n          deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!\n\n            <ng-container freudTemplateHeader>\n              <img alt=\"Card\" src=\"assets/img/img.png\" style=\"height: 150px;object-fit: cover\">\n            </ng-container>\n\n            <ng-container freudTemplatefooter>\n              <div style=\"display: flex; gap: 4px\">\n                <freud-button>Button</freud-button>\n                <freud-button [color]=\"'secondary'\">Button</freud-button>\n              </div>\n          </ng-container>\n      </freud-card>\n    </div>\n  `,\n})"
                 }
             ],
-            "stories/media/icons/Icons.stories.ts": [
+            "stories/icons/Icons.stories.ts": [
                 {
                     "name": "AllIcons",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/media/icons/Icons.stories.ts",
+                    "file": "stories/icons/Icons.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => {\n  return {\n    template: `\n      <div style=\"display: flex; flex-wrap: wrap;\">\n        <ng-container *ngFor=\"let iconName of iconNames\">\n          <div style=\"padding: 16px;\">\n            <i class=\"freud-icon freud-icon-{{ iconName }}\"></i>\n            <p>{{ iconName }}</p>\n          </div>\n        </ng-container>\n      </div>\n    `,\n    props: {\n      iconNames: iconNamesJson,\n    },\n  };\n}"
+                    "defaultValue": "() => ({\n  component: AllIconsComponent,\n})"
+                },
+                {
+                    "name": "Verificated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/icons/Icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => {\n  return {\n    template: `\n      <i class='freud-icon freud-icon-verificated' style='font-size: 24px'></i>\n      <span class='freud-icon freud-icon-verificated' style='font-size: 24px'></span>\n     `\n  };\n}"
+                },
+                {
+                    "name": "VerificatedSmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/icons/Icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => {\n  return {\n    template: `\n      <i class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 14px'></i>\n      <span class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 14px'></span>\n     `\n  };\n}"
                 }
             ],
             "stories/forms/input-textarea/InputTextArea.stories.ts": [
@@ -23909,68 +24134,6 @@
                     "defaultValue": "`\n    <div style=\"height: 250px\">\n        <freud-cascade-select\n          [(ngModel)]=\"value\"\n          [disabled]=\"disabled\"\n          [label]=\"label\"\n          [options]=\"options\"\n          [optionLabel]=\"'cname'\"\n          [optionValue]=\"'code'\"\n          [placeholder]=\"placeholder\"\n          [optionGroupLabel]=\"'name'\"\n          [optionGroupChildren]=\"['states', 'cities']\"\n          [helpText]=\"helpText\"\n          [invalid]=\"invalid\"\n          [bgColor]=\"bgColor\">\n      </freud-cascade-select>\n    </div>\n`"
                 }
             ],
-            "stories/forms/checkbox/Checkbox.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Label",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudCheckboxComponent>",
-                    "defaultValue": "(args: FreudCheckboxComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
-                },
-                {
-                    "name": "templateHTML",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "`\n      <freud-checkbox\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [bgColor]=\"bgColor\"\n        [invalid]=\"invalid\">\n    </freud-checkbox>\n`"
-                }
-            ],
             "stories/forms/input-group/InputGroup.stories.ts": [
                 {
                     "name": "BGColor",
@@ -24153,6 +24316,68 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "`\n    <freud-input-mask\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [placeholder]=\"placeholder\"\n        [helpText]=\"helpText\"\n        [invalid]=\"invalid\"\n        [mask]=\"mask\"\n        [bgColor]=\"bgColor\">\n    </freud-input-mask>\n`"
+                }
+            ],
+            "stories/forms/checkbox/Checkbox.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudCheckboxComponent>",
+                    "defaultValue": "(args: FreudCheckboxComponent) => ({\n  props: { ...args },\n  template: templateHTML,\n})"
+                },
+                {
+                    "name": "templateHTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/forms/checkbox/Checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n      <freud-checkbox\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n        [bgColor]=\"bgColor\"\n        [invalid]=\"invalid\">\n    </freud-checkbox>\n`"
                 }
             ],
             "stories/forms/input-number/InputNumber.stories.ts": [
@@ -24821,6 +25046,182 @@
                     "defaultValue": "false"
                 }
             ],
+            "stories/media/avatar/Avatar.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Imagem",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateSize.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudAvatarComponent>",
+                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
+                },
+                {
+                    "name": "TemplateSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudAvatarComponent>",
+                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"display: flex; align-items: center\">\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'sm'\" [label]=\"'A'\"></freud-avatar>\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'md'\" [label]=\"'A'\"></freud-avatar>\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'lg'\" [label]=\"'A'\"></freud-avatar>\n    </div>\n  `,\n})"
+                },
+                {
+                    "name": "WithBadge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "WithLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/avatar/Avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "stories/media/gallery/gallery.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/gallery/gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/gallery/gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "images",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/gallery/gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria1.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria1.jpg\",\n    \"alt\": \"Description for Image 1\",\n    \"title\": \"Title 1\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria2.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria2.jpg\",\n    \"alt\": \"Description for Image 2\",\n    \"title\": \"Title 2\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria3.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria3.jpg\",\n    \"alt\": \"Description for Image 3\",\n    \"title\": \"Title 3\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria4.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria4.jpg\",\n    \"alt\": \"Description for Image 4\",\n    \"title\": \"Title 4\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria5.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria5.jpg\",\n    \"alt\": \"Description for Image 5\",\n    \"title\": \"Title 5\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria6.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria6.jpg\",\n    \"alt\": \"Description for Image 6\",\n    \"title\": \"Title 6\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria7.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria7.jpg\",\n    \"alt\": \"Description for Image 7\",\n    \"title\": \"Title 7\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria8.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria8.jpg\",\n    \"alt\": \"Description for Image 8\",\n    \"title\": \"Title 8\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria9.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria9.jpg\",\n    \"alt\": \"Description for Image 9\",\n    \"title\": \"Title 9\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria10.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria10.jpg\",\n    \"alt\": \"Description for Image 10\",\n    \"title\": \"Title 10\"\n  }\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/gallery/gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudGalleryComponent>",
+                    "defaultValue": "(args: FreudGalleryComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-gallery\n        [images]=\"images\"\n        [showThumbnails]=\"showThumbnails\"\n        [bgColor]=\"bgColor\">\n    </freud-gallery>\n  `,\n})"
+                },
+                {
+                    "name": "WithoutThumbnail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/gallery/gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "stories/media/image/Image.stories.ts": [
+                {
+                    "name": "BGColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/image/Image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/image/Image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/image/Image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/media/image/Image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FreudImageComponent>",
+                    "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
+                }
+            ],
             "stories/others/acordion/Acordion.stories.ts": [
                 {
                     "name": "BGColor",
@@ -25441,182 +25842,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "stories/media/avatar/Avatar.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Icon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Imagem",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Size",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "TemplateSize.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudAvatarComponent>",
-                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-avatar [size]=\"size\" [label]=\"label\" [badge]=\"badge\" [bgColor]=\"bgColor\" [withIcon]=\"withIcon\" [image]=\"image\"></freud-avatar>\n  `,\n})"
-                },
-                {
-                    "name": "TemplateSize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudAvatarComponent>",
-                    "defaultValue": "(args: FreudAvatarComponent) => ({\n  props: { ...args },\n  template: `\n    <div style=\"display: flex; align-items: center\">\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'sm'\" [label]=\"'A'\"></freud-avatar>\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'md'\" [label]=\"'A'\"></freud-avatar>\n        <freud-avatar style=\"margin-right: 16px;\" [size]=\"'lg'\" [label]=\"'A'\"></freud-avatar>\n    </div>\n  `,\n})"
-                },
-                {
-                    "name": "WithBadge",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "WithLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/avatar/Avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "stories/media/gallery/gallery.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/gallery/gallery.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/gallery/gallery.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "images",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/gallery/gallery.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria1.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria1.jpg\",\n    \"alt\": \"Description for Image 1\",\n    \"title\": \"Title 1\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria2.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria2.jpg\",\n    \"alt\": \"Description for Image 2\",\n    \"title\": \"Title 2\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria3.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria3.jpg\",\n    \"alt\": \"Description for Image 3\",\n    \"title\": \"Title 3\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria4.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria4.jpg\",\n    \"alt\": \"Description for Image 4\",\n    \"title\": \"Title 4\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria5.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria5.jpg\",\n    \"alt\": \"Description for Image 5\",\n    \"title\": \"Title 5\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria6.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria6.jpg\",\n    \"alt\": \"Description for Image 6\",\n    \"title\": \"Title 6\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria7.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria7.jpg\",\n    \"alt\": \"Description for Image 7\",\n    \"title\": \"Title 7\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria8.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria8.jpg\",\n    \"alt\": \"Description for Image 8\",\n    \"title\": \"Title 8\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria9.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria9.jpg\",\n    \"alt\": \"Description for Image 9\",\n    \"title\": \"Title 9\"\n  },\n  {\n    \"previewImageSrc\": \"assets/img/gallery/galleria10.jpg\",\n    \"thumbnailImageSrc\": \"assets/img/gallery/galleria10.jpg\",\n    \"alt\": \"Description for Image 10\",\n    \"title\": \"Title 10\"\n  }\n]"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/gallery/gallery.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudGalleryComponent>",
-                    "defaultValue": "(args: FreudGalleryComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-gallery\n        [images]=\"images\"\n        [showThumbnails]=\"showThumbnails\"\n        [bgColor]=\"bgColor\">\n    </freud-gallery>\n  `,\n})"
-                },
-                {
-                    "name": "WithoutThumbnail",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/gallery/gallery.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "stories/media/image/Image.stories.ts": [
-                {
-                    "name": "BGColor",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/image/Image.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/image/Image.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Preview",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/image/Image.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/media/image/Image.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FreudImageComponent>",
-                    "defaultValue": "(args: FreudImageComponent) => ({\n  props: { ...args },\n  template: `\n    <freud-image [preview]=\"preview\" [alt]=\"alt\" [src]=\"src\" [height]=\"height\" [width]=\"width\"></freud-image>\n  `,\n})"
                 }
             ],
             "stories/structure/breadcrumb/Breadcrumb.stories.ts": [
@@ -29632,6 +29857,45 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/icons/Icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AllIcons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/icons/Icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Verificated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/icons/Icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "VerificatedSmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/icons/all-icons/all-icons.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AllIconsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/media/avatar/Avatar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -29797,16 +30061,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithoutThumbnail",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/media/icons/Icons.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "AllIcons",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

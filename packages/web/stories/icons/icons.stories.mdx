@@ -5,6 +5,7 @@ import { FreudHeaderComponent } from '../header/header.component';
 import { FreudTypographyModule } from '@freud-ds/web-components';
 
 
+
 import {
   AllIcons,
   Verificated,
@@ -14,8 +15,10 @@ import {
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudTypographyModule],
-    })
+      imports: [
+        FreudTypographyModule,
+    ],
+    }),
   ]}
   argTypes={{
     size: {
@@ -78,7 +81,9 @@ import {
 ## <a id="list"></a>Listing
 <br />
 
-### With Label
+This is the actual list of icons available in Freud Design System. Select your icon and copy the name to use in your project.
+
+**If you click in the icon, it will be sent to clipboard.**
 <Canvas>
   <Story story={AllIcons}/>
 </Canvas>
