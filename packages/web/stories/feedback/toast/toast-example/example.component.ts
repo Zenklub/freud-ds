@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FreudMessageService } from "../../../../projects/web-components/src/services/message.service";
+import { FreudMessageService } from '@freud-ds/web-components';
 
 @Component({
   selector: 'freud-toast-examples',
