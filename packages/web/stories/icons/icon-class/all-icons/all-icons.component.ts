@@ -21,7 +21,6 @@ export class AllIconsComponent implements OnInit {
   // constructor(private clipboardService: ClipboardService, private messageService: FreudMessageService) {}
 
   ngOnInit(): void {
-    console.log(iconNamesJson);
     this.fullIconNames = iconNamesJson;
     this.filterIcons();
   }
