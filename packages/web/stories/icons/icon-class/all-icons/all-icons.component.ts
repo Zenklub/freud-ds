@@ -18,7 +18,6 @@ export class AllIconsComponent implements OnInit {
   searchText: string = '';
 
   constructor(private clipboardService: ClipboardService) {}
-  // constructor(private clipboardService: ClipboardService, private messageService: FreudMessageService) {}
 
   ngOnInit(): void {
     this.fullIconNames = iconNamesJson;
