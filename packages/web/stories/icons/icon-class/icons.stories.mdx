@@ -1,0 +1,91 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+
+import { FreudHeaderComponent } from '../../header/header.component';
+import { FreudTypographyModule } from '@freud-ds/web-components';
+import { FreudInputTextModule } from '@freud-ds/web-components';
+
+
+
+import {
+  AllIcons,
+  Verificated,
+  VerificatedSmall,
+} from './Icons.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [
+        FreudTypographyModule,
+        FreudInputTextModule,
+    ],
+    }),
+  ]}
+  argTypes={{
+    size: {
+      control: {
+        type: 'select',
+        options: ["sm", "md", "lg"]
+      },
+    }
+  }}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+  title="@freud-ds/web-components/Icons"
+  component={AllIcons}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Icones",
+      description: "Listagem de icones disponíveis na biblioteca."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+@import '~@freud-ds/icons/style/style.css';
+```
+
+## <a id="usage"></a>Usage
+
+```ts
+<i class='freud-icon freud-icon-[icon-name]'></i>
+<span class='freud-icon freud-icon-[icon-name]'></span>
+```
+
+<Canvas>
+  <Story story={Verificated}/>
+</Canvas>
+
+```ts
+<i class='freud-icon freud-icon-[icon-name] freud-icon-small'></i>
+<span class='freud-icon freud-icon-[icon-name] freud-icon-small'></span>
+```
+
+<Canvas>
+  <Story story={VerificatedSmall}/>
+</Canvas>
+
+## <a id="list"></a>Listing
+<br />
+
+This is the actual list of icons available in Freud Design System. Select your icon and copy the name to use in your project.
+
+**If you click in the icon, it will be sent to clipboard.**
+<Canvas>
+  <Story story={AllIcons}/>
+</Canvas>
