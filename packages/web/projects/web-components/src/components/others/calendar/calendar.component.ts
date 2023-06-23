@@ -3,39 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Component({
   selector: 'freud-calendar',
-  template: `
-    <p-calendar
-      [(ngModel)]="value"
-      [inline]="inline"
-      [view]="view"
-      [selectionMode]="selectionMode"
-      [dateFormat]="dateFormat"
-      [showOtherMonths]="showOtherMonths"
-      [selectOtherMonths]="selectOtherMonths"
-      [showWeek]="showWeek"
-      [yearNavigator]="yearNavigator"
-      [yearRange]="yearRange"
-      [defaultDate]="defaultDate"
-      [showTime]="showTime"
-      [hourFormat]="hourFormat"
-      [disabled]="disabled"
-      [timeOnly]="timeOnly"
-      [required]="required"
-      [maxDate]="maxDate"
-      [monthNavigator]="monthNavigator"
-      [disabledDates]="disabledDates"
-      [minDate]="minDate"
-      (ngModelChange)="modelValueChange()"
-      (onSelect)="onSelect.emit($event)"
-      (onBlur)="onBlur.emit($event)"
-      (onFocus)="onFocus.emit($event)"
-      (onClose)="onClose.emit($event)"
-      (onShow)="onShow.emit($event)"
-      (onTodayClick)="onTodayClick.emit($event)"
-      (onClearClick)="onClearClick.emit($event)"
-    >
-    </p-calendar>
-  `,
+  templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
@@ -46,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudCalendarComponent),
       multi: true
-    }
+    },
   ]
 })
 export class FreudCalendarComponent implements ControlValueAccessor {
@@ -56,10 +24,10 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Input() selectionMode: "single" | "multiple" | "range" = 'single';
   @Input() view: 'date' | 'month' = 'date';
   @Input() inline: boolean = true;
+  @Input() label: string = '';
   @Input() yearRange!: string;
   @Input() disabledDates!: Date[];
   @Input() disabledDays!: number[];
-
   @Input() yearNavigator: boolean = false;
   @Input() monthNavigator: boolean = false;
   @Input() timeOnly: boolean = false;
@@ -92,13 +60,17 @@ export class FreudCalendarComponent implements ControlValueAccessor {
 
   onModelTouched: any = () => { };
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
-    this.onModelChange(this._value);
+    if (typeof this.onModelChange === 'function') {
+      if (typeof this.onModelChange === 'function') {
+        this.onModelChange(this._value);
+      }
+    }
     this.modelValueChange();
     this.onModelTouched();
   }
@@ -118,7 +90,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
   }
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 }

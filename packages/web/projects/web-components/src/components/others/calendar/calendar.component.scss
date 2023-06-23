@@ -2,6 +2,36 @@
 @import '../../../../scss/typography';
 
 .freud-calendar {
+  .calendar__wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+  .calendar__wrapper--input{
+    .p-calendar{
+      width: 100%;
+    }
+    .p-inputtext{
+      height: 40px;
+      border-radius: $border-radius-md;
+      border: 1px solid $neutral-color-light-03;
+      width: 100%;
+      &::placeholder {
+        color: $neutral-color-dark-02;
+        opacity: 1;
+        @include typography($font-size-xs, $font-weight-regular, 24px);
+      }
+    }
+  }
+  .calendar__label{
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+  }
+ 
+
   .p-datepicker {
     border: unset;
     border-radius: $border-radius-md;
