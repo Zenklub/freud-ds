@@ -4,11 +4,15 @@
 /dist
 /tmp
 /out-tsc
-documentation.json
+# Only exists if Bazel was run
+/bazel-out
 
 # dependencies
 /node_modules
 /packages/**/node_modules
+
+# profiling files
+chrome-profiler-events*.json
 
 # IDEs and editors
 /.idea
@@ -25,6 +29,7 @@ documentation.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.history/*
 
 # misc
 /.sass-cache
@@ -35,8 +40,19 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-.tool-versions
 
 # System Files
 .DS_Store
 Thumbs.db
+yarn.lock
+
+.history
+.scannerwork
+.vscode
+coverage
+test-report.xml
+
+
+# Dist global
+*/*/dist
+*/*/node_modules

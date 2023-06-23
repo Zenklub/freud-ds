@@ -1,0 +1,38 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-scroll-top {
+  .p-link:focus {
+    box-shadow: unset;
+  }
+}
+
+.freud-scroll-top.freud-bgcolor {
+  .p-scrolltop.p-link {
+    background-color: $neutral-color-white;
+  }
+  .p-scrolltop .p-scrolltop-icon {
+    color: $brand-color-pure;
+  }
+  .p-scrolltop.p-link:hover {
+    background-color: $brand-color-04;
+    .p-scrolltop-icon {
+      color: $neutral-color-white;
+    }
+  }
+}
+
+.freud-scroll-top:not(.freud-bgcolor) {
+  .p-scrolltop.p-link {
+    background-color: $brand-color-pure;
+    color: $neutral-color-white;
+  }
+  .p-scrolltop .p-scrolltop-icon {
+    color: $neutral-color-white;
+  }
+  .p-scrolltop.p-link:hover {
+    background-color: $brand-color-04;
+    .p-scrolltop-icon {
+      color: $neutral-color-white;
+    }
+  }
+}

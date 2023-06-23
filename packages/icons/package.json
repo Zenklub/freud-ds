@@ -1,0 +1,23 @@
+{
+  "name": "@freud-ds/icons",
+  "version": "2.1.1",
+  "description": "Zenklub - Freud DS Icons",
+  "author": "Zenklub",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "emoji",
+    "fonts",
+    "icon",
+    "style"
+  ],
+  "scripts": {
+    "build": "npm run clean && cp -r src ./dist && cp package.json dist/package.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0"
+  }
+}

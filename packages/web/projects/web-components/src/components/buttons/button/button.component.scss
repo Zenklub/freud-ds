@@ -1,0 +1,131 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-btn:not(.freud-btn-bgcolor) {
+  &.freud-btn-color-primary {
+    .p-button {
+      background-color:  $brand-color-pure;
+      border-color: $brand-color-pure;
+      color: $neutral-color-white;
+    }
+  }
+
+  &.freud-btn-color-secondary {
+    $freud-btn-color: $brand-color-pure;
+    $freud-btn-border: $brand-color-pure;
+    .p-button {
+      background-color: transparent;
+      border-color: $freud-btn-border;
+      color: $freud-btn-color;
+    }
+  }
+
+  &.freud-btn-color-ghost {
+    $freud-btn-background: transparent;
+    $freud-btn-color: $brand-color-pure;
+    $freud-btn-border: transparent;
+    .p-button {
+      background-color: $freud-btn-background;
+      border-color: $freud-btn-border;
+      color: $freud-btn-color;
+    }
+  }
+
+  .p-button:enabled:hover {
+    background: $brand-color-01;
+    border-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+}
+
+.freud-btn.freud-btn-bgcolor {
+  &.freud-btn-color-primary {
+    .p-button {
+      background-color: $neutral-color-white;
+      border-color: $neutral-color-white;
+      color: $brand-color-pure;
+    }
+  }
+
+  &.freud-btn-color-secondary {
+    .p-button {
+      background-color: transparent;
+      border-color: $neutral-color-white;
+      color: $neutral-color-white;
+    }
+  }
+
+  &.freud-btn-color-ghost {
+    .p-button {
+      background-color: transparent;
+      border-color: transparent;
+      color: $neutral-color-white;
+    }
+  }
+
+  .p-button[disabled] {
+    opacity: $opacity-level-5;
+    color: $brand-color-pure;
+  }
+
+  .p-button:enabled:hover {
+    background: $brand-color-03;
+    border-color: $brand-color-03;
+    color: $neutral-color-white;
+  }
+}
+
+
+.freud-btn .p-button {
+  font-family: $font-family-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-md;
+  @include typography($font-size-xs, $font-weight-semibold, auto);
+  &[disabled] {
+    opacity: $opacity-level-5;
+  }
+  &:focus {
+    box-shadow: unset;
+  }
+  &.p-button-icon-only {
+    width: auto;
+  }
+}
+
+
+.freud-btn-size-small {
+  .p-button {
+    font-size: $font-size-xxs;
+    padding: 0 $spacing-size-nano;
+    height: 32px;
+    &.p-button-icon-only {
+      padding: 0 3px;
+    }
+  }
+}
+
+.freud-btn-size-medium {
+  .p-button {
+    padding: 0 $spacing-size-xxxs;
+    height: 40px;
+    &.p-button-icon-only {
+      padding: 0 7px;
+    }
+  }
+}
+
+.freud-btn-size-large {
+  .p-button {
+    padding: 0 $spacing-size-xxs;
+    height: 48px;
+    &.p-button-icon-only {
+      padding: 0 11px;
+    }
+  }
+}
+
+.button-content:not(:empty) + .p-button-icon {
+  margin-left: $spacing-size-xxxs;
+}

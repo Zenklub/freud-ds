@@ -1,0 +1,34 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-card {
+  .p-card {
+    color: $neutral-color-dark-03;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-level-3;
+  }
+  .p-card .p-card-title {
+    @include typography($font-size-md, $font-weight-bold, 24px);
+  }
+
+  .p-card .p-card-content {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-card .p-card-subtitle {
+    color: $neutral-color-dark-02;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-card .p-card-footer {
+    padding: 0;
+  }
+
+  .p-card-header {
+    img {
+      border-top-left-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
+    }
+  }
+
+}

@@ -1,0 +1,57 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-input-mask:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-input-mask.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-input-mask {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    &::placeholder {
+      color: $feedback-color-negative-04;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-inputtext:enabled:hover {
+    border-color: $brand-color-pure;
+  }
+}

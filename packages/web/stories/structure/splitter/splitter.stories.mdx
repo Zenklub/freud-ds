@@ -1,0 +1,63 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSplitterComponent, FreudSplitterModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor, Vertical
+} from './Splitter.stories.ts'; import {SplitterModule} from "primeng/splitter";
+
+<Meta
+  decorators={[
+    moduleMetadata({imports: [FreudSplitterModule, SplitterModule]})
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+  title="@freud-ds/web-components/Structure/Splitter"
+  component={FreudSplitterComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Splitter",
+      description: "O splitter é utilizado para separar e redimensionar painéis."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudSplitterModule } from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+
+### Vertical
+Utilize a propriedade `layout` com o valor `vertical` para inverter o layout do panel.
+<Canvas>
+  <Story story={Vertical}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSplitterComponent} />

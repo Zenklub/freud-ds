@@ -1,0 +1,54 @@
+name: Icons - build and publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Nova versão
+        default: 2.0.0
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Configure git
+        run: |
+          git config user.email "bot@zenklub.com"
+          git config user.name "Zenklub Deploy Bot"
+
+      - name: Update version
+        run: |
+          cd packages/icons
+          npm version ${{ github.event.inputs.version }}
+
+      - name: Push new version
+        run: |
+          git add .
+          git commit -m "chore(icons): automatic version update"
+          git push
+
+      - name: Build
+        run: |
+          cd packages/icons
+          npm run build
+
+      - name: Publish
+        run: |
+          cd packages/icons/dist
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          echo "unsafe-perm = true" >> ~/.npmrc
+          npm publish --access public
+
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

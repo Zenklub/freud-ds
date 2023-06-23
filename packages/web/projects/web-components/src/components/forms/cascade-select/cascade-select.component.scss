@@ -1,0 +1,82 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-cascade-select:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-cascade-select.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-cascade-select {
+
+  .p-cascadeselect-panel {
+    box-shadow: $shadow-level-3;
+  }
+  .pi {
+    font-size: 14px;
+  }
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-inputtext {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-cascadeselect {
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-cascadeselect:not(.p-disabled).p-focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-cascadeselect:not(.p-disabled):hover {
+    border-color: $brand-color-pure;
+  }
+  .p-cascadeselect .p-cascadeselect-panel {
+    border-radius: $border-radius-md;
+    margin-top: 1px;
+  }
+
+  .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item {
+    color: $neutral-color-dark-03;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+  }
+  .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item:not(.p-highlight):not(.p-disabled):hover {
+    color: $brand-color-pure;
+    background-color: $brand-color-01;
+  }
+
+  .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item.p-highlight {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+
+  .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item:focus,
+  .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item .p-cascadeselect-item-content:focus {
+    box-shadow: unset;
+  }
+}
+

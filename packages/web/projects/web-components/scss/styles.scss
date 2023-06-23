@@ -1,0 +1,162 @@
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+@import "./typography.scss";
+
+@import '~@freud-ds/tokens/style/scss/_variables.scss';
+@import '~@freud-ds/icons/style/style.css';
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(../fonts/SourceSansPro-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(../fonts/SourceSansPro-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "Source Sans Pro";
+    src: local("Source Sans Pro"), url(../fonts/SourceSansPro-Bold.ttf) format("truetype");
+    font-weight: bold;
+}
+
+
+.p-component {
+  font-family: $font-family-base;
+}
+
+.disabled {
+  opacity: $opacity-level-7;
+}
+
+// Freud icon
+.freud-icon-20px {
+
+}
+
+
+// Input group
+.freud-input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+
+  .freud-input-text {
+    width: 100%;
+  }
+}
+
+.freud-input-group .freud-input-group-addon {
+  background: $neutral-color-light-02;
+  color: #6c757d;
+  padding: 8px;
+  border-top: 1px solid $neutral-color-light-02;
+  border-left: 1px solid $neutral-color-light-02;
+  border-bottom: 1px solid $neutral-color-light-02;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  @include typography($font-size-xs, $font-weight-bold, auto);
+  font-family: $font-family-base;
+}
+.freud-input-group .freud-input-group-addon:last-child {
+  border-right: 1px solid $neutral-color-light-02;
+}
+
+.freud-input-group > .p-component,
+.freud-input-group > .p-element,
+.freud-input-group > .freud-btn .p-button,
+.freud-input-group > .freud-input-text .freud-field .p-inputtext,
+.freud-input-group > .p-float-label > .p-component {
+  border-radius: 0;
+  margin: 0;
+}
+.freud-input-group > .p-component + .freud-input-group-addon,
+.freud-input-group > .p-element + .freud-input-group-addon,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext + .freud-input-group-addon,
+.freud-input-group > .p-float-label > .p-component + .freud-input-group-addon {
+  border-left: 0 none;
+}
+.freud-input-group > .p-component:focus,
+.freud-input-group > .p-element:focus,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext:focus,
+.freud-input-group > .p-float-label > .p-component:focus {
+  z-index: 1;
+}
+.freud-input-group > .p-component:focus ~ label,
+.freud-input-group > .p-element:focus ~ label,
+.freud-input-group > .p-inputwrapper > .p-component > .p-inputtext:focus ~ label,
+.freud-input-group > .p-float-label > .p-component:focus ~ label {
+  z-index: 1;
+}
+
+.freud-input-group .freud-input-group-addon:first-child,
+.freud-input-group .freud-btn:first-child .p-button,
+.freud-input-group freud-input-text:first-child .freud-field .p-inputtext,
+.freud-input-group > .p-inputwrapper:first-child > .p-component,
+.freud-input-group > .p-inputwrapper:first-child > .p-component > .p-inputtext {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.freud-input-group .p-float-label:first-child freud-input-text {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.freud-input-group .freud-input-group-addon:last-child,
+.freud-input-group .freud-btn:last-child .p-button,
+.freud-input-group .freud-input-text:last-child  .freud-field .p-inputtext,
+.freud-input-group > .p-inputwrapper:last-child > .p-component,
+.freud-input-group > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.freud-input-group .p-float-label:last-child input {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.p-fluid .freud-input-group .p-button {
+  width: auto;
+}
+.p-fluid .freud-input-group .p-button.p-button-icon-only {
+  width: 2.357rem;
+}
+
+
+// Dialog
+
+.p-dialog .p-dialog-header {
+  border-top-right-radius: $border-radius-md;
+  border-top-left-radius: $border-radius-md;
+}
+
+.p-dialog .p-dialog-content {
+  border-bottom-right-radius: $border-radius-md;
+  border-bottom-left-radius: $border-radius-md;
+}
+
+
+// Block UI
+@keyframes p-component-overlay-enter-animation {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba($neutral-color-dark-03, $opacity-level-4);
+  }
+}
+@keyframes p-component-overlay-leave-animation {
+  from {
+    background-color: rgba($neutral-color-dark-03, $opacity-level-4);
+  }
+  to {
+    background-color: transparent;
+  }
+}
