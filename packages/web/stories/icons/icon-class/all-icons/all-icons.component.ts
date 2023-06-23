@@ -45,6 +45,5 @@ export class AllIconsComponent implements OnInit {
 
   toast(iconName: string) {
     this.message = `"${iconName}" ${this.baseMessage}!`
-    console.log(this.message);
   }
 }
