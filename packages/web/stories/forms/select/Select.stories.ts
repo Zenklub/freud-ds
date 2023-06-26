@@ -5,20 +5,20 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
 
 const items = [
-  {name: 'New York', code: 'NY'},
-  {name: 'Rome', code: 'RM', disabled: true},
-  {name: 'London', code: 'LDN'},
-  {name: 'Istanbul', code: 'IST'},
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM', disabled: true },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
 ];
 
 const templateHTML = `
     <div style="height: 250px">
         <freud-select
-          [(ngModel)]="value"
           [disabled]="disabled"
           [label]="label"
           [options]="options"
           [optionLabel]="optionLabel"
+          [filter]="filter"
           [optionValue]="optionValue"
           [placeholder]="placeholder"
           [helpText]="helpText"
@@ -52,6 +52,18 @@ BGColor.args = {
   optionLabel: 'name',
   optionValue: 'code'
 };
+
+export const Filter = Template.bind({});
+Filter.args = {
+  label: 'Label',
+  filter: true,
+  value: '',
+  placeholder: 'Placeholder',
+  options: items,
+  optionLabel: 'name',
+  optionValue: 'code'
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Label',
