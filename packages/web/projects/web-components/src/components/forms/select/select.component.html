@@ -1,0 +1,35 @@
+<div class="freud-field" [class.disabled]="disabled">
+    <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+    <p-dropdown
+      [id]="id"
+      [class.ng-invalid]="invalid"
+      [class.ng-dirty]="invalid"
+      [(ngModel)]="value"
+      [optionLabel]="optionLabel"
+      [optionValue]="optionValue"
+      [optionDisabled]="optionDisabled"
+      [optionGroupLabel]="optionGroupLabel"
+      [optionGroupChildren]="optionGroupChildren"
+      [placeholder]="placeholder || ''"
+      [virtualScroll]="virtualScroll"
+      [dropdownIcon]="dropdownIcon"
+      [emptyMessage]="emptyMessage"
+      [itemSize]="itemSize"
+      [disabled]="disabled"
+      [required]="required"
+      [filter]="filter"
+      [options]="options"
+      (onFocus)="onFocus.emit($event)"
+      (onBlur)="onBlur.emit($event)"
+      (onChange)="onChange.emit($event)"
+      (onFilter)="onFilter.emit($event)"
+      (onShow)="onShow.emit($event)"
+      (onHide)="onHide.emit($event)"
+      (onClear)="onClear.emit($event)"
+
+    ></p-dropdown>
+    <small
+      [class.disabled]="disabled"
+      *ngIf="helpText"
+      class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+  </div>

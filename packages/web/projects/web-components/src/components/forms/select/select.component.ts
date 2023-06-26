@@ -12,42 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   selector: 'freud-select',
   styleUrls: ['./select.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  template: `
-    <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-      <p-dropdown
-        [id]="id"
-        [class.ng-invalid]="invalid"
-        [class.ng-dirty]="invalid"
-        [(ngModel)]="value"
-        [optionLabel]="optionLabel"
-        [optionValue]="optionValue"
-        [optionDisabled]="optionDisabled"
-        [optionGroupLabel]="optionGroupLabel"
-        [optionGroupChildren]="optionGroupChildren"
-        [placeholder]="placeholder || ''"
-        [virtualScroll]="virtualScroll"
-        [dropdownIcon]="dropdownIcon"
-        [emptyMessage]="emptyMessage"
-        [itemSize]="itemSize"
-        [disabled]="disabled"
-        [required]="required"
-        [options]="options"
-        (onFocus)="onFocus.emit($event)"
-        (onBlur)="onBlur.emit($event)"
-        (onChange)="onChange.emit($event)"
-        (onFilter)="onFilter.emit($event)"
-        (onShow)="onShow.emit($event)"
-        (onHide)="onHide.emit($event)"
-        (onClear)="onClear.emit($event)"
-
-      ></p-dropdown>
-      <small
-        [class.disabled]="disabled"
-        *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
-    </div>
-  `,
+  templateUrl: './select.component.html',
   host: {
     class: 'freud-select',
     '[class.freud-bgcolor]': `bgColor`,
@@ -62,6 +27,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 })
 export class FreudSelectComponent implements ControlValueAccessor {
   @Input() label: string = '';
+  @Input() filter: boolean = false;
+  @Input() lazy: boolean = false;
   @Input() options!: any[];
   @Input() helpText: string = '';
   @Input() placeholder: string = '';
@@ -116,18 +83,25 @@ export class FreudSelectComponent implements ControlValueAccessor {
 
   onModelTouched: any = () => { };
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
-    this.onModelChange(this._value);
-    this.onModelTouched();
+    if (typeof this.onModelChange === 'function') {
+      this.onModelChange(this._value);
+    }
+
+
+    if (typeof this.onModelTouched === 'function') {
+      this.onModelTouched();
+    }
+
     this.valueChange.emit(v);
   }
 
