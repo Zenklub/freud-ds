@@ -1,6 +1,15 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
+
+.option--with-icon{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  .freud-icon{
+    font-size: 14px;
+  }
+}
 .freud-select-button.freud-select-bgcolor {
   .p-selectbutton .p-button.p-highlight {
     color: $brand-color-04;

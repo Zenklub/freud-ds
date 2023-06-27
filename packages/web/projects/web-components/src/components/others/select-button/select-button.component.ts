@@ -1,20 +1,10 @@
 import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { FreudIconPosition, FreudSelectButtonOption } from './select-button.interface';
 
 @Component({
   selector: 'freud-select-button',
-  template: `
-    <p-selectButton
-      [options]="options"
-      [(ngModel)]="selectedOption"
-      [multiple]="multiple"
-      [tabindex]="tabindex"
-      [optionDisabled]="optionDisabled"
-      [optionLabel]="optionLabel"
-      [disabled]="disabled"
-      (onChange)="selectedOptionChange.emit($event)">
-    </p-selectButton>
-  `,
+  templateUrl: './select-button.component.html',
   styleUrls: ['./select-button.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
@@ -29,11 +19,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     }
   ]
 })
-export class FreudSelectButtonComponent implements ControlValueAccessor {
 
-  @Input() options!: any[];
+export class FreudSelectButtonComponent implements ControlValueAccessor {
+  @Input() options!: FreudSelectButtonOption[];
   @Input() optionLabel!: string;
-  @Input() selectedOption!: any;
+  @Input() iconPosition: FreudIconPosition = 'preppend'
+  @Input() selectedOption!: FreudSelectButtonOption;
   @Input() multiple: boolean = false;
   @Input() disabled: boolean = false;
   @Input() bgColor: boolean = false;
@@ -52,14 +43,19 @@ export class FreudSelectButtonComponent implements ControlValueAccessor {
 
   onModelTouched: any = () => { };
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
-    this.onModelChange(this._value);
-    this.onModelTouched();
+
+    if (typeof this.onModelChange === 'function') {
+      this.onModelChange(this._value);
+    }
+    if (typeof this.onModelTouched === 'function') {
+      this.onModelTouched();
+    }
     this.modelValueChange();
   }
 
@@ -75,10 +71,7 @@ export class FreudSelectButtonComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
-
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
