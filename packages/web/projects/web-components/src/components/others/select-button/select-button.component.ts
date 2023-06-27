@@ -50,12 +50,8 @@ export class FreudSelectButtonComponent implements ControlValueAccessor {
   public set value(v) {
     this._value = v;
 
-    if (typeof this.onModelChange === 'function') {
-      this.onModelChange(this._value);
-    }
-    if (typeof this.onModelTouched === 'function') {
-      this.onModelTouched();
-    }
+    this.onModelChange?.(this._value);
+    this.onModelTouched?.();
     this.modelValueChange();
   }
 
