@@ -4,10 +4,16 @@
 
 .option--with-icon{
   display: flex;
-  gap: 5px;
   align-items: center;
+  
   .freud-icon{
     font-size: 14px;
+    &--preppend{
+      margin-right: 5px;
+    }
+    &--append{
+      margin-left: 5px;
+    }
   }
 }
 .freud-select-button.freud-select-bgcolor {
