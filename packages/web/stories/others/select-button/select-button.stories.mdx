@@ -4,9 +4,10 @@ import { FreudSelectButtonComponent, FreudSelectButtonModule } from '@freud-ds/w
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
-  BGColor,
-  Disabled, OptionDisabled,
+  BGColor,IconAppendPreppend,
+  Disabled, OptionDisabled,WithIcons
 } from './SelectButton.stories.ts';
+
 
 <Meta
   decorators={[
@@ -64,6 +65,17 @@ export class Componente {
 ### Default
 <Canvas>
   <Story story={Default}/>
+</Canvas>
+
+### Opções com ícones
+<Canvas>
+  <Story story={WithIcons}/>
+</Canvas>
+
+#### Posição do ícone
+iconPosition: 'append' | 'preppend'
+<Canvas>
+  <Story story={IconAppendPreppend}/>
 </Canvas>
 
 ### BG Color

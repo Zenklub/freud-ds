@@ -1,0 +1,36 @@
+<p-selectButton
+  [options]="options"
+  [(ngModel)]="selectedOption"
+  [multiple]="multiple"
+  [tabindex]="tabindex"
+  [optionDisabled]="optionDisabled"
+  [optionLabel]="optionLabel"
+  [disabled]="disabled"
+  (onChange)="selectedOptionChange.emit($event)"
+>
+  <ng-template let-item pTemplate>
+    <div [ngClass]="{ 'option--with-icon': item.icon }">
+      <i
+        [class]="
+          'freud-icon ' +
+          'freud-icon-' +
+          item.icon +
+          ' freud-icon--' +
+          iconPosition
+        "
+        *ngIf="item.icon && iconPosition === 'preppend'"
+      ></i>
+      <span class="p-button-label">{{ item.label }}</span>
+      <i
+        [class]="
+          'freud-icon ' +
+          'freud-icon-' +
+          item.icon +
+          ' freud-icon--' +
+          iconPosition
+        "
+        *ngIf="item.icon && iconPosition === 'append'"
+      ></i>
+    </div>
+  </ng-template>
+</p-selectButton>
