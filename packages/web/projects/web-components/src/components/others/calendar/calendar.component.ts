@@ -36,7 +36,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Input() showWeek: boolean = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
-
+  @Input() appendTo: string = 'body'
   @Input() minDate!: Date;
   @Input() maxDate!: Date;
   @Input() defaultDate!: Date;

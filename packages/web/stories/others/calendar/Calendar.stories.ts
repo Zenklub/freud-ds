@@ -10,6 +10,7 @@ const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) =
   template: `
     <freud-calendar
       [selectionMode]="selectionMode"
+      [appendTo]="appendTo"
       [dateFormat]="dateFormat"
       [inline]="inline"
       [showOtherMonths]="showOtherMonths"
@@ -47,11 +48,22 @@ TimeOnly.args = {
   value: new Date(),
   timeOnly: true,
   hourFormat: '12',
-  yearRange: '2000:2030'
 }
+
 
 export const Input = Template.bind({});
 Input.args = {
+  value: new Date(),
+  inline: false,
+  label: 'Data de nascimento',
+  timeOnly: false,
+  hourFormat: '12',
+  showTime: false,
+  yearRange: '2000:2030'
+}
+
+export const AppendTo = Template.bind({});
+AppendTo.args = {
   value: new Date(),
   inline: false,
   label: 'Data de nascimento',
