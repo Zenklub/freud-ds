@@ -47,7 +47,6 @@ TimeOnly.args = {
   value: new Date(),
   timeOnly: true,
   hourFormat: '12',
-  yearRange: '2000:2030'
 }
 
 
