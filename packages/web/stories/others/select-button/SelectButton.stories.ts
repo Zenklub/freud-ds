@@ -66,7 +66,8 @@ Overflow.args = {
   options: optionsWithIcon,
   optionLabel: 'label',
   selectedOption: optionsWithIcon[1],
-  iconPosition: 'append'
+  iconPosition: 'append',
+  autoOverflow: true
 };
 
 export const BGColor = Template.bind({});
