@@ -10,6 +10,7 @@ const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) =
   template: `
     <freud-calendar
       [selectionMode]="selectionMode"
+      [appendTo]="appendTo"
       [dateFormat]="dateFormat"
       [inline]="inline"
       [showOtherMonths]="showOtherMonths"
