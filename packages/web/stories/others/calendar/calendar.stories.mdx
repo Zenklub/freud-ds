@@ -8,7 +8,8 @@ import {
   TimeOnly,
   MonthView,
   YearNavigator,
-  Input
+  Input,
+  AppendTo
 } from './Calendar.stories.ts';
 
 <Meta
@@ -62,6 +63,12 @@ O card é definido com o elemento `freud-calendar`.
 ### Com input
 <Canvas>
   <Story story={Input}/>
+</Canvas>
+
+### AppendTo
+ default: 'body' ( renderiza o calendário no body da página ) pode ser usado com [appendTo]="mydiv" com a div com id="mydiv" 	
+<Canvas>
+  <Story story={AppendTo}/>
 </Canvas>
 
 ### TimeOnly

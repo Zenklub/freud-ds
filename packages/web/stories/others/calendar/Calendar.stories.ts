@@ -50,8 +50,20 @@ TimeOnly.args = {
   yearRange: '2000:2030'
 }
 
+
 export const Input = Template.bind({});
 Input.args = {
+  value: new Date(),
+  inline: false,
+  label: 'Data de nascimento',
+  timeOnly: false,
+  hourFormat: '12',
+  showTime: false,
+  yearRange: '2000:2030'
+}
+
+export const AppendTo = Template.bind({});
+AppendTo.args = {
   value: new Date(),
   inline: false,
   label: 'Data de nascimento',

@@ -1,7 +1,6 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-calendar {
   .calendar__wrapper{
     display: flex;
     flex-direction: column;
@@ -126,4 +125,3 @@
     background-color: $brand-color-pure;
     color: $neutral-color-white;
   }
-}
