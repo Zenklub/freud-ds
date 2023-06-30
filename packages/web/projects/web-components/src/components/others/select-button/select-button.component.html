@@ -7,6 +7,7 @@
   [optionLabel]="optionLabel"
   [disabled]="disabled"
   (onChange)="selectedOptionChange.emit($event)"
+  [ngClass]="overflowClass"
 >
   <ng-template let-item pTemplate>
     <div [ngClass]="{ 'option--with-icon': item.icon }">

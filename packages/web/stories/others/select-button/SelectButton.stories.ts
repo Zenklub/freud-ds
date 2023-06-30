@@ -19,6 +19,7 @@ const templateHTML = `
     <freud-select-button
         [options]="options"
         [multiple]="multiple"
+        [autoOverflow]="autoOverflow"
         [tabindex]="tabindex"
         [bgColor]="bgColor"
         [disabled]="disabled"
@@ -55,7 +56,19 @@ IconAppendPreppend.args = {
   iconPosition: 'append'
 };
 
+const fixedWidthTemplate: Story<FreudSelectButtonComponent> = (args: FreudSelectButtonComponent) => ({
+  props: { ...args },
+  template: `<div class="resizable-div">${templateHTML}</div>`,
+});
 
+export const Overflow = fixedWidthTemplate.bind({});
+Overflow.args = {
+  options: optionsWithIcon,
+  optionLabel: 'label',
+  selectedOption: optionsWithIcon[1],
+  iconPosition: 'append',
+  autoOverflow: true
+};
 
 export const BGColor = Template.bind({});
 BGColor.args = {
