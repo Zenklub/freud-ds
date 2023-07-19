@@ -5,8 +5,12 @@ on:
     inputs:
       version:
         description: Nova versão
-        default: 2.0.0
+        default: patch
         required: true
+        type: choice
+        options:
+          - patch
+          - minor
 
 jobs:
   build:
@@ -35,7 +39,7 @@ jobs:
         run: |
           git add .
           git commit -m "chore(logos): automatic version update"
-          git push
+          git push https://${{ secrets.FREUD_DS_GITHUB_PAT }}@github.com:Zenklub/freud-ds.git
 
       - name: Build
         run: npm run build:logos
