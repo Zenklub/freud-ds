@@ -17,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.FREUD_DS_GITHUB_PAT }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -44,7 +46,6 @@ jobs:
           cd packages/web
           git add .
           git commit -m "chore(web-components): automatic version update"
-          git remote set-url origin https://${{ secrets.FREUD_DS_GITHUB_PAT }}@github.com:Zenklub/freud-ds.git
           git push
 
       - name: Build
