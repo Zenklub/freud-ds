@@ -5,8 +5,12 @@ on:
     inputs:
       version:
         description: Nova versão
-        default: 2.0.0
+        default: patch
         required: true
+        type: choice
+        options:
+          - patch
+          - minor
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,17 +39,17 @@ jobs:
           cd packages/web/projects/web-components
           npm version ${{ github.event.inputs.version }}
 
-      - name: Build
-        run: |
-          cd packages/web
-          npm run build
-
       - name: Push new version
         run: |
           cd packages/web
           git add .
           git commit -m "chore(web-components): automatic version update"
-          git push
+          git push https://${{ secrets.FREUD_DS_GITHUB_PAT }}@github.com:Zenklub/freud-ds.git
+
+      - name: Build
+        run: |
+          cd packages/web
+          npm run build
 
       - name: Publish
         run: |
