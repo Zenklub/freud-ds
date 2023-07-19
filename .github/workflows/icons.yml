@@ -39,7 +39,8 @@ jobs:
         run: |
           git add .
           git commit -m "chore(icons): automatic version update"
-          git push https://${{ secrets.FREUD_DS_GITHUB_PAT }}@github.com:Zenklub/freud-ds.git
+          git remote set-url origin https://${{ secrets.FREUD_DS_GITHUB_PAT }}@github.com:Zenklub/freud-ds.git
+          git push
 
       - name: Build
         run: |
