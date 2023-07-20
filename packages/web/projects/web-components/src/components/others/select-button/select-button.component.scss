@@ -1,16 +1,50 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
+.has-overflow{
+  .p-selectbutton{
+    display: inline-grid;
+    width: 100%;
+    .p-ripple.p-element.p-button.p-component{
+      border-radius: 8px;
+      margin: 3px 0;
+    }
+  }
+}
+
+.no-overflow{
+  .p-selectbutton{
+    display: inline-flex;
+    overflow: auto;
+  }
+}
+
+.option--with-icon{
+  display: flex;
+  align-items: center;
+  
+  .freud-icon{
+    font-size: 14px;
+    &--preppend{
+      margin-right: 5px;
+    }
+    &--append{
+      margin-left: 5px;
+    }
+  }
+}
 .freud-select-button.freud-select-bgcolor {
   .p-selectbutton .p-button.p-highlight {
     color: $brand-color-04;
     background: $neutral-color-white;
     border: 1px solid $neutral-color-white;
   }
-  .p-selectbutton .p-button {
-    border: 1px solid $brand-color-05;
-    background: $brand-color-04;
-    color: $neutral-color-white;
+  .p-selectbutton {
+    .p-button {
+      border: 1px solid $brand-color-05;
+      background: $brand-color-04;
+      color: $neutral-color-white;
+    }
   }
 }
 

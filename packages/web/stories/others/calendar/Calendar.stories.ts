@@ -1,14 +1,16 @@
-import { Story } from '@storybook/angular';
-import { FreudCalendarComponent } from '@freud-ds/web-components';
+import { Meta, Story } from '@storybook/angular';
+import { FreudCalendarComponent, FreudCalendarModule } from '@freud-ds/web-components';
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule, NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
 
 const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) => ({
   props: { ...args },
   template: `
     <freud-calendar
       [selectionMode]="selectionMode"
+      [appendTo]="appendTo"
       [dateFormat]="dateFormat"
       [inline]="inline"
       [showOtherMonths]="showOtherMonths"
@@ -27,7 +29,8 @@ const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) =
       [required]="required"
       [maxDate]="maxDate"
       [minDate]="minDate"
-      [(ngModel)]="value">
+      [label]="label"
+      >
     </freud-calendar>
   `,
 });
@@ -38,11 +41,35 @@ Default.args = {
   yearRange: '2000:2030'
 }
 
+
+
 export const TimeOnly = Template.bind({});
 TimeOnly.args = {
   value: new Date(),
   timeOnly: true,
   hourFormat: '12',
+}
+
+
+export const Input = Template.bind({});
+Input.args = {
+  value: new Date(),
+  inline: false,
+  label: 'Data de nascimento',
+  timeOnly: false,
+  hourFormat: '12',
+  showTime: false,
+  yearRange: '2000:2030'
+}
+
+export const AppendTo = Template.bind({});
+AppendTo.args = {
+  value: new Date(),
+  inline: false,
+  label: 'Data de nascimento',
+  timeOnly: false,
+  hourFormat: '12',
+  showTime: false,
   yearRange: '2000:2030'
 }
 
@@ -74,9 +101,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
+        CommonModule,
         BrowserModule,
-        BrowserAnimationsModule
-      ]
+        BrowserAnimationsModule,
+        FreudCalendarModule
+      ],
+      declarations: []
     })
   ]
-}
+} as Meta;

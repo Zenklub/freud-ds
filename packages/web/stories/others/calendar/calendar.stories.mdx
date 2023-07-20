@@ -7,7 +7,9 @@ import {
   BGColor,
   TimeOnly,
   MonthView,
-  YearNavigator
+  YearNavigator,
+  Input,
+  AppendTo
 } from './Calendar.stories.ts';
 
 <Meta
@@ -47,7 +49,7 @@ import { FreudCalendarModule } from '@freud-ds/web-components';
 ## Getting Started
 O card é definido com o elemento `freud-calendar`.
 ```html
-<freud-calendar [(ngModel)]="value"></freud-calendar>
+<freud-calendar ></freud-calendar>
 ```
 
 ## <a id="exemplos"></a>Exemplos
@@ -56,6 +58,17 @@ O card é definido com o elemento `freud-calendar`.
 ### Default
 <Canvas>
   <Story story={Default}/>
+</Canvas>
+
+### Com input
+<Canvas>
+  <Story story={Input}/>
+</Canvas>
+
+### AppendTo
+ default: 'body' ( renderiza o calendário no body da página ) pode ser usado com [appendTo]="mydiv" com a div com id="mydiv" 	
+<Canvas>
+  <Story story={AppendTo}/>
 </Canvas>
 
 ### TimeOnly
@@ -87,7 +100,7 @@ Utilize a propriedade `view` para exibir o calendário em formato de Mês.
 Default date format is dd/mm/yy, to customize this use dateFormat property.
 
 ```html
-<freud-calendar [(ngModel)]="dateValue" dateFormat="dd.mm.yy"></freud-calendar>
+<freud-calendar dateFormat="dd.mm.yy"></freud-calendar>
 ```
 Following options can be a part of the format.
 

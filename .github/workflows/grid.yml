@@ -5,14 +5,20 @@ on:
     inputs:
       version:
         description: Nova versão
-        default: 2.0.0
+        default: patch
         required: true
+        type: choice
+        options:
+          - patch
+          - minor
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.FREUD_DS_GITHUB_PAT }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16

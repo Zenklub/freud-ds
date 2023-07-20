@@ -18,10 +18,8 @@ export class AllIconsComponent implements OnInit {
   searchText: string = '';
 
   constructor(private clipboardService: ClipboardService) {}
-  // constructor(private clipboardService: ClipboardService, private messageService: FreudMessageService) {}
 
   ngOnInit(): void {
-    console.log(iconNamesJson);
     this.fullIconNames = iconNamesJson;
     this.filterIcons();
   }
@@ -47,6 +45,9 @@ export class AllIconsComponent implements OnInit {
 
   toast(iconName: string) {
     this.message = `"${iconName}" ${this.baseMessage}!`
+<<<<<<< HEAD
     console.log(this.message);
+=======
+>>>>>>> main
   }
 }
