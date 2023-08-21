@@ -19,6 +19,7 @@ const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) =
       [view]="view"
       [yearNavigator]="yearNavigator"
       [yearRange]="yearRange"
+      [stepMinute]="stepMinute"
       [defaultDate]="defaultDate"
       [showTime]="showTime"
       [hourFormat]="hourFormat"
@@ -49,6 +50,14 @@ TimeOnly.args = {
   timeOnly: true,
   hourFormat: '12',
 }
+
+export const MinuteStep = Template.bind({});
+MinuteStep.args = {
+  value: new Date(),
+  timeOnly: true,
+  stepMinute: 10
+}
+
 
 
 export const Input = Template.bind({});
