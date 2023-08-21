@@ -17,7 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     },
   ]
 })
-export class FreudCalendarComponent implements ControlValueAccessor {
+export class FreudCalendarComponent implements ControlValueAccessor{
   @Input() dateFormat: string = 'dd/mm/yy';
   @Input() showTime: boolean = true
   @Input() hourFormat: '12' | '24' = '24';
@@ -40,7 +40,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Input() minDate!: Date;
   @Input() maxDate!: Date;
   @Input() defaultDate!: Date;
-
+  @Input() stepMinute: number = 1;
   @Output() onSelect: EventEmitter<any> = new EventEmitter();
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
@@ -51,6 +51,7 @@ export class FreudCalendarComponent implements ControlValueAccessor {
   @Output() onClearClick: EventEmitter<any> = new EventEmitter();
 
   private _value!: any;
+
 
   modelValueChange() {
     this.valueChange.emit(this.value);

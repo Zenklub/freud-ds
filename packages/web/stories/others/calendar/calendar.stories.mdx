@@ -9,7 +9,8 @@ import {
   MonthView,
   YearNavigator,
   Input,
-  AppendTo
+  AppendTo,
+  MinuteStep
 } from './Calendar.stories.ts';
 
 <Meta
@@ -76,6 +77,12 @@ Utilize a propriedade `timeOnly` para exibir somente as horas, e a propriedade `
 entre `12` e `24` horas
 <Canvas>
   <Story story={TimeOnly}/>
+</Canvas>
+
+### MinuteStep
+Utilize a propriedade `MinuteStep` para controlar a quantidadede passos a clicar no seletor de minutos.
+<Canvas>
+  <Story story={MinuteStep}/>
 </Canvas>
 
 ### MonthView
