@@ -7,7 +7,7 @@ type avatarSizes = 'sm' | 'md' | 'lg';
   template: `
     <p-avatar
       [label]="(image || withIcon) ? '' : label"
-      [icon]="(withIcon || !label) ? 'freud-icon freud-icon-user' : ''"
+      [icon]="(withIcon || (!label && !image)) ? 'freud-icon freud-icon-user' : ''"
       shape="circle"
       [image]="image">
       <freud-badge *ngIf="badge" [value]="badge" color="error"></freud-badge>
