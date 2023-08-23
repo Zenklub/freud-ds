@@ -39,10 +39,10 @@ BGColor.args = {
 // Imagem
 export const Imagem = Template.bind({});
 Imagem.args = {
-  label: 'BG',
   size: 'md',
   image: 'assets/img/avatar.png'
 };
+
 // Badge
 export const WithBadge = Template.bind({});
 WithBadge.args = {
