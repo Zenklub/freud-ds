@@ -22,7 +22,7 @@ jobs:
           node generateJson.mjs
           cd ../../packages/web
           npm i -g npm@8
-          npm i --quiet
+          npm i --quiet --legacy-peer-deps
           npm run build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
