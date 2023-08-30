@@ -43,5 +43,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Storybook Build Files
 build-storybook.log
 storybook-static
+documentation.json
