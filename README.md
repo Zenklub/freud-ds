@@ -1,5 +1,11 @@
 # Freud DS Workspace
 
+## Estrutura
+
+Esse [monorepo](https://monorepo.tools/) utiliza o [lerna](https://lerna.js.org/) para gerenciamento das libs.
+
+Todos as lisbs estão na pasta `packages`
+
 ## Requisitos para desenvolvimento e manipulação das libs
 
 - Node 16
@@ -7,10 +13,28 @@
 
 ## Instalando o projeto
 
-Faça o clone do projeto em sua máquina. Entre na pasta raiz do projeto e rode o comando `npm install --legacy-peer-deps`. Utilize esta flag pois não estamos usando as versões mais recentes de algumas dependências. Após isso, rode o comando `npm run bootstrap --legacy-peer-deps`. Ele deve realizar as instalações das dependências dos projetos (_packages_) presentes neste monorepo.
+Na pasta raiz do projeto e rode o comando:
 
-## Estrutura
+```bash
+npm install --legacy-peer-deps
+```
 
-Esse workspace utiliza o lerna para gerenciamento das libs.
+`--legacy-peer-deps`: Utilize esta flag pois não estamos usando as versões mais recentes de algumas dependências.
 
-Todos as lisbs estão na pasta `packages`
+Para cada pacote que precise mexer, entre na pasta do projeto e rode:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+<!-- TODO: atualizar lerna para usar novo package management -->
+
+<!-- Após isso, rode o comando:
+
+```bash
+npm run bootstrap --legacy-peer-deps
+```
+
+Ele deve realizar as instalações das dependências dos projetos (_packages_) presentes neste monorepo. -->
+
+
