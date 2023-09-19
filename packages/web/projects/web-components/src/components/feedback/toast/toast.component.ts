@@ -1,6 +1,7 @@
 import { Component, Input, ViewEncapsulation } from "@angular/core";
 
 type positions = "top-right" | "top-left" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center" | "center";
+type targetOptions = '_blank' | '_self' | '_top' | '_parent';
 
 @Component({
   selector: 'freud-toast',
@@ -18,14 +19,13 @@ export class FreudToastComponent {
   @Input() position: positions = 'top-right';
   @Input() key!: string;
   @Input() url?: string;
-  @Input() openInNewTab = true;
+  @Input() targetParam: targetOptions = '_blank';
 
   openURL(event: any): void {
     const isCloseBtn = event.srcElement.className.includes('close-icon');
-    const whereToOpen = this.openInNewTab ? '_blank' : '_top';
 
     if (!isCloseBtn && this.url) {
-      window.open(this.url, whereToOpen);
+      window.open(this.url, this.targetParam);
     }
   }
 }
