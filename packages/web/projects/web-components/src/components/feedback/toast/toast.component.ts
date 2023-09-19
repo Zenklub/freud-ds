@@ -18,12 +18,14 @@ export class FreudToastComponent {
   @Input() position: positions = 'top-right';
   @Input() key!: string;
   @Input() url?: string;
+  @Input() openInNewTab = true;
 
   openURL(event: any): void {
     const isCloseBtn = event.srcElement.className.includes('close-icon');
+    const whereToOpen = this.openInNewTab ? '_blank' : '_top';
 
-    if(!isCloseBtn && this.url){
-      window.open(this.url, '_blank');
+    if (!isCloseBtn && this.url) {
+      window.open(this.url, whereToOpen);
     }
   }
 }
