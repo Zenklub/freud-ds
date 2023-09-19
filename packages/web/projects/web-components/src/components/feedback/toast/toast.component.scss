@@ -53,10 +53,6 @@
 
   p-toast.clickable {
     cursor: pointer;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, .2) !important;
-    }
   }
 
   .p-toast .p-toast-icon-close {
