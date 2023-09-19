@@ -17,7 +17,7 @@ export class FreudToastComponent {
 
   @Input() position: positions = 'top-right';
   @Input() key!: string;
-  @Input() url!: string;
+  @Input() url?: string;
 
   openURL(event: any): void {
     const isCloseBtn = event.srcElement.className.includes('close-icon');
