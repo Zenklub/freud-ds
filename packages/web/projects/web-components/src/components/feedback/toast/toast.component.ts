@@ -5,7 +5,7 @@ type positions = "top-right" | "top-left" | "bottom-left" | "bottom-right" | "to
 @Component({
   selector: 'freud-toast',
   template: `
-    <p-toast [position]="position" [key]="key" [class.clickable] = "url" (click)="openURL($event)"></p-toast>
+    <p-toast [position]="position" [key]="key" [class.clickable]="url" (click)="url && openURL($event)"></p-toast>
   `,
   styleUrls: ['./toast.component.scss'],
   encapsulation: ViewEncapsulation.None,
