@@ -7,9 +7,11 @@
     border-radius: $border-radius-md!important;
     color: $neutral-color-dark-04!important;
     box-shadow: unset!important;
+
     .p-toast-message-content{
       border-width: 0 0 0 0!important;
     }
+
     .p-toast-message-content .p-toast-message-icon {
       font-size: 24px!important;
     }
@@ -47,6 +49,10 @@
       margin-left: -5px!important;
       margin-right: 4px!important;
     }
+  }
+
+  p-toast.clickable {
+    cursor: pointer;
   }
 
   .p-toast .p-toast-icon-close {

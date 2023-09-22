@@ -1,22 +1,23 @@
-import {Meta, Canvas, Story, ArgsTable} from '@storybook/addon-docs';
-import { moduleMetadata } from '@storybook/angular';
-import { FreudToastComponent, FreudToastModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
 import {
-  Default,
-} from './Toast.stories.ts';
-import {FreudToastExampleModule} from "./toast-example/example.module";
+  FreudToastComponent,
+  FreudToastModule,
+} from "@freud-ds/web-components";
+import { FreudHeaderComponent } from "../../header/header.component";
+import { Default } from "./Toast.stories.ts";
+import { FreudToastExampleModule } from "./toast-example/example.module";
 
 <Meta
   decorators={[
-    moduleMetadata({imports: [FreudToastModule, FreudToastExampleModule]})
+    moduleMetadata({ imports: [FreudToastModule, FreudToastExampleModule] }),
   ]}
   parameters={{
-    layout: 'centered',
-    viewMode: 'docs',
+    layout: "centered",
+    viewMode: "docs",
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   }}
   title="@freud-ds/web-components/Feedback/Toast"
   component={FreudToastComponent}
@@ -27,14 +28,16 @@ import {FreudToastExampleModule} from "./toast-example/example.module";
     component: FreudHeaderComponent,
     props: {
       title: "Toast",
-      description: "O Toast é um aviso que fornece um feedback simples sobre uma operação em uma pequena mensagem."
+      description:
+        "O Toast é um aviso que fornece um feedback simples sobre uma operação em uma pequena mensagem.",
     },
   }}
 </Story>
 
 ## <a id="importing"></a>Import
+
 ```ts
-import { FreudToastModule  } from '@freud-ds/web-components';
+import { FreudToastModule } from "@freud-ds/web-components";
 ```
 
 ## Getting Started
@@ -42,36 +45,44 @@ import { FreudToastModule  } from '@freud-ds/web-components';
 É necessário o componente `freud-toast` definido no html e o serviço `FreudMessageService` para a inclusão das mensagens
 
 Toast oferece suporte a várias posições em que o padrão é "top-right".
+
 ```html
 <freud-toast [position]="'top-center'"></freud-toast>
 ```
+
 ```ts
-import { FreudMessageService, FreudMessage } from '@freud-ds/web-components';
+import { FreudMessageService, FreudMessage } from "@freud-ds/web-components";
 
 export class ComponentDemo {
+  constructor(private messageService: FreudMessageService) {}
 
-    constructor(private messageService: FreudMessageService) {}
-
-    confirm() {
-        const message: FreudMessage = {severity:'success', summary:'Service Message', detail:'Via MessageService'};
-        this.messageService.add(message);
-    }
+  confirm() {
+    const message: FreudMessage = {
+      severity: "success",
+      summary: "Service Message",
+      detail: "Via MessageService",
+    };
+    this.messageService.add(message);
+  }
 }
 ```
 
 ## <a id="exemplos"></a> Exemplos
-<br/>
 
-### Theme
+<br />
+
+Clique nos botões para ver cada toast, tanto as versões normais quanto as clicáveis na segunda linha.
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
-
 
 ## API
 
 ### Positions
+
 Aqui estão os valores possíveis para as posições do Toast
+
 - top-right
 - top-left
 - bottom-right
@@ -81,7 +92,9 @@ Aqui estão os valores possíveis para as posições do Toast
 - center
 
 ### Severities
+
 Aqui estão os valores possíveis para a gravidade de uma mensagem.
+
 - success
 - info
 - warn
