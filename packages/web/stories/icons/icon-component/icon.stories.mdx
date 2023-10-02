@@ -36,35 +36,49 @@ import { Icon, IconSmall } from "./Icon.stories";
   {{
     component: FreudHeaderComponent,
     props: {
-      title: "Icon",
+      title: "Freud Icon",
       description:
-        "Como usar Icon como um componente do Freud DS",
+        "Ícone próprio do Freud DS, utilizado para exibir ícones na tela.",
     },
   }}
 </Story>
 
+## Dependencies
+
+### bla bla blas
+
 ## <a id="importing"></a>Import
 
 ```ts
-@import from "@freud-ds/web-components";
+import { FreudIconComponent } from '@freud-ds/web-components'; 
 ```
 
-## <a id="exemplos"></a>Exemplos
+## Icon default
 
-### Icon default
+### Usage
+
+```ts
+<freud-icon icon="[icon name]"></freud-icon>
+```
+
+### Example
 
 <Canvas>
-  <Story name="Icon">
-    <freud-icon icon="accessible"></freud-icon>
-  </Story>
+  <Story story={Icon}/>
 </Canvas>
 
-### Icon small
+## Icon small
+
+### Usage
+
+```ts
+<freud-icon icon="[icon name]" size="sm"></freud-icon>
+```
+
+### Example
 
 <Canvas>
-  <Story name="IconSmall">
-      <freud-icon icon="accessible" size="sm"></freud-icon>
-  </Story>
+  <Story story={IconSmall}/>
 </Canvas>
 
 

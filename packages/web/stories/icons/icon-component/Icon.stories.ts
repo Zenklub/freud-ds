@@ -7,13 +7,18 @@ const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
   <freud-icon [icon]="icon" [size]="size"></freud-icon>  `,
 });
 
-export const Icon = Template.bind({});
-Icon.args = {
-  icon: 'accessible',
+export const Icon = () => {
+  return {
+    template: `
+    <freud-icon icon="award"></freud-icon>
+    `
+  }
 };
 
-export const IconSmall = Template.bind({});
-IconSmall.args = {
-  icon: 'accessible',
-    size: 'sm',
+export const IconSmall = () => {
+  return {
+    template: `
+    <freud-icon icon="award" size="sm"></freud-icon>
+    `
+  }
 };
