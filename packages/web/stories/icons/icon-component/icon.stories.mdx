@@ -1,0 +1,71 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
+import { FreudIconComponent, FreudIconModule} from "@freud-ds/web-components";
+import { FreudHeaderComponent } from "../../header/header.component";
+import { Icon, IconSmall } from "./Icon.stories";
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudIconModule],
+    }),
+  ]}
+  argTypes={{
+    size: {
+      control: {
+        type: "select",
+        options: ["sm", "md"],
+      },
+    },
+  }}
+  parameters={{
+    layout: "centered",
+    backgrounds: {
+      default: "Default",
+      values: [
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
+      ],
+    },
+  }}
+  title="@freud-ds/web-components/Icons/icon-component"
+  component={FreudIconComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Icon",
+      description:
+        "Como usar Icon como um componente do Freud DS",
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+@import from "@freud-ds/web-components";
+```
+
+## <a id="exemplos"></a>Exemplos
+
+### Icon default
+
+<Canvas>
+  <Story name="Icon">
+    <freud-icon icon="accessible"></freud-icon>
+  </Story>
+</Canvas>
+
+### Icon small
+
+<Canvas>
+  <Story name="IconSmall">
+      <freud-icon icon="accessible" size="sm"></freud-icon>
+  </Story>
+</Canvas>
+
+
+
