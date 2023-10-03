@@ -38,38 +38,43 @@ import { Icon, IconSmall } from "./Icon.stories";
     props: {
       title: "Freud Icon",
       description:
-        "Ícone próprio do Freud DS, utilizado para exibir ícones na tela.",
+        "Componente próprio do Freud DS, utilizado para exibir ícones na tela.",
     },
   }}
 </Story>
 
-## Dependencies
+## Libs
 
-### bla bla blas
+É necessário instalar algumas libs do Freud DS para utilizar este componente. Para instalar, rode os comandos abaixo no terminal do seu projeto:
 
-## <a id="importing"></a>Import
+### Web Components
 
 ```ts
-import { FreudIconComponent } from '@freud-ds/web-components'; 
+npm i @freud-ds/web-components --legacy-peer-deps
 ```
 
-## Icon default
+### Icons
+
+```ts
+npm i @freud-ds/icons --legacy-peer-deps
+```
+
+## <a id="importing"></a>Import
+Importe o FreudIconComponent e o FreudIconModule no seu arquivo. Utilizando os comandos:
+```ts
+import { FreudIconComponent, FreudIconModule } from '@freud-ds/web-components'; 
+```
+
+## Icon
+Para utilizar o componente, basta utilizar a tag ```<freud-icon>```passando o nome do ícone (e, caso seja necessário, 
+o tamanho) como parâmetro. Para ver a lista de ícones disponíveis, 
+[clique aqui](https://zenklub.github.io/freud-ds/iframe.html?viewMode=docs&id=freud-ds-web-components-icons--storyname-hidden#a-idlistalisting).
 
 ### Usage
 
 ```ts
 <freud-icon icon="[icon name]"></freud-icon>
 ```
-
-### Example
-
-<Canvas>
-  <Story story={Icon}/>
-</Canvas>
-
-## Icon small
-
-### Usage
 
 ```ts
 <freud-icon icon="[icon name]" size="sm"></freud-icon>
@@ -78,8 +83,12 @@ import { FreudIconComponent } from '@freud-ds/web-components';
 ### Example
 
 <Canvas>
+  <Story story={Icon}/>
+</Canvas>
+
+<Canvas>
   <Story story={IconSmall}/>
 </Canvas>
 
-
-
+## API
+<ArgsTable of={FreudIconComponent} />
