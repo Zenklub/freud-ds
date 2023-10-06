@@ -1,4 +1,8 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
+
+export const FreudIconSizes = ['sm', 'md'] as const;
+export type FreudIconSize = typeof FreudIconSizes[number];
 
 @Component({
   selector: 'freud-icon',
@@ -6,17 +10,12 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   template: `<span [ngClass]="iconClasses"></span>`,
   styleUrls: ['./icon.component.scss'],
   host: {
-    class: 'freud-icon',
+    class: 'inline-flex',
   },
 })
 export class FreudIconComponent {
   @Input() icon: string = '';
-  @Input() size: 'sm' | 'md' = 'md';
-
-  constructor() {
-    // Log para verificar se o componente está sendo inicializado corretamente
-    console.log('FreudIconComponent constructor called');
-  }
+  @Input() size: FreudIconSize = 'md';
 
   // Método para calcular as classes de estilo com base nas propriedades "icon" e "size"
   get iconClasses(): string[] {
@@ -30,10 +29,6 @@ export class FreudIconComponent {
       classes.push('freud-icon-md');
     }
     
-    // Log para verificar as classes CSS geradas
-    console.log('Icon classes:', classes);
-    
     return classes;
   }
 }
-
