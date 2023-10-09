@@ -1,5 +1,4 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
 
 export const FreudIconSizes = ['sm', 'md'] as const;
 export type FreudIconSize = typeof FreudIconSizes[number];
