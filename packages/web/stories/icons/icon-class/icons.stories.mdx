@@ -1,46 +1,37 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import { moduleMetadata } from '@storybook/angular';
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
 
-import { FreudHeaderComponent } from '../../header/header.component';
-import { FreudTypographyModule } from '@freud-ds/web-components';
-import { FreudInputTextModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from "../../header/header.component";
+import { FreudTypographyModule } from "@freud-ds/web-components";
+import { FreudInputTextModule } from "@freud-ds/web-components";
 
-
-
-import {
-  AllIcons,
-  Verificated,
-  VerificatedSmall,
-} from './Icons.stories.ts';
+import { AllIcons, Verificated, VerificatedSmall } from "./Icons.stories.ts";
 
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [
-        FreudTypographyModule,
-        FreudInputTextModule,
-    ],
+      imports: [FreudTypographyModule, FreudInputTextModule],
     }),
   ]}
   argTypes={{
     size: {
       control: {
-        type: 'select',
-        options: ["sm", "md", "lg"]
+        type: "select",
+        options: ["sm", "md", "lg"],
       },
-    }
+    },
   }}
   parameters={{
-    layout: 'centered',
+    layout: "centered",
     backgrounds: {
-      default: 'Default',
+      default: "Default",
       values: [
-        { name: 'Default', value: '#FFFFFF' },
-        { name: 'BgColor', value: '#6732D1' },
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
       ],
-    }
+    },
   }}
-  title="@freud-ds/web-components/Icons"
+  title="@freud-ds/web-components/Icons/Ícone como classe CSS"
   component={AllIcons}
 />
 
@@ -49,7 +40,7 @@ import {
     component: FreudHeaderComponent,
     props: {
       title: "Icones",
-      description: "Listagem de icones disponíveis na biblioteca."
+      description: "Listagem de icones disponíveis na biblioteca.",
     },
   }}
 </Story>
@@ -68,7 +59,7 @@ import {
 ```
 
 <Canvas>
-  <Story story={Verificated}/>
+  <Story story={Verificated} />
 </Canvas>
 
 ```ts
@@ -77,15 +68,17 @@ import {
 ```
 
 <Canvas>
-  <Story story={VerificatedSmall}/>
+  <Story story={VerificatedSmall} />
 </Canvas>
 
 ## <a id="list"></a>Listing
+
 <br />
 
 This is the actual list of icons available in Freud Design System. Select your icon and copy the name to use in your project.
 
 **If you click in the icon, it will be sent to clipboard.**
+
 <Canvas>
-  <Story story={AllIcons}/>
+  <Story story={AllIcons} />
 </Canvas>
