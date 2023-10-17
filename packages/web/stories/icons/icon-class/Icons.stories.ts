@@ -18,34 +18,34 @@ export const AllIcons = () => ({
   component: AllIconsComponent,
 });
 
-export const Verificated_i = () => {
+export const Default_i = () => {
   return {
     template: `
-      <i class='freud-icon freud-icon-verificated' style='font-size: 24px'></i>
+      <i class="freud-icon freud-icon-verificated"></i>
      `
   };
 };
 
-export const VerificatedSmall_i = () => {
+export const Small_i = () => {
   return {
     template: `
-      <i class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 16px'></i>
+      <i class="freud-icon freud-icon-verificated freud-icon-small"></i>
      `
   };
 };
 
-export const Verificated_span = () => {
+export const Default_span = () => {
   return {
     template: `
-      <span class='freud-icon freud-icon-verificated' style='font-size: 24px'></span>
+      <span class="freud-icon freud-icon-verificated"></span>
      `
   };
 };
 
-export const VerificatedSmall_span= () => {
+export const Small_span= () => {
   return {
     template: `
-      <span class='freud-icon freud-icon-verificated freud-icon-small' style='font-size: 16px'></span>
+      <span class="freud-icon freud-icon-verificated freud-icon-small"></span>
      `
   };
 };

@@ -5,7 +5,7 @@ import { FreudHeaderComponent } from "../../header/header.component";
 import { FreudTypographyModule } from "@freud-ds/web-components";
 import { FreudInputTextModule } from "@freud-ds/web-components";
 
-import { AllIcons, Verificated_i, VerificatedSmall_i, Verificated_span, VerificatedSmall_span } from "./Icons.stories.ts";
+import { AllIcons, Default_i, Small_i, Default_span, Small_span } from "./Icons.stories.ts";
 
 <Meta
   decorators={[
@@ -58,21 +58,21 @@ como parâmetro.
 #### Utilizando a tag ``<i>``
 
 <Canvas withSource={SourceState.OPEN}>
-  <Story story={Verificated_i} />
+  <Story story={Default_i} />
 </Canvas>
 
 <Canvas withSource={SourceState.OPEN}>
-  <Story story={VerificatedSmall_i} />
+  <Story story={Small_i} />
 </Canvas>
 
 #### Utilizando a tag ``<span>``
 
 <Canvas withSource={SourceState.OPEN}>
-  <Story story={Verificated_span} />
+  <Story story={Default_span} />
 </Canvas>
 
 <Canvas withSource={SourceState.OPEN}>
-  <Story story={VerificatedSmall_span} />
+  <Story story={Small_span} />
 </Canvas>
 
 ## Lista de ícones disponíveis
