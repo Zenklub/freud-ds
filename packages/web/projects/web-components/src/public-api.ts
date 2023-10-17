@@ -38,6 +38,9 @@ export * from './components/feedback/progress-bar';
 export * from './components/feedback/rating';
 export * from './components/feedback/badge';
 
+// Icons
+export * from './components/icons/icon';
+
 // Media
 export * from './components/media/avatar';
 export * from './components/media/fille-upload';
