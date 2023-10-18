@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 
 type buttonSizes = 'sm' | 'md' | 'lg';
 type buttonColors = 'primary' | 'secondary' | 'ghost';
@@ -27,6 +27,12 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
   }
 })
 export class FreudButtonComponent {
+  @HostBinding('style.pointer-events') get pEvents(): string {
+    if (this.disabled || this.loading) {
+      return 'none';
+    }
+    return 'auto';
+  }
 
   @Input() size: buttonSizes = 'md';
   @Input() color: buttonColors = 'primary';
