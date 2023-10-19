@@ -1,6 +1,6 @@
 {
   "name": "@freud-ds/icons",
-  "version": "2.2.0",
+  "version": "2.2.0-rc.0",
   "description": "Zenklub - Freud DS Icons",
   "author": "Zenklub",
   "homepage": "",
@@ -11,11 +11,13 @@
     "emoji",
     "fonts",
     "icon",
-    "style"
+    "style",
+    "iconList"
   ],
   "scripts": {
-    "build": "npm run clean && cp -r src ./dist && cp package.json dist/package.json",
-    "clean": "rm -rf dist"
+    "build": "npm run clean && npm run generate && cp -r src ./dist && cp package.json dist/package.json",
+    "clean": "rm -rf dist",
+    "generate": "node generateIconList.mjs"
   },
   "dependencies": {
     "fs-extra": "^11.1.0"
