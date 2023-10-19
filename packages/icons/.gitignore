@@ -1,2 +1,2 @@
-src/iconList/*.js
-src/iconList/*.json
+src/iconList/icons.*
+out

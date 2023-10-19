@@ -34,16 +34,16 @@ fs.readdir(sourceDir, (err, files) => {
     console.log('Arquivo JSON gerado com sucesso!');
   });
 
-  fs.writeFile(path.join(outputFolder, 'icons.js'), generateIconString(iconNames), (err) => {
+  fs.writeFile(path.join(outputFolder, 'icons.ts'), generateIconString(iconNames), (err) => {
     if (err) {
-      console.error('Não foi possível escrever o arquivo JS:', err);
+      console.error('Não foi possível escrever o arquivo TS:', err);
       return;
     }
-    console.log('Arquivo JS gerado com sucesso!');
+    console.log('Arquivo TS gerado com sucesso!');
   });
 
 });
 
 function generateIconString(iconNames) {
-  return `module.exports = ${JSON.stringify(iconNames)};`;
+  return `export const icons = ${JSON.stringify(iconNames)} as const;\n`;
 }
