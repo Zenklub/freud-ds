@@ -11,7 +11,7 @@ const sourceDir = path.join(__dirname, "src");
 const destinationDir = path.join(__dirname, `${folderNameToCreate}`);
 
 
-if (!fs.existsSync(destinationDir)){
+if (!fs.existsSync(destinationDir)) {
   console.log('Creating the dist folder...');
   fs.mkdirSync(destinationDir, { recursive: true });
 }
@@ -25,5 +25,3 @@ fsExtra.copy(sourceDir, destinationDir, (err) => {
   console.log('=============================================');
   console.log('Build completed!');
 });
-
-
