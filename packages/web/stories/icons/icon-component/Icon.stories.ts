@@ -1,5 +1,24 @@
-import { Story } from '@storybook/angular';
+import { Story, Meta, moduleMetadata } from '@storybook/angular';
+
 import { FreudIconComponent } from '@freud-ds/web-components'; 
+import { AllIconsComponent } from '../all-icons/all-icons.component';
+
+import { ClipboardModule } from 'ngx-clipboard';
+
+
+export default {
+  title: 'Icons',
+  decorators: [
+    moduleMetadata({
+      imports: [ClipboardModule],
+      declarations: [AllIconsComponent],
+    }),
+  ],
+} as Meta;
+
+export const AllIcons = () => ({
+  component: AllIconsComponent,
+});
 
 const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
   props: { ...args },

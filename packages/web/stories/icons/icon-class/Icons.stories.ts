@@ -1,7 +1,8 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
 
 import { ClipboardModule } from 'ngx-clipboard';
-import { AllIconsComponent } from './all-icons/all-icons.component';
+
+import { AllIconsComponent } from '../all-icons/all-icons.component';
 
 
 export default {
