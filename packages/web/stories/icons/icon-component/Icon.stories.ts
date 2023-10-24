@@ -1,10 +1,9 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 
-import { FreudIconComponent } from '@freud-ds/web-components'; 
+import { FreudIconComponent } from '@freud-ds/web-components';
 import { AllIconsComponent } from '../all-icons/all-icons.component';
 
 import { ClipboardModule } from 'ngx-clipboard';
-
 
 export default {
   title: 'Icons',
@@ -18,6 +17,9 @@ export default {
 
 export const AllIcons = () => ({
   component: AllIconsComponent,
+  props: {
+    copyMode: 'component',
+  },
 });
 
 const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
@@ -27,14 +29,14 @@ const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
 
 export const Icon = () => {
   return {
-    template: `<freud-icon icon="award"></freud-icon>`
-  }
+    template: `<freud-icon icon="award"></freud-icon>`,
+  };
 };
 
 export const IconSmall = () => {
   return {
-    template: `<freud-icon icon="award" size="sm"></freud-icon>`
-  }
+    template: `<freud-icon icon="award" size="sm"></freud-icon>`,
+  };
 };
 
 export const IconTest = Template.bind({});
