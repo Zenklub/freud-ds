@@ -18,7 +18,7 @@ jobs:
         run: |
           rm -rf package.json
           rm -rf package-lock.json
-          cd ../../packages/web
+          cd packages/web
           npm i -g npm@8
           npm i --quiet --legacy-peer-deps
           npm run build-storybook
