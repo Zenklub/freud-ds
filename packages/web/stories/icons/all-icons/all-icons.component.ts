@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 
-import iconNamesJson from './icon-names.json';
+import { icons } from '@freud-ds/icons';
 
 @Component({
   selector: 'all-icons',
@@ -22,7 +22,7 @@ export class AllIconsComponent implements OnInit {
   constructor(private clipboardService: ClipboardService) {}
 
   ngOnInit(): void {
-    this.fullIconNames = iconNamesJson;
+    this.fullIconNames = [...icons];
     this.filterIcons();
   }
 
@@ -47,7 +47,7 @@ export class AllIconsComponent implements OnInit {
         iconName.includes(this.searchText)
       );
     } else {
-      this.iconNames = iconNamesJson;
+      this.iconNames = [...icons];
     }
   }
 
