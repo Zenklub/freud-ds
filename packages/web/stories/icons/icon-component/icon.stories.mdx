@@ -1,13 +1,15 @@
 import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
 import { moduleMetadata } from "@storybook/angular";
-import { FreudIconComponent, FreudIconModule, FreudIconSizes} from "@freud-ds/web-components";
+
+import { FreudIconComponent, FreudIconModule, FreudIconSizes, FreudTypographyModule, FreudInputTextModule} from "@freud-ds/web-components";
 import { FreudHeaderComponent } from "../../header/header.component";
-import { Icon, IconSmall, IconTest } from "./Icon.stories";
+
+import { Icon, IconSmall, IconTest, AllIcons } from "./Icon.stories";
 
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudIconModule],
+      imports: [FreudIconModule, FreudTypographyModule, FreudInputTextModule],
     }),
   ]}
   argTypes={{
@@ -29,7 +31,7 @@ import { Icon, IconSmall, IconTest } from "./Icon.stories";
     },
   }}
   title="@freud-ds/web-components/Icons/Ícone como componente"
-  component={FreudIconComponent}
+  component={FreudIconComponent, AllIcons}
 />
 
 <Story name="Storyname-hidden">
@@ -107,7 +109,7 @@ na lista de ``styles []`` do arquivo ``angular.json`` do seu projeto, como no ex
 
 ## Icon
 Para utilizar o componente, basta utilizar a tag ``<freud-icon>``passando o nome do ícone (e, caso seja necessário, o tamanho) 
-como parâmetro. Para ver a lista de ícones disponíveis, [clique aqui][all-icons].
+como parâmetro. 
 
 ### Teste os ícones
 Clique em ``Icon Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
@@ -127,7 +129,15 @@ para ter acesso a área de testes, onde você pode colocar os ícones da lista p
   <Story story={IconSmall}/>
 </Canvas>
 
+## Lista de ícones disponíveis
+
+Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um ícone e o código para utilizar o componente ``freud-icon`` será copiado para o seu clipboard.
+
+**Clique no ícone, ele será enviado para sua área de transferência.**
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={AllIcons} />
+</Canvas>
+
 ## API
 <ArgsTable of={FreudIconComponent} />
-
-[all-icons]: https://zenklub.github.io/freud-ds/iframe.html?viewMode=docs&id=freud-ds-web-components-icons--storyname-hidden#a-idlistalisting

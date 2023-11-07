@@ -19,7 +19,7 @@ jobs:
           rm -rf package.json
           rm -rf package-lock.json
           cd packages/icons
-          node generateJson.mjs
+          npm run generate
           cd ../../packages/web
           npm i -g npm@8
           npm i --quiet --legacy-peer-deps

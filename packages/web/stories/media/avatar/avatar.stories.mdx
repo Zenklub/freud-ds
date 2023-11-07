@@ -1,9 +1,10 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudAvatarComponent, FreudAvatarModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Size,
+  AvatarTest,
+  SizeLG, SizeMD, SizeSM,
   BGColor,
   Imagem,
   Icon,
@@ -49,45 +50,80 @@ import {
   }}
 </Story>
 
+## Pré-requisitos
+
+### Libs
+
+É necessário instalar a lib de ```web-components``` para o correto funcionamento do componente:
+```bash
+npm i @freud-ds/web-components
+```
+
 ## <a id="importing"></a>Import
 
+Importe o ```FreudAvatarModule``` em cada módulo que for utilizar o ```FreudAvatarComponent``` em seu projeto:
 ```ts
 import FreudAvatarModule from '@freud-ds/web-components';
 ```
+## Avatar
 
-## <a id="exemplos"></a>Exemplos
-<br />
+Para utilizar o componente, basta utilizar a tag ``<freud-avatar>`` passando os parâmetros necessários.
 
-### With Label
-<Canvas>
-  <Story story={WithLabel}/>
+### Teste os tipos de avatar
+Clique em ``Avatar Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
+para ter acesso a área de testes, onde você pode colocar os ícones da lista para ver sua exibição e tamanho.
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={AvatarTest}/>
 </Canvas>
 
-### Image
-<Canvas>
-  <Story story={Imagem}/>
-</Canvas>
+### Exemplos de uso
+Cada um dos exemplos são apresentados separadamente, mas nada impede que mais de um parâmetro seja utilizado ao mesmo tempo, desde que a lógica de uso faça sentido.
 
-### Icon
-<Canvas>
+#### Icon 
+Por padrão, quando nenhuma ```label``` ou ```image``` são passadas, o avatar é exibido com o ```icon```.
+<Canvas withSource={SourceState.OPEN}>
   <Story story={Icon}/>
 </Canvas>
 
-### With Badge
-<Canvas>
+#### With Label
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={WithLabel}/>
+</Canvas>
+
+#### Image
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Imagem}/>
+</Canvas>
+
+#### With Badge
+<Canvas withSource={SourceState.OPEN}>
   <Story story={WithBadge}/>
 </Canvas>
 
-### Size (SM, MD, LG)
-<Canvas>
-  <Story story={Size}/>
+#### BG Color
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={BGColor}/>
 </Canvas>
 
-### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+### Tamanhos do avatar
+
+#### Large
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={SizeLG}/>
+</Canvas>
+
+#### Medium
+Por padrão, quando não é colocado nenhum parâmetro de tamanho, o avatar é exibido no tamanho ``md``.
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={SizeMD}/>
+</Canvas>
+
+#### Small
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={SizeSM}/>
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudAvatarComponent} />
+<ArgsTable of={FreudAvatarComponent}/>

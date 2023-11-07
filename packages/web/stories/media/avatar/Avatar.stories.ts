@@ -8,54 +8,75 @@ const Template: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
   `,
 });
 
-const TemplateSize: Story<FreudAvatarComponent> = (args: FreudAvatarComponent) => ({
-  props: { ...args },
-  template: `
-    <div style="display: flex; align-items: center">
-        <freud-avatar style="margin-right: 16px;" [size]="'sm'" [label]="'A'"></freud-avatar>
-        <freud-avatar style="margin-right: 16px;" [size]="'md'" [label]="'A'"></freud-avatar>
-        <freud-avatar style="margin-right: 16px;" [size]="'lg'" [label]="'A'"></freud-avatar>
-    </div>
-  `,
-});
+//Teste
+export const AvatarTest = Template.bind({});
 
-// With Label
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'A',
+// Icon
+export const Icon = () => {
+  return {
+    template: `
+      <freud-avatar></freud-avatar>
+    `,
+  };
 };
 
-// Sizes
-export const Size = TemplateSize.bind({});
-
-// BgColor
-export const BGColor = Template.bind({});
-BGColor.args = {
-  label: 'BG',
-  size: 'md',
-  bgColor: true
+// With Label
+export const WithLabel = () => {
+  return {
+    template: `
+      <freud-avatar label="A"></freud-avatar>
+    `,
+  };
 };
 
 // Imagem
-export const Imagem = Template.bind({});
-Imagem.args = {
-  size: 'md',
-  image: 'assets/img/avatar.png'
+export const Imagem = () => {
+  return {
+    template: `
+      <freud-avatar image="assets/img/avatar.png"></freud-avatar>
+    `,
+  };
 };
 
 // Badge
-export const WithBadge = Template.bind({});
-WithBadge.args = {
-  label: 'BG',
-  size: 'md',
-  badge: '7',
-  image: 'assets/img/avatar.png'
+export const WithBadge = () => {
+  return {
+    template: `
+      <freud-avatar badge="7"></freud-avatar>
+    `,
+  };
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  label: '',
-  size: 'md',
-  badge: '5',
-  withIcon: true
+// BgColor
+export const BGColor = () => {
+  return {
+    template: `
+      <freud-avatar bgColor="true" label="BG"></freud-avatar>
+    `,
+  };
 };
+
+// Sizes
+export const SizeLG = () => {
+  return {
+    template: `
+      <freud-avatar size="lg"></freud-avatar>
+    `,
+  };
+};
+
+export const SizeMD = () => {
+  return {
+    template: `
+    <freud-avatar></freud-avatar> 
+    `,
+  };
+}
+
+export const SizeSM = () => {
+  return {
+    template: `
+    <freud-avatar size="sm"></freud-avatar> 
+    `,
+  };
+}
