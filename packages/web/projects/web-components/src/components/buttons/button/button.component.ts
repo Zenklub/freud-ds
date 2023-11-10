@@ -1,4 +1,9 @@
-import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 
 type buttonSizes = 'sm' | 'md' | 'lg';
 type buttonColors = 'primary' | 'secondary' | 'ghost';
@@ -8,8 +13,15 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
   styleUrls: ['./button.component.scss'],
   encapsulation: ViewEncapsulation.None,
   template: `
-    <p-button [disabled]="disabled" [loading]="loading" [icon]="icon" [type]="type">
-      <div class="button-content"><ng-content></ng-content></div>
+    <p-button
+      [disabled]="disabled"
+      [loading]="loading"
+      [icon]="icon"
+      [type]="type"
+      [label]="label"
+      [iconPos]="iconPos"
+    >
+      <div class="button-content" *ngIf="!label"><ng-content></ng-content></div>
     </p-button>
   `,
   host: {
@@ -24,7 +36,7 @@ type buttonColors = 'primary' | 'secondary' | 'ghost';
     '[class.freud-btn-size-small]': `size === 'sm'`,
     '[class.freud-btn-size-medium]': `size === 'md'`,
     '[class.freud-btn-size-large]': `size === 'lg'`,
-  }
+  },
 })
 export class FreudButtonComponent {
   @HostBinding('style.pointer-events') get pEvents(): string {
@@ -41,5 +53,6 @@ export class FreudButtonComponent {
   @Input() type!: string;
   @Input() loading = false;
   @Input() icon!: string;
-
+  @Input() label: string = '';
+  @Input() iconPos: 'left' | 'right' = 'left';
 }
