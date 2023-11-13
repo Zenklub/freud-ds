@@ -8,7 +8,7 @@ import {
 type buttonSizes = 'sm' | 'md' | 'lg';
 type buttonColors = 'primary' | 'secondary' | 'ghost';
 
-type iconPositions = 'left' | 'right';
+type iconPos = 'left' | 'right';
 
 @Component({
   selector: 'freud-button',
@@ -56,5 +56,5 @@ export class FreudButtonComponent {
   @Input() loading = false;
   @Input() icon: string = '';
   @Input() label: string = '';
-  @Input() iconPos = 'left';
+  @Input() iconPos: iconPos = 'left';
 }
