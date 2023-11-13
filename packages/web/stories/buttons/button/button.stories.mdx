@@ -1,16 +1,20 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
+  ButtonTest,
   Primary,
   Secondary,
   Ghost,
-  BGColor,
-  Size,
+  BGColorPrimary, BGColorSecondary, BGColorGhost,
+  SizeLg, SizeMd, SizeSm,
   Disabled,
   Loading,
-  IconOnly, WithIconRight
+  IconOnly, 
+  WithIconRight,
+  WithIconLeft,
+  WithNGContent,
 } from './Button.stories.ts';
 
 <Meta
@@ -36,57 +40,116 @@ title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent}
     component: FreudHeaderComponent,
     props: {
       title: "Button",
-      description: "O componente Button é usado para acionar uma ação ou evento."
+      description: "Componente próprio do Freud DS, utilizado para acionar uma ação ou evento."
     },
   }}
 </Story>
 
-## <a id="importing"></a>Import
+## Pré-requisitos
+Estes são alguns pré-requisitos necessários para utilizar os botões do Freud DS:
 
-```ts
-import FreudButtonModule from '@freud-ds/web-components';
+### Libs
+É necessário instalar a lib de componentes do Freud DS para utilizar os botões. Para instalar, rode o comando abaixo 
+no terminal do seu projeto:
+
+#### Web Components
+```bash
+npm i @freud-ds/web-components
 ```
 
-## <a id="exemplos"></a>Exemplos
-<br />
+### Imports
 
-### Theme
-<Canvas>
+#### Módulo
+Importe o `FreudButtonModule` em cada módulo que for utilizar o `FreudButtonComponent`. Utilizando o código:
+```ts
+import { FreudButtonModule } from '@freud-ds/web-components'; 
+
+@NgModule({
+  imports: [
+    FreudButtonModule
+    //e outros imports...
+  ]
+})
+```
+
+## Teste os botões
+Clique em ``Button Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
+para ter acesso a área de testes, onde você pode testar todos os parâmetros do componente `Button`.
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={ButtonTest}/>
+</Canvas>
+
+## Exemplos de utilização
+
+### Colors
+Por padrão, o botão será exibido na cor `primary` em qualquer situação, mas você pode mudar isso utilizando o parâmetro `color`.
+
+#### Theme
+<Canvas withSource={SourceState.OPEN}>
   <Story story={Primary}/>
   <Story story={Secondary}/>
   <Story story={Ghost}/>
 </Canvas>
 
-### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+#### BG Color
+<Canvas style={{ backgroundColor: '#241249' }} withSource={SourceState.OPEN}>
+  <Story story={BGColorPrimary}/>
+  <Story story={BGColorSecondary}/>
+  <Story story={BGColorGhost}/>
 </Canvas>
 
-### Size
-<Canvas>
-  <Story story={Size}/>
+### Sizes
+Por padrão, o botão será exibido no tamanho `md`, mas você pode mudar isso utilizando o parâmetro `size`.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={SizeLg}/>
+  <Story story={SizeMd}/>
+  <Story story={SizeSm}/>
 </Canvas>
 
 ### Disabled
-<Canvas>
+<Canvas withSource={SourceState.OPEN}>
   <Story story={Disabled}/>
 </Canvas>
 
 ### Loading
-<Canvas>
+<Canvas withSource={SourceState.OPEN}>
   <Story story={Loading}/>
 </Canvas>
 
-### Icon-Only
-<Canvas>
+### With icon
+
+#### Icon Only
+<Canvas withSource={SourceState.OPEN}>
   <Story story={IconOnly}/>
 </Canvas>
 
-### With Icon Right
-<Canvas>
+#### Icon position
+Por padrão, o ícone será exibido a esquerda do `label`, mas você pode mudar isso utilizando o parâmetro `iconPos`.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={WithIconLeft}/>
   <Story story={WithIconRight}/>
 </Canvas>
 
-## <a id="api"></a>API
+## Outra forma de utilização
+Além de utilizar `label`, você também pode utilizar outro meio para inserir o texto do botão, o `ng-content`. 
+Porém **recomenda-se** utilizar da forma apresentada acima, com o `label`, que é a forma padrão do Freud DS.
+Caso você opte por utilizar o `ng-content`, leve em consideração que **não** será possível mudar a posição do ícone no componente, 
+isso só ocorre com a utilização do `label`.
+
+**ATENÇÃO**: se você já utilizava o componente `Button` antes dessa atualização, é necessário e recomendado alterar a utilização do texto do botão de `ng-content` para `label`, 
+garantindo que você possa modificar a posição do ícone do botão, além de estar utilizando o novo padrão estabelecido pelo Freud DS.
+
+Para utilizar é simples, basta não passar o `label` e inserir o texto dentro da *tag* do componente, como no exemplo abaixo:
+
+**--> os outros parâmetros continuam funcionando da mesma forma!**
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={WithNGContent}/>
+</Canvas>
+
+## API
 
 <ArgsTable of={FreudButtonComponent} />
