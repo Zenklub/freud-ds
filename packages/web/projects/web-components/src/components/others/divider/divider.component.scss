@@ -1,0 +1,34 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-divider {
+  .p-divider.p-divider-horizontal .p-divider-content,
+  .p-divider.p-divider-vertical .p-divider-content {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+}
+
+.freud-divider:not(.freud-bgcolor) {
+  .p-divider.p-divider-vertical .p-divider-content,
+  .p-divider.p-divider-horizontal .p-divider-content {
+    color: $neutral-color-dark-04;
+  }
+  .p-divider.p-divider-horizontal:before {
+    border-top-color: $neutral-color-light-03;
+  }
+}
+
+.freud-divider.freud-bgcolor {
+  .p-divider.p-divider-vertical .p-divider-content,
+  .p-divider.p-divider-horizontal .p-divider-content {
+    color: $neutral-color-white;
+  }
+  .p-divider.p-divider-horizontal:before {
+    border-top-color: $neutral-color-light-02;
+  }
+
+  .p-divider.p-divider-vertical .p-divider-content,
+  .p-divider.p-divider-horizontal .p-divider-content {
+    background-color: $brand-color-06;
+  }
+}

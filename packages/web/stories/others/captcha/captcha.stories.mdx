@@ -1,0 +1,89 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudCaptchaComponent, FreudCaptchaModule, FreudButtonModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor,
+  Advanced
+} from './Captcha.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudCaptchaModule, FreudButtonModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Others/Captcha" component={FreudCaptchaComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Captcha",
+      description: "Captcha é um componente de validação de formulário baseado em Recaptcha do Google."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudCaptchaModule } from '@freud-ds/web-components';
+```
+
+## Getting Started
+Captcha é usado com um siteKey e um retorno de chamada para verificar a resposta.
+```html
+<freud-captcha siteKey="YOUR_SITE_KEY" (onResponse)="showResponse($event)"></freud-captcha>
+```
+
+Além disso, inclua o recurso de widget captcha em sua página.
+```html
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
+```
+O nome do callback global é initRecaptcha por padrão e pode ser alterado usando a propriedade initCallback.
+```html
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=loadCaptcha" async defer></script>
+```
+```html
+<freud-captcha siteKey="YOUR_SITE_KEY" (onResponse)="showResponse($event)" initCallback="loadCaptcha"></freud-captcha>
+```
+
+### Verification
+Para garantir que um token de resposta seja válido, a verificação em relação à recaptcha api precisa ser feita no back-end.
+Leia mais na documentação oficial: https://developers.google.com/recaptcha/docs/verify
+```ts
+showResponse(response) {
+    //Chamada para o backend verificar o token
+}
+
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+### Site Key
+Gere a sua chave na versão 2 do Captcha
+<ArgsTable of={FreudCaptchaComponent} />

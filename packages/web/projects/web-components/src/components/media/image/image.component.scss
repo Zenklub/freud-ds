@@ -1,0 +1,19 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-image {
+  .p-image-toolbar {
+    z-index: 100000;
+  }
+  .p-link:focus {
+    box-shadow: 0 0 0 0.2rem $brand-color-pure;
+  }
+  .p-image-preview-container:hover > .p-image-preview-indicator {
+    background-color: rgba(0, 0, 0, 0.64);
+  }
+  .p-image-preview-icon {
+    color: $neutral-color-light-01;
+  }
+  .p-image-preview {
+    max-height: calc(100vh - 115px);
+  }
+}

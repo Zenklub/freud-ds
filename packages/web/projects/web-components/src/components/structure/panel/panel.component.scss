@@ -1,0 +1,55 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-panel {
+  .p-panel .p-panel-header .p-panel-title {
+    font-weight: 700;
+  }
+  .p-panel .p-panel-header .p-panel-header-icon:focus {
+    box-shadow: unset;
+  }
+  .p-toggleable-content {
+    background-color: white;
+  }
+  .p-panel .p-panel-header .p-panel-header-icon,
+  .p-panel-icons .freud-btn:not(.freud-btn-bgcolor).freud-btn-color-ghost .p-button {
+    color: $neutral-color-dark-02;
+  }
+  .p-panel .p-panel-header .p-panel-header-icon:enabled:hover {
+    background: #EEE6FC;
+    border-color: #EEE6FC;
+  }
+  .p-panel-icons freud-button .p-button-label {
+    display: none;
+  }
+  .p-panel .p-panel-header {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, 16px);
+    border-top-right-radius: $border-radius-md;
+    border-top-left-radius: $border-radius-md;
+    background-color: $neutral-color-light-01;
+    border-color: $neutral-color-light-02;
+  }
+  .p-panel .p-panel-content {
+    border-bottom: 0 none;
+    border-color: $neutral-color-light-02;
+    color: $neutral-color-dark-02;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .p-panel .p-panel-footer {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+    padding: 16px;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+    border-color: $neutral-color-light-02;
+    color: $neutral-color-dark-04;
+    &:empty {
+      padding: 8px;
+      margin-top: -16px;
+    }
+    &:not(:empty) {
+      border-top: 1px solid $neutral-color-light-02;
+    }
+  }
+}

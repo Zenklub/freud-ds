@@ -1,0 +1,69 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudDividerComponent, FreudDividerModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor, Horizontal, Vertical,
+} from './Divider.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudDividerModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Others/Divider" component={FreudDividerComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Divider",
+      description: "É usado para separar visualmente o conteúdo em uma lista ou grupo."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudDividerModule } from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### Horizontal (left, center, right)
+<Canvas>
+  <Story story={Horizontal}/>
+</Canvas>
+
+### Vertical (top, bottom)
+<Canvas>
+  <Story story={Vertical}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudDividerComponent} />

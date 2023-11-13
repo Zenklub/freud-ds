@@ -1,47 +1,40 @@
-# Freud DS
+# Freud DS Workspace
 
-Escala e consistência em todos os produtos Zen!
+## Estrutura
 
-## Sobre o Freud
+Esse [monorepo](https://monorepo.tools/) utiliza o [lerna](https://lerna.js.org/) para gerenciamento das libs.
 
-Neurologista e psiquiatra criador da psicanálise. Seus estudos serviram como base pra a evolução da psicologia. 
+Todos as lisbs estão na pasta `packages`
 
-Do mesmo modo, nosso Design System tem como base garantir a evolução dos produtos Zenklub.
+## Requisitos para desenvolvimento e manipulação das libs
 
-Através do Freud DS queremos propagar pelo mundo a importância de criar produtos acessíveis e consistentes.
+- Node 16
+- NPM na versão 8.x.x
 
-### Documentação de design
-- [Freud DS](https://zeroheight.com/2f57d070e/p/628e1e-design-system-zenklub)
+## Instalando o projeto
 
+Na pasta raiz do projeto e rode o comando:
 
-## Projetos
+```bash
+npm install --legacy-peer-deps
+```
 
+`--legacy-peer-deps`: Utilize esta flag pois não estamos usando as versões mais recentes de algumas dependências.
 
-### @freud-ds/core-support
+Para cada pacote que precise mexer, entre na pasta do projeto e rode:
 
-Biblioteca que auxilia na composição dos componentes e interfaces como ícones, marcas, grids e utilities.
+```bash
+npm install --legacy-peer-deps
+```
 
-### @freud-ds/core-webcomponent
+<!-- TODO: atualizar lerna para usar novo package management -->
 
-Biblioteca de componentes web para Angular
+<!-- Após isso, rode o comando:
 
-### @freud-ds/core-appcomponent
+```bash
+npm run bootstrap --legacy-peer-deps
+```
 
-Biblioteca de componentes mobile para react-native
-
-
-## Requisitos
-
-Para este projeto, você precisa de um conhecimento básico de _Storybook_ para os projetos de core-web e core-mobile e _Style Dictionary_ para a biblioteca de suporte.
-
-Se você nunca encontrou nenhum deles antes, recomendamos algumas horas para se familiarizar com ambos, antes de voltar aqui.
-
-### Referências
-- [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/angular/en/get-started/)
-- [Style Dictionary](https://amzn.github.io/style-dictionary/#/)
-- [NX workspace](https://nx.dev/)
+Ele deve realizar as instalações das dependências dos projetos (_packages_) presentes neste monorepo. -->
 
 
-## Como instalar o Freud em seu projeto Angular
-
-[Somente o core (Tokens, grid, icones e emojis)](./libs/core-support/README.md)

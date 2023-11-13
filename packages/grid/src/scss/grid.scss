@@ -1,0 +1,72 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'grid-variables';
+@use 'mixins';
+
+.freud-grid, .freud-grid-fixed {
+  @each $size in map.keys(grid-variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $margin: map.get(grid-variables.$default-margin, $size);
+
+      @include mixins.layout-grid($size, $margin, grid-variables.$max-width);
+    }
+  }
+}
+
+.freud-grid-fixed {
+  max-width: 1368px;
+}
+
+.freud-row {
+  @each $size in map.keys(grid-variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $margin: map.get(grid-variables.$default-margin, $size);
+      $gutter: map.get(grid-variables.$default-gutter, $size);
+
+      @include mixins.inner($size, $margin, $gutter);
+    }
+  }
+}
+
+.freud-col {
+  // select the upper breakpoint
+  $upper-breakpoint: list.nth(map.keys(grid-variables.$breakpoints), 1);
+
+  @each $size in map.keys(grid-variables.$breakpoints) {
+    @include mixins.screen-fluid($size) {
+      $gutter: map.get(grid-variables.$default-gutter, $size);
+
+      @include mixins.cell($size, grid-variables.$columns, $gutter);
+
+      @for $span from 1 through grid-variables.$columns {
+        // Span classes.
+        // stylelint-disable max-nesting-depth
+        @at-root .freud-col-#{$span},
+            .#{$size}\:freud-col-#{$span} {
+          @include mixins.cell-span_($size, $span, $gutter);
+        }
+        // stylelint-enable max-nesting-depth
+      }
+    }
+  }
+
+  // Order override classes.
+  @for $i from 1 through grid-variables.$columns {
+    &-order-#{$i} {
+      @include mixins.cell-order($i);
+    }
+  }
+
+  // Alignment classes.
+  &-align-top {
+    @include mixins.cell-align(top);
+  }
+
+  &-align-middle {
+    @include mixins.cell-align(middle);
+  }
+
+  &-align-bottom {
+    @include mixins.cell-align(bottom);
+  }
+}

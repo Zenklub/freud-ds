@@ -1,0 +1,79 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSlideMenuComponent, FreudSlideMenuModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor,
+} from './SlideMenu.stories.ts'; import {RouterTestingModule} from "@angular/router/testing";
+
+<Meta
+  decorators={[
+    moduleMetadata({imports: [FreudSlideMenuModule, RouterTestingModule]})
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+  title="@freud-ds/web-components/Structure/SlideMenu"
+  component={FreudSlideMenuComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "SlideMenu",
+      description: "SlideMenu exibe submenus com animação de slides."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudSlideMenuModule } from '@freud-ds/web-components';
+```
+
+## Getting Started
+FreudSlideMenu requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+```ts
+import { FreudMenuItem } from '@freud-ds/web-components';
+
+items: FreudMenuItem[] = [{
+  label: 'Options',
+  items: [{
+    label: 'Update',
+    icon: 'freud-icon freud-icon-refresh',
+    command: () => {/* Comando */ }
+  },
+  {
+    label: 'Delete',
+    icon: 'freud-icon freud-icon-times'
+  }
+  ]}
+]
+```
+```html
+      <freud-slide-menu [items]="items"></freud-slide-menu>
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSlideMenuComponent} />

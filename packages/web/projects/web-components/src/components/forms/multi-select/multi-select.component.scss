@@ -1,0 +1,128 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-multi-select:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-multi-select.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-multi-select {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-inputtext {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-multiselect {
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-multiselect:not(.p-disabled).p-focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-multiselect:not(.p-disabled):hover {
+    border-color: $brand-color-pure;
+  }
+  .p-multiselect .p-multiselect-panel {
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-level-3;
+    margin-top: 1px;
+  }
+
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    padding: 12px 1rem;
+    color: $neutral-color-dark-03;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+  }
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+
+  .p-multiselect-panel .p-multiselect-header {
+    border-top-right-radius: $border-radius-md;
+    border-top-left-radius: $border-radius-md;
+  }
+
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight,
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background-color: $brand-color-pure;
+    border-color: $brand-color-pure;
+  }
+
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: $brand-color-pure;
+  }
+
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus {
+    box-shadow: unset;
+  }
+
+  // Input
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-inputtext:enabled:hover {
+    border-color: $brand-color-pure;
+  }
+  .p-multiselect-panel .p-multiselect-header {
+    background-color: $neutral-color-light-01;
+    border-bottom: 1px solid $neutral-color-light-03;
+  }
+
+  // Chip
+  .p-multiselect.p-multiselect-chip .p-multiselect-token {
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    @include typography($font-size-xxs, $font-weight-regular, 21px);
+    background: $brand-color-01;
+    color: $brand-color-pure;
+    border-radius: $border-radius-md;
+  }
+}
+

@@ -1,0 +1,90 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudSplitButtonComponent, FreudSplitButtonModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Default,
+  BGColor,
+  Disabled
+} from './SplitButton.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudSplitButtonModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Buttons/SplitButton" component={FreudSplitButtonComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "SplitButton",
+      description: "SplitButton agrupa um conjunto de comandos em uma sobreposição com um comando padrão."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import e utilização
+
+```ts
+// Adicione o modulo do Freud Select Button
+import { FreudSplitButtonModule } from '@freud-ds/web-components';
+
+// No Componente declare a lista de opções de acordo com a interface "FreudMenuItem"
+import { FreudMenuItem } from '@freud-ds/web-components';
+export class Componente {
+    items: FreudMenuItem[];
+    selectedItem: any;
+    constructor() {
+        this.items = [
+            {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => this.update.bind(this)},
+            {label: 'Delete', icon: 'freud-icon freud-icon-delete', command: () => {this.delete();}},
+            {label: 'Angular.io', icon: 'freud-icon freud-icon-info', url: 'http://angular.io'},
+            {separator: true},
+            {label: 'Setup', icon: 'freud-icon freud-icon-cog', routerLink: ['/setup']}
+        ];
+    }
+    update() {
+      // Ação quando o usuário clicar no botão de update
+    }
+
+    delete() {
+        // Ação quando o usuário clicar no botão de delete
+    }
+}
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  <Story story={Default}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+
+### Disabled
+<Canvas>
+  <Story story={Disabled}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudSplitButtonComponent} />

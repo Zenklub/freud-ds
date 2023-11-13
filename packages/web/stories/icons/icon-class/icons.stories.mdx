@@ -1,0 +1,85 @@
+import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
+
+import { FreudHeaderComponent } from "../../header/header.component";
+import { FreudTypographyModule, FreudInputTextModule } from "@freud-ds/web-components";
+
+import { AllIcons, Default_i, Small_i, Default_span, Small_span } from "./Icons.stories.ts";
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudTypographyModule, FreudInputTextModule],
+    }),
+  ]}
+  argTypes={{}}
+  parameters={{
+    layout: "centered",
+    backgrounds: {
+      default: "Default",
+      values: [
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
+      ],
+    },
+  }}
+  title="@freud-ds/web-components/Icons/Ícone como classe CSS"
+  component={AllIcons}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Icon",
+      description: "Utilizando classe CSS para exibir ícones na tela.",
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+### Estilo
+Importe o arquivo de estilo dos ícones:
+
+#### CSS Global
+O arquivo de estilo dos ícones será importado globalmente, ou seja, em toda a aplicação. Para isso, coloque esse código 
+no seu arquivo ``.css`` global:
+```css
+@import '~@freud-ds/icons/style/style.css';
+```
+
+## Icon
+Para utilizar o componente, basta utilizar a tag ``<i>`` ou ``<span>`` passando a classe com o nome do ícone (``freud-icon freud-icon-[icon-name]``)
+como parâmetro.
+
+### Exemplo
+
+#### Utilizando a tag ``<i>``
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Default_i} />
+</Canvas>
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Small_i} />
+</Canvas>
+
+#### Utilizando a tag ``<span>``
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Default_span} />
+</Canvas>
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Small_span} />
+</Canvas>
+
+## Lista de ícones disponíveis
+
+Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um ícone e o parâmetro ``class`` será copiado para o seu clipboard.
+
+**Clique no ícone, ele será enviado para sua área de transferência.**
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={AllIcons} />
+</Canvas>

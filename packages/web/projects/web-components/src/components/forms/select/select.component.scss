@@ -1,0 +1,76 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-select:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-select.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-select {
+  .help-text {
+    margin-top: $spacing-size-quark;
+  }
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-dropdown-panel {
+    box-shadow: $shadow-level-3;
+  }
+
+  .p-inputtext {
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-dropdown {
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-dropdown:not(.p-disabled).p-focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-dropdown:not(.p-disabled):hover {
+    border-color: $brand-color-pure;
+  }
+  .p-dropdown .p-dropdown-panel {
+    border-radius: $border-radius-md;
+    margin-top: 1px;
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 12px 1rem;
+    color: $neutral-color-dark-03;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+  }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+  }
+}
+

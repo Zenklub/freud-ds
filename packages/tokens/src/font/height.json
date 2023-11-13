@@ -1,0 +1,11 @@
+{
+  "line": {
+    "height": {
+      "auto": { "value": "auto" },
+      "xs": { "value": "100%" },
+      "sm": { "value": "120%" },
+      "md": { "value": "150%" },
+      "lg": { "value": "200%" }
+    }
+  }
+}

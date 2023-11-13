@@ -1,0 +1,40 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-progress-bar:not(.freud-bgcolor) {
+  .p-progressbar {
+    background-color: $neutral-color-light-02;
+  }
+  .p-progressbar-value {
+    background-color: $brand-color-pure;
+  }
+  .p-progressbar-determinate .p-progressbar-label {
+    color: $neutral-color-white;
+  }
+}
+.freud-progress-bar.freud-bgcolor {
+  .p-progressbar {
+    background-color: $brand-color-04;
+  }
+  .p-progressbar-value {
+    background-color: $neutral-color-white;
+  }
+  .p-progressbar-determinate .p-progressbar-label {
+    color: $brand-color-05;
+  }
+}
+
+.freud-progress-bar {
+  .p-progressbar {
+    border-radius: $border-radius-md;
+  }
+  .p-progressbar-determinate .p-progressbar-label {
+    @include typography($font-size-xs, $font-weight-regular, 20px);
+  }
+  .p-progressbar-determinate {
+    height: 21px;
+  }
+  .p-progressbar-indeterminate {
+    height: 6px;
+  }
+}

@@ -1,0 +1,66 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudTooltipComponent, FreudTooltipModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Top,
+  Bottom,
+  Left,
+  Right,
+  BGColor
+} from './Tooltip.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudTooltipModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Feedback/Tooltip" component={FreudTooltipComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Tooltip",
+      description: "É uma mensagem breve e informativa que aparece quando um usuário interage com um elemento."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudTooltipModule } from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Directions
+<Canvas>
+  <Story story={Top}/>
+  <Story story={Bottom}/>
+  <Story story={Left}/>
+  <Story story={Right}/>
+</Canvas>
+
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudTooltipComponent} />

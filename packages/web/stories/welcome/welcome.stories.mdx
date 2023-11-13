@@ -1,0 +1,24 @@
+import imageUrl from '../../.storybook/assets/img/welcome.svg';
+import { styled } from '@storybook/theming';
+import { Meta } from '@storybook/addon-docs';
+
+
+export const StyledDiv = styled.div`
+  width: 100%;
+  text-align: center;
+`
+
+<Meta
+  title="Welcome"
+  parameters={{
+    layout: 'fullscreen',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    }
+  }}
+/>
+
+<StyledDiv>
+  <img src={imageUrl} alt="Welcome" />
+</StyledDiv>

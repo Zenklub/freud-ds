@@ -1,0 +1,80 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-input-number:not(.freud-bgcolor) {
+  .freud-label, .help-text {
+    color: $neutral-color-dark-04;
+  }
+}
+
+.freud-input-number.freud-bgcolor {
+  .freud-label, .help-text {
+    color: $neutral-color-white;
+  }
+}
+
+.freud-input-number {
+  .freud-field {
+    display: flex;
+    flex-flow: column;
+  }
+  .freud-label {
+    margin-bottom: $spacing-size-quark;
+  }
+
+  .p-inputnumber:not(.p-inputnumber-buttons-vertical) {
+    width: 100%;
+  }
+
+  .p-inputnumber-button-group .p-inputnumber-button .freud-icon {
+    font-size: 14px;
+  }
+
+  .p-inputnumber-buttons-horizontal .p-inputnumber-input {
+    text-align: center;
+  }
+
+  .p-button.p-button-icon-only {
+    padding: 7px 0;
+  }
+
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext.ng-invalid {
+    border: 1px solid $feedback-color-negative-04;
+    &::placeholder {
+      color: $feedback-color-negative-04;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: $shadow-focused-zen;
+    border-color: $brand-color-pure;
+  }
+
+  .p-inputtext:enabled:hover {
+    border-color: $brand-color-pure;
+  }
+  .p-button:hover {
+    background: $brand-color-03;
+    border-radius: $border-radius-md;
+    border: 1px solid $brand-color-03;
+  }
+  .p-button {
+    border-radius: $border-radius-md;
+    background-color: $brand-color-pure;
+    border: 1px solid $brand-color-pure;
+  }
+}
+

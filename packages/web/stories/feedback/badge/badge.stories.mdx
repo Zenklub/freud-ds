@@ -1,0 +1,94 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudBadgeComponent, FreudBadgeModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  Size,
+  Default,
+  Success,
+  Info,
+  Warning,
+  Error,
+  Actived,
+  BGColor
+} from './Badge.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({imports: [FreudBadgeModule]})
+  ]}
+  argTypes={{
+    color: {
+      control: {
+        type: 'select',
+        options: ["primary", "success", "info", "warning", "error", "actived"]
+      },
+    }
+  }}
+  parameters={{
+    layout: 'centered',
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+  title="@freud-ds/web-components/Feedback/Badge"
+  component={FreudBadgeComponent}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Badge",
+      description: "O emblema é um pequeno indicador de status para outro elemento."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import FreudBadgeModule from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Options
+<Canvas>
+  <Story story={Default}/>
+  <Story story={Success}/>
+  <Story story={Info}/>
+  <Story story={Warning}/>
+  <Story story={Error}/>
+  <Story story={Actived}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+### Size (Default, Large)
+<Canvas>
+  <Story story={Size}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+### Colors
+
+Os tipos de colors disponíveis são:
+
+- primary
+- success
+- info
+- warning
+- error
+- actived
+
+<ArgsTable of={FreudBadgeComponent} />

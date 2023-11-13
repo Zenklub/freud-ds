@@ -1,0 +1,19 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+.freud-chip {
+  .p-chip {
+    border-radius: $border-radius-md;
+    background-color: $brand-color-01;
+    color: $brand-color-pure;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-chip .pi-chip-remove-icon:focus {
+    box-shadow: unset;
+  }
+  .p-chip .pi-chip-remove-icon {
+    font-size: 16px;
+  }
+
+}

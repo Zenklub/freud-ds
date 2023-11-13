@@ -1,0 +1,26 @@
+{
+  "name": "@freud-ds/tokens",
+  "version": "2.0.7",
+  "description": "Zenklub - Freud DS Tokens",
+  "author": "Zenklub",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "assets",
+    "style"
+  ],
+  "scripts": {
+    "build": "npm run clean && node ./build.js && npm run copy",
+    "copy": "cp -r assets dist/ && cp package.json dist/package.json && npm run copy-files",
+    "clean": "rm -rf dist",
+    "copy-readme": "cp ./README.md ./dist",
+    "copy-license": "cp ./LICENSE ./dist",
+    "copy-changelog": "cp ./Changelog.md ./dist",
+    "copy-files": "npm run copy-readme && npm run copy-changelog"
+  },
+  "devDependencies": {
+    "style-dictionary": "3.7.0"
+  }
+}
