@@ -52,7 +52,7 @@ export class FreudButtonComponent {
   @Input() disabled = false;
   @Input() type!: string;
   @Input() loading = false;
-  @Input() icon!: string;
+  @Input() icon: string = '';
   @Input() label: string = '';
   @Input() iconPos: 'left' | 'right' = 'left';
 }

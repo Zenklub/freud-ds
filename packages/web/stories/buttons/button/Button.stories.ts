@@ -11,7 +11,7 @@ const TemplateTest: Story<FreudButtonComponent> = (args: FreudButtonComponent) =
 export const ButtonTest = TemplateTest.bind({});
 ButtonTest.args = {
   label: 'Teste'
-}
+};
 
 // Theme
 export const Primary = () => {
@@ -63,7 +63,7 @@ export const Loading = () => {
   return {
     template: `<freud-button [loading]="true" [bgColor]="false" [label]="'Button loading'" [iconPos]="'right'"></freud-button>`,
   };
-}
+};
 
 // Sizes
 export const SizeLg = () => {
@@ -95,17 +95,17 @@ export const WithIconRight = () => {
   return {
     template: `<freud-button [icon]="'freud-icon freud-icon-check'" [label]="'Button right'" [iconPos]="'right'"></freud-button>`,
   };
-}
+};
 
 export const WithIconLeft = () => {
   return {
     template: `<freud-button [icon]="'freud-icon freud-icon-check'" [label]="'Button left'"></freud-button>`,
   };
-}
+};
 
 // With ng-content
 export const WithNGContent = () => {
   return {
     template: `<freud-button>Button sem label</freud-button>`,
   };
-}
+};
