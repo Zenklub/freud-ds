@@ -22,7 +22,7 @@ export const Primary = () => {
 
 export const Secondary = () => {
   return {
-    template: `<freud-button [color]="'secundary'" [label]="'Button secondary'"></freud-button>`,
+    template: `<freud-button [color]="'secondary'" [label]="'Button secondary'"></freud-button>`,
   };
 };
 
@@ -55,7 +55,7 @@ export const BGColorGhost = () => {
 export const Disabled = () => {
   return {
     template: `<freud-button [disabled]="true" [label]="'Button disabled'"></freud-button>`,
-  };BGColorGhost
+  };
 };
 
 // Loading

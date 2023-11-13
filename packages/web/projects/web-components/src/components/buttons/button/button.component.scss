@@ -97,8 +97,6 @@
   .p-button {
     font-size: $font-size-xxs;
     padding: 0 $spacing-size-nano;
-    padding-left: 8px;
-    padding-right: 8px;
     height: 32px;
     &.p-button-icon-only {
       padding: 0 3px;
@@ -109,8 +107,6 @@
 .freud-btn-size-medium {
   .p-button {
     padding: 0 $spacing-size-xxxs;
-    padding-left: 16px;
-    padding-right: 16px;
     height: 40px;
     &.p-button-icon-only {
       padding: 0 7px;
@@ -120,9 +116,7 @@
 
 .freud-btn-size-large {
   .p-button {
-    padding: 0 $spacing-size-xxs;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 $spacing-size-xxxs;
     height: 48px;
     &.p-button-icon-only {
       padding: 0 11px;
