@@ -1,10 +1,10 @@
-@import '../../../../../../../tokens/dist/style/scss/variables';
-@import '../../../../scss/typography';
+@import "../../../../../../../tokens/dist/style/scss/variables";
+@import "../../../../scss/typography";
 
 .freud-btn:not(.freud-btn-bgcolor) {
   &.freud-btn-color-primary {
     .p-button {
-      background-color:  $brand-color-pure;
+      background-color: $brand-color-pure;
       border-color: $brand-color-pure;
       color: $neutral-color-white;
     }
@@ -75,10 +75,9 @@
   }
 }
 
-
 .freud-btn .p-button {
   font-family: $font-family-base;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: $border-radius-md;
@@ -93,7 +92,6 @@
     width: auto;
   }
 }
-
 
 .freud-btn-size-small {
   .p-button {
@@ -118,7 +116,7 @@
 
 .freud-btn-size-large {
   .p-button {
-    padding: 0 $spacing-size-xxs;
+    padding: 0 $spacing-size-xxxs;
     height: 48px;
     &.p-button-icon-only {
       padding: 0 11px;
@@ -129,3 +127,28 @@
 .button-content:not(:empty) + .p-button-icon {
   margin-left: $spacing-size-xxxs;
 }
+
+.p-button .p-button-icon-left {
+  &.p-bnt-size-small {
+    margin-right: 8px;
+  }
+  &.p-bnt-size-medium {
+    margin-right: 16px;
+  }
+  &.p-bnt-size-large {
+    margin-right: 16px;
+  }
+}
+
+.p-button .p-button-icon-right {
+  &.p-bnt-size-small {
+    margin-left: 8px;
+  }
+  &.p-bnt-size-medium {
+    margin-left: 16px;
+  }
+  &.p-bnt-size-large {
+    margin-left: 16px;
+  }
+}
+
