@@ -28,7 +28,7 @@ export class FreudAccordionTabComponent {
   @Input() tabindex: number = 0;
   @Input() selected: boolean = false;
   @Input() header!: string;
-  @Input() style!: string;
+  @Input() style!: any;
   @Input() bgColor: boolean = false;
   @ViewChild('ref') ref!: any;
 
@@ -67,7 +67,7 @@ export class FreudAccordionTabComponent {
 })
 
 export class FreudAccordionComponent {
-  @Input() style!: string;
+  @Input() style!: any;
   @Input() tabindex: number = 0;
   @Input() multiple: boolean = false;
   @Input() collapseIcon: string = 'freud-icon freud-icon-chevron-down';

@@ -12,12 +12,7 @@
     "@angular/animations": "16.2.x",
     "@angular/cdk": "16.2.x",
     "@freud-ds/tokens": "2.x",
-    "@freud-ds/icons": "2.x",
-    "@fullcalendar/angular": "6.x",
-    "@fullcalendar/core": "6.x",
-    "@fullcalendar/daygrid": "6.x",
-    "@fullcalendar/interaction": "6.x",
-    "@fullcalendar/timegrid": "6.x"
+    "@freud-ds/icons": "2.x"
   },
   "dependencies": {
     "tslib": "^2.6.2",

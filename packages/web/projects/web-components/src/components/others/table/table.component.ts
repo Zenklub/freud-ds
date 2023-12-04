@@ -47,7 +47,7 @@ import { DomHandler } from "primeng/dom";
 export class FreudTableComponent implements AfterContentInit {
 
   @Input() value!: any[];
-  @Input() style!: string;
+  @Input() style!: any;
   @Input() columns!: any[];
   headerTemplate!: TemplateRef<any>;
   headerGroupedTemplate!: TemplateRef<any>;

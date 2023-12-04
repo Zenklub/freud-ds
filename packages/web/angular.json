@@ -35,22 +35,49 @@
         }
       }
     },
-    "storybook": {
+    "freud-docs": {
       "projectType": "application",
       "root": "stories",
       "sourceRoot": "stories",
       "architect": {
         "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "tsconfig.json",
-            "styles": [
-              "./projects/web-components/scss/styles.scss"
-            ],
-            "scripts": []
+            "project": "ng-package.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "freud-docs:build",
+            "port": 6006,
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "freud-docs:build",
+            "outputDir": "storybook-static",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ]
           }
         }
       }
     }
-  },
-  "defaultProject": "web-components"
+  }
 }

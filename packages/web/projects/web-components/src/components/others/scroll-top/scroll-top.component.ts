@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ScrollTop } from "primeng/scrolltop";
 
 @Component({
@@ -27,19 +27,8 @@ export class FreudScrollTopComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     if (this.target === 'parent') {
-      this.element.bindParentScrollListener = this.bindParentScrollListener.bind(this);
-      this.element.unbindParentScrollListener = this.unbindParentScrollListener.bind(this);
       this.element.onClick = this.onClick.bind(this);
-      this.element.bindParentScrollListener();
     }
-  }
-
-  bindParentScrollListener() {
-    this.element.scrollListener = () => {
-      this.element.checkVisibility(this.element.el.nativeElement.parentElement.parentElement.scrollTop);
-    };
-
-    this.element.el.nativeElement.parentElement.parentElement.addEventListener('scroll', this.element.scrollListener);
   }
 
   onClick() {
@@ -48,13 +37,6 @@ export class FreudScrollTopComponent implements AfterViewInit {
       top: 0,
       behavior: this.behavior
     });
-  }
-
-  unbindParentScrollListener() {
-    if (this.element.scrollListener) {
-      this.element.el.nativeElement.parentElement.parentElement.removeEventListener('scroll', this.element.scrollListener);
-      this.element.scrollListener = null;
-    }
   }
 
 }

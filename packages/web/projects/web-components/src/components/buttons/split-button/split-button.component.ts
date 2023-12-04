@@ -9,7 +9,7 @@ import { FreudMenuItem } from "../../../api/menu.interface";
       [disabled]="disabled"
       [model]="items"
       (onDropdownClick)="onDropdownClick.emit($event)"
-      (onClick)="onClick.emit($event)">
+      (onClick)="onClick.emit()">
     </p-splitButton>
   `,
   styleUrls: ['./split-button.component.scss'],

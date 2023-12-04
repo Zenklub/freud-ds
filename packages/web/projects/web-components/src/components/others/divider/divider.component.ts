@@ -22,7 +22,7 @@ export class FreudDividerComponent {
 
   @Input() type: "dashed" | "dotted" | 'solid' = 'solid';
   @Input() bgColor: boolean = false;
-  @Input() style!: string;
+  @Input() style!: any;
   @Input() layout: 'horizontal' | 'vertical' = 'horizontal';
   @Input() align!: "left" | "center" | "right" | "top" | "bottom";
 

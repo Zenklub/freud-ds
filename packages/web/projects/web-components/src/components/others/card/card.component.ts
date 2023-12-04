@@ -28,7 +28,7 @@ export class FreudCardComponent {
 
   @Input() header!: string;
   @Input() subheader!: string;
-  @Input() style!: string;
+  @Input() style!: any;
   @ViewChild('cardElement') cardElement!: Card;
 
   getBlockableElement() {

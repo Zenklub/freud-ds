@@ -8,6 +8,6 @@ import { FreudButtonModule, FreudDynamicDialogModule } from "@freud-ds/web-compo
   imports: [CommonModule, FreudDynamicDialogModule, FreudButtonModule],
   declarations: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],
   exports: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent],
-  entryComponents: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent]
+  // entryComponents: [FreudDynamicDialogExampleComponent, FreudDynamicExampleComponent]
 })
 export class FreudDynamicExampleModule { }
