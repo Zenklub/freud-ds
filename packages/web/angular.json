@@ -53,6 +53,7 @@
             "configDir": ".storybook",
             "browserTarget": "freud-docs:build",
             "port": 6006,
+            "styles": ["./projects/web-components/scss/styles.scss"],
             "compodoc": true,
             "compodocArgs": [
               "-e",
@@ -68,6 +69,7 @@
             "configDir": ".storybook",
             "browserTarget": "freud-docs:build",
             "outputDir": "storybook-static",
+            "styles": ["./projects/web-components/scss/styles.scss"],
             "compodoc": true,
             "compodocArgs": [
               "-e",

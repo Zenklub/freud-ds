@@ -1,7 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudTableComponent } from '@freud-ds/web-components';
-// @ts-ignore
-import * as dataJson from './data.json';
+import dataJson from './data.json';
 
 const data = dataJson['data'];
 
