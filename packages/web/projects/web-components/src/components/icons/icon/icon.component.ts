@@ -22,18 +22,11 @@ export class FreudIconComponent {
     if (this.icon) {
       classes.push(`freud-icon-${this.icon}`);
     }
-    if (this.size === 'sm') {
-      classes.push('freud-icon-sm');
-    } else if (this.size === 'lg') {
-      classes.push('freud-icon-lg');
-    } else if (this.size === 'xl') {
-      classes.push('freud-icon-xl');
-    } else if (this.size === 'xxl') {
-      classes.push('freud-icon-xxl');
-    } else {
-      classes.push('freud-icon-md');
+
+    if (this.size) {
+      classes.push(`freud-icon-${this.size}`);
     }
-    
+
     return classes;
   }
 }
