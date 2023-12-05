@@ -8,7 +8,7 @@ import { DialogModule } from "primeng/dialog";
 import { FormsModule } from "@angular/forms";
 
 @NgModule({
-    imports: [CommonModule, DialogModule, FormsModule],
+  imports: [CommonModule, DialogModule, FormsModule],
   declarations: [FreudDialogComponent],
   exports: [FreudDialogComponent],
   providers: []
