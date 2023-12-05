@@ -23,9 +23,7 @@ export class FreudIconComponent {
       classes.push(`freud-icon-${this.icon}`);
     }
 
-    if (this.size) {
-      classes.push(`freud-icon-${this.size}`);
-    }
+    classes.push(`freud-icon-${this.size}`);
 
     return classes;
   }
