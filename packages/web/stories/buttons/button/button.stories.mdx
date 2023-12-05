@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
+import { FreudHeaderComponent } from '../../header';
 import {
   ButtonTest,
   Primary,
@@ -35,15 +35,10 @@ import {
   }}
 title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Button",
-      description: "Componente próprio do Freud DS, utilizado para acionar uma ação ou evento."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Button"
+  description="Componente próprio do Freud DS, utilizado para acionar uma ação ou evento."
+/>
 
 ## Pré-requisitos
 Estes são alguns pré-requisitos necessários para utilizar os botões do Freud DS:

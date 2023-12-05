@@ -33,15 +33,10 @@ import {
   component={FreudDialogComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Dialog",
-      description: "É um contêiner para exibir o conteúdo em uma janela de sobreposição."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Dialog"
+  description="É um contêiner para exibir o conteúdo em uma janela de sobreposição."
+/>
 
 ## <a id="importing"></a>Import
 ```ts

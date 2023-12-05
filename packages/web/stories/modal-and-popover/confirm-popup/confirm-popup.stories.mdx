@@ -31,15 +31,10 @@ import {
   component={FreudConfirmPopupComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "ConfirmPopup",
-      description: "Exibe uma sobreposição de confirmação exibida relativamente ao seu destino."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="ConfirmPopup"
+  description="Exibe uma sobreposição de confirmação exibida relativamente ao seu destino."
+/>
 
 ## <a id="importing"></a>Import
 ```ts

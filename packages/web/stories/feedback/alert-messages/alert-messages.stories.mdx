@@ -30,15 +30,10 @@ import {
   component={FreudAlertMessagesComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Alert-Messages",
-      description: "O alerta exibe uma mensagem curta e importante de uma forma que atraia a atenção do usuário sem interromper o que ele estiver fazendo."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="AlertMessages"
+  description="O alerta exibe uma mensagem curta e importante de uma forma que atraia a atenção do usuário sem interromper o que ele estiver fazendo."
+/>
 
 ## <a id="importing"></a>Import
 ```ts

@@ -29,15 +29,10 @@ import {
   }}
 title="@freud-ds/web-components/Feedback/Skeleton" component={FreudSkeletonComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Skeleton",
-      description: "Exibe uma visualização do espaço reservado de seu conteúdo antes que os dados sejam carregados, reduzindo a sensação de lentidão do tempo de carregamento."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Skeleton"
+  description="Exibe uma visualização do espaço reservado de seu conteúdo antes que os dados sejam carregados, reduzindo a sensação de lentidão do tempo de carregamento."
+/>
 
 ## <a id="importing"></a>Import
 

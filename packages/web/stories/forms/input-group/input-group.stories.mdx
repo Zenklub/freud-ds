@@ -39,15 +39,10 @@ import {
   }}
 title="@freud-ds/web-components/Forms/InputGroup" component={FreudInputTextComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Input Group",
-      description: "Texto, ícone, botões e outros conteúdos podem ser agrupados ao lado de input de entrada."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Input Group"
+  description="Texto, ícone, botões e outros conteúdos podem ser agrupados ao lado de input de entrada."
+/>
 
 ## Getting Started
 Utilize a classe `freud-input-group` e `freud-input-group-addon` para montar um agrupamento personalizado entre input e botões, icones e outros

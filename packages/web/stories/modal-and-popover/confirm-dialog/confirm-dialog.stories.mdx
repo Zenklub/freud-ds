@@ -31,15 +31,10 @@ import {
   component={FreudConfirmDialogComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "ConfirmDialog",
-      description: "Para exibir facilmente janelas de confirmação que podem ser compartilhadas por várias ações no mesmo componente."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="ConfirmDialog"
+  description="Para exibir facilmente janelas de confirmação que podem ser compartilhadas por várias ações no mesmo componente."
+/>
 
 ## <a id="importing"></a>Import
 ```ts

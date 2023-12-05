@@ -28,15 +28,10 @@ import {FreudDynamicExampleModule} from "./dynamic-dialog-example/example.module
   title="@freud-ds/web-components/Modal e Popover/DynamicDialog"
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "DynamicDialog",
-      description: "Os diálogos podem ser criados dinamicamente com qualquer componente como conteúdo usando um DialogService."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="DynamicDialog"
+  description="Os diálogos podem ser criados dinamicamente com qualquer componente como conteúdo usando um DialogService."
+/>
 
 ## <a id="importing"></a>Import
 ```ts

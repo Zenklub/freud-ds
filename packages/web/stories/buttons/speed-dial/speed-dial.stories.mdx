@@ -32,21 +32,10 @@ import {
   }}
 title="@freud-ds/web-components/Buttons/SpeedDial" component={FreudSpeedDialComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "SpeedDial",
-      description: "Quando pressionado, um botão de ação flutuante pode exibir várias ações primárias que podem ser executadas em uma página."
-    },
-    parameters: {
-      viewMode: 'docs',
-      previewTabs: {
-        canvas: { hidden: true }
-      },
-    }
-  }}
-</Story>
+<FreudHeaderComponent
+  title="SpeedDial"
+  description="Quando pressionado, um botão de ação flutuante pode exibir várias ações primárias que podem ser executadas em uma página."
+/>
 
 ## <a id="importing"></a>Import
 

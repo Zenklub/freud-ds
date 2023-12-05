@@ -30,15 +30,10 @@ import {FreudBlockExampleModule} from "./block-example/example.module";
   }}
 title="@freud-ds/web-components/Others/BlockUI" component={FreudBlockUIComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "BlockUI",
-      description: "BlockUI pode bloquear outros componentes ou a página inteira."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="BlockUI"
+  description="BlockUI pode bloquear outros componentes ou a página inteira."
+/>
 
 ## <a id="importing"></a>Import
 

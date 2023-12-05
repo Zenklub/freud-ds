@@ -31,19 +31,13 @@ import { Icon, IconSmall, IconTest, AllIcons } from "./Icon.stories";
     },
   }}
   title="@freud-ds/web-components/Icons/Ícone como componente"
-  component={FreudIconComponent, AllIcons}
+  component={FreudIconComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Freud Icon",
-      description:
-        "Componente próprio do Freud DS, utilizado para exibir ícones na tela.",
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Freud Icon"
+  description="Componente próprio do Freud DS, utilizado para exibir ícones na tela."
+/>
 
 ## Pré-requisitos
 

@@ -23,16 +23,10 @@ import { FreudToastExampleModule } from "./toast-example/example.module";
   component={FreudToastComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Toast",
-      description:
-        "O Toast é um aviso que fornece um feedback simples sobre uma operação em uma pequena mensagem.",
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Toast"
+  description="O Toast é um aviso que fornece um feedback simples sobre uma operação em uma pequena mensagem."
+/>
 
 ## <a id="importing"></a>Import
 

@@ -1,43 +1,41 @@
-// TODO: Verificar o import
-@import '../../../tokens/dist/style/scss/_variables.scss';
+.freud-docs-header {
+  padding-bottom: 32px;
 
-div.header {
-  font-family: $font-family-base;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 32px;
-  background: url(./bg.png) center no-repeat;
-  background-size: 100% 300px;
-  z-index: 0;
+  .header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: url(./bg.png) center no-repeat;
+    background-size: 100% 300px;
 
-  & > div {
-    width: 100%;
-    z-index: 1;
+    .container {
+      margin: 0 auto;
+      max-width: 87%;
+      padding-bottom: 90px;
+      width: 100%;
+    }
+
+    h2.title {
+      align-items: center;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 60px;
+      margin: 0 0 30px 0;
+      padding: 90px 0 0 0;
+      text-align: left;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+
+    p {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Source Sans Pro", sans-serif;
+    }
   }
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 87%;
-  padding-bottom: 90px;
-}
-
-h2.title {
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 60px;
-  margin: 0 0 30px 0;
-  padding: 90px 0 0 0;
-  text-align: left;
-}
-
-p {
-  color: white;
 }

@@ -32,15 +32,10 @@ import {CommonModule} from "@angular/common";
   }}
 title="@freud-ds/web-components/Others/Table" component={FreudTableComponent} />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Table",
-      description: "Requer uma coleção para exibir junto com os componentes da coluna para a representação dos dados."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Table"
+  description="Requer uma coleção para exibir junto com os componentes da coluna para a representação dos dados."
+/>
 
 ## <a id="importing"></a>Import
 

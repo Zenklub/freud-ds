@@ -25,7 +25,8 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
