@@ -51,7 +51,7 @@ const TemplateCaptionAndSummary: Story<FreudTableComponent> = (args: FreudTableC
             <ng-template freudTemplate="caption">
                 <div class="p-d-flex p-ai-center p-jc-between">
                     Produtos
-                    <p-button icon="pi pi-refresh"></p-button>
+                    <button icon="pi pi-refresh"></button>
                 </div>
             </ng-template>
             <ng-template freudTemplate="header" let-columns="columns">
