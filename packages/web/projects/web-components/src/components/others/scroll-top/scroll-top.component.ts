@@ -25,10 +25,23 @@ export class FreudScrollTopComponent implements AfterViewInit {
   @Input() icon: string = 'freud-icon freud-icon-chevron-up';
   @ViewChild('element') element!: ScrollTop;
 
+  scrollListener: any;
+
   ngAfterViewInit() {
     if (this.target === 'parent') {
+      this.element.bindParentScrollListener = this.bindParentScrollListener.bind(this);
+      this.element.unbindParentScrollListener = this.unbindParentScrollListener.bind(this);
       this.element.onClick = this.onClick.bind(this);
+      this.element.bindParentScrollListener();
     }
+  }
+
+  bindParentScrollListener() {
+    this.scrollListener = () => {
+      this.element.checkVisibility(this.element.el.nativeElement.parentElement.parentElement.scrollTop);
+    };
+
+    this.element.el.nativeElement.parentElement.parentElement.addEventListener('scroll', this.scrollListener);
   }
 
   onClick() {
@@ -37,6 +50,13 @@ export class FreudScrollTopComponent implements AfterViewInit {
       top: 0,
       behavior: this.behavior
     });
+  }
+
+  unbindParentScrollListener() {
+    if (this.scrollListener) {
+      this.element.el.nativeElement.parentElement.parentElement.removeEventListener('scroll', this.scrollListener);
+      this.scrollListener = null;
+    }
   }
 
 }
