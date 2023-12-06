@@ -5,12 +5,13 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   template: `
     <p-rating
       [(ngModel)]="value"
-      [stars]="stars"
+      [stars]="stars || 5"
       [disabled]="disabled"
       [iconOnClass]="iconOnClass"
       [iconOffClass]="iconOffClass"
       [cancel]="false"
-      (onRate)="onRateChange($event)">
+      (onRate)="onRateChange($event)"
+    >
     </p-rating>
   `,
   styleUrls: ['./rating.component.scss'],
