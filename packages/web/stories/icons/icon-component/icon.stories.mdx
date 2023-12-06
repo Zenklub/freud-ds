@@ -6,10 +6,12 @@ import { FreudHeaderComponent } from "../../header/header.component";
 
 import { Icon, IconSmall, IconTest, AllIcons } from "./Icon.stories";
 
+import { AllIconsModule } from "../all-icons/all-icons.module";
+
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudIconModule, FreudTypographyModule, FreudInputTextModule],
+      imports: [FreudIconModule, FreudTypographyModule, FreudInputTextModule, AllIconsModule],
     }),
   ]}
   argTypes={{

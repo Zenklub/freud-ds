@@ -30,3 +30,5 @@ npm install
 ```bash
 npm install --legacy-peer-deps
 ```
+
+Referência e thread do problema: https://github.com/storybookjs/storybook/issues/14828#issuecomment-1523875596

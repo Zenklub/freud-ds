@@ -1,6 +1,5 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
-
-import { ClipboardModule } from 'ngx-clipboard';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AllIconsComponent } from '../all-icons/all-icons.component';
 
@@ -8,18 +7,19 @@ export default {
   title: 'Icons',
   decorators: [
     moduleMetadata({
-      imports: [ClipboardModule],
+      imports: [BrowserModule],
       declarations: [AllIconsComponent],
     }),
   ],
 } as Meta;
 
-export const AllIcons = () => ({
-  component: AllIconsComponent,
-  props: {
-    copyMode: 'class',
-  },
-});
+export const AllIcons = () => {
+  return {
+    template: `
+      <all-icons copyMode="class"></all-icons>
+     `,
+  };
+};
 
 export const Default_i = () => {
   return {
