@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import { moduleMetadata } from '@storybook/angular';
 import docJson from "../documentation.json";
@@ -30,6 +31,7 @@ export const decorators = [
     imports: [
       BrowserModule,
       BrowserAnimationsModule,
+      FormsModule,
     ],
     declarations: []
   })
