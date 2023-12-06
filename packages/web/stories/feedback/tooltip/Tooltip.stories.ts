@@ -6,11 +6,12 @@ const Template: Story<FreudTooltipComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <span freud-tooltip style="color:{{bgColor ? 'white' : 'black'}}"
+    <span freud-tooltip
       [tooltipLabel]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
-      style="font-family: 'Source Sans Pro'"
-      [bgColor]="bgColor">Passe o mouse aqui!</span>
+      [bgColor]="bgColor">
+      <span style="color:{{bgColor ? 'white' : 'black'}}; font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+    </span>
   `,
 });
 
@@ -21,7 +22,9 @@ export const TooltipTest = Template.bind({});
 export const Top = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label top" tooltipPosition="top" style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="Tooltip label top" tooltipPosition="top">
+        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
@@ -29,7 +32,9 @@ export const Top = () => {
 export const Bottom = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label bottom" tooltipPosition="bottom" style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="Tooltip label bottom" tooltipPosition="bottom">
+        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
@@ -37,7 +42,9 @@ export const Bottom = () => {
 export const Right = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label right" tooltipPosition="right" style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="Tooltip label right" tooltipPosition="right">
+        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
@@ -45,7 +52,9 @@ export const Right = () => {
 export const Left = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label left" tooltipPosition="left" style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="Tooltip label left" tooltipPosition="left">
+        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
@@ -54,7 +63,9 @@ export const Left = () => {
 export const BGColor = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label com BGColor" tooltipPosition="bottom" bgColor="true" style="font-family: 'Source Sans Pro'; color: 'white'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="Tooltip label com BGColor" tooltipPosition="bottom" bgColor="true">
+        <span style="font-family: 'Source Sans Pro'; color: 'white'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
@@ -63,7 +74,9 @@ export const BGColor = () => {
 export const Disabled = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="" tooltipPosition="bottom" style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      <span freud-tooltip tooltipLabel="" tooltipPosition="bottom">
+        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
+      </span>
     `,
   };
 };
