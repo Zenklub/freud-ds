@@ -1,64 +1,107 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import { moduleMetadata } from '@storybook/angular';
-import { FreudTooltipComponent, FreudTooltipModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
-import {
-  Top,
-  Bottom,
-  Left,
-  Right,
-  BGColor
-} from './Tooltip.stories.ts';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
+import { FreudTooltipComponent, FreudTooltipModule } from "@freud-ds/web-components";
+import { FreudHeaderComponent } from "../../header/header.component";
+import { Top, Bottom, Left, Right, BGColor, TooltipTest, Disabled } from "./Tooltip.stories.ts";
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudTooltipModule],
-    })
+    }),
   ]}
   parameters={{
-    layout: 'centered',
+    layout: "centered",
     backgrounds: {
-      default: 'Default',
+      default: "Default",
       values: [
-        { name: 'Default', value: '#FFFFFF' },
-        { name: 'BgColor', value: '#6732D1' },
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Feedback/Tooltip" component={FreudTooltipComponent} />
+  title="@freud-ds/web-components/Feedback/Tooltip"
+  component={FreudTooltipComponent}
+/>
 
 <Story name="Storyname-hidden">
   {{
     component: FreudHeaderComponent,
     props: {
       title: "Tooltip",
-      description: "É uma mensagem breve e informativa que aparece quando um usuário interage com um elemento."
+      description:
+        "É uma mensagem breve e informativa que aparece quando um usuário interage com um elemento.",
     },
   }}
 </Story>
 
-## <a id="importing"></a>Import
+## Pré-requisitos
 
-```ts
-import { FreudTooltipModule } from '@freud-ds/web-components';
+### Libs
+
+É necessário instalar a lib de ```web-components``` para o correto funcionamento do componente:
+```bash
+npm i @freud-ds/web-components
 ```
 
-## <a id="exemplos"></a>Exemplos
-<br />
+## <a id="importing"></a>Import
 
-### Directions
-<Canvas>
-  <Story story={Top}/>
-  <Story story={Bottom}/>
-  <Story story={Left}/>
-  <Story story={Right}/>
+Importe o ```FreudTooltipModule``` em cada módulo que for utilizar o ```FreudTooltipComponent``` em seu projeto:
+```ts
+import { FreudTooltipModule } from "@freud-ds/web-components";
+```
+
+## Tooltip
+
+Para utilizar o componente, basta utilizar a tag ``<span freud-tooltip>`` passando os parâmetros necessários.
+
+### Teste os tipos de avatar
+
+Clique em ``Tooltip Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
+para ter acesso a área de testes, onde você pode testar todos os exemplos listados abaixo.
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={TooltipTest}/>
 </Canvas>
 
+## Exemplos de uso
+Cada um dos exemplos são apresentados separadamente, mas nada impede que mais de um parâmetro seja utilizado ao mesmo tempo, desde que a lógica de uso faça sentido.
 
-### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+### Direções
+Por padrão, o Tooltip aparece na direção ``top``. Para alterar a direção, basta passar o parâmetro ``direction`` com o valor desejado:
+
+#### Top
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Top} />
+</Canvas>
+
+#### Bottom
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Bottom} />
+</Canvas>
+
+#### Left
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Left} />
+</Canvas>
+
+#### Right
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Right} />
+</Canvas>
+
+### Cor de background
+
+<Canvas withSource={SourceState.OPEN} style={{ backgroundColor: "#241249" }}>
+  <Story story={BGColor} />
+</Canvas>
+
+### Tooltip disabled
+Existe uma possibilidade de desabilitar o Tooltip, para isso basta passar o parâmetro ``tooltipLabel`` com o valor vazio ou com a condição que desejar.
+
+#### Vazio
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Disabled} />
 </Canvas>
 
 ## <a id="api"></a>API
