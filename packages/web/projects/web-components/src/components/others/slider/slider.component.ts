@@ -10,11 +10,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [max]="max"
       [step]="step"
       [range]="range"
-      [orientation]="orientation"
+      [orientation]="orientation || 'horizontal'"
       [tabindex]="tabindex"
       [disabled]="disabled"
       (ngModelChange)="modelValueChange()"
-      (onChange)="selectedOptionChange.emit($event)">
+      (onChange)="selectedOptionChange.emit($event)"
+    >
     </p-slider>
   `,
   styleUrls: ['./slider.component.scss'],
