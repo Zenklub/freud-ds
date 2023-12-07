@@ -7,7 +7,8 @@ import { FreudMenuItem } from "../../../api/menu.interface";
     <p-tabMenu
       [model]="items"
       [styleClass]="'freud-typography bodyBoldAuto'"
-      [activeItem]="activeItem"></p-tabMenu>
+      [activeItem]="activeItem"
+    ></p-tabMenu>
   `,
   styleUrls: ['./tab-menu.component.scss'],
   encapsulation: ViewEncapsulation.None,

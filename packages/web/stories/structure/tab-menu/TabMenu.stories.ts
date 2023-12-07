@@ -25,6 +25,7 @@ Default.args = {
   items: items,
   activeItem: items[0]
 };
+
 export const BGColor = Template.bind({});
 BGColor.args = {
   items: items,
