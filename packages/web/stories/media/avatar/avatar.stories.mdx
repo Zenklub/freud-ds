@@ -68,7 +68,7 @@ Para utilizar o componente, basta utilizar a tag ``<freud-avatar>`` passando os 
 Clique em ``Avatar Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
 para ter acesso a área de testes, onde você pode colocar os ícones da lista para ver sua exibição e tamanho.
 
-<Canvas withSource={SourceState.NONE}>
+<Canvas sourceState={SourceState.NONE}>
   <Story story={AvatarTest}/>
 </Canvas>
 
@@ -77,45 +77,45 @@ Cada um dos exemplos são apresentados separadamente, mas nada impede que mais d
 
 #### Icon 
 Por padrão, quando nenhuma ```label``` ou ```image``` são passadas, o avatar é exibido com o ```icon```.
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Icon}/>
 </Canvas>
 
 #### With Label
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={WithLabel}/>
 </Canvas>
 
 #### Image
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Imagem}/>
 </Canvas>
 
 #### With Badge
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={WithBadge}/>
 </Canvas>
 
 #### BG Color
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={BGColor}/>
 </Canvas>
 
 ### Tamanhos do avatar
 
 #### Large
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={SizeLG}/>
 </Canvas>
 
 #### Medium
 Por padrão, quando não é colocado nenhum parâmetro de tamanho, o avatar é exibido no tamanho ``md``.
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={SizeMD}/>
 </Canvas>
 
 #### Small
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={SizeSM}/>
 </Canvas>
 

@@ -71,7 +71,7 @@ import { FreudButtonModule } from '@freud-ds/web-components';
 Clique em ``Button Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
 para ter acesso a área de testes, onde você pode testar todos os parâmetros do componente `Button`.
 
-<Canvas withSource={SourceState.NONE}>
+<Canvas sourceState={SourceState.NONE}>
   <Story story={ButtonTest}/>
 </Canvas>
 
@@ -81,14 +81,14 @@ para ter acesso a área de testes, onde você pode testar todos os parâmetros d
 Por padrão, o botão será exibido na cor `primary` em qualquer situação, mas você pode mudar isso utilizando o parâmetro `color`.
 
 #### Theme
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Primary}/>
   <Story story={Secondary}/>
   <Story story={Ghost}/>
 </Canvas>
 
 #### BG Color
-<Canvas style={{ backgroundColor: '#241249' }} withSource={SourceState.OPEN}>
+<Canvas style={{ backgroundColor: '#241249' }} sourceState={SourceState.OPEN}>
   <Story story={BGColorPrimary}/>
   <Story story={BGColorSecondary}/>
   <Story story={BGColorGhost}/>
@@ -97,33 +97,33 @@ Por padrão, o botão será exibido na cor `primary` em qualquer situação, mas
 ### Sizes
 Por padrão, o botão será exibido no tamanho `md`, mas você pode mudar isso utilizando o parâmetro `size`.
 
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={SizeLg}/>
   <Story story={SizeMd}/>
   <Story story={SizeSm}/>
 </Canvas>
 
 ### Disabled
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Disabled}/>
 </Canvas>
 
 ### Loading
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Loading}/>
 </Canvas>
 
 ### With icon
 
 #### Icon Only
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={IconOnly}/>
 </Canvas>
 
 #### Icon position
 Por padrão, o ícone será exibido a esquerda do `label`, mas você pode mudar isso utilizando o parâmetro `iconPos`.
 
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={WithIconLeft}/>
   <Story story={WithIconRight}/>
 </Canvas>
@@ -141,7 +141,7 @@ Para utilizar é simples, basta não passar o `label` e inserir o texto dentro d
 
 **--> os outros parâmetros continuam funcionando da mesma forma!**
 
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={WithNGContent}/>
 </Canvas>
 

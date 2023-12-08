@@ -111,17 +111,17 @@ como parâmetro.
 Clique em ``Icon Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
 para ter acesso a área de testes, onde você pode colocar os ícones da lista para ver sua exibição e tamanho.
 
-<Canvas withSource={SourceState.NONE}>
+<Canvas sourceState={SourceState.NONE}>
   <Story story={IconTest}/>
 </Canvas>
 
 ### Exemplo
 
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={Icon}/>
 </Canvas>
 
-<Canvas withSource={SourceState.OPEN}>
+<Canvas sourceState={SourceState.OPEN}>
   <Story story={IconSmall}/>
 </Canvas>
 
@@ -131,7 +131,7 @@ Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um íco
 
 **Clique no ícone, ele será enviado para sua área de transferência.**
 
-<Canvas withSource={SourceState.NONE}>
+<Canvas sourceState={SourceState.NONE}>
   <Story story={AllIcons} />
 </Canvas>
 
