@@ -1,38 +1,40 @@
 import { Meta, Story } from '@storybook/angular';
 import { FreudCalendarComponent, FreudCalendarModule } from '@freud-ds/web-components';
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule, NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) => ({
   props: { ...args },
   template: `
-    <freud-calendar
-      [selectionMode]="selectionMode"
-      [appendTo]="appendTo"
-      [dateFormat]="dateFormat"
-      [inline]="inline"
-      [showOtherMonths]="showOtherMonths"
-      [selectOtherMonths]="selectOtherMonths"
-      [showWeek]="showWeek"
-      [view]="view"
-      [yearNavigator]="yearNavigator"
-      [yearRange]="yearRange"
-      [stepMinute]="stepMinute"
-      [defaultDate]="defaultDate"
-      [showTime]="showTime"
-      [hourFormat]="hourFormat"
-      [disabled]="disabled"
-      [timeOnly]="timeOnly"
-      [monthNavigator]="monthNavigator"
-      [disabledDates]="disabledDates"
-      [required]="required"
-      [maxDate]="maxDate"
-      [minDate]="minDate"
-      [label]="label"
-      >
-    </freud-calendar>
+    <div style="min-height: 400px;">
+      <freud-calendar
+        [selectionMode]="selectionMode"
+        [appendTo]="appendTo"
+        [dateFormat]="dateFormat"
+        [inline]="inline"
+        [showOtherMonths]="showOtherMonths"
+        [selectOtherMonths]="selectOtherMonths"
+        [showWeek]="showWeek"
+        [view]="view"
+        [yearNavigator]="yearNavigator"
+        [yearRange]="yearRange"
+        [stepMinute]="stepMinute"
+        [defaultDate]="defaultDate"
+        [showTime]="showTime"
+        [hourFormat]="hourFormat"
+        [disabled]="disabled"
+        [timeOnly]="timeOnly"
+        [monthNavigator]="monthNavigator"
+        [disabledDates]="disabledDates"
+        [required]="required"
+        [maxDate]="maxDate"
+        [minDate]="minDate"
+        [label]="label"
+        >
+      </freud-calendar>
+    </div>
   `,
 });
 

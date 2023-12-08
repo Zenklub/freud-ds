@@ -12,12 +12,12 @@ import { PrimeTemplate } from "primeng/api";
   selector: 'freud-splitter',
   template: `
     <p-splitter
-      [panelSizes]="panelSizes"
-      [style]="style"
+      [panelSizes]="panelSizes || []"
+      [style]="style || null"
       [layout]="layout || 'horizontal'"
-      [minSizes]="minSizes"
-      [panelStyleClass]="panelStyleClass"
-      [panelStyle]="panelStyle"
+      [minSizes]="minSizes || []"
+      [panelStyleClass]="panelStyleClass || ''"
+      [panelStyle]="panelStyle || {}"
       (onResizeEnd)="onResizeEnd.emit($event)"
       (onResizeStart)="onResizeStart.emit($event)">
       <ng-container *ngIf="templates">
