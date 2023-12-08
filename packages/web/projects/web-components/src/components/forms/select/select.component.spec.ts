@@ -8,9 +8,8 @@ describe('FreudSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudSelectComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudSelectComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -2,23 +2,22 @@
 @import '../../../../scss/typography';
 
 .freud-tooltip-container {
-    display:inline-block;
-    position:relative;
+  display: inline-block;
+  position: relative;
 }
 
 .p-tooltip {
-    .p-tooltip-text {
-        padding: 10.5px;
-        color: $neutral-color-white;
-        @include typography($font-size-xs, $font-weight-regular, 24px);
-        border-radius: $border-radius-md;
-        background-color:  $neutral-color-dark-03;
-        box-shadow: $shadow-level-3;
-    }
+  .p-tooltip-text {
+    padding: 10.5px;
+    color: $neutral-color-white;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+    border-radius: $border-radius-md;
+    background-color: $neutral-color-dark-03;
+    box-shadow: $shadow-level-3;
+  }
 }
 
 .p-tooltip.freud-bg-color {
-
   &.p-tooltip-right .p-tooltip-arrow {
     border-right-color: $neutral-color-white;
   }
@@ -32,7 +31,7 @@
     border-bottom-color: $neutral-color-white;
   }
 
-  .p-tooltip-text{
+  .p-tooltip-text {
     color: $neutral-color-dark-03;
     background-color: $neutral-color-white;
   }

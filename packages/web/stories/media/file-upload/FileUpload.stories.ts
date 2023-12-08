@@ -1,10 +1,12 @@
 import { FreudFileUploadComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
-const Template: Story<FreudFileUploadComponent> = (args: FreudFileUploadComponent) => ({
+const Template: Story<FreudFileUploadComponent> = (
+  args: FreudFileUploadComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-file-upload
@@ -40,9 +42,8 @@ export const BasicUi = Template.bind({});
 BasicUi.args = {
   url: './upload.php',
   mode: 'basic',
-  chooseLabel: ''
+  chooseLabel: '',
 };
-
 
 // BgColor
 export const BGColor = Template.bind({});
@@ -54,10 +55,7 @@ BGColor.args = {
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

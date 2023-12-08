@@ -2,8 +2,8 @@
 @import '../../../../scss/typography';
 
 .freud-scroll-panel {
-
-  .p-scrollpanel, p-scrollpanel-bar {
+  .p-scrollpanel,
+  p-scrollpanel-bar {
     background-color: $neutral-color-white;
     padding: 14px 14px 14px 14px;
     border-radius: $border-radius-md;
@@ -15,5 +15,4 @@
   .p-scrollpanel-content {
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
-
 }

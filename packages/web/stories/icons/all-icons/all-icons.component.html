@@ -1,4 +1,5 @@
-<div class="all-icons-container"
+<div
+  class="all-icons-container"
   freud-typography
   [fontType]="'smallRegular1-5'"
 >
@@ -9,13 +10,12 @@
     (keyup)="filterIcons($event)"
   ></freud-input-text>
   <ng-container *ngFor="let iconName of iconNames">
-    <div class="icon-item"
+    <div
+      class="icon-item"
       (click)="clipboard(iconName)"
       title="Send to clipboard"
     >
-      <i
-        class="freud-icon freud-icon-{{ iconName }}"
-      ></i>
+      <i class="freud-icon freud-icon-{{ iconName }}"></i>
       <span>{{ iconName }}</span>
     </div>
   </ng-container>

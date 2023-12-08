@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-input-mask:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-input-mask.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }

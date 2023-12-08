@@ -3,10 +3,10 @@ import { Confirmation, ConfirmationService } from 'primeng/api';
 
 @Injectable()
 export class FreudConfirmationService {
-
   constructor(private primeConfirmation: ConfirmationService) {}
 
-  requireConfirmation$ = this.primeConfirmation['requireConfirmationSource'].asObservable();
+  requireConfirmation$ =
+    this.primeConfirmation['requireConfirmationSource'].asObservable();
   accept = this.primeConfirmation['acceptConfirmationSource'].asObservable();
 
   confirm(confirmation: Confirmation) {
@@ -22,5 +22,4 @@ export class FreudConfirmationService {
   onAccept() {
     this.primeConfirmation['acceptConfirmationSource'].next(null);
   }
-
 }

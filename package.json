@@ -7,7 +7,8 @@
     "build:logos": "lerna run build --scope @freud-ds/logos",
     "build:icons": "lerna run build --scope @freud-ds/icons",
     "build:grid": "lerna run build --scope @freud-ds/grid",
-    "build:web": "lerna run build --scope @freud-ds/web"
+    "build:web": "lerna run build --scope @freud-ds/web",
+    "prepare": "husky install"
   },
   "dependencies": {
     "native-base": "^3.4.25",
@@ -30,8 +31,10 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "fs-extra": "^10.1.0",
+    "husky": "^8.0.3",
     "jest": "^26.6.3",
     "lerna": "^6.0.3",
+    "lint-staged": "^15.2.0",
     "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
@@ -40,5 +43,8 @@
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2",
     "@types/react-native": "0.68.1"
+  },
+  "lint-staged": {
+    "packages/web/**/*": "prettier ./packages/web --write --ignore-unknown"
   }
 }

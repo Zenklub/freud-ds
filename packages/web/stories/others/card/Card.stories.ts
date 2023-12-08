@@ -15,10 +15,12 @@ const Template: Story<FreudCardComponent> = (args: FreudCardComponent) => ({
 });
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Simple Card'
-}
+  header: 'Simple Card',
+};
 
-const TemplateAdvanced: Story<FreudCardComponent> = (args: FreudCardComponent) => ({
+const TemplateAdvanced: Story<FreudCardComponent> = (
+  args: FreudCardComponent,
+) => ({
   props: { ...args },
   template: `
     <div style="width: 350px">
@@ -46,11 +48,11 @@ const TemplateAdvanced: Story<FreudCardComponent> = (args: FreudCardComponent) =
 export const Advanced = TemplateAdvanced.bind({});
 Advanced.args = {
   header: 'Advanced Card',
-  subheader: 'Card Subheader'
-}
+  subheader: 'Card Subheader',
+};
 
 export const BGColor = TemplateAdvanced.bind({});
 BGColor.args = {
   header: 'Advanced Card',
-  subheader: 'Card Subheader'
-}
+  subheader: 'Card Subheader',
+};

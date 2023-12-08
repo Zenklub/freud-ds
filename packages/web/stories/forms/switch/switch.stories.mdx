@@ -1,20 +1,18 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudSwitchComponent, FreudSwitchModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-  Custom,
-  Disabled,
-} from './Switch.stories.ts';
-import {FormsModule} from "@angular/forms";
+  FreudSwitchComponent,
+  FreudSwitchModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, Custom, Disabled } from './Switch.stories.ts';
+import { FormsModule } from '@angular/forms';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudSwitchModule, FormsModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -25,9 +23,11 @@ import {FormsModule} from "@angular/forms";
         { name: 'BgColor', value: '#6732D1' },
         { name: 'Custom', value: '#84CC16' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/Switch" component={FreudSwitchComponent} />
+  title="@freud-ds/web-components/Forms/Switch"
+  component={FreudSwitchComponent}
+/>
 
 <FreudHeaderComponent
   title="Switch"
@@ -41,28 +41,32 @@ import { FreudSwitchModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Custom
+
 <Canvas>
-  <Story story={Custom}/>
+  <Story story={Custom} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
-</Canvas>
 
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor} />
+</Canvas>
 
 ## <a id="api"></a>API
 

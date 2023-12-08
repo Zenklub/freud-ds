@@ -8,9 +8,8 @@ describe('FreudCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudChipComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudChipComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

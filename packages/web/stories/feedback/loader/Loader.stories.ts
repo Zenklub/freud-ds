@@ -1,9 +1,7 @@
 import { Story } from '@storybook/angular';
-import { FreudLoaderComponent } from "@freud-ds/web-components";
+import { FreudLoaderComponent } from '@freud-ds/web-components';
 
-const Template: Story<FreudLoaderComponent> = (
-  args: FreudLoaderComponent
-) => ({
+const Template: Story<FreudLoaderComponent> = (args: FreudLoaderComponent) => ({
   props: { ...args },
   template: `
     <freud-loader
@@ -17,10 +15,10 @@ export const Default = Template.bind({});
 Default.args = {};
 
 const TemplateBG: Story<FreudLoaderComponent> = (
-  args: FreudLoaderComponent
+  args: FreudLoaderComponent,
 ) => ({
-  props: {...args},
-  template:`
+  props: { ...args },
+  template: `
     <freud-loader style="margin-right: 20px;"
       [bgColor]="true">
     </freud-loader>
@@ -29,7 +27,7 @@ const TemplateBG: Story<FreudLoaderComponent> = (
 export const BGColor = TemplateBG.bind({});
 
 const TemplateSize: Story<FreudLoaderComponent> = (
-  args: FreudLoaderComponent
+  args: FreudLoaderComponent,
 ) => ({
   props: { ...args },
   template: `

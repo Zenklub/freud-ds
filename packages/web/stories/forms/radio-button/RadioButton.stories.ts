@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudRadioButtonComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const templateHTML = `
@@ -14,7 +14,9 @@ const templateHTML = `
         ></freud-radio-button-example>
 `;
 
-const Template: Story<FreudRadioButtonComponent> = (args: FreudRadioButtonComponent) => ({
+const Template: Story<FreudRadioButtonComponent> = (
+  args: FreudRadioButtonComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
   argTypes: {
@@ -28,17 +30,17 @@ const Template: Story<FreudRadioButtonComponent> = (args: FreudRadioButtonCompon
         defaultValue: { summary: 'Hello' },
       },
       control: {
-        type: 'text'
-      }
-    }
-  }
+        type: 'text',
+      },
+    },
+  },
 });
 export const Default = Template.bind({});
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   label: 'Label',
-  bgColor: true
+  bgColor: true,
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
@@ -54,10 +56,7 @@ Label.args = {
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

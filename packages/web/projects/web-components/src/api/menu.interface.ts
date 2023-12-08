@@ -1,3 +1,3 @@
-import { MenuItem } from "primeng/api";
+import { MenuItem } from 'primeng/api';
 
-export interface FreudMenuItem extends MenuItem {}
+export type FreudMenuItem = MenuItem;

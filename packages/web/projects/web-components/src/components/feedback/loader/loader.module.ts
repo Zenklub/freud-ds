@@ -8,4 +8,4 @@ import { FreudLoaderComponent } from './loader.component';
   declarations: [FreudLoaderComponent],
   exports: [FreudLoaderComponent],
 })
-export class FreudLoaderModule { }
+export class FreudLoaderModule {}

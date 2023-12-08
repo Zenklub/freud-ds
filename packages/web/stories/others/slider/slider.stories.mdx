@@ -1,20 +1,23 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudSliderComponent, FreudSliderModule } from '@freud-ds/web-components';
+import {
+  FreudSliderComponent,
+  FreudSliderModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   Vertical,
-  Range
+  Range,
 } from './Slider.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudSliderModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +27,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Others/Slider" component={FreudSliderComponent} />
+  title="@freud-ds/web-components/Others/Slider"
+  component={FreudSliderComponent}
+/>
 
 <FreudHeaderComponent
   title="Slider"
@@ -40,34 +45,38 @@ import { FreudSliderModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Vertical
+
 <Canvas>
-  <Story story={Vertical}/>
+  <Story story={Vertical} />
 </Canvas>
 
 ### Range
+
 <Canvas>
-  <Story story={Range}/>
+  <Story story={Range} />
 </Canvas>
 
 ### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
-</Canvas>
 
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor} />
+</Canvas>
 
 ### Disabled
-<Canvas>
-  <Story story={Disabled}/>
-</Canvas>
 
+<Canvas>
+  <Story story={Disabled} />
+</Canvas>
 
 ## <a id="api"></a>API
 

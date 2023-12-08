@@ -16,7 +16,9 @@ const templateHTML = `
     </freud-input-textarea>
 `;
 
-const Template: Story<FreudInputTextAreaComponent> = (args: FreudInputTextAreaComponent) => ({
+const Template: Story<FreudInputTextAreaComponent> = (
+  args: FreudInputTextAreaComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
@@ -27,7 +29,7 @@ Default.args = {
   placeholder: 'Placeholder',
   rows: 5,
   cols: 30,
-  autoResize: false
+  autoResize: false,
 };
 
 export const BGColor = Template.bind({});
@@ -40,7 +42,7 @@ BGColor.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Label',
-  disabled: true
+  disabled: true,
 };
 
 export const AutoResize = Template.bind({});
@@ -56,4 +58,3 @@ Invalid.args = {
   placeholder: 'Placeholder',
   invalid: true,
 };
-

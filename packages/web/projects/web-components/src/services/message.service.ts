@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Message, MessageService } from "primeng/api";
+import { Message, MessageService } from 'primeng/api';
 
 @Injectable()
 export class FreudMessageService {
-
-  constructor(private primeMessage: MessageService) { }
+  constructor(private primeMessage: MessageService) {}
 
   messageObserver = this.primeMessage['messageSource'].asObservable();
   clearObserver = this.primeMessage['clearSource'].asObservable();

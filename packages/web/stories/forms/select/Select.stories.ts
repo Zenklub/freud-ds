@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudSelectComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const items = [
@@ -39,7 +39,7 @@ Default.args = {
   placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const BGColor = Template.bind({});
@@ -50,7 +50,7 @@ BGColor.args = {
   helpText: 'Helper Text',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Filter = Template.bind({});
@@ -61,7 +61,7 @@ Filter.args = {
   placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Disabled = Template.bind({});
@@ -70,7 +70,7 @@ Disabled.args = {
   disabled: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Invalid = Template.bind({});
@@ -80,16 +80,13 @@ Invalid.args = {
   invalid: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

@@ -8,9 +8,8 @@ describe('FreudProgressSpinnerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudProgressSpinnerComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudProgressSpinnerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

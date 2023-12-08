@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-select:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-select.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -63,7 +65,9 @@
     transition: box-shadow 0.2s;
     border-radius: 0;
   }
-  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  .p-dropdown-panel
+    .p-dropdown-items
+    .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
   }
@@ -73,4 +77,3 @@
     color: $brand-color-pure;
   }
 }
-

@@ -1,23 +1,23 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudProgressSpinnerComponent, FreudProgressSpinnerModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-} from './ProgressSpinner.stories.ts';
+  FreudProgressSpinnerComponent,
+  FreudProgressSpinnerModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor } from './ProgressSpinner.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudProgressSpinnerModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -25,9 +25,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Feedback/ProgressSpinner" component={FreudProgressSpinnerComponent} />
+  title="@freud-ds/web-components/Feedback/ProgressSpinner"
+  component={FreudProgressSpinnerComponent}
+/>
 
 <FreudHeaderComponent
   title="ProgressSpiner"
@@ -41,16 +43,19 @@ import { FreudRatingComponent } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

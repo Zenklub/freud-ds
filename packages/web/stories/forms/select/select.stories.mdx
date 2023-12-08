@@ -1,20 +1,23 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudSelectComponent, FreudSelectModule } from '@freud-ds/web-components';
+import {
+  FreudSelectComponent,
+  FreudSelectModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   Invalid,
-  Filter
+  Filter,
 } from './Select.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudSelectModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +27,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/Select" component={FreudSelectComponent} />
+  title="@freud-ds/web-components/Forms/Select"
+  component={FreudSelectComponent}
+/>
 
 <FreudHeaderComponent
   title="Select / Dropdwon"
@@ -40,31 +45,37 @@ import { FreudSelectModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Filter
+
 <Canvas>
-  <Story story={Filter}/>
+  <Story story={Filter} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

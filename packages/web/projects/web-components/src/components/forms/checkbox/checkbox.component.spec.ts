@@ -8,9 +8,8 @@ describe('FreudCheckboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudCheckboxComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudCheckboxComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

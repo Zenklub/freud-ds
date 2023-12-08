@@ -1,14 +1,14 @@
 import { Story } from '@storybook/angular';
 import { FreudMultiSelectComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const items = [
-  {name: 'New York', code: 'NY'},
-  {name: 'Rome', code: 'RM', disabled: true},
-  {name: 'London', code: 'LDN'},
-  {name: 'Istanbul', code: 'IST'},
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM', disabled: true },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
 ];
 
 const templateHTML = `
@@ -29,7 +29,9 @@ const templateHTML = `
     </div>
 `;
 
-const Template: Story<FreudMultiSelectComponent> = (args: FreudMultiSelectComponent) => ({
+const Template: Story<FreudMultiSelectComponent> = (
+  args: FreudMultiSelectComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
@@ -40,7 +42,7 @@ Default.args = {
   placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const BGColor = Template.bind({});
@@ -51,7 +53,7 @@ BGColor.args = {
   helpText: 'Helper Text',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
@@ -59,7 +61,7 @@ Disabled.args = {
   disabled: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Chip = Template.bind({});
@@ -68,9 +70,8 @@ Chip.args = {
   options: items,
   optionLabel: 'name',
   optionValue: 'code',
-  display: 'chip'
+  display: 'chip',
 };
-
 
 export const Invalid = Template.bind({});
 Invalid.args = {
@@ -79,16 +80,13 @@ Invalid.args = {
   invalid: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

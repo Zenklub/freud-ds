@@ -1,10 +1,12 @@
 import { Story } from '@storybook/angular';
-import { FreudScrollTopComponent } from "@freud-ds/web-components";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FreudScrollTopComponent } from '@freud-ds/web-components';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
-const Template: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
+const Template: Story<FreudScrollTopComponent> = (
+  args: FreudScrollTopComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-scroll-top [threshold]="200"></freud-scroll-top>
@@ -12,7 +14,9 @@ const Template: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent)
 });
 export const Default = Template.bind({});
 
-const TemplateTarget: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
+const TemplateTarget: Story<FreudScrollTopComponent> = (
+  args: FreudScrollTopComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-scroll-panel [style]="{height: '200px', width: '300px'}">
@@ -32,7 +36,9 @@ const TemplateTarget: Story<FreudScrollTopComponent> = (args: FreudScrollTopComp
   `,
 });
 
-const TemplateTargetBGColor: Story<FreudScrollTopComponent> = (args: FreudScrollTopComponent) => ({
+const TemplateTargetBGColor: Story<FreudScrollTopComponent> = (
+  args: FreudScrollTopComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-scroll-panel [style]="{height: '200px', width: '300px', backgroundColor: '#241249', color: 'white'}">
@@ -58,10 +64,7 @@ export const BGColor = TemplateTargetBGColor.bind({});
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

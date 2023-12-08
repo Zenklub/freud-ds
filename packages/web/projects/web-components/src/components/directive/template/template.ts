@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Directive({
   selector: '[freudTemplate]',
-  host: {}
+  host: {},
 })
 export class FreudTemplate {
   @Input() type!: string;
@@ -20,6 +20,6 @@ export class FreudTemplate {
 @NgModule({
   imports: [CommonModule],
   exports: [FreudTemplate],
-  declarations: [FreudTemplate]
+  declarations: [FreudTemplate],
 })
 export class FreudTemplateModule {}

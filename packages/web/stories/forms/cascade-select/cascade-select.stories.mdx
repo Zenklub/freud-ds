@@ -1,19 +1,22 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudCascadeSelectComponent, FreudCascadeSelectModule } from '@freud-ds/web-components';
+import {
+  FreudCascadeSelectComponent,
+  FreudCascadeSelectModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
-  Invalid
+  Invalid,
 } from './CascadeSelect.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudCascadeSelectModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -23,9 +26,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/CascadeSelect" component={FreudCascadeSelectComponent} />
+  title="@freud-ds/web-components/Forms/CascadeSelect"
+  component={FreudCascadeSelectComponent}
+/>
 
 <FreudHeaderComponent
   title="CascadeSelect"
@@ -39,69 +44,77 @@ import { FreudCascadeSelectModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 CascadeSelect requer um valor para vincular e uma coleção de objetos arbitrários com uma hierarquia aninhada.
 `optionGroupLabel` é usado para o texto de uma categoria e `optionGroupChildren` é para definir os filhos da categoria.
 Observe que a ordem de `optionGroupChildren` é importante e deve corresponder à hierarquia de dados.
+
 ```html
 <freud-cascade-select
-    [(ngModel)]="selectedCity"
-    [options]="countries"
-    optionLabel="cname"
-    optionGroupLabel="name"
-    [optionGroupChildren]="['states', 'cities']"
-    [style]="{'minWidth': '14rem'}">
+  [(ngModel)]="selectedCity"
+  [options]="countries"
+  optionLabel="cname"
+  optionGroupLabel="name"
+  [optionGroupChildren]="['states', 'cities']"
+  [style]="{'minWidth': '14rem'}"
+>
 </freud-cascade-select>
 ```
+
 ```ts
 countries: any[
-    {
-          name: 'Australia',
-          code: 'AU',
-          states: [
-              {
-                  name: 'New South Wales',
-                  cities: [
-                      {cname: 'Sydney', code: 'A-SY'},
-                      {cname: 'Newcastle', code: 'A-NE'},
-                      {cname: 'Wollongong', code: 'A-WO'}
-                  ]
-              },
-              {
-                  name: 'Queensland',
-                  cities: [
-                      {cname: 'Brisbane', code: 'A-BR'},
-                      {cname: 'Townsville', code: 'A-TO'}
-                  ]
-              },
-
-          ]
-      }
+  {
+    name: 'Australia',
+    code: 'AU',
+    states: [
+      {
+        name: 'New South Wales',
+        cities: [
+          { cname: 'Sydney', code: 'A-SY' },
+          { cname: 'Newcastle', code: 'A-NE' },
+          { cname: 'Wollongong', code: 'A-WO' },
+        ],
+      },
+      {
+        name: 'Queensland',
+        cities: [
+          { cname: 'Brisbane', code: 'A-BR' },
+          { cname: 'Townsville', code: 'A-TO' },
+        ],
+      },
+    ],
+  }
 ];
 
 selectedCity: any;
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

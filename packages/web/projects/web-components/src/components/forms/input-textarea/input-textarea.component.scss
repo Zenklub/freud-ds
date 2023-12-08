@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-input-textarea:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-input-textarea.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -53,4 +55,3 @@
     border-color: $brand-color-pure;
   }
 }
-

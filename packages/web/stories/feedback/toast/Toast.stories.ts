@@ -1,7 +1,7 @@
 import { FreudToastComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
@@ -13,15 +13,12 @@ const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.storyName = 'Theme'
+Default.storyName = 'Theme';
 
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

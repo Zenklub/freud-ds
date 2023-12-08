@@ -2,21 +2,19 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudMenuComponent, FreudMenuModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import {
-  Default,
-  BGColor,
-} from './Menu.stories.ts'; import {RouterTestingModule} from "@angular/router/testing";
+import { Default, BGColor } from './Menu.stories.ts';
+import { RouterTestingModule } from '@angular/router/testing';
 
 <Meta
   decorators={[
-    moduleMetadata({imports: [FreudMenuModule, RouterTestingModule]})
+    moduleMetadata({ imports: [FreudMenuModule, RouterTestingModule] }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   }}
   title="@freud-ds/web-components/Structure/Menu"
   component={FreudMenuComponent}
@@ -34,7 +32,9 @@ import { FreudMenuModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 FreudMenu requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+
 ```ts
 import { FreudMenuItem } from '@freud-ds/web-components';
 
@@ -52,32 +52,36 @@ items: FreudMenuItem[] = [{
   ]}
 ]
 ```
+
 ```html
-      <freud-menu
-          [items]="items"
-          [popup]="false">
-</freud-menu>
+<freud-menu [items]="items" [popup]="false"> </freud-menu>
 ```
 
 ## Popup Mode
+
 O menu é embutido por padrão, o modo pop-up também é compatível com a ativação da propriedade pop-up e o método de alternância de chamada passando o evento do elemento âncora.
 
 ```html
 <freud-menu #menu [popup]="true" [items]="items"></freud-menu>
-<freud-button (click)="menu.reference.toggle($event)">Clique para mostrar menu!</freud-button>
+<freud-button (click)="menu.reference.toggle($event)"
+  >Clique para mostrar menu!</freud-button
+>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

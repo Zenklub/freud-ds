@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FreudIconComponent } from '@freud-ds/web-components';
 import { AllIconsComponent } from '../all-icons/all-icons.component';
 
-
 export default {
   title: 'Icons',
   decorators: [
@@ -17,7 +16,7 @@ export default {
 
 const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
   props: { ...args },
-  template: `<freud-icon [icon]="icon" [size]="size"></freud-icon>`,
+  template: '<freud-icon [icon]="icon" [size]="size"></freud-icon>',
 });
 
 export const AllIcons = () => {
@@ -30,13 +29,13 @@ export const AllIcons = () => {
 
 export const Icon = () => {
   return {
-    template: `<freud-icon icon="award"></freud-icon>`,
+    template: '<freud-icon icon="award"></freud-icon>',
   };
 };
 
 export const IconSmall = () => {
   return {
-    template: `<freud-icon icon="award" size="sm"></freud-icon>`,
+    template: '<freud-icon icon="award" size="sm"></freud-icon>',
   };
 };
 

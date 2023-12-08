@@ -15,7 +15,8 @@
 
 .freud-radio-button {
   .p-radiobutton .p-radiobutton-box.p-highlight,
-  .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-highlight:hover {
+  .p-radiobutton:not(.p-radiobutton-disabled)
+    .p-radiobutton-box.p-highlight:hover {
     background-color: $brand-color-pure;
     border-color: $brand-color-pure;
   }
@@ -26,7 +27,7 @@
   }
   .p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
     width: 8px;
-    height: 8px
+    height: 8px;
   }
 
   .p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box:hover,

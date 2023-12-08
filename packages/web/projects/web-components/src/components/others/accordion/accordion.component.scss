@@ -1,7 +1,8 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.freud-accordion, .freud-accordion-tab {
+.freud-accordion,
+.freud-accordion-tab {
   .p-accordion .p-accordion-header .p-accordion-header-link {
     background-color: $neutral-color-light-01;
     border-color: $neutral-color-light-02;
@@ -9,21 +10,31 @@
   }
 
   .p-accordion .p-accordion-content,
-  .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  .p-accordion
+    .p-accordion-header:not(.p-disabled).p-highlight
+    .p-accordion-header-link {
     border-color: $neutral-color-light-02;
   }
 
-  .p-accordion p-accordiontab:first-child .p-accordion-header .p-accordion-header-link {
+  .p-accordion
+    p-accordiontab:first-child
+    .p-accordion-header
+    .p-accordion-header-link {
     border-top-right-radius: $border-radius-md;
     border-top-left-radius: $border-radius-md;
   }
 
-  .p-accordion p-accordiontab:last-child .p-accordion-header:not(.p-highlight) .p-accordion-header-link {
+  .p-accordion
+    p-accordiontab:last-child
+    .p-accordion-header:not(.p-highlight)
+    .p-accordion-header-link {
     border-bottom-right-radius: $border-radius-md;
     border-bottom-left-radius: $border-radius-md;
   }
 
-  .p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus {
+  .p-accordion
+    .p-accordion-header:not(.p-disabled)
+    .p-accordion-header-link:focus {
     box-shadow: unset;
   }
   .p-accordion-header-text {
@@ -35,7 +46,9 @@
   }
 
   .p-accordion p-accordiontab .p-accordion-content,
-  .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  .p-accordion
+    .p-accordion-header:not(.p-disabled).p-highlight
+    .p-accordion-header-link {
     border-bottom-right-radius: $border-radius-md;
     border-bottom-left-radius: $border-radius-md;
   }

@@ -1,5 +1,12 @@
-import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-slider',
@@ -22,25 +29,25 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-slider',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudSliderComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudSliderComponent implements ControlValueAccessor {
-  @Input() min: number = 0;
-  @Input() max: number = 100;
-  @Input() step: number = 1;
-  @Input() range: boolean = false;
+  @Input() min = 0;
+  @Input() max = 100;
+  @Input() step = 1;
+  @Input() range = false;
   @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
-  @Input() disabled: boolean = false;
-  @Input() bgColor: boolean = false;
-  @Input() tabindex: number = 0;
+  @Input() disabled = false;
+  @Input() bgColor = false;
+  @Input() tabindex = 0;
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() selectedOptionChange: EventEmitter<any> = new EventEmitter<any>();
 
@@ -50,15 +57,15 @@ export class FreudSliderComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
@@ -77,11 +84,9 @@ export class FreudSliderComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
-
 }

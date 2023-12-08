@@ -1,6 +1,9 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudTypographyComponent, FreudTypographyModule } from '@freud-ds/web-components';
+import {
+  FreudTypographyComponent,
+  FreudTypographyModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../header/header.component';
 import { headingTypes } from '../../projects/web-components/src/components/typography/typrography.type';
 
@@ -8,20 +11,20 @@ import {
   HeadingRegular,
   HeadingSemibold,
   HeadingBold,
-  HeadingBGColor
+  HeadingBGColor,
 } from './typography.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudTypographyModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -29,14 +32,14 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   argTypes={{
     fontType: {
       control: {
         type: 'select',
-        options: headingTypes
-      }
+        options: headingTypes,
+      },
     },
     label: {
       name: 'Texto',
@@ -45,11 +48,13 @@ import {
       description: 'Texto a ser exibido',
       table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'Texto' }
-      }
-    }
+        defaultValue: { summary: 'Texto' },
+      },
+    },
   }}
-title="@freud-ds/web-components/Typography/Heading" component={FreudTypographyComponent} />
+  title="@freud-ds/web-components/Typography/Heading"
+  component={FreudTypographyComponent}
+/>
 
 <FreudHeaderComponent
   title="Heading"
@@ -63,31 +68,36 @@ import { FreudTypographyModule } from '@freud-ds/web-components';
 ```
 
 ## Utilização
+
 Utilize a diretiva `freud-typography` com o tipo de fonte para definit a tipografia
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Regular
+
 <Canvas>
-  <Story story={HeadingRegular}/>
+  <Story story={HeadingRegular} />
 </Canvas>
 
 ### Semibold
+
 <Canvas>
-  <Story story={HeadingSemibold}/>
+  <Story story={HeadingSemibold} />
 </Canvas>
 
 ### Bold
+
 <Canvas>
-  <Story story={HeadingBold}/>
+  <Story story={HeadingBold} />
 </Canvas>
 
 ### BG Color
-<Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={HeadingBGColor}/>
-</Canvas>
 
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={HeadingBGColor} />
+</Canvas>
 
 ## <a id="api"></a>API
 

@@ -1,11 +1,13 @@
 import { Story } from '@storybook/angular';
-import { FreudDialogExampleComponent } from "./dialog-example/example.component";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FreudDialogExampleComponent } from './dialog-example/example.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
-const Template: Story<FreudDialogExampleComponent> = (args: FreudDialogExampleComponent) => ({
-  props: {...args},
+const Template: Story<FreudDialogExampleComponent> = (
+  args: FreudDialogExampleComponent,
+) => ({
+  props: { ...args },
   template: `
     <freud-dialog-example [view]="view"></freud-dialog-example>
   `,
@@ -13,25 +15,22 @@ const Template: Story<FreudDialogExampleComponent> = (args: FreudDialogExampleCo
 
 export const Default = Template.bind({});
 Default.args = {
-  view: 'basic'
-}
+  view: 'basic',
+};
 export const Modal = Template.bind({});
 Modal.args = {
-  view: 'modal'
-}
+  view: 'modal',
+};
 
 export const Maximizable = Template.bind({});
 Maximizable.args = {
-  view: 'maximizable'
-}
+  view: 'maximizable',
+};
 
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

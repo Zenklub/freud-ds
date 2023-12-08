@@ -1,20 +1,23 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudInputNumberComponent, FreudInputNumberModule } from '@freud-ds/web-components';
+import {
+  FreudInputNumberComponent,
+  FreudInputNumberModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   ButtonLayout,
-  Invalid
+  Invalid,
 } from './InputNumber.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudInputNumberModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +27,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/InputNumber" component={FreudInputNumberComponent} />
+  title="@freud-ds/web-components/Forms/InputNumber"
+  component={FreudInputNumberComponent}
+/>
 
 <FreudHeaderComponent
   title="InputNumber"
@@ -40,31 +45,37 @@ import { FreudInputNumberModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### ButtonLayout (default, horizontal, vertical)
+
 <Canvas>
-  <Story story={ButtonLayout}/>
+  <Story story={ButtonLayout} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

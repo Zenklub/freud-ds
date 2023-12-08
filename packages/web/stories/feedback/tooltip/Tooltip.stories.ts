@@ -2,7 +2,7 @@ import { Story } from '@storybook/angular';
 import { FreudTooltipComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudTooltipComponent> = (
-  args: FreudTooltipComponent
+  args: FreudTooltipComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -17,22 +17,22 @@ const Template: Story<FreudTooltipComponent> = (
 export const Top = Template.bind({});
 Top.args = {
   tooltipLabel: 'Tooltip label top',
-  tooltipPosition: 'top'
+  tooltipPosition: 'top',
 };
 export const Bottom = Template.bind({});
 Bottom.args = {
   tooltipLabel: 'Tooltip label bottom',
-  tooltipPosition: 'bottom'
+  tooltipPosition: 'bottom',
 };
 export const Right = Template.bind({});
 Right.args = {
   tooltipLabel: 'Tooltip label right',
-  tooltipPosition: 'right'
+  tooltipPosition: 'right',
 };
 export const Left = Template.bind({});
 Left.args = {
   tooltipLabel: 'Tooltip label left',
-  tooltipPosition: 'left'
+  tooltipPosition: 'left',
 };
 
 // BgColor
@@ -40,5 +40,5 @@ export const BGColor = Template.bind({});
 BGColor.args = {
   tooltipLabel: 'Com bgColor',
   tooltipPosition: 'bottom',
-  bgColor: true
+  bgColor: true,
 };

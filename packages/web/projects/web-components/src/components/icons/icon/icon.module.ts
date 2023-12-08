@@ -6,6 +6,6 @@ import { FreudIconComponent } from './icon.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [FreudIconComponent],
-  exports: [FreudIconComponent]
+  exports: [FreudIconComponent],
 })
-export class FreudIconModule { }
+export class FreudIconModule {}

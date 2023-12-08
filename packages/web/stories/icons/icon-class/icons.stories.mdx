@@ -1,27 +1,48 @@
-import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
-import { moduleMetadata } from "@storybook/angular";
+import {
+  Meta,
+  Canvas,
+  Story,
+  ArgsTable,
+  SourceState,
+} from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
 
-import { FreudHeaderComponent } from "../../header/header.component";
-import { FreudIconModule, FreudTypographyModule, FreudInputTextModule } from "@freud-ds/web-components";
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  FreudIconModule,
+  FreudTypographyModule,
+  FreudInputTextModule,
+} from '@freud-ds/web-components';
 
-import { AllIcons, Default_i, Small_i, Default_span, Small_span } from "./Icons.stories.ts";
+import {
+  AllIcons,
+  Default_i,
+  Small_i,
+  Default_span,
+  Small_span,
+} from './Icons.stories.ts';
 
-import { AllIconsModule } from "../all-icons/all-icons.module";
+import { AllIconsModule } from '../all-icons/all-icons.module';
 
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudIconModule, FreudTypographyModule, FreudInputTextModule, AllIconsModule],
+      imports: [
+        FreudIconModule,
+        FreudTypographyModule,
+        FreudInputTextModule,
+        AllIconsModule,
+      ],
     }),
   ]}
   argTypes={{}}
   parameters={{
-    layout: "centered",
+    layout: 'centered',
     backgrounds: {
-      default: "Default",
+      default: 'Default',
       values: [
-        { name: "Default", value: "#FFFFFF" },
-        { name: "BgColor", value: "#6732D1" },
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
       ],
     },
   }}
@@ -35,23 +56,28 @@ import { AllIconsModule } from "../all-icons/all-icons.module";
 />
 
 ## <a id="importing"></a>Import
+
 ### Estilo
+
 Importe o arquivo de estilo dos ícones:
 
 #### CSS Global
-O arquivo de estilo dos ícones será importado globalmente, ou seja, em toda a aplicação. Para isso, coloque esse código 
-no seu arquivo ``.css`` global:
+
+O arquivo de estilo dos ícones será importado globalmente, ou seja, em toda a aplicação. Para isso, coloque esse código
+no seu arquivo `.css` global:
+
 ```css
 @import '@freud-ds/icons/style/style.css';
 ```
 
 ## Icon
-Para utilizar o componente, basta utilizar a tag ``<i>`` ou ``<span>`` passando a classe com o nome do ícone (``freud-icon freud-icon-[icon-name]``)
+
+Para utilizar o componente, basta utilizar a tag `<i>` ou `<span>` passando a classe com o nome do ícone (`freud-icon freud-icon-[icon-name]`)
 como parâmetro.
 
 ### Exemplo
 
-#### Utilizando a tag ``<i>``
+#### Utilizando a tag `<i>`
 
 <Canvas sourceState={SourceState.OPEN}>
   <Story story={Default_i} />
@@ -61,7 +87,7 @@ como parâmetro.
   <Story story={Small_i} />
 </Canvas>
 
-#### Utilizando a tag ``<span>``
+#### Utilizando a tag `<span>`
 
 <Canvas sourceState={SourceState.OPEN}>
   <Story story={Default_span} />
@@ -73,7 +99,7 @@ como parâmetro.
 
 ## Lista de ícones disponíveis
 
-Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um ícone e o parâmetro ``class`` será copiado para o seu clipboard.
+Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um ícone e o parâmetro `class` será copiado para o seu clipboard.
 
 **Clique no ícone, ele será enviado para sua área de transferência.**
 

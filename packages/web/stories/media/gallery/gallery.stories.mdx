@@ -1,22 +1,19 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudGalleryComponent, FreudGalleryModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  BGColor,
-  Default,
-  WithoutThumbnail
-} from './gallery.stories.ts';
+  FreudGalleryComponent,
+  FreudGalleryModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { BGColor, Default, WithoutThumbnail } from './gallery.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudGalleryModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudGalleryModule] })]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
   }}
   title="@freud-ds/web-components/Media/Gallery"
@@ -37,6 +34,7 @@ import { FreudGalleryModule } from '@freud-ds/web-components';
 ## Getting Started
 
 Defina a lista de imagens a serem exibidas utilizando a interface `GalleryPhoto`.
+
 ```ts
 
 import { GalleryPhoto } from '@freud-ds/web-components';
@@ -53,34 +51,36 @@ images: GalleryPhoto[] = [
 ```
 
 No html use as propriedades `showThumbnails` e `bgColor` para definir a exibição dos thumbnails e cor do background
+
 ```html
 <freud-gallery
-    [images]="images"
-    [showThumbnails]="showThumbnails"
-    [bgColor]="bgColor">
+  [images]="images"
+  [showThumbnails]="showThumbnails"
+  [bgColor]="bgColor"
+>
 </freud-gallery>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Without Thumbnail
+
 <Canvas>
-  <Story story={WithoutThumbnail}/>
+  <Story story={WithoutThumbnail} />
 </Canvas>
 
-[//]: # (### BgColor)
-
-[//]: # (<Canvas style={{ backgroundColor: '#241249' }}>)
-
-[//]: # (  <Story story={BGColor}/>)
-
-[//]: # (</Canvas>)
+[//]: # '### BgColor'
+[//]: # "<Canvas style={{ backgroundColor: '#241249' }}>"
+[//]: # '  <Story story={BGColor}/>'
+[//]: # '</Canvas>'
 
 ## <a id="api"></a>API
 

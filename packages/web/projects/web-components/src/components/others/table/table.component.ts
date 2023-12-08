@@ -1,36 +1,46 @@
 import {
-  AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef,
+  AfterContentInit,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
-  ContentChildren, Directive, HostListener,
-  Input, OnDestroy, OnInit,
+  ContentChildren,
+  Directive,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
   QueryList,
-  TemplateRef, ViewChild,
-  ViewEncapsulation
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
-import { FreudTemplate } from "../../directive/template";
-import { Table } from "primeng/table";
-import { Subscription } from "rxjs";
-import { DomHandler } from "primeng/dom";
+import { FreudTemplate } from '../../directive/template';
+import { Table } from 'primeng/table';
+import { Subscription } from 'rxjs';
+import { DomHandler } from 'primeng/dom';
 
 @Component({
   selector: 'freud-table',
   template: `
-    <p-table
-      #tableRef
-      [value]="value"
-      [columns]="columns"
-      [style]="style">
-
+    <p-table #tableRef [value]="value" [columns]="columns" [style]="style">
       <ng-template pTemplate="caption">
         <ng-container *ngTemplateOutlet="captionTemplate"></ng-container>
       </ng-template>
 
       <ng-template pTemplate="header" let-columns>
-        <ng-container *ngTemplateOutlet="headerTemplate; context: { columns: columns }"></ng-container>
+        <ng-container
+          *ngTemplateOutlet="headerTemplate; context: { columns: columns }"
+        ></ng-container>
       </ng-template>
       <ng-content></ng-content>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <ng-container *ngTemplateOutlet="bodyTemplate; context: {item: rowData, columns: columns}"></ng-container>
+        <ng-container
+          *ngTemplateOutlet="
+            bodyTemplate;
+            context: { item: rowData, columns: columns }
+          "
+        ></ng-container>
       </ng-template>
 
       <ng-template pTemplate="summary">
@@ -42,10 +52,9 @@ import { DomHandler } from "primeng/dom";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-table',
-  }
+  },
 })
 export class FreudTableComponent implements AfterContentInit {
-
   @Input() value!: any[];
   @Input() style!: any;
   @Input() columns!: any[];
@@ -91,8 +100,8 @@ export class FreudTableComponent implements AfterContentInit {
     '[class.p-highlight]': 'sorted',
     '[attr.tabindex]': 'isEnabled() ? "0" : null',
     '[attr.role]': '"columnheader"',
-    '[attr.aria-sort]': 'sortOrder'
-  }
+    '[attr.aria-sort]': 'sortOrder',
+  },
 })
 export class FreudSortableColumn implements AfterViewInit, OnDestroy {
   @Input('freudSortableColumn') field!: string;
@@ -108,10 +117,11 @@ export class FreudSortableColumn implements AfterViewInit, OnDestroy {
   constructor(public dt: FreudTableComponent) {
     if (this.isEnabled()) {
       setTimeout(() => {
-        this.subscription = this.dt.tableRef?.tableService.sortSource$.subscribe((sortMeta) => {
-          this.updateSortState();
-        });
-      }, 3000)
+        this.subscription =
+          this.dt.tableRef?.tableService.sortSource$.subscribe(() => {
+            this.updateSortState();
+          });
+      }, 3000);
     }
   }
 
@@ -123,7 +133,11 @@ export class FreudSortableColumn implements AfterViewInit, OnDestroy {
 
   updateSortState() {
     this.sorted = this.dt.tableRef?.isSorted(this.field);
-    this.sortOrder = this.sorted ? (this.dt.tableRef.sortOrder === 1 ? 'ascending' : 'descending') : 'none';
+    this.sortOrder = this.sorted
+      ? this.dt.tableRef.sortOrder === 1
+        ? 'ascending'
+        : 'descending'
+      : 'none';
   }
 
   @HostListener('click', ['$event'])
@@ -132,7 +146,7 @@ export class FreudSortableColumn implements AfterViewInit, OnDestroy {
       this.updateSortState();
       this.dt.tableRef.sort({
         originalEvent: event,
-        field: this.field
+        field: this.field,
       });
 
       DomHandler.clearSelection();
@@ -149,7 +163,10 @@ export class FreudSortableColumn implements AfterViewInit, OnDestroy {
   }
 
   isFilterElement(element: HTMLElement) {
-    return DomHandler.hasClass(element, 'pi-filter-icon') || DomHandler.hasClass(element, 'p-column-filter-menu-button');
+    return (
+      DomHandler.hasClass(element, 'pi-filter-icon') ||
+      DomHandler.hasClass(element, 'p-column-filter-menu-button')
+    );
   }
 
   ngOnDestroy() {
@@ -162,32 +179,41 @@ export class FreudSortableColumn implements AfterViewInit, OnDestroy {
 @Component({
   selector: 'freud-sortIcon',
   template: `
-        <i class="p-sortable-column-icon freud-icon freud-icon-fw"
-           [ngClass]="{ 'freud-icon-sort-amount-up-alt': sortOrder === 1, 'freud-icon-sort-amount-down': sortOrder === -1, 'freud-icon-sort-alt': sortOrder === 0 }"></i>
-        <span *ngIf="isMultiSorted()" class="p-sortable-column-badge">{{ getBadgeValue() }}</span>
-    `,
+    <i
+      class="p-sortable-column-icon freud-icon freud-icon-fw"
+      [ngClass]="{
+        'freud-icon-sort-amount-up-alt': sortOrder === 1,
+        'freud-icon-sort-amount-down': sortOrder === -1,
+        'freud-icon-sort-alt': sortOrder === 0
+      }"
+    ></i>
+    <span *ngIf="isMultiSorted()" class="p-sortable-column-badge">{{
+      getBadgeValue()
+    }}</span>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'p-element'
-  }
+    class: 'p-element',
+  },
 })
 export class FreudSortIcon implements AfterViewInit, OnDestroy {
   @Input() field!: string;
 
   subscription!: Subscription;
 
-  sortOrder: number = 0;
+  sortOrder = 0;
 
-  constructor(public dt: FreudTableComponent, public cd: ChangeDetectorRef) {
-  }
+  constructor(public dt: FreudTableComponent, public cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.cd.detectChanges();
     setTimeout(() => {
-      this.subscription = this.dt.tableRef?.tableService.sortSource$.subscribe((sortMeta: any) => {
-        this.updateSortState();
-      });
+      this.subscription = this.dt.tableRef?.tableService.sortSource$.subscribe(
+        () => {
+          this.updateSortState();
+        },
+      );
     }, 3000);
     this.updateSortState();
   }
@@ -198,9 +224,11 @@ export class FreudSortIcon implements AfterViewInit, OnDestroy {
 
   updateSortState() {
     if (this.dt.tableRef?.sortMode === 'single') {
-      this.sortOrder = this.dt.tableRef?.isSorted(this.field) ? this.dt.tableRef.sortOrder : 0;
+      this.sortOrder = this.dt.tableRef?.isSorted(this.field)
+        ? this.dt.tableRef.sortOrder
+        : 0;
     } else if (this.dt.tableRef?.sortMode === 'multiple') {
-      let sortMeta = this.dt.tableRef.getSortMeta(this.field);
+      const sortMeta = this.dt.tableRef.getSortMeta(this.field);
       this.sortOrder = sortMeta ? sortMeta.order : 0;
     }
 
@@ -208,12 +236,16 @@ export class FreudSortIcon implements AfterViewInit, OnDestroy {
   }
 
   getMultiSortMetaIndex() {
-    let multiSortMeta = this.dt.tableRef._multiSortMeta;
+    const multiSortMeta = this.dt.tableRef._multiSortMeta;
     let index = -1;
 
-    if (multiSortMeta && this.dt.tableRef.sortMode === 'multiple' && (this.dt.tableRef.showInitialSortBadge || multiSortMeta.length > 1)) {
+    if (
+      multiSortMeta &&
+      this.dt.tableRef.sortMode === 'multiple' &&
+      (this.dt.tableRef.showInitialSortBadge || multiSortMeta.length > 1)
+    ) {
       for (let i = 0; i < multiSortMeta.length; i++) {
-        let meta = multiSortMeta[i];
+        const meta = multiSortMeta[i];
         if (meta.field === this.field || meta.field === this.field) {
           index = i;
           break;
@@ -225,13 +257,16 @@ export class FreudSortIcon implements AfterViewInit, OnDestroy {
   }
 
   getBadgeValue() {
-    let index = this.getMultiSortMetaIndex();
+    const index = this.getMultiSortMetaIndex();
 
     return this.dt.tableRef.groupRowsBy && index > -1 ? index : index + 1;
   }
 
   isMultiSorted() {
-    return this.dt.tableRef?.sortMode === 'multiple' && this.getMultiSortMetaIndex() > -1;
+    return (
+      this.dt.tableRef?.sortMode === 'multiple' &&
+      this.getMultiSortMetaIndex() > -1
+    );
   }
 
   ngOnDestroy() {

@@ -1,19 +1,17 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudCheckboxComponent, FreudCheckboxModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-  Disabled,
-  Label
-} from './Checkbox.stories.ts';
+  FreudCheckboxComponent,
+  FreudCheckboxModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, Disabled, Label } from './Checkbox.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudCheckboxModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -23,9 +21,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/Checkbox" component={FreudCheckboxComponent} />
+  title="@freud-ds/web-components/Forms/Checkbox"
+  component={FreudCheckboxComponent}
+/>
 
 <FreudHeaderComponent
   title="Checkbox"
@@ -39,11 +39,14 @@ import { FreudCheckboxModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 O modo múltiplo é ativado por padrão, a propriedade ngModel refere-se a uma matriz para vincular os valores selecionados.
 
 ### Model Driven Forms
+
 A caixa de seleção também pode ser usada em um formulário orientado a modelo.
 Neste caso, devido a um problema no Angular, vincule a instância formControl em vez de usar formControlName.
+
 ```html<!-- Wrong -->
 <freud-checkbox formControlName="cities"></freud-checkbox>
 
@@ -52,31 +55,37 @@ Neste caso, devido a um problema no Angular, vincule a instância formControl em
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Label
+
 <Canvas>
-  <Story story={Label}/>
+  <Story story={Label} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
 ### Label
+
 O atributo `label` fornece um texto de rótulo para a caixa de seleção. Esse rótulo também pode ser clicado e alterna o estado marcado.
 
 <ArgsTable of={FreudCheckboxComponent} />

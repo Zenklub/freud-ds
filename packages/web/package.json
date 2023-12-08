@@ -9,7 +9,11 @@
     "test": "ng test",
     "storybook": "ng run freud-docs:storybook",
     "build-storybook": "ng run freud-docs:build-storybook",
-    "chromatic": "npx chromatic --project-token=8fdc06c43311 --auto-accept-changes"
+    "chromatic": "npx chromatic --project-token=8fdc06c43311 --auto-accept-changes",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier:write": "npx prettier . --write",
+    "prettier:check": "npx prettier . --check"
   },
   "dependencies": {
     "@angular/animations": "16.2.x",
@@ -54,8 +58,12 @@
     "@storybook/testing-library": "^0.2.2",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
     "babel-loader": "^8.3.0",
     "chromatic": "^6.11.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.1.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -63,6 +71,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^16.2.2",
+    "prettier": "3.1.0",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "storybook": "^7.6.3",

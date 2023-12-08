@@ -5,9 +5,7 @@
     "entryFile": "src/public-api.ts",
     "cssUrl": "inline"
   },
-  "assets": [
-    "./scss", "./fonts"
-  ],
+  "assets": ["./scss", "./fonts"],
   "allowedNonPeerDependencies": [
     "primeng",
     "primeicons",

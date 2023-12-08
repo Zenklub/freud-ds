@@ -12,62 +12,63 @@ const Template: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
   value: 'Default',
-  color: 'primary'
+  color: 'primary',
 };
 export const Success = Template.bind({});
 Success.args = {
   value: 'Success',
-  color: 'success'
+  color: 'success',
 };
 export const Info = Template.bind({});
 Info.args = {
   value: 'Info',
-  color: 'info'
+  color: 'info',
 };
 export const Warning = Template.bind({});
 Warning.args = {
   value: 'Warning',
-  color: 'warning'
+  color: 'warning',
 };
 export const Error = Template.bind({});
 Error.args = {
   value: 'Error',
-  color: 'error'
+  color: 'error',
 };
 
 // outline
 export const OutlineDefault = Template.bind({});
 OutlineDefault.args = {
   value: 'Default',
-  outline: true
+  outline: true,
 };
 export const OutlineSuccess = Template.bind({});
 OutlineSuccess.args = {
   value: 'Success',
   color: 'success',
-  outline: true
+  outline: true,
 };
 export const OutlineInfo = Template.bind({});
 OutlineInfo.args = {
   value: 'Info',
   color: 'info',
-  outline: true
+  outline: true,
 };
 export const OutlineWarning = Template.bind({});
 OutlineWarning.args = {
   value: 'Warning',
   color: 'warning',
-  outline: true
+  outline: true,
 };
 export const OutlineError = Template.bind({});
 OutlineError.args = {
   value: 'Error',
   color: 'error',
-  outline: true
+  outline: true,
 };
 
-
-const TemplateBgColor: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
+const TemplateBgColor: Story<FreudTagComponent> = (
+  args: FreudTagComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-tag style="margin-right: 8px" [outline]="outline" [value]="'Default'"></freud-tag>
@@ -80,10 +81,10 @@ const TemplateBgColor: Story<FreudTagComponent> = (args: FreudTagComponent) => (
 
 export const BGColor = TemplateBgColor.bind({});
 BGColor.args = {
-  outline: false
+  outline: false,
 };
 
 export const BGColorOutline = TemplateBgColor.bind({});
 BGColorOutline.args = {
-  outline: true
+  outline: true,
 };

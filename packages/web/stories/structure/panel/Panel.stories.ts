@@ -1,7 +1,7 @@
 import { FreudPanelComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const Template: Story<FreudPanelComponent> = (args: FreudPanelComponent) => ({
@@ -19,10 +19,12 @@ const Template: Story<FreudPanelComponent> = (args: FreudPanelComponent) => ({
 export const Default = Template.bind({});
 export const Toggleable = Template.bind({});
 Toggleable.args = {
-  toggleable: true
+  toggleable: true,
 };
 
-const TemplateFooter: Story<FreudPanelComponent> = (args: FreudPanelComponent) => ({
+const TemplateFooter: Story<FreudPanelComponent> = (
+  args: FreudPanelComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-panel [header]="'Header'">
@@ -39,10 +41,12 @@ const TemplateFooter: Story<FreudPanelComponent> = (args: FreudPanelComponent) =
 
 export const Footer = TemplateFooter.bind({});
 Footer.args = {
-  toggleable: true
+  toggleable: true,
 };
 
-const TemplateIcons: Story<FreudPanelComponent> = (args: FreudPanelComponent) => ({
+const TemplateIcons: Story<FreudPanelComponent> = (
+  args: FreudPanelComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-panel [header]="'Header'" [toggleable]="true">
@@ -64,10 +68,7 @@ export const Icons = TemplateIcons.bind({});
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};

@@ -7,18 +7,23 @@ type position = 'top' | 'bottom' | 'left' | 'right';
   selector: '[freud-tooltip]',
   exportAs: 'freudTooltip',
   template: `
-    <div [pTooltip]="tooltipLabel" [tooltipPosition]="tooltipPosition" [class.bgColor]="bgColor"
-        [tooltipStyleClass]="bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'" class="freud-tooltip-container">
+    <div
+      [pTooltip]="tooltipLabel"
+      [tooltipPosition]="tooltipPosition"
+      [class.bgColor]="bgColor"
+      [tooltipStyleClass]="
+        bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'
+      "
+      class="freud-tooltip-container"
+    >
       <ng-content></ng-content>
     </div>
   `,
   styleUrls: ['./tooltip.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class FreudTooltipComponent {
-
-  @Input() tooltipLabel: string = '';
+  @Input() tooltipLabel = '';
   @Input() tooltipPosition: position = 'top';
-  @Input() bgColor: boolean = false;
-
+  @Input() bgColor = false;
 }

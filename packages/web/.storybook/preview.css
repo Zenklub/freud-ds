@@ -1,7 +1,7 @@
-.resizable-div{
-    border: 1px solid red;
-    padding: 10px;
-    resize: horizontal;
-    overflow: auto;
-    width: 250px;
+.resizable-div {
+  border: 1px solid red;
+  padding: 10px;
+  resize: horizontal;
+  overflow: auto;
+  width: 250px;
 }

@@ -1,19 +1,23 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudInputTextAreaComponent, FreudInputTextAreaModule } from '@freud-ds/web-components';
+import {
+  FreudInputTextAreaComponent,
+  FreudInputTextAreaModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
-  Invalid, AutoResize
+  Invalid,
+  AutoResize,
 } from './InputTextArea.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudInputTextAreaModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -23,9 +27,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/InputTextArea" component={FreudInputTextAreaComponent} />
+  title="@freud-ds/web-components/Forms/InputTextArea"
+  component={FreudInputTextAreaComponent}
+/>
 
 <FreudHeaderComponent
   title="Input Text Area"
@@ -39,31 +45,37 @@ import { FreudInputTextAreaModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### AutoResize
+
 <Canvas>
-  <Story story={AutoResize}/>
+  <Story story={AutoResize} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

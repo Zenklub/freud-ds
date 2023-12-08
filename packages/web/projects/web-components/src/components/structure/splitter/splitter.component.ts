@@ -1,12 +1,13 @@
 import {
   Component,
-  ContentChildren, EventEmitter,
+  ContentChildren,
+  EventEmitter,
   Input,
   Output,
   QueryList,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { PrimeTemplate } from "primeng/api";
+import { PrimeTemplate } from 'primeng/api';
 
 @Component({
   selector: 'freud-splitter',
@@ -19,7 +20,8 @@ import { PrimeTemplate } from "primeng/api";
       [panelStyleClass]="panelStyleClass || ''"
       [panelStyle]="panelStyle || {}"
       (onResizeEnd)="onResizeEnd.emit($event)"
-      (onResizeStart)="onResizeStart.emit($event)">
+      (onResizeStart)="onResizeStart.emit($event)"
+    >
       <ng-container *ngIf="templates">
         <ng-template ngFor let-panel let-i="index" [ngForOf]="templates">
           <ng-template pTemplate>
@@ -33,19 +35,17 @@ import { PrimeTemplate } from "primeng/api";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-splitter',
-  }
+  },
 })
 export class FreudSplitterComponent {
-
   @Input() panelSizes: number[] = [];
   @Input() minSizes: number[] = [];
-  @Input() layout: "horizontal" | "vertical" = 'horizontal';
+  @Input() layout: 'horizontal' | 'vertical' = 'horizontal';
   @Input() panelStyleClass!: string;
-  @Input() gutterSize: number = 4;
-  @Input() panelStyle!: Object;
+  @Input() gutterSize = 4;
+  @Input() panelStyle!: any;
   @Input() style!: any;
   @ContentChildren(PrimeTemplate) templates!: QueryList<any>;
   @Output() onResizeStart: EventEmitter<any> = new EventEmitter<any>();
   @Output() onResizeEnd: EventEmitter<any> = new EventEmitter<any>();
-
 }

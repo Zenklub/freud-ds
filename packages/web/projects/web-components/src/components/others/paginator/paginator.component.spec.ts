@@ -8,9 +8,8 @@ describe('FreudPaginatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudPaginatorComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudPaginatorComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

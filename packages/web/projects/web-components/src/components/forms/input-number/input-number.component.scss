@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-input-number:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-input-number.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -77,4 +79,3 @@
     border: 1px solid $brand-color-pure;
   }
 }
-

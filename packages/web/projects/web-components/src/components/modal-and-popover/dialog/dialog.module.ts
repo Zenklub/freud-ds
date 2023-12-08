@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { FreudDialogComponent } from './dialog.component';
 
-
-import { DialogModule } from "primeng/dialog";
-import { FormsModule } from "@angular/forms";
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, DialogModule, FormsModule],
   declarations: [FreudDialogComponent],
   exports: [FreudDialogComponent],
-  providers: []
+  providers: [],
 })
-export class FreudDialogModule { }
+export class FreudDialogModule {}

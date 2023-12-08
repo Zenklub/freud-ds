@@ -1,10 +1,10 @@
-import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { moduleMetadata } from "@storybook/angular";
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
 import {
   FreudSelectButtonComponent,
   FreudSelectButtonModule,
-} from "@freud-ds/web-components";
-import { FreudHeaderComponent } from "../../header/header.component";
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
@@ -13,7 +13,7 @@ import {
   OptionDisabled,
   WithIcons,
   Overflow,
-} from "./SelectButton.stories.ts";
+} from './SelectButton.stories.ts';
 
 <Meta
   decorators={[
@@ -22,12 +22,12 @@ import {
     }),
   ]}
   parameters={{
-    layout: "centered",
+    layout: 'centered',
     backgrounds: {
-      default: "Default",
+      default: 'Default',
       values: [
-        { name: "Default", value: "#FFFFFF" },
-        { name: "BgColor", value: "#6732D1" },
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
       ],
     },
   }}
@@ -44,7 +44,7 @@ import {
 
 ```ts
 // Adicione o modulo do Freud Select Button
-import { FreudSelectButtonModule } from "@freud-ds/web-components";
+import { FreudSelectButtonModule } from '@freud-ds/web-components';
 
 // No Componente declare a lista de opções e o item selecionado por padrão
 export class Componente {
@@ -52,11 +52,11 @@ export class Componente {
   selectedItem: any;
   constructor() {
     this.items = [
-      { name: "New York", code: "NY" },
-      { name: "Rome", code: "RM" },
-      { name: "London", code: "LDN" },
-      { name: "Istanbul", code: "IST" },
-      { name: "Paris", code: "PRS" },
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },
     ];
   }
 }
@@ -87,19 +87,22 @@ iconPosition: 'append' | 'preppend'
 </Canvas>
 
 #### Overflow
+
 Para ativarmos o autodetect de overflow precisamos envelopar o componente dentro de uma div com width fixa, por exemplo:
+
 ```
 <div style="width: 200px">
     <freud-select-button [autoOverflow]="true" />
 </div>
 ```
+
 <Canvas>
-    <Story story={Overflow} />
+  <Story story={Overflow} />
 </Canvas>
 
 ### BG Color
 
-<Canvas style={{ backgroundColor: "#241249" }}>
+<Canvas style={{ backgroundColor: '#241249' }}>
   <Story story={BGColor} />
 </Canvas>
 

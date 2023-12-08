@@ -1,36 +1,36 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudAccordionComponent, FreudAccordionModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-  Multiple,
-  Disabled
-} from './Acordion.stories.ts';
-import {AccordionModule} from "primeng/accordion";
+  FreudAccordionComponent,
+  FreudAccordionModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, Multiple, Disabled } from './Acordion.stories.ts';
+import { AccordionModule } from 'primeng/accordion';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudAccordionModule, AccordionModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }, 
+      canvas: { hidden: true },
+    },
     backgrounds: {
       default: 'Default',
       values: [
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Others/Accordion" component={FreudAccordionComponent} />
+  title="@freud-ds/web-components/Others/Accordion"
+  component={FreudAccordionComponent}
+/>
 
 <FreudHeaderComponent
   title="Accordion"
@@ -44,27 +44,33 @@ import { FreudAccordionModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Multiple
+
 <Canvas>
-  <Story story={Multiple}/>
+  <Story story={Multiple} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
+
 <ArgsTable of={FreudAccordionComponent} />

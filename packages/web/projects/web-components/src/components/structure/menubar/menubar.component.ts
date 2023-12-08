@@ -1,5 +1,11 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api/menu.interface";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FreudMenuItem } from '../../../api/menu.interface';
 
 @Component({
   selector: 'freud-menubar',
@@ -7,7 +13,12 @@ import { FreudMenuItem } from "../../../api/menu.interface";
     <p-menubar [model]="items" [autoDisplay]="autoDisplay">
       <ng-template pTemplate="start">
         <a class="menubar-home-logo" [href]="startImgHref">
-          <img [src]="startImgSrc" height="32" class="mr-2" [alt]="startImgAlt">
+          <img
+            [src]="startImgSrc"
+            height="32"
+            class="mr-2"
+            [alt]="startImgAlt"
+          />
         </a>
       </ng-template>
     </p-menubar>
@@ -16,16 +27,15 @@ import { FreudMenuItem } from "../../../api/menu.interface";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-menubar',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
 export class FreudMenubarComponent {
   @Input() items!: FreudMenuItem[];
   @Input() startImgSrc!: string;
   @Input() startImgAlt!: string;
   @Input() startImgHref!: string;
-  @Input() bgColor: boolean = false;
-  @Input() autoDisplay: boolean = false;
+  @Input() bgColor = false;
+  @Input() autoDisplay = false;
   @Output() onItemClick: EventEmitter<any> = new EventEmitter();
-
 }

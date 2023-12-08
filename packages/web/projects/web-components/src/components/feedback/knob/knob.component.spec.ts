@@ -8,9 +8,8 @@ describe('FreudKnobComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudKnobComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudKnobComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

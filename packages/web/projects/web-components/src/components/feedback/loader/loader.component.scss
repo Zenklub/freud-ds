@@ -1,7 +1,9 @@
 @import '@freud-ds/tokens/style/scss/_variables.scss';
 
 @keyframes spin {
-  to { transform: rotate(1turn); }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .freud-loader {
@@ -39,9 +41,9 @@
   position: absolute;
   top: 0;
   left: 2.35em; /* (largura - largura da barra)/2  */
-  width: .3em;
+  width: 0.3em;
   height: 1.2em;
-  border-radius: .2em;
+  border-radius: 0.2em;
   background: $brand-color-pure;
   box-shadow: 0 3.8em $brand-color-01; /* altura - altura da barra */
   transform-origin: 50% 2.5em; /* altura / 2 */

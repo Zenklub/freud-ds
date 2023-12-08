@@ -4,13 +4,12 @@
   padding: 3px $spacing-size-nano;
 }
 .freud-tag .p-tag-value {
-    font-weight: $font-weight-semibold;
-    font-size: $font-size-xxxs;
-    line-height: 18px;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xxxs;
+  line-height: 18px;
 }
 
 .freud-tag:not(.outline) {
-
   .freud-tag-primary .p-tag {
     background-color: $brand-color-pure;
   }

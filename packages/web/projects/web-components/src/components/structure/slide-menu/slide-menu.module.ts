@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FreudSlideMenuComponent } from "./slide-menu.component";
-import { SlideMenuModule } from "primeng/slidemenu";
-
-
+import { FreudSlideMenuComponent } from './slide-menu.component';
+import { SlideMenuModule } from 'primeng/slidemenu';
 
 @NgModule({
   imports: [CommonModule, SlideMenuModule],
   declarations: [FreudSlideMenuComponent],
-  exports: [FreudSlideMenuComponent]
+  exports: [FreudSlideMenuComponent],
 })
-export class FreudSlideMenuModule { }
+export class FreudSlideMenuModule {}

@@ -3,11 +3,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'freud-divider',
   template: `
-    <p-divider
-      [type]="type"
-      [layout]="layout"
-      [align]="align"
-      [style]="style">
+    <p-divider [type]="type" [layout]="layout" [align]="align" [style]="style">
       <ng-content></ng-content>
     </p-divider>
   `,
@@ -15,15 +11,13 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-divider',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
 export class FreudDividerComponent {
-
-  @Input() type: "dashed" | "dotted" | 'solid' = 'solid';
-  @Input() bgColor: boolean = false;
+  @Input() type: 'dashed' | 'dotted' | 'solid' = 'solid';
+  @Input() bgColor = false;
   @Input() style!: any;
   @Input() layout: 'horizontal' | 'vertical' = 'horizontal';
-  @Input() align!: "left" | "center" | "right" | "top" | "bottom";
-
+  @Input() align!: 'left' | 'center' | 'right' | 'top' | 'bottom';
 }

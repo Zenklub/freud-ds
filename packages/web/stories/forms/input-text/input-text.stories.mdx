@@ -1,20 +1,25 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudInputTextComponent, FreudInputTextModule } from '@freud-ds/web-components';
+import {
+  FreudInputTextComponent,
+  FreudInputTextModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   Placeholder,
-  Icon, Invalid, HelperText
+  Icon,
+  Invalid,
+  HelperText,
 } from './InputText.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudInputTextModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +29,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/InputText" component={FreudInputTextComponent} />
+  title="@freud-ds/web-components/Forms/InputText"
+  component={FreudInputTextComponent}
+/>
 
 <FreudHeaderComponent
   title="Input Text"
@@ -40,41 +47,49 @@ import { FreudInputTextModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Placeholder
+
 <Canvas>
-  <Story story={Placeholder}/>
+  <Story story={Placeholder} />
 </Canvas>
 
 ### Icon
+
 <Canvas>
-  <Story story={Icon}/>
+  <Story story={Icon} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### Helper Text
+
 <Canvas>
-  <Story story={HelperText}/>
+  <Story story={HelperText} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

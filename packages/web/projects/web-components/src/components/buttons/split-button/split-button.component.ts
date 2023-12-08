@@ -1,5 +1,11 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api/menu.interface";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FreudMenuItem } from '../../../api/menu.interface';
 
 @Component({
   selector: 'freud-split-button',
@@ -9,23 +15,22 @@ import { FreudMenuItem } from "../../../api/menu.interface";
       [disabled]="disabled"
       [model]="items"
       (onDropdownClick)="onDropdownClick.emit($event)"
-      (onClick)="onClick.emit()">
+      (onClick)="onClick.emit()"
+    >
     </p-splitButton>
   `,
   styleUrls: ['./split-button.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-split-button',
-    '[class.freud-split-bgcolor]': `bgColor`,
-  }
+    '[class.freud-split-bgcolor]': 'bgColor',
+  },
 })
 export class FreudSplitButtonComponent {
-
   @Input() label!: string;
-  @Input() disabled: boolean = false;
+  @Input() disabled = false;
   @Input() items!: FreudMenuItem[];
-  @Input() bgColor: boolean = false;
+  @Input() bgColor = false;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() onDropdownClick: EventEmitter<any> = new EventEmitter<any>();
-
 }

@@ -1,20 +1,17 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudInputMaskComponent, FreudInputMaskModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Data,
-  BGColor,
-  CPF,
-  Celular,
-  Telefone
-} from './InputMask.stories.ts';
+  FreudInputMaskComponent,
+  FreudInputMaskModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Data, BGColor, CPF, Celular, Telefone } from './InputMask.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudInputMaskModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +21,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/InputMask" component={FreudInputMaskComponent} />
+  title="@freud-ds/web-components/Forms/InputMask"
+  component={FreudInputMaskComponent}
+/>
 
 <FreudHeaderComponent
   title="Input Mask"
@@ -42,11 +41,12 @@ import { FreudInputMaskModule } from '@freud-ds/web-components';
 ## Getting Started
 
 ### Mask
+
 O formato da máscara pode ser uma combinação das seguintes definições integradas.
 
 - a - Alfa caracteres (padrão: A-Z,a-z)
 - 9 - Números (0-9)
-- * - Alfa númerico caracteres (A-Z,a-z,0-9)
+- - - Alfa númerico caracteres (A-Z,a-z,0-9)
 
 ```html
 <freud-input-mask [(ngModel)]="val" mask="a*-999-a999"></freud-input-mask>
@@ -55,35 +55,44 @@ O formato da máscara pode ser uma combinação das seguintes definições integ
 Você também pode definir seu próprio padrão regex para caracteres alfa
 
 ```html
-<freud-input-mask formControlName="username" mask="(999) 999-9999? x99999"></freud-input-mask>
+<freud-input-mask
+  formControlName="username"
+  mask="(999) 999-9999? x99999"
+></freud-input-mask>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Data
+
 <Canvas>
-  <Story story={Data}/>
+  <Story story={Data} />
 </Canvas>
 
 ### CPF
+
 <Canvas>
-  <Story story={CPF}/>
+  <Story story={CPF} />
 </Canvas>
 
 ### Celular
+
 <Canvas>
-  <Story story={Celular}/>
+  <Story story={Celular} />
 </Canvas>
 
 ### Telefone
+
 <Canvas>
-  <Story story={Telefone}/>
+  <Story story={Telefone} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

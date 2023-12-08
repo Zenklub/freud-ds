@@ -9,4 +9,4 @@ import { FreudBadgeComponent } from './badge.component';
   declarations: [FreudBadgeComponent],
   exports: [FreudBadgeComponent],
 })
-export class FreudBadgeModule { }
+export class FreudBadgeModule {}

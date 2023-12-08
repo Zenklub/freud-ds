@@ -14,9 +14,9 @@ export const Default = Template.bind({});
 
 export const Removable = Template.bind({});
 Removable.args = {
-  removable: true
-}
+  removable: true,
+};
 export const BGColor = Template.bind({});
 BGColor.args = {
-  removable: true
-}
+  removable: true,
+};

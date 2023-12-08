@@ -8,6 +8,6 @@ import { FreudBadgeModule } from '../../feedback/badge';
 @NgModule({
   imports: [CommonModule, AvatarModule, FreudBadgeModule],
   declarations: [FreudAvatarComponent],
-  exports: [FreudAvatarComponent]
+  exports: [FreudAvatarComponent],
 })
-export class FreudAvatarModule { }
+export class FreudAvatarModule {}

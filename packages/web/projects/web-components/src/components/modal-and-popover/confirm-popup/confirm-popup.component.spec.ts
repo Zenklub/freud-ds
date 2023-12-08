@@ -8,9 +8,8 @@ describe('FreudConfirmDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudConfirmPopupComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudConfirmPopupComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

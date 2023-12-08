@@ -12,12 +12,14 @@
     background-color: white;
   }
   .p-panel .p-panel-header .p-panel-header-icon,
-  .p-panel-icons .freud-btn:not(.freud-btn-bgcolor).freud-btn-color-ghost .p-button {
+  .p-panel-icons
+    .freud-btn:not(.freud-btn-bgcolor).freud-btn-color-ghost
+    .p-button {
     color: $neutral-color-dark-02;
   }
   .p-panel .p-panel-header .p-panel-header-icon:enabled:hover {
-    background: #EEE6FC;
-    border-color: #EEE6FC;
+    background: #eee6fc;
+    border-color: #eee6fc;
   }
   .p-panel-icons freud-button .p-button-label {
     display: none;

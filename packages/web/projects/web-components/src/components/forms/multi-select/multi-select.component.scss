@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-multi-select:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-multi-select.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -60,7 +62,9 @@
     transition: box-shadow 0.2s;
     border-radius: 0;
   }
-  .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
+  .p-multiselect-panel
+    .p-multiselect-items
+    .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
   }
@@ -125,4 +129,3 @@
     border-radius: $border-radius-md;
   }
 }
-

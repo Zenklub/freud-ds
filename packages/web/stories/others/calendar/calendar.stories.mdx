@@ -1,6 +1,10 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudCalendarComponent, FreudCalendarModule, FreudButtonModule } from '@freud-ds/web-components';
+import {
+  FreudCalendarComponent,
+  FreudCalendarModule,
+  FreudButtonModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
@@ -10,14 +14,14 @@ import {
   YearNavigator,
   Input,
   AppendTo,
-  MinuteStep
+  MinuteStep,
 } from './Calendar.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudCalendarModule, FreudButtonModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -27,9 +31,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Others/Calendar (TODO: fix)" component={FreudCalendarComponent} />
+  title="@freud-ds/web-components/Others/Calendar (TODO: fix)"
+  component={FreudCalendarComponent}
+/>
 
 <FreudHeaderComponent
   title="Calendar"
@@ -43,67 +49,84 @@ import { FreudCalendarModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 O card é definido com o elemento `freud-calendar`.
+
 ```html
-<freud-calendar ></freud-calendar>
+<freud-calendar></freud-calendar>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Com input
+
 <Canvas>
-  <Story story={Input}/>
+  <Story story={Input} />
 </Canvas>
 
 ### AppendTo
- default: 'body' ( renderiza o calendário no body da página ) pode ser usado com [appendTo]="mydiv" com a div com id="mydiv" 	
+
+default: 'body' ( renderiza o calendário no body da página ) pode ser usado com [appendTo]="mydiv" com a div com id="mydiv"
+
 <Canvas>
-  <Story story={AppendTo}/>
+  <Story story={AppendTo} />
 </Canvas>
 
 ### TimeOnly
+
 Utilize a propriedade `timeOnly` para exibir somente as horas, e a propriedade `hourFormat` para alternar a visualização
 entre `12` e `24` horas
+
 <Canvas>
-  <Story story={TimeOnly}/>
+  <Story story={TimeOnly} />
 </Canvas>
 
 ### MinuteStep
+
 Utilize a propriedade `MinuteStep` para controlar a quantidadede passos a clicar no seletor de minutos.
+
 <Canvas>
-  <Story story={MinuteStep}/>
+  <Story story={MinuteStep} />
 </Canvas>
 
 ### MonthView
+
 Utilize a propriedade `view` para exibir o calendário em formato de Mês.
+
 <Canvas>
-  <Story story={MonthView}/>
+  <Story story={MonthView} />
 </Canvas>
 
 ### YearNavigator
+
 <Canvas>
-  <Story story={YearNavigator}/>
+  <Story story={YearNavigator} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
 ### DateFormat
+
 Default date format is dd/mm/yy, to customize this use dateFormat property.
 
 ```html
 <freud-calendar dateFormat="dd.mm.yy"></freud-calendar>
 ```
+
 Following options can be a part of the format.
 
 - d - day of month (no leading zero)
@@ -123,6 +146,5 @@ Following options can be a part of the format.
 - '...' - literal text
 - '' - single quote
 - anything else - literal text
-
 
 <ArgsTable of={FreudCalendarComponent} />

@@ -4,8 +4,9 @@ import {
   EventEmitter,
   Input,
   Output,
-  QueryList, ViewChild,
-  ViewEncapsulation
+  QueryList,
+  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 
 @Component({
@@ -19,19 +20,17 @@ import {
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-accordion-tab',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
-
 export class FreudAccordionTabComponent {
-  @Input() disabled: boolean = false;
-  @Input() tabindex: number = 0;
-  @Input() selected: boolean = false;
+  @Input() disabled = false;
+  @Input() tabindex = 0;
+  @Input() selected = false;
   @Input() header!: string;
   @Input() style!: any;
-  @Input() bgColor: boolean = false;
+  @Input() bgColor = false;
   @ViewChild('ref') ref!: any;
-
 }
 
 @Component({
@@ -45,37 +44,38 @@ export class FreudAccordionTabComponent {
       [collapseIcon]="collapseIcon"
       [style]="style"
       (onOpen)="onOpen.emit($event)"
-      (onClose)="onClose.emit($event)">
-        <ng-container *ngFor="let template of templates">
-          <p-accordionTab
-            [disabled]="template.disabled"
-            [selected]="template.selected"
-            [tabindex]="template.tabindex"
-            [header]="template.header"
-            [style]="template.style">
-            <div [innerHTML]="template.ref?.nativeElement?.innerHTML"></div>
-          </p-accordionTab>
-        </ng-container>
+      (onClose)="onClose.emit($event)"
+    >
+      <ng-container *ngFor="let template of templates">
+        <p-accordionTab
+          [disabled]="template.disabled"
+          [selected]="template.selected"
+          [tabindex]="template.tabindex"
+          [header]="template.header"
+          [style]="template.style"
+        >
+          <div [innerHTML]="template.ref?.nativeElement?.innerHTML"></div>
+        </p-accordionTab>
+      </ng-container>
     </p-accordion>
   `,
   styleUrls: ['./accordion.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-accordion',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
-
 export class FreudAccordionComponent {
   @Input() style!: any;
-  @Input() tabindex: number = 0;
-  @Input() multiple: boolean = false;
-  @Input() collapseIcon: string = 'freud-icon freud-icon-chevron-down';
-  @Input() expandIcon: string = 'freud-icon freud-icon-chevron-right';
+  @Input() tabindex = 0;
+  @Input() multiple = false;
+  @Input() collapseIcon = 'freud-icon freud-icon-chevron-down';
+  @Input() expandIcon = 'freud-icon freud-icon-chevron-right';
   @Input() activeIndex!: number;
-  @Input() bgColor: boolean = false;
-  @ContentChildren(FreudAccordionTabComponent) templates!: QueryList<FreudAccordionTabComponent>;
+  @Input() bgColor = false;
+  @ContentChildren(FreudAccordionTabComponent)
+  templates!: QueryList<FreudAccordionTabComponent>;
   @Output() onClose: EventEmitter<any> = new EventEmitter<any>();
   @Output() onOpen: EventEmitter<any> = new EventEmitter<any>();
-
 }

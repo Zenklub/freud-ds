@@ -1,26 +1,25 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudTableComponent, FreudTableModule, FreudTemplateModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Basic,
-  Sort,
-  BGColor,
-  CaptionAndSummary
-} from './Table.stories.ts';
-import {CommonModule} from "@angular/common";
+  FreudTableComponent,
+  FreudTableModule,
+  FreudTemplateModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Basic, Sort, BGColor, CaptionAndSummary } from './Table.stories.ts';
+import { CommonModule } from '@angular/common';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudTableModule, FreudTemplateModule, CommonModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -28,9 +27,11 @@ import {CommonModule} from "@angular/common";
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Others/Table" component={FreudTableComponent} />
+  title="@freud-ds/web-components/Others/Table"
+  component={FreudTableComponent}
+/>
 
 <FreudHeaderComponent
   title="Table"
@@ -40,10 +41,14 @@ title="@freud-ds/web-components/Others/Table" component={FreudTableComponent} />
 ## <a id="importing"></a>Import
 
 ```ts
-import { FreudTableModule, FreudTemplateModule } from '@freud-ds/web-components';
+import {
+  FreudTableModule,
+  FreudTemplateModule,
+} from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 A tabela requer um valor como uma matriz de objetos e modelos para a apresentação.
 
 ```ts
@@ -61,26 +66,27 @@ cars: Car[];
 
 ```html
 <freud-table [value]="cars">
-    <ng-template freudTemplate="header">
-        <tr>
-            <th>Vin</th>
-            <th>Year</th>
-            <th>Brand</th>
-            <th>Color</th>
-        </tr>
-    </ng-template>
-    <ng-template freudTemplate="body" let-item="item">
-        <tr>
-            <td>{{item.vin}}</td>
-            <td>{{item.year}}</td>
-            <td>{{item.brand}}</td>
-            <td>{{item.color}}</td>
-        </tr>
-    </ng-template>
+  <ng-template freudTemplate="header">
+    <tr>
+      <th>Vin</th>
+      <th>Year</th>
+      <th>Brand</th>
+      <th>Color</th>
+    </tr>
+  </ng-template>
+  <ng-template freudTemplate="body" let-item="item">
+    <tr>
+      <td>{{item.vin}}</td>
+      <td>{{item.year}}</td>
+      <td>{{item.brand}}</td>
+      <td>{{item.color}}</td>
+    </tr>
+  </ng-template>
 </freud-table>
 ```
 
 ### Dynamic
+
 É possível criar a tabela dinamicamente enviando as colunas para a tabela e recuperando nos templates
 
 ```
@@ -89,76 +95,87 @@ columns: string[] = ['vin', 'year', 'brand', 'color'];
 ```
 
 ```html
-  <freud-table [value]="value" [columns]="columns">
-      <ng-template freudTemplate="header" let-columns="columns">
-            <tr><th *ngFor="let col of columns">{{col}}</th></tr>
-        </ng-template>
-      <ng-template freudTemplate="body" let-item="item" let-columns="columns">
-          <tr>
-              <td *ngFor="let col of columns">{{item[col]}}</td>
-          </tr>
-      </ng-template>
-  </freud-table>
+<freud-table [value]="value" [columns]="columns">
+  <ng-template freudTemplate="header" let-columns="columns">
+    <tr>
+      <th *ngFor="let col of columns">{{col}}</th>
+    </tr>
+  </ng-template>
+  <ng-template freudTemplate="body" let-item="item" let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">{{item[col]}}</td>
+    </tr>
+  </ng-template>
+</freud-table>
 ```
 
 ### Sort
+
 É possível ordenar as colunas a partir de 2 diretivas no freudTemplate header.
 
 ```html
-  <freud-table [value]="value" [columns]="columns">
-      <ng-template freudTemplate="header" let-columns="columns">
-            <tr>
-                <th freudSortableColumn="{{col}}" *ngFor="let col of columns">{{col}} <freud-sortIcon field="{{col}}"></freud-sortIcon></th>
-            </tr>
-        </ng-template>
-  </freud-table>
+<freud-table [value]="value" [columns]="columns">
+  <ng-template freudTemplate="header" let-columns="columns">
+    <tr>
+      <th freudSortableColumn="{{col}}" *ngFor="let col of columns">
+        {{col}} <freud-sortIcon field="{{col}}"></freud-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+</freud-table>
 ```
 
 ### Caption and Summary
+
 Utilize os templates de `caption` e `summary` para incluir um header e footer personalizado na tabela
 
 ```html
-  <freud-table [value]="value" [columns]="columns">
-      <ng-template freudTemplate="caption">
-          <div class="p-d-flex p-ai-center p-jc-between">
-              Products
-              <p-button icon="pi pi-refresh"></p-button>
-          </div>
-      </ng-template>
+<freud-table [value]="value" [columns]="columns">
+  <ng-template freudTemplate="caption">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      Products
+      <p-button icon="pi pi-refresh"></p-button>
+    </div>
+  </ng-template>
 
-     // Outros templates
+  // Outros templates
 
-      <ng-template freudTemplate="summary">
-          <div class="p-d-flex p-ai-center p-jc-between">
-              In total there are {{value ? value.length : 0 }} products.
-          </div>
-      </ng-template>
-  </freud-table>
+  <ng-template freudTemplate="summary">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      In total there are {{value ? value.length : 0 }} products.
+    </div>
+  </ng-template>
+</freud-table>
 ```
 
-
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Basic}/>
+  <Story story={Basic} />
 </Canvas>
 
 ### Sort
+
 <Canvas>
-  <Story story={Sort}/>
+  <Story story={Sort} />
 </Canvas>
 
 ### Caption and Summary
+
 <Canvas>
-  <Story story={CaptionAndSummary}/>
+  <Story story={CaptionAndSummary} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
+
 <ArgsTable of={FreudTableComponent} />

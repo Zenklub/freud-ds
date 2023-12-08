@@ -2,7 +2,7 @@ import { Story } from '@storybook/angular';
 import { FreudProgressBarComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudProgressBarComponent> = (
-  args: FreudProgressBarComponent
+  args: FreudProgressBarComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -13,15 +13,15 @@ const Template: Story<FreudProgressBarComponent> = (
 
 export const Default = Template.bind({});
 Default.args = {
-  bgColor: false
-}
+  bgColor: false,
+};
 
 export const Indeterminate = Template.bind({});
 Indeterminate.args = {
   bgColor: false,
-  mode: 'indeterminate'
-}
+  mode: 'indeterminate',
+};
 export const BGColor = Template.bind({});
 BGColor.args = {
-  bgColor: true
-}
+  bgColor: true,
+};

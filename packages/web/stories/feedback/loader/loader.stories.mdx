@@ -1,18 +1,17 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudLoaderComponent, FreudLoaderModule } from "../../../projects/web-components/src/components/feedback/loader";
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-  Size
-} from './Loader.stories';
+  FreudLoaderComponent,
+  FreudLoaderModule,
+} from '../../../projects/web-components/src/components/feedback/loader';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, Size } from './Loader.stories';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudLoaderModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -22,9 +21,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-  title="@freud-ds/web-components/Feedback/Loader" component={FreudLoaderComponent} />
+  title="@freud-ds/web-components/Feedback/Loader"
+  component={FreudLoaderComponent}
+/>
 
 <FreudHeaderComponent
   title="Loader"
@@ -38,21 +39,25 @@ import { FreudLoaderModule, StepMenu } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ### Size (Default, Large)
+
 <Canvas>
-  <Story story={Size}/>
+  <Story story={Size} />
 </Canvas>
 
 ## <a id="api"></a>API

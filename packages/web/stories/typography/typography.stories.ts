@@ -3,28 +3,28 @@ import { Story } from '@storybook/angular';
 import { FreudTypographyComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
     <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">{{label}}</p>
-  `
+  `,
 });
 export const HeadingBGColor = Template.bind({});
-HeadingBGColor.storyName = 'BG Color'
+HeadingBGColor.storyName = 'BG Color';
 HeadingBGColor.args = {
   fontType: 'h1BoldAuto',
-  fontBgColor: true
+  fontBgColor: true,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   fontType: 'bodyRegular1-5',
-  fontBgColor: true
+  fontBgColor: true,
 };
 
 const TemplateRegular: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -58,14 +58,14 @@ const TemplateRegular: Story<FreudTypographyComponent> = (
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h3RegularAuto'">h3/regular-400/line-height-Auto (h3RegularAuto)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h2RegularAuto'">h2/regular-400/line-height-Auto (h2RegularAuto)</p>
     <p freud-typography [fontType]="'h1RegularAuto'">h1/regular-400/line-height-auto (h1RegularAuto)</p>
-  `
+  `,
 });
 
 export const HeadingRegular = TemplateRegular.bind({});
 
 // Heading semibold
 const TemplateSemibold: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -99,14 +99,14 @@ const TemplateSemibold: Story<FreudTypographyComponent> = (
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3SemiboldAuto'">h3/Semibold-600/line-height-Auto (h3SemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2SemiboldAuto'">h2/Semibold-600/line-height-Auto (h2SemiboldAuto)</p>
   <p freud-typography [fontType]="'h1SemiboldAuto'">h1/Semibold-600/line-height-auto (h1RegularAuto)</p>
-  `
+  `,
 });
 
 export const HeadingSemibold = TemplateSemibold.bind({});
 
 // Heading Bold
 const TemplateBold: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -140,7 +140,7 @@ const TemplateBold: Story<FreudTypographyComponent> = (
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h3BoldAuto'">h3/Bold-700/line-height-Auto (h3BoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'h2BoldAuto'">h2/Bold-700/line-height-Auto (h2BoldAuto)</p>
   <p freud-typography [fontType]="'h1BoldAuto'">h1/Bold-700/line-height-auto (h1BoldAuto)</p>
-  `
+  `,
 });
 
 export const HeadingBold = TemplateBold.bind({});
@@ -148,7 +148,7 @@ export const HeadingBold = TemplateBold.bind({});
 // Text
 // Text Regular
 const TemplateTextRegular: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -166,14 +166,14 @@ const TemplateTextRegular: Story<FreudTypographyComponent> = (
     <br><br>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'smallRegularAuto'">small/regular-400/line-height-Auto (smallRegularAuto)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'bodyRegularAuto'">body/regular-400/line-height-Auto (bodyRegularAuto)</p>
-  `
+  `,
 });
 
 export const TextRegular = TemplateTextRegular.bind({});
 
 // Text semibold
 const TemplateTextSemibold: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -191,14 +191,14 @@ const TemplateTextSemibold: Story<FreudTypographyComponent> = (
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallSemiboldAuto'">small/Semibold-600/line-height-Auto (smallSemiboldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodySemiboldAuto'">body/Semibold-600/line-height-Auto (bodySemiboldAuto)</p>
-  `
+  `,
 });
 
 export const TextSemibold = TemplateTextSemibold.bind({});
 
 // Text Bold
 const TemplateTextBold: Story<FreudTypographyComponent> = (
-  args: FreudTypographyComponent
+  args: FreudTypographyComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -216,7 +216,7 @@ const TemplateTextBold: Story<FreudTypographyComponent> = (
   <br><br>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'smallBoldAuto'">small/Bold-700/line-height-Auto (smallBoldAuto)</p>
   <p style="margin-bottom: 8px" freud-typography [fontType]="'bodyBoldAuto'">body/Bold-700/line-height-Auto (bodyBoldAuto)</p>
-  `
+  `,
 });
 
 export const TextBold = TemplateTextBold.bind({});

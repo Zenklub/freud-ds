@@ -1,17 +1,30 @@
-import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs';
+import {
+  Meta,
+  Canvas,
+  Story,
+  ArgsTable,
+  SourceState,
+} from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudButtonComponent, FreudButtonModule } from '@freud-ds/web-components';
+import {
+  FreudButtonComponent,
+  FreudButtonModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header';
 import {
   ButtonTest,
   Primary,
   Secondary,
   Ghost,
-  BGColorPrimary, BGColorSecondary, BGColorGhost,
-  SizeLg, SizeMd, SizeSm,
+  BGColorPrimary,
+  BGColorSecondary,
+  BGColorGhost,
+  SizeLg,
+  SizeMd,
+  SizeSm,
   Disabled,
   Loading,
-  IconOnly, 
+  IconOnly,
   WithIconRight,
   WithIconLeft,
   WithNGContent,
@@ -21,7 +34,7 @@ import {
   decorators={[
     moduleMetadata({
       imports: [FreudButtonModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -31,9 +44,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent} />
+  title="@freud-ds/web-components/Buttons/Button"
+  component={FreudButtonComponent}
+/>
 
 <FreudHeaderComponent
   title="Button"
@@ -41,13 +56,16 @@ title="@freud-ds/web-components/Buttons/Button" component={FreudButtonComponent}
 />
 
 ## Pré-requisitos
+
 Estes são alguns pré-requisitos necessários para utilizar os botões do Freud DS:
 
 ### Libs
-É necessário instalar a lib de componentes do Freud DS para utilizar os botões. Para instalar, rode o comando abaixo 
+
+É necessário instalar a lib de componentes do Freud DS para utilizar os botões. Para instalar, rode o comando abaixo
 no terminal do seu projeto:
 
 #### Web Components
+
 ```bash
 npm i @freud-ds/web-components
 ```
@@ -55,9 +73,11 @@ npm i @freud-ds/web-components
 ### Imports
 
 #### Módulo
+
 Importe o `FreudButtonModule` em cada módulo que for utilizar o `FreudButtonComponent`. Utilizando o código:
+
 ```ts
-import { FreudButtonModule } from '@freud-ds/web-components'; 
+import { FreudButtonModule } from '@freud-ds/web-components';
 
 @NgModule({
   imports: [
@@ -68,81 +88,91 @@ import { FreudButtonModule } from '@freud-ds/web-components';
 ```
 
 ## Teste os botões
-Clique em ``Button Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
+
+Clique em `Button Test` (na lista de componentes no canto esquerdo) e depois em `Canvas` (no canto superior esquerdo dessa página)
 para ter acesso a área de testes, onde você pode testar todos os parâmetros do componente `Button`.
 
 <Canvas sourceState={SourceState.NONE}>
-  <Story story={ButtonTest}/>
+  <Story story={ButtonTest} />
 </Canvas>
 
 ## Exemplos de utilização
 
 ### Colors
+
 Por padrão, o botão será exibido na cor `primary` em qualquer situação, mas você pode mudar isso utilizando o parâmetro `color`.
 
 #### Theme
+
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={Primary}/>
-  <Story story={Secondary}/>
-  <Story story={Ghost}/>
+  <Story story={Primary} />
+  <Story story={Secondary} />
+  <Story story={Ghost} />
 </Canvas>
 
 #### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }} sourceState={SourceState.OPEN}>
-  <Story story={BGColorPrimary}/>
-  <Story story={BGColorSecondary}/>
-  <Story story={BGColorGhost}/>
+  <Story story={BGColorPrimary} />
+  <Story story={BGColorSecondary} />
+  <Story story={BGColorGhost} />
 </Canvas>
 
 ### Sizes
+
 Por padrão, o botão será exibido no tamanho `md`, mas você pode mudar isso utilizando o parâmetro `size`.
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={SizeLg}/>
-  <Story story={SizeMd}/>
-  <Story story={SizeSm}/>
+  <Story story={SizeLg} />
+  <Story story={SizeMd} />
+  <Story story={SizeSm} />
 </Canvas>
 
 ### Disabled
+
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### Loading
+
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={Loading}/>
+  <Story story={Loading} />
 </Canvas>
 
 ### With icon
 
 #### Icon Only
+
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={IconOnly}/>
+  <Story story={IconOnly} />
 </Canvas>
 
 #### Icon position
+
 Por padrão, o ícone será exibido a esquerda do `label`, mas você pode mudar isso utilizando o parâmetro `iconPos`.
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={WithIconLeft}/>
-  <Story story={WithIconRight}/>
+  <Story story={WithIconLeft} />
+  <Story story={WithIconRight} />
 </Canvas>
 
 ## Outra forma de utilização
-Além de utilizar `label`, você também pode utilizar outro meio para inserir o texto do botão, o `ng-content`. 
+
+Além de utilizar `label`, você também pode utilizar outro meio para inserir o texto do botão, o `ng-content`.
 Porém **recomenda-se** utilizar da forma apresentada acima, com o `label`, que é a forma padrão do Freud DS.
-Caso você opte por utilizar o `ng-content`, leve em consideração que **não** será possível mudar a posição do ícone no componente, 
+Caso você opte por utilizar o `ng-content`, leve em consideração que **não** será possível mudar a posição do ícone no componente,
 isso só ocorre com a utilização do `label`.
 
-**ATENÇÃO**: se você já utilizava o componente `Button` antes dessa atualização, é necessário e recomendado alterar a utilização do texto do botão de `ng-content` para `label`, 
+**ATENÇÃO**: se você já utilizava o componente `Button` antes dessa atualização, é necessário e recomendado alterar a utilização do texto do botão de `ng-content` para `label`,
 garantindo que você possa modificar a posição do ícone do botão, além de estar utilizando o novo padrão estabelecido pelo Freud DS.
 
-Para utilizar é simples, basta não passar o `label` e inserir o texto dentro da *tag* do componente, como no exemplo abaixo:
+Para utilizar é simples, basta não passar o `label` e inserir o texto dentro da _tag_ do componente, como no exemplo abaixo:
 
 **--> os outros parâmetros continuam funcionando da mesma forma!**
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={WithNGContent}/>
+  <Story story={WithNGContent} />
 </Canvas>
 
 ## API

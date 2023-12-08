@@ -1,5 +1,12 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api/menu.interface";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FreudMenuItem } from '../../../api/menu.interface';
 
 @Component({
   selector: 'freud-menu',
@@ -17,16 +24,14 @@ import { FreudMenuItem } from "../../../api/menu.interface";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-menu',
-  }
+  },
 })
 export class FreudMenuComponent {
-
   @Input() items!: FreudMenuItem[];
-  @Input() popup: boolean = false;
+  @Input() popup = false;
   @Input() appendTo!: string;
 
   @Output() onShow: EventEmitter<any> = new EventEmitter<any>();
   @Output() onHide: EventEmitter<any> = new EventEmitter<any>();
   @ViewChild('pMenu') reference!: any;
-
 }

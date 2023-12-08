@@ -7,22 +7,29 @@ import {
   Success,
   Info,
   Warning,
-  Error, OutlineDefault, OutlineSuccess, OutlineInfo, OutlineWarning, OutlineError, BGColor, BGColorOutline,
+  Error,
+  OutlineDefault,
+  OutlineSuccess,
+  OutlineInfo,
+  OutlineWarning,
+  OutlineError,
+  BGColor,
+  BGColorOutline,
 } from './Tag.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudTagModule],
-    })
+    }),
   ]}
   argTypes={{
     color: {
       control: {
         type: 'select',
-        options: ["primary", "success", "info", "warning", "error"]
+        options: ['primary', 'success', 'info', 'warning', 'error'],
       },
-    }
+    },
   }}
   parameters={{
     layout: 'centered',
@@ -32,7 +39,7 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   title="@freud-ds/web-components/Feedback/Tag"
   component={FreudTagComponent}
@@ -50,34 +57,39 @@ import FreudTagModule from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Theme
+
 <Canvas>
-  <Story story={Default}/>
-  <Story story={Success}/>
-  <Story story={Info}/>
-  <Story story={Warning}/>
-  <Story story={Error}/>
+  <Story story={Default} />
+  <Story story={Success} />
+  <Story story={Info} />
+  <Story story={Warning} />
+  <Story story={Error} />
 </Canvas>
 
 ### Outline
+
 <Canvas>
-  <Story story={OutlineDefault}/>
-  <Story story={OutlineSuccess}/>
-  <Story story={OutlineInfo}/>
-  <Story story={OutlineWarning}/>
-  <Story story={OutlineError}/>
+  <Story story={OutlineDefault} />
+  <Story story={OutlineSuccess} />
+  <Story story={OutlineInfo} />
+  <Story story={OutlineWarning} />
+  <Story story={OutlineError} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ### BG Color Outline
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColorOutline}/>
+  <Story story={BGColorOutline} />
 </Canvas>
 
 ## <a id="api"></a>API

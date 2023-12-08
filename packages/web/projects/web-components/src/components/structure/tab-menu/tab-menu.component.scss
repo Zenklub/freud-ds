@@ -1,9 +1,7 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-
 .freud-tab-menu {
-
   &:not(.freud-bgcolor) {
     .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
       color: $neutral-color-dark-02;
@@ -26,7 +24,10 @@
       border-width: 0 0 2px 0;
     }
     .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link,
-    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+    .p-tabmenu
+      .p-tabmenu-nav
+      .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover
+      .p-menuitem-link {
       background-color: transparent;
       border-color: $brand-color-01;
       color: $brand-color-01;
@@ -46,7 +47,10 @@
     @include typography($font-size-xs, $font-weight-semibold, auto);
   }
 
-  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+  .p-tabmenu
+    .p-tabmenu-nav
+    .p-tabmenuitem
+    .p-menuitem-link:not(.p-disabled):focus {
     box-shadow: unset;
   }
 }

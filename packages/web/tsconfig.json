@@ -5,7 +5,7 @@
     "baseUrl": "./",
     "paths": {
       "@freud-ds/web-components": ["projects/web-components/src/public-api"],
-      "@freud-ds/icons": ["../../packages/icons/src/index"],
+      "@freud-ds/icons": ["../../packages/icons/src/index"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -20,10 +20,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
+    "lib": ["ES2022", "dom"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "react"
@@ -33,5 +30,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  },
+  }
 }

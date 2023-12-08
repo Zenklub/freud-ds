@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api/menu.interface";
+import { FreudMenuItem } from '../../../api/menu.interface';
 
 @Component({
   selector: 'freud-tab-menu',
@@ -14,13 +14,11 @@ import { FreudMenuItem } from "../../../api/menu.interface";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-tab-menu',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
 export class FreudTabMenuComponent {
-
   @Input() items!: FreudMenuItem[];
   @Input() activeItem!: FreudMenuItem;
-  @Input() bgColor: boolean = false;
-
+  @Input() bgColor = false;
 }

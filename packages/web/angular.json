@@ -58,12 +58,7 @@
               "./stories/header/header.component.scss"
             ],
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "."
-            ]
+            "compodocArgs": ["-e", "json", "-d", "."]
           }
         },
         "build-storybook": {
@@ -77,12 +72,7 @@
               "./stories/header/header.component.scss"
             ],
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "."
-            ]
+            "compodocArgs": ["-e", "json", "-d", "."]
           }
         }
       }

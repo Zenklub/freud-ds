@@ -28,16 +28,17 @@ type iconPos = 'left' | 'right';
   `,
   host: {
     class: 'freud-btn',
-    '[class.freud-btn-color-primary]': `!['secondary', 'ghost'].includes(color)`,
-    '[class.freud-btn-color-secondary]': `color === 'secondary'`,
-    '[class.freud-btn-color-ghost]': `color === 'ghost'`,
+    '[class.freud-btn-color-primary]':
+      "!['secondary', 'ghost'].includes(color)",
+    '[class.freud-btn-color-secondary]': "color === 'secondary'",
+    '[class.freud-btn-color-ghost]': "color === 'ghost'",
 
-    '[class.freud-btn-bgcolor]': `bgColor`,
-    '[class.freud-btn-loading]': `loading`,
+    '[class.freud-btn-bgcolor]': 'bgColor',
+    '[class.freud-btn-loading]': 'loading',
 
-    '[class.freud-btn-size-small]': `size === 'sm'`,
-    '[class.freud-btn-size-medium]': `size === 'md'`,
-    '[class.freud-btn-size-large]': `size === 'lg'`,
+    '[class.freud-btn-size-small]': "size === 'sm'",
+    '[class.freud-btn-size-medium]': "size === 'md'",
+    '[class.freud-btn-size-large]': "size === 'lg'",
   },
 })
 export class FreudButtonComponent {
@@ -54,7 +55,7 @@ export class FreudButtonComponent {
   @Input() disabled = false;
   @Input() type!: string;
   @Input() loading = false;
-  @Input() icon: string = '';
-  @Input() label: string = '';
+  @Input() icon = '';
+  @Input() label = '';
   @Input() iconPos: iconPos = 'left';
 }

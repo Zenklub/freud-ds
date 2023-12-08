@@ -1,20 +1,24 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudListboxComponent, FreudListboxModule } from '@freud-ds/web-components';
+import {
+  FreudListboxComponent,
+  FreudListboxModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
-  Checkbox, Filter,
-  CheckboxAndFilter
+  Checkbox,
+  Filter,
+  CheckboxAndFilter,
 } from './Listbox.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudListboxModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,9 +28,11 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
-title="@freud-ds/web-components/Forms/Listbox" component={FreudListboxComponent} />
+  title="@freud-ds/web-components/Forms/Listbox"
+  component={FreudListboxComponent}
+/>
 
 <FreudHeaderComponent
   title="Listbox"
@@ -40,69 +46,82 @@ import { FreudListboxModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 Listbox requer um valor para vincular e uma coleção de opções.
+
 ```html
-<freud-listbox [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></freud-listbox>
+<freud-listbox
+  [options]="cities"
+  [(ngModel)]="selectedCity"
+  optionLabel="name"
+></freud-listbox>
 ```
 
 ```ts
 interface City {
-    name: string,
-    code: string
+  name: string;
+  code: string;
 }
 
 export class ListboxDemo {
+  cities: City[];
 
-    cities: City[];
+  selectedCity: City;
 
-    selectedCity: City;
-
-    constructor() {
-        this.cities = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
-        ];
-    }
-
+  constructor() {
+    this.cities = [
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },
+    ];
+  }
 }
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Filter
+
 Utilize a propriedade `filter` para habilitar um input para filtrar os resultados
+
 <Canvas>
-  <Story story={Filter}/>
+  <Story story={Filter} />
 </Canvas>
 
 ### Checkbox
+
 Utilize as propriedades `multiple` e `checkbox` para habilitar a multipla seleção com checkbox
+
 <Canvas>
-  <Story story={Checkbox}/>
+  <Story story={Checkbox} />
 </Canvas>
 
 ### Checkbox and Filter
+
 <Canvas>
-  <Story story={CheckboxAndFilter}/>
+  <Story story={CheckboxAndFilter} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

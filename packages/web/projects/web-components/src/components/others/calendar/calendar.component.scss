@@ -1,5 +1,5 @@
-@import "../../../../../../../tokens/dist/style/scss/variables";
-@import "../../../../scss/typography";
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
 
 .calendar__wrapper {
   display: flex;
@@ -65,7 +65,10 @@ button.p-datepicker-next:enabled:hover {
   @include typography($font-size-xs, $font-weight-bold, auto);
 }
 
-.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+.p-datepicker:not(.p-disabled)
+  table
+  td
+  span:not(.p-highlight):not(.p-disabled):hover {
   color: $neutral-color-dark-02;
   background-color: $neutral-color-light-03;
 }
@@ -104,13 +107,17 @@ table {
   color: $neutral-color-dark-02;
 }
 
-.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-highlight):not(.p-disabled):hover {
+.p-datepicker:not(.p-disabled)
+  .p-monthpicker
+  .p-monthpicker-month:not(.p-highlight):not(.p-disabled):hover {
   color: $neutral-color-white;
   background-color: $brand-color-03;
   border-radius: $border-radius-md;
 }
 
-.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-highlight):not(.p-disabled):focus {
+.p-datepicker:not(.p-disabled)
+  .p-monthpicker
+  .p-monthpicker-month:not(.p-highlight):not(.p-disabled):focus {
   box-shadow: unset;
 }
 

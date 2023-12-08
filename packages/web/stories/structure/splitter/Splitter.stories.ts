@@ -1,7 +1,9 @@
 import { FreudSplitterComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
-const Template: Story<FreudSplitterComponent> = (args: FreudSplitterComponent) => ({
+const Template: Story<FreudSplitterComponent> = (
+  args: FreudSplitterComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-splitter [panelSizes]="panelSizes" [style]="{'height': '300px'}" [layout]="layout">
@@ -23,7 +25,7 @@ export const Default = Template.bind({});
 
 export const Vertical = Template.bind({});
 Vertical.args = {
-  layout: 'vertical'
-}
+  layout: 'vertical',
+};
 
 export const BGColor = Template.bind({});

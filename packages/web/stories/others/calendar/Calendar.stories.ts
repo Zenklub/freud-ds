@@ -1,11 +1,16 @@
 import { Meta, Story } from '@storybook/angular';
-import { FreudCalendarComponent, FreudCalendarModule } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  FreudCalendarComponent,
+  FreudCalendarModule,
+} from '@freud-ds/web-components';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
-const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) => ({
+const Template: Story<FreudCalendarComponent> = (
+  args: FreudCalendarComponent,
+) => ({
   props: { ...args },
   template: `
     <div style="min-height: 400px;">
@@ -41,26 +46,22 @@ const Template: Story<FreudCalendarComponent> = (args: FreudCalendarComponent) =
 export const Default = Template.bind({});
 Default.args = {
   value: new Date(),
-  yearRange: '2000:2030'
-}
-
-
+  yearRange: '2000:2030',
+};
 
 export const TimeOnly = Template.bind({});
 TimeOnly.args = {
   value: new Date(),
   timeOnly: true,
   hourFormat: '12',
-}
+};
 
 export const MinuteStep = Template.bind({});
 MinuteStep.args = {
   value: new Date(),
   timeOnly: true,
-  stepMinute: 10
-}
-
-
+  stepMinute: 10,
+};
 
 export const Input = Template.bind({});
 Input.args = {
@@ -70,8 +71,8 @@ Input.args = {
   timeOnly: false,
   hourFormat: '12',
   showTime: false,
-  yearRange: '2000:2030'
-}
+  yearRange: '2000:2030',
+};
 
 export const AppendTo = Template.bind({});
 AppendTo.args = {
@@ -81,8 +82,8 @@ AppendTo.args = {
   timeOnly: false,
   hourFormat: '12',
   showTime: false,
-  yearRange: '2000:2030'
-}
+  yearRange: '2000:2030',
+};
 
 export const MonthView = Template.bind({});
 MonthView.args = {
@@ -92,8 +93,8 @@ MonthView.args = {
   hourFormat: '12',
   yearNavigator: false,
   view: 'month',
-  yearRange: '2000:2030'
-}
+  yearRange: '2000:2030',
+};
 
 export const YearNavigator = Template.bind({});
 YearNavigator.args = {
@@ -101,12 +102,12 @@ YearNavigator.args = {
   timeOnly: false,
   showTime: false,
   yearNavigator: true,
-  yearRange: '2000:2030'
-}
+  yearRange: '2000:2030',
+};
 export const BGColor = Template.bind({});
 BGColor.args = {
   value: new Date(),
-}
+};
 
 export default {
   decorators: [
@@ -115,9 +116,9 @@ export default {
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
-        FreudCalendarModule
+        FreudCalendarModule,
       ],
-      declarations: []
-    })
-  ]
+      declarations: [],
+    }),
+  ],
 } as Meta;

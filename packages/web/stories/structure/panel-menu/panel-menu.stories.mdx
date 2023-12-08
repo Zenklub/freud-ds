@@ -1,22 +1,20 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudPanelMenuComponent, FreudPanelMenuModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-} from './PanelMenu.stories.ts';
+  FreudPanelMenuComponent,
+  FreudPanelMenuModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor } from './PanelMenu.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudPanelMenuModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudPanelMenuModule] })]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   }}
   title="@freud-ds/web-components/Structure/PanelMenu"
   component={FreudPanelMenuComponent}
@@ -34,7 +32,9 @@ import { FreudPanelMenuModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 FreudPanelMenu requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+
 ```ts
 import { FreudMenuItem } from '@freud-ds/web-components';
 
@@ -64,24 +64,26 @@ items: FreudMenuItem[] = [
   }
 ]
 ```
+
 ```html
-      <freud-panel-menu
-          [styleParams]="{'width':'400px'}"
-          [items]="items">
+<freud-panel-menu [styleParams]="{'width':'400px'}" [items]="items">
 </freud-panel-menu>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API

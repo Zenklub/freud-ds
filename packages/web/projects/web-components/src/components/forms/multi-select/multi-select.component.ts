@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-multi-select',
@@ -14,7 +14,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
       <p-multiSelect
         [id]="id"
         [class.ng-invalid]="invalid"
@@ -43,42 +48,44 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-multi-select',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudMultiSelectComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudMultiSelectComponent implements ControlValueAccessor {
-  @Input() label: string = '';
+  @Input() label = '';
   @Input() options!: any[];
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
-  @Input() virtualScroll: boolean = false;
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
+  @Input() virtualScroll = false;
   @Input() itemSize!: number;
-  @Input() emptyMessage: string = 'Sem resultados';
-  @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
+  @Input() emptyMessage = 'Sem resultados';
+  @Input() dropdownIcon = 'freud-icon freud-icon-chevron-down';
   @Input() optionLabel!: string;
   @Input() optionValue!: string;
-  @Input() optionDisabled: string = 'disabled';
-  @Input() optionGroupLabel: string = 'label';
-  @Input() optionGroupChildren: string = 'items';
-  @Input() characterPattern: string = '';
+  @Input() optionDisabled = 'disabled';
+  @Input() optionGroupLabel = 'label';
+  @Input() optionGroupChildren = 'items';
+  @Input() characterPattern = '';
   @Input() display: 'comma' | 'chip' = 'comma';
-  @Input() autoClear: boolean = true;
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -106,26 +113,24 @@ export class FreudMultiSelectComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
     this.valueChange.emit(v);
   }
-
 }
