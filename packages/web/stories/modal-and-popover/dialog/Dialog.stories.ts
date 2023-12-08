@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudDialogExampleComponent } from './dialog-example/example.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { moduleMetadata } from '@storybook/angular';
+import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudDialogExampleComponent> = (
   args: FreudDialogExampleComponent,
@@ -29,8 +29,8 @@ Maximizable.args = {
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [BrowserAnimationsModule],
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
 };

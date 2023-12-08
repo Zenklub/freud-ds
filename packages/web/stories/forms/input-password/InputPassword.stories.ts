@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudInputPasswordComponent } from '@freud-ds/web-components';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { moduleMetadata } from '@storybook/angular';
+import { importProvidersFrom } from '@angular/core';
 
 const templateFeedback = `
   <div style="height: 130px">
@@ -117,8 +117,8 @@ CustomTemplate.args = {
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [BrowserAnimationsModule],
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
 };

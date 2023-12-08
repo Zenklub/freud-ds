@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudListboxComponent } from '@freud-ds/web-components';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { moduleMetadata } from '@storybook/angular';
+import { importProvidersFrom } from '@angular/core';
 
 const items = [
   { name: 'New York', code: 'NY' },
@@ -84,8 +84,8 @@ CheckboxAndFilter.args = {
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [BrowserAnimationsModule],
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
 };

@@ -1,7 +1,8 @@
 import { FreudConfirmDialogComponent } from '@freud-ds/web-components';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { moduleMetadata, Story } from '@storybook/angular';
+import { applicationConfig, Story } from '@storybook/angular';
+import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudConfirmDialogComponent> = () => ({
   template: `
@@ -13,8 +14,8 @@ export const Default = Template.bind({});
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [BrowserAnimationsModule],
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
 };
