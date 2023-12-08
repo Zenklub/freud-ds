@@ -1,6 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudAccordionComponent } from '@freud-ds/web-components';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
@@ -66,7 +66,7 @@ export const BGColor = Template.bind({});
 export default {
   decorators: [
     moduleMetadata({
-      imports: [BrowserModule, BrowserAnimationsModule],
+      imports: [BrowserAnimationsModule],
     }),
   ],
 };

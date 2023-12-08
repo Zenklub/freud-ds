@@ -22,9 +22,7 @@ export class FreudDynamicExampleComponent {
 
 @Component({
   selector: 'freud-dynamic-dialog-example',
-  template: `
-    <freud-button (click)="confirm($event)">Clique aqui!</freud-button>
-  `,
+  template: ` <freud-button (click)="confirm()">Clique aqui!</freud-button> `,
   styleUrls: ['./example.component.scss'],
 })
 export class FreudDynamicDialogExampleComponent {

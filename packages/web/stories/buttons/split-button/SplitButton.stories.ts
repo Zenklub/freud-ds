@@ -3,7 +3,6 @@ import {
   FreudSplitButtonComponent,
   FreudMenuItem,
 } from '@freud-ds/web-components';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
@@ -85,7 +84,7 @@ Disabled.args = {
 export default {
   decorators: [
     moduleMetadata({
-      imports: [BrowserModule, BrowserAnimationsModule],
+      imports: [BrowserAnimationsModule],
     }),
   ],
 };

@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -23,17 +22,16 @@ export const parameters = {
       hidden: false,
     },
   },
-  docs: { inlineStories: true },
+  docs: {
+    stories: {
+      inline: true,
+    },
+  },
 };
 
 export const decorators = [
   moduleMetadata({
-    imports: [
-      BrowserModule,
-      BrowserAnimationsModule,
-      FormsModule,
-      RouterTestingModule,
-    ],
+    imports: [BrowserAnimationsModule, FormsModule, RouterTestingModule],
     declarations: [],
     providers: [],
   }),

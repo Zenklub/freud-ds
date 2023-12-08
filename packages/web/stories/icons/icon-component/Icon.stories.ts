@@ -1,5 +1,4 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { FreudIconComponent } from '@freud-ds/web-components';
 import { AllIconsComponent } from '../all-icons/all-icons.component';
@@ -8,7 +7,6 @@ export default {
   title: 'Icons',
   decorators: [
     moduleMetadata({
-      imports: [BrowserModule],
       declarations: [AllIconsComponent],
     }),
   ],

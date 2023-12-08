@@ -1,6 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudScrollTopComponent } from '@freud-ds/web-components';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
@@ -64,7 +64,7 @@ export const BGColor = TemplateTargetBGColor.bind({});
 export default {
   decorators: [
     moduleMetadata({
-      imports: [BrowserModule, BrowserAnimationsModule],
+      imports: [BrowserAnimationsModule],
     }),
   ],
 };

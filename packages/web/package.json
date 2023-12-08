@@ -64,6 +64,7 @@
     "chromatic": "^6.11.4",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-mdx": "^3.0.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

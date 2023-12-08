@@ -3,7 +3,7 @@ import {
   FreudCalendarComponent,
   FreudCalendarModule,
 } from '@freud-ds/web-components';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
@@ -112,12 +112,7 @@ BGColor.args = {
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        CommonModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        FreudCalendarModule,
-      ],
+      imports: [CommonModule, BrowserAnimationsModule, FreudCalendarModule],
       declarations: [],
     }),
   ],

@@ -1,6 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudDialogExampleComponent } from './dialog-example/example.component';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
@@ -30,7 +30,7 @@ Maximizable.args = {
 export default {
   decorators: [
     moduleMetadata({
-      imports: [BrowserModule, BrowserAnimationsModule],
+      imports: [BrowserAnimationsModule],
     }),
   ],
 };
