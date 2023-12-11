@@ -6,7 +6,9 @@ import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudConfirmDialogComponent> = () => ({
   template: `
-    <freud-confirm-dialog-example></freud-confirm-dialog-example>
+    <div style="min-height: 400px;">
+      <freud-confirm-dialog-example></freud-confirm-dialog-example>
+    </div>
   `,
 });
 

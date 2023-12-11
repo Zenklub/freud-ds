@@ -9,7 +9,9 @@ const Template: Story<FreudDialogExampleComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <freud-dialog-example [view]="view"></freud-dialog-example>
+    <div style="min-height: 400px;">
+      <freud-dialog-example [view]="view"></freud-dialog-example>
+    </div>
   `,
 });
 

@@ -6,7 +6,9 @@ import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudConfirmPopupComponent> = () => ({
   template: `
-    <freud-confirm-popup-example></freud-confirm-popup-example>
+    <div style="min-height: 300px;">
+      <freud-confirm-popup-example></freud-confirm-popup-example>
+    </div>
   `,
 });
 
