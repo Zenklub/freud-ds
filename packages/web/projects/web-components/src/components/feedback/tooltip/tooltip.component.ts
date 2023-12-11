@@ -1,13 +1,14 @@
 import { ViewEncapsulation } from '@angular/core';
 import { Component, Input } from '@angular/core';
 
-type position = 'top' | 'bottom' | 'left' | 'right';
+type TooltopPosition = 'top' | 'bottom' | 'left' | 'right';
 
 @Component({
   selector: '[freud-tooltip]',
   exportAs: 'freudTooltip',
   template: `
     <div
+      (mouseenter)="handleMouseEnter()"
       [pTooltip]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
       [class.bgColor]="bgColor"
@@ -24,6 +25,23 @@ type position = 'top' | 'bottom' | 'left' | 'right';
 })
 export class FreudTooltipComponent {
   @Input() tooltipLabel = '';
-  @Input() tooltipPosition: position = 'top';
+  @Input() tooltipPosition: TooltopPosition = 'top';
   @Input() bgColor = false;
+  @Input() maxWidth = 690;
+
+  handleMouseEnter() {
+    setTimeout(() => {
+      const tooltip = document.querySelector('.freud-tooltip');
+      if (!tooltip) return;
+      const tooltipMaxWidth = this.maxWidthLimiter(this.maxWidth, 690);
+      (tooltip as HTMLElement).style.maxWidth = `${tooltipMaxWidth}px`;
+    });
+  }
+
+  maxWidthLimiter(width: number, maxWidthLimit: number): number {
+    if (width > maxWidthLimit) {
+      console.warn('Tooltip: maxWidth exceeded');
+    }
+    return Math.min(width, maxWidthLimit);
+  }
 }
