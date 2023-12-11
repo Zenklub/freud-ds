@@ -12,11 +12,6 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
-  props: { ...args },
-  template: '<freud-icon [icon]="icon" [size]="size"></freud-icon>',
-});
-
 export const AllIcons = () => {
   return {
     template: `
@@ -25,15 +20,38 @@ export const AllIcons = () => {
   };
 };
 
-export const Icon = () => {
+const Template: Story<FreudIconComponent> = (args: FreudIconComponent) => ({
+  props: { ...args },
+  template: '<freud-icon [icon]="icon" [size]="size"></freud-icon>',
+});
+
+export const IconSM = () => {
+  return {
+    template: `<freud-icon icon="award" size="sm"></freud-icon>`,
+  };
+};
+
+export const IconMD = () => {
   return {
     template: '<freud-icon icon="award"></freud-icon>',
   };
 };
 
-export const IconSmall = () => {
+export const IconLG = () => {
   return {
-    template: '<freud-icon icon="award" size="sm"></freud-icon>',
+    template: `<freud-icon icon="award" size="lg"></freud-icon>`,
+  };
+};
+
+export const IconXL = () => {
+  return {
+    template: `<freud-icon icon="award" size="xl"></freud-icon>`,
+  };
+};
+
+export const IconXXL = () => {
+  return {
+    template: `<freud-icon icon="award" size="xxl"></freud-icon>`,
   };
 };
 

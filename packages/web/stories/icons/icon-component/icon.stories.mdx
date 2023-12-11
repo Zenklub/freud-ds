@@ -16,7 +16,15 @@ import {
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 
-import { Icon, IconSmall, IconTest, AllIcons } from './Icon.stories';
+import {
+  IconSM,
+  IconMD,
+  IconLG,
+  IconXL,
+  IconXXL,
+  IconTest,
+  AllIcons,
+} from './Icon.stories';
 
 import { AllIconsModule } from '../all-icons/all-icons.module';
 
@@ -145,11 +153,23 @@ para ter acesso a área de testes, onde você pode colocar os ícones da lista p
 ### Exemplo
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={Icon} />
+  <Story story={IconSM} />
 </Canvas>
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={IconSmall} />
+  <Story story={IconMD} />
+</Canvas>
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={IconLG} />
+</Canvas>
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={IconXL} />
+</Canvas>
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={IconXXL} />
 </Canvas>
 
 ## Lista de ícones disponíveis

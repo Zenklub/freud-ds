@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
-export const FreudIconSizes = ['sm', 'md'] as const;
+export const FreudIconSizes = ['sm', 'md', 'lg', 'xl', 'xxl'] as const;
 export type FreudIconSize = typeof FreudIconSizes[number];
 
 @Component({
@@ -22,11 +22,8 @@ export class FreudIconComponent {
     if (this.icon) {
       classes.push(`freud-icon-${this.icon}`);
     }
-    if (this.size === 'sm') {
-      classes.push('freud-icon-sm');
-    } else {
-      classes.push('freud-icon-md');
-    }
+
+    classes.push(`freud-icon-${this.size}`);
 
     return classes;
   }
