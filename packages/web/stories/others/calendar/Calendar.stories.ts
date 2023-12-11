@@ -13,33 +13,31 @@ const Template: Story<FreudCalendarComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <div style="min-height: 400px;">
-      <freud-calendar
-        [selectionMode]="selectionMode"
-        [appendTo]="appendTo"
-        [dateFormat]="dateFormat"
-        [inline]="inline"
-        [showOtherMonths]="showOtherMonths"
-        [selectOtherMonths]="selectOtherMonths"
-        [showWeek]="showWeek"
-        [view]="view"
-        [yearNavigator]="yearNavigator"
-        [yearRange]="yearRange"
-        [stepMinute]="stepMinute"
-        [defaultDate]="defaultDate"
-        [showTime]="showTime"
-        [hourFormat]="hourFormat"
-        [disabled]="disabled"
-        [timeOnly]="timeOnly"
-        [monthNavigator]="monthNavigator"
-        [disabledDates]="disabledDates"
-        [required]="required"
-        [maxDate]="maxDate"
-        [minDate]="minDate"
-        [label]="label"
-        >
-      </freud-calendar>
-    </div>
+    <freud-calendar
+      [selectionMode]="selectionMode"
+      [appendTo]="appendTo"
+      [dateFormat]="dateFormat"
+      [inline]="inline"
+      [showOtherMonths]="showOtherMonths"
+      [selectOtherMonths]="selectOtherMonths"
+      [showWeek]="showWeek"
+      [view]="view"
+      [yearNavigator]="yearNavigator"
+      [yearRange]="yearRange"
+      [stepMinute]="stepMinute"
+      [defaultDate]="defaultDate"
+      [showTime]="showTime"
+      [hourFormat]="hourFormat"
+      [disabled]="disabled"
+      [timeOnly]="timeOnly"
+      [monthNavigator]="monthNavigator"
+      [disabledDates]="disabledDates"
+      [required]="required"
+      [maxDate]="maxDate"
+      [minDate]="minDate"
+      [label]="label"
+      >
+    </freud-calendar>
   `,
 });
 
@@ -47,6 +45,7 @@ export const Default = Template.bind({});
 Default.args = {
   value: new Date(),
   yearRange: '2000:2030',
+  inline: true,
 };
 
 export const TimeOnly = Template.bind({});
