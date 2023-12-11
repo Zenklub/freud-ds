@@ -19,13 +19,21 @@ module.exports = {
         sourceType: 'script',
       },
     },
+    {
+      files: ['*.{md,mdx}'],
+      parser: 'eslint-mdx',
+      rules: {
+        'prettier/prettier': 'off',
+        semi: 'off',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'linebreak-style': ['error', 'unix'],
     semi: ['error', 'always'],
