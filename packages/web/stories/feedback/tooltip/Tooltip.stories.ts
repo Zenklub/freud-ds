@@ -23,7 +23,7 @@ export const TooltipTest = Template.bind({});
 export const MaxWidthSmall = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" maxWidth="100">
+      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" [maxWidth]="100">
         <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
       </span>
     `,
@@ -43,7 +43,7 @@ export const MaxWidthDefault = () => {
 export const MaxWidthLarge = () => {
   return {
     template: `
-      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" maxWidth="800">
+      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" [maxWidth]="800">
         <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
       </span>
     `,
