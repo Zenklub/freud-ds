@@ -29,7 +29,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         [optionGroupChildren]="optionGroupChildren"
         [placeholder]="placeholder || ''"
         [virtualScroll]="virtualScroll"
-        [dropdownIcon]="dropdownIcon"
+        [dropdownIcon]="dropdownIcon || 'freud-icon freud-icon-chevron-down'"
         [dropdown]="dropdown"
         [dropdownMode]="dropdownMode"
         [field]="field"

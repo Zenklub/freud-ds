@@ -37,6 +37,11 @@ export const Default = Template.bind({});
 Default.args = {
   multiple: true,
   url: './upload.php',
+  chooseLabel: 'Escolha',
+  uploadLabel: 'Enviar',
+  cancelLabel: 'Cancelar',
+  showUploadButton: true,
+  showCancelButton: true,
 };
 export const BasicUi = Template.bind({});
 BasicUi.args = {
@@ -50,6 +55,11 @@ export const BGColor = Template.bind({});
 BGColor.args = {
   multiple: true,
   url: './upload.php',
+  chooseLabel: 'Escolha',
+  uploadLabel: 'Enviar',
+  cancelLabel: 'Cancelar',
+  showUploadButton: true,
+  showCancelButton: true,
 };
 
 export default {

@@ -25,7 +25,7 @@ import { HttpHeaders } from '@angular/common/http';
       [uploadIcon]="uploadIcon"
       [cancelIcon]="cancelIcon"
       [withCredentials]="withCredentials"
-      [mode]="mode"
+      [mode]="mode || 'advanced'"
       [customUpload]="customUpload"
       [showUploadButton]="showUploadButton"
       [showCancelButton]="showCancelButton"

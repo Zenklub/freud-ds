@@ -13,8 +13,8 @@ type sizes = 'default' | 'large';
     <p-knob
       [(ngModel)]="value"
       (onChange)="onChangeValue($event)"
-      [min]="min"
-      [max]="max"
+      [min]="min || 0"
+      [max]="max || 100"
       [size]="size === 'large' ? 200 : 100"
       [step]="step"
       [valueColor]="bgColor ? 'white' : '#6732D1'"

@@ -7,7 +7,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
       [value]="value"
       [showValue]="showValue"
       [unit]="unit"
-      [mode]="mode"
+      [mode]="mode || 'determinate'"
     >
     </p-progressBar>
   `,
