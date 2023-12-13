@@ -22,7 +22,6 @@ type iconPos = 'left' | 'right';
       [type]="type"
       [label]="label"
       [iconPos]="iconPos"
-      [fullWidth]="fullWidth"
     >
       <div class="button-content" *ngIf="!label"><ng-content></ng-content></div>
     </p-button>
