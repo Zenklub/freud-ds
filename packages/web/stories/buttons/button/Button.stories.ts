@@ -87,7 +87,7 @@ export const SizeSm = () => {
 // Full Width
 export const fullWidth = () => {
   return {
-    template: `<freud-button [bgColor]="bgColor" [fullWidth]="true" label="Button fullWidth"></freud-button>`,
+    template: `<freud-button [bgColor]="bgColor" fullWidth="true" label="Button fullWidth"></freud-button>`,
   };
 };
 

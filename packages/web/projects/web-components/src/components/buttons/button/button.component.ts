@@ -40,7 +40,7 @@ type iconPos = 'left' | 'right';
     '[class.freud-btn-size-medium]': `size === 'md'`,
     '[class.freud-btn-size-large]': `size === 'lg'`,
 
-    '[class.freud-btn-full-width]': `fullWidth ? 'freud-btn-full-width' : ''`,
+    '[class.freud-btn-full-width]': `fullWidth`,
   },
 })
 export class FreudButtonComponent {
