@@ -7,7 +7,7 @@ const Template: Story<FreudTypographyComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">{{label}}</p>
+    <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">Texto exclusivo Zenklub</p>
   `,
 });
 export const HeadingBGColor = Template.bind({});
@@ -42,7 +42,6 @@ const TemplateRegular: Story<FreudTypographyComponent> = (
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h3Regular1-2'">h3/regular-400/line-height-1.2 (h3Regular1-2)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h2Regular1-2'">h2/regular-400/line-height-1.2 (h2Regular1-2)</p>
     <p freud-typography [fontType]="'h1Regular1-2'">h1/regular-400/line-height-1.2 (h1Regular1-2)</p>
-
     <br><br>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h6Regular1'">h6/regular-400/line-height-1 (h6Regular1)</p>
     <p style="margin-bottom: 8px" freud-typography [fontType]="'h5Regular1'">h5/regular-400/line-height-1 (h5Regular1)</p>
