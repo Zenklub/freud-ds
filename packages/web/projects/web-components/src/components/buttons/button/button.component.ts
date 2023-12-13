@@ -22,6 +22,7 @@ type iconPos = 'left' | 'right';
       [type]="type"
       [label]="label"
       [iconPos]="iconPos"
+      [fullWidth]="fullWidth"
     >
       <div class="button-content" *ngIf="!label"><ng-content></ng-content></div>
     </p-button>
@@ -38,6 +39,8 @@ type iconPos = 'left' | 'right';
     '[class.freud-btn-size-small]': `size === 'sm'`,
     '[class.freud-btn-size-medium]': `size === 'md'`,
     '[class.freud-btn-size-large]': `size === 'lg'`,
+
+    '[class.freud-btn-full-width]': `fullWidth`,
   },
 })
 export class FreudButtonComponent {
@@ -57,4 +60,5 @@ export class FreudButtonComponent {
   @Input() icon: string = '';
   @Input() label: string = '';
   @Input() iconPos: iconPos = 'left';
+  @Input() fullWidth: boolean = false;
 }
