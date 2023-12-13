@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta, Story, applicationConfig } from '@storybook/angular';
 import {
   FreudCalendarComponent,
   FreudCalendarModule,
@@ -7,6 +7,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
+import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudCalendarComponent> = (
   args: FreudCalendarComponent,
@@ -46,12 +47,14 @@ Default.args = {
   value: new Date(),
   yearRange: '2000:2030',
   inline: true,
+  showTime: true,
 };
 
 export const TimeOnly = Template.bind({});
 TimeOnly.args = {
   value: new Date(),
   timeOnly: true,
+  inline: true,
   hourFormat: '12',
 };
 
@@ -59,6 +62,7 @@ export const MinuteStep = Template.bind({});
 MinuteStep.args = {
   value: new Date(),
   timeOnly: true,
+  inline: true,
   stepMinute: 10,
 };
 
@@ -87,6 +91,7 @@ AppendTo.args = {
 export const MonthView = Template.bind({});
 MonthView.args = {
   value: new Date(),
+  inline: true,
   timeOnly: false,
   showTime: false,
   hourFormat: '12',
@@ -98,6 +103,7 @@ MonthView.args = {
 export const YearNavigator = Template.bind({});
 YearNavigator.args = {
   value: new Date(),
+  inline: true,
   timeOnly: false,
   showTime: false,
   yearNavigator: true,
@@ -106,13 +112,14 @@ YearNavigator.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   value: new Date(),
+  inline: true,
+  showTime: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [CommonModule, BrowserAnimationsModule, FreudCalendarModule],
-      declarations: [],
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
 } as Meta;
