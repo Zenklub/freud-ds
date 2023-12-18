@@ -30,22 +30,6 @@ const items: FreudMenuItem[] = [
   { label: 'Setup', icon: 'freud-icon freud-icon-cog' },
 ];
 
-const itemsWithoutIcon: FreudMenuItem[] = [
-  {
-    label: 'Update',
-    command: () => {
-      console.log('Evento update');
-    },
-  },
-  {
-    label: 'Delete',
-    command: () => {
-      console.log('Evento delete');
-    },
-  },
-  { label: 'Zenklub', url: 'http://zenklub.com' },
-];
-
 const templateHTML = `
     <freud-split-button
         [label]="label"
@@ -71,7 +55,7 @@ Default.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   label: 'Button bg Color',
-  items: itemsWithoutIcon,
+  items: items,
   bgColor: true,
 };
 export const Disabled = Template.bind({});
