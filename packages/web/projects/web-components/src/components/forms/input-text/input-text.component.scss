@@ -48,8 +48,6 @@
   .p-inputtext.ng-invalid {
     border: 1px solid $feedback-color-negative-04;
     &::placeholder {
-      color: $feedback-color-negative-04;
-      opacity: 1;
       @include typography($font-size-xs, $font-weight-regular, 24px);
     }
   }
