@@ -86,4 +86,8 @@
     .p-cascadeselect-item-content:focus {
     box-shadow: unset;
   }
+
+  .p-cascadeselect-group-icon {
+    display: flex;
+  }
 }
