@@ -78,4 +78,58 @@
     background-color: $brand-color-pure;
     border: 1px solid $brand-color-pure;
   }
+
+  .p-inputnumber-buttons-stacked {
+    .p-inputtext {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .p-inputnumber-button {
+      height: 20px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .p-inputnumber-buttons-horizontal {
+    .p-inputtext {
+      border-radius: 0;
+    }
+    .p-inputnumber-button .freud-icon {
+      font-size: 16px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .p-inputnumber-buttons-vertical {
+    .p-inputtext {
+      border-radius: 0;
+    }
+    .p-inputnumber-button .freud-icon {
+      font-size: 16px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
