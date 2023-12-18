@@ -42,7 +42,7 @@
     border: 1px solid $neutral-color-light-03;
   }
 
-  .p-inputtext.ng-invalid {
+  p-cascadeselect.ng-invalid .p-cascadeselect {
     border: 1px solid $feedback-color-negative-04;
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }

@@ -39,7 +39,7 @@
     }
   }
 
-  .p-inputtext.ng-invalid {
+  p-inputmask.ng-invalid .p-inputtext {
     border: 1px solid $feedback-color-negative-04;
     &::placeholder {
       color: $feedback-color-negative-04;

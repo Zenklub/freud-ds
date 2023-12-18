@@ -91,7 +91,7 @@
     width: 100%;
   }
 
-  .p-inputtext.ng-invalid {
+  p-autocomplete.ng-invalid .p-inputtext {
     border: 1px solid $feedback-color-negative-04;
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
