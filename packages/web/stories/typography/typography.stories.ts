@@ -7,7 +7,9 @@ const Template: Story<FreudTypographyComponent> = (
 ) => ({
   props: { ...args },
   template: `
-    <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">Texto exclusivo Zenklub</p>
+    <div style="background: #241249; padding: 24px;">
+      <p freud-typography [fontType]="fontType" [fontBgColor]="fontBgColor">Texto exclusivo Zenklub</p>
+    </div>
   `,
 });
 export const HeadingBGColor = Template.bind({});
@@ -16,11 +18,21 @@ HeadingBGColor.args = {
   fontType: 'h1BoldAuto',
   fontBgColor: true,
 };
+HeadingBGColor.parameters = {
+  backgrounds: {
+    default: 'dark',
+  },
+};
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   fontType: 'bodyRegular1-5',
   fontBgColor: true,
+};
+BGColor.parameters = {
+  backgrounds: {
+    default: 'dark',
+  },
 };
 
 const TemplateRegular: Story<FreudTypographyComponent> = (
