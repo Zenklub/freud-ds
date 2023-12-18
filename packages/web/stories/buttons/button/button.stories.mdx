@@ -17,6 +17,7 @@ import {
   SizeLg,
   SizeMd,
   SizeSm,
+  fullWidth,
   Disabled,
   Loading,
   IconOnly,
@@ -121,6 +122,16 @@ Por padrão, o botão será exibido no tamanho `md`, mas você pode mudar isso u
   <Story story={SizeLg} />
   <Story story={SizeMd} />
   <Story story={SizeSm} />
+</Canvas>
+
+### Full Width
+
+Por padrão, o botão não ocupará a largura total do seu container, mas você pode mudar isso utilizando o parâmetro `fullWidth`.
+
+**OBS.: O parâmetro só aceita valores booleanos, ou seja, `true` ou `false`.**
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={fullWidth} />
 </Canvas>
 
 ### Disabled

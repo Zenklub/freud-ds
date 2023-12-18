@@ -36,9 +36,11 @@ type iconPos = 'left' | 'right';
     '[class.freud-btn-bgcolor]': 'bgColor',
     '[class.freud-btn-loading]': 'loading',
 
-    '[class.freud-btn-size-small]': "size === 'sm'",
-    '[class.freud-btn-size-medium]': "size === 'md'",
-    '[class.freud-btn-size-large]': "size === 'lg'",
+    '[class.freud-btn-size-small]': `size === 'sm'`,
+    '[class.freud-btn-size-medium]': `size === 'md'`,
+    '[class.freud-btn-size-large]': `size === 'lg'`,
+
+    '[class.freud-btn-full-width]': `fullWidth`,
   },
 })
 export class FreudButtonComponent {
@@ -58,4 +60,5 @@ export class FreudButtonComponent {
   @Input() icon = '';
   @Input() label = '';
   @Input() iconPos: iconPos = 'left';
+  @Input() fullWidth = false;
 }

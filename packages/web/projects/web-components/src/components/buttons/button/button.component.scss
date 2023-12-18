@@ -93,6 +93,13 @@
   }
 }
 
+.freud-btn-full-width {
+  .p-button {
+    width: 100%;
+    display: block;
+  }
+}
+
 .freud-btn-size-small {
   .p-button {
     font-size: $font-size-xxs;
