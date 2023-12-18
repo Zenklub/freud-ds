@@ -46,7 +46,7 @@
   .p-button {
     background: $neutral-color-white;
     border: 1px solid $neutral-color-light-03;
-    border-radius: $border-radius-md;
+    border-radius: 0 $border-radius-md $border-radius-md 0;
     border-left: unset;
   }
 
@@ -64,9 +64,10 @@
 
   .p-autocomplete-dd .p-inputtext {
     border-right: unset;
+    border-radius: $border-radius-md 0 0 $border-radius-md;
   }
 
-  .p-button-icon {
+  .p-button-icon-only {
     font-size: 24px;
     color: $neutral-color-dark-02;
   }

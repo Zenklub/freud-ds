@@ -35,7 +35,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         [field]="field"
         [multiple]="multiple"
         [emptyMessage]="emptyMessage"
-        [itemSize]="itemSize"
+        [virtualScrollItemSize]="itemSize"
         [disabled]="disabled"
         [required]="required"
         [suggestions]="suggestions"

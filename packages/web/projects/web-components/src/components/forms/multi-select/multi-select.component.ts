@@ -34,7 +34,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         [virtualScroll]="virtualScroll"
         [dropdownIcon]="dropdownIcon"
         [emptyMessage]="emptyMessage"
-        [itemSize]="itemSize"
+        [virtualScrollItemSize]="itemSize"
         [disabled]="disabled"
         [display]="display"
         [options]="options"
