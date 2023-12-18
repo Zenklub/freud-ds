@@ -51,7 +51,14 @@
 .freud-select-button {
   .p-selectbutton .p-button {
     @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);
-    border-radius: $border-radius-md;
+
+    border-radius: 0;
+    &:first-of-type {
+      border-radius: $border-radius-md 0 0 $border-radius-md;
+    }
+    &:last-of-type {
+      border-radius: 0 $border-radius-md $border-radius-md 0;
+    }
   }
 }
 
