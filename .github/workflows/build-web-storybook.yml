@@ -22,7 +22,6 @@ jobs:
           cd packages/icons
           npm run generate
           cd ../../packages/web
-          npm i -g npm@9
           npm ci
           npm run build-storybook
       - name: Deploy 🚀
