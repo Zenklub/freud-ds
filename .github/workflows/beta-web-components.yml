@@ -1,0 +1,35 @@
+name: (Beta) Web components - build and publish
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          rm -rf package.json
+          rm -rf package-lock.json
+          npm i -g npm@9
+          cd packages/web
+          npm ci
+
+      - name: Build
+        run: |
+          cd packages/web
+          npm run build
+
+      - name: Publish beta version
+        run: |
+          cd packages/web/dist
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          echo "unsafe-perm = true" >> ~/.npmrc
+          npm publish --access public --tag beta
+
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
