@@ -63,7 +63,7 @@ export const Disabled = () => {
 // Loading
 export const Loading = () => {
   return {
-    template: `<freud-button [loading]="true" [bgColor]="false" label="Button loading" iconPos="right"></freud-button>`,
+    template: `<freud-button [loading]="true" [bgColor]="false" label="Button loading"></freud-button>`,
   };
 };
 
