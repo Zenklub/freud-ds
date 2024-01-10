@@ -95,9 +95,13 @@
 
 .freud-btn-full-width {
   width: 100%;
+  
   .p-button {
     width: 100%;
-    display: block;
+  }
+
+  .p-button-label {
+    flex-grow: 0;
   }
 }
 
