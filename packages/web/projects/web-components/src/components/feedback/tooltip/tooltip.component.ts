@@ -8,7 +8,6 @@ type position = 'top' | 'bottom' | 'left' | 'right';
   exportAs: 'freudTooltip',
   template: `
     <div
-      (mouseenter)="handleMouseEnter()"
       [pTooltip]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
       [class.bgColor]="bgColor"
@@ -25,21 +24,4 @@ export class FreudTooltipComponent {
   @Input() tooltipLabel: string = '';
   @Input() tooltipPosition: position = 'top';
   @Input() bgColor: boolean = false;
-  @Input() maxWidth: number = 690;
-
-  handleMouseEnter() {
-    setTimeout(() => {
-      const tooltip = document.querySelector('.freud-tooltip');
-      if (!tooltip) return;
-      const tooltipMaxWidth = this.maxWidthLimiter(this.maxWidth, 690);
-      (tooltip as HTMLElement).style.maxWidth = `${tooltipMaxWidth}px`;
-    });
-  }
-
-  maxWidthLimiter(width: number, maxWidthLimit: number): number {
-    if (width > maxWidthLimit) {
-      console.warn('Tooltip: maxWidth exceeded');
-    }
-    return Math.min(width, maxWidthLimit);
-  }
 }

@@ -10,7 +10,7 @@ const Template: Story<FreudTooltipComponent> = (
       [tooltipLabel]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
       [bgColor]="bgColor"
-      [maxWidth]="maxWidth">
+    >
       <span style="color:{{bgColor ? 'white' : 'black'}}; font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
     </span>
   `,
@@ -18,37 +18,6 @@ const Template: Story<FreudTooltipComponent> = (
 
 //Teste
 export const TooltipTest = Template.bind({});
-
-// MaxWidth
-export const MaxWidthSmall = () => {
-  return {
-    template: `
-      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" [maxWidth]="100">
-        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
-      </span>
-    `,
-  };
-};
-
-export const MaxWidthDefault = () => {
-  return {
-    template: `
-      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom">
-        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
-      </span>
-    `,
-  };
-};
-
-export const MaxWidthLarge = () => {
-  return {
-    template: `
-      <span freud-tooltip tooltipLabel="Tooltip label teste de maxWidth | Tooltip label teste de maxWidth | Tooltip label teste de maxWidth" tooltipPosition="bottom" [maxWidth]="800">
-        <span style="font-family: 'Source Sans Pro'">Passe o mouse aqui!</span>
-      </span>
-    `,
-  };
-};
 
 // Position
 export const Top = () => {
