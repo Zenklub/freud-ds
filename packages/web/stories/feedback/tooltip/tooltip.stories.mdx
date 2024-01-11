@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-do
 import { moduleMetadata } from "@storybook/angular";
 import { FreudTooltipComponent, FreudTooltipModule } from "@freud-ds/web-components";
 import { FreudHeaderComponent } from "../../header/header.component";
-import { Top, Bottom, Left, Right, BGColor, TooltipTest, Disabled, MaxWidthSmall, MaxWidthDefault, MaxWidthLarge } from "./Tooltip.stories.ts";
+import { Top, Bottom, Left, Right, BGColor, TooltipTest, Disabled } from "./Tooltip.stories.ts";
 
 <Meta
   decorators={[
@@ -66,31 +66,6 @@ para ter acesso a área de testes, onde você pode testar todos os exemplos list
 
 ## Exemplos de uso
 Cada um dos exemplos são apresentados separadamente, mas nada impede que mais de um parâmetro seja utilizado ao mesmo tempo, desde que a lógica de uso faça sentido.
-
-### Largura máxima
-Por padrão, o ``Tooltip`` tem uma largura máxima de ``690px``. Para alterar esse valor, basta passar o parâmetro ``maxWidth`` com apenas o número desejado, 
-sem usar ``px`` ao final. 
-
-**OBS.:** Vale lembrar que o valor máximo é de ``690px``, então qualquer valor acima disso será ignorado e o valor padrão será utilizado. 
-Apenas valores menores serão considerados e modificarão a largura máxima do Tooltip.
-
-**Recomendação:** O objetivo principal de um ``Tooltip`` é dar dicas ou informações pequenas, ou seja, um texto muito grande não seria o indicado para esses momentos. 
-Ao utilizar o componente, opte por frases curtas e objetivas, mantendo esse comportamento, não há necessidade de alcançar os ``690px`` do ``maxWidth``.
-
-#### Small
-<Canvas withSource={SourceState.OPEN}>
-  <Story story={MaxWidthSmall} /> 
-</Canvas>
-
-#### Default
-<Canvas withSource={SourceState.OPEN}>
-  <Story story={MaxWidthDefault} />
-</Canvas>
-
-#### Large
-<Canvas withSource={SourceState.OPEN}>
-  <Story story={MaxWidthLarge} />
-</Canvas>
 
 ### Direções
 Por padrão, o Tooltip aparece na direção ``top``. Para alterar a direção, basta passar o parâmetro ``direction`` com o valor desejado:
