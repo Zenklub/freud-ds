@@ -4,14 +4,16 @@ import { Component, Input } from '@angular/core';
 type position = 'top' | 'bottom' | 'left' | 'right';
 
 @Component({
-  selector: '[freud-tooltip]',
+  selector: '[freud-tooltip], freud-tooltip',
   exportAs: 'freudTooltip',
   template: `
     <div
       [pTooltip]="tooltipLabel"
       [tooltipPosition]="tooltipPosition"
       [class.bgColor]="bgColor"
-      [tooltipStyleClass]="bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'"
+      [tooltipStyleClass]="
+        bgColor ? 'freud-tooltip freud-bg-color' : 'freud-tooltip'
+      "
       class="freud-tooltip-container"
     >
       <ng-content></ng-content>
