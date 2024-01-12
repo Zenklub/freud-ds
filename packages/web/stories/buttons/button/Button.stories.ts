@@ -87,9 +87,21 @@ export const SizeSm = () => {
 };
 
 // Full Width
-export const fullWidth = () => {
+export const FullWidth = () => {
   return {
     template: `<freud-button [bgColor]="bgColor" [fullWidth]="true" label="Button fullWidth"></freud-button>`,
+  };
+};
+
+export const FullWidthIconLeft = () => {
+  return {
+    template: `<freud-button [bgColor]="bgColor" [fullWidth]="true" icon="freud-icon freud-icon-check" label="Button fullWidth"></freud-button>`,
+  };
+};
+
+export const FullWidthIconRight = () => {
+  return {
+    template: `<freud-button [bgColor]="bgColor" [fullWidth]="true" icon="freud-icon freud-icon-check" iconPos="right" label="Button fullWidth"></freud-button>`,
   };
 };
 

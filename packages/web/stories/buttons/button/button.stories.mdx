@@ -17,7 +17,9 @@ import {
   SizeLg,
   SizeMd,
   SizeSm,
-  fullWidth,
+  FullWidth,
+  FullWidthIconLeft,
+  FullWidthIconRight,
   Disabled,
   Loading,
   IconOnly,
@@ -131,7 +133,19 @@ Por padrão, o botão não ocupará a largura total do seu container, mas você 
 **OBS.: O parâmetro só aceita valores booleanos, ou seja, `true` ou `false`.**
 
 <Canvas sourceState={SourceState.OPEN}>
-  <Story story={fullWidth} />
+  <Story story={FullWidth} />
+</Canvas>
+
+### Full Width with icon
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={FullWidthIconLeft} />
+</Canvas>
+
+### Full Width with icon right
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={FullWidthIconRight} />
 </Canvas>
 
 ### Disabled
