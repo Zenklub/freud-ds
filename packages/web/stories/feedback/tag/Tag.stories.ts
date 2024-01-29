@@ -4,7 +4,7 @@ import { FreudTagComponent } from '@freud-ds/web-components';
 const Template: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
   props: { ...args },
   template: `
-    <freud-tag [outline]="outline" [color]="color" [value]="value"></freud-tag>
+    <freud-tag [outline]="outline" [color]="color" [value]="value" [size]="size"></freud-tag>
   `,
 });
 
@@ -66,6 +66,20 @@ OutlineError.args = {
   outline: true
 };
 
+//Size
+export const SizeMd = Template.bind({});
+SizeMd.args = {
+  value: 'Default',
+  color: 'primary',
+  size: 'md'
+};
+
+export const SizeLg = Template.bind({});
+SizeLg.args = {
+  value: 'Default',
+  color: 'primary',
+  size: 'lg'
+};
 
 const TemplateBgColor: Story<FreudTagComponent> = (args: FreudTagComponent) => ({
   props: { ...args },

@@ -7,7 +7,7 @@ import {
   Success,
   Info,
   Warning,
-  Error, OutlineDefault, OutlineSuccess, OutlineInfo, OutlineWarning, OutlineError, BGColor, BGColorOutline,
+  Error, OutlineDefault, OutlineSuccess, OutlineInfo, OutlineWarning, OutlineError, BGColor, BGColorOutline, SizeMd, SizeLg,
 } from './Tag.stories.ts';
 
 <Meta
@@ -83,6 +83,12 @@ import FreudTagModule from '@freud-ds/web-components';
 ### BG Color Outline
 <Canvas style={{ backgroundColor: '#241249' }}>
   <Story story={BGColorOutline}/>
+</Canvas>
+
+### Size
+<Canvas>
+  <Story story={SizeMd}/>
+  <Story story={SizeLg}/>
 </Canvas>
 
 ## <a id="api"></a>API
