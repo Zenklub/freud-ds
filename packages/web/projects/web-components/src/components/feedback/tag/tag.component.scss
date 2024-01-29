@@ -1,12 +1,29 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
-.freud-tag .p-tag {
-  padding: 3px $spacing-size-nano;
-}
-.freud-tag .p-tag-value {
-    font-weight: $font-weight-semibold;
-    font-size: $font-size-xxxs;
-    line-height: 18px;
+.freud-tag {
+  
+  &-md {
+    .p-tag  {
+      padding: 3px $spacing-size-nano;
+    }
+    .p-tag-value {
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-xxxs;
+      line-height: 18px;
+    }
+  }
+
+  &-lg {
+    .p-tag {
+      padding: $spacing-size-nano $spacing-size-xxxs;
+    }
+    .p-tag-value {
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-xs;
+      line-height: 18px;
+    }
+  } 
+  
 }
 
 .freud-tag:not(.outline) {
