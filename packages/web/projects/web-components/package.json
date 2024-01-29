@@ -1,7 +1,7 @@
 {
   "name": "@freud-ds/web-components",
   "description": "Zenklub - Freud DS Web components",
-  "version": "2.13.1",
+  "version": "2.14.0",
   "scripts": {
     "build": "ng-packagr",
     "build:lib": "ng build testlib"
