@@ -2,12 +2,14 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
 
+type TagSize = 'md' | 'lg';
+
 @Component({
   selector: 'freud-tag',
   template: `
     <p-tag
       [value]="value"
-      class="freud-tag-{{ color || 'primary' }}"
+      class="freud-tag-{{ color || 'primary' }} freud-tag-{{ size }}"
       [rounded]="true"
     ></p-tag>
   `,
@@ -21,5 +23,6 @@ type colors = 'primary' | 'success' | 'info' | 'warning' | 'error';
 export class FreudTagComponent {
   @Input() value!: string;
   @Input() color: colors = 'primary';
-  @Input() outline = false;
+  @Input() outline: boolean = false;
+  @Input() size: TagSize = 'md';
 }
