@@ -46,5 +46,6 @@ module.exports = {
     '**/node_modules/**',
     '**/coverage/**',
     'karma.conf.js',
+    '**/storybook-static/**',
   ],
 };
