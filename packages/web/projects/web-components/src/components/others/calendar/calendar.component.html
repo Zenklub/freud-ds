@@ -1,36 +1,43 @@
-<div class="calendar__wrapper" [ngClass]="{'calendar__wrapper--input': !inline}">
-    <label class="freud-typography bodySemibold1-2 freud-label" *ngIf="!inline && label">{{label}}</label>
-    <p-calendar
-        [(ngModel)]="value"
-        [inline]="inline"
-        [view]="view"
-        [selectionMode]="selectionMode"
-        [dateFormat]="dateFormat"
-        [showOtherMonths]="showOtherMonths"
-        [selectOtherMonths]="selectOtherMonths"
-        [showWeek]="showWeek"
-        [yearNavigator]="yearNavigator"
-        [yearRange]="yearRange"
-        [appendTo]="appendTo"
-        [stepMinute]="stepMinute"
-        [defaultDate]="defaultDate"
-        [showTime]="showTime"
-        [hourFormat]="hourFormat"
-        [disabled]="disabled"
-        [timeOnly]="timeOnly"
-        [required]="required"
-        [maxDate]="maxDate"
-        [monthNavigator]="monthNavigator"
-        [disabledDates]="disabledDates"
-        [minDate]="minDate"
-        (ngModelChange)="modelValueChange()"
-        (onSelect)="onSelect.emit($event)"
-        (onBlur)="onBlur.emit($event)"
-        (onFocus)="onFocus.emit($event)"
-        (onClose)="onClose.emit($event)"
-        (onShow)="onShow.emit($event)"
-        (onTodayClick)="onTodayClick.emit($event)"
-        (onClearClick)="onClearClick.emit($event)"
-    >
-    </p-calendar>
+<div
+  class="calendar__wrapper"
+  [ngClass]="{ 'calendar__wrapper--input': !inline }"
+>
+  <label
+    class="freud-typography bodySemibold1-2 freud-label"
+    *ngIf="!inline && label"
+    >{{ label }}</label
+  >
+  <p-calendar
+    [(ngModel)]="value"
+    [inline]="inline"
+    [view]="view || 'date'"
+    [selectionMode]="selectionMode || 'single'"
+    [dateFormat]="dateFormat || 'dd/mm/yy'"
+    [showOtherMonths]="showOtherMonths"
+    [selectOtherMonths]="selectOtherMonths"
+    [showWeek]="showWeek"
+    [yearNavigator]="yearNavigator"
+    [yearRange]="yearRange || ''"
+    [appendTo]="appendTo || 'body'"
+    [stepMinute]="stepMinute || 1"
+    [defaultDate]="defaultDate"
+    [showTime]="showTime"
+    [hourFormat]="hourFormat"
+    [disabled]="disabled"
+    [timeOnly]="timeOnly"
+    [required]="required"
+    [maxDate]="maxDate"
+    [monthNavigator]="monthNavigator"
+    [disabledDates]="disabledDates"
+    [minDate]="minDate"
+    (ngModelChange)="modelValueChange()"
+    (onSelect)="onSelect.emit($event)"
+    (onBlur)="onBlur.emit($event)"
+    (onFocus)="onFocus.emit($event)"
+    (onClose)="onClose.emit($event)"
+    (onShow)="onShow.emit($event)"
+    (onTodayClick)="onTodayClick.emit($event)"
+    (onClearClick)="onClearClick.emit($event)"
+  >
+  </p-calendar>
 </div>

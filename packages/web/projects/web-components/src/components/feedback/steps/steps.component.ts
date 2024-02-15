@@ -1,7 +1,13 @@
-import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { FreudMenuItem } from "../../../api/menu.interface";
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FreudMenuItem } from '../../../api/menu.interface';
 
-export interface StepMenu extends FreudMenuItem {}
+export type StepMenu = FreudMenuItem;
 
 @Component({
   selector: 'freud-steps',
@@ -10,22 +16,22 @@ export interface StepMenu extends FreudMenuItem {}
       [model]="model"
       [activeIndex]="activeIndex"
       [readonly]="readonly"
-      (activeIndexChange)="activeIndexChange.emit($event)">
+      (activeIndexChange)="activeIndexChange.emit($event)"
+    >
     </p-steps>
   `,
   styleUrls: ['./steps.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-steps',
-    '[class.freud-steps-bgcolor]': `bgColor`,
-  }
+    '[class.freud-steps-bgcolor]': 'bgColor',
+  },
 })
 export class FreudStepsComponent {
-
   @Input() model!: StepMenu[];
-  @Input() readonly: boolean = false;
-  @Input() bgColor: boolean = false;
-  @Input() activeIndex: number = 0;
-  @Output() activeIndexChange: EventEmitter<number> = new EventEmitter<number>();
-
+  @Input() readonly = false;
+  @Input() bgColor = false;
+  @Input() activeIndex = 0;
+  @Output() activeIndexChange: EventEmitter<number> =
+    new EventEmitter<number>();
 }

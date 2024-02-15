@@ -1,7 +1,6 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
 .freud-gallery:not(.freud-bgcolor) {
-
 }
 .freud-gallery.freud-bgcolor {
 }
@@ -16,7 +15,9 @@
   .p-galleria .p-galleria-indicators .p-galleria-indicator button {
     background-color: $neutral-color-light-03;
   }
-  .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-item-content:focus {
+  .p-galleria
+    .p-galleria-thumbnail-container
+    .p-galleria-thumbnail-item-content:focus {
     box-shadow: 0 0 0 0.2rem $brand-color-pure;
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Card } from "primeng/card";
+import { Card } from 'primeng/card';
 
 @Component({
   selector: 'freud-card',
@@ -8,7 +8,8 @@ import { Card } from "primeng/card";
       #cardElement
       [header]="header"
       [subheader]="subheader"
-      [style]="style">
+      [style]="style"
+    >
       <ng-template pTemplate="header">
         <ng-content select="[freudTemplateHeader]"></ng-content>
       </ng-template>
@@ -22,17 +23,15 @@ import { Card } from "primeng/card";
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-card',
-  }
+  },
 })
 export class FreudCardComponent {
-
   @Input() header!: string;
   @Input() subheader!: string;
-  @Input() style!: string;
+  @Input() style!: any;
   @ViewChild('cardElement') cardElement!: Card;
 
   getBlockableElement() {
     return this.cardElement.getBlockableElement();
   }
-
 }

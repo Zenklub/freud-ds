@@ -1,9 +1,8 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
 .freud-tag {
-  
   &-md {
-    .p-tag  {
+    .p-tag {
       padding: 3px $spacing-size-nano;
     }
     .p-tag-value {
@@ -22,12 +21,10 @@
       font-size: $font-size-xs;
       line-height: 18px;
     }
-  } 
-  
+  }
 }
 
 .freud-tag:not(.outline) {
-
   .freud-tag-primary .p-tag {
     background-color: $brand-color-pure;
   }

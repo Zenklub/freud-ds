@@ -47,7 +47,7 @@
     color: $neutral-color-dark-02;
   }
 
-  .p-menu a.p-menuitem-link .p-menuitem-text{
+  .p-menu a.p-menuitem-link .p-menuitem-text {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }

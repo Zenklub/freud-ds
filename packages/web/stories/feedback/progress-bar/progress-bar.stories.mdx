@@ -1,23 +1,23 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudProgressBarComponent, FreudProgressBarModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor, Indeterminate,
-} from './ProgressBar.stories.ts';
+  FreudProgressBarComponent,
+  FreudProgressBarModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, Indeterminate } from './ProgressBar.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudProgressBarModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -25,19 +25,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Feedback/ProgressBar" component={FreudProgressBarComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "ProgressBar",
-      description: "Indicadores de progresso exibem a duração de um processo."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Feedback/ProgressBar"
+  component={FreudProgressBarComponent}
+/>
+
+<FreudHeaderComponent
+  title="ProgressBar"
+  description="Indicadores de progresso exibem a duração de um processo."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -46,23 +43,27 @@ import { FreudProgressBarModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Indeterminate
+
 <Canvas>
-  <Story story={Indeterminate}/>
+  <Story story={Indeterminate} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudProgressBarComponent} />
+<ArgTypes of={FreudProgressBarComponent} />

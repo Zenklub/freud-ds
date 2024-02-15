@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-input-text',
@@ -14,51 +14,59 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <span [class.p-input-icon-right]="rightIcon">
-          <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
-          <input
-            [id]="id"
-            type="text"
-            [class.ng-invalid]="invalid"
-            [class.ng-dirty]="invalid"
-            pInputText
-            [(ngModel)]="value"
-            [placeholder]="placeholder || ''"
-            [disabled]="disabled"
-            [required]="required"
-            (ngModelChange)="modelValueChange()"
-            (focus)="onFocus.emit($event)"
-            (blur)="onBlur.emit($event)"
-            (input)="onInput.emit($event)"
-            (keydown)="onKeydown.emit($event)"
-          />
-        </span>
-      <small [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
+      <span [class.p-input-icon-right]="rightIcon">
+        <i class="{{ rightIcon }}" *ngIf="rightIcon"></i>
+        <input
+          [id]="id"
+          type="text"
+          [class.ng-invalid]="invalid"
+          [class.ng-dirty]="invalid"
+          pInputText
+          [(ngModel)]="value"
+          [placeholder]="placeholder || ''"
+          [disabled]="disabled"
+          [required]="required"
+          (ngModelChange)="modelValueChange()"
+          (focus)="onFocus.emit($event)"
+          (blur)="onBlur.emit($event)"
+          (input)="onInput.emit($event)"
+          (keydown)="onKeydown.emit($event)"
+        />
+      </span>
+      <small
+        [class.disabled]="disabled"
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText ? helpText : '' }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-input-text',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudInputTextComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudInputTextComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
+  @Input() label = '';
+  @Input() helpText = '';
+  @Input() placeholder = '';
   @Input() rightIcon!: string;
-  @Input() invalid: boolean = false;
+  @Input() invalid = false;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -74,15 +82,15 @@ export class FreudInputTextComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
@@ -101,10 +109,9 @@ export class FreudInputTextComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 }

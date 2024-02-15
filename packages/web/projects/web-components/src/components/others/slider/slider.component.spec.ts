@@ -8,9 +8,8 @@ describe('FreudSliderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudSliderComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudSliderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

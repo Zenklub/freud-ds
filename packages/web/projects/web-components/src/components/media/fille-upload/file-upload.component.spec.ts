@@ -8,9 +8,8 @@ describe('FreudFileUploadComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudFileUploadComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudFileUploadComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

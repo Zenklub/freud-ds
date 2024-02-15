@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SelectButtonModule } from 'primeng/selectbutton';
 
 import { FreudSelectButtonComponent } from './select-button.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule, SelectButtonModule, FormsModule],
+  imports: [CommonModule, SelectButtonModule, FormsModule],
   declarations: [FreudSelectButtonComponent],
-  exports: [FreudSelectButtonComponent]
+  exports: [FreudSelectButtonComponent],
 })
-export class FreudSelectButtonModule { }
+export class FreudSelectButtonModule {}

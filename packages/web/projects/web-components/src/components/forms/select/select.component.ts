@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-select',
@@ -15,38 +15,38 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   templateUrl: './select.component.html',
   host: {
     class: 'freud-select',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudSelectComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudSelectComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() filter: boolean = false;
-  @Input() lazy: boolean = false;
+  @Input() label = '';
+  @Input() filter = false;
+  @Input() lazy = false;
   @Input() options!: any[];
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
-  @Input() virtualScroll: boolean = false;
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
+  @Input() virtualScroll = false;
   @Input() itemSize!: number;
-  @Input() emptyMessage: string = 'Sem resultados';
-  @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
+  @Input() emptyMessage = 'Sem resultados';
+  @Input() dropdownIcon = 'freud-icon freud-icon-chevron-down';
   @Input() optionLabel!: string;
   @Input() optionValue!: string;
-  @Input() optionDisabled: string = 'disabled';
-  @Input() optionGroupLabel: string = 'label';
-  @Input() optionGroupChildren: string = 'items';
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() optionDisabled = 'disabled';
+  @Input() optionGroupLabel = 'label';
+  @Input() optionGroupChildren = 'items';
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -60,7 +60,6 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
-
 
   private _value!: string;
 
@@ -76,12 +75,11 @@ export class FreudSelectComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
   onSomeEventOccured(newValue: string) {
     this.value = newValue;
@@ -97,12 +95,10 @@ export class FreudSelectComponent implements ControlValueAccessor {
       this.onModelChange(this._value);
     }
 
-
     if (typeof this.onModelTouched === 'function') {
       this.onModelTouched();
     }
 
     this.valueChange.emit(v);
   }
-
 }

@@ -8,9 +8,8 @@ describe('FreudTagComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudTagComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudTagComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

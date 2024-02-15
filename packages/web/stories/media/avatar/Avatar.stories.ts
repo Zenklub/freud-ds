@@ -71,7 +71,7 @@ export const SizeMD = () => {
     <freud-avatar></freud-avatar> 
     `,
   };
-}
+};
 
 export const SizeSM = () => {
   return {
@@ -79,4 +79,4 @@ export const SizeSM = () => {
     <freud-avatar size="sm"></freud-avatar> 
     `,
   };
-}
+};

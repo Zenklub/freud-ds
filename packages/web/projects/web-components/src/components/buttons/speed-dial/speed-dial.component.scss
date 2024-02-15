@@ -1,7 +1,8 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
 .freud-speed-dial:not(.freud-speed-dial-bgcolor) {
-  .p-button, .p-button:hover {
+  .p-button,
+  .p-button:hover {
     background: $brand-color-pure;
     border: 1px solid $brand-color-pure;
     box-shadow: 0 0 0 2px $brand-color-pure;
@@ -27,7 +28,8 @@
 }
 
 .freud-speed-dial.freud-speed-dial-bgcolor {
-  .p-button, .p-button:hover {
+  .p-button,
+  .p-button:hover {
     background: $neutral-color-white;
     border: 1px solid $neutral-color-white;
     box-shadow: 0 0 0 2px $neutral-color-white;

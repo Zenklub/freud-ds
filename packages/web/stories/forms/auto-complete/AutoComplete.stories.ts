@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudAutoCompleteComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const templateHTML = `
     <div style="height: 150px">
@@ -28,12 +28,16 @@ const templateDropdown = `
     </div>
 `;
 
-const TemplateDropdown: Story<FreudAutoCompleteComponent> = (args: FreudAutoCompleteComponent) => ({
+const TemplateDropdown: Story<FreudAutoCompleteComponent> = (
+  args: FreudAutoCompleteComponent,
+) => ({
   props: { ...args },
   template: templateDropdown,
 });
 
-const Template: Story<FreudAutoCompleteComponent> = (args: FreudAutoCompleteComponent) => ({
+const Template: Story<FreudAutoCompleteComponent> = (
+  args: FreudAutoCompleteComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
@@ -65,11 +69,8 @@ Dropdown.args = {
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

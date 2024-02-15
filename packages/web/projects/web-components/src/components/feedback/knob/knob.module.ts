@@ -8,6 +8,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [CommonModule, KnobModule, FormsModule],
   declarations: [FreudKnobComponent],
-  exports: [FreudKnobComponent]
+  exports: [FreudKnobComponent],
 })
-export class FreudKnobModule { }
+export class FreudKnobModule {}

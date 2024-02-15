@@ -58,9 +58,7 @@ export * from './components/others/slider';
 export * from './components/others/action-icon';
 export * from './components/others/paginator';
 export * from './components/others/chip';
-export * from './components/others/captcha';
 export * from './components/others/table';
-export * from './components/others/full-calendar';
 export * from './components/others/accordion';
 
 // Structure
@@ -73,7 +71,6 @@ export * from './components/structure/panel';
 export * from './components/structure/panel-menu';
 export * from './components/structure/scroll-panel';
 export * from './components/structure/slide-menu';
-export * from './components/structure/splitter';
 export * from './components/structure/tab-view';
 
 // Modal and popover

@@ -1,3 +1,3 @@
-import { Message } from "primeng/api";
+import { Message } from 'primeng/api';
 
-export interface FreudMessage extends Message {}
+export type FreudMessage = Message;

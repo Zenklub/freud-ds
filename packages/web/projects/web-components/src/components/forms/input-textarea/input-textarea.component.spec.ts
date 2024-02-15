@@ -8,9 +8,8 @@ describe('FreudInputTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudInputTextAreaComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudInputTextAreaComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

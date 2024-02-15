@@ -7,6 +7,6 @@ import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   imports: [CommonModule, TooltipModule],
   declarations: [FreudTooltipComponent],
-  exports: [FreudTooltipComponent]
+  exports: [FreudTooltipComponent],
 })
-export class FreudTooltipModule { }
+export class FreudTooltipModule {}

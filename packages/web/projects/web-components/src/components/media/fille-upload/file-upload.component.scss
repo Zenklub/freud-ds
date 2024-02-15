@@ -19,7 +19,7 @@
   }
 
   .p-button {
-    background-color:  $brand-color-pure;
+    background-color: $brand-color-pure;
     border-color: $brand-color-pure;
     color: $neutral-color-white;
     padding: 0 $spacing-size-xxxs;
@@ -36,7 +36,8 @@
     }
   }
 
-  .p-button:enabled:hover, .p-fileupload-choose:not(.p-disabled):hover {
+  .p-button:enabled:hover,
+  .p-fileupload-choose:not(.p-disabled):hover {
     background: $brand-color-01;
     border-color: $brand-color-01;
     color: $brand-color-pure;

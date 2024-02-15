@@ -8,9 +8,8 @@ describe('FreudCalendarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudCalendarComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudCalendarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

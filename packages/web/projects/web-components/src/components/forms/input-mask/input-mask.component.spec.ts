@@ -8,9 +8,8 @@ describe('FreudInputMaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudInputMaskComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudInputMaskComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

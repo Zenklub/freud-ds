@@ -13,14 +13,16 @@ const templateHTML = `
     </freud-input-number>
 `;
 
-const Template: Story<FreudInputNumberComponent> = (args: FreudInputNumberComponent) => ({
+const Template: Story<FreudInputNumberComponent> = (
+  args: FreudInputNumberComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
 export const Default = Template.bind({});
 Default.args = {
   label: 'Label',
-  value: ''
+  value: '',
 };
 
 export const BGColor = Template.bind({});
@@ -28,10 +30,12 @@ BGColor.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   bgColor: true,
-  showButtons: true
+  showButtons: true,
 };
 
-const TemplateButtonLayout: Story<FreudInputNumberComponent> = (args: FreudInputNumberComponent) => ({
+const TemplateButtonLayout: Story<FreudInputNumberComponent> = (
+  args: FreudInputNumberComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-input-number
@@ -65,7 +69,7 @@ export const ButtonLayout = TemplateButtonLayout.bind({});
 export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Label',
-  disabled: true
+  disabled: true,
 };
 
 export const Invalid = Template.bind({});
@@ -74,4 +78,3 @@ Invalid.args = {
   placeholder: 'Placeholder',
   invalid: true,
 };
-

@@ -11,10 +11,9 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-action-icon',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
 export class FreudActionIconComponent {
-  @Input() bgColor: boolean = false;
-
+  @Input() bgColor = false;
 }

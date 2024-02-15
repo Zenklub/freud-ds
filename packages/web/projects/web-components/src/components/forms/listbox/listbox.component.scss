@@ -1,7 +1,6 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-
 .freud-listbox {
   .freud-field {
     display: flex;
@@ -20,7 +19,8 @@
     box-shadow: $shadow-level-3;
   }
 
-  .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
+  .p-listbox:not(.p-disabled)
+    .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
   }
@@ -73,6 +73,4 @@
   .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
     border-color: $brand-color-pure;
   }
-
 }
-

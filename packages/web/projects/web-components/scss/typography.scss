@@ -1,4 +1,4 @@
-@import '~@freud-ds/tokens/style/scss/_variables.scss';
+@import '@freud-ds/tokens/style/scss/_variables.scss';
 
 @mixin typography($fontSize, $lineHeight, $fontWeight) {
   font-size: $fontSize;
@@ -321,5 +321,4 @@
   &.h6BoldAuto {
     @include typography($font-size-xxs, $font-weight-bold, auto);
   }
-
 }

@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudSwitchComponent } from '@freud-ds/web-components';
 
-let value: boolean = false;
+const value = false;
 
 const templateHTML = `
       <freud-input-switch
@@ -18,12 +18,12 @@ const Template: Story<FreudSwitchComponent> = (args: FreudSwitchComponent) => ({
 });
 export const Default = Template.bind({});
 Default.args = {
-  value: value
+  value: value,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
-  value: value
+  value: value,
 };
 
 export const Custom = Template.bind({});
@@ -35,5 +35,5 @@ Custom.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
-  value: value
+  value: value,
 };

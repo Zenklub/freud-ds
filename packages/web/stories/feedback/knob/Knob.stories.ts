@@ -1,9 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudKnobComponent } from '@freud-ds/web-components';
 
-const Template: Story<FreudKnobComponent> = (
-  args: FreudKnobComponent
-) => ({
+const Template: Story<FreudKnobComponent> = (args: FreudKnobComponent) => ({
   props: { ...args },
   template: `
     <freud-knob
@@ -20,12 +18,12 @@ const Template: Story<FreudKnobComponent> = (
 
 export const Default = Template.bind({});
 Default.args = {
-  value: 50
+  value: 50,
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: 50,
-  disabled: true
+  disabled: true,
 };
 
 export const BGColor = Template.bind({});
@@ -34,10 +32,7 @@ BGColor.args = {
   bgColor: true,
 };
 
-
-const TemplateSize: Story<FreudKnobComponent> = (
-  args: FreudKnobComponent
-) => ({
+const TemplateSize: Story<FreudKnobComponent> = (args: FreudKnobComponent) => ({
   props: { ...args },
   template: `
     <div style="display: flex; align-items: center;">

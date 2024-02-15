@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-input-number',
@@ -14,76 +14,74 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-          <p-inputNumber
-            [id]="id"
-            [inputId]="id"
-            type="text"
-            [class.ng-invalid]="invalid"
-            [class.ng-dirty]="invalid"
-            [(ngModel)]="value"
-            [placeholder]="placeholder || ''"
-            [disabled]="disabled"
-            [required]="required"
-
-            [format]="format"
-            [buttonLayout]="buttonLayout"
-            [incrementButtonIcon]="incrementButtonIcon"
-            [decrementButtonIcon]="decrementButtonIcon"
-            [showButtons]="showButtons"
-            [locale]="locale"
-            [localeMatcher]="localeMatcher"
-            [mode]="mode"
-
-            [prefix]="prefix"
-            [useGrouping]="useGrouping"
-            [suffix]="suffix"
-            [currency]="currency"
-            [currencyDisplay]="currencyDisplay"
-
-            [minFractionDigits]="minFractionDigits"
-            [maxFractionDigits]="maxFractionDigits"
-
-            [min]="min"
-            [max]="max"
-
-            [step]="step"
-            [allowEmpty]="allowEmpty"
-
-            (ngModelChange)="modelValueChange()"
-            (focus)="onFocus.emit($event)"
-            (blur)="onBlur.emit($event)"
-            (input)="onInput.emit($event)"
-            (keydown)="onKeydown.emit($event)"
-          ></p-inputNumber>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
+      <p-inputNumber
+        [id]="id"
+        [inputId]="id"
+        type="text"
+        [class.ng-invalid]="invalid"
+        [class.ng-dirty]="invalid"
+        [(ngModel)]="value"
+        [placeholder]="placeholder || ''"
+        [disabled]="disabled"
+        [required]="required"
+        [format]="format"
+        [buttonLayout]="buttonLayout"
+        [incrementButtonIcon]="incrementButtonIcon"
+        [decrementButtonIcon]="decrementButtonIcon"
+        [showButtons]="showButtons"
+        [locale]="locale"
+        [localeMatcher]="localeMatcher"
+        [mode]="mode"
+        [prefix]="prefix"
+        [useGrouping]="useGrouping"
+        [suffix]="suffix"
+        [currency]="currency"
+        [currencyDisplay]="currencyDisplay"
+        [minFractionDigits]="minFractionDigits"
+        [maxFractionDigits]="maxFractionDigits"
+        [min]="min"
+        [max]="max"
+        [step]="step"
+        [allowEmpty]="allowEmpty"
+        (ngModelChange)="modelValueChange()"
+        (focus)="onFocus.emit($event)"
+        (blur)="onBlur.emit($event)"
+        (input)="onInput.emit($event)"
+        (keydown)="onKeydown.emit($event)"
+      ></p-inputNumber>
     </div>
   `,
   host: {
     class: 'freud-input-number',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudInputNumberComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
-
 export class FreudInputNumberComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() format: boolean = true;
-  @Input() allowEmpty: boolean = true;
-  @Input() useGrouping: boolean = true;
-  @Input() showButtons: boolean = false;
+  @Input() label = '';
+  @Input() format = true;
+  @Input() allowEmpty = true;
+  @Input() useGrouping = true;
+  @Input() showButtons = false;
   @Input() buttonLayout: 'stacked' | 'horizontal' | 'vertical' = 'stacked';
-  @Input() incrementButtonIcon: string = 'freud-icon freud-icon-chevron-up';
-  @Input() decrementButtonIcon: string = 'freud-icon freud-icon-chevron-down';
+  @Input() incrementButtonIcon = 'freud-icon freud-icon-chevron-up';
+  @Input() decrementButtonIcon = 'freud-icon freud-icon-chevron-down';
   @Input() locale!: string;
-  @Input() localeMatcher: "lookup" | "best fit" = 'best fit';
-  @Input() mode: "decimal" | "currency" = "decimal";
-  @Input() currencyDisplay: string = "symbol";
+  @Input() localeMatcher: 'lookup' | 'best fit' = 'best fit';
+  @Input() mode: 'decimal' | 'currency' = 'decimal';
+  @Input() currencyDisplay = 'symbol';
   @Input() currency!: string;
   @Input() prefix!: string;
   @Input() suffix!: string;
@@ -91,13 +89,13 @@ export class FreudInputNumberComponent implements ControlValueAccessor {
   @Input() maxFractionDigits!: number;
   @Input() min!: number;
   @Input() max!: number;
-  @Input() step: number = 1;
+  @Input() step = 1;
 
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
+  @Input() placeholder = '';
+  @Input() invalid = false;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -113,15 +111,15 @@ export class FreudInputNumberComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
@@ -140,10 +138,9 @@ export class FreudInputNumberComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 }

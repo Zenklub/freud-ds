@@ -1,7 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudTableComponent } from '@freud-ds/web-components';
-// @ts-ignore
-import * as dataJson from './data.json';
+import dataJson from './data.json';
 
 const data = dataJson['data'];
 
@@ -24,7 +23,9 @@ const Template: Story<FreudTableComponent> = (args: FreudTableComponent) => ({
     </div>
   `,
 });
-const TemplateSort: Story<FreudTableComponent> = (args: FreudTableComponent) => ({
+const TemplateSort: Story<FreudTableComponent> = (
+  args: FreudTableComponent,
+) => ({
   props: { ...args },
   template: `
     <div style="width: 100%">
@@ -44,7 +45,9 @@ const TemplateSort: Story<FreudTableComponent> = (args: FreudTableComponent) => 
   `,
 });
 
-const TemplateCaptionAndSummary: Story<FreudTableComponent> = (args: FreudTableComponent) => ({
+const TemplateCaptionAndSummary: Story<FreudTableComponent> = (
+  args: FreudTableComponent,
+) => ({
   props: { ...args },
   template: `
     <div style="width: 100% overflow: auto;">
@@ -52,7 +55,7 @@ const TemplateCaptionAndSummary: Story<FreudTableComponent> = (args: FreudTableC
             <ng-template freudTemplate="caption">
                 <div class="p-d-flex p-ai-center p-jc-between">
                     Produtos
-                    <p-button icon="pi pi-refresh"></p-button>
+                    <button icon="pi pi-refresh"></button>
                 </div>
             </ng-template>
             <ng-template freudTemplate="header" let-columns="columns">
@@ -78,23 +81,23 @@ const TemplateCaptionAndSummary: Story<FreudTableComponent> = (args: FreudTableC
 export const Basic = Template.bind({});
 Basic.args = {
   value: data,
-  columns: Object.keys(data[0])
-}
+  columns: Object.keys(data[0]),
+};
 
 export const CaptionAndSummary = TemplateCaptionAndSummary.bind({});
 CaptionAndSummary.args = {
   value: data,
-  columns: Object.keys(data[0])
-}
+  columns: Object.keys(data[0]),
+};
 
 export const Sort = TemplateSort.bind({});
 Sort.args = {
   value: data,
-  columns: Object.keys(data[0])
-}
+  columns: Object.keys(data[0]),
+};
 
 export const BGColor = TemplateSort.bind({});
 BGColor.args = {
   value: data,
-  columns: Object.keys(data[0])
-}
+  columns: Object.keys(data[0]),
+};

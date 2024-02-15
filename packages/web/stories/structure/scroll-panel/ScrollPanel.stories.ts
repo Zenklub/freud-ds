@@ -1,6 +1,8 @@
 import { FreudScrollPanelComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
-const Template: Story<FreudScrollPanelComponent> = (args: FreudScrollPanelComponent) => ({
+const Template: Story<FreudScrollPanelComponent> = (
+  args: FreudScrollPanelComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-scroll-panel [style]="{height: '200px', width: '300px'}">

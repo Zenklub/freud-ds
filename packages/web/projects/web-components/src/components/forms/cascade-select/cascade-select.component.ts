@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-cascade-select',
@@ -14,7 +14,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
       <p-cascadeSelect
         [id]="id"
         [class.ng-invalid]="invalid"
@@ -34,42 +39,43 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
         (onBeforeHide)="onBeforeHide.emit($event)"
         (onChange)="onChange.emit($event)"
         (onShow)="onShow.emit($event)"
-
       ></p-cascadeSelect>
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-cascade-select',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudCascadeSelectComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudCascadeSelectComponent implements ControlValueAccessor {
-  @Input() label: string = '';
+  @Input() label = '';
   @Input() options!: any[];
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
   @Input() optionLabel!: string;
   @Input() optionValue!: string;
   @Input() dataKey!: string;
-  @Input() optionGroupLabel: string = 'label';
+  @Input() optionGroupLabel = 'label';
   @Input() optionGroupChildren!: string[];
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onGroupChange: EventEmitter<any> = new EventEmitter();
@@ -82,7 +88,6 @@ export class FreudCascadeSelectComponent implements ControlValueAccessor {
   @Output() onFilter: EventEmitter<any> = new EventEmitter();
   @Output() onShow: EventEmitter<any> = new EventEmitter();
   @Output() onBeforeShow: EventEmitter<any> = new EventEmitter();
-
 
   private _value!: any;
 
@@ -98,26 +103,24 @@ export class FreudCascadeSelectComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
     this.valueChange.emit(v);
   }
-
 }

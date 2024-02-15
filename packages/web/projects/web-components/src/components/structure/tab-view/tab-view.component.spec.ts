@@ -8,9 +8,8 @@ describe('FreudTabViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudTabViewComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudTabViewComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

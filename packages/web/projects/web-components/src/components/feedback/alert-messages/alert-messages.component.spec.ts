@@ -8,9 +8,8 @@ describe('FreudAlertMessagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudAlertMessagesComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudAlertMessagesComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

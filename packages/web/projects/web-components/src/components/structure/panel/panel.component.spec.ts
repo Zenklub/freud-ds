@@ -8,9 +8,8 @@ describe('FreudScrollPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudPanelComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudPanelComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,17 +1,21 @@
-import { FreudAlertMessagesComponent, FreudMessage } from '@freud-ds/web-components';
-import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+import {
+  FreudAlertMessagesComponent,
+  FreudMessage,
+} from '@freud-ds/web-components';
+import { Story, applicationConfig } from '@storybook/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const messages: FreudMessage[] = [
-  {severity:'success', summary:'Success', detail:'Message content'},
-  {severity:'info', summary:'Info', detail:'Message content'},
-  {severity:'warn', summary:'Warning', detail:'Message content'},
-  {severity:'error', summary:'Error', detail:'Message content'}
-]
+  { severity: 'success', summary: 'Success', detail: 'Message content' },
+  { severity: 'info', summary: 'Info', detail: 'Message content' },
+  { severity: 'warn', summary: 'Warning', detail: 'Message content' },
+  { severity: 'error', summary: 'Error', detail: 'Message content' },
+];
 
-const Template: Story<FreudAlertMessagesComponent> = (args: FreudAlertMessagesComponent) => ({
+const Template: Story<FreudAlertMessagesComponent> = (
+  args: FreudAlertMessagesComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-alert-messages
@@ -22,10 +26,12 @@ const Template: Story<FreudAlertMessagesComponent> = (args: FreudAlertMessagesCo
 
 export const Default = Template.bind({});
 Default.args = {
-  messages: messages
-}
+  messages: messages,
+};
 
-const TemplateInline: Story<FreudAlertMessagesComponent> = (args: FreudAlertMessagesComponent) => ({
+const TemplateInline: Story<FreudAlertMessagesComponent> = (
+  args: FreudAlertMessagesComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-alert-message [severity]="'success'" [text]="'Message Content'"></freud-alert-message><br><br>
@@ -38,16 +44,13 @@ export const Inline = TemplateInline.bind({});
 
 export const BGColor = Template.bind({});
 BGColor.args = {
-  messages: messages
-}
+  messages: messages,
+};
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

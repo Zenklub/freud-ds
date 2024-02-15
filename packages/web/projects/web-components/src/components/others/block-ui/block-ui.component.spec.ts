@@ -8,9 +8,8 @@ describe('FreudCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudBlockUIComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudBlockUIComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

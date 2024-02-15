@@ -7,6 +7,6 @@ import { FreudButtonComponent } from './button.component';
 @NgModule({
   imports: [CommonModule, ButtonModule],
   declarations: [FreudButtonComponent],
-  exports: [FreudButtonComponent]
+  exports: [FreudButtonComponent],
 })
-export class FreudButtonModule { }
+export class FreudButtonModule {}

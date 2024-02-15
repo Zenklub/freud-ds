@@ -2,7 +2,7 @@ import { Story } from '@storybook/angular';
 import { FreudProgressSpinnerComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudProgressSpinnerComponent> = (
-  args: FreudProgressSpinnerComponent
+  args: FreudProgressSpinnerComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -15,9 +15,9 @@ const Template: Story<FreudProgressSpinnerComponent> = (
 
 export const Default = Template.bind({});
 Default.args = {
-  bgColor: false
-}
+  bgColor: false,
+};
 export const BGColor = Template.bind({});
 BGColor.args = {
-  bgColor: true
-}
+  bgColor: true,
+};

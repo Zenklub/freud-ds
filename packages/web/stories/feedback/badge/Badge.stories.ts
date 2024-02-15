@@ -7,14 +7,18 @@ const Template: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
   `,
 });
 
-const TemplateBlank: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+const TemplateBlank: Story<FreudBadgeComponent> = (
+  args: FreudBadgeComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-badge [size]="size" [color]="color" [value]="value" style="position: relative;top: 4px;"></freud-badge>
   `,
 });
 
-const TemplateBgColor: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+const TemplateBgColor: Story<FreudBadgeComponent> = (
+  args: FreudBadgeComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-badge style="margin-right: 16px;" [color]="'primary'" [value]="'1'"></freud-badge>
@@ -26,7 +30,9 @@ const TemplateBgColor: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) 
   `,
 });
 
-const TemplateSizes: Story<FreudBadgeComponent> = (args: FreudBadgeComponent) => ({
+const TemplateSizes: Story<FreudBadgeComponent> = (
+  args: FreudBadgeComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-badge style="margin-right: 16px;" [size]="'default'" [color]="'primary'" [value]="'1'"></freud-badge>
@@ -46,28 +52,27 @@ Default.args = {
 export const Success = Template.bind({});
 Success.args = {
   value: '10',
-  color: 'success'
+  color: 'success',
 };
 export const Info = Template.bind({});
 Info.args = {
   value: '5',
-  color: 'info'
+  color: 'info',
 };
 export const Warning = Template.bind({});
 Warning.args = {
   value: '99',
-  color: 'warning'
+  color: 'warning',
 };
 export const Error = Template.bind({});
 Error.args = {
   value: 'A',
-  color: 'error'
+  color: 'error',
 };
 export const Actived = TemplateBlank.bind({});
 Actived.args = {
   value: '',
-  color: 'actived'
+  color: 'actived',
 };
-
 
 export const BGColor = TemplateBgColor.bind({});

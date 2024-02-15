@@ -8,9 +8,8 @@ describe('FreudDividerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudDividerComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudDividerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-input-switch',
@@ -23,44 +23,45 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [trueValue]="trueValue"
       [falseValue]="falseValue"
       [name]="name"
-      (onChange)="onChange.emit($event)">
+      (onChange)="onChange.emit($event)"
+    >
     </p-inputSwitch>
   `,
   host: {
     '[class.freud-input-switch--custom]': 'custom',
-    class: `freud-input-switch`,
+    class: 'freud-input-switch',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudSwitchComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudSwitchComponent implements ControlValueAccessor {
-  @Input() invalid: boolean = false;
+  @Input() invalid = false;
   @Input() disabled = false;
-  @Input() name: string = '';
+  @Input() name = '';
   @Input() falseValue: any = false;
   @Input() trueValue: any = true;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
-  @Input() custom: boolean = false;
+  @Input() custom = false;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   private _value!: boolean;
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onChange.emit(v);
     this.onModelChange(this._value);
@@ -80,10 +81,9 @@ export class FreudSwitchComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onSomeEventOccured(newValue: boolean){
+  onSomeEventOccured(newValue: boolean) {
     this.value = newValue;
   }
 }

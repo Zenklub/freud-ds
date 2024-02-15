@@ -12,10 +12,10 @@ export class AllIconsComponent implements OnInit {
   iconNames: string[] = [];
   fullIconNames: string[] = [];
 
-  baseMessage: string = 'Copied to clipboard';
+  baseMessage = 'Copied to clipboard';
   message: string = this.baseMessage;
 
-  searchText: string = '';
+  searchText = '';
 
   @Input() copyMode: 'class' | 'component' = 'class';
 
@@ -44,7 +44,7 @@ export class AllIconsComponent implements OnInit {
 
     if (this.searchText) {
       this.iconNames = this.fullIconNames.filter((iconName) =>
-        iconName.includes(this.searchText)
+        iconName.includes(this.searchText),
       );
     } else {
       this.iconNames = [...icons];

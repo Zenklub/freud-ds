@@ -1,7 +1,23 @@
-import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-type positions = "center" | "top" | "bottom" | "left" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right";
+type positions =
+  | 'center'
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'topleft'
+  | 'topright'
+  | 'bottomleft'
+  | 'bottomright';
 @Component({
   selector: 'freud-dialog',
   template: `
@@ -17,7 +33,8 @@ type positions = "center" | "top" | "bottom" | "left" | "right" | "top-left" | "
       [minimizeIcon]="minimizeIcon"
       [maximizeIcon]="maximizeIcon"
       [maximizable]="maximizable"
-      [header]="header">
+      [header]="header"
+    >
       <ng-content></ng-content>
       <ng-template pTemplate="footer">
         <ng-content select="[freudTemplatefooter]"></ng-content>
@@ -27,29 +44,28 @@ type positions = "center" | "top" | "bottom" | "left" | "right" | "top-left" | "
   styleUrls: ['./dialog.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'freud-dialog'
+    class: 'freud-dialog',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudDialogComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudDialogComponent implements ControlValueAccessor {
-
   @Input() header!: string;
-  @Input() modal: boolean = false;
-  @Input() draggable: boolean = true;
-  @Input() resizable: boolean = false;
-  @Input() showHeader: boolean = true;
-  @Input() maximizable: boolean = false;
-  @Input() closable: boolean = true;
-  @Input() position:	positions	= 'center';
-  @Input() closeIcon: string = 'freud-icon freud-icon-times';
-  @Input() minimizeIcon: string = 'freud-icon freud-icon-window-minimize';
-  @Input() maximizeIcon: string = 'freud-icon freud-icon-window-maximize';
+  @Input() modal = false;
+  @Input() draggable = true;
+  @Input() resizable = false;
+  @Input() showHeader = true;
+  @Input() maximizable = false;
+  @Input() closable = true;
+  @Input() position: positions = 'center';
+  @Input() closeIcon = 'freud-icon freud-icon-times';
+  @Input() minimizeIcon = 'freud-icon freud-icon-window-minimize';
+  @Input() maximizeIcon = 'freud-icon freud-icon-window-maximize';
   @Output() visibleChange: EventEmitter<any> = new EventEmitter();
   private _visible!: boolean;
 
@@ -57,15 +73,15 @@ export class FreudDialogComponent implements ControlValueAccessor {
     this.visibleChange.emit(this.visible);
   }
 
-  onChange: any = (_: string) => { };
+  onChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  @Input() get visible(){
+  @Input() get visible() {
     return this._visible;
   }
 
-  public set visible(v){
+  public set visible(v) {
     this._visible = v;
     this.onChange(this._visible);
     this.modelValueChange();
@@ -84,6 +100,5 @@ export class FreudDialogComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 }

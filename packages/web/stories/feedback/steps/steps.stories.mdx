@@ -1,18 +1,18 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FreudStepsComponent, FreudStepsModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor
-} from './Steps.stories.ts';
+  FreudStepsComponent,
+  FreudStepsModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor } from './Steps.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudStepsModule, RouterTestingModule],
-    })
+    }),
   ]}
   parameters={{
     backgrounds: {
@@ -21,19 +21,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Feedback/Steps" component={FreudStepsComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Steps",
-      description: "Componentes de etapas é um indicador para as etapas em um fluxo de trabalho."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Feedback/Steps"
+  component={FreudStepsComponent}
+/>
+
+<FreudHeaderComponent
+  title="Steps"
+  description="Componentes de etapas é um indicador para as etapas em um fluxo de trabalho."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -42,27 +39,30 @@ import { FreudStepsModule, StepMenu } from '@freud-ds/web-components';
 ```
 
 ### Declaração dos itens
+
 ```ts
 const itens: StepMenu[] = [
-  {label: 'Item1'},
-  {label: 'Item2'},
-  {label: 'Item3'},
-  {label: 'Item4'}
-]
+  { label: 'Item1' },
+  { label: 'Item2' },
+  { label: 'Item3' },
+  { label: 'Item4' },
+];
 ```
 
 ## <a id="exemplos"></a>Exemplos
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudStepsComponent} />
+<ArgTypes of={FreudStepsComponent} />

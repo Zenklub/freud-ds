@@ -1,11 +1,11 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import {
   FreudInputTextComponent,
   FreudInputTextModule,
   FreudButtonModule,
   FreudRadioButtonModule,
-  FreudCheckboxModule
+  FreudCheckboxModule,
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
@@ -14,20 +14,25 @@ import {
   IconRight,
   RadioAndButton,
   IconAndRadio,
-  CheckboxAndText
+  CheckboxAndText,
 } from './InputGroup.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
-      imports: [FreudInputTextModule, FreudButtonModule, FreudRadioButtonModule, FreudCheckboxModule],
-    })
+      imports: [
+        FreudInputTextModule,
+        FreudButtonModule,
+        FreudRadioButtonModule,
+        FreudCheckboxModule,
+      ],
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -35,52 +40,57 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Forms/InputGroup" component={FreudInputTextComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Input Group",
-      description: "Texto, ícone, botões e outros conteúdos podem ser agrupados ao lado de input de entrada."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Forms/InputGroup"
+  component={FreudInputTextComponent}
+/>
+
+<FreudHeaderComponent
+  title="Input Group"
+  description="Texto, ícone, botões e outros conteúdos podem ser agrupados ao lado de input de entrada."
+/>
 
 ## Getting Started
+
 Utilize a classe `freud-input-group` e `freud-input-group-addon` para montar um agrupamento personalizado entre input e botões, icones e outros
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### IconLeft
+
 <Canvas>
-  <Story story={IconLeft}/>
+  <Story story={IconLeft} />
 </Canvas>
 
 ### IconRight
+
 <Canvas>
-  <Story story={IconRight}/>
+  <Story story={IconRight} />
 </Canvas>
 
 ### RadioAndButton
+
 <Canvas>
-  <Story story={RadioAndButton}/>
+  <Story story={RadioAndButton} />
 </Canvas>
 
 ### IconAndRadio
+
 <Canvas>
-  <Story story={IconAndRadio}/>
+  <Story story={IconAndRadio} />
 </Canvas>
 
 ### CheckboxAndText
+
 <Canvas>
-  <Story story={CheckboxAndText}/>
+  <Story story={CheckboxAndText} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>

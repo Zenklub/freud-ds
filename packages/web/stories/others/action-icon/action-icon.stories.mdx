@@ -1,23 +1,23 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudActionIconComponent, FreudActionIconModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-} from './ActionIcon.stories.ts';
+  FreudActionIconComponent,
+  FreudActionIconModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor } from './ActionIcon.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudActionIconModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -25,19 +25,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Others/Action Icon" component={FreudActionIconComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Action Icon",
-      description: "Action Icon é utilizado para fechar modais e componentes."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Others/Action Icon"
+  component={FreudActionIconComponent}
+/>
+
+<FreudHeaderComponent
+  title="Action Icon"
+  description="Action Icon é utilizado para fechar modais e componentes."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -45,20 +42,22 @@ title="@freud-ds/web-components/Others/Action Icon" component={FreudActionIconCo
 import { FreudActionIconModule } from '@freud-ds/web-components';
 ```
 
-
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudActionIconComponent} />
+<ArgTypes of={FreudActionIconComponent} />

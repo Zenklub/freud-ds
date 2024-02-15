@@ -12,7 +12,8 @@
     background-color: $brand-color-pure;
   }
 
-  .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+  .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover
+    .p-inputswitch-slider {
     background-color: $brand-color-04;
   }
 
@@ -25,7 +26,8 @@
       background-color: $complementary-color-like-pure;
     }
 
-    .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+    .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover
+      .p-inputswitch-slider {
       background-color: $complementary-color-like-04;
     }
   }

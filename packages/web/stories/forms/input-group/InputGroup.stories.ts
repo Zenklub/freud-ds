@@ -1,7 +1,9 @@
 import { Story } from '@storybook/angular';
 import { FreudInputTextComponent } from '@freud-ds/web-components';
 
-const TemplateIconLeft: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const TemplateIconLeft: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: `
     <div class="freud-input-group">
@@ -9,10 +11,12 @@ const TemplateIconLeft: Story<FreudInputTextComponent> = (args: FreudInputTextCo
       <freud-input-text placeholder="Username"></freud-input-text>
     </div>
   `,
-})
+});
 export const IconLeft = TemplateIconLeft.bind({});
 
-const TemplateIconRight: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const TemplateIconRight: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: `
     <div class="freud-input-group">
@@ -20,10 +24,12 @@ const TemplateIconRight: Story<FreudInputTextComponent> = (args: FreudInputTextC
       <span class="freud-input-group-addon"><i class="freud-icon freud-icon-user"></i></span>
     </div>
   `,
-})
+});
 export const IconRight = TemplateIconRight.bind({});
 
-const TemplateIconAndRadio: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const TemplateIconAndRadio: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: `
     <div class="freud-input-group">
@@ -34,10 +40,12 @@ const TemplateIconAndRadio: Story<FreudInputTextComponent> = (args: FreudInputTe
       </span>
     </div>
   `,
-})
+});
 export const IconAndRadio = TemplateIconAndRadio.bind({});
 
-const TemplateRadioAndButton: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const TemplateRadioAndButton: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: `
     <div class="freud-input-group">
@@ -48,12 +56,14 @@ const TemplateRadioAndButton: Story<FreudInputTextComponent> = (args: FreudInput
       <freud-button>Button</freud-button>
     </div>
   `,
-})
+});
 export const RadioAndButton = TemplateRadioAndButton.bind({});
 
 export const BGColor = TemplateRadioAndButton.bind({});
 
-const TemplateCheckboxAndText: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const TemplateCheckboxAndText: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: `
     <div class="freud-input-group">
@@ -64,8 +74,6 @@ const TemplateCheckboxAndText: Story<FreudInputTextComponent> = (args: FreudInpu
       <span class="freud-input-group-addon">ww</span>
     </div>
   `,
-})
+});
 
 export const CheckboxAndText = TemplateCheckboxAndText.bind({});
-
-

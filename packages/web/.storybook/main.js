@@ -1,11 +1,12 @@
 module.exports = {
-  "stories": [
-    "../stories/welcome/welcome.stories.mdx",
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.story.@(ts)" // Adicione o .stories caso queia mapear as histórias padrões
+  stories: [
+    '../stories/welcome/welcome.stories.mdx',
+    '../stories/**/*.stories.mdx',
+    '../stories/**/*.story.@(ts)', // Adicione o .stories caso queia mapear as histórias padrões
   ],
-  "addons": [
-    "@storybook/addon-links",
+
+  addons: [
+    '@storybook/addon-links',
     {
       name: '@storybook/addon-essentials',
       options: {
@@ -15,18 +16,25 @@ module.exports = {
         viewport: false,
       },
     },
-    "@storybook/addon-interactions"
+    '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm',
   ],
-  "framework": "@storybook/angular",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
+
+  framework: {
+    name: '@storybook/angular',
+    options: {},
   },
+
   staticDirs: [
     { from: './assets', to: 'assets/' }, // working properly
   ],
+
   features: {
     modernInlineRender: false,
-    buildStoriesJson: true
-  }
+    buildStoriesJson: true,
+  },
 
-}
+  docs: {
+    autodocs: true,
+  },
+};

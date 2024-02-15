@@ -1,21 +1,19 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudMenubarComponent, FreudMenubarModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-} from './Menubar.stories.ts';
+  FreudMenubarComponent,
+  FreudMenubarModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor } from './Menubar.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudMenubarModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudMenubarModule] })]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -23,21 +21,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   title="@freud-ds/web-components/Structure/Menubar"
   component={FreudMenubarComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Menubar",
-      description: "Menubar é um menu principal para as interfaces."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Menubar"
+  description="Menubar é um menu principal para as interfaces."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -46,7 +39,9 @@ import { FreudMenubarComponent } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 Menubar requer uma coleção de itens de menu, para isso utilize a interface `FreudMenuItem`
+
 ```ts
 import { FreudMenuItem } from '@freud-ds/web-components';
 
@@ -57,29 +52,34 @@ items: FreudMenuItem[] = [
   {label: 'Item4'}
 ]
 ```
+
 ```html
-      <freud-menubar
-          [startImgAlt]="'Home'"
-          [startImgSrc]="'assets/img/zenklub.svg'"
-          [startImgHref]="'https://zenklub.com.br'"
-          [items]="items"
-          [bgColor]="bgColor">
+<freud-menubar
+  [startImgAlt]="'Home'"
+  [startImgSrc]="'assets/img/zenklub.svg'"
+  [startImgHref]="'https://zenklub.com.br'"
+  [items]="items"
+  [bgColor]="bgColor"
+>
 </freud-menubar>
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas style={{ backgroundColor: '#F7F9FA' }}>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#F7F9FA' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudMenubarComponent} />
+<ArgTypes of={FreudMenubarComponent} />

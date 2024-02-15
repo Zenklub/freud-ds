@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'freud-panel',
@@ -14,7 +20,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
       [toggleable]="toggleable"
       (onBeforeToggle)="onBeforeToggle.emit($event)"
       (onAfterToggle)="onAfterToggle.emit($event)"
-      >
+    >
       <ng-template pTemplate="icons">
         <ng-content select="[freudTemplateIcons]"></ng-content>
       </ng-template>
@@ -32,19 +38,17 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-panel',
-  }
+  },
 })
 export class FreudPanelComponent {
-
   @Input() header!: string;
-  @Input() toggleable: boolean = false;
-  @Input() collapsed: boolean = false;
-  @Input() showHeader: boolean = true;
+  @Input() toggleable = false;
+  @Input() collapsed = false;
+  @Input() showHeader = true;
   @Input() toggler: 'icon' | 'header' = 'icon';
   @Input() style!: any;
-  @Input() expandIcon: string = 'freud-icon freud-icon-plus';
-  @Input() collapseIcon: string = 'freud-icon freud-icon-minus';
+  @Input() expandIcon = 'freud-icon freud-icon-plus';
+  @Input() collapseIcon = 'freud-icon freud-icon-minus';
   @Output() onBeforeToggle = new EventEmitter();
   @Output() onAfterToggle = new EventEmitter();
-
 }

@@ -1,22 +1,19 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudAlertMessagesComponent, FreudAlertMessagesModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  Inline,
-  BGColor
-} from './AlertMessages.stories.ts';
+  FreudAlertMessagesComponent,
+  FreudAlertMessagesModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, Inline, BGColor } from './AlertMessages.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudAlertMessagesModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudAlertMessagesModule] })]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -24,45 +21,45 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   title="@freud-ds/web-components/Feedback/AlertMessages"
   component={FreudAlertMessagesComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Alert-Messages",
-      description: "O alerta exibe uma mensagem curta e importante de uma forma que atraia a atenção do usuário sem interromper o que ele estiver fazendo."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="AlertMessages"
+  description="O alerta exibe uma mensagem curta e importante de uma forma que atraia a atenção do usuário sem interromper o que ele estiver fazendo."
+/>
 
 ## <a id="importing"></a>Import
+
 ```ts
-import { FreudAlertMessagesComponent  } from '@freud-ds/web-components';
+import { FreudAlertMessagesComponent } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a> Exemplos
-<br/>
+
+<br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Inline
 
 Para os alertas inline utilize o componente `freud-alert-message`
+
 <Canvas>
-  <Story story={Inline}/>
+  <Story story={Inline} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## API
@@ -70,6 +67,7 @@ Para os alertas inline utilize o componente `freud-alert-message`
 As mensagens a serem exibidas podem ser definidas usando a propriedade `messages` sendo uma lista de `FreudMessage` ou usando o serviço `FreudMessageService`.
 
 ### Utilizando via componente
+
 ```ts
 
 show() {
@@ -81,6 +79,7 @@ hide() {
 }
 
 ```
+
 ```html
 <freud-confirm-dialog [messages]="messages"></freud-confirm-dialog>
 ```
@@ -88,24 +87,32 @@ hide() {
 ### Utilizando via serviço
 
 É necessário o componente `freud-confirm-dialog` definido no html
+
 ```html
 <freud-confirm-dialog></freud-confirm-dialog>
 ```
+
 ```ts
-import { FreudMessageService  } from '@freud-ds/web-components';
+import { FreudMessageService } from '@freud-ds/web-components';
 
 export class ComponentDemo {
+  constructor(private messageService: FreudMessageService) {}
 
-    constructor(private messageService: FreudMessageService) {}
-
-    confirm() {
-        this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService', icon: 'freud-icon freud-icon-check-circle'});
-    }
+  confirm() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Service Message',
+      detail: 'Via MessageService',
+      icon: 'freud-icon freud-icon-check-circle',
+    });
+  }
 }
 ```
 
 ### Severities
+
 Aqui estão os valores possíveis para a gravidade de uma mensagem.
+
 - success
 - info
 - warn

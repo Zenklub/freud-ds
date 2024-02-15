@@ -1,29 +1,61 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-
 .freud-menubar:not(.freud-bgcolor) {
   .p-menubar {
     background-color: $neutral-color-white;
   }
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-submenu-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-icon {
     color: $neutral-color-dark-03;
     user-select: unset;
   }
 
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled):hover,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link:not(.p-disabled):hover {
     @media screen and (min-width: 961px) {
       background-color: $neutral-color-light-02;
     }
   }
 
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-menuitem-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-submenu-icon {
     @media screen and (min-width: 961px) {
       color: $brand-color-pure !important;
     }
@@ -39,23 +71,68 @@
   .p-menubar {
     background-color: $brand-color-pure;
   }
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-submenu-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-menuitem-text,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    .p-menuitem-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-menuitem-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    .p-submenu-icon,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link:not(.p-disabled):hover
+    .p-submenu-icon {
     @media screen and (min-width: 961px) {
       color: $neutral-color-white;
     }
   }
 
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled):hover,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem.p-menuitem-active
+    > .p-menuitem-link:not(.p-disabled):hover {
     @media screen and (min-width: 961px) {
       background-color: $brand-color-03;
     }
@@ -72,7 +149,6 @@
     .p-menubar .p-menubar-button:hover {
       background-color: $brand-color-03;
     }
-
   }
 }
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
@@ -104,9 +180,21 @@
   }
 
   .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link,
-  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link span.p-submenu-icon,
-  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
-  .p-menubar .p-submenu-list .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+  .p-menubar
+    .p-submenu-list
+    .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    span.p-submenu-icon,
+  .p-menubar
+    .p-submenu-list
+    .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    .p-menuitem-icon,
+  .p-menubar
+    .p-submenu-list
+    .p-menuitem.p-menuitem-active
+    > .p-menuitem-link
+    .p-menuitem-text {
     background-color: $brand-color-01;
     color: $brand-color-pure;
   }
@@ -139,7 +227,10 @@
       box-shadow: $shadow-level-3;
     }
 
-    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover,
+    .p-menubar
+      .p-menubar-root-list
+      > .p-menuitem
+      > .p-menuitem-link:not(.p-disabled):hover,
     .p-menubar .p-menuitem-link:not(.p-disabled):hover,
     .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon,
     .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
@@ -148,7 +239,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 960px) {
   .menubar-home-logo {

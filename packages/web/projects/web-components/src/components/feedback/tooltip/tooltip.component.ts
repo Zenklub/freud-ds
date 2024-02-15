@@ -1,7 +1,7 @@
 import { ViewEncapsulation } from '@angular/core';
 import { Component, Input } from '@angular/core';
 
-type position = 'top' | 'bottom' | 'left' | 'right';
+type TooltopPosition = 'top' | 'bottom' | 'left' | 'right';
 
 @Component({
   selector: '[freud-tooltip], freud-tooltip',
@@ -24,6 +24,6 @@ type position = 'top' | 'bottom' | 'left' | 'right';
 })
 export class FreudTooltipComponent {
   @Input() tooltipLabel: string = '';
-  @Input() tooltipPosition: position = 'top';
+  @Input() tooltipPosition: TooltopPosition = 'top';
   @Input() bgColor: boolean = false;
 }

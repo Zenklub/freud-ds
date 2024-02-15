@@ -2,13 +2,15 @@
 @import '../../../../scss/typography';
 
 .freud-input-number:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-input-number.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -49,11 +51,9 @@
     }
   }
 
-  .p-inputtext.ng-invalid {
+  p-inputnumber.ng-invalid .p-inputtext {
     border: 1px solid $feedback-color-negative-04;
     &::placeholder {
-      color: $feedback-color-negative-04;
-      opacity: 1;
       @include typography($font-size-xs, $font-weight-regular, 24px);
     }
   }
@@ -76,5 +76,58 @@
     background-color: $brand-color-pure;
     border: 1px solid $brand-color-pure;
   }
-}
 
+  .p-inputnumber-buttons-stacked {
+    .p-inputtext {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .p-inputnumber-button {
+      height: 20px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .p-inputnumber-buttons-horizontal {
+    .p-inputtext {
+      border-radius: 0;
+    }
+    .p-inputnumber-button .freud-icon {
+      font-size: 16px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .p-inputnumber-buttons-vertical {
+    .p-inputtext {
+      border-radius: 0;
+    }
+    .p-inputnumber-button .freud-icon {
+      font-size: 16px;
+    }
+    .p-inputnumber-button-up {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .p-inputnumber-button-down {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

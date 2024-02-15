@@ -1,9 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudRatingComponent } from '@freud-ds/web-components';
 
-const Template: Story<FreudRatingComponent> = (
-  args: FreudRatingComponent
-) => ({
+const Template: Story<FreudRatingComponent> = (args: FreudRatingComponent) => ({
   props: { ...args },
   template: `
     <freud-rating
@@ -17,12 +15,12 @@ const Template: Story<FreudRatingComponent> = (
 
 export const Default = Template.bind({});
 Default.args = {
-  value: 2
-}
+  value: 2,
+};
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: 2,
-  disabled: true
+  disabled: true,
 };
 export const BGColor = Template.bind({});
 BGColor.args = {

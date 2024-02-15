@@ -8,33 +8,27 @@ Todos as lisbs estão na pasta `packages`
 
 ## Requisitos para desenvolvimento e manipulação das libs
 
-- Node 16
-- NPM na versão 8.x.x
+- Node 18.x
+- NPM na versão 9.x
 
 ## Instalando o projeto
 
 Na pasta raiz do projeto e rode o comando:
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
-
-`--legacy-peer-deps`: Utilize esta flag pois não estamos usando as versões mais recentes de algumas dependências.
 
 Para cada pacote que precise mexer, entre na pasta do projeto e rode:
 
 ```bash
+npm install
+```
+
+**Importate!** Para o pacote `@freud-ds/web-components` localizado em `packages/web/projects/web-components`, rode:
+
+```bash
 npm install --legacy-peer-deps
 ```
 
-<!-- TODO: atualizar lerna para usar novo package management -->
-
-<!-- Após isso, rode o comando:
-
-```bash
-npm run bootstrap --legacy-peer-deps
-```
-
-Ele deve realizar as instalações das dependências dos projetos (_packages_) presentes neste monorepo. -->
-
-
+Referência e thread do problema: https://github.com/storybookjs/storybook/issues/14828#issuecomment-1523875596

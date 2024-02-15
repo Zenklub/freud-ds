@@ -26,7 +26,8 @@ $maxDialogWidth: 700px;
     box-shadow: unset;
   }
 
-  .p-dialog .p-dialog-header .p-dialog-title, .p-dialog .p-dialog-header {
+  .p-dialog .p-dialog-header .p-dialog-title,
+  .p-dialog .p-dialog-header {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-bold, 19.2px);
     border-top-right-radius: 8px;

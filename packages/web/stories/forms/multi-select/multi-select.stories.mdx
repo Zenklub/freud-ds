@@ -1,20 +1,23 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudMultiSelectComponent, FreudMultiSelectModule } from '@freud-ds/web-components';
+import {
+  FreudMultiSelectComponent,
+  FreudMultiSelectModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   Invalid,
-   Chip
+  Chip,
 } from './MultiSelect.stories.ts';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudMultiSelectModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -24,19 +27,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Forms/MultiSelect" component={FreudMultiSelectComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Multiselect",
-      description: "O MultiSelect permite a pessoa usuária escolha várias opções dentro de uma lista já pré-definida."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Forms/MultiSelect"
+  component={FreudMultiSelectComponent}
+/>
+
+<FreudHeaderComponent
+  title="Multiselect"
+  description="O MultiSelect permite a pessoa usuária escolha várias opções dentro de uma lista já pré-definida."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -45,35 +45,41 @@ import { FreudMultiSelectModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
-
 ### Chip
+
 Utilize o parametro `display` com o valor `chip`.
+
 <Canvas>
-  <Story story={Chip}/>
+  <Story story={Chip} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudMultiSelectComponent} />
+<ArgTypes of={FreudMultiSelectComponent} />

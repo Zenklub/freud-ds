@@ -5,8 +5,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { FreudSplitButtonComponent } from './split-button.component';
 
 @NgModule({
-    imports: [CommonModule, SplitButtonModule],
+  imports: [CommonModule, SplitButtonModule],
   declarations: [FreudSplitButtonComponent],
-  exports: [FreudSplitButtonComponent]
+  exports: [FreudSplitButtonComponent],
 })
-export class FreudSplitButtonModule { }
+export class FreudSplitButtonModule {}

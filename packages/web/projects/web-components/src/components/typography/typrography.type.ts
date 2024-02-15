@@ -20,7 +20,7 @@ export const headingTypes = [
   'h4Regular1',
   'h5Regular1',
   'h6Regular1',
-  
+
   'h1RegularAuto',
   'h2RegularAuto',
   'h3RegularAuto',
@@ -85,7 +85,7 @@ export const headingTypes = [
   'h4BoldAuto',
   'h5BoldAuto',
   'h6BoldAuto',
-]
+];
 
 export const bodyTypes = [
   // Regular
@@ -97,7 +97,7 @@ export const bodyTypes = [
 
   'smallRegular1',
   'bodyRegular1',
-  
+
   'smallRegularAuto',
   'bodyRegularAuto',
 
@@ -126,4 +126,4 @@ export const bodyTypes = [
 
   'smallBoldAuto',
   'bodyBoldAuto',
-]
+];

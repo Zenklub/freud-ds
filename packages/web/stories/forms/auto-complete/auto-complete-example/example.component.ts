@@ -13,13 +13,13 @@ import { Component, Input } from '@angular/core';
       [multiple]="multiple"
       [dropdown]="dropdown"
       [placeholder]="'Placeholder'"
-      (completeMethod)="filterItems($event)">
+      (completeMethod)="filterItems($event)"
+    >
     </freud-auto-complete>
   `,
-  styleUrls: ['./example.component.scss']
+  styleUrls: ['./example.component.scss'],
 })
 export class FreudAutoCompleteExampleComponent {
-
   allItems = [
     'Adamantina',
     'Abc',
@@ -28,7 +28,7 @@ export class FreudAutoCompleteExampleComponent {
     'London',
     'Islanbul',
     'São Paulo',
-    'Rio de Janeiro'
+    'Rio de Janeiro',
   ];
   items = [
     'Adamantina',
@@ -38,23 +38,23 @@ export class FreudAutoCompleteExampleComponent {
     'London',
     'Islanbul',
     'São Paulo',
-    'Rio de Janeiro'
-  ]
-  selectedItem: string = '';
+    'Rio de Janeiro',
+  ];
+  selectedItem = '';
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() dropdown = false;
   @Input() multiple = false;
 
-  @Input() invalid: boolean = false;
+  @Input() invalid = false;
   constructor() {}
 
   filterItems(event: any) {
     //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-    let filtered : any[] = [];
-    let query = event.query;
-    for(let i = 0; i < this.allItems.length; i++) {
-      let item = this.allItems[i];
+    const filtered: any[] = [];
+    const query = event.query;
+    for (let i = 0; i < this.allItems.length; i++) {
+      const item = this.allItems[i];
       if (item.toLowerCase().indexOf(query.toLowerCase()) == 0) {
         filtered.push(item);
       }
@@ -62,5 +62,4 @@ export class FreudAutoCompleteExampleComponent {
 
     this.items = filtered;
   }
-
 }

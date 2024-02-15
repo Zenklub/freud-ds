@@ -1,5 +1,12 @@
-import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-calendar',
@@ -13,34 +20,34 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudCalendarComponent),
-      multi: true
+      multi: true,
     },
-  ]
+  ],
 })
-export class FreudCalendarComponent implements ControlValueAccessor{
-  @Input() dateFormat: string = 'dd/mm/yy';
-  @Input() showTime: boolean = true
+export class FreudCalendarComponent implements ControlValueAccessor {
+  @Input() dateFormat = 'dd/mm/yy';
+  @Input() showTime = true;
   @Input() hourFormat: '12' | '24' = '24';
-  @Input() selectionMode: "single" | "multiple" | "range" = 'single';
+  @Input() selectionMode: 'single' | 'multiple' | 'range' = 'single';
   @Input() view: 'date' | 'month' = 'date';
-  @Input() inline: boolean = true;
-  @Input() label: string = '';
+  @Input() inline = true;
+  @Input() label = '';
   @Input() yearRange!: string;
   @Input() disabledDates!: Date[];
   @Input() disabledDays!: number[];
-  @Input() yearNavigator: boolean = false;
-  @Input() monthNavigator: boolean = false;
-  @Input() timeOnly: boolean = false;
-  @Input() showOtherMonths: boolean = true;
-  @Input() selectOtherMonths: boolean = true;
-  @Input() showWeek: boolean = false;
+  @Input() yearNavigator = false;
+  @Input() monthNavigator = false;
+  @Input() timeOnly = false;
+  @Input() showOtherMonths = true;
+  @Input() selectOtherMonths = true;
+  @Input() showWeek = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
-  @Input() appendTo: string = 'body'
+  @Input() required = false;
+  @Input() appendTo = 'body';
   @Input() minDate!: Date;
   @Input() maxDate!: Date;
   @Input() defaultDate!: Date;
-  @Input() stepMinute: number = 1;
+  @Input() stepMinute = 1;
   @Output() onSelect: EventEmitter<any> = new EventEmitter();
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
@@ -52,14 +59,13 @@ export class FreudCalendarComponent implements ControlValueAccessor{
 
   private _value!: any;
 
-
   modelValueChange() {
     this.valueChange.emit(this.value);
   }
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
   public get value() {
     return this._value;
@@ -90,8 +96,7 @@ export class FreudCalendarComponent implements ControlValueAccessor{
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
   onSomeEventOccured(newValue: string) {
     this.value = newValue;

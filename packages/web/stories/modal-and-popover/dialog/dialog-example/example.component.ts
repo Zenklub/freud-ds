@@ -3,18 +3,17 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'freud-dialog-example',
   templateUrl: './example.component.html',
-  styleUrls: ['./example.component.scss']
+  styleUrls: ['./example.component.scss'],
 })
 export class FreudDialogExampleComponent {
-
   @Input() view: 'basic' | 'modal' | 'maximizable' = 'basic';
-  displayModal: boolean = false;
+  displayModal = false;
 
-  displayBasic: boolean = false;
+  displayBasic = false;
 
-  displayBasic2: boolean = false;
+  displayBasic2 = false;
 
-  displayMaximizable: boolean = false;
+  displayMaximizable = false;
 
   showModalDialog() {
     this.displayModal = true;

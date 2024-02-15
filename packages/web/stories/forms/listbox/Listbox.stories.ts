@@ -1,14 +1,14 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudListboxComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const items = [
-  {name: 'New York', code: 'NY'},
-  {name: 'Rome', code: 'RM', disabled: true},
-  {name: 'London', code: 'LDN'},
-  {name: 'Istanbul', code: 'IST'},
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM', disabled: true },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
 ];
 
 const templateHTML = `
@@ -27,7 +27,9 @@ const templateHTML = `
     </div>
 `;
 
-const Template: Story<FreudListboxComponent> = (args: FreudListboxComponent) => ({
+const Template: Story<FreudListboxComponent> = (
+  args: FreudListboxComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
@@ -36,7 +38,7 @@ Default.args = {
   value: '',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Filter = Template.bind({});
@@ -44,21 +46,21 @@ Filter.args = {
   options: items,
   optionLabel: 'name',
   multiple: true,
-  filter: true
+  filter: true,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Checkbox = Template.bind({});
@@ -67,7 +69,7 @@ Checkbox.args = {
   optionLabel: 'name',
   optionValue: 'code',
   checkbox: true,
-  multiple: true
+  multiple: true,
 };
 
 export const CheckboxAndFilter = Template.bind({});
@@ -77,16 +79,13 @@ CheckboxAndFilter.args = {
   optionValue: 'code',
   checkbox: true,
   multiple: true,
-  filter: true
+  filter: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

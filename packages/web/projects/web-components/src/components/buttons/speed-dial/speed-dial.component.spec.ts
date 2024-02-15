@@ -8,9 +8,8 @@ describe('FreudSpeedDialComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudSpeedDialComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudSpeedDialComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

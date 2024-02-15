@@ -1,36 +1,29 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudImageComponent, FreudImageModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  Preview
-} from './Image.stories.ts';
+  FreudImageComponent,
+  FreudImageModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, Preview } from './Image.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudImageModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudImageModule] })]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   }}
   title="@freud-ds/web-components/Media/Image"
   component={FreudImageComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Image",
-      description: "Para exibir diferentes tipos de imagens em interfaces."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="Image"
+  description="Para exibir diferentes tipos de imagens em interfaces."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -39,18 +32,21 @@ import { FreudImageModule } from '@freud-ds/web-components';
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Preview
+
 <Canvas>
-  <Story story={Preview}/>
+  <Story story={Preview} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudImageComponent} />
+<ArgTypes of={FreudImageComponent} />

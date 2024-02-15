@@ -6,28 +6,28 @@ import { Component, Input } from '@angular/core';
     <freud-radio-button
       [(ngModel)]="value"
       [disabled]="disabled"
-      [label]="label ? (label + ' 1'): ''"
+      [label]="label ? label + ' 1' : ''"
       [name]="'label'"
       [radioValue]="'item2'"
-      [bgColor]="bgColor">
+      [bgColor]="bgColor"
+    >
     </freud-radio-button>
-    <br><br>
+    <br /><br />
     <freud-radio-button
       [(ngModel)]="value"
       [disabled]="disabled"
-      [label]="label ? (label + ' 2'): ''"
+      [label]="label ? label + ' 2' : ''"
       [name]="'label'"
       [radioValue]="'item1'"
-      [bgColor]="bgColor">
+      [bgColor]="bgColor"
+    >
     </freud-radio-button>
-  `
+  `,
 })
 export class FreudRadioButtonExampleComponent {
-
-  selectedItem: string = '';
+  selectedItem = '';
   @Input() value!: any;
   @Input() label!: string;
   @Input() bgColor = false;
   @Input() disabled = false;
-
 }

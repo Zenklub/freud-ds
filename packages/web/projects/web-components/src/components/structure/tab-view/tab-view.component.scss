@@ -2,7 +2,6 @@
 @import '../../../../scss/typography';
 
 .freud-tab-view {
-
   .p-tabview .p-tabview-nav li .p-tabview-nav-link,
   .p-tabview .p-tabview-panels,
   .p-tabview .p-tabview-nav {
@@ -17,7 +16,10 @@
     box-shadow: unset;
   }
 
-  .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+  .p-tabview
+    .p-tabview-nav
+    li:not(.p-highlight):not(.p-disabled):hover
+    .p-tabview-nav-link {
     border-color: $brand-color-02;
     background-color: transparent;
     color: $brand-color-02;

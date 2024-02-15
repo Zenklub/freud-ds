@@ -1,10 +1,12 @@
 import { FreudFileUploadComponent } from '@freud-ds/web-components';
-import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 
-const Template: Story<FreudFileUploadComponent> = (args: FreudFileUploadComponent) => ({
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
+
+const Template: Story<FreudFileUploadComponent> = (
+  args: FreudFileUploadComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-file-upload
@@ -35,29 +37,35 @@ export const Default = Template.bind({});
 Default.args = {
   multiple: true,
   url: './upload.php',
+  chooseLabel: 'Escolha',
+  uploadLabel: 'Enviar',
+  cancelLabel: 'Cancelar',
+  showUploadButton: true,
+  showCancelButton: true,
 };
 export const BasicUi = Template.bind({});
 BasicUi.args = {
   url: './upload.php',
   mode: 'basic',
-  chooseLabel: ''
+  chooseLabel: '',
 };
-
 
 // BgColor
 export const BGColor = Template.bind({});
 BGColor.args = {
   multiple: true,
   url: './upload.php',
+  chooseLabel: 'Escolha',
+  uploadLabel: 'Enviar',
+  cancelLabel: 'Cancelar',
+  showUploadButton: true,
+  showCancelButton: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

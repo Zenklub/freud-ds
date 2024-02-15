@@ -6,10 +6,10 @@
     color: $neutral-color-dark-03;
   }
 
-  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon, .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon,
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
     color: $neutral-color-dark-03;
   }
-
 }
 .freud-breadcrumb.freud-bgcolor {
   .p-breadcrumb ul li.p-breadcrumb-chevron {
@@ -17,7 +17,8 @@
     color: $neutral-color-white;
   }
 
-  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon, .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon,
+  .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
     color: $neutral-color-white;
   }
 }
