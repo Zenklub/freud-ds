@@ -1,0 +1,45 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+:host {
+    div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+    }
+    span, label {
+        cursor: pointer;
+    }
+
+    span {
+        width: 20px;
+        height: 20px;
+        background-color: $brand-color-02;
+        border: solid 1px white;
+        border-radius: 2px;
+        position: relative;
+
+        &[checked=true] {
+            background-color: $brand-color-03;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 5px;
+                height: 10px;
+                
+                border: solid white;
+                border-width: 0 3px 3px 0;
+
+                transform: rotate(45deg);
+                margin: 2px 6px;
+            }
+
+        }
+    }
+
+    label {
+        font-family: $font-family-base;
+    }
+}

@@ -21,6 +21,7 @@ export * from './components/forms/multi-select';
 export * from './components/forms/cascade-select';
 export * from './components/forms/listbox';
 export * from './components/forms/checkbox';
+export * from './components/forms/guild-checkbox';
 export * from './components/forms/switch';
 export * from './components/forms/radio-button';
 
