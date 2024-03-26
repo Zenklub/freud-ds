@@ -26,11 +26,10 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-devkit/build-angular:jest",
           "options": {
-            "main": "projects/web-components/src/test.ts",
-            "tsConfig": "projects/web-components/tsconfig.spec.json",
-            "karmaConfig": "projects/web-components/karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/web-components/tsconfig.spec.json"
           }
         }
       }
