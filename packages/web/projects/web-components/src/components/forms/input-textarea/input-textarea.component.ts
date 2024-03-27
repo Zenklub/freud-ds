@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+// TODO: create tests for this component
+
 @Component({
   selector: 'freud-input-textarea',
   styleUrls: ['./input-textarea.component.scss'],
