@@ -27,11 +27,11 @@ describe('FreudSwitchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('deve aplicar a classe switch-custom quando o atributo custom for verdadeiro', () => {
+  it('should apply switch-custom class when custom is true', () => {
     const testHostFixture = TestBed.createComponent(TestCustomSwitch);
     testHostFixture.detectChanges();
 
