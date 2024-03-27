@@ -32,9 +32,9 @@ runs:
     - name: Install web components dependencies
       if: steps.node-modules.outputs.cache-hit != 'true'
       shell: bash
-      run:
-        - cd packages/web
-        - npm ci
+      run: |
+        cd packages/web &&
+        npm ci
 
     - name: Run web components tests
       shell: bash
