@@ -56,3 +56,6 @@ test-report.xml
 # Dist global
 */*/dist
 */*/node_modules
+
+# Angular
+.angular

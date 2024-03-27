@@ -18,11 +18,11 @@ describe('TypographyComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o componente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Deve atribuir corretamente classes de estilo', () => {
+  it('should set style classes', () => {
     const getClass = (className: string) =>
       fixture.debugElement.classes[className];
 
