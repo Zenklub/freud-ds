@@ -7,6 +7,7 @@
     "build": "ng build web-components",
     "watch": "ng build web-components --watch --configuration development",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "storybook": "ng run freud-docs:storybook",
     "build-storybook": "ng run freud-docs:build-storybook",
     "chromatic": "npx chromatic --project-token=8fdc06c43311 --auto-accept-changes",

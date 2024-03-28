@@ -38,4 +38,4 @@ runs:
 
     - name: Run web components tests
       shell: bash
-      run: npm run test
+      run: npm run test:coverage
