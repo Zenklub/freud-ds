@@ -1,5 +1,5 @@
 name: Quality Gate (Web Components)
-description: Run Test and Sonarcloud check
+description: Run Test
 
 runs:
   using: 'composite'
