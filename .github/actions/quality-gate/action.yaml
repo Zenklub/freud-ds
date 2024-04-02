@@ -1,0 +1,43 @@
+name: Quality Gate (Web Components)
+description: Run Test
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+        cache: 'npm'
+
+    - name: Cache root node modules
+      uses: actions/cache@v3
+      id: node-modules
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+    - name: Install root dependencies
+      if: steps.node-modules.outputs.cache-hit != 'true'
+      shell: bash
+      run: npm ci
+
+    - name: Cache web components node modules
+      uses: actions/cache@v3
+      id: node-modules-web-components
+      with:
+        path: ./packages/web/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('packages/web/package-lock.json') }}
+
+    - name: Install web components dependencies
+      if: steps.node-modules.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        cd packages/web &&
+        npm ci
+
+    - name: Run web components tests
+      shell: bash
+      run: |
+        cd packages/web &&
+        npm run test:coverage

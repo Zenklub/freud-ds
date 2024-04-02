@@ -4,11 +4,7 @@
     "types": ["node"],
     "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "../src/test.ts",
-    "../src/**/*.spec.ts",
-    "../projects/**/*.spec.ts"
-  ],
+  "exclude": ["../src/**/*.spec.ts", "../projects/**/*.spec.ts"],
   "include": ["../src/**/*", "../projects/**/*", "../stories/**/*"],
   "files": ["./typings.d.ts"]
 }
