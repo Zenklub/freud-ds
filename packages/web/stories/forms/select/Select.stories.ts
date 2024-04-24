@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudSelectComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
 const items = [
@@ -16,6 +16,7 @@ const templateHTML = `
         <freud-select
           [disabled]="disabled"
           [label]="label"
+          [useItemTemplate]="useItemTemplate"
           [options]="options"
           [optionLabel]="optionLabel"
           [filter]="filter"
@@ -39,7 +40,7 @@ Default.args = {
   placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const BGColor = Template.bind({});
@@ -50,7 +51,7 @@ BGColor.args = {
   helpText: 'Helper Text',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Filter = Template.bind({});
@@ -61,7 +62,7 @@ Filter.args = {
   placeholder: 'Placeholder',
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Disabled = Template.bind({});
@@ -70,7 +71,7 @@ Disabled.args = {
   disabled: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
 };
 
 export const Invalid = Template.bind({});
@@ -80,16 +81,37 @@ Invalid.args = {
   invalid: true,
   options: items,
   optionLabel: 'name',
-  optionValue: 'code'
+  optionValue: 'code',
+};
+
+export const Tags = Template.bind({});
+Tags.args = {
+  label: 'Label',
+  useItemTemplate: true,
+  placeholder: 'Placeholder',
+  invalid: true,
+  options: [
+    {
+      label: 'New York',
+      code: 'NY',
+      tags: [
+        { label: 'Conteúdos' },
+        { label: 'Autoavaliações' },
+        { label: 'Sessões de psicoterapia (16)' },
+        { label: 'Sessões de psiquiatria' },
+      ],
+    },
+    { label: 'Rome', code: 'RM', disabled: true },
+    { label: 'London', code: 'LDN' },
+    { label: 'Istanbul', code: 'IST' },
+  ],
+  optionValue: 'code',
 };
 
 export default {
   decorators: [
     moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+      imports: [BrowserModule, BrowserAnimationsModule],
+    }),
+  ],
+};
