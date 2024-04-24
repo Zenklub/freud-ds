@@ -16,6 +16,7 @@ const templateHTML = `
         <freud-select
           [disabled]="disabled"
           [label]="label"
+          [useItemTemplate]="useItemTemplate"
           [options]="options"
           [optionLabel]="optionLabel"
           [filter]="filter"
@@ -80,6 +81,21 @@ Invalid.args = {
   invalid: true,
   options: items,
   optionLabel: 'name',
+  optionValue: 'code'
+};
+
+export const Tags = Template.bind({});
+Tags.args = {
+  label: 'Label',
+  useItemTemplate: true,
+  placeholder: 'Placeholder',
+  invalid: true,
+  options: [
+    { label: 'New York', code: 'NY', tags: [ { label: 'Conteúdos'}, {label: 'Autoavaliações'},{label: 'Sessões de psicoterapia (16)'}, {label: 'Sessões de psiquiatria'}] },
+    { label: 'Rome', code: 'RM', disabled: true },
+    { label: 'London', code: 'LDN' },
+    { label: 'Istanbul', code: 'IST' },
+  ],
   optionValue: 'code'
 };
 

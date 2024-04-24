@@ -7,7 +7,8 @@ import {
   BGColor,
   Disabled,
   Invalid,
-  Filter
+  Filter,
+  Tags
 } from './Select.stories.ts';
 
 <Meta
@@ -70,6 +71,20 @@ import { FreudSelectModule } from '@freud-ds/web-components';
 ### BG Color
 <Canvas style={{ backgroundColor: '#241249' }}>
   <Story story={BGColor}/>
+</Canvas>
+
+### Opções com tags
+Para usarmos as opções com tags, devemos setar a propriedade **useItemTemplate** para true. E as opções devem conter um array **tabs** como abaixo:
+```
+ options: [
+    { label: 'New York', code: 'NY', tags: [ { label: 'Conteúdos'}, {label: 'Autoavaliações'},{label: 'Sessões de psicoterapia (16)'}, {label: 'Sessões de psiquiatria'}] },
+    { label: 'Rome', code: 'RM', disabled: true },
+    { label: 'London', code: 'LDN' },
+    { label: 'Istanbul', code: 'IST' },
+  ]
+```
+<Canvas>
+  <Story story={Tags}/>
 </Canvas>
 
 ## <a id="api"></a>API

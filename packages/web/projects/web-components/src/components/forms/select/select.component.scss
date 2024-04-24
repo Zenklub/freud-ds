@@ -66,11 +66,30 @@
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
+    .select__tag{
+      background-color: white!important;
+    }
   }
 
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
     background-color: $brand-color-01;
     color: $brand-color-pure;
+    .select__ta{
+      background-color: white!important;
+    }
+  }
+  .tags{
+    display: inline-flex;
+    gap: 5px;
+    margin-top: 10px;
+    .select__tag{
+      background-color: #EEE6FC;
+      border-radius: 8px;
+      padding: 4px 8px 4px 8px;
+      font-size: 14px;
+      color:#6732D1;
+      width: min-content;
+    }
   }
 }
 

@@ -37,7 +37,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() itemSize!: number;
   @Input() emptyMessage: string = 'Sem resultados';
   @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
-  @Input() optionLabel!: string;
+  @Input() optionLabel: string = 'label'
   @Input() optionValue!: string;
   @Input() optionDisabled: string = 'disabled';
   @Input() optionGroupLabel: string = 'label';
@@ -48,7 +48,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required: boolean = false;
   @Input() id!: string;
-
+  @Input() useItemTemplate = false
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
