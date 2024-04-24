@@ -36,7 +36,9 @@
       <div class="flex align-items-center gap-2">
         <div>{{ optionLabel ? item[optionLabel] : item.label }}</div>
         <div class="tags" *ngIf="item.tags?.length > 0">
-          <div  class="select__tag" *ngFor="let tag of item.tags">{{ tag.label }}</div>
+          <div class="select__tag" *ngFor="let tag of item.tags">
+            {{ tag.label }}
+          </div>
         </div>
       </div>
     </ng-template>

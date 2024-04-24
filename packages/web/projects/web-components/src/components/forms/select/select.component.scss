@@ -1,14 +1,16 @@
-@import '../../../../../../../tokens/dist/style/scss/variables';
-@import '../../../../scss/typography';
+@import "../../../../../../../tokens/dist/style/scss/variables";
+@import "../../../../scss/typography";
 
 .freud-select:not(.freud-bgcolor) {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-dark-04;
   }
 }
 
 .freud-select.freud-bgcolor {
-  .freud-label, .help-text {
+  .freud-label,
+  .help-text {
     color: $neutral-color-white;
   }
 }
@@ -66,23 +68,24 @@
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
-    .select__tag{
-      background-color: white!important;
+    .select__tag {
+      background-color: white !important;
     }
   }
 
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
     background-color: $brand-color-01;
     color: $brand-color-pure;
-    .select__ta{
-      background-color: white!important;
+    .select__tag {
+      background-color: white !important;
     }
   }
-  .tags{
+  .tags {
     display: inline-flex;
+    flex-wrap: wrap;
     gap: 5px;
     margin-top: 10px;
-    .select__tag{
+    .select__tag {
       background-color: $brand-color-01;
       border-radius: $border-radius-md;
       padding: $spacing-size-quark $spacing-size-nano $spacing-size-quark $spacing-size-nano;
@@ -92,4 +95,3 @@
     }
   }
 }
-

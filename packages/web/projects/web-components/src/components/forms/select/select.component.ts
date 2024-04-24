@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-select',
@@ -21,9 +21,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudSelectComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudSelectComponent implements ControlValueAccessor {
   @Input() label: string = '';
@@ -37,7 +37,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() itemSize!: number;
   @Input() emptyMessage: string = 'Sem resultados';
   @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
-  @Input() optionLabel: string = 'label'
+  @Input() optionLabel: string = 'label';
   @Input() optionValue!: string;
   @Input() optionDisabled: string = 'disabled';
   @Input() optionGroupLabel: string = 'label';
@@ -48,7 +48,7 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required: boolean = false;
   @Input() id!: string;
-  @Input() useItemTemplate = false
+  @Input() useItemTemplate = false;
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
@@ -60,7 +60,6 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
-
 
   private _value!: string;
 
@@ -76,12 +75,11 @@ export class FreudSelectComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
   onSomeEventOccured(newValue: string) {
     this.value = newValue;
@@ -97,12 +95,10 @@ export class FreudSelectComponent implements ControlValueAccessor {
       this.onModelChange(this._value);
     }
 
-
     if (typeof this.onModelTouched === 'function') {
       this.onModelTouched();
     }
 
     this.valueChange.emit(v);
   }
-
 }
