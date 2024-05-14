@@ -20,6 +20,7 @@
     [dropdownIcon]="dropdownIcon"
     [emptyMessage]="emptyMessage"
     [virtualScrollItemSize]="itemSize"
+    [itemSize]="itemSize"
     [disabled]="disabled"
     [required]="required"
     [filter]="filter"
@@ -31,7 +32,18 @@
     (onShow)="onShow.emit($event)"
     (onHide)="onHide.emit($event)"
     (onClear)="onClear.emit($event)"
-  ></p-dropdown>
+  >
+    <ng-template let-item pTemplate="item" *ngIf="useItemTemplate">
+      <div class="flex align-items-center gap-2">
+        <div>{{ optionLabel ? item[optionLabel] : item.label }}</div>
+        <div class="tags" *ngIf="item.tags?.length > 0">
+          <div class="select__tag" *ngFor="let tag of item.tags">
+            {{ tag.label }}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dropdown>
   <small
     [class.disabled]="disabled"
     *ngIf="helpText"

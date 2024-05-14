@@ -1,5 +1,5 @@
-@import '../../../../../../../tokens/dist/style/scss/variables';
-@import '../../../../scss/typography';
+@import "../../../../../../../tokens/dist/style/scss/variables";
+@import "../../../../scss/typography";
 
 .freud-select:not(.freud-bgcolor) {
   .freud-label,
@@ -70,10 +70,30 @@
     .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
+    .select__tag {
+      background-color: white !important;
+    }
   }
 
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
     background-color: $brand-color-01;
     color: $brand-color-pure;
+    .select__tag {
+      background-color: white !important;
+    }
+  }
+  .tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    .select__tag {
+      background-color: $brand-color-01;
+      border-radius: $border-radius-md;
+      padding: $spacing-size-quark $spacing-size-nano $spacing-size-quark $spacing-size-nano;
+      font-size: $font-size-xxs;
+      color: $brand-color-pure;
+      width: min-content;
+    }
   }
 }

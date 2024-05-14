@@ -11,7 +11,8 @@ import {
   Disabled,
   Invalid,
   Filter,
-} from './Select.stories.ts';
+  Tags,
+} from "./Select.stories.ts";
 
 <Meta
   decorators={[
@@ -20,15 +21,20 @@ import {
     }),
   ]}
   parameters={{
-    layout: 'centered',
+    layout: "centered",
     backgrounds: {
-      default: 'Default',
+      default: "Default",
       values: [
-        { name: 'Default', value: '#FFFFFF' },
-        { name: 'BgColor', value: '#6732D1' },
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
       ],
     },
   }}
+  title="@freud-ds/web-components/Forms/Select"
+  component={FreudSelectComponent}
+/>
+
+<Story name="Storyname-hidden"
   title="@freud-ds/web-components/Forms/Select"
   component={FreudSelectComponent}
 />
@@ -41,7 +47,7 @@ import {
 ## <a id="importing"></a>Import
 
 ```ts
-import { FreudSelectModule } from '@freud-ds/web-components';
+import { FreudSelectModule } from "@freud-ds/web-components";
 ```
 
 ## <a id="exemplos"></a>Exemplos
@@ -74,8 +80,35 @@ import { FreudSelectModule } from '@freud-ds/web-components';
 
 ### BG Color
 
-<Canvas style={{ backgroundColor: '#241249' }}>
+<Canvas style={{ backgroundColor: "#241249" }}>
   <Story story={BGColor} />
+</Canvas>
+
+### Opções com tags
+
+Para usarmos as opções com tags, devemos setar a propriedade **useItemTemplate** para true. E as opções devem conter um array **tabs** como abaixo:
+
+```
+  options: [
+    {
+      label: 'New York',
+      code: 'NY',
+      tags: [
+        { label: 'Conteúdos'},
+        { label: 'Autoavaliações' },
+        { label: 'Sessões de psicoterapia (16)' },
+        { label: 'Sessões de psiquiatria'},
+      ],
+    },
+    { label: 'Rome', code: 'RM', disabled: true },
+    { label: 'London', code: 'LDN' },
+    { label: 'Istanbul', code: 'IST' },
+  ]
+
+```
+
+<Canvas>
+  <Story story={Tags} />
 </Canvas>
 
 ## <a id="api"></a>API
