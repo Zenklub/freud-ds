@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "tslib": "^2.6.2",
-    "primeng": "16.9.10-lts",
+    "primeng": "^16.9.1",
     "primeicons": "^6.0.1"
   }
 }
