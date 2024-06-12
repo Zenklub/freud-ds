@@ -12,14 +12,19 @@ import { GalleryPhoto } from '../../../api/gallery-photo.interface';
       [showIndicators]="!showThumbnails"
     >
       <ng-template pTemplate="item" let-item>
-        <img [src]="item.previewImageSrc" style="width: 100%;" />
+        <div *ngIf="item.type === 'image'">
+          <img [src]="item.previewImageSrc" [alt]="item.alt" style="width: 100%;"/>
+        </div>
+        <div *ngIf="item.type === 'video'" style="width: 100%;">
+          <iframe [src]="item.previewImageSrc" frameborder="0" allowfullscreen></iframe>
+        </div>
       </ng-template>
       <ng-template pTemplate="thumbnail" let-item>
-        <div class="p-grid p-nogutter p-justify-center">
-          <img
-            [src]="item.thumbnailImageSrc"
-            style="width: 80px;height: 60px"
-          />
+        <div *ngIf="item.type === 'image'" class="p-grid p-nogutter p-justify-center">
+          <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 80px;height: 60px"/>
+        </div>
+        <div *ngIf="item.type === 'video'" class="p-grid p-nogutter p-justify-center">
+          <img src="item.thumbnailImageSrc" [alt]="item.alt" style="width: 80px;height: 60px"/>
         </div>
       </ng-template>
     </p-galleria>
