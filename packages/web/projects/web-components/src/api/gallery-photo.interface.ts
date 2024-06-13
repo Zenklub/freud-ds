@@ -1,6 +1,7 @@
 export interface GalleryPhoto {
-  previewImageSrc: string;
-  thumbnailImageSrc: string;
-  alt: string;
-  title: string;
+  "type": 'image' | 'video';
+  "previewImageSrc": string;
+  "thumbnailImageSrc": string;
+  "alt": string;
+  "title": string;
 }

@@ -5,7 +5,7 @@ import {
   FreudGalleryModule,
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import { BGColor, Default, WithoutThumbnail } from './gallery.stories.ts';
+import { BGColor, Default, WithoutThumbnail, Videos } from './gallery.stories.ts';
 
 <Meta
   decorators={[moduleMetadata({ imports: [FreudGalleryModule] })]}
@@ -41,8 +41,16 @@ import { GalleryPhoto } from '@freud-ds/web-components';
 
 images: GalleryPhoto[] = [
     {
+        "type": "image"
         "previewImageSrc": "demo/images/galleria/galleria5.jpg",
         "thumbnailImageSrc": "demo/images/galleria/galleria5s.jpg",
+        "alt": "Description for Image 5",
+        "title": "Title 5"
+    },
+    {
+        "type": "video"
+        "previewImageSrc": "https://www.youtube.com/embed/AurVL6n56wg",
+        "thumbnailImageSrc": "https://www.youtube.com/embed/AurVL6n56wg",
         "alt": "Description for Image 5",
         "title": "Title 5"
     }
@@ -69,6 +77,12 @@ No html use as propriedades `showThumbnails` e `bgColor` para definir a exibiÃ§Ã
 
 <Canvas>
   <Story story={Default} />
+</Canvas>
+
+### With Videos
+
+<Canvas>
+  <Story story={Videos} />
 </Canvas>
 
 ### Without Thumbnail

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { FreudGalleryComponent } from './gallery.component';
 import { GalleriaModule } from 'primeng/galleria';
+import { SafePipe } from 'projects/web-components/src/api/safe.pipe';
 
 @NgModule({
   imports: [CommonModule, GalleriaModule],
-  declarations: [FreudGalleryComponent],
+  declarations: [FreudGalleryComponent, SafePipe],
   exports: [FreudGalleryComponent],
 })
 export class FreudGalleryModule {}
