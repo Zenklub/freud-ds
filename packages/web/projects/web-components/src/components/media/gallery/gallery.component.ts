@@ -11,6 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
       [responsiveOptions]="responsiveOptions"
       [showThumbnails]="showThumbnails"
       [showIndicators]="!showThumbnails"
+      [(activeIndex)]="activeIndex"
     >
       <ng-template pTemplate="item" let-item>
         <div class="gallery-item">
@@ -40,6 +41,7 @@ export class FreudGalleryComponent {
   @Input() images: GalleryPhoto[] = [];
   @Input() bgColor = false;
   @Input() showThumbnails = true;
+  @Input() activeIndex = 0;
 
   @Input() responsiveOptions = [
     {
