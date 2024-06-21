@@ -8,9 +8,8 @@ describe('FreudInputTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudInputTextComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudInputTextComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('FreudInputTextComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

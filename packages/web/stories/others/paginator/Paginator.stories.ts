@@ -1,7 +1,9 @@
 import { Story } from '@storybook/angular';
-import { FreudPaginatorComponent } from "@freud-ds/web-components";
+import { FreudPaginatorComponent } from '@freud-ds/web-components';
 
-const Template: Story<FreudPaginatorComponent> = (args: FreudPaginatorComponent) => ({
+const Template: Story<FreudPaginatorComponent> = (
+  args: FreudPaginatorComponent,
+) => ({
   props: { ...args },
   template: `<freud-paginator
     [rows]="rows"
@@ -23,8 +25,8 @@ Default.args = {
   pageLinkSize: 4,
   first: 0,
   showFirstLastIcon: true,
-  alwaysShow: true
-}
+  alwaysShow: true,
+};
 
 export const PageReport = Template.bind({});
 PageReport.args = {
@@ -36,8 +38,8 @@ PageReport.args = {
   currentPageReportTemplate: '({currentPage} de {totalPages})',
   first: 0,
   showFirstLastIcon: true,
-  alwaysShow: true
-}
+  alwaysShow: true,
+};
 
 export const BGColor = Template.bind({});
 BGColor.args = {
@@ -47,5 +49,5 @@ BGColor.args = {
   pageLinkSize: 4,
   first: 0,
   showFirstLastIcon: true,
-  alwaysShow: true
-}
+  alwaysShow: true,
+};

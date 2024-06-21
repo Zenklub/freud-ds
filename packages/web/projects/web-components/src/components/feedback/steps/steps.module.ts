@@ -8,6 +8,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [CommonModule, StepsModule, RouterModule],
   declarations: [FreudStepsComponent],
-  exports: [FreudStepsComponent]
+  exports: [FreudStepsComponent],
 })
-export class FreudStepsModule { }
+export class FreudStepsModule {}

@@ -1,3 +1,3 @@
-import { DynamicDialogConfig } from "primeng/dynamicdialog/dynamicdialog-config";
+import { DynamicDialogConfig } from 'primeng/dynamicdialog/dynamicdialog-config';
 
-export interface FreudDynamicDialogConfig extends DynamicDialogConfig {}
+export type FreudDynamicDialogConfig = DynamicDialogConfig;

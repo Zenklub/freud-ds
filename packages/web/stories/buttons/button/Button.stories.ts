@@ -2,7 +2,9 @@ import { Story } from '@storybook/angular';
 import { FreudButtonComponent } from '@freud-ds/web-components';
 
 // Button Test
-const TemplateTest: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
+const TemplateTest: Story<FreudButtonComponent> = (
+  args: FreudButtonComponent,
+) => ({
   props: { ...args },
   template: `<freud-button [color]="color" [bgColor]="bgColor" [size]="size" [disabled]="disabled" 
 [loading]="loading" [icon]="icon" [label]="label" [iconPos]="iconPos"></freud-button>`,
@@ -10,7 +12,7 @@ const TemplateTest: Story<FreudButtonComponent> = (args: FreudButtonComponent) =
 
 export const ButtonTest = TemplateTest.bind({});
 ButtonTest.args = {
-  label: 'Teste'
+  label: 'Teste',
 };
 
 // Theme
@@ -61,7 +63,7 @@ export const Disabled = () => {
 // Loading
 export const Loading = () => {
   return {
-    template: `<freud-button [loading]="true" [bgColor]="false" label="Button loading" iconPos="right"></freud-button>`,
+    template: `<freud-button [loading]="true" [bgColor]="false" label="Button loading"></freud-button>`,
   };
 };
 
@@ -103,7 +105,7 @@ export const FullWidthIconRight = () => {
   };
 };
 
-// With icon 
+// With icon
 export const IconOnly = () => {
   return {
     template: `<freud-button icon="freud-icon freud-icon-check"></freud-button>`,
@@ -125,6 +127,6 @@ export const WithIconLeft = () => {
 // With ng-content
 export const WithNGContent = () => {
   return {
-    template: `<freud-button>Button sem label</freud-button>`,
+    template: '<freud-button>Button sem label</freud-button>',
   };
 };

@@ -8,9 +8,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

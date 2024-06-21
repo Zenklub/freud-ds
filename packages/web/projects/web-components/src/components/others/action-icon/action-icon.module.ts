@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FreudActionIconComponent } from './action-icon.component';
 
 @NgModule({
-    imports: [CommonModule],
+  imports: [CommonModule],
   declarations: [FreudActionIconComponent],
-  exports: [FreudActionIconComponent]
+  exports: [FreudActionIconComponent],
 })
-export class FreudActionIconModule { }
+export class FreudActionIconModule {}

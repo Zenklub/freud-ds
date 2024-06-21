@@ -8,9 +8,8 @@ describe('FreudCheckboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudCheckboxComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudCheckboxComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('FreudCheckboxComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

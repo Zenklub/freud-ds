@@ -8,9 +8,8 @@ describe('FreudInputMaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudInputMaskComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudInputMaskComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('FreudInputMaskComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

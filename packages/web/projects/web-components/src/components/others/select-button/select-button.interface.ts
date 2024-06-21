@@ -1,6 +1,6 @@
 export interface FreudSelectButtonOption {
-    label: string;
-    icon?: string;
+  label: string;
+  icon?: string;
 }
 
-export type FreudIconPosition = 'preppend' | 'append'
+export type FreudIconPosition = 'preppend' | 'append';

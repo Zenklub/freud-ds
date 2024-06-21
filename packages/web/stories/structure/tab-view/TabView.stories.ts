@@ -1,7 +1,9 @@
 import { FreudTabViewComponent } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
-const Template: Story<FreudTabViewComponent> = (args: FreudTabViewComponent) => ({
+const Template: Story<FreudTabViewComponent> = (
+  args: FreudTabViewComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-tab-view
@@ -24,22 +26,24 @@ const Template: Story<FreudTabViewComponent> = (args: FreudTabViewComponent) => 
 
 export const Default = Template.bind({});
 Default.args = {
-  activeIndex: 0
+  activeIndex: 0,
 };
 
 export const Scrollable = Template.bind({});
 Scrollable.args = {
   activeIndex: 0,
-  scrollable: true
+  scrollable: true,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   activeIndex: 1,
-  bgColor: true
+  bgColor: true,
 };
 
-const TemplateIcon: Story<FreudTabViewComponent> = (args: FreudTabViewComponent) => ({
+const TemplateIcon: Story<FreudTabViewComponent> = (
+  args: FreudTabViewComponent,
+) => ({
   props: { ...args },
   template: `
     <freud-tab-view

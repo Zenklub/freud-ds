@@ -10,13 +10,17 @@ const templateHTML = `
     </freud-divider>
 `;
 
-const Template: Story<FreudDividerComponent> = (args: FreudDividerComponent) => ({
+const Template: Story<FreudDividerComponent> = (
+  args: FreudDividerComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
 export const Default = Template.bind({});
 
-const TemplateHorizontal: Story<FreudDividerComponent> = (args: FreudDividerComponent) => ({
+const TemplateHorizontal: Story<FreudDividerComponent> = (
+  args: FreudDividerComponent,
+) => ({
   props: { ...args },
   template: `
       <freud-divider
@@ -43,10 +47,12 @@ export const Horizontal = TemplateHorizontal.bind({});
 
 export const BGColor = Template.bind({});
 BGColor.args = {
-  bgColor: true
+  bgColor: true,
 };
 
-const TemplateVertical: Story<FreudDividerComponent> = (args: FreudDividerComponent) => ({
+const TemplateVertical: Story<FreudDividerComponent> = (
+  args: FreudDividerComponent,
+) => ({
   props: { ...args },
   template: `
       <div style="display: flex;gap: 16px;height: 220px">
@@ -66,4 +72,3 @@ const TemplateVertical: Story<FreudDividerComponent> = (args: FreudDividerCompon
   `,
 });
 export const Vertical = TemplateVertical.bind({});
-

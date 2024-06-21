@@ -2,13 +2,20 @@
 @import '../../../../scss/typography';
 
 .freud-panel-menu {
-
-  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon,
+  .p-panelmenu
+    .p-panelmenu-content
+    .p-menuitem
+    .p-menuitem-link
+    .p-menuitem-icon,
   .p-panelmenu .p-panelmenu-header > a .p-menuitem-icon {
     font-size: 14px;
   }
 
-  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+  .p-panelmenu
+    .p-panelmenu-content
+    .p-menuitem
+    .p-menuitem-link
+    .p-menuitem-icon {
     color: $neutral-color-dark-02;
   }
 
@@ -16,22 +23,34 @@
     margin-bottom: $spacing-size-quark;
   }
 
-  .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a, {
+  .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a {
     border-top-right-radius: $border-radius-md;
     border-top-left-radius: $border-radius-md;
   }
 
-  .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-header:not(.p-highlight) > a {
+  .p-panelmenu
+    .p-panelmenu-panel:last-child
+    .p-panelmenu-header:not(.p-highlight)
+    > a {
     border-bottom-right-radius: $border-radius-md;
     border-bottom-left-radius: $border-radius-md;
   }
 
-  .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
+  .p-panelmenu
+    .p-panelmenu-header:not(.p-highlight):not(.p-disabled)
+    > a:hover {
     background-color: $neutral-color-light-01;
   }
 
-  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover,
-  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover span {
+  .p-panelmenu
+    .p-panelmenu-content
+    .p-menuitem
+    .p-menuitem-link:not(.p-disabled):hover,
+  .p-panelmenu
+    .p-panelmenu-content
+    .p-menuitem
+    .p-menuitem-link:not(.p-disabled):hover
+    span {
     background-color: $brand-color-01;
     color: $brand-color-pure;
   }
@@ -57,7 +76,11 @@
     @include typography($font-size-xs, $font-weight-bold, 16px);
   }
 
-  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+  .p-panelmenu
+    .p-panelmenu-content
+    .p-menuitem
+    .p-menuitem-link
+    .p-menuitem-text {
     color: $neutral-color-dark-03;
     @include typography($font-size-xs, $font-weight-regular, auto);
   }
@@ -66,5 +89,4 @@
   .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
     box-shadow: unset;
   }
-
 }

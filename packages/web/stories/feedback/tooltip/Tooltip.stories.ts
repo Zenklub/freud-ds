@@ -2,7 +2,7 @@ import { Story } from '@storybook/angular';
 import { FreudTooltipComponent } from '@freud-ds/web-components';
 
 const Template: Story<FreudTooltipComponent> = (
-  args: FreudTooltipComponent
+  args: FreudTooltipComponent,
 ) => ({
   props: { ...args },
   template: `
@@ -65,7 +65,7 @@ export const BGColor = () => {
   return {
     template: `
       <span freud-tooltip tooltipLabel="Tooltip label com BGColor" tooltipPosition="bottom" bgColor="true">
-        <span style="font-family: 'Source Sans Pro'; color: 'white'">Passe o mouse aqui!</span>
+        <span style="font-family: 'Source Sans Pro'; color: white">Passe o mouse aqui!</span>
       </span>
     `,
   };

@@ -8,9 +8,8 @@ describe('FreudTooltipComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudTooltipComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudTooltipComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

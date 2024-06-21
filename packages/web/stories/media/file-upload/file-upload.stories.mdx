@@ -1,17 +1,14 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudFileUploadComponent, FreudFileUploadModule } from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
 import {
-  Default,
-  BGColor,
-  BasicUi
-} from './FileUpload.stories.ts';
+  FreudFileUploadComponent,
+  FreudFileUploadModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, BGColor, BasicUi } from './FileUpload.stories.ts';
 
 <Meta
-  decorators={[
-    moduleMetadata({imports: [FreudFileUploadModule]})
-  ]}
+  decorators={[moduleMetadata({ imports: [FreudFileUploadModule] })]}
   parameters={{
     layout: 'centered',
     backgrounds: {
@@ -20,21 +17,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   title="@freud-ds/web-components/Media/FileUpload"
   component={FreudFileUploadComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "File Upload",
-      description: "FileUpload é um uploader avançado com suporte para arrastar e soltar, uploads de vários arquivos, upload automático, rastreamento de progresso e validações."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="File Upload"
+  description="FileUpload é um uploader avançado com suporte para arrastar e soltar, uploads de vários arquivos, upload automático, rastreamento de progresso e validações."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -43,44 +35,63 @@ import { FreudFileUploadComponent } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 FileUpload requer uma propriedade `url` como destino de upload e `name` para identificar os arquivos no back-end.
+
 ```html
-<freud-file-upload [name]="'file[]'" [url]="'https://api.com/upload'"></freud-file-upload>
+<freud-file-upload
+  [name]="'file[]'"
+  [url]="'https://api.com/upload'"
+></freud-file-upload>
 ```
 
 ### DragDrop
+
 A seleção de arquivo também pode ser feita arrastando e soltando um ou mais arquivos na seção de conteúdo do componente.
 
 ### Multiple Uploads
+
 Apenas um arquivo pode ser selecionado por vez, para permitir a seleção de vários, habilite a opção `multiple`.
 
 ### File Types
+
 Os tipos de arquivo selecionáveis podem ser restritos com a propriedade aceitar, o exemplo abaixo permite apenas o
 upload de imagens. Leia mais sobre outros valores possíveis <a href="https://www.w3schools.com/tags/att_input_accept.asp" target="_blank">aqui</a>.
 
 ### File Size
+
 O tamanho máximo do arquivo pode ser restrito usando a propriedade `maxFileSize` definida em bytes.
 
 ### Basic UI
+
 O modo básico FileUpload fornece uma interface do usuário mais simples como alternativa ao modo avançado.
+
 ```html
 <freud-file-upload
-    mode="basic"
-    name="demo[]"
-    url="./upload.php"
-    accept="image/*"
-    maxFileSize="1000000"
-    chooseLabel=""
-    (onUpload)="onBasicUpload($event)"
-    [auto]="true">
+  mode="basic"
+  name="demo[]"
+  url="./upload.php"
+  accept="image/*"
+  maxFileSize="1000000"
+  chooseLabel=""
+  (onUpload)="onBasicUpload($event)"
+  [auto]="true"
+>
 </freud-file-upload>
 ```
 
 ### Custom Upload
+
 A implementação de upload pode ser substituída ativando a propriedade customUpload e definindo um evento de manipulador de upload customizado.
+
 ```html
-<freud-file-upload name="myfile[]" customUpload="true" (uploadHandler)="myUploader($event)"></freud-file-upload>
+<freud-file-upload
+  name="myfile[]"
+  customUpload="true"
+  (uploadHandler)="myUploader($event)"
+></freud-file-upload>
 ```
+
 ```ts
   myUploader(event) {
       //event.files == files to upload
@@ -88,23 +99,27 @@ A implementação de upload pode ser substituída ativando a propriedade customU
 ```
 
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ### Basic UI
+
 <Canvas>
-  <Story story={BasicUi}/>
+  <Story story={BasicUi} />
 </Canvas>
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudFileUploadComponent} />
+<ArgTypes of={FreudFileUploadComponent} />

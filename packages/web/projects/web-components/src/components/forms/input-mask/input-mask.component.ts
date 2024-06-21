@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-input-mask',
@@ -14,7 +14,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
       <p-inputMask
         [id]="id"
         [class.ng-invalid]="invalid"
@@ -37,34 +42,36 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-input-mask',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudInputMaskComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudInputMaskComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
-  @Input() mask: string = '';
-  @Input() unmask: boolean = false;
-  @Input() slotChar: string = '';
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() label = '';
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
+  @Input() mask = '';
+  @Input() unmask = false;
+  @Input() slotChar = '';
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -91,26 +98,24 @@ export class FreudInputMaskComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
     this.valueChange.emit(this._value);
   }
-
 }

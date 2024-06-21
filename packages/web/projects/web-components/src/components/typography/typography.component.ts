@@ -17,13 +17,13 @@ type fontTypes = typeof types[number];
   styleUrls: ['./typography.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  template: `<ng-content></ng-content> `,
+  template: '<ng-content></ng-content> ',
   host: {
     class: 'freud-typography',
-    '[class.typography-bg-color]': `fontBgColor`,
+    '[class.typography-bg-color]': 'fontBgColor',
   },
 })
 export class FreudTypographyComponent {
   @HostBinding('class') @Input() fontType: fontTypes = 'bodyRegular1-5';
-  @Input() fontBgColor: boolean = false;
+  @Input() fontBgColor = false;
 }

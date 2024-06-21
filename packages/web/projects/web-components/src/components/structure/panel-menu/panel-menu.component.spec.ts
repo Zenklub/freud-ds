@@ -8,9 +8,8 @@ describe('FreudPanelMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudPanelMenuComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudPanelMenuComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

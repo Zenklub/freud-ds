@@ -8,9 +8,8 @@ describe('FreudSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreudAutoCompleteComponent ]
-    })
-    .compileComponents();
+      declarations: [FreudAutoCompleteComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('FreudSelectComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o compoenente', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

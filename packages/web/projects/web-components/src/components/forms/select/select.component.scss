@@ -41,7 +41,7 @@
     width: 100%;
   }
 
-  .p-inputtext.ng-invalid {
+  p-dropdown.ng-invalid .p-dropdown {
     border: 1px solid $feedback-color-negative-04;
     @include typography($font-size-xs, $font-weight-regular, 24px);
   }
@@ -65,7 +65,9 @@
     transition: box-shadow 0.2s;
     border-radius: 0;
   }
-  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  .p-dropdown-panel
+    .p-dropdown-items
+    .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
     background-color: $brand-color-01;
     color: $brand-color-pure;
     .select__tag {

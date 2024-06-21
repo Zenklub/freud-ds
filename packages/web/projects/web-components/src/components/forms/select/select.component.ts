@@ -15,7 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   templateUrl: './select.component.html',
   host: {
     class: 'freud-select',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
@@ -26,27 +26,27 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class FreudSelectComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() filter: boolean = false;
-  @Input() lazy: boolean = false;
+  @Input() label = '';
+  @Input() filter = false;
+  @Input() lazy = false;
   @Input() options!: any[];
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
-  @Input() virtualScroll: boolean = false;
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
+  @Input() virtualScroll = false;
   @Input() itemSize!: number;
-  @Input() emptyMessage: string = 'Sem resultados';
-  @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
+  @Input() emptyMessage = 'Sem resultados';
+  @Input() dropdownIcon = 'freud-icon freud-icon-chevron-down';
   @Input() optionLabel: string = 'label';
   @Input() optionValue: string = 'value';
-  @Input() optionDisabled: string = 'disabled';
-  @Input() optionGroupLabel: string = 'label';
-  @Input() optionGroupChildren: string = 'items';
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() optionDisabled = 'disabled';
+  @Input() optionGroupLabel = 'label';
+  @Input() optionGroupChildren = 'items';
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
   @Input() useItemTemplate = false;
   @Output() onFocus: EventEmitter<any> = new EventEmitter();

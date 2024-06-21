@@ -48,3 +48,6 @@ Thumbs.db
 build-storybook.log
 storybook-static
 documentation.json
+
+# Angular cache
+.angular/cache

@@ -1,37 +1,45 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-
 .freud-alert-messages {
-  .p-message, .p-inline-message {
+  .p-message,
+  .p-inline-message {
     border: unset;
     border-radius: $border-radius-md;
     color: $neutral-color-dark-04;
 
-    &.p-message-success, &.p-inline-message-success {
+    &.p-message-success,
+    &.p-inline-message-success {
       background-color: $feedback-color-positive-01;
-      .p-message-icon, .p-inline-message-icon {
+      .p-message-icon,
+      .p-inline-message-icon {
         color: $feedback-color-positive-pure;
       }
     }
 
-    &.p-message-info, &.p-inline-message-info {
+    &.p-message-info,
+    &.p-inline-message-info {
       background-color: $feedback-color-neutral-01;
-      .p-message-icon, .p-inline-message-icon {
+      .p-message-icon,
+      .p-inline-message-icon {
         color: $feedback-color-neutral-pure;
       }
     }
 
-    &.p-message-warn, &.p-inline-message-warn {
+    &.p-message-warn,
+    &.p-inline-message-warn {
       background-color: $feedback-color-warning-01;
-      .p-message-icon, .p-inline-message-icon {
+      .p-message-icon,
+      .p-inline-message-icon {
         color: $feedback-color-alert-pure;
       }
     }
 
-    &.p-message-error, &.p-inline-message-error {
+    &.p-message-error,
+    &.p-inline-message-error {
       background-color: $feedback-color-negative-01;
-      .p-message-icon, .p-inline-message-icon {
+      .p-message-icon,
+      .p-inline-message-icon {
         color: $feedback-color-negative-pure;
       }
     }
@@ -57,22 +65,20 @@
 
   .pi-info-circle:before {
     font-family: 'Freud Icon' !important;
-    content: "\e9ed";
+    content: '\e9ed';
   }
 
   .pi-exclamation-triangle:before {
     font-family: 'Freud Icon' !important;
-    content: "\e903";
+    content: '\e903';
   }
 
   .pi-times-circle:before {
     font-family: 'Freud Icon' !important;
-    content: "\e9b9";
+    content: '\e9b9';
   }
   .pi-check:before {
     font-family: 'Freud Icon' !important;
-    content: "\e973";
+    content: '\e973';
   }
-
-
 }

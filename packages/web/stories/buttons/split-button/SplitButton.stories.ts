@@ -1,32 +1,34 @@
-import { Story } from '@storybook/angular';
-import { FreudSplitButtonComponent, FreudMenuItem } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
+import {
+  FreudSplitButtonComponent,
+  FreudMenuItem,
+} from '@freud-ds/web-components';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const items: FreudMenuItem[] = [
-  {label: 'Update', icon: 'freud-icon freud-icon-refresh', command: () => {
-      console.log('Evento update')
-    }
-  },
   {
-    label: 'Delete', icon: 'freud-icon freud-icon-close', command: () => {
-      console.log('Evento delete')
+    label: 'Update',
+    icon: 'freud-icon freud-icon-refresh',
+    command: () => {
+      console.log('Evento update');
     },
   },
-  {label: 'Zenklub', icon: 'freud-icon freud-icon-info', url: 'http://zenklub.com'},
-  {separator: true},
-  {label: 'Setup', icon: 'freud-icon freud-icon-cog'}
-]
-
-const itemsWithoutIcon: FreudMenuItem[] = [
-  {label: 'Update', command: () => {console.log('Evento update')}
+  {
+    label: 'Delete',
+    icon: 'freud-icon freud-icon-close',
+    command: () => {
+      console.log('Evento delete');
+    },
   },
   {
-    label: 'Delete', command: () => {console.log('Evento delete')},
+    label: 'Zenklub',
+    icon: 'freud-icon freud-icon-info',
+    url: 'http://zenklub.com',
   },
-  {label: 'Zenklub', url: 'http://zenklub.com'}
-]
+  { separator: true },
+  { label: 'Setup', icon: 'freud-icon freud-icon-cog' },
+];
 
 const templateHTML = `
     <freud-split-button
@@ -38,36 +40,35 @@ const templateHTML = `
     <p *ngIf="!disabled" style="margin-bottom: 180px"></p>
 `;
 
-const Template: Story<FreudSplitButtonComponent> = (args: FreudSplitButtonComponent) => ({
+const Template: Story<FreudSplitButtonComponent> = (
+  args: FreudSplitButtonComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
 export const Default = Template.bind({});
 Default.args = {
   label: 'Button Default',
-  items: items
+  items: items,
 };
 
 export const BGColor = Template.bind({});
 BGColor.args = {
   label: 'Button bg Color',
-  items: itemsWithoutIcon,
-  bgColor: true
+  items: items,
+  bgColor: true,
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Button bg Color',
   items: items,
-  disabled: true
+  disabled: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

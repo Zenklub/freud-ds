@@ -1,8 +1,8 @@
 import { FreudImageComponent } from '@freud-ds/web-components';
-import { Story } from '@storybook/angular';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const Template: Story<FreudImageComponent> = (args: FreudImageComponent) => ({
   props: { ...args },
@@ -25,7 +25,7 @@ Preview.args = {
   height: '300px',
   width: 'auto',
   alt: 'Zenklub Image',
-  preview: true
+  preview: true,
 };
 
 export const BGColor = Template.bind({});
@@ -38,11 +38,8 @@ BGColor.args = {
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

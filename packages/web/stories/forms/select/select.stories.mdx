@@ -1,16 +1,17 @@
-import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { moduleMetadata } from "@storybook/angular";
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
 import {
   FreudSelectComponent,
   FreudSelectModule,
-} from "@freud-ds/web-components";
-import { FreudHeaderComponent } from "../../header/header.component";
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
   Invalid,
   Filter,
+  Countries,
   Tags,
 } from "./Select.stories.ts";
 
@@ -34,16 +35,15 @@ import {
   component={FreudSelectComponent}
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Select / Dropdown",
-      description:
-        "Uma lista suspensa de itens. Com o item selecionado a exibição é fechada.",
-    },
-  }}
-</Story>
+<Story name="Storyname-hidden"
+  title="@freud-ds/web-components/Forms/Select"
+  component={FreudSelectComponent}
+/>
+
+<FreudHeaderComponent
+  title="Select / Dropdown"
+  description="Uma lista suspensa de itens. Com o item selecionado a exibição é fechada."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -65,6 +65,12 @@ import { FreudSelectModule } from "@freud-ds/web-components";
 
 <Canvas>
   <Story story={Filter} />
+</Canvas>
+
+### Countries
+
+<Canvas>
+  <Story story={Countries} />
 </Canvas>
 
 ### Invalid
@@ -114,4 +120,4 @@ Para usarmos as opções com tags, devemos setar a propriedade **useItemTemplate
 
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudSelectComponent} />
+<ArgTypes of={FreudSelectComponent} />

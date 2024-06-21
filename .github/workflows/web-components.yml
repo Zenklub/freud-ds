@@ -21,15 +21,14 @@ jobs:
           token: ${{ secrets.FREUD_DS_GITHUB_PAT }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install Dependencies
         run: |
           rm -rf package.json
           rm -rf package-lock.json
-          npm i -g npm@8
           cd packages/web
-          npm ci --quiet --legacy-peer-deps
+          npm ci
 
       - name: Configure git
         run: |
@@ -41,17 +40,17 @@ jobs:
           cd packages/web/projects/web-components
           npm version ${{ github.event.inputs.version }}
 
+      - name: Build
+        run: |
+          cd packages/web
+          npm run build
+
       - name: Push new version
         run: |
           cd packages/web
           git add .
           git commit -m "chore(web-components): automatic version update"
           git push
-
-      - name: Build
-        run: |
-          cd packages/web
-          npm run build
 
       - name: Publish
         run: |

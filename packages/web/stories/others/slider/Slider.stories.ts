@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudSliderComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const templateHTML = `
     <freud-slider
@@ -24,7 +24,7 @@ export const Default = Template.bind({});
 export const BGColor = Template.bind({});
 BGColor.args = {
   value: 20,
-  bgColor: true
+  bgColor: true,
 };
 
 export const Vertical = Template.bind({});
@@ -36,21 +36,18 @@ Vertical.args = {
 export const Range = Template.bind({});
 Range.args = {
   value: [10, 20],
-  range: true
+  range: true,
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: 20,
-  disabled: true
+  disabled: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-radio-button',
@@ -21,31 +21,31 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [value]="radioValue"
       [label]="label"
       [inputId]="inputId"
-
       (focus)="onFocus.emit($event)"
-      (blur)="onBlur.emit($event)">
+      (blur)="onBlur.emit($event)"
+    >
     </p-radioButton>
   `,
   host: {
     class: 'freud-radio-button',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudRadioButtonComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudRadioButtonComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() bgColor: boolean = false;
+  @Input() label = '';
+  @Input() bgColor = false;
   @Input() inputId!: string;
   @Input() name!: string;
   @Input() disabled = false;
   @Input() radioValue!: any;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -58,15 +58,15 @@ export class FreudRadioButtonComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
-  onModelChange: any = (_: string) => { };
+  onModelChange: any = (_: string) => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
@@ -85,10 +85,9 @@ export class FreudRadioButtonComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 }

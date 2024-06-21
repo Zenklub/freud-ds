@@ -4,9 +4,11 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+
+// TODO: create tests for this component
 
 @Component({
   selector: 'freud-input-textarea',
@@ -14,53 +16,61 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
-        <textarea
-          [id]="id"
-          type="text"
-          [class.ng-invalid]="invalid"
-          [class.ng-dirty]="invalid"
-          [(ngModel)]="value"
-          [rows]="rows"
-          [cols]="cols"
-          [autoResize]="autoResize"
-          pInputTextarea
-          [placeholder]="placeholder || ''"
-          [disabled]="disabled"
-          [required]="required"
-          (focus)="onFocus.emit($event)"
-          (blur)="onBlur.emit($event)"
-          (input)="onInput.emit($event)"
-          (keydown)="onKeydown.emit($event)"
-        ></textarea>
-      <small id="{{id}}-help"
-             [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
+      <textarea
+        [id]="id"
+        type="text"
+        [class.ng-invalid]="invalid"
+        [class.ng-dirty]="invalid"
+        [(ngModel)]="value"
+        [rows]="rows"
+        [cols]="cols"
+        [autoResize]="autoResize"
+        pInputTextarea
+        [placeholder]="placeholder || ''"
+        [disabled]="disabled"
+        [required]="required"
+        (focus)="onFocus.emit($event)"
+        (blur)="onBlur.emit($event)"
+        (input)="onInput.emit($event)"
+        (keydown)="onKeydown.emit($event)"
+      ></textarea>
+      <small
+        id="{{ id }}-help"
+        [class.disabled]="disabled"
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText ? helpText : '' }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-input-textarea',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudInputTextAreaComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudInputTextAreaComponent implements ControlValueAccessor {
-  @Input() label: string = '';
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
+  @Input() label = '';
+  @Input() helpText = '';
+  @Input() placeholder = '';
   @Input() cols!: number;
   @Input() rows!: number;
-  @Input() invalid: boolean = false;
-  @Input() autoResize: boolean = false;
+  @Input() invalid = false;
+  @Input() autoResize = false;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -74,11 +84,11 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
 
   private _value!: string;
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onChange(this._value);
     this.onTouched();
@@ -97,14 +107,13 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onChange: any = () => { };
+  onChange: any = () => {};
 
-  onTouched: any = () => { };
+  onTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 }

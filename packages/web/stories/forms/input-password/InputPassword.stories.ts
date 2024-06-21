@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudInputPasswordComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const templateFeedback = `
   <div style="height: 130px">
@@ -59,17 +59,23 @@ const templateHTML = `
     </freud-input-password>
 `;
 
-const Template: Story<FreudInputPasswordComponent> = (args: FreudInputPasswordComponent) => ({
+const Template: Story<FreudInputPasswordComponent> = (
+  args: FreudInputPasswordComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
 
-const TemplateFeedback: Story<FreudInputPasswordComponent> = (args: FreudInputPasswordComponent) => ({
+const TemplateFeedback: Story<FreudInputPasswordComponent> = (
+  args: FreudInputPasswordComponent,
+) => ({
   props: { ...args },
   template: templateFeedback,
 });
 
-const TemplateFull: Story<FreudInputPasswordComponent> = (args: FreudInputPasswordComponent) => ({
+const TemplateFull: Story<FreudInputPasswordComponent> = (
+  args: FreudInputPasswordComponent,
+) => ({
   props: { ...args },
   template: templateFull,
 });
@@ -91,7 +97,7 @@ export const Feedback = TemplateFeedback.bind({});
 Feedback.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  feedback: true
+  feedback: true,
 };
 
 export const Invalid = Template.bind({});
@@ -106,16 +112,13 @@ export const CustomTemplate = TemplateFull.bind({});
 CustomTemplate.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  feedback: true
+  feedback: true,
 };
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};

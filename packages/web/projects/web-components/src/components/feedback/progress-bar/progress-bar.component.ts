@@ -1,6 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
-
 @Component({
   selector: 'freud-progress-bar',
   template: `
@@ -8,21 +7,21 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
       [value]="value"
       [showValue]="showValue"
       [unit]="unit"
-      [mode]="mode">
+      [mode]="mode || 'determinate'"
+    >
     </p-progressBar>
   `,
   styleUrls: ['./progress-bar.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'freud-progress-bar',
-    '[class.freud-bgcolor]': `bgColor`,
-  }
+    '[class.freud-bgcolor]': 'bgColor',
+  },
 })
 export class FreudProgressBarComponent {
-  @Input() value: number = 0;
-  @Input() showValue:	boolean	= true;
+  @Input() value = 0;
+  @Input() showValue = true;
   @Input() mode: 'determinate' | 'indeterminate' = 'determinate';
-  @Input() unit: string = '%';
-  @Input() bgColor: boolean = false;
-
+  @Input() unit = '%';
+  @Input() bgColor = false;
 }

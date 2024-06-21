@@ -10,9 +10,10 @@ jobs:
     concurrency: ci-${{ github.ref }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3   
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install and Build 🔧
         run: |
@@ -21,8 +22,7 @@ jobs:
           cd packages/icons
           npm run generate
           cd ../../packages/web
-          npm i -g npm@8
-          npm i --quiet --legacy-peer-deps
+          npm ci
           npm run build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

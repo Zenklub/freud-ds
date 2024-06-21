@@ -1,8 +1,8 @@
-import { Story } from '@storybook/angular';
+import { Story, applicationConfig } from '@storybook/angular';
 import { FreudCheckboxComponent } from '@freud-ds/web-components';
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { moduleMetadata } from '@storybook/angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
 
 const templateHTML = `
       <freud-checkbox
@@ -16,16 +16,15 @@ const templateHTML = `
 
 export default {
   decorators: [
-    moduleMetadata({
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule
-      ]
-    })
-  ]
-}
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
+};
 
-const Template: Story<FreudCheckboxComponent> = (args: FreudCheckboxComponent) => ({
+const Template: Story<FreudCheckboxComponent> = (
+  args: FreudCheckboxComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
@@ -37,7 +36,7 @@ Default.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   label: 'Label',
-  bgColor: true
+  bgColor: true,
 };
 export const Disabled = Template.bind({});
 Disabled.args = {
@@ -49,4 +48,3 @@ export const Label = Template.bind({});
 Label.args = {
   label: 'Label',
 };
-

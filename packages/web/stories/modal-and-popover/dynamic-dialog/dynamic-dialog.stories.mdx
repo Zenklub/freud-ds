@@ -1,21 +1,21 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudDynamicDialogModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import {
-  Default
-} from './DynamicDialog.stories.ts';
-import {FreudDynamicExampleModule} from "./dynamic-dialog-example/example.module";
+import { Default } from './DynamicDialog.stories.ts';
+import { FreudDynamicExampleModule } from './dynamic-dialog-example/example.module';
 
 <Meta
   decorators={[
-    moduleMetadata({imports: [FreudDynamicDialogModule, FreudDynamicExampleModule]})
+    moduleMetadata({
+      imports: [FreudDynamicDialogModule, FreudDynamicExampleModule],
+    }),
   ]}
   parameters={{
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
     },
     backgrounds: {
       default: 'Default',
@@ -23,35 +23,31 @@ import {FreudDynamicExampleModule} from "./dynamic-dialog-example/example.module
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
+    },
   }}
   title="@freud-ds/web-components/Modal e Popover/DynamicDialog"
 />
 
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "DynamicDialog",
-      description: "Os diálogos podem ser criados dinamicamente com qualquer componente como conteúdo usando um DialogService."
-    },
-  }}
-</Story>
+<FreudHeaderComponent
+  title="DynamicDialog"
+  description="Os diálogos podem ser criados dinamicamente com qualquer componente como conteúdo usando um DialogService."
+/>
 
 ## <a id="importing"></a>Import
+
 ```ts
-import { FreudDynamicDialogModule  } from '@freud-ds/web-components';
+import { FreudDynamicDialogModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
-Diálogos dinâmicos requerem uma instância de um `FreudDialogService` que é responsável por exibir um diálogo com um componente como seu conteúdo.
 
+Diálogos dinâmicos requerem uma instância de um `FreudDialogService` que é responsável por exibir um diálogo com um componente como seu conteúdo.
 
 Uma vez que o conteúdo carregado dinamicamente não é definido no momento da compilação, é necessária uma configuração usando o `entryComponents` do seu módulo pai.
 
-
 O exemplo abaixo exibe uma lista de carros usando o componente `CarsListDemo`, portanto, ele precisa ser configurado em `entryComponents` junto com a
 importação de `FreudDynamicDialogModule`. Exemplo;
+
 ```ts
 @NgModule({
     imports: [
@@ -72,22 +68,22 @@ export class DynamicDialogDemoModule {
 O próximo passo é injetar uma instância de `FreudDialogService` no componente que abrirá o diálogo com o metodo `show` para chamar o serviço.
 
 ```ts
-import {Component} from '@angular/core';
-import { FreudDialogService  } from '@freud-ds/web-components';
-import {CarsListDemo} from './carslistdemo';
+import { Component } from '@angular/core';
+import { FreudDialogService } from '@freud-ds/web-components';
+import { CarsListDemo } from './carslistdemo';
 
 @Component({
-    templateUrl: './dynamicdialogdemo.html',
-    providers: [FreudDialogService]
+  templateUrl: './dynamicdialogdemo.html',
+  providers: [FreudDialogService],
 })
 export class DynamicDialogDemo {
-    constructor(public dialogService: FreudDialogService) {}
+  constructor(public dialogService: FreudDialogService) {}
 
   show() {
-      const ref = this.dialogService.open(CarsListDemo, {
-          header: 'Dynamic Dialog Header',
-          width: '70%'
-      });
+    const ref = this.dialogService.open(CarsListDemo, {
+      header: 'Dynamic Dialog Header',
+      width: '70%',
+    });
   }
 }
 ```
@@ -97,34 +93,37 @@ export class DynamicDialogDemo {
 ```
 
 ## <a id="exemplos"></a>Exemplo
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
-
 ## API
+
 Utilize a interface `FreudDynamicDialogConfig` ao chamar a função `open` que possui os seguintes parametros:
+
 ```ts
 export declare interface FreudDynamicDialogConfig {
-    data?: any;
-    header?: string;
-    footer?: string;
-    width?: string;
-    height?: string;
-    closeOnEscape?: boolean;
-    baseZIndex?: number;
-    autoZIndex?: boolean;
-    dismissableMask?: boolean;
-    rtl?: boolean;
-    style?: any;
-    contentStyle?: any;
-    styleClass?: string;
-    transitionOptions?: string;
-    closable?: boolean;
-    showHeader?: boolean;
-    modal?: boolean;
+  data?: any;
+  header?: string;
+  footer?: string;
+  width?: string;
+  height?: string;
+  closeOnEscape?: boolean;
+  baseZIndex?: number;
+  autoZIndex?: boolean;
+  dismissableMask?: boolean;
+  rtl?: boolean;
+  style?: any;
+  contentStyle?: any;
+  styleClass?: string;
+  transitionOptions?: string;
+  closable?: boolean;
+  showHeader?: boolean;
+  modal?: boolean;
 }
 ```

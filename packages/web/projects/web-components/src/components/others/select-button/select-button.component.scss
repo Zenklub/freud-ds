@@ -1,34 +1,34 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 @import '../../../../scss/typography';
 
-.has-overflow{
-  .p-selectbutton{
+.has-overflow {
+  .p-selectbutton {
     display: inline-grid;
     width: 100%;
-    .p-ripple.p-element.p-button.p-component{
+    .p-ripple.p-element.p-button.p-component {
       border-radius: 8px;
       margin: 3px 0;
     }
   }
 }
 
-.no-overflow{
-  .p-selectbutton{
+.no-overflow {
+  .p-selectbutton {
     display: inline-flex;
     overflow: auto;
   }
 }
 
-.option--with-icon{
+.option--with-icon {
   display: flex;
   align-items: center;
-  
-  .freud-icon{
+
+  .freud-icon {
     font-size: 14px;
-    &--preppend{
+    &--preppend {
       margin-right: 5px;
     }
-    &--append{
+    &--append {
       margin-left: 5px;
     }
   }
@@ -51,14 +51,20 @@
 .freud-select-button {
   .p-selectbutton .p-button {
     @include typography($font-size-xxs, $font-weight-bold, $font-size-xxs);
-    border-radius: $border-radius-md;
+
+    border-radius: 0;
+    &:first-of-type {
+      border-radius: $border-radius-md 0 0 $border-radius-md;
+    }
+    &:last-of-type {
+      border-radius: 0 $border-radius-md $border-radius-md 0;
+    }
   }
 }
 
 .p-button:focus {
   box-shadow: 0 0 0 1px $brand-color-pure;
 }
-
 
 .freud-select-button:not(.freud-select-bgcolor) {
   .p-selectbutton .p-button.p-highlight {

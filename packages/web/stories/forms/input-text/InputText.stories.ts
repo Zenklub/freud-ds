@@ -14,28 +14,30 @@ const templateHTML = `
     </freud-input-text>
 `;
 
-const Template: Story<FreudInputTextComponent> = (args: FreudInputTextComponent) => ({
+const Template: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
   props: { ...args },
   template: templateHTML,
 });
 export const Default = Template.bind({});
 Default.args = {
   label: 'Label',
-  value: ''
+  value: '',
 };
 
 export const Placeholder = Template.bind({});
 Placeholder.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  value: ''
+  value: '',
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  rightIcon: 'freud-icon freud-icon-box'
+  rightIcon: 'freud-icon freud-icon-box',
 };
 
 export const HelperText = Template.bind({});
@@ -44,8 +46,6 @@ HelperText.args = {
   placeholder: 'Placeholder',
   helpText: 'Helper Text',
 };
-
-
 
 export const BGColor = Template.bind({});
 BGColor.args = {
@@ -57,7 +57,7 @@ BGColor.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   label: 'Label',
-  disabled: true
+  disabled: true,
 };
 
 export const Invalid = Template.bind({});
@@ -66,4 +66,3 @@ Invalid.args = {
   placeholder: 'Placeholder',
   invalid: true,
 };
-

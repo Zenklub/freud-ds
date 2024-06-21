@@ -24,33 +24,50 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/web-components/src/test.ts",
-            "tsConfig": "projects/web-components/tsconfig.spec.json",
-            "karmaConfig": "projects/web-components/karma.conf.js"
-          }
         }
       }
     },
-    "storybook": {
+    "freud-docs": {
       "projectType": "application",
       "root": "stories",
       "sourceRoot": "stories",
       "architect": {
         "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "tsconfig.json",
+            "project": "ng-package.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "freud-docs:build",
+            "port": 6006,
             "styles": [
-              "./projects/web-components/scss/styles.scss"
+              "./projects/web-components/scss/styles.scss",
+              "./stories/header/header.component.scss"
             ],
-            "scripts": []
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "freud-docs:build",
+            "outputDir": "storybook-static",
+            "styles": [
+              "./projects/web-components/scss/styles.scss",
+              "./stories/header/header.component.scss"
+            ],
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."]
           }
         }
       }
     }
-  },
-  "defaultProject": "web-components"
+  }
 }

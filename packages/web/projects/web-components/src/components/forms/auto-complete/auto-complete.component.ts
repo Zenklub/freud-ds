@@ -4,9 +4,9 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'freud-auto-complete',
@@ -14,7 +14,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+      <label
+        for="{{ id }}"
+        class="freud-typography bodySemibold1-2 freud-label"
+        *ngIf="label"
+        >{{ label }}</label
+      >
       <p-autoComplete
         [id]="id"
         [class.ng-invalid]="invalid"
@@ -24,13 +29,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
         [optionGroupChildren]="optionGroupChildren"
         [placeholder]="placeholder || ''"
         [virtualScroll]="virtualScroll"
-        [dropdownIcon]="dropdownIcon"
+        [dropdownIcon]="dropdownIcon || 'freud-icon freud-icon-chevron-down'"
         [dropdown]="dropdown"
         [dropdownMode]="dropdownMode"
         [field]="field"
         [multiple]="multiple"
         [emptyMessage]="emptyMessage"
-        [itemSize]="itemSize"
+        [virtualScrollItemSize]="itemSize"
         [disabled]="disabled"
         [required]="required"
         [suggestions]="suggestions"
@@ -42,48 +47,49 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
         (onShow)="onShow.emit($event)"
         (onHide)="onHide.emit($event)"
         (onClear)="onClear.emit($event)"
-
       ></p-autoComplete>
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+        class="help-text freud-typography bodyRegularAuto"
+        >{{ helpText }}</small
+      >
     </div>
   `,
   host: {
     class: 'freud-auto-complete',
-    '[class.freud-bgcolor]': `bgColor`,
+    '[class.freud-bgcolor]': 'bgColor',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudAutoCompleteComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudAutoCompleteComponent implements ControlValueAccessor {
-  @Input() label: string = '';
+  @Input() label = '';
   @Input() suggestions!: any[];
-  @Input() helpText: string = '';
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
-  @Input() multiple: boolean = false;
-  @Input() dropdown: boolean = false;
-  @Input() forceSelection: boolean = false;
-  @Input() virtualScroll: boolean = false;
+  @Input() helpText = '';
+  @Input() placeholder = '';
+  @Input() invalid = false;
+  @Input() multiple = false;
+  @Input() dropdown = false;
+  @Input() forceSelection = false;
+  @Input() virtualScroll = false;
   @Input() itemSize!: number;
   @Input() field!: string;
-  @Input() emptyMessage: string = 'Sem resultados';
-  @Input() dropdownIcon: string = 'freud-icon freud-icon-chevron-down';
-  @Input() optionGroupLabel: string = 'label';
-  @Input() optionGroupChildren: string = 'items';
+  @Input() emptyMessage = 'Sem resultados';
+  @Input() dropdownIcon = 'freud-icon freud-icon-chevron-down';
+  @Input() optionGroupLabel = 'label';
+  @Input() optionGroupChildren = 'items';
   @Input() dropdownMode: 'blank' | 'current' = 'blank';
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() bgColor = false;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -96,7 +102,6 @@ export class FreudAutoCompleteComponent implements ControlValueAccessor {
   @Output() onHide: EventEmitter<any> = new EventEmitter();
   @Output() onClear: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
-
 
   private _value!: any;
 
@@ -112,26 +117,24 @@ export class FreudAutoCompleteComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.valueChange.emit(this._value);
     this.onModelTouched();
   }
-
 }

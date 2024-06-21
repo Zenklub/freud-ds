@@ -4,11 +4,21 @@ import {
   forwardRef,
   Input,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export type listboxFilterMatchModes = "contains" | "startsWith" | "endsWith" | "equals" | "notEquals" | "in" | "lt" | "lte" | "gt" | "gte";
+export type listboxFilterMatchModes =
+  | 'contains'
+  | 'startsWith'
+  | 'endsWith'
+  | 'equals'
+  | 'notEquals'
+  | 'in'
+  | 'lt'
+  | 'lte'
+  | 'gt'
+  | 'gte';
 
 @Component({
   selector: 'freud-listbox',
@@ -39,7 +49,8 @@ export type listboxFilterMatchModes = "contains" | "startsWith" | "endsWith" | "
         [filterPlaceHolder]="filterPlaceHolder"
         (onDblClick)="onDblClick.emit($event)"
         (onClick)="onClick.emit($event)"
-        (onChange)="onChange.emit($event)">
+        (onChange)="onChange.emit($event)"
+      >
       </p-listbox>
     </div>
   `,
@@ -50,31 +61,31 @@ export type listboxFilterMatchModes = "contains" | "startsWith" | "endsWith" | "
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FreudListboxComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FreudListboxComponent implements ControlValueAccessor {
-  @Input() checkbox: boolean = false;
+  @Input() checkbox = false;
   @Input() options!: any[];
-  @Input() showToggleAll: boolean = true;
+  @Input() showToggleAll = true;
   @Input() group!: boolean;
-  @Input() filterPlaceHolder: string = 'Filtrar';
-  @Input() filter: boolean = false;
-  @Input() invalid: boolean = false;
-  @Input() multiple: boolean = false;
-  @Input() emptyFilterMessage: string = 'Sem resultados';
-  @Input() emptyMessage: string = 'Sem resultados';
+  @Input() filterPlaceHolder = 'Filtrar';
+  @Input() filter = false;
+  @Input() invalid = false;
+  @Input() multiple = false;
+  @Input() emptyFilterMessage = 'Sem resultados';
+  @Input() emptyMessage = 'Sem resultados';
   @Input() filterMatchMode: listboxFilterMatchModes = 'contains';
   @Input() optionLabel!: string;
   @Input() optionValue!: string;
-  @Input() optionDisabled: string = 'disabled';
-  @Input() optionGroupLabel: string = 'label';
-  @Input() optionGroupChildren: string = 'items';
-  @Input() characterPattern: string = '';
-  @Input() autoClear: boolean = true;
+  @Input() optionDisabled = 'disabled';
+  @Input() optionGroupLabel = 'label';
+  @Input() optionGroupChildren = 'items';
+  @Input() characterPattern = '';
+  @Input() autoClear = true;
   @Input() disabled = false;
-  @Input() required: boolean = false;
+  @Input() required = false;
   @Input() id!: string;
 
   @Output() onDblClick: EventEmitter<any> = new EventEmitter();
@@ -98,26 +109,24 @@ export class FreudListboxComponent implements ControlValueAccessor {
     this.onModelTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-  }
+  setDisabledState?(isDisabled: boolean): void {}
 
-  onModelChange: any = () => { };
+  onModelChange: any = () => {};
 
-  onModelTouched: any = () => { };
+  onModelTouched: any = () => {};
 
-  onSomeEventOccured(newValue: string){
+  onSomeEventOccured(newValue: string) {
     this.value = newValue;
   }
 
-  public get value(){
+  public get value() {
     return this._value;
   }
 
-  public set value(v){
+  public set value(v) {
     this._value = v;
     this.onModelChange(this._value);
     this.onModelTouched();
     this.valueChange.emit(v);
   }
-
 }

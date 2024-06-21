@@ -1,21 +1,25 @@
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { FreudAutoCompleteComponent, FreudAutoCompleteModule } from '@freud-ds/web-components';
+import {
+  FreudAutoCompleteComponent,
+  FreudAutoCompleteModule,
+} from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
 import {
   Default,
   BGColor,
   Disabled,
-  Invalid, Dropdown, Multiple
-} from './AutoComplete.stories.ts'; import {
-  FreudAutocompleteExampleModule
-} from "./auto-complete-example/example.module";
+  Invalid,
+  Dropdown,
+  Multiple,
+} from './AutoComplete.stories.ts';
+import { FreudAutocompleteExampleModule } from './auto-complete-example/example.module';
 
 <Meta
   decorators={[
     moduleMetadata({
       imports: [FreudAutoCompleteModule, FreudAutocompleteExampleModule],
-    })
+    }),
   ]}
   parameters={{
     layout: 'centered',
@@ -25,19 +29,16 @@ import {
         { name: 'Default', value: '#FFFFFF' },
         { name: 'BgColor', value: '#6732D1' },
       ],
-    }
-  }}
-title="@freud-ds/web-components/Forms/AutoComplete" component={FreudAutoCompleteComponent} />
-
-<Story name="Storyname-hidden">
-  {{
-    component: FreudHeaderComponent,
-    props: {
-      title: "Autocomplete",
-      description: "AutoComplete é um componente de input que fornece sugestões em tempo real ao ser digitado."
     },
   }}
-</Story>
+  title="@freud-ds/web-components/Forms/AutoComplete"
+  component={FreudAutoCompleteComponent}
+/>
+
+<FreudHeaderComponent
+  title="Autocomplete"
+  description="AutoComplete é um componente de input que fornece sugestões em tempo real ao ser digitado."
+/>
 
 ## <a id="importing"></a>Import
 
@@ -46,88 +47,102 @@ import { FreudAutoCompleteModule } from '@freud-ds/web-components';
 ```
 
 ## Getting Started
+
 FreudAutoComplete usa ngModel para ligação bidirecional, requer uma lista de sugestões e um completeMethod para consultar os resultados.
 O completeMethod obtém o texto da consulta como propriedade event.query e deve atualizar as sugestões com os resultados da pesquisa.
+
 ```html
-<freud-auto-complete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></freud-auto-complete>
+<freud-auto-complete
+  [(ngModel)]="text"
+  [suggestions]="results"
+  (completeMethod)="search($event)"
+></freud-auto-complete>
 ```
+
 ```ts
 export class AutoCompleteDemo {
+  text: string;
 
-    text: string;
+  results: string[] = [
+    'New York',
+    'Rome',
+    'London',
+    'Islanbul',
+    'São Paulo',
+    'Rio de Janeiro',
+  ];
 
-    results: string[] = [
-      'New York',
-      'Rome',
-      'London',
-      'Islanbul',
-      'São Paulo',
-      'Rio de Janeiro'
-    ];
-
-    search(event) {
-        this.mylookupservice.getResults(event.query).then(data => {
-            this.results = data;
-        });
-    }
-
+  search(event) {
+    this.mylookupservice.getResults(event.query).then((data) => {
+      this.results = data;
+    });
+  }
 }
 ```
 
 ## Change Detection of Suggestions
+
 O preenchimento automático usa a verificação baseada em setter para perceber se as sugestões foram alteradas para atualizar a interface do usuário.
 Para que isso funcione, suas alterações, como adicionar ou remover um registro, sempre devem criar uma nova referência de array em vez de
 manipular uma array existente, pois o Angular não aciona setters se a referência não mudar.
 
-
 ## <a id="exemplos"></a>Exemplos
+
 <br />
 
 ### Default
+
 <Canvas>
-  <Story story={Default}/>
+  <Story story={Default} />
 </Canvas>
 
 ### Invalid
+
 <Canvas>
-  <Story story={Invalid}/>
+  <Story story={Invalid} />
 </Canvas>
 
 ### Disabled
+
 <Canvas>
-  <Story story={Disabled}/>
+  <Story story={Disabled} />
 </Canvas>
 
 ### Dropdown
+
 <Canvas>
-  <Story story={Dropdown}/>
+  <Story story={Dropdown} />
 </Canvas>
 
 ### Multiple
+
 <Canvas>
-  <Story story={Multiple}/>
+  <Story story={Multiple} />
 </Canvas>
 
-
 ### BG Color
+
 <Canvas style={{ backgroundColor: '#241249' }}>
-  <Story story={BGColor}/>
+  <Story story={BGColor} />
 </Canvas>
 
 ## <a id="api"></a>API
 
 ### Dropdown
+
 Ativar a propriedade `dropdown` exibe um botão ao lado do campo de entrada onde o comportamento do clique do botão é
 definido usando a propriedade dropdownMode que considera "blank" ou "current" como valores possíveis.
 "blank" é o modo padrão para enviar uma consulta com uma string vazia, enquanto a configuração "atual" envia uma consulta
 com o valor atual da entrada.
 
 ### Force Selection
+
 A propriedade `forceSelection` valida a entrada manual para verificar se ela também existe na lista de sugestões, caso contrário,
 o valor de entrada é limpo para garantir que o valor passado para o modelo seja sempre uma das sugestões.
 
 ### Multiple Selection
+
 O modo múltiplo é ativado usando a propriedade `multiple` para selecionar mais de um valor do preenchimento automático.
 Nesse caso, a referência de valor deve ser uma matriz.
 
-<ArgsTable of={FreudAutoCompleteComponent} />
+<ArgTypes of={FreudAutoCompleteComponent} />

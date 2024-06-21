@@ -1,8 +1,8 @@
 @import '../../../../../../../tokens/dist/style/scss/variables';
 
 .freud-gallery:not(.freud-bgcolor) {
-
 }
+
 .freud-gallery.freud-bgcolor {
 }
 
@@ -10,13 +10,39 @@
   .p-link:focus {
     box-shadow: unset;
   }
+
   .p-galleria .p-galleria-indicators .p-galleria-indicator.p-highlight button {
     background-color: $brand-color-pure;
   }
+
   .p-galleria .p-galleria-indicators .p-galleria-indicator button {
     background-color: $neutral-color-light-03;
   }
-  .p-galleria .p-galleria-thumbnail-container .p-galleria-thumbnail-item-content:focus {
+
+  .p-galleria
+    .p-galleria-thumbnail-container
+    .p-galleria-thumbnail-item-content:focus {
     box-shadow: 0 0 0 0.2rem $brand-color-pure;
   }
+
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container, .video-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-container img, .video-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
 }
