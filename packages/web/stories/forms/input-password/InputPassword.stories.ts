@@ -55,6 +55,7 @@ const templateHTML = `
         [feedback]="feedback"
         [placeholder]="placeholder"
         [invalid]="invalid"
+        [errorText]="errorText"
         [bgColor]="bgColor">
     </freud-input-password>
 `;
@@ -99,6 +100,15 @@ Invalid.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   invalid: true,
+  feedback: false,
+};
+
+export const ErrorText = Template.bind({});
+ErrorText.args = {
+  label: 'Label',
+  placeholder: 'Placeholder',
+  invalid: true,
+  errorText: 'Senha inválida',
   feedback: false,
 };
 
