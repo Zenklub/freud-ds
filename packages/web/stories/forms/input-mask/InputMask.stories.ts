@@ -8,6 +8,7 @@ const templateHTML = `
         [label]="label"
         [placeholder]="placeholder"
         [helpText]="helpText"
+        [errorText]="errorText"
         [invalid]="invalid"
         [mask]="mask"
         [bgColor]="bgColor">
@@ -44,6 +45,15 @@ Telefone.args = {
   label: 'Label',
   value: '',
   mask: '(99) 9999-9999'
+};
+
+export const TelefoneError = Template.bind({});
+TelefoneError.args = {
+  label: 'Label',
+  value: '9888',
+  mask: '(99) 9999-9999',
+  invalid: true,
+  errorText: 'Telefone inválido'
 };
 
 export const BGColor = Template.bind({});

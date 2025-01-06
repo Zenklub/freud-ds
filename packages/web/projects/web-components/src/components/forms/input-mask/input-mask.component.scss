@@ -14,8 +14,11 @@
 }
 
 .freud-input-mask {
-  .help-text {
+  .help-text, .error-text {
     margin-top: $spacing-size-quark;
+  }
+  .error-text {
+    color: $feedback-color-negative-04;
   }
   .freud-field {
     display: flex;
