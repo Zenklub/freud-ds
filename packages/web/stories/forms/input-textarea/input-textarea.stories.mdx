@@ -6,7 +6,9 @@ import {
   Default,
   BGColor,
   Disabled,
-  Invalid, AutoResize
+  Invalid,
+  ErrorText,
+  AutoResize
 } from './InputTextArea.stories.ts';
 
 <Meta
@@ -54,6 +56,11 @@ import { FreudInputTextAreaModule } from '@freud-ds/web-components';
 ### Invalid
 <Canvas>
   <Story story={Invalid}/>
+</Canvas>
+
+### ErrorText
+<Canvas>
+  <Story story={ErrorText}/>
 </Canvas>
 
 ### Disabled
