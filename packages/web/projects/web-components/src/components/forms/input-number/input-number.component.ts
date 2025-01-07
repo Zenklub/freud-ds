@@ -56,6 +56,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
             (input)="onInput.emit($event)"
             (keydown)="onKeydown.emit($event)"
           ></p-inputNumber>
+          <small
+            [class.disabled]="disabled"
+            *ngIf="invalid && errorText"
+            class="error-text freud-typography bodyRegularAuto"
+          >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -73,6 +78,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 export class FreudInputNumberComponent implements ControlValueAccessor {
   @Input() label: string = '';
+  @Input() errorText: string = '';
   @Input() format: boolean = true;
   @Input() allowEmpty: boolean = true;
   @Input() useGrouping: boolean = true;

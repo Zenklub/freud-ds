@@ -37,7 +37,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       <small
         [class.disabled]="disabled"
         *ngIf="helpText"
-        class="help-text freud-typography bodyRegularAuto">{{helpText}}</small>
+        class="help-text freud-typography bodyRegularAuto"
+      >{{helpText}}</small>
+      <small
+        [class.disabled]="disabled"
+        *ngIf="invalid && errorText"
+        class="error-text freud-typography bodyRegularAuto"
+      >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -55,6 +61,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 export class FreudInputMaskComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
+  @Input() errorText: string = '';
   @Input() placeholder: string = '';
   @Input() invalid: boolean = false;
   @Input() mask: string = '';

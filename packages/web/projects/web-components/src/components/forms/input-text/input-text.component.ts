@@ -34,8 +34,19 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
             (keydown)="onKeydown.emit($event)"
           />
         </span>
-      <small [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+
+        <small
+          *ngIf="helpText"
+          [class.disabled]="disabled"
+          class="help-text freud-typography bodyRegularAuto"
+        >{{helpText}}</small>
+
+        <small
+          *ngIf="invalid && errorText"
+          [class.disabled]="disabled"
+          class="error-text freud-typography bodyRegularAuto"
+        >{{errorText}}</small>
+      
     </div>
   `,
   host: {
@@ -53,6 +64,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 export class FreudInputTextComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
+  @Input() errorText: string = '';
   @Input() placeholder: string = '';
   @Input() rightIcon!: string;
   @Input() invalid: boolean = false;

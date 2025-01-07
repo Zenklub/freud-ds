@@ -45,6 +45,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
               <ng-content select="[freudTemplatefooter]"></ng-content>
             </ng-template>
         </p-password>
+        <small
+          [class.disabled]="disabled"
+          *ngIf="invalid && errorText"
+          class="error-text freud-typography bodyRegularAuto"
+        >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -70,6 +75,7 @@ export class FreudInputPasswordComponent implements ControlValueAccessor {
   @Input() strongLabel!: string;
   @Input() headerLabel!: string;
   @Input() invalid: boolean = false;
+  @Input() errorText: string = '';
   @Input() toggleMask: boolean = true;
   @Input() feedback: boolean = true;
   @Input() bgColor = false;

@@ -8,6 +8,7 @@ const templateHTML = `
         [label]="label"
         [placeholder]="placeholder"
         [invalid]="invalid"
+        [errorText]="errorText"
         [showButtons]="showButtons"
         [bgColor]="bgColor">
     </freud-input-number>
@@ -75,3 +76,10 @@ Invalid.args = {
   invalid: true,
 };
 
+export const ErrorText = Template.bind({});
+ErrorText.args = {
+  label: 'Label',
+  placeholder: 'Placeholder',
+  invalid: true,
+  errorText: 'Error Text',
+};

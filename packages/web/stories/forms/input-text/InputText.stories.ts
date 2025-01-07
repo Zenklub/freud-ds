@@ -8,6 +8,7 @@ const templateHTML = `
         [label]="label"
         [placeholder]="placeholder"
         [helpText]="helpText"
+        [errorText]="errorText"
         [invalid]="invalid"
         [rightIcon]="rightIcon"
         [bgColor]="bgColor">
@@ -45,7 +46,13 @@ HelperText.args = {
   helpText: 'Helper Text',
 };
 
-
+export const ErrorText = Template.bind({});
+ErrorText.args = {
+  label: 'Label',
+  placeholder: 'Placeholder',
+  invalid: true,
+  errorText: 'Error Text',
+};
 
 export const BGColor = Template.bind({});
 BGColor.args = {
@@ -53,6 +60,8 @@ BGColor.args = {
   placeholder: 'Placeholder',
   bgColor: true,
   helpText: 'Helper Text',
+  invalid: true,
+  errorText: 'Error Text',
 };
 export const Disabled = Template.bind({});
 Disabled.args = {

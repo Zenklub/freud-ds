@@ -14,6 +14,10 @@
 }
 
 .freud-input-number {
+  .error-text {
+    color: $feedback-color-negative-04;
+    margin-top: $spacing-size-quark;
+  }
   .freud-field {
     display: flex;
     flex-flow: column;

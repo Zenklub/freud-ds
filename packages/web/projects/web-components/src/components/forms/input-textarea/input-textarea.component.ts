@@ -33,9 +33,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
           (input)="onInput.emit($event)"
           (keydown)="onKeydown.emit($event)"
         ></textarea>
-      <small id="{{id}}-help"
-             [class.disabled]="disabled"
-             class="help-text freud-typography bodyRegularAuto">{{helpText ? helpText : ''}}</small>
+
+        <small
+          *ngIf="helpText"
+          id="{{id}}-help"
+          [class.disabled]="disabled"
+          class="help-text freud-typography bodyRegularAuto"
+        >{{helpText}}</small>
+
+        <small
+          *ngIf="invalid && errorText"
+          id="{{id}}-error"
+          [class.disabled]="disabled"
+          class="error-text freud-typography bodyRegularAuto"
+        >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -53,6 +64,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 export class FreudInputTextAreaComponent implements ControlValueAccessor {
   @Input() label: string = '';
   @Input() helpText: string = '';
+  @Input() errorText: string = '';
   @Input() placeholder: string = '';
   @Input() cols!: number;
   @Input() rows!: number;
