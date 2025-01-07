@@ -47,7 +47,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
         </p-password>
         <small
           [class.disabled]="disabled"
-          *ngIf="errorText"
+          *ngIf="invalid && errorText"
           class="error-text freud-typography bodyRegularAuto"
         >{{errorText}}</small>
     </div>

@@ -42,7 +42,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
         >{{helpText}}</small>
 
         <small
-          *ngIf="errorText"
+          *ngIf="invalid && errorText"
           [class.disabled]="disabled"
           class="error-text freud-typography bodyRegularAuto"
         >{{errorText}}</small>
