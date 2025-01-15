@@ -21,6 +21,9 @@ jobs:
           cd packages/icons
           npm run generate
           cd ../../packages/web
+          mkdir ~/.npm-global
+          npm config set prefix '~/.npm-global'
+          export PATH=~/.npm-global/bin:$PATH
           npm i -g npm@8
           npm i --quiet --legacy-peer-deps
           npm run build-storybook
