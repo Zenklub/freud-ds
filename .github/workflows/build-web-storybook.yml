@@ -10,7 +10,7 @@ jobs:
     concurrency: ci-${{ github.ref }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
         with:
           node-version: 16
 
@@ -21,11 +21,14 @@ jobs:
           cd packages/icons
           npm run generate
           cd ../../packages/web
+          mkdir ~/.npm-global
+          npm config set prefix '~/.npm-global'
+          export PATH=~/.npm-global/bin:$PATH
           npm i -g npm@8
           npm i --quiet --legacy-peer-deps
           npm run build-storybook
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
           branch: gh-pages
           folder: packages/web/storybook-static
