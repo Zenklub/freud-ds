@@ -1,0 +1,17 @@
+{
+  "shadow": {
+    "focused": {
+      "zen": { "value": "0px 0px 0px 3px #E7E0F6" }
+    },
+    "level": {
+      "1": { "value": "0px 2px 4px rgba(31, 41, 55, 0.08)" },
+      "2": { "value": "0px 2px 6px rgba(31, 41, 55, 0.12)" },
+      "3": { "value": "0px 2px 8px rgba(31, 41, 55, 0.14)" },
+      "4": { "value": "0px 4px 8px rgba(31, 41, 55, 0.16)" },
+      "5": { "value": "0px 4px 16px rgba(31, 41, 55, 0.16)" },
+      "6": { "value": "0px 6px 20px rgba(31, 41, 55, 0.16)" },
+      "7": { "value": "0px 8px 16px rgba(31, 41, 55, 0.16)" },
+      "8": { "value": "0px 12px 24px rgba(31, 41, 55, 0.2)" }
+    }
+  }
+}

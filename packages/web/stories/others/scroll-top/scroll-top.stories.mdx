@@ -1,0 +1,70 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudScrollTopComponent, FreudScrollTopModule, FreudPanelModule, FreudScrollPanelModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import {
+  BGColor,
+  Default,
+  TargetElement,
+} from './ScrollTop.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudScrollTopModule, FreudPanelModule, FreudScrollPanelModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+title="@freud-ds/web-components/Others/ScrollTop" component={FreudScrollTopComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "ScrollTop",
+      description: "ScrollTop é exibido após uma determinada posição de rolagem e usado para navegar rapidamente para o topo da página."
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudScrollTopModule } from '@freud-ds/web-components';
+```
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Default
+<Canvas>
+  // Faça scroll na pagina para ver o botão no lado inferior direito
+  <Story story={Default}/>
+</Canvas>
+
+### TargetElement
+<Canvas>
+  <Story story={TargetElement}/>
+</Canvas>
+
+### BGColor
+<Canvas>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudScrollTopComponent} />

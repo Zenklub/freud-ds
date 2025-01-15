@@ -1,0 +1,78 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+
+.freud-alert-messages {
+  .p-message, .p-inline-message {
+    border: unset;
+    border-radius: $border-radius-md;
+    color: $neutral-color-dark-04;
+
+    &.p-message-success, &.p-inline-message-success {
+      background-color: $feedback-color-positive-01;
+      .p-message-icon, .p-inline-message-icon {
+        color: $feedback-color-positive-pure;
+      }
+    }
+
+    &.p-message-info, &.p-inline-message-info {
+      background-color: $feedback-color-neutral-01;
+      .p-message-icon, .p-inline-message-icon {
+        color: $feedback-color-neutral-pure;
+      }
+    }
+
+    &.p-message-warn, &.p-inline-message-warn {
+      background-color: $feedback-color-warning-01;
+      .p-message-icon, .p-inline-message-icon {
+        color: $feedback-color-alert-pure;
+      }
+    }
+
+    &.p-message-error, &.p-inline-message-error {
+      background-color: $feedback-color-negative-01;
+      .p-message-icon, .p-inline-message-icon {
+        color: $feedback-color-negative-pure;
+      }
+    }
+
+    .freud-icon {
+      font-size: 31px;
+      margin-left: -5px;
+      margin-right: 4px;
+    }
+  }
+
+  .p-inline-message {
+    padding: 11px;
+  }
+
+  .p-message .p-message-summary {
+    @include typography($font-size-xs, $font-weight-bold, auto);
+  }
+
+  .p-message-detail {
+    @include typography($font-size-xs, $font-weight-regular, auto);
+  }
+
+  .pi-info-circle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e9ed";
+  }
+
+  .pi-exclamation-triangle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e903";
+  }
+
+  .pi-times-circle:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e9b9";
+  }
+  .pi-check:before {
+    font-family: 'Freud Icon' !important;
+    content: "\e973";
+  }
+
+
+}

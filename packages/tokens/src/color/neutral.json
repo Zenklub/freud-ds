@@ -1,0 +1,20 @@
+{
+  "neutral": {
+    "color": {
+      "white": { "value": "#FFFFFF" },
+      "black": { "value": "#000000" },
+      "dark": {
+        "01": { "value": "#9CA3AF" },
+        "02": { "value": "#6B7280" },
+        "03": { "value": "#384252" },
+        "04": { "value": "#1F2937" }
+      },
+      "light": {
+        "01": { "value": "#F7F9FA" },
+        "02": { "value": "#F0F2F5" },
+        "03": { "value": "#E5E7EB" },
+        "04": { "value": "#D1D5DB" }
+      }
+    }
+  }
+}

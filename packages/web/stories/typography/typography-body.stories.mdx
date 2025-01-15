@@ -1,0 +1,98 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { FreudTypographyComponent, FreudTypographyModule } from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../header/header.component';
+import { headingTypes } from '../../projects/web-components/src/components/typography/typrography.type';
+
+import {
+  TextRegular,
+  TextSemibold,
+  TextBold,
+  BGColor
+} from './typography.stories.ts';
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudTypographyModule],
+    })
+  ]}
+  parameters={{
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    },
+    backgrounds: {
+      default: 'Default',
+      values: [
+        { name: 'Default', value: '#FFFFFF' },
+        { name: 'BgColor', value: '#6732D1' },
+      ],
+    }
+  }}
+  argTypes={{
+    fontType: {
+      control: {
+        type: 'select',
+        options: headingTypes
+      }
+    },
+    label: {
+      name: 'Texto',
+      type: { name: 'string', required: false },
+      defaultValue: 'Texto exclusivo Zenklub',
+      description: 'Texto a ser exibido',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Texto' }
+      }
+    }
+  }}
+title="@freud-ds/web-components/Typography/Text" component={FreudTypographyComponent} />
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Text",
+      description: "Temos dois padrões de textos: Body e Small. Ambos possuem sua versão regular, semibold e bold e também opções de lineheight (1, 1.2, 1.5 e auto)"
+    },
+  }}
+</Story>
+
+## <a id="importing"></a>Import
+
+```ts
+import { FreudTypographyModule } from '@freud-ds/web-components';
+```
+
+## Utilização
+Utilize a diretiva `freud-typography` com o tipo de fonte para definit a tipografia
+
+## <a id="exemplos"></a>Exemplos
+<br />
+
+### Regular
+<Canvas>
+  <Story story={TextRegular}/>
+</Canvas>
+
+### Semibold
+<Canvas>
+  <Story story={TextSemibold}/>
+</Canvas>
+
+### Bold
+<Canvas>
+  <Story story={TextBold}/>
+</Canvas>
+
+### BG Color
+<Canvas style={{ backgroundColor: '#241249' }}>
+  <Story story={BGColor}/>
+</Canvas>
+
+## <a id="api"></a>API
+
+<ArgsTable of={FreudTypographyComponent} />

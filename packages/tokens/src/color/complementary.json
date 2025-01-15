@@ -1,0 +1,24 @@
+{
+  "complementary": {
+    "color": {
+      "funny": {
+        "pure": { "value": "#FF4099" },
+        "01": { "value": "#FFE8F3" },
+        "02": { "value": "#FFA6CF" },
+        "03": { "value": "#FF73B4" },
+        "04": { "value": "#C83278" },
+        "05": { "value": "#912457" },
+        "06": { "value": "#591636" }
+      },
+      "like": {
+        "pure": { "value": "#84CC16" },
+        "01": { "value": "#ECF5DF" },
+        "02": { "value": "#C6E792" },
+        "03": { "value": "#A5DA54" },
+        "04": { "value": "#67A011" },
+        "05": { "value": "#4B740D" },
+        "06": { "value": "#2E4708" }
+      }
+    }
+  }
+}

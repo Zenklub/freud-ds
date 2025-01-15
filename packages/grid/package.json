@@ -1,0 +1,20 @@
+{
+  "name": "@freud-ds/grid",
+  "version": "2.0.8",
+  "description": "Zenklub - Freud DS Grid",
+  "author": "Zenklub",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "grid.scss",
+    "grid-variables.scss",
+    "mixins.scss",
+    "scss"
+  ],
+  "scripts": {
+    "build": "npm run clean && cp -r src dist && cp package.json dist/package.json && cp ./README.md ./dist",
+    "clean": "rm -rf dist"
+  }
+}

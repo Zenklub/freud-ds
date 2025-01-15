@@ -1,0 +1,36 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-action-icon.freud-bgcolor {
+  button {
+    color: $neutral-color-white;
+  }
+  button:enabled:hover {
+    background: $brand-color-03;
+  }
+}
+
+.freud-action-icon {
+  button {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border: 0 none;
+    background: transparent;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    display: grid;
+    align-items: center;
+    .freud-icon {
+      font-size: 14px;
+    }
+  }
+}
+
+.freud-action-icon:not(.freud-bgcolor) {
+  button {
+    color: $neutral-color-dark-02;
+  }
+  button:enabled:hover {
+    background: $neutral-color-light-02;
+  }
+}

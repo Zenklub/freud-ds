@@ -1,0 +1,39 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+@import '../../../../scss/typography';
+
+$maxDialogWidth: 700px;
+.freud-dialog {
+  .p-dialog {
+    &:not(.p-dialog-maximized) {
+      max-width: $maxDialogWidth;
+    }
+    border-radius: 8px;
+    box-shadow: $shadow-level-3;
+  }
+  .p-dialog-footer {
+    display: flex;
+    place-content: flex-end;
+  }
+
+  .p-dialog .p-dialog-content {
+    color: $neutral-color-dark-03;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    @include typography($font-size-xs, $font-weight-regular, 24px);
+  }
+
+  .p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+    box-shadow: unset;
+  }
+
+  .p-dialog .p-dialog-header .p-dialog-title, .p-dialog .p-dialog-header {
+    color: $neutral-color-dark-03;
+    @include typography($font-size-xs, $font-weight-bold, 19.2px);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .p-dialog .p-dialog-footer {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}

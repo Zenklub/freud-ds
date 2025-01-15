@@ -1,0 +1,143 @@
+import { Meta, Canvas, Story, ArgsTable, SourceState } from "@storybook/addon-docs";
+import { moduleMetadata } from "@storybook/angular";
+
+import { FreudIconComponent, FreudIconModule, FreudIconSizes, FreudTypographyModule, FreudInputTextModule} from "@freud-ds/web-components";
+import { FreudHeaderComponent } from "../../header/header.component";
+
+import { Icon, IconSmall, IconTest, AllIcons } from "./Icon.stories";
+
+<Meta
+  decorators={[
+    moduleMetadata({
+      imports: [FreudIconModule, FreudTypographyModule, FreudInputTextModule],
+    }),
+  ]}
+  argTypes={{
+    size: {
+      control: {
+        type: "select",
+        options: [...FreudIconSizes],
+      },
+    },
+  }}
+  parameters={{
+    layout: "centered",
+    backgrounds: {
+      default: "Default",
+      values: [
+        { name: "Default", value: "#FFFFFF" },
+        { name: "BgColor", value: "#6732D1" },
+      ],
+    },
+  }}
+  title="@freud-ds/web-components/Icons/Ícone como componente"
+  component={FreudIconComponent, AllIcons}
+/>
+
+<Story name="Storyname-hidden">
+  {{
+    component: FreudHeaderComponent,
+    props: {
+      title: "Freud Icon",
+      description:
+        "Componente próprio do Freud DS, utilizado para exibir ícones na tela.",
+    },
+  }}
+</Story>
+
+## Pré-requisitos
+
+### Libs
+
+É necessário instalar algumas libs do Freud DS para utilizar este componente. Para instalar, rode os comandos abaixo 
+no terminal do seu projeto:
+
+#### Web Components
+
+```bash
+npm i @freud-ds/web-components
+```
+
+#### Icons
+
+```bash
+npm i @freud-ds/icons
+```
+
+## <a id="importing"></a>Import
+
+### Módulo
+Importe o FreudIconModule em cada módulo que for utilizar o FreudIconComponent. Utilizando o código:
+```ts
+import { FreudIconModule } from '@freud-ds/web-components'; 
+
+@NgModule({
+  imports: [
+    FreudIconModule
+    //e outros imports...
+  ]
+})
+```
+
+### Estilo
+Importe o arquivo de estilo dos ícones. Há duas formas de fazer isso: 
+
+#### CSS Global
+O arquivo de estilo dos ícones será importado globalmente, ou seja, em toda a aplicação. Para isso, coloque esse código 
+no seu arquivo ``.css`` global:
+```css
+@import '~@freud-ds/icons/style/style.css';
+```
+#### Arquivo JSON
+O arquivo de estilo dos ícones será colocado no arquivo ``angular.json`` do seu projeto. Para isso, coloque o arquivo ``.css`` 
+na lista de ``styles []`` do arquivo ``angular.json`` do seu projeto, como no exemplo abaixo:
+```json
+{
+	// ...
+	"architect": {
+		"build": {
+			"options": {
+				"styles": [
+					// ...
+					"node_modules/@freud-ds/icons/style/style.css"
+				]
+			}
+		}
+	}
+}
+```
+
+## Icon
+Para utilizar o componente, basta utilizar a tag ``<freud-icon>``passando o nome do ícone (e, caso seja necessário, o tamanho) 
+como parâmetro. 
+
+### Teste os ícones
+Clique em ``Icon Test`` (na lista de componentes no canto esquerdo) e depois em ``Canvas`` (no canto superior esquerdo dessa página) 
+para ter acesso a área de testes, onde você pode colocar os ícones da lista para ver sua exibição e tamanho.
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={IconTest}/>
+</Canvas>
+
+### Exemplo
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={Icon}/>
+</Canvas>
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story story={IconSmall}/>
+</Canvas>
+
+## Lista de ícones disponíveis
+
+Essa é a lista com todos os ícones disponíveis no Freud DS. Selecione um ícone e o código para utilizar o componente ``freud-icon`` será copiado para o seu clipboard.
+
+**Clique no ícone, ele será enviado para sua área de transferência.**
+
+<Canvas withSource={SourceState.NONE}>
+  <Story story={AllIcons} />
+</Canvas>
+
+## API
+<ArgsTable of={FreudIconComponent} />

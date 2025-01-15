@@ -1,0 +1,126 @@
+@import "../../../../../../../tokens/dist/style/scss/variables";
+@import "../../../../scss/typography";
+
+.calendar__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+.calendar__wrapper--input {
+  .p-calendar {
+    width: 100%;
+  }
+  .p-inputtext {
+    height: 40px;
+    border-radius: $border-radius-md;
+    border: 1px solid $neutral-color-light-03;
+    width: 100%;
+    &::placeholder {
+      color: $neutral-color-dark-02;
+      opacity: 1;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+}
+.calendar__label {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+}
+
+.p-datepicker {
+  border: unset;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-level-3;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-next {
+  width: 28px;
+  height: 28px;
+  border: 0 none;
+  background: transparent;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  display: grid;
+  align-items: center;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev:focus,
+.p-datepicker .p-datepicker-header .p-datepicker-next:focus {
+  box-shadow: unset;
+}
+
+button.p-datepicker-next {
+  color: $neutral-color-dark-02;
+}
+button.p-datepicker-next:enabled:hover {
+  background: $neutral-color-light-02;
+}
+
+.p-datepicker .p-datepicker-header {
+  color: $neutral-color-dark-02;
+  @include typography($font-size-xs, $font-weight-bold, auto);
+}
+
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+  color: $neutral-color-dark-02;
+  background-color: $neutral-color-light-03;
+}
+
+table {
+  td > span:focus {
+    box-shadow: unset;
+  }
+
+  thead {
+    color: $neutral-color-dark-04;
+    @include typography($font-size-xs, $font-weight-semibold, 24px);
+  }
+  tbody {
+    td:not(.p-datepicker-other-month) {
+      color: $neutral-color-dark-02;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+    td.p-datepicker-other-month {
+      color: $neutral-color-dark-01;
+      @include typography($font-size-xs, $font-weight-regular, 24px);
+    }
+  }
+  td.p-datepicker-today > span {
+    color: $neutral-color-dark-02;
+    background-color: $neutral-color-light-04;
+  }
+  td.p-datepicker-today > span.p-highlight,
+  td > span.p-highlight {
+    color: $neutral-color-white;
+    background-color: $brand-color-pure;
+  }
+}
+.p-datepicker .p-timepicker span {
+  @include typography($font-size-xs, $font-weight-regular, 19.2px);
+  color: $neutral-color-dark-02;
+}
+
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-highlight):not(.p-disabled):hover {
+  color: $neutral-color-white;
+  background-color: $brand-color-03;
+  border-radius: $border-radius-md;
+}
+
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-highlight):not(.p-disabled):focus {
+  box-shadow: unset;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month {
+  color: $neutral-color-dark-02;
+  @include typography($font-size-xs, $font-weight-bold, auto);
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month.p-highlight {
+  border-radius: $border-radius-md;
+  background-color: $brand-color-pure;
+  color: $neutral-color-white;
+}

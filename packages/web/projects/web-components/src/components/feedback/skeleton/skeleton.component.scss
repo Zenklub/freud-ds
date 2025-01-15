@@ -1,0 +1,17 @@
+@import '../../../../../../../tokens/dist/style/scss/variables';
+
+.freud-skeleton:not(.freud-bgcolor) {
+  .p-skeleton {
+    background-color: $neutral-color-light-02;
+  }
+}
+.freud-skeleton.freud-bgcolor {
+  .p-skeleton {
+    background-color: $brand-color-06;
+  }
+  .p-skeleton:after {
+    background: linear-gradient(
+        90deg, rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  }
+}
