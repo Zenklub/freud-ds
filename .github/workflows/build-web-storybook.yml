@@ -1,5 +1,6 @@
 name: Web Components - Deploy & Publish Storybook
 on:
+  workflow_dispatch:
   push:
     branches:
       - develop
