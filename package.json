@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "bootstrap": "lerna bootstrap && lerna exec npm install",
     "build:tokens": "lerna run build --scope @freud-ds/tokens",
