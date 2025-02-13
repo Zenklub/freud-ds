@@ -60,7 +60,6 @@ export * from './components/others/paginator';
 export * from './components/others/chip';
 export * from './components/others/captcha';
 export * from './components/others/table';
-export * from './components/others/full-calendar';
 export * from './components/others/accordion';
 
 // Structure
