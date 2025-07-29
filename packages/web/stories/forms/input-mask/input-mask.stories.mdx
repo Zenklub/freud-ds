@@ -1,11 +1,13 @@
 import { Meta, Canvas, Story, ArgTypes } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import {
-  FreudInputMaskComponent,
-  FreudInputMaskModule,
-} from '@freud-ds/web-components';
-import { FreudHeaderComponent } from '../../header/header.component';
-import { Data, BGColor, CPF, Celular, Telefone } from './InputMask.stories.ts';
+  Data,
+  BGColor,
+  CPF,
+  Celular,
+  Telefone,
+  TelefoneError,
+} from './InputMask.stories.ts';
 
 <Meta
   decorators={[
@@ -87,6 +89,11 @@ Você também pode definir seu próprio padrão regex para caracteres alfa
 
 <Canvas>
   <Story story={Telefone} />
+</Canvas>
+
+### Telefone Error
+<Canvas>
+  <Story story={TelefoneError}/>
 </Canvas>
 
 ### BG Color

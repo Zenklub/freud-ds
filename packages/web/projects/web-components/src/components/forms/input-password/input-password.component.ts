@@ -14,41 +14,42 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label
-        for="{{ id }}"
-        class="freud-typography bodySemibold1-2 freud-label"
-        *ngIf="label"
-        >{{ label }}</label
-      >
-      <p-password
-        [id]="id"
-        [class.ng-invalid]="invalid"
-        [class.ng-dirty]="invalid"
-        [(ngModel)]="value"
-        [placeholder]="placeholder || ''"
-        [disabled]="disabled"
-        [required]="required"
-        [toggleMask]="toggleMask"
-        [feedback]="feedback"
-        [promptLabel]="promptLabel"
-        [mediumRegex]="mediumRegex"
-        [strongRegex]="strongRegex"
-        [weakLabel]="weakLabel"
-        [mediumLabel]="mediumLabel"
-        [strongLabel]="strongLabel"
-        (ngModelChange)="modelValueChange()"
-        (focus)="onFocus.emit($event)"
-        (blur)="onBlur.emit($event)"
-        (input)="onInput.emit($event)"
-        (keydown)="onKeydown.emit($event)"
-      >
-        <ng-template pTemplate="header">
-          <ng-content select="[freudTemplateHeader]"></ng-content>
-        </ng-template>
-        <ng-template pTemplate="footer">
-          <ng-content select="[freudTemplatefooter]"></ng-content>
-        </ng-template>
-      </p-password>
+      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+        <p-password
+          [id]="id"
+          [class.ng-invalid]="invalid"
+          [class.ng-dirty]="invalid"
+          [(ngModel)]="value"
+          [placeholder]="placeholder || ''"
+          [disabled]="disabled"
+          [required]="required"
+          [toggleMask]="toggleMask"
+          [feedback]="feedback"
+
+          [promptLabel]="promptLabel"
+          [mediumRegex]="mediumRegex"
+          [strongRegex]="strongRegex"
+          [weakLabel]="weakLabel"
+          [mediumLabel]="mediumLabel"
+          [strongLabel]="strongLabel"
+
+          (ngModelChange)="modelValueChange()"
+          (focus)="onFocus.emit($event)"
+          (blur)="onBlur.emit($event)"
+          (input)="onInput.emit($event)"
+          (keydown)="onKeydown.emit($event)">
+            <ng-template pTemplate="header">
+              <ng-content select="[freudTemplateHeader]"></ng-content>
+            </ng-template>
+            <ng-template pTemplate="footer">
+              <ng-content select="[freudTemplatefooter]"></ng-content>
+            </ng-template>
+        </p-password>
+        <small
+          [class.disabled]="disabled"
+          *ngIf="invalid && errorText"
+          class="error-text freud-typography bodyRegularAuto"
+        >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -74,9 +75,10 @@ export class FreudInputPasswordComponent implements ControlValueAccessor {
   @Input() mediumLabel!: string;
   @Input() strongLabel!: string;
   @Input() headerLabel!: string;
-  @Input() invalid = false;
-  @Input() toggleMask = true;
-  @Input() feedback = true;
+  @Input() invalid: boolean = false;
+  @Input() errorText: string = '';
+  @Input() toggleMask: boolean = true;
+  @Input() feedback: boolean = true;
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required = false;

@@ -16,11 +16,15 @@
 }
 
 .freud-input-text {
-  .help-text {
+  .help-text, .error-text {
     margin-top: $spacing-size-quark;
   }
-  .p-input-icon-left > i,
-  .p-input-icon-right > i {
+
+  .error-text {
+    color: $feedback-color-negative-04;
+  }
+
+  .p-input-icon-left>i, .p-input-icon-right>i {
     margin-top: -10px;
     font-size: 24px;
   }

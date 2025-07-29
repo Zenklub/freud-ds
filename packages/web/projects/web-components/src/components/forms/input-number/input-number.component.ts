@@ -16,47 +16,53 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label
-        for="{{ id }}"
-        class="freud-typography bodySemibold1-2 freud-label"
-        *ngIf="label"
-        >{{ label }}</label
-      >
-      <p-inputNumber
-        [id]="id"
-        [inputId]="id"
-        type="text"
-        [class.ng-invalid]="invalid"
-        [class.ng-dirty]="invalid"
-        [(ngModel)]="value"
-        [placeholder]="placeholder || ''"
-        [disabled]="disabled"
-        [required]="required"
-        [format]="format"
-        [buttonLayout]="buttonLayout"
-        [incrementButtonIcon]="incrementButtonIcon"
-        [decrementButtonIcon]="decrementButtonIcon"
-        [showButtons]="showButtons"
-        [locale]="locale"
-        [localeMatcher]="localeMatcher"
-        [mode]="mode"
-        [prefix]="prefix"
-        [useGrouping]="useGrouping"
-        [suffix]="suffix"
-        [currency]="currency"
-        [currencyDisplay]="currencyDisplay"
-        [minFractionDigits]="minFractionDigits"
-        [maxFractionDigits]="maxFractionDigits"
-        [min]="min"
-        [max]="max"
-        [step]="step"
-        [allowEmpty]="allowEmpty"
-        (ngModelChange)="modelValueChange()"
-        (focus)="onFocus.emit($event)"
-        (blur)="onBlur.emit($event)"
-        (input)="onInput.emit($event)"
-        (keydown)="onKeydown.emit($event)"
-      ></p-inputNumber>
+      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+          <p-inputNumber
+            [id]="id"
+            [inputId]="id"
+            type="text"
+            [class.ng-invalid]="invalid"
+            [class.ng-dirty]="invalid"
+            [(ngModel)]="value"
+            [placeholder]="placeholder || ''"
+            [disabled]="disabled"
+            [required]="required"
+
+            [format]="format"
+            [buttonLayout]="buttonLayout"
+            [incrementButtonIcon]="incrementButtonIcon"
+            [decrementButtonIcon]="decrementButtonIcon"
+            [showButtons]="showButtons"
+            [locale]="locale"
+            [localeMatcher]="localeMatcher"
+            [mode]="mode"
+
+            [prefix]="prefix"
+            [useGrouping]="useGrouping"
+            [suffix]="suffix"
+            [currency]="currency"
+            [currencyDisplay]="currencyDisplay"
+
+            [minFractionDigits]="minFractionDigits"
+            [maxFractionDigits]="maxFractionDigits"
+
+            [min]="min"
+            [max]="max"
+
+            [step]="step"
+            [allowEmpty]="allowEmpty"
+
+            (ngModelChange)="modelValueChange()"
+            (focus)="onFocus.emit($event)"
+            (blur)="onBlur.emit($event)"
+            (input)="onInput.emit($event)"
+            (keydown)="onKeydown.emit($event)"
+          ></p-inputNumber>
+          <small
+            [class.disabled]="disabled"
+            *ngIf="invalid && errorText"
+            class="error-text freud-typography bodyRegularAuto"
+          >{{errorText}}</small>
     </div>
   `,
   host: {
@@ -72,11 +78,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class FreudInputNumberComponent implements ControlValueAccessor {
-  @Input() label = '';
-  @Input() format = true;
-  @Input() allowEmpty = true;
-  @Input() useGrouping = true;
-  @Input() showButtons = false;
+  @Input() label: string = '';
+  @Input() errorText: string = '';
+  @Input() format: boolean = true;
+  @Input() allowEmpty: boolean = true;
+  @Input() useGrouping: boolean = true;
+  @Input() showButtons: boolean = false;
   @Input() buttonLayout: 'stacked' | 'horizontal' | 'vertical' = 'stacked';
   @Input() incrementButtonIcon = 'freud-icon freud-icon-chevron-up';
   @Input() decrementButtonIcon = 'freud-icon freud-icon-chevron-down';

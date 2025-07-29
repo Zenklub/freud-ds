@@ -12,6 +12,7 @@ const templateHTML = `
         [placeholder]="placeholder"
         [helpText]="helpText"
         [invalid]="invalid"
+        [errorText]="errorText"
         [bgColor]="bgColor">
     </freud-input-textarea>
 `;
@@ -58,3 +59,12 @@ Invalid.args = {
   placeholder: 'Placeholder',
   invalid: true,
 };
+
+export const ErrorText = Template.bind({});
+ErrorText.args = {
+  label: 'Label',
+  placeholder: 'Placeholder',
+  invalid: true,
+  errorText: 'Error Text',
+};
+

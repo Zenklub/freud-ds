@@ -14,36 +14,39 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="freud-field" [class.disabled]="disabled">
-      <label
-        for="{{ id }}"
-        class="freud-typography bodySemibold1-2 freud-label"
-        *ngIf="label"
-        >{{ label }}</label
-      >
-      <span [class.p-input-icon-right]="rightIcon">
-        <i class="{{ rightIcon }}" *ngIf="rightIcon"></i>
-        <input
-          [id]="id"
-          type="text"
-          [class.ng-invalid]="invalid"
-          [class.ng-dirty]="invalid"
-          pInputText
-          [(ngModel)]="value"
-          [placeholder]="placeholder || ''"
-          [disabled]="disabled"
-          [required]="required"
-          (ngModelChange)="modelValueChange()"
-          (focus)="onFocus.emit($event)"
-          (blur)="onBlur.emit($event)"
-          (input)="onInput.emit($event)"
-          (keydown)="onKeydown.emit($event)"
-        />
-      </span>
-      <small
-        [class.disabled]="disabled"
-        class="help-text freud-typography bodyRegularAuto"
-        >{{ helpText ? helpText : '' }}</small
-      >
+      <label for="{{id}}" class="freud-typography bodySemibold1-2 freud-label" *ngIf="label">{{label}}</label>
+        <span [class.p-input-icon-right]="rightIcon">
+          <i class="{{rightIcon}}" *ngIf="rightIcon"></i>
+          <input
+            [id]="id"
+            type="text"
+            [class.ng-invalid]="invalid"
+            [class.ng-dirty]="invalid"
+            pInputText
+            [(ngModel)]="value"
+            [placeholder]="placeholder || ''"
+            [disabled]="disabled"
+            [required]="required"
+            (ngModelChange)="modelValueChange()"
+            (focus)="onFocus.emit($event)"
+            (blur)="onBlur.emit($event)"
+            (input)="onInput.emit($event)"
+            (keydown)="onKeydown.emit($event)"
+          />
+        </span>
+
+        <small
+          *ngIf="helpText"
+          [class.disabled]="disabled"
+          class="help-text freud-typography bodyRegularAuto"
+        >{{helpText}}</small>
+
+        <small
+          *ngIf="invalid && errorText"
+          [class.disabled]="disabled"
+          class="error-text freud-typography bodyRegularAuto"
+        >{{errorText}}</small>
+      
     </div>
   `,
   host: {
@@ -59,9 +62,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class FreudInputTextComponent implements ControlValueAccessor {
-  @Input() label = '';
-  @Input() helpText = '';
-  @Input() placeholder = '';
+  @Input() label: string = '';
+  @Input() helpText: string = '';
+  @Input() errorText: string = '';
+  @Input() placeholder: string = '';
   @Input() rightIcon!: string;
   @Input() invalid = false;
   @Input() bgColor = false;
