@@ -10,6 +10,12 @@ import {
   Telefone,
   TelefoneError,
 } from './InputMask.stories.ts';
+import {
+  FreudInputMaskComponent,
+  FreudInputMaskModule,
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Data, BGColor, CPF, Celular, Telefone, WithAccessibility } from './InputMask.stories.ts';
 
 <Meta
   decorators={[
@@ -97,6 +103,80 @@ Você também pode definir seu próprio padrão regex para caracteres alfa
   <Story story={BGColor}/>
 </Canvas>
 
+### Acessibilidade
+
+O componente `InputMask` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudInputMaskComponent} />
+### Propriedades Disponíveis
+
+O componente `FreudInputMaskComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`label`**: Define o texto do label do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`helpText`**: Define o texto de ajuda do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`placeholder`**: Define o texto placeholder do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`invalid`**: Define se o input está em estado inválido
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`mask`**: Define a máscara do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`unmask`**: Define se deve remover a máscara no valor
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`slotChar`**: Define o caractere de preenchimento
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`characterPattern`**: Define o padrão de caracteres permitidos
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`autoClear`**: Define se deve limpar automaticamente
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`bgColor`**: Define se o input deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`disabled`**: Define se o input está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`required`**: Define se o input é obrigatório
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`id`**: Define o ID do componente
+  - Tipo: `string`
+  - Padrão: `auto-gerado`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
+
+<ArgTypes of={FreudInputMaskComponent} />

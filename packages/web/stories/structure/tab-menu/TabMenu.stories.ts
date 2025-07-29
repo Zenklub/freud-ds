@@ -31,3 +31,27 @@ BGColor.args = {
   activeItem: items[0],
   bgColor: true
 };
+
+// Accessibility
+const TemplateAccessibility: Story<FreudTabMenuComponent> = (
+  args: FreudTabMenuComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-tab-menu
+      [items]="items"
+      [activeItem]="activeItem"
+      [bgColor]="bgColor"
+      [ariaLabel]="ariaLabel"
+      [ariaLabelledBy]="ariaLabelledBy">
+    </freud-tab-menu>
+  `,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  items: items,
+  activeItem: items[0],
+  ariaLabel: 'Menu de navegação principal',
+  ariaLabelledBy: 'nav-heading',
+};

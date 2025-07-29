@@ -63,3 +63,33 @@ BGColor.args = {
   bgColor: true,
   mask: '99/99/9999'
 };
+
+// Accessibility
+const TemplateAccessibility: Story<FreudInputMaskComponent> = (
+  args: FreudInputMaskComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-input-mask
+        [(ngModel)]="value"
+        [disabled]="disabled"
+        [label]="label"
+        [placeholder]="placeholder"
+        [helpText]="helpText"
+        [invalid]="invalid"
+        [mask]="mask"
+        [bgColor]="bgColor"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-input-mask>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'Data de nascimento',
+  placeholder: 'DD/MM/AAAA',
+  mask: '99/99/9999',
+  ariaLabel: 'Campo para inserir data de nascimento no formato DD/MM/AAAA',
+  ariaLabelledBy: 'birthdate-heading',
+};

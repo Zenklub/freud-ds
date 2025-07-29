@@ -6,7 +6,14 @@ type targetOptions = '_blank' | '_self' | '_top' | '_parent';
 @Component({
   selector: 'freud-toast',
   template: `
-    <p-toast [position]="position" [key]="key" [class.clickable]="url" (click)="url && openURL($event)"></p-toast>
+    <p-toast
+      [position]="position"
+      [key]="key"
+      [class.clickable]="url"
+      (click)="url && openURL($event)"
+      [attr.aria-label]="ariaLabel"
+      [attr.aria-labelledby]="ariaLabelledBy"
+    ></p-toast>
   `,
   styleUrls: ['./toast.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -20,7 +27,8 @@ export class FreudToastComponent {
   @Input() key!: string;
   @Input() url?: string;
   @Input() targetParam: targetOptions = '_blank';
-
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   openURL(event: any): void {
     const isCloseBtn = event.srcElement.className.includes('close-icon');
 

@@ -1,8 +1,10 @@
 import { Story } from '@storybook/angular';
 import { FreudButtonComponent } from '@freud-ds/web-components';
 
-// Button Test
-const TemplateTest: Story<FreudButtonComponent> = (args: FreudButtonComponent) => ({
+
+const TemplateTest: Story<FreudButtonComponent> = (
+  args: FreudButtonComponent,
+) => ({
   props: { ...args },
   template: `<freud-button [color]="color" [bgColor]="bgColor" [size]="size" [disabled]="disabled" 
 [loading]="loading" [icon]="icon" [label]="label" [iconPos]="iconPos"></freud-button>`,
@@ -126,5 +128,12 @@ export const WithIconLeft = () => {
 export const WithNGContent = () => {
   return {
     template: `<freud-button>Button sem label</freud-button>`,
+  };
+};
+
+// Accessibility
+export const WithAriaLabel = () => {
+  return {
+    template: '<freud-button ariaLabel="Botão para salvar formulário" label="Salvar"></freud-button>',
   };
 };

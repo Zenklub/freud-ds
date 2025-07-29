@@ -5,6 +5,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
 
+
 const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
   props: { ...args },
   template: `
@@ -15,6 +16,18 @@ const Template: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
 
 export const Default = Template.bind({});
 Default.storyName = 'Theme'
+
+// Accessibility
+const TemplateAccessibility: Story<FreudToastComponent> = (args: FreudToastComponent) => ({
+  props: { ...args },
+  template: `
+    <freud-toast-examples>
+    </freud-toast-examples>
+  `,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.storyName = 'Acessibilidade';
 
 export default {
   decorators: [

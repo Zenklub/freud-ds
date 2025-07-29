@@ -108,6 +108,41 @@ Tags.args = {
   optionValue: 'code',
 };
 
+// Accessibility
+const TemplateAccessibility: Story<FreudSelectComponent> = (args: FreudSelectComponent) => ({
+  props: { ...args },
+  template: `
+    <div style="height: 250px">
+        <freud-select
+          [disabled]="disabled"
+          [label]="label"
+          [useItemTemplate]="useItemTemplate"
+          [options]="options"
+          [optionLabel]="optionLabel"
+          [filter]="filter"
+          [optionValue]="optionValue"
+          [placeholder]="placeholder"
+          [helpText]="helpText"
+          [invalid]="invalid"
+          [bgColor]="bgColor"
+          [ariaLabel]="ariaLabel"
+          [ariaLabelledBy]="ariaLabelledBy">
+      </freud-select>
+    </div>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'País de origem',
+  placeholder: 'Selecione um país',
+  ariaLabel: 'Seletor de país de origem do usuário',
+  ariaLabelledBy: 'country-heading',
+  options: items,
+  optionLabel: 'name',
+  optionValue: 'code',
+};
+
 export default {
   decorators: [
     moduleMetadata({

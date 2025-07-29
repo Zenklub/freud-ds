@@ -76,3 +76,31 @@ Invalid.args = {
   invalid: true,
 };
 
+// Accessibility
+const TemplateAccessibility: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-input-text
+        [(ngModel)]="value"
+        [disabled]="disabled"
+        [label]="label"
+        [placeholder]="placeholder"
+        [helpText]="helpText"
+        [invalid]="invalid"
+        [rightIcon]="rightIcon"
+        [bgColor]="bgColor"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-input-text>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'Nome completo',
+  placeholder: 'Digite seu nome completo',
+  ariaLabel: 'Campo para inserir nome completo do usuário',
+  ariaLabelledBy: 'name-heading',
+};

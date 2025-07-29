@@ -3,10 +3,10 @@ import { moduleMetadata } from "@storybook/angular";
 import {
   FreudToastComponent,
   FreudToastModule,
-} from "@freud-ds/web-components";
-import { FreudHeaderComponent } from "../../header/header.component";
-import { Default } from "./Toast.stories.ts";
-import { FreudToastExampleModule } from "./toast-example/example.module";
+} from '@freud-ds/web-components';
+import { FreudHeaderComponent } from '../../header/header.component';
+import { Default, WithAccessibility } from './Toast.stories.ts';
+import { FreudToastExampleModule } from './toast-example/example.module';
 
 <Meta
   decorators={[
@@ -77,6 +77,14 @@ Clique nos botões para ver cada toast, tanto as versões normais quanto as clic
   <Story story={Default} />
 </Canvas>
 
+### Acessibilidade
+
+O componente `Toast` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## API
 
 ### Positions
@@ -100,4 +108,36 @@ Aqui estão os valores possíveis para a gravidade de uma mensagem.
 - warn
 - error
 
-<ArgsTable of={FreudToastComponent} />
+## API
+
+### Propriedades Disponíveis
+
+O componente `FreudToastComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`position`**: Define a posição do toast na tela
+  - Tipo: `'top-right' | 'top-left' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center' | 'center'`
+  - Padrão: `'top-right'`
+
+- **`key`**: Chave única para identificar o toast
+  - Tipo: `string`
+  - Obrigatório: `true`
+
+- **`url`**: URL para redirecionamento quando o toast for clicado
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`targetParam`**: Define como abrir a URL
+  - Tipo: `'_blank' | '_self' | '_top' | '_parent'`
+  - Padrão: `'_blank'`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
+
+<ArgTypes of={FreudToastComponent} />

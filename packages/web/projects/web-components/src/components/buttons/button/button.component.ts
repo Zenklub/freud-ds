@@ -22,7 +22,8 @@ type iconPos = 'left' | 'right';
       [type]="type"
       [label]="label"
       [iconPos]="iconPos"
-    >
+      [ariaLabel]="ariaLabel"
+      >
       <div class="button-content" *ngIf="!label"><ng-content></ng-content></div>
     </p-button>
   `,
@@ -59,5 +60,6 @@ export class FreudButtonComponent {
   @Input() icon: string = '';
   @Input() label: string = '';
   @Input() iconPos: iconPos = 'left';
-  @Input() fullWidth: boolean = false;
+  @Input() fullWidth = false;
+  @Input() ariaLabel = '';
 }

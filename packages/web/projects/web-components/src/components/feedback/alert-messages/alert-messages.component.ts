@@ -7,7 +7,12 @@ type severities = 'success' | 'info' | 'warn' | 'error';
 @Component({
   selector: 'freud-alert-messages',
   template: `
-    <p-messages [(value)]="messages" [closable]="closable"></p-messages>
+    <p-messages
+      [(value)]="messages"
+      [closable]="closable"
+      [attr.aria-label]="ariaLabel"
+      [attr.aria-labelledby]="ariaLabelledBy"
+    ></p-messages>
   `,
   styleUrls: ['./alert-messages.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -20,8 +25,9 @@ export class FreudAlertMessagesComponent {
 
   @Input() severity: severities = 'success';
   @Input() text!: string;
-  @Input() closable: boolean = true;
-
+  @Input() closable = true;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
 }
 
 @Component({

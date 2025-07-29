@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import { FreudSwitchComponent } from '@freud-ds/web-components';
 
-let value: boolean = false;
+const value = false;
 
 const templateHTML = `
       <freud-input-switch
@@ -36,4 +36,28 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
   value: value
+};
+
+// Accessibility
+const TemplateAccessibility: Story<FreudSwitchComponent> = (
+  args: FreudSwitchComponent,
+) => ({
+  props: { ...args },
+  template: `
+      <freud-input-switch
+        [(ngModel)]="defaultValue"
+        [disabled]="disabled"
+        [invalid]="invalid"
+        [custom]="custom"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-input-switch>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  value: value,
+  ariaLabel: 'Alternar notificações por email',
+  ariaLabelledBy: 'notifications-heading',
 };

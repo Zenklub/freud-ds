@@ -50,3 +50,27 @@ Label.args = {
   label: 'Label',
 };
 
+// Accessibility
+const TemplateAccessibility: Story<FreudCheckboxComponent> = (
+  args: FreudCheckboxComponent,
+) => ({
+  props: { ...args },
+  template: `
+      <freud-checkbox
+        [(ngModel)]="value"
+        [disabled]="disabled"
+        [label]="label"
+        [bgColor]="bgColor"
+        [invalid]="invalid"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-checkbox>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'Aceito os termos e condições',
+  ariaLabel: 'Checkbox para aceitar termos e condições',
+  ariaLabelledBy: 'terms-heading',
+};
