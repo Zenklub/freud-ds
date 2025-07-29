@@ -4,22 +4,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
 
-// Propriedades disponíveis no FreudCheckboxComponent:
-// - invalid: boolean (padrão: false)
-// - binary: boolean (padrão: true)
-// - disabled: boolean (padrão: false)
-// - label: string (padrão: '')
-// - bgColor: boolean (padrão: false)
-// - name: string (padrão: '')
-// - falseValue: any (padrão: false)
-// - trueValue: any (padrão: true)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
-// - checkboxIcon: string (padrão: 'freud-icon freud-icon-check')
-// - inputId: string (padrão: '')
-// - required: boolean (padrão: false)
-// - id: string (padrão: auto-gerado)
-
 const templateHTML = `
       <freud-checkbox
         [(ngModel)]="value"

@@ -4,33 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { moduleMetadata } from '@storybook/angular';
 
-// Propriedades disponíveis no FreudSelectComponent:
-// - label: string (padrão: '')
-// - filter: boolean (padrão: false)
-// - lazy: boolean (padrão: false)
-// - options: any[] (obrigatório)
-// - helpText: string (padrão: '')
-// - placeholder: string (padrão: '')
-// - invalid: boolean (padrão: false)
-// - virtualScroll: boolean (padrão: false)
-// - itemSize: number (padrão: undefined)
-// - emptyMessage: string (padrão: 'Sem resultados')
-// - dropdownIcon: string (padrão: 'freud-icon freud-icon-chevron-down')
-// - optionLabel: string (padrão: 'label')
-// - optionValue: string (padrão: 'value')
-// - optionDisabled: string (padrão: 'disabled')
-// - optionGroupLabel: string (padrão: 'label')
-// - optionGroupChildren: string (padrão: 'items')
-// - characterPattern: string (padrão: '')
-// - autoClear: boolean (padrão: true)
-// - bgColor: boolean (padrão: false)
-// - disabled: boolean (padrão: false)
-// - required: boolean (padrão: false)
-// - id: string (padrão: '')
-// - useItemTemplate: boolean (padrão: false)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
-
 const items = [
   { name: 'New York', code: 'NY' },
   { name: 'Rome', code: 'RM', disabled: true },

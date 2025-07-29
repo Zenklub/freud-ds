@@ -1,19 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudInputTextComponent } from '@freud-ds/web-components';
 
-// Propriedades disponíveis no FreudInputTextComponent:
-// - label: string (padrão: '')
-// - helpText: string (padrão: '')
-// - placeholder: string (padrão: '')
-// - rightIcon: string (padrão: '')
-// - invalid: boolean (padrão: false)
-// - bgColor: boolean (padrão: false)
-// - disabled: boolean (padrão: false)
-// - required: boolean (padrão: false)
-// - id: string (padrão: auto-gerado)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
-
 const templateHTML = `
     <freud-input-text
         [(ngModel)]="value"

@@ -1,13 +1,6 @@
 import { FreudTabMenuComponent, FreudMenuItem } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
-// Propriedades disponíveis no FreudTabMenuComponent:
-// - items: FreudMenuItem[] (obrigatório)
-// - activeItem: FreudMenuItem (obrigatório)
-// - bgColor: boolean (padrão: false)
-// - ariaLabel: string (padrão: '') - Propriedade de acessibilidade
-// - ariaLabelledBy: string (padrão: '') - Propriedade de acessibilidade
-
 const items: FreudMenuItem[] = [
   {label: 'Home', command: () => console.log('menuClicked')},
   {label: 'Calendar', command: () => console.log('menuClicked')},

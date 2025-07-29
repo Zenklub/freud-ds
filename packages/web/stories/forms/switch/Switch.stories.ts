@@ -1,18 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudSwitchComponent } from '@freud-ds/web-components';
 
-// Propriedades disponíveis no FreudSwitchComponent:
-// - invalid: boolean (padrão: false)
-// - disabled: boolean (padrão: false)
-// - name: string (padrão: '')
-// - falseValue: any (padrão: false)
-// - trueValue: any (padrão: true)
-// - required: boolean (padrão: false)
-// - id: string (padrão: '')
-// - custom: boolean (padrão: false)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
-
 const value = false;
 
 const templateHTML = `

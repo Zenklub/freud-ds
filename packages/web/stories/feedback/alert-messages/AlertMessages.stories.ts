@@ -4,13 +4,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from '@storybook/angular';
 
-// Propriedades disponíveis no FreudAlertMessagesComponent:
-// - messages: FreudMessage[] (obrigatório)
-// - severity: 'success' | 'info' | 'warn' | 'error' (padrão: 'success')
-// - text: string (obrigatório)
-// - closable: boolean (padrão: true)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
 
 const messages: FreudMessage[] = [
   {severity:'success', summary:'Success', detail:'Message content'},

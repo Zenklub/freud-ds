@@ -1,23 +1,6 @@
 import { Story } from '@storybook/angular';
 import { FreudInputMaskComponent } from '@freud-ds/web-components';
 
-// Propriedades disponíveis no FreudInputMaskComponent:
-// - label: string (padrão: '')
-// - helpText: string (padrão: '')
-// - placeholder: string (padrão: '')
-// - invalid: boolean (padrão: false)
-// - mask: string (padrão: '')
-// - unmask: boolean (padrão: false)
-// - slotChar: string (padrão: '')
-// - characterPattern: string (padrão: '')
-// - autoClear: boolean (padrão: true)
-// - bgColor: boolean (padrão: false)
-// - disabled: boolean (padrão: false)
-// - required: boolean (padrão: false)
-// - id: string (padrão: auto-gerado)
-// - ariaLabelledBy?: string - Propriedade de acessibilidade
-// - ariaLabel?: string - Propriedade de acessibilidade
-
 const templateHTML = `
     <freud-input-mask
         [(ngModel)]="value"
