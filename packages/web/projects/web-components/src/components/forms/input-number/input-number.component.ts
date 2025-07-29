@@ -43,7 +43,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
             [minFractionDigits]="minFractionDigits"
             [maxFractionDigits]="maxFractionDigits"
-
+            [ariaLabelledBy]="ariaLabelledBy"
+            [ariaLabel]="ariaLabel"
             [min]="min"
             [max]="max"
 
@@ -97,15 +98,17 @@ export class FreudInputNumberComponent implements ControlValueAccessor {
   @Input() maxFractionDigits!: number;
   @Input() min!: number;
   @Input() max!: number;
-  @Input() step: number = 1;
-
-  @Input() placeholder: string = '';
-  @Input() invalid: boolean = false;
+  @Input() step = 1;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
+  @Input() placeholder = '';
+  @Input() invalid = false;
   @Input() bgColor = false;
   @Input() disabled = false;
   @Input() required: boolean = false;
   @Input() id: string = Math.random().toString(36).substring(2);
 
+  
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() onBlur: EventEmitter<any> = new EventEmitter();

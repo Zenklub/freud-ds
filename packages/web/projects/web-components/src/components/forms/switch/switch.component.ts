@@ -23,7 +23,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [trueValue]="trueValue"
       [falseValue]="falseValue"
       [name]="name"
-      (onChange)="onChange.emit($event)">
+      (onChange)="onChange.emit($event)"
+      [ariaLabelledBy]="ariaLabelledBy"
+      [ariaLabel]="ariaLabel"
+    >
     </p-inputSwitch>
   `,
   host: {
@@ -46,7 +49,9 @@ export class FreudSwitchComponent implements ControlValueAccessor {
   @Input() trueValue: any = true;
   @Input() required: boolean = false;
   @Input() id!: string;
-  @Input() custom: boolean = false;
+  @Input() custom = false;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 

@@ -2,14 +2,8 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudDialogComponent, FreudDialogModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import {
-  Default,
-  Modal,
-  Maximizable
-} from './Dialog.stories.ts';
-import {
-  FreudDialogExampleModule
-} from "./dialog-example/example.module";
+import { Default, Modal, Maximizable, WithAccessibility } from './Dialog.stories.ts';
+import { FreudDialogExampleModule } from './dialog-example/example.module';
 
 <Meta
   decorators={[
@@ -84,6 +78,14 @@ Utilize a propriedade `maximizable` para incluir um botão de expandir o modal e
   <Story story={Maximizable}/>
 </Canvas>
 
+### Acessibilidade
+
+O componente `Dialog` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
 
 ### Position
@@ -97,4 +99,79 @@ Utilize a propriedade `position` para posicionar o dialog, opções disponíveis
 - "top-right"
 - "bottom-left"
 - "bottom-right"
-<ArgsTable of={FreudDialogComponent} />
+
+## API
+
+### Propriedades Disponíveis
+
+O componente `FreudDialogComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`header`**: Define o cabeçalho do dialog
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`modal`**: Define se o dialog é modal
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`draggable`**: Define se o dialog pode ser arrastado
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`resizable`**: Define se o dialog pode ser redimensionado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`showHeader`**: Define se deve mostrar o cabeçalho
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`maximizable`**: Define se o dialog pode ser maximizado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`closable`**: Define se o dialog pode ser fechado
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`position`**: Define a posição do dialog
+  - Tipo: `'center' | 'top' | 'bottom' | 'left' | 'right' | 'topleft' | 'topright' | 'bottomleft' | 'bottomright'`
+  - Padrão: `'center'`
+
+#### Propriedades de Ícones
+- **`closeIcon`**: Define o ícone do botão fechar
+  - Tipo: `string`
+  - Padrão: `'freud-icon freud-icon-times'`
+
+- **`minimizeIcon`**: Define o ícone do botão minimizar
+  - Tipo: `string`
+  - Padrão: `'freud-icon freud-icon-window-minimize'`
+
+- **`maximizeIcon`**: Define o ícone do botão maximizar
+  - Tipo: `string`
+  - Padrão: `'freud-icon freud-icon-window-maximize'`
+
+#### Propriedades de Foco
+- **`focusTrap`**: Define se deve capturar o foco
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`focusOnShow`**: Define se deve focar ao mostrar
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`closeOnEscape`**: Define se deve fechar ao pressionar ESC
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+#### Propriedades de Acessibilidade
+- **`closeAriaLabel`**: Define o label de acessibilidade do botão fechar
+  - Tipo: `string`
+  - Padrão: `'Fechar modal'`
+
+- **`closeTabindex`**: Define o tabindex do botão fechar
+  - Tipo: `string`
+  - Padrão: `'0'`
+
+<ArgTypes of={FreudDialogComponent} />

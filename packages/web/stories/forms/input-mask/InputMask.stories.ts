@@ -1,6 +1,23 @@
 import { Story } from '@storybook/angular';
 import { FreudInputMaskComponent } from '@freud-ds/web-components';
 
+// Propriedades disponíveis no FreudInputMaskComponent:
+// - label: string (padrão: '')
+// - helpText: string (padrão: '')
+// - placeholder: string (padrão: '')
+// - invalid: boolean (padrão: false)
+// - mask: string (padrão: '')
+// - unmask: boolean (padrão: false)
+// - slotChar: string (padrão: '')
+// - characterPattern: string (padrão: '')
+// - autoClear: boolean (padrão: true)
+// - bgColor: boolean (padrão: false)
+// - disabled: boolean (padrão: false)
+// - required: boolean (padrão: false)
+// - id: string (padrão: auto-gerado)
+// - ariaLabelledBy?: string - Propriedade de acessibilidade
+// - ariaLabel?: string - Propriedade de acessibilidade
+
 const templateHTML = `
     <freud-input-mask
         [(ngModel)]="value"
@@ -62,4 +79,34 @@ BGColor.args = {
   placeholder: 'Placeholder',
   bgColor: true,
   mask: '99/99/9999'
+};
+
+// Accessibility
+const TemplateAccessibility: Story<FreudInputMaskComponent> = (
+  args: FreudInputMaskComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-input-mask
+        [(ngModel)]="value"
+        [disabled]="disabled"
+        [label]="label"
+        [placeholder]="placeholder"
+        [helpText]="helpText"
+        [invalid]="invalid"
+        [mask]="mask"
+        [bgColor]="bgColor"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-input-mask>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'Data de nascimento',
+  placeholder: 'DD/MM/AAAA',
+  mask: '99/99/9999',
+  ariaLabel: 'Campo para inserir data de nascimento no formato DD/MM/AAAA',
+  ariaLabelledBy: 'birthdate-heading',
 };

@@ -25,6 +25,24 @@ Maximizable.args = {
   view: 'maximizable'
 }
 
+// Accessibility
+const TemplateAccessibility: Story<FreudDialogExampleComponent> = (
+  args: FreudDialogExampleComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <div style="min-height: 400px;">
+      <freud-dialog-example [view]="view"></freud-dialog-example>
+    </div>
+  `,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.storyName = 'Acessibilidade';
+WithAccessibility.args = {
+  view: 'basic',
+};
+
 export default {
   decorators: [
     moduleMetadata({

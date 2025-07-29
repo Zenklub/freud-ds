@@ -17,7 +17,13 @@ type positions = "center" | "top" | "bottom" | "left" | "right" | "top-left" | "
       [minimizeIcon]="minimizeIcon"
       [maximizeIcon]="maximizeIcon"
       [maximizable]="maximizable"
-      [header]="header">
+      [header]="header"
+      [focusTrap]="focusTrap"
+      [focusOnShow]="focusOnShow"
+      [closeAriaLabel]="closeAriaLabel"
+      [closeTabindex]="closeTabindex"
+      [closeOnEscape]="closeOnEscape"
+    >
       <ng-content></ng-content>
       <ng-template pTemplate="footer">
         <ng-content select="[freudTemplatefooter]"></ng-content>
@@ -51,6 +57,11 @@ export class FreudDialogComponent implements ControlValueAccessor {
   @Input() minimizeIcon: string = 'freud-icon freud-icon-window-minimize';
   @Input() maximizeIcon: string = 'freud-icon freud-icon-window-maximize';
   @Output() visibleChange: EventEmitter<any> = new EventEmitter();
+  @Input() focusTrap = true;
+  @Input() focusOnShow = true;
+  @Input() closeAriaLabel = 'Fechar modal';
+  @Input() closeTabindex = '0';
+  @Input() closeOnEscape = true;
   private _visible!: boolean;
 
   modelValueChange() {

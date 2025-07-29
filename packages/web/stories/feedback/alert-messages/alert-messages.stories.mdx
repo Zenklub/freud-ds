@@ -2,11 +2,7 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { FreudAlertMessagesComponent, FreudAlertMessagesModule } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import {
-  Default,
-  Inline,
-  BGColor
-} from './AlertMessages.stories.ts';
+import { Default, Inline, BGColor, WithAccessibility } from './AlertMessages.stories.ts';
 
 <Meta
   decorators={[
@@ -65,44 +61,13 @@ Para os alertas inline utilize o componente `freud-alert-message`
   <Story story={BGColor}/>
 </Canvas>
 
-## API
+### Acessibilidade
 
-As mensagens a serem exibidas podem ser definidas usando a propriedade `messages` sendo uma lista de `FreudMessage` ou usando o serviço `FreudMessageService`.
+O componente `AlertMessages` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
 
-### Utilizando via componente
-```ts
-
-show() {
-    this.msgs.push({severity:'info', summary:'Info Message', detail:'Freud DS'});
-}
-
-hide() {
-    this.msgs = [];
-}
-
-```
-```html
-<freud-confirm-dialog [messages]="messages"></freud-confirm-dialog>
-```
-
-### Utilizando via serviço
-
-É necessário o componente `freud-confirm-dialog` definido no html
-```html
-<freud-confirm-dialog></freud-confirm-dialog>
-```
-```ts
-import { FreudMessageService  } from '@freud-ds/web-components';
-
-export class ComponentDemo {
-
-    constructor(private messageService: FreudMessageService) {}
-
-    confirm() {
-        this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService', icon: 'freud-icon freud-icon-check-circle'});
-    }
-}
-```
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
 
 ### Severities
 Aqui estão os valores possíveis para a gravidade de uma mensagem.
@@ -110,3 +75,46 @@ Aqui estão os valores possíveis para a gravidade de uma mensagem.
 - info
 - warn
 - error
+
+## API
+
+### Propriedades Disponíveis
+
+O componente `FreudAlertMessagesComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`messages`**: Array de mensagens a serem exibidas
+  - Tipo: `FreudMessage[]`
+  - Obrigatório: `true`
+
+- **`severity`**: Define a gravidade da mensagem
+  - Tipo: `'success' | 'info' | 'warn' | 'error'`
+  - Padrão: `'success'`
+
+- **`text`**: Texto da mensagem
+  - Tipo: `string`
+  - Obrigatório: `true`
+
+- **`closable`**: Define se a mensagem pode ser fechada
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
+
+### Interface FreudMessage
+
+```typescript
+interface FreudMessage {
+  severity: 'success' | 'info' | 'warn' | 'error';
+  summary: string;
+  detail: string;
+  icon?: string;
+}
+```

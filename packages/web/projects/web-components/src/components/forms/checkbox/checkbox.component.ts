@@ -27,7 +27,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [label]="label"
       [checkboxIcon]="checkboxIcon"
       [inputId]="inputId"
-      (onChange)="onChange.emit($event)">
+      (onChange)="onChange.emit($event)"
+      [ariaLabelledBy]="ariaLabelledBy"
+      [ariaLabel]="ariaLabel"
+    >
     </p-checkbox>
   `,
   host: {
@@ -51,8 +54,9 @@ export class FreudCheckboxComponent implements ControlValueAccessor {
   @Input() name!: string;
   @Input() falseValue: any = false;
   @Input() trueValue: any = true;
-
-  @Input() checkboxIcon: string = 'freud-icon freud-icon-check';
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
+  @Input() checkboxIcon = 'freud-icon freud-icon-check';
   @Input() inputId!: string;
   @Input() required: boolean = false;
   @Input() id: string = Math.random().toString(36).substring(2);

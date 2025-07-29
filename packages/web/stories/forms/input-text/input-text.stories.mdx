@@ -11,6 +11,7 @@ import {
   Invalid,
   HelperText,
   ErrorText,
+  WithAccessibility,
 } from './InputText.stories.ts';
 
 <Meta
@@ -90,6 +91,64 @@ import { FreudInputTextModule } from '@freud-ds/web-components';
   <Story story={BGColor}/>
 </Canvas>
 
+### Acessibilidade
+
+O componente `InputText` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
 
-<ArgsTable of={FreudInputTextComponent} />
+### Propriedades Disponíveis
+
+O componente `FreudInputTextComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`label`**: Define o texto do label do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`helpText`**: Define o texto de ajuda do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`placeholder`**: Define o texto placeholder do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`rightIcon`**: Define o ícone à direita do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`invalid`**: Define se o input está em estado inválido
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`bgColor`**: Define se o input deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`disabled`**: Define se o input está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`required`**: Define se o input é obrigatório
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`id`**: Define o ID do componente
+  - Tipo: `string`
+  - Padrão: `auto-gerado`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
+
+<ArgTypes of={FreudInputTextComponent} />

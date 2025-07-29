@@ -23,7 +23,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
       [inputId]="inputId"
 
       (focus)="onFocus.emit($event)"
-      (blur)="onBlur.emit($event)">
+      (blur)="onBlur.emit($event)"
+      [ariaLabelledBy]="ariaLabelledBy"
+      [ariaLabel]="ariaLabel"
+    >
     </p-radioButton>
   `,
   host: {
@@ -47,6 +50,9 @@ export class FreudRadioButtonComponent implements ControlValueAccessor {
   @Input() radioValue!: any;
   @Input() required: boolean = false;
   @Input() id!: string;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
+
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();

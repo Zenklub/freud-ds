@@ -18,6 +18,7 @@ import {
   WithIconRight,
   WithIconLeft,
   WithNGContent,
+  WithAriaLabel,
 } from './Button.stories.ts';
 
 <Meta
@@ -173,6 +174,65 @@ Para utilizar é simples, basta não passar o `label` e inserir o texto dentro d
   <Story story={WithNGContent}/>
 </Canvas>
 
+## Acessibilidade
+
+O componente `Button` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+### Aria Label
+
+Utilize a propriedade `ariaLabel` para fornecer uma descrição mais detalhada do botão para leitores de tela.
+
+<Canvas sourceState={SourceState.OPEN}>
+  <Story story={WithAriaLabel} />
+</Canvas>
+
 ## API
 
-<ArgsTable of={FreudButtonComponent} />
+### Propriedades Disponíveis
+
+O componente `FreudButtonComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`color`**: Define a cor do botão
+  - Tipo: `'primary' | 'secondary' | 'ghost'`
+  - Padrão: `'primary'`
+
+- **`bgColor`**: Define se o botão deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`size`**: Define o tamanho do botão
+  - Tipo: `'sm' | 'md' | 'lg'`
+  - Padrão: `'md'`
+
+- **`disabled`**: Define se o botão está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`loading`**: Define se o botão está em estado de carregamento
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Conteúdo
+- **`icon`**: Define o ícone do botão
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`label`**: Define o texto do botão
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`iconPos`**: Define a posição do ícone
+  - Tipo: `'left' | 'right'`
+  - Padrão: `'left'`
+
+- **`fullWidth`**: Define se o botão deve ocupar toda a largura disponível
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do botão para leitores de tela
+  - Tipo: `string`
+  - Padrão: `''`
+
+<ArgTypes of={FreudButtonComponent} />
