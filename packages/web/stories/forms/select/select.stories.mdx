@@ -13,6 +13,7 @@ import {
   Filter,
   Countries,
   Tags,
+  WithAccessibility,
 } from "./Select.stories.ts";
 
 <Meta
@@ -118,6 +119,121 @@ Para usarmos as opções com tags, devemos setar a propriedade **useItemTemplate
   <Story story={Tags} />
 </Canvas>
 
+### Acessibilidade
+
+O componente `Select` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
+
+### Propriedades Disponíveis
+
+O componente `FreudSelectComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`label`**: Define o texto do label do select
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`filter`**: Define se o select deve ter filtro
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`lazy`**: Define se o select deve carregar dados de forma lazy
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`options`**: Array de opções do select
+  - Tipo: `any[]`
+  - Obrigatório: `true`
+
+- **`helpText`**: Define o texto de ajuda do select
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`placeholder`**: Define o texto placeholder do select
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`invalid`**: Define se o select está em estado inválido
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Configuração
+- **`virtualScroll`**: Define se o select deve usar scroll virtual
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`itemSize`**: Define o tamanho dos itens para scroll virtual
+  - Tipo: `number`
+  - Padrão: `undefined`
+
+- **`emptyMessage`**: Define a mensagem quando não há resultados
+  - Tipo: `string`
+  - Padrão: `'Sem resultados'`
+
+- **`dropdownIcon`**: Define o ícone do dropdown
+  - Tipo: `string`
+  - Padrão: `'freud-icon freud-icon-chevron-down'`
+
+- **`optionLabel`**: Define qual propriedade usar como label
+  - Tipo: `string`
+  - Padrão: `'label'`
+
+- **`optionValue`**: Define qual propriedade usar como valor
+  - Tipo: `string`
+  - Padrão: `'value'`
+
+- **`optionDisabled`**: Define qual propriedade usar para desabilitar
+  - Tipo: `string`
+  - Padrão: `'disabled'`
+
+- **`optionGroupLabel`**: Define qual propriedade usar como label do grupo
+  - Tipo: `string`
+  - Padrão: `'label'`
+
+- **`optionGroupChildren`**: Define qual propriedade usar como filhos do grupo
+  - Tipo: `string`
+  - Padrão: `'items'`
+
+- **`characterPattern`**: Define o padrão de caracteres permitidos
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`autoClear`**: Define se deve limpar automaticamente
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`bgColor`**: Define se o select deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`disabled`**: Define se o select está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`required`**: Define se o select é obrigatório
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`id`**: Define o ID do componente
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`useItemTemplate`**: Define se deve usar template personalizado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
 
 <ArgTypes of={FreudSelectComponent} />

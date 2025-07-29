@@ -3,6 +3,33 @@ import { FreudSelectComponent } from '@freud-ds/web-components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
 
+// Propriedades disponíveis no FreudSelectComponent:
+// - label: string (padrão: '')
+// - filter: boolean (padrão: false)
+// - lazy: boolean (padrão: false)
+// - options: any[] (obrigatório)
+// - helpText: string (padrão: '')
+// - placeholder: string (padrão: '')
+// - invalid: boolean (padrão: false)
+// - virtualScroll: boolean (padrão: false)
+// - itemSize: number (padrão: undefined)
+// - emptyMessage: string (padrão: 'Sem resultados')
+// - dropdownIcon: string (padrão: 'freud-icon freud-icon-chevron-down')
+// - optionLabel: string (padrão: 'label')
+// - optionValue: string (padrão: 'value')
+// - optionDisabled: string (padrão: 'disabled')
+// - optionGroupLabel: string (padrão: 'label')
+// - optionGroupChildren: string (padrão: 'items')
+// - characterPattern: string (padrão: '')
+// - autoClear: boolean (padrão: true)
+// - bgColor: boolean (padrão: false)
+// - disabled: boolean (padrão: false)
+// - required: boolean (padrão: false)
+// - id: string (padrão: '')
+// - useItemTemplate: boolean (padrão: false)
+// - ariaLabelledBy?: string - Propriedade de acessibilidade
+// - ariaLabel?: string - Propriedade de acessibilidade
+
 const items = [
   { name: 'New York', code: 'NY' },
   { name: 'Rome', code: 'RM', disabled: true },
@@ -1104,6 +1131,41 @@ Tags.args = {
     { label: 'London', code: 'LDN' },
     { label: 'Istanbul', code: 'IST' },
   ],
+  optionValue: 'code',
+};
+
+// Accessibility
+const TemplateAccessibility: Story<FreudSelectComponent> = (args: FreudSelectComponent) => ({
+  props: { ...args },
+  template: `
+    <div style="height: 250px">
+        <freud-select
+          [disabled]="disabled"
+          [label]="label"
+          [useItemTemplate]="useItemTemplate"
+          [options]="options"
+          [optionLabel]="optionLabel"
+          [filter]="filter"
+          [optionValue]="optionValue"
+          [placeholder]="placeholder"
+          [helpText]="helpText"
+          [invalid]="invalid"
+          [bgColor]="bgColor"
+          [ariaLabel]="ariaLabel"
+          [ariaLabelledBy]="ariaLabelledBy">
+      </freud-select>
+    </div>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'País de origem',
+  placeholder: 'Selecione um país',
+  ariaLabel: 'Seletor de país de origem do usuário',
+  ariaLabelledBy: 'country-heading',
+  options: items,
+  optionLabel: 'name',
   optionValue: 'code',
 };
 

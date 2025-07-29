@@ -8,6 +8,8 @@ import { FreudMenuItem } from '../../../api/menu.interface';
       [model]="items"
       [styleClass]="'freud-typography bodyBoldAuto'"
       [activeItem]="activeItem"
+      [ariaLabel]="ariaLabel"
+      [ariaLabelledBy]="ariaLabelledBy"
     ></p-tabMenu>
   `,
   styleUrls: ['./tab-menu.component.scss'],
@@ -21,4 +23,6 @@ export class FreudTabMenuComponent {
   @Input() items!: FreudMenuItem[];
   @Input() activeItem!: FreudMenuItem;
   @Input() bgColor = false;
+  @Input() ariaLabel = '';
+  @Input() ariaLabelledBy = '';
 }

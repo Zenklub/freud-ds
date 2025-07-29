@@ -32,7 +32,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
           [weakLabel]="weakLabel"
           [mediumLabel]="mediumLabel"
           [strongLabel]="strongLabel"
-
+          [ariaLabelledBy]="ariaLabelledBy"
+          [ariaLabel]="ariaLabel"
           (ngModelChange)="modelValueChange()"
           (focus)="onFocus.emit($event)"
           (blur)="onBlur.emit($event)"
@@ -83,7 +84,8 @@ export class FreudInputPasswordComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
-
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() onBlur: EventEmitter<any> = new EventEmitter();

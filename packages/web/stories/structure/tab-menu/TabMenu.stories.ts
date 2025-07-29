@@ -1,6 +1,13 @@
 import { FreudTabMenuComponent, FreudMenuItem } from '@freud-ds/web-components';
 import { Story } from '@storybook/angular';
 
+// Propriedades disponíveis no FreudTabMenuComponent:
+// - items: FreudMenuItem[] (obrigatório)
+// - activeItem: FreudMenuItem (obrigatório)
+// - bgColor: boolean (padrão: false)
+// - ariaLabel: string (padrão: '') - Propriedade de acessibilidade
+// - ariaLabelledBy: string (padrão: '') - Propriedade de acessibilidade
+
 const items: FreudMenuItem[] = [
   { label: 'Home', command: () => console.log('menuClicked') },
   { label: 'Calendar', command: () => console.log('menuClicked') },
@@ -33,4 +40,28 @@ BGColor.args = {
   items: items,
   activeItem: items[0],
   bgColor: true,
+};
+
+// Accessibility
+const TemplateAccessibility: Story<FreudTabMenuComponent> = (
+  args: FreudTabMenuComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-tab-menu
+      [items]="items"
+      [activeItem]="activeItem"
+      [bgColor]="bgColor"
+      [ariaLabel]="ariaLabel"
+      [ariaLabelledBy]="ariaLabelledBy">
+    </freud-tab-menu>
+  `,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  items: items,
+  activeItem: items[0],
+  ariaLabel: 'Menu de navegação principal',
+  ariaLabelledBy: 'nav-heading',
 };

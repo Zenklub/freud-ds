@@ -5,7 +5,7 @@ import {
   FreudTabMenuModule,
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import { Default, BGColor } from './TabMenu.stories.ts';
+import { Default, BGColor, WithAccessibility } from './TabMenu.stories.ts';
 
 <Meta
   decorators={[moduleMetadata({ imports: [FreudTabMenuModule] })]}
@@ -75,6 +75,51 @@ items: FreudMenuItem[] = [
   <Story story={BGColor} />
 </Canvas>
 
+### Acessibilidade
+
+O componente `TabMenu` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
+
+### Propriedades Disponíveis
+
+O componente `FreudTabMenuComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`items`**: Array de itens do menu
+  - Tipo: `FreudMenuItem[]`
+  - Obrigatório: `true`
+
+- **`activeItem`**: Item ativo do menu
+  - Tipo: `FreudMenuItem`
+  - Obrigatório: `true`
+
+- **`bgColor`**: Define se o menu deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Padrão: `''`
+
+### Interface FreudMenuItem
+
+```typescript
+interface FreudMenuItem {
+  label: string;
+  command: () => void;
+  icon?: string;
+  disabled?: boolean;
+}
+```
 
 <ArgTypes of={FreudTabMenuComponent} />

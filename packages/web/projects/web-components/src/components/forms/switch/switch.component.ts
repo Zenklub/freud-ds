@@ -24,6 +24,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       [falseValue]="falseValue"
       [name]="name"
       (onChange)="onChange.emit($event)"
+      [ariaLabelledBy]="ariaLabelledBy"
+      [ariaLabel]="ariaLabel"
     >
     </p-inputSwitch>
   `,
@@ -48,6 +50,8 @@ export class FreudSwitchComponent implements ControlValueAccessor {
   @Input() required = false;
   @Input() id!: string;
   @Input() custom = false;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 

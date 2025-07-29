@@ -30,6 +30,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
           [placeholder]="placeholder || ''"
           [disabled]="disabled"
           [required]="required"
+          [attr.aria-label]="ariaLabel"
+          [attr.aria-labelledby]="ariaLabelledBy"
           (focus)="onFocus.emit($event)"
           (blur)="onBlur.emit($event)"
           (input)="onInput.emit($event)"
@@ -76,6 +78,8 @@ export class FreudInputTextAreaComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required = false;
   @Input() id!: string;
+  @Input() ariaLabel?: string;
+  @Input() ariaLabelledBy?: string;
 
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 

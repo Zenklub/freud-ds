@@ -5,7 +5,7 @@ import {
   FreudCheckboxModule,
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import { Default, BGColor, Disabled, Label } from './Checkbox.stories.ts';
+import { Default, BGColor, Disabled, Label, WithAccessibility } from './Checkbox.stories.ts';
 
 <Meta
   decorators={[
@@ -82,7 +82,78 @@ Neste caso, devido a um problema no Angular, vincule a instância formControl em
   <Story story={BGColor} />
 </Canvas>
 
+### Acessibilidade
+
+O componente `Checkbox` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
+
+### Propriedades Disponíveis
+
+O componente `FreudCheckboxComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`invalid`**: Define se o checkbox está em estado inválido
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`binary`**: Define se o checkbox é binário (true/false)
+  - Tipo: `boolean`
+  - Padrão: `true`
+
+- **`disabled`**: Define se o checkbox está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`label`**: Define o texto do label do checkbox
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`bgColor`**: Define se o checkbox deve ter cor de fundo
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Configuração
+- **`name`**: Define o nome do checkbox
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`falseValue`**: Define o valor quando desmarcado
+  - Tipo: `any`
+  - Padrão: `false`
+
+- **`trueValue`**: Define o valor quando marcado
+  - Tipo: `any`
+  - Padrão: `true`
+
+- **`checkboxIcon`**: Define o ícone do checkbox
+  - Tipo: `string`
+  - Padrão: `'freud-icon freud-icon-check'`
+
+- **`inputId`**: Define o ID do input
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`required`**: Define se o checkbox é obrigatório
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`id`**: Define o ID do componente
+  - Tipo: `string`
+  - Padrão: `auto-gerado`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
 
 ### Label
 

@@ -5,7 +5,7 @@ import {
   FreudSwitchModule,
 } from '@freud-ds/web-components';
 import { FreudHeaderComponent } from '../../header/header.component';
-import { Default, BGColor, Custom, Disabled } from './Switch.stories.ts';
+import { Default, BGColor, Custom, Disabled, WithAccessibility } from './Switch.stories.ts';
 import { FormsModule } from '@angular/forms';
 
 <Meta
@@ -68,6 +68,60 @@ import { FreudSwitchModule } from '@freud-ds/web-components';
   <Story story={BGColor} />
 </Canvas>
 
+### Acessibilidade
+
+O componente `Switch` suporta propriedades de acessibilidade para melhorar a experiência de usuários que utilizam leitores de tela.
+
+<Canvas>
+  <Story story={WithAccessibility} />
+</Canvas>
+
 ## <a id="api"></a>API
+
+### Propriedades Disponíveis
+
+O componente `FreudSwitchComponent` possui as seguintes propriedades:
+
+#### Propriedades Básicas
+- **`invalid`**: Define se o switch está em estado inválido
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`disabled`**: Define se o switch está desabilitado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`name`**: Define o nome do switch
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`falseValue`**: Define o valor quando desligado
+  - Tipo: `any`
+  - Padrão: `false`
+
+- **`trueValue`**: Define o valor quando ligado
+  - Tipo: `any`
+  - Padrão: `true`
+
+- **`required`**: Define se o switch é obrigatório
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+- **`id`**: Define o ID do componente
+  - Tipo: `string`
+  - Padrão: `''`
+
+- **`custom`**: Define se o switch deve usar estilo customizado
+  - Tipo: `boolean`
+  - Padrão: `false`
+
+#### Propriedades de Acessibilidade
+- **`ariaLabelledBy`**: Referencia o ID de outro elemento que descreve o componente
+  - Tipo: `string`
+  - Opcional: `true`
+
+- **`ariaLabel`**: Fornece uma descrição mais detalhada do componente para leitores de tela
+  - Tipo: `string`
+  - Opcional: `true`
 
 <ArgTypes of={FreudSwitchComponent} />

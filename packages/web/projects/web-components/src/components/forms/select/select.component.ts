@@ -49,6 +49,8 @@ export class FreudSelectComponent implements ControlValueAccessor {
   @Input() required = false;
   @Input() id!: string;
   @Input() useItemTemplate = false;
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
   @Output() onBlur: EventEmitter<any> = new EventEmitter();

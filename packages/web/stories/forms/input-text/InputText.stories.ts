@@ -1,6 +1,19 @@
 import { Story } from '@storybook/angular';
 import { FreudInputTextComponent } from '@freud-ds/web-components';
 
+// Propriedades disponíveis no FreudInputTextComponent:
+// - label: string (padrão: '')
+// - helpText: string (padrão: '')
+// - placeholder: string (padrão: '')
+// - rightIcon: string (padrão: '')
+// - invalid: boolean (padrão: false)
+// - bgColor: boolean (padrão: false)
+// - disabled: boolean (padrão: false)
+// - required: boolean (padrão: false)
+// - id: string (padrão: auto-gerado)
+// - ariaLabelledBy?: string - Propriedade de acessibilidade
+// - ariaLabel?: string - Propriedade de acessibilidade
+
 const templateHTML = `
     <freud-input-text
         [(ngModel)]="value"
@@ -76,4 +89,33 @@ Invalid.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   invalid: true,
+};
+
+// Accessibility
+const TemplateAccessibility: Story<FreudInputTextComponent> = (
+  args: FreudInputTextComponent,
+) => ({
+  props: { ...args },
+  template: `
+    <freud-input-text
+        [(ngModel)]="value"
+        [disabled]="disabled"
+        [label]="label"
+        [placeholder]="placeholder"
+        [helpText]="helpText"
+        [invalid]="invalid"
+        [rightIcon]="rightIcon"
+        [bgColor]="bgColor"
+        [ariaLabel]="ariaLabel"
+        [ariaLabelledBy]="ariaLabelledBy">
+    </freud-input-text>
+`,
+});
+
+export const WithAccessibility = TemplateAccessibility.bind({});
+WithAccessibility.args = {
+  label: 'Nome completo',
+  placeholder: 'Digite seu nome completo',
+  ariaLabel: 'Campo para inserir nome completo do usuário',
+  ariaLabelledBy: 'name-heading',
 };

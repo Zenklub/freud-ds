@@ -2,6 +2,17 @@ import { Story } from '@storybook/angular';
 import { FreudButtonComponent } from '@freud-ds/web-components';
 
 // Button Test
+// Propriedades disponíveis:
+// - color: 'primary' | 'secondary' | 'ghost' (padrão: 'primary')
+// - bgColor: boolean (padrão: false)
+// - size: 'sm' | 'md' | 'lg' (padrão: 'md')
+// - disabled: boolean (padrão: false)
+// - loading: boolean (padrão: false)
+// - icon: string (padrão: '')
+// - label: string (padrão: '')
+// - iconPos: 'left' | 'right' (padrão: 'left')
+// - fullWidth: boolean (padrão: false)
+// - ariaLabel: string (padrão: '') - Propriedade de acessibilidade
 const TemplateTest: Story<FreudButtonComponent> = (
   args: FreudButtonComponent,
 ) => ({
@@ -128,5 +139,12 @@ export const WithIconLeft = () => {
 export const WithNGContent = () => {
   return {
     template: '<freud-button>Button sem label</freud-button>',
+  };
+};
+
+// Accessibility
+export const WithAriaLabel = () => {
+  return {
+    template: '<freud-button ariaLabel="Botão para salvar formulário" label="Salvar"></freud-button>',
   };
 };

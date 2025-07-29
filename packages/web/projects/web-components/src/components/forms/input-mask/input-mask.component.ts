@@ -38,6 +38,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         (onInput)="onInput.emit($event)"
         (onComplete)="onComplete.emit($event)"
         (onKeydown)="onKeydown.emit($event)"
+        [ariaLabelledBy]="ariaLabelledBy"
+        [ariaLabel]="ariaLabel"
       ></p-inputMask>
       <small
         [class.disabled]="disabled"
@@ -78,7 +80,8 @@ export class FreudInputMaskComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required = false;
   @Input() id: string = Math.random().toString(36).substring(2);
-
+  @Input() ariaLabelledBy?: string;
+  @Input() ariaLabel?: string;
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
 
   @Output() onBlur: EventEmitter<any> = new EventEmitter();
